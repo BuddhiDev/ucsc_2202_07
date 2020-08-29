@@ -31,6 +31,10 @@ if(!isset($_SESSION['nic'])){
                     <li><a href="#">My orders</a></li>
                 </ul>
             </nav>
+
+            <div>
+          <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
+        </div>
             <!-- <div>
                 <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button>Sign In</button></a>
                 <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button>Sign Up</button></a>

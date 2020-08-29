@@ -24,11 +24,11 @@ if(!isset($_SESSION['nic'])){
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
             <li><a href="#"></a>Dress Showcase</li>
-            <li><a href="/ucsc_2202_07/andum.lk/Manage_order.php">Manage order</a></li>
+            <li><a href="Manage_order.php">Manage order</a></li>
           </ul>
         </nav>
         <div>
-          <a class="cta" href="#"><button>Sign Out</button></a>
+        <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
         </div>
       </header>
     </div>
