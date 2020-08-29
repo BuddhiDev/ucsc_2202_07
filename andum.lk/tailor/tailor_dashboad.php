@@ -57,7 +57,7 @@
           <p>Jeny@gmail.com</p><br>
           <p>1224435534<p><br>
             <div>
-              <a class="cta" href="/ucsc_2202_07/andum.lk/tailor/edit_profile.php"><button>Edit Profile</button></a>
+              <a class="cta" href="/ucsc_2202_07/andum.lk/tailor/edit_profile.php"><button class="loginbutton btn-full-w">Edit Profile</button></a>
             </div>
         </div>
       <div>
