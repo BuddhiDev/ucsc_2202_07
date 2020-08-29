@@ -60,7 +60,7 @@ if(!isset($_SESSION['nic'])){
 			$username = $_SESSION['nic'];
 			$t_type="0";
 			$sql = "SELECT * FROM users WHERE type='$t_type'";
-            $result=mysqli_query($db,$sql);
+      $result=mysqli_query($db,$sql);
 
            if($result)
 		   {
