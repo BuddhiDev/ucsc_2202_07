@@ -32,11 +32,15 @@ require("server.php");
     </header>
   </div>
         
-    <form action="action_page.php" method="post">
+    <form action="signup.php" method="post">
         <!-- <div class="imgcontainer">
           <img src="img_avatar2.png" alt="Avatar" class="avatar">
         </div> -->
       
+        <!-- errors display -->
+            <?php include("errors.php"); 
+            ?>
+
         <div class="login-container">
           
           <div class="form-field-inline">
@@ -76,7 +80,7 @@ require("server.php");
 
           <div class="form-field-inline">
             <label for="utype" class="field-label-inline"><b>User Type</b></label>
-            <input type="text" class="field-value-inline" name="utype">
+            <input type="text" class="field-value-inline" name="utype" required>
           </div>
           
           

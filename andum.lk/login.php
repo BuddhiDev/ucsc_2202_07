@@ -26,7 +26,7 @@
     </header>
   </div>
         
-  <form action="action_page.php" method="post">
+  <form action="login.php" method="post">
         <!-- <div class="imgcontainer">
           <img src="img_avatar2.png" alt="Avatar" class="avatar">
         </div> -->

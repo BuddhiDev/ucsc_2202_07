@@ -10,27 +10,15 @@
 
     if(isset($_POST['register']))
     {
-        $username = mysqli_real_escape_string($db,$_POST['nice']);
+        $nic = mysqli_real_escape_string($db,$_POST['nic']);
         $email = mysqli_real_escape_string($db,$_POST['email']);
         $password1 = mysqli_real_escape_string($db,$_POST['password']);
         $password2 = mysqli_real_escape_string($db,$_POST['c_password']);
         $fname = mysqli_real_escape_string($db,$_POST['fname']);
         $lname = mysqli_real_escape_string($db,$_POST['lname']);
         $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
-		$u_type = mysqli_real_escape_string($db,$_POST['u_type']);
+		$utype = mysqli_real_escape_string($db,$_POST['utype']);
 
-        if(empty($username))
-        {
-            array_push($errors,"Username is required");
-        }
-        if(empty($email))
-        {
-            array_push($errors,"Email is required");
-        }
-        if(empty($password1))
-        {
-            array_push($errors,"Password is required");
-        }
         if($password1!=$password2)
         {
             array_push($errors,"Passwords do not match");
@@ -38,16 +26,16 @@
         if(count($errors)==0)
         {
             $password=md5($password1);
-            $sql = "INSERT INTO users (username, email, password, type) VALUES ('$username','$email','$password','$u_type')";
+            $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype')";
             mysqli_query($db,$sql);
-            $_SESSION['username']=$username;
+            $_SESSION['nic']=$nic;
             $_SESSION['success']="You are now logged in";
-			$_SESSION['u_type']="$u_type";
+			$_SESSION['utype']="$utype";
             
-			if($_SESSION['u_type']==0){
+			if($_SESSION['utype']==0){
 					header('location: tailor/index.php');
 				}
-				else if($_SESSION['u_type']==1){
+				else if($_SESSION['utype']==1){
 					header('location: customer/index.php');
 				}
 			
