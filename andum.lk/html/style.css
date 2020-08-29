@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: muli;
+}
+
+li, a, button{
+        font-family: muli;
+        font-weight: 160px;
+        font-size: 16px;
+        text-decoration: none;
+        padding: 0px 5px;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 10px;
+
+}
+
+.logo {
+    cursor: pointer;
+    height: 50px;
+
+}
+
+.nav-area {
+    list-style: none;
+}
+
+.nav-area li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-area li a{
+    color: rgb(160, 156, 156);
+    transition: all 0.3s ease 0s;
+}
+
+.nav-area li a:hover{
+    color: rgb(0, 0, 0);
+}
+button {
+    padding: 9px 25px;
+    background-color: blue;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+
+button {
+    background-color: #EB2188;
+    color: white;
+}
+
+button:hover {
+    color: black;
+}
+
+.box {
+    background: white;
+    padding: 5px;
+    box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.5);
+}
+
+/* form-styles */
+
+.form-field-inline{
+    display: flex;
+    align-items: center;
+}
+
+.field-label-inline{
+    flex:1;
+    font-weight: 500;
+}
+
+.field-value-inline{
+    flex:3;
+    border-radius: 8px;
+}
+
+.login-container{
+    width: 58%;
+    box-shadow: 0px 1px 4px 1px #f4f4f4;
+    border-radius: 8px;
+    padding: 30px 40px;
+    margin: 100px auto;
+}
+
+.btn-panel-center{
+    text-align: left;
+}
+
+.btn-full-w{
+    width: 15%;
+    margin: 10px auto;
+}
+
+/* footer */
+
+.footer{
+    background:  #FAFAFA;
+    color: black;
+    height: 300px;
+    position: relative; 
+
+}
+
+.footer .footer-content{
+    height: 250px;
+    display: flex;
+}
+
+.footer .footer-content .footer-section{
+    flex: 1;
+    list-style: none;
+    /* border: 1px solid black; */
+}
+
+.footer .footer-bottom{
+    background: black;
+    color: white;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+}
+
+
+/* .footer-logo { */
+    /* display: block;
+    margin-bottom: 16px;
+} */
+
+
+
