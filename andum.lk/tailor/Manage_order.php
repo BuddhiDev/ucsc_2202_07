@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>andum.lk</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
     <style>
       table {
         border-collapse: collapse;
@@ -24,7 +24,7 @@
 <body>
     <div class="box">
       <header>
-        <img class="logo" src="logo.png" alt="logo">
+        <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
         <nav>
           <ul class="nav-area">
             <li><a href="#">Explore</a></li>
