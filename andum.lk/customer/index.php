@@ -31,6 +31,10 @@ if(!isset($_SESSION['nic'])){
                     <li><a href="#">My orders</a></li>
                 </ul>
             </nav>
+
+            <div>
+          <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
+        </div>
             <!-- <div>
                 <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button>Sign In</button></a>
                 <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button>Sign Up</button></a>
@@ -56,7 +60,7 @@ if(!isset($_SESSION['nic'])){
 			$username = $_SESSION['nic'];
 			$t_type="0";
 			$sql = "SELECT * FROM users WHERE type='$t_type'";
-            $result=mysqli_query($db,$sql);
+      $result=mysqli_query($db,$sql);
 
            if($result)
 		   {
