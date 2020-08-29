@@ -1,3 +1,7 @@
+<?php
+require("server.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,36 +32,53 @@
     </header>
   </div>
         
-    <form action="action_page.php" method="post">
+    <form action="signup.php" method="post">
         <!-- <div class="imgcontainer">
           <img src="img_avatar2.png" alt="Avatar" class="avatar">
         </div> -->
-      
+        <!-- errors display -->
+            <?php include("errors.php"); 
+            ?>
         <div class="login-container">
           
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
-            <input type="text" class="field-value-inline" name="uname" required>
+            <input type="text" class="field-value-inline" name="nic" required>
           </div>
           
           <div class="form-field-inline">
-            <label for="psw" class="field-label-inline"><b>Email Address</b></label>
-            <input type="password" class="field-value-inline" name="psw" required>
+            <label for="email" class="field-label-inline"><b>Email Address</b></label>
+            <input type="text" class="field-value-inline" name="email" required>
           </div>
 
           <div class="form-field-inline">
-            <label for="psw" class="field-label-inline"><b>Choose Passsword</b></label>
-            <input type="password" class="field-value-inline" name="psw" required>
+            <label for="fname" class="field-label-inline"><b>First Name</b></label>
+            <input type="text" class="field-value-inline" name="fname" required>
           </div>
 
           <div class="form-field-inline">
-            <label for="psw" class="field-label-inline"><b>Re-enter Password</b></label>
-            <input type="password" class="field-value-inline" name="psw" required>
+            <label for="lname" class="field-label-inline"><b>Last Name</b></label>
+            <input type="text" class="field-value-inline" name="lname" required>
           </div>
 
           <div class="form-field-inline">
-            <label for="psw" class="field-label-inline"><b>Phone Number</b></label>
-            <input type="password" class="field-value-inline" name="psw" required>
+            <label for="password" class="field-label-inline"><b>Choose Passsword</b></label>
+            <input type="password" class="field-value-inline" name="password" required>
+          </div>
+
+          <div class="form-field-inline">
+            <label for="c_password" class="field-label-inline"><b>Re-enter Password</b></label>
+            <input type="password" class="field-value-inline" name="c_password" required>
+          </div>
+
+          <div class="form-field-inline">
+            <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
+            <input type="text" class="field-value-inline" name="contactno">
+          </div>
+
+          <div class="form-field-inline">
+            <label for="utype" class="field-label-inline"><b>User Type</b></label>
+            <input type="text" class="field-value-inline" name="utype" required>
           </div>
           
           
@@ -65,7 +86,7 @@
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit">SIGN UP </button>
+            <button class="loginbutton btn-full-w" type="submit" name="register">SIGN UP </button>
           </div>
 
           

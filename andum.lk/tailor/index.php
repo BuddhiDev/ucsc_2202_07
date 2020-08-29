@@ -1,6 +1,6 @@
-<?php include("file:///C|/xampp/htdocs/AndumLK/server.php"); 
+<?php include("../server.php"); 
 
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['nic'])){
 	header("location:../login.php");
 	exit();
 }
@@ -8,44 +8,29 @@ if(!isset($_SESSION['username'])){
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Andum.LK - Tailor</title>
-        <link rel="stylesheet" type="text/css" href="file:///C|/xampp/htdocs/AndumLK/styles/style.css">
-        </head>
-    <body>
-        <div class="header">
-            <h2>Tailor Dashboard</h2>
-        </div>    
-        
-        <div class="content">
-
-        <?php if(isset($_SESSION['success'])): ?>
-                <div class="error success">
-                    <h3>
-                        <?php
-                            echo $_SESSION['success'];
-                            unset ($_SESSION['success']);
-                        ?>
-                    </h3>
-                </div>    
-        <?php endif ?>
-
-        <?php if(isset($_SESSION['username'])): ?>
-            <p>
-                Welcome <strong><?php echo $_SESSION['username']; ?></strong>
-            </p>
-            <div align="right"><a href="file:///C|/xampp/htdocs/AndumLK/tailor/index.php?logout='1'" style="color:red;">Logout</a></div>
-
-        <?php endif ?>    
-        </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>andum.lk</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="box">
+      <header>
+        <img class="logo" src="../logo.png" alt="logo">
+        <nav>
+          <ul class="nav-area">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Hire a Fashion Designer</a></li>
+            <li><a href="#"></a>Dress Showcase</li>
+            <li><a href="Manage_order.php">Manage order</a></li>
+          </ul>
+        </nav>
         <div>
-          <h3>Hello Tailor! what are you going to do today?</h3>
+        <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
         </div>
-        <div>
-          <p><br>
-            <a href="file:///C|/xampp/htdocs/AndumLK/tailor/inventory_list.php">Inventory Manage</a></p>
-          <p><a href="file:///C|/xampp/htdocs/AndumLK/tailor/order_list.php">Orders Manage</a></p>
-        </div>
-    </body>
+      </header>
+    </div>
+</body>
 </html>
