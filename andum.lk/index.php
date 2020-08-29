@@ -22,8 +22,8 @@
                 </ul>  
             </nav>
             <div>
-                <a class="cta" href="file:///D:/Group%20Project/andum.lk/html/login.html#"><button>Sign In</button></a>
-                <a class="cta" href="file:///D:/Group%20Project/andum.lk/html/signup.html"><button>Sign Up</button></a>
+                <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button>Sign In</button></a>
+                <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button>Sign Up</button></a>
             </div>
        
         
