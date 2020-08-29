@@ -20,8 +20,8 @@
         </ul>  
       </nav>
       <div>
-        <a class="cta" href="#"><button>Sign In</button></a>
-        <a class="cta" href="#"><button>Sign Up</button></a>
+        <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button>Sign In</button></a>
+        <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button>Sign Up</button></a>
       </div>
     </header>
   </div>
@@ -49,7 +49,7 @@
         <button class="loginbutton btn-full-w" type="submit">SIGN IN </button>
       </div>
       <!-- <div> -->
-        <span class="psw">Don't you have an account? <a href="file:///D:/Group%20Project/andum.lk/html/signup.html">SIGN UP</a> now!</span>
+        <span class="psw">Don't you have an account? <a href="/ucsc_2202_07/andum.lk/signup.php">SIGN UP</a> now!</span>
       <!-- </div> -->
       <!-- <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
