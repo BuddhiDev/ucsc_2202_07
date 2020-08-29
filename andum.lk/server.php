@@ -10,10 +10,13 @@
 
     if(isset($_POST['register']))
     {
-        $username = mysqli_real_escape_string($db,$_POST['uname']);
+        $username = mysqli_real_escape_string($db,$_POST['nice']);
         $email = mysqli_real_escape_string($db,$_POST['email']);
         $password1 = mysqli_real_escape_string($db,$_POST['password']);
         $password2 = mysqli_real_escape_string($db,$_POST['c_password']);
+        $fname = mysqli_real_escape_string($db,$_POST['fname']);
+        $lname = mysqli_real_escape_string($db,$_POST['lname']);
+        $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
 		$u_type = mysqli_real_escape_string($db,$_POST['u_type']);
 
         if(empty($username))
