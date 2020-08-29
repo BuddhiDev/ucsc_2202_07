@@ -46,41 +46,33 @@
     if(isset($_POST['login']))
     {
 
-        $username = mysqli_real_escape_string($db,$_POST['uname']);
+        $nic = mysqli_real_escape_string($db,$_POST['nic']);
         $password1 = mysqli_real_escape_string($db,$_POST['password']);
 
-        if(empty($username))
-        {
-            array_push($errors,"Username is required");
-        }
-        if(empty($password1))
-        {
-            array_push($errors,"Password is required");
-        }
         if(count($errors)==0)
         {
             $password=md5($password1);
-            $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+            $sql = "SELECT * FROM users WHERE nic='$nic' AND password='$password'";
             $result=mysqli_query($db,$sql);
 
             if(mysqli_num_rows($result)==1)
             {
-                $_SESSION['username']=$username;
+                $_SESSION['nic']=$nic;
                 $_SESSION['success']="You are now logged in";
 				
-				$sql = "SELECT type FROM users WHERE username='$username' AND password='$password'";
+				$sql = "SELECT type FROM users WHERE nic='$nic' AND password='$password'";
 				$result=mysqli_query($db,$sql);
 				
 				if($row = mysqli_fetch_assoc($result))
 				{
-      			$_SESSION['u_type'] = $row['type'];
+      			$_SESSION['utype'] = $row['type'];
 				}
 				
 				
-				if($_SESSION['u_type']==0){
+				if($_SESSION['utype']==0){
 					header('location: tailor/index.php');
 				}
-				else if($_SESSION['u_type']==1){
+				else if($_SESSION['utype']==1){
 					header('location: customer/index.php');
 				}
                 
