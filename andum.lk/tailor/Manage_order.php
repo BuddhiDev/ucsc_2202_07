@@ -49,11 +49,9 @@ if(!isset($_SESSION['nic'])){
     <table>
       <tr>
         <th>Order Id</th>
-        <th>NIC</th>
-        <th>Customer Name</th>
-        <th>Start Date</th>
+        <th>Customer NIC</th>
+        <th>Customer First Name</th>
         <th>Status</th>
-        <th>Complete Date</th>
         <th>Edit Details</th>
       </tr>
       <tr>
@@ -61,7 +59,7 @@ if(!isset($_SESSION['nic'])){
      <?php 
 	
   $nic = $_SESSION['nic'];
-  $sql = "SELECT * FROM orders WHERE t_username='$nic'";
+  $sql = "SELECT * FROM orders WHERE t_nic='$nic'";
         $result=mysqli_query($db,$sql);
 
         if(mysqli_num_rows($result)>0)
@@ -72,26 +70,26 @@ if(!isset($_SESSION['nic'])){
 
 
       <td><?php echo $row["id"] ?></td>
-      <td><?php echo $row["cus_username"] ?></td>
-      <td><?php echo $row["t_username"] ?></td>
+      <td><?php echo $row["c_nic"] ?></td>
+      <td><?php echo $row["c_fname"] ?></td>
       <td><?php echo $row["status"] ?></td>
       <td>
         <div>
           <a class="cta" href="#"><button>Edit</button></a>
         </div>
       </td>
+          </tr>
 <?php
           }
         }
       
   else
   {
-    echo "You have no active orders";
+ 
   }
 
     ?>
 
-    </tr>
 
     </table>
   </div>

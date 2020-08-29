@@ -57,21 +57,29 @@ if(!isset($_SESSION['nic'])){
       <div class="content">
 
       <?php
-			$username = $_SESSION['nic'];
-			$t_type="0";
+      $nic = $_SESSION['nic'];
+      $fname = $_SESSION['fname'];
+      $lname = $_SESSION['lname'];
+      $t_type="0";
 			$sql = "SELECT * FROM users WHERE type='$t_type'";
       $result=mysqli_query($db,$sql);
 
-           if($result)
+      if($result)
 		   {
 			   while ($row = mysqli_fetch_assoc($result)) {
-        		$t_name = $row["nic"];
+        		$t_nic = $row["nic"];
 				    ?>
         <form method="post" action="index.php">
         <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
         <h4><b>
-         <label name="t_name">   
-        <?php echo $row["fname"] ?> </label>
+         <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
+         <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+         <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
+
+         <?php echo $row["nic"] ?>  
+        </b></h4>
+        <b>
+         <?php echo $row["fname"] ?>	&nbsp;<?php echo $row["lname"] ?>  
         </b></h4>
         <p>Tailor</p>
 
