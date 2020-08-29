@@ -168,7 +168,7 @@ button:hover {
 /* add slide show to index.php */
 
 * {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
+
 .mySlides {display: none;}
 img {vertical-align: middle;}
 

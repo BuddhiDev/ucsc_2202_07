@@ -11,7 +11,7 @@ if(!isset($_SESSION['nic'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>andum.lk</title>
+    <title>Andum.lk - Manage Orders</title>
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
     <style>
       table {
@@ -52,14 +52,13 @@ if(!isset($_SESSION['nic'])){
         <th>Customer NIC</th>
         <th>Customer First Name</th>
         <th>Status</th>
-        <th>Edit Details</th>
       </tr>
       <tr>
 
      <?php 
 	
-  $nic = $_SESSION['nic'];
-  $sql = "SELECT * FROM orders WHERE t_nic='$nic'";
+    $nic = $_SESSION['nic'];
+    $sql = "SELECT * FROM orders WHERE t_nic='$nic'";
         $result=mysqli_query($db,$sql);
 
         if(mysqli_num_rows($result)>0)
@@ -75,7 +74,7 @@ if(!isset($_SESSION['nic'])){
       <td><?php echo $row["status"] ?></td>
       <td>
         <div>
-          <a class="cta" href="#"><button>Edit</button></a>
+          <a class="cta" href="#"><button>View</button></a>
         </div>
       </td>
           </tr>
