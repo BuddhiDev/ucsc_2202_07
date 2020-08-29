@@ -16,12 +16,18 @@
 
         .title {
           color: grey;
-          font-size: 18px;
+          font-size: 25px;
+        }
+        .column {
+          float: left;
+          width: 25%;
+          padding: 0 10px;
         }
       </style>
 </head>
 <body>
   <!--create nav bar -->
+
     <div class="box">
       <header>
         <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
@@ -39,14 +45,22 @@
       </header>
     </div>
     <!--profile-->
-    <div class="card">
-  <img src="/ucsc_2202_07/andum.lk/tailor/tailor-01.jpg" alt="John" style="width:100%">
-  <h1>Jeny Doe</h1>
-  <p class="title">Tailor</p>
-  <p>Colombo</p>
-  <p>Jeny@mail.com</p>
-  <p>1224435534<p>
-
-</div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="/ucsc_2202_07/andum.lk/tailor/tailor-01.jpg" alt="John" style="width:100%">
+          <h1>Jeny Doe</h1>
+          <br>
+          <p class="title">Tailor</p>
+          <br>
+          <h3>Colombo</h3><br>
+          <p>Jeny@gmail.com</p><br>
+          <p>1224435534<p><br>
+            <div>
+              <a class="cta" href="/ucsc_2202_07/andum.lk/tailor/edit_profile.php"><button>Edit Profile</button></a>
+            </div>
+        </div>
+      <div>
+    <div>
 </body>
 </html>
