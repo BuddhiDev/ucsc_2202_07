@@ -10,8 +10,6 @@
 <body>
   <div class="box">
     <header>
-
-
       <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
@@ -21,7 +19,8 @@
           <li><a href="#">About Us</a></li>
         </ul>
       </nav>
-      <div>
+    </header>
+  <div>
 
-  </body>
-  </html>
+</body>
+</html>
