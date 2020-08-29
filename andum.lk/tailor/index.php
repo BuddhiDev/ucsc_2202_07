@@ -11,7 +11,7 @@ if(!isset($_SESSION['nic'])){
 <html>
     <head>
         <title>Andum.LK - Tailor</title>
-        <link rel="stylesheet" type="text/css" href="file:///C|/xampp/htdocs/AndumLK/styles/style.css">
+        <link rel="stylesheet" type="text/css" href="../styles/style.css">
         </head>
     <body>
         <div class="header">
@@ -31,11 +31,11 @@ if(!isset($_SESSION['nic'])){
                 </div>    
         <?php endif ?>
 
-        <?php if(isset($_SESSION['username'])): ?>
+        <?php if(isset($_SESSION['nic'])): ?>
             <p>
-                Welcome <strong><?php echo $_SESSION['username']; ?></strong>
+                Welcome <strong><?php echo $_SESSION['nic']; ?></strong>
             </p>
-            <div align="right"><a href="file:///C|/xampp/htdocs/AndumLK/tailor/index.php?logout='1'" style="color:red;">Logout</a></div>
+            <div align="right"><a href="index.php?logout='1'" style="color:red;">Logout</a></div>
 
         <?php endif ?>    
         </div>
@@ -44,8 +44,8 @@ if(!isset($_SESSION['nic'])){
         </div>
         <div>
           <p><br>
-            <a href="file:///C|/xampp/htdocs/AndumLK/tailor/inventory_list.php">Inventory Manage</a></p>
-          <p><a href="file:///C|/xampp/htdocs/AndumLK/tailor/order_list.php">Orders Manage</a></p>
+            <a href="inventory_list.php">Inventory Manage</a></p>
+          <p><a href="order_list.php">Orders Manage</a></p>
         </div>
     </body>
 </html>

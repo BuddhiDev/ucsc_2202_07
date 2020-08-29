@@ -156,5 +156,13 @@ button:hover {
     margin-bottom: 16px;
 } */
 
+.error{
+    width: 58%;
+    color: deeppink;
+    box-shadow: 0px 1px 4px 1px #f4f4f4;
+    border-radius: 8px;
+    padding: 30px 40px;
+    margin: 100px auto;
+}
 
 

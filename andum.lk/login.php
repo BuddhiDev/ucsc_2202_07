@@ -33,10 +33,9 @@ require("server.php");
         <!-- <div class="imgcontainer">
           <img src="img_avatar2.png" alt="Avatar" class="avatar">
         </div> -->
-    <!-- errors display -->
-    <?php include("errors.php"); 
-            ?>  
-
+        <!-- errors display -->
+            <?php include("errors.php"); 
+            ?>
 
     <div class="login-container">
       <div class="form-field-inline">
