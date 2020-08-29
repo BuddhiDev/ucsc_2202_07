@@ -2,7 +2,7 @@
 
     session_start();
 
-    $username="";
+    $nic="";
     $email="";
     $errors=array();
 
@@ -29,6 +29,8 @@
             $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype')";
             mysqli_query($db,$sql);
             $_SESSION['nic']=$nic;
+            $_SESSION['fname']=$fname;
+            $_SESSION['lname']=$lname;
             $_SESSION['success']="You are now logged in";
 			$_SESSION['utype']="$utype";
             
@@ -59,13 +61,20 @@
             {
                 $_SESSION['nic']=$nic;
                 $_SESSION['success']="You are now logged in";
+                if($row = mysqli_fetch_assoc($result))
+				{
+                    $_SESSION['fname'] =$row['fname'];
+                    $_SESSION['lname'] =$row['lname'];
+				}
+                
 				
 				$sql = "SELECT type FROM users WHERE nic='$nic' AND password='$password'";
 				$result=mysqli_query($db,$sql);
 				
 				if($row = mysqli_fetch_assoc($result))
 				{
-      			$_SESSION['utype'] = $row['type'];
+                  $_SESSION['utype'] = $row['type'];
+
 				}
 				
 				
@@ -97,15 +106,17 @@
 
 	if(isset($_POST['hireT']))
     {
-			$t_nic = mysqli_real_escape_string($db,$_POST['t_name']);
-			
-            $sql = "INSERT INTO orders (cus_username, t_username, status) VALUES ('$nic','$t_nic','Hello')";
+			$t_nic = mysqli_real_escape_string($db,$_POST['t_nic']);
+            $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
+            $c_fname = mysqli_real_escape_string($db,$_POST['c_fname']);
+
+            $sql = "INSERT INTO orders (c_nic, c_fname, t_nic, status) VALUES ('$c_nic','$c_fname','$t_nic','Active')";
             $result=mysqli_query($db,$sql);
 			if($result)
 			{
 				header('location: hired_list.php');
 			}
-		else{
+		    else{
 			array_push($errors,"Hire a tailor failed, try again later");
 		}
 
