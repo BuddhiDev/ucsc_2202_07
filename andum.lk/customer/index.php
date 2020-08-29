@@ -12,7 +12,7 @@ if(!isset($_SESSION['nic'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>andum.lk</title>
+    <title>Andum.lk - Customer</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -26,7 +26,7 @@ if(!isset($_SESSION['nic'])){
             <nav>
                 <ul class="nav-area">
                     <li><a href="#">Explore</a></li>
-                    <li><a href="#">Hired Tailors</a></li>
+                    <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">Hired Tailors</a></li>
                     <li><a href="#">Hired Fashion Designer</a></li>
                     <li><a href="#">My orders</a></li>
                 </ul>
@@ -73,6 +73,7 @@ if(!isset($_SESSION['nic'])){
         <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
         <h4><b>
          <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
+         <input type="hidden" value="<?php echo $row["fname"] ?> " name="t_fname">
          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
          <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
 
