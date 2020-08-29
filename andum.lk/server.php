@@ -97,9 +97,9 @@
 
 	if(isset($_POST['hireT']))
     {
-			$t_username = mysqli_real_escape_string($db,$_POST['t_name']);
+			$t_nic = mysqli_real_escape_string($db,$_POST['t_name']);
 			
-            $sql = "INSERT INTO orders (cus_username, t_username, status) VALUES ('$username','$t_username','Hello')";
+            $sql = "INSERT INTO orders (cus_username, t_username, status) VALUES ('$nic','$t_nic','Hello')";
             $result=mysqli_query($db,$sql);
 			if($result)
 			{

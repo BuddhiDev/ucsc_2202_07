@@ -1,3 +1,11 @@
+<?php include("../server.php"); 
+
+if(!isset($_SESSION['nic'])){
+	header("location:../login.php");
+	exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +41,7 @@
           </ul>
         </nav>
         <div>
-          <a class="cta" href="#"><button>Sign Out</button></a>
+          <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
         </div>
       </header>
     </div>
@@ -49,17 +57,40 @@
         <th>Edit Details</th>
       </tr>
       <tr>
-      <td>1001</td>
-      <td>965233243v</td>
-      <td>Smith</td>
-      <td>2020-08-03</td>
-      <td>on going</td>
-      <td>2020-08-30</td>
+
+     <?php 
+	
+  $nic = $_SESSION['nic'];
+  $sql = "SELECT * FROM orders WHERE t_username='$nic'";
+        $result=mysqli_query($db,$sql);
+
+        if(mysqli_num_rows($result)>0)
+        {
+
+          while($row = mysqli_fetch_assoc($result)) {
+            ?>
+
+
+      <td><?php echo $row["id"] ?></td>
+      <td><?php echo $row["cus_username"] ?></td>
+      <td><?php echo $row["t_username"] ?></td>
+      <td><?php echo $row["status"] ?></td>
       <td>
         <div>
           <a class="cta" href="#"><button>Edit</button></a>
         </div>
       </td>
+<?php
+          }
+        }
+      
+  else
+  {
+    echo "You have no active orders";
+  }
+
+    ?>
+
     </tr>
 
     </table>
