@@ -1,3 +1,6 @@
+<?php
+require("server.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,19 +29,22 @@
     </header>
   </div>
         
-  <form action="action_page.php" method="post">
+  <form action="login.php" method="post">
         <!-- <div class="imgcontainer">
           <img src="img_avatar2.png" alt="Avatar" class="avatar">
         </div> -->
-      
+        <!-- errors display -->
+            <?php include("errors.php"); 
+            ?>
+
     <div class="login-container">
       <div class="form-field-inline">
-        <label for="uname" class="field-label-inline">Username</label>
-        <input type="text" class="field-value-inline" name="uname" required>
+        <label for="nic" class="field-label-inline">NIC Number</label>
+        <input type="text" class="field-value-inline" name="nic" required>
       </div>
       <div class="form-field-inline">
-        <label for="psw" class="field-label-inline"><b>Password</b></label>
-        <input type="password" class="field-value-inline" name="psw" required>
+        <label for="password" class="field-label-inline"><b>Password</b></label>
+        <input type="password" class="field-value-inline" name="password" required>
       </div>
       <div>
         <span class="psw">Forgot<a href="#">password?</a></span>
@@ -46,7 +52,7 @@
       <div class="btn-panel-center">
         <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
         <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
-        <button class="loginbutton btn-full-w" type="submit">SIGN IN </button>
+        <button class="loginbutton btn-full-w" type="submit" name="login">SIGN IN </button>
       </div>
       <!-- <div> -->
         <span class="psw">Don't you have an account? <a href="/ucsc_2202_07/andum.lk/signup.php">SIGN UP</a> now!</span>

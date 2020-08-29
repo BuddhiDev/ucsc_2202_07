@@ -1,6 +1,6 @@
 <?php include("../server.php"); 
 
-if(!isset($_SESSION['nic'])){
+if(!isset($_SESSION['username'])){
 	header("location:../login.php");
 	exit();
 }
@@ -10,12 +10,12 @@ if(!isset($_SESSION['nic'])){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Andum.LK - Tailor</title>
+        <title>Tailor - Orders</title>
         <link rel="stylesheet" type="text/css" href="../styles/style.css">
         </head>
-<body>
+    <body>
         <div class="header">
-            <h2>Customer Dashboard</h2>
+            <h2>Tailor Orders</h2>
         </div>    
         
         <div class="content">
@@ -33,45 +33,33 @@ if(!isset($_SESSION['nic'])){
 
         <?php if(isset($_SESSION['username'])): ?>
             <p>
-                Welcome <strong><?php echo $_SESSION['nic']; ?></strong>
+                Welcome <strong><?php echo $_SESSION['username']; ?></strong>
             </p>
             <div align="right"><a href="index.php?logout='1'" style="color:red;">Logout</a></div>
 
         <?php endif ?>    
         </div>
         <div>
-          <h3>Hello Customer! Checkout our best tailors</h3>
-        </div>
-        <div>
-          <p><br>
-          </p>
-        </div>
 		
-	<div>
-		<?php
-			$nic = $_SESSION['nic'];
-			$t_type="0";
-			$sql = "SELECT * FROM users WHERE type='$t_type'";
+			<?php 
+	
+			$username = $_SESSION['username'];
+			$sql = "SELECT * FROM orders WHERE t_username='$username'";
             $result=mysqli_query($db,$sql);
 
-           if($result)
-		   {
-			   while ($row = mysqli_fetch_assoc($result)) {
-        		$t_name = $row["nic"];
-				    ?>
-			<form method="post" action="index.php">
-				   <div class="input-group">
-					<input type="text" name="t_name" value="<?php echo $t_name ; ?>" readonly><br> 
-            		<button type="submit" name="hireT" class="btn">Hire Tailor</button>
-            		</div> 
-			</form>
-		<?php
-			   }
-		   }
+            if(mysqli_num_rows($result)>0)
+            {
+                echo "You have orders";
+            }
+			else
+			{
+				echo "You have no active orders";
+			}
 
-	
-	?>
-	
-	</div>
-</body>
+				?>
+                
+
+		</div>
+
+    </body>
 </html>
