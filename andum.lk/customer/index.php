@@ -8,48 +8,52 @@ if(!isset($_SESSION['nic'])){
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Andum.LK - Tailor</title>
-        <link rel="stylesheet" type="text/css" href="../styles/style.css">
-        </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>andum.lk</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
 <body>
-        <div class="header">
-            <h2>Customer Dashboard</h2>
-        </div>    
-        
-        <div class="content">
+    <div class="box">
+    <header>
 
-        <?php if(isset($_SESSION['success'])): ?>
-                <div class="error success">
-                    <h3>
-                        <?php
-                            echo $_SESSION['success'];
-                            unset ($_SESSION['success']);
-                        ?>
-                    </h3>
-                </div>    
-        <?php endif ?>
 
-        <?php if(isset($_SESSION['username'])): ?>
-            <p>
-                Welcome <strong><?php echo $_SESSION['nic']; ?></strong>
-            </p>
-            <div align="right"><a href="index.php?logout='1'" style="color:red;">Logout</a></div>
+            <img class="logo" src="../logo.png" alt="logo">
+            <nav>
+                <ul class="nav-area">
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Hired Tailors</a></li>
+                    <li><a href="#">Hired Fashion Designer</a></li>
+                    <li><a href="#">My orders</a></li>
+                </ul>
+            </nav>
+            <!-- <div>
+                <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button>Sign In</button></a>
+                <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button>Sign Up</button></a>
 
-        <?php endif ?>    
+            </div> -->
+
         </div>
-        <div>
-          <h3>Hello Customer! Checkout our best tailors</h3>
-        </div>
-        <div>
-          <p><br>
-          </p>
-        </div>
-		
-	<div>
-		<?php
-			$nic = $_SESSION['nic'];
+
+
+
+    </header>
+</div>
+<center>
+    <br/>
+
+<div class="main">
+  <div class="columns">
+    <div class ="row">
+
+      <div class="content">
+
+      <?php
+			$username = $_SESSION['nic'];
 			$t_type="0";
 			$sql = "SELECT * FROM users WHERE type='$t_type'";
             $result=mysqli_query($db,$sql);
@@ -59,19 +63,35 @@ if(!isset($_SESSION['nic'])){
 			   while ($row = mysqli_fetch_assoc($result)) {
         		$t_name = $row["nic"];
 				    ?>
-			<form method="post" action="index.php">
-				   <div class="input-group">
-					<input type="text" name="t_name" value="<?php echo $t_name ; ?>" readonly><br> 
-            		<button type="submit" name="hireT" class="btn">Hire Tailor</button>
-            		</div> 
-			</form>
-		<?php
-			   }
-		   }
+        <form method="post" action="index.php">
+        <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
+        <h4><b>
+         <label name="t_name">   
+        <?php echo $row["fname"] ?> </label>
+        </b></h4>
+        <p>Tailor</p>
 
-	
-	?>
-	
-	</div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+
+        <div>
+          <a class="cta"><button name="hireT">Hire</button></a>  
+        </div>
+        </form>
+        <br />
+
+        <?php
+               }
+            }
+		   ?>
+
+  </div>
+</div>
+</div>
+</div>
+</center>
 </body>
 </html>

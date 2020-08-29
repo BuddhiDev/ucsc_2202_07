@@ -8,44 +8,29 @@ if(!isset($_SESSION['nic'])){
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Andum.LK - Tailor</title>
-        <link rel="stylesheet" type="text/css" href="../styles/style.css">
-        </head>
-    <body>
-        <div class="header">
-            <h2>Tailor Dashboard</h2>
-        </div>    
-        
-        <div class="content">
-
-        <?php if(isset($_SESSION['success'])): ?>
-                <div class="error success">
-                    <h3>
-                        <?php
-                            echo $_SESSION['success'];
-                            unset ($_SESSION['success']);
-                        ?>
-                    </h3>
-                </div>    
-        <?php endif ?>
-
-        <?php if(isset($_SESSION['nic'])): ?>
-            <p>
-                Welcome <strong><?php echo $_SESSION['nic']; ?></strong>
-            </p>
-            <div align="right"><a href="index.php?logout='1'" style="color:red;">Logout</a></div>
-
-        <?php endif ?>    
-        </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>andum.lk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+      <header>
+        <img class="logo" src="logo.png" alt="logo">
+        <nav>
+          <ul class="nav-area">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Hire a Fashion Designer</a></li>
+            <li><a href="#"></a>Dress Showcase</li>
+            <li><a href="/ucsc_2202_07/andum.lk/Manage_order.php">Manage order</a></li>
+          </ul>
+        </nav>
         <div>
-          <h3>Hello Tailor! what are you going to do today?</h3>
+          <a class="cta" href="#"><button>Sign Out</button></a>
         </div>
-        <div>
-          <p><br>
-            <a href="inventory_list.php">Inventory Manage</a></p>
-          <p><a href="order_list.php">Orders Manage</a></p>
-        </div>
-    </body>
+      </header>
+    </div>
+</body>
 </html>
