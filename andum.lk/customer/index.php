@@ -25,10 +25,11 @@ if(!isset($_SESSION['nic'])){
             <img class="logo" src="../logo.png" alt="logo" class="img-box">
             <nav>
                 <ul class="nav-area">
+                <li><a href="#">Home</a></li>
                     <li><a href="#">Explore</a></li>
                     <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">Hired Tailors</a></li>
                     <li><a href="#">Hired Fashion Designer</a></li>
-                    <li><a href="#">My orders</a></li>
+                    <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">My orders</a></li>
                 </ul>
             </nav>
 
@@ -93,7 +94,7 @@ if(!isset($_SESSION['nic'])){
         <span class="fa fa-star"></span>
 
         <div>
-          <a class="cta"><button name="hireT" class="loginbutton btn-full-w">Hire</button></a>  
+          <a a href="/ucsc_2202_07/andum.lk/customer/hired_list.php" class="cta"><button name="hireT" class="loginbutton btn-full-w">Hire</button></a>  
         </div>
         </form>
             </div>
@@ -141,6 +142,5 @@ if(!isset($_SESSION['nic'])){
           &copy; andum.lk
     </div>
   </div>
-  
 </body>
 </html>

@@ -120,7 +120,11 @@ button:hover {
 .footer{
     background:  #FAFAFA;
     color: black;
-    position: relative;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    margin-top: 80px;
 
 }
 
@@ -150,7 +154,7 @@ button:hover {
     text-align: center;
     bottom: 0px;
     left: 0px;
-    /* padding-top: 20px; */
+    padding: 10px 15px;
 }
 
 

@@ -33,7 +33,7 @@ if(!isset($_SESSION['nic'])){
 </head>
 
 
-<body>
+
 
   <body>
       <div class="box">
@@ -41,9 +41,11 @@ if(!isset($_SESSION['nic'])){
           <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
           <nav>
             <ul class="nav-area">
-              <li><a href="#">Explore</a></li>
-              <li><a href="#">Hired fashion designers</a></li>
-              <li><a href="#">Dress showcase</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">Hired Tailors</a></li>
+            <li><a href="#">Hired Fashion Designer</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">My orders</a></li>
             </ul>
           </nav>
           <div>
@@ -51,7 +53,7 @@ if(!isset($_SESSION['nic'])){
           </div>
         </header>
       </div>
-      <div style="overflow-x:auto;">
+      <div>
       <table>
         <tr>
           <th>Order Id</th>

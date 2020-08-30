@@ -16,6 +16,7 @@
         <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
         <nav>
           <ul class="nav-area">
+          <li><a href="#">Home</a></li>
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/tailor/dress-showcase.php">Dress Showcase</a></li>
