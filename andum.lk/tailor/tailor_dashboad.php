@@ -6,25 +6,7 @@
     <title>andum.lk</title>
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
-    <style>
-        .card {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          max-width: 300px;
-          margin: auto;
-          text-align: center;
-          font-family: arial;
-        }
 
-        .title {
-          color: grey;
-          font-size: 25px;
-        }
-        .column {
-          float: left;
-          width: 25%;
-          padding: 0 10px;
-        }
-      </style>
 </head>
 <body>
   <!--create nav bar -->
@@ -61,9 +43,11 @@
               <a class="cta" href="/ucsc_2202_07/andum.lk/tailor/edit_profile.php"><button class="loginbutton btn-full-w">Edit Profile</button></a>
             </div>
         </div>
-      <div>
-    <div>
+      </div>
+    </div>
 
+
+<!--footer-->
     <div class="footer">
     <div class="footer-content">
       <div class="footer-section about">
@@ -95,6 +79,4 @@
   </div>
 
 </body>
-
-
 </html>
