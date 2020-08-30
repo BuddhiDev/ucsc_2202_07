@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 30px 10px;
+    padding:10px;
 
 }
 
@@ -114,29 +114,33 @@ button:hover {
 .footer{
     background:  #FAFAFA;
     color: black;
-    height: 300px;
     position: relative; 
 
 }
 
 .footer .footer-content{
-    height: 250px;
     display: flex;
 }
 
 .footer .footer-content .footer-section{
     flex: 1;
+    padding:20px 40px;
+}
+
+.footer-section ul{
     list-style: none;
-    /* border: 1px solid black; */
+}
+
+.footer-section ul > a > li{
+    font-size:13px;
+    font-weight:600;
 }
 
 .footer .footer-bottom{
     background: black;
     color: white;
     width: 100%;
-    height: 50px;
     text-align: center;
-    position: absolute;
     bottom: 0px;
     left: 0px;
     padding-top: 20px;
