@@ -40,26 +40,27 @@
 
 <!-- Full-width images with number and caption text -->
 <div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
+  <!-- <div class="numbertext">1 / 3</div> -->
+  <img src="images/12.jpeg" style="width:100%">
+  <!-- <div class="text">Caption Text</div> -->
+</div>
+
+<div class="mySlides fade">
+  <!-- <div class="numbertext">1 / 3</div> -->
   <img src="images/pexels-artem-beliaikin-1100790.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
+  <!-- <div class="text">Caption Text</div> -->
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
+  <!-- <div class="numbertext">2 / 3</div> -->
   <img src="images/pexels-cottonbro-4621921.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
+  <!-- <div class="text">Caption Two</div> -->
 </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="images/pexels-leticia-ribeiro-2249290.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
 
 <!-- Next and previous buttons -->
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
+<!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 </div>
 <br>
 

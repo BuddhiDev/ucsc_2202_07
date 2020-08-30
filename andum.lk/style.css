@@ -50,6 +50,9 @@ header {
 .nav-area li a{
     color: rgb(160, 156, 156);
     transition: all 0.3s ease 0s;
+    font-weight: 600;
+    color: #121212;
+    font-size: 14px;
 }
 
 .nav-area li a:hover{
@@ -120,7 +123,7 @@ button:hover {
 .footer{
     background:  #FAFAFA;
     color: black;
-    position: fixed;
+    position: relative;
     bottom: 0px;
     right: 0px;
     left: 0px;
