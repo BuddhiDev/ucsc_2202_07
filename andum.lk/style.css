@@ -120,7 +120,7 @@ button:hover {
 .footer{
     background:  #FAFAFA;
     color: black;
-    position: relative; 
+    position: relative;
 
 }
 
@@ -182,12 +182,12 @@ button:hover {
     text-align: center;
     font-family: arial;
   }
-  
+
   .price {
     color: grey;
     font-size: 22px;
   }
-  
+
   .card button {
     border: none;
     outline: 0;
@@ -199,7 +199,7 @@ button:hover {
     width: 100%;
     font-size: 18px;
   }
-  
+
   .card button:hover {
     opacity: 0.7;
   } */
@@ -256,7 +256,7 @@ button:hover {
       color:white;
       background-color: #ff555b;
       line-height: 20px;
-       
+
   }
 
   .cart{
@@ -291,6 +291,22 @@ button:hover {
       box-shadow: 2px 2px 12px rgba(47,47,47,0.40);
       transition: all ease 0.1s;
   }
-  
 
+/*profile card*/
+.card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+}
 
+.title {
+        color: grey;
+        font-size: 25px;
+}
+.column {
+        float: center;
+        width: 25%;
+        padding: 0 10px;
+}
