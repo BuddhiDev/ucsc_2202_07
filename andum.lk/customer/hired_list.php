@@ -82,7 +82,7 @@ if(!isset($_SESSION['nic'])){
       <td><?php echo $row["status"] ?></td>
       <td>
         <div>
-          <a class="cta" href="#"><button>View</button></a>
+          <a class="cta" href="#"><button class="loginbutton btn-full-w">View</button></a>
         </div>
       </td>
           </tr>
