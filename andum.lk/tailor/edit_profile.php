@@ -29,7 +29,9 @@
       <form>
         <div class="login-container">
           <h1>Edit Profile</h1>
-          <img src="/ucsc_2202_07/andum.lk/tailor/tailor-01.jpg" alt="John" style="width:25%">
+          <center>
+          <img src="/ucsc_2202_07/andum.lk/tailor/tailor-01.jpg" alt="Jeny" style="width:25%" >
+        </center>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
             <input type="text" class="field-value-inline" name="nic" required>
@@ -72,6 +74,37 @@
           </label> -->
         </div>
       </form>
+
+      <!--footer-->
+          <div class="footer">
+          <div class="footer-content">
+            <div class="footer-section about">
+              <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo"><h1 class="logo-txt"><span></span></h1>
+              <div class="socials">
+                <a href="#"><i class="fas fa-facebook"></i></a>
+                <a href="#"><i class="fas fa-instagram"></i></a>
+                <a href="#"><i class="fas fa- google+"></i></a>
+              </div>
+            </div>
+            <div class="footer-section links">
+              <ul>
+                <a href="#"><li>HIRE A TAILOR</li></a>
+                <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+                <a href="#"><li>SHIPPING AND RETURNS</li></a>
+              </ul>
+            </div>
+            <div class="footer-section links2 ">
+              <ul>
+                <a href="#"><li>HIRE A TAILOR</li></a>
+                <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+                <a href="#"><li>SHIPPING AND RETURNS</li></a>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+                &copy; andum.lk
+          </div>
+        </div>
 
 </body>
 </html>
