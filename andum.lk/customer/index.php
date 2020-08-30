@@ -13,8 +13,8 @@ if(!isset($_SESSION['nic'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andum.lk - Customer</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
 
 </head>
 <body>
@@ -22,7 +22,7 @@ if(!isset($_SESSION['nic'])){
     <header>
 
 
-            <img class="logo" src="../logo.png" alt="logo">
+            <img class="logo" src="../logo.png" alt="logo" class="img-box">
             <nav>
                 <ul class="nav-area">
                     <li><a href="#">Explore</a></li>
@@ -33,7 +33,7 @@ if(!isset($_SESSION['nic'])){
             </nav>
 
             <div>
-          <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
+          <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
         </div>
             <!-- <div>
                 <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button>Sign In</button></a>
@@ -50,11 +50,12 @@ if(!isset($_SESSION['nic'])){
 <center>
     <br/>
 
-<div class="main">
+<!-- <div class="main">
   <div class="columns">
-    <div class ="row">
+    <div class ="row"> -->
 
-      <div class="content">
+<div class="sliderbox-wrap">
+  
 
       <?php
       $nic = $_SESSION['nic'];
@@ -68,8 +69,9 @@ if(!isset($_SESSION['nic'])){
 		   {
 			   while ($row = mysqli_fetch_assoc($result)) {
         		$t_nic = $row["nic"];
-				    ?>
-        <form method="post" action="index.php">
+            ?>
+            <div slider-box>
+            <form method="post" action="index.php">
         <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
         <h4><b>
          <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
@@ -91,9 +93,11 @@ if(!isset($_SESSION['nic'])){
         <span class="fa fa-star"></span>
 
         <div>
-          <a class="cta"><button name="hireT">Hire</button></a>  
+          <a class="cta"><button name="hireT" class="loginbutton btn-full-w">Hire</button></a>  
         </div>
         </form>
+            </div>
+        
         <br />
 
         <?php
@@ -102,9 +106,9 @@ if(!isset($_SESSION['nic'])){
 		   ?>
 
   </div>
+<!-- </div>
 </div>
-</div>
-</div>
+</div> -->
 </center>
 </body>
 </html>

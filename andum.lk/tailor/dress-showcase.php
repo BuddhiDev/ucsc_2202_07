@@ -60,19 +60,50 @@
   <p>Some text about the jeans..</p>
   <p><button>Add to Cart</button></p> -->
 <!-- </div> -->
+<div class="sliderbox-wrap">
 
 <div class="slider-box">
-    <p class="time">New</p>
+    <!-- <p class="time">New</p> -->
     <div class="img-box">
         <img src="product1.jpg" alt="">
     </div>
-    <p class="detail">Black Ladies Bags Collections
+    <!-- <p class="detail">Black Ladies Bags Collections
         <a href="#" class="price">Price</a>
-    </p>
-    <div class="cart">
-        <a href="#">Add To Cart</a>
-    </div>
+    </p> -->
+    <!-- <div class="cart"> -->
+        <a href="#"><button class="loginbutton btn-full-w"s>Add To Cart</button></a>
+    <!-- </div> -->
 </div>
+
+<div class="slider-box">
+    <!-- <p class="time">New</p> -->
+    <div class="img-box">
+        <img src="product1.jpg" alt="">
+    </div>
+    <!-- <p class="detail">Black Ladies Bags Collections
+        <a href="#" class="price">Price</a>
+    </p> -->
+    <!-- <div class="cart"> -->
+        <a href="#"><button class="loginbutton btn-full-w"s>Add To Cart</button></a>
+    <!-- </div> -->
+</div>
+
+<div class="slider-box">
+    <!-- <p class="time">New</p> -->
+    <div class="img-box">
+        <img src="product1.jpg" alt="">
+    </div>
+    <!-- <p class="detail">Black Ladies Bags Collections
+        <a href="#" class="price">Price</a>
+    </p> -->
+    <!-- <div class="cart"> -->
+        <a href="#"><button class="loginbutton btn-full-w"s>Add To Cart</button></a>
+    <!-- </div> -->
+</div>
+
+</div>
+
+
 
 <div class="footer">
     <div class="footer-content">
