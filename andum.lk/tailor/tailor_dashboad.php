@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>andum.lk</title>
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
     <style>
         .card {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -35,12 +36,12 @@
           <ul class="nav-area">
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
-            <li><a href="#"></a>Dress Showcase</li>
+            <li><a href="/ucsc_2202_07/andum.lk/customer/custdashboard.php">Dress Showcase</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/tailor/Manage_order.php">Manage order</a></li>
           </ul>
         </nav>
         <div>
-          <a class="cta" href="#"><button>Sign Out</button></a>
+          <a class="cta" href="#"><button class="loginbutton btn-full-w">Sign Out</button></a>
         </div>
       </header>
     </div>

@@ -14,6 +14,7 @@ li, a, button{
         font-size: 16px;
         text-decoration: none;
         padding: 0px 5px;
+        cursor: pointer;
 
 }
 
@@ -266,6 +267,14 @@ button:hover {
 
   .slider-box:hover .img-box img{
       transform:scale(1.07);
+      transition: all ease 0.3s;
+  }
+
+  .cart:hover{
+      transform: scale(1.1);
+      background-color: #EB2188;
+      box-shadow: 2px 2px 12px rgba(47,47,47,0.40);
+      transition: all ease 0.1s;
   }
   
 
