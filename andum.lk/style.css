@@ -32,6 +32,12 @@ header {
 
 }
 
+.footer-logo {
+    cursor: pointer;
+    height: 100px;
+
+}
+
 .nav-area {
     list-style: none;
 }
@@ -132,8 +138,9 @@ button:hover {
 }
 
 .footer-section ul > a > li{
-    font-size:13px;
-    font-weight:600;
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
 }
 
 .footer .footer-bottom{
@@ -143,7 +150,7 @@ button:hover {
     text-align: center;
     bottom: 0px;
     left: 0px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 
@@ -156,7 +163,7 @@ button:hover {
     width: 58%;
     box-shadow: 0px 1px 4px 1px #f4f4f4;
     border-radius: 8px;
-    padding: 20px 40px;
+    padding: 0px 40px;
     margin: 10px auto;
 }
 

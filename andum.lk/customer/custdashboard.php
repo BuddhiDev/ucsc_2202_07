@@ -20,7 +20,7 @@
             </ul>  
           </nav>
           <div>
-            <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w"s>Sign Out</button></a>
+            <a class="cta" href="/ucsc_2202_07/andum.lk"><button class="loginbutton btn-full-w"s>Sign Out</button></a>
           </div>
         </header>
       </div>

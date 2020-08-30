@@ -31,19 +31,20 @@ if(!isset($_SESSION['nic'])){
 </head>
 <body>
     <div class="box">
-      <header>
-        <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
-        <nav>
-          <ul class="nav-area">
+    <header>
+          <img class="logo" src="logo.png" alt="logo">
+          <nav>
+            <ul class="nav-area">
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
-            <li><a href="#"></a>Dress Showcase</li>
-          </ul>
-        </nav>
-        <div>
-          <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
-        </div>
-      </header>
+            <li><a href="/ucsc_2202_07/andum.lk/customer/custdashboard.php">Dress Showcase</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/tailor/Manage_order.php">Manage order</a></li>
+            </ul>  
+          </nav>
+          <div>
+            <a class="cta" href="/ucsc_2202_07/andum.lk"><button class="loginbutton btn-full-w"s>Sign Out</button></a>
+          </div>
+        </header>
     </div>
     <div style="overflow-x:auto;">
     <table>
