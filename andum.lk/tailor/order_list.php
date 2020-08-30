@@ -12,6 +12,7 @@ if(!isset($_SESSION['username'])){
     <head>
         <title>Tailor - Orders</title>
         <link rel="stylesheet" type="text/css" href="../styles/style.css">
+        <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
         </head>
     <body>
         <div class="header">
