@@ -14,6 +14,7 @@ if(!isset($_SESSION['nic'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andum.lk - Tailor</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
 </head>
 <body>
     <div class="box">

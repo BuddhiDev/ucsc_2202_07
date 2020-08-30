@@ -36,7 +36,7 @@
           <ul class="nav-area">
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
-            <li><a href="/ucsc_2202_07/andum.lk/customer/custdashboard.php">Dress Showcase</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/tailor/dress-showcase.php">Dress Showcase</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/tailor/Manage_order.php">Manage order</a></li>
           </ul>
         </nav>

@@ -14,6 +14,7 @@ if(!isset($_SESSION['nic'])){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>andum.lk</title>
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
+<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
 <style>
   table {
     border-collapse: collapse;
@@ -46,7 +47,7 @@ if(!isset($_SESSION['nic'])){
             </ul>
           </nav>
           <div>
-            <a class="cta" href="index.php?logout='1'"><button name="logout">Sign Out</button></a>
+            <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
           </div>
         </header>
       </div>
@@ -95,5 +96,36 @@ if(!isset($_SESSION['nic'])){
     ?>
       </table>
     </div>
+
+
+    <div class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo"><h1 class="logo-txt"><span></span></h1>
+        <div class="socials">
+          <a href="#"><i class="fas fa-facebook"></i></a>
+          <a href="#"><i class="fas fa-instagram"></i></a>
+          <a href="#"><i class="fas fa- google+"></i></a>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <ul>
+          <a href="#"><li>HIRE A TAILOR</li></a>
+          <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+          <a href="#"><li>SHIPPING AND RETURNS</li></a>
+        </ul>
+      </div>
+      <div class="footer-section links2 ">
+        <ul>
+          <a href="#"><li>HIRE A TAILOR</li></a>
+          <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+          <a href="#"><li>SHIPPING AND RETURNS</li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+          &copy; andum.lk
+    </div>
+  </div>
 </body>
 </html>

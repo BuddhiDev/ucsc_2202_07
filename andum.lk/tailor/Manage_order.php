@@ -13,6 +13,7 @@ if(!isset($_SESSION['nic'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andum.lk - Manage Orders</title>
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
     <style>
       table {
         border-collapse: collapse;
@@ -32,12 +33,12 @@ if(!isset($_SESSION['nic'])){
 <body>
     <div class="box">
     <header>
-          <img class="logo" src="logo.png" alt="logo">
+          <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
           <nav>
             <ul class="nav-area">
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
-            <li><a href="/ucsc_2202_07/andum.lk/customer/custdashboard.php">Dress Showcase</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/tailor/dress-showcase.php">Dress Showcase</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/tailor/Manage_order.php">Manage order</a></li>
             </ul>  
           </nav>
@@ -92,6 +93,36 @@ if(!isset($_SESSION['nic'])){
 
 
     </table>
+  </div>
+
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo"><h1 class="logo-txt"><span></span></h1>
+        <div class="socials">
+          <a href="#"><i class="fas fa-facebook"></i></a>
+          <a href="#"><i class="fas fa-instagram"></i></a>
+          <a href="#"><i class="fas fa- google+"></i></a>
+        </div>
+      </div>
+      <div class="footer-section links">
+        <ul>
+          <a href="#"><li>HIRE A TAILOR</li></a>
+          <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+          <a href="#"><li>SHIPPING AND RETURNS</li></a>
+        </ul>
+      </div>
+      <div class="footer-section links2 ">
+        <ul>
+          <a href="#"><li>HIRE A TAILOR</li></a>
+          <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+          <a href="#"><li>SHIPPING AND RETURNS</li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+          &copy; andum.lk
+    </div>
   </div>
 
 </body>
