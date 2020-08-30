@@ -30,10 +30,6 @@ require("server.php");
   </div>
         
   <form action="login.php" method="post">
-        <!-- <div class="imgcontainer">
-          <img src="img_avatar2.png" alt="Avatar" class="avatar">
-        </div> -->
-        <!-- errors display -->
             <?php include("errors.php"); 
             ?>
 
@@ -61,16 +57,9 @@ require("server.php");
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label> -->
       </div>
-      <!-- <div class="btn-panel-center" style="background-color:#f1f1f1">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-      </div> -->
   </form>
 
-  <!-- footer -->
-  <!-- <footer>
-   <img class="logo" src="logo.png" alt="logo">
-  </footer> -->
+  <!-- </footer> -->
   <div class="footer">
     <div class="footer-content">
       <div class="footer-section about">
@@ -99,9 +88,6 @@ require("server.php");
     <div class="footer-bottom">
           &copy; andum.lk
     </div>
-  </div>
-
-      
-    
+  </div>   
 </body>
 </html>

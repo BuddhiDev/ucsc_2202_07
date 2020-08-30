@@ -32,10 +32,7 @@ require("server.php");
     </header>
   </div>
         
-    <form action="signup.php" method="post">
-        <!-- <div class="imgcontainer">
-          <img src="img_avatar2.png" alt="Avatar" class="avatar">
-        </div> -->
+  <form action="signup.php" method="post">
         <!-- errors display -->
             <?php include("errors.php"); 
             ?>
@@ -81,24 +78,20 @@ require("server.php");
             <input type="text" class="field-value-inline" name="utype" required>
           </div>
           
-          
-
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
             <button class="loginbutton btn-full-w" type="submit" name="register">SIGN UP </button>
           </div>
 
-          
-
           <!-- <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label> -->
         </div>
-      
-        
-      </form>
-      <div class="footer">
+              
+  </form>
+
+  <div class="footer">
     <div class="footer-content">
       <div class="footer-section about">
         <img class="footer-logo" src="logo.png" alt="logo"><h1 class="logo-txt"><span></span></h1>
@@ -126,6 +119,6 @@ require("server.php");
     <div class="footer-bottom">
           &copy; andum.lk
     </div>
-    
+ </div>  
 </body>
 </html>

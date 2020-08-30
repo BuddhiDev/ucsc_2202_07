@@ -18,10 +18,8 @@ if(!isset($_SESSION['nic'])){
 
 </head>
 <body>
-    <div class="box">
+  <div class="box">
     <header>
-
-
             <img class="logo" src="../logo.png" alt="logo" class="img-box">
             <nav>
                 <ul class="nav-area">
@@ -33,30 +31,21 @@ if(!isset($_SESSION['nic'])){
                 </ul>
             </nav>
 
-            <div>
+        <div>
           <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
         </div>
-            <!-- <div>
-                <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button>Sign In</button></a>
-                <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button>Sign Up</button></a>
 
-            </div> -->
-
-        </div>
+  </div>
 
 
 
     </header>
 </div>
 <center>
-    <br/>
 
-<!-- <div class="main">
-  <div class="columns">
-    <div class ="row"> -->
+<br/>
 
 <div class="sliderbox-wrap">
-  
 
       <?php
       $nic = $_SESSION['nic'];
@@ -107,9 +96,7 @@ if(!isset($_SESSION['nic'])){
 		   ?>
 
   </div>
-<!-- </div>
-</div>
-</div> -->
+
 </center>
 
 <!--footer-->
