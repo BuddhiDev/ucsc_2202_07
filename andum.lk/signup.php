@@ -14,8 +14,8 @@ require("server.php");
 <body>
   <div class="box">
     <header>
-        
-        
+
+
       <img class="logo" src="logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
@@ -23,7 +23,7 @@ require("server.php");
           <li><a href="#">Hire a Tailor</a></li>
           <li><a href="#">Hire a Fashion Designer</a></li>
           <li><a href="#">About Us</a></li>
-        </ul>  
+        </ul>
       </nav>
       <div>
         <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a>
@@ -31,18 +31,18 @@ require("server.php");
       </div>
     </header>
   </div>
-        
+
   <form action="signup.php" method="post">
         <!-- errors display -->
-            <?php include("errors.php"); 
+            <?php include("errors.php");
             ?>
         <div class="login-container">
-          
+
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
             <input type="text" class="field-value-inline" name="nic" required>
           </div>
-          
+
           <div class="form-field-inline">
             <label for="email" class="field-label-inline"><b>Email Address</b></label>
             <input type="text" class="field-value-inline" name="email" required>
@@ -75,9 +75,22 @@ require("server.php");
 
           <div class="form-field-inline">
             <label for="utype" class="field-label-inline"><b>User Type</b></label>
-            <input type="text" class="field-value-inline" name="utype" required>
+            <!-- <input type="text" class="field-value-inline" name="utype" required> -->
+
+            <div class="btn-panel-center">
+
+              <button class="loginbutton btn-full-w" type="submit" name="register">Customer </button>
+              <button class="loginbutton btn-full-w" type="submit" name="register">Tailor </button>
+              <button class="loginbutton btn-full-w" type="submit" name="register">Fashion Designer </button>
+
+            </div>
+
           </div>
-          
+
+
+
+
+
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
@@ -88,7 +101,7 @@ require("server.php");
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label> -->
         </div>
-              
+
   </form>
 
   <div class="footer">
@@ -119,6 +132,6 @@ require("server.php");
     <div class="footer-bottom">
           &copy; andum.lk
     </div>
- </div>  
+ </div>
 </body>
 </html>
