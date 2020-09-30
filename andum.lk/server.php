@@ -26,8 +26,16 @@
         if(count($errors)==0)
         {
             $password=md5($password1);
+            // inser to user table
             $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype')";
             mysqli_query($db,$sql);
+
+            // insert user if tailor
+
+
+            // insert user if customer
+
+            //save session cache
             $_SESSION['nic']=$nic;
             $_SESSION['fname']=$fname;
             $_SESSION['lname']=$lname;
@@ -110,7 +118,7 @@
             $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
             $c_fname = mysqli_real_escape_string($db,$_POST['c_fname']);
 
-            $sql = "INSERT INTO orders (c_nic, c_fname, t_nic, status) VALUES ('$c_nic','$c_fname','$t_nic','Active')";
+            $sql = "INSERT INTO orders (c_nic, c_fname, t_nic, t_fname, status) VALUES ('$c_nic','$c_fname','$t_nic','Active')";
             $result=mysqli_query($db,$sql);
 			if($result)
 			{
