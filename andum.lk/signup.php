@@ -74,14 +74,24 @@ require("server.php");
           </div>
 
           <div class="form-field-inline">
+            <label for="address" class="field-label-inline"><b>Address</b></label>
+            <input type="text" class="field-value-inline" name="address">
+          </div>
+
+          <div class="form-field-inline">
+            <label for="postal" class="field-label-inline"><b>Postal Code</b></label>
+            <input type="text" class="field-value-inline" name="postal">
+          </div>
+
+          <div class="form-field-inline">
             <label for="utype" class="field-label-inline"><b>User Type</b></label>
             <!-- <input type="text" class="field-value-inline" name="utype" required> -->
 
             <div class="btn-panel-center">
 
-              <button class="loginbutton btn-full-w" type="submit" name="register">Customer </button>
-              <button class="loginbutton btn-full-w" type="submit" name="register">Tailor </button>
-              <button class="loginbutton btn-full-w" type="submit" name="register">Fashion Designer </button>
+              <button class="loginbutton btn-full-w" type="submit" name="ut_cus">Customer </button>
+              <button class="loginbutton btn-full-w" type="submit" name="ut_t">Tailor </button>
+              <button class="loginbutton btn-full-w" type="submit" name="ut_fd">Fashion Designer </button>
 
             </div>
 

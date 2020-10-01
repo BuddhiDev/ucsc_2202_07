@@ -17,7 +17,9 @@
         $fname = mysqli_real_escape_string($db,$_POST['fname']);
         $lname = mysqli_real_escape_string($db,$_POST['lname']);
         $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
-		$utype = mysqli_real_escape_string($db,$_POST['utype']);
+        $utype = mysqli_real_escape_string($db,$_POST['utype']);
+        $addres = mysqli_real_escape_string($db,$_POST['address']);
+        $postal = mysqli_real_escape_string($db,$_POST['postal']);
 
         if($password1!=$password2)
         {
@@ -27,7 +29,7 @@
         {
             $password=md5($password1);
             // inser to user table
-            $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype')";
+            $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
             mysqli_query($db,$sql);
 
             // insert user if tailor
