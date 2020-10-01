@@ -53,7 +53,7 @@ if(!isset($_SESSION['username'])){
                 echo "You have products";
             }
 
-				?>
+			?>
                 <form method="post" action="ineventory_list.php">
 
             <div class="input-group">
