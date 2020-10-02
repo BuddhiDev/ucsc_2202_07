@@ -70,7 +70,7 @@ button{
 
     <div class="row">
       <div class="col-25">
-        <lable for="type">dress type:</label>
+        <lable for="type">Category:</label>
         <img src="" class="image">
       </div>
       <div class="col-75">
