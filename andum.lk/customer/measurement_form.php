@@ -33,7 +33,7 @@
 
 
 .option{
-  background-color: #ffb3ff;
+  background-color: #EB2188;
   padding: 8px 10px;
 }
 
@@ -99,7 +99,7 @@ button{
         <input class="input-field" type="text" placeholder="Neck" name="neck">
         <select class="option" name="Unit" id="unit">
           <option>inch</option>
-          <option></option>
+          <option>cm</option>
         </select>
       </div>
     </div>
