@@ -25,11 +25,10 @@ if (!isset($_SESSION['nic'])) {
       <img class="logo" src="../logo.png" alt="logo" class="img-box">
       <nav>
         <ul class="nav-area">
-          <li><a href="#">Home</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/customer/dress_showcase.php">Explore</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/customer/index.php">Home</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/customer/dress_showcase.php">Dress Showcase</a></li>
           <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">Hired Tailors</a></li>
           <li><a href="#">Hired Fashion Designer</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">My orders</a></li>
         </ul>
       </nav>
 
@@ -63,7 +62,9 @@ if (!isset($_SESSION['nic'])) {
       ?>
           <div class="slider-box">
             <form method="post" action="index.php" class="tailor-form">
+              <table><tr><td>
               <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
+        </td><td>
               <h4><b>
                   <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
                   <input type="hidden" value="<?php echo $row["fname"] ?> " name="t_fname">
@@ -86,6 +87,8 @@ if (!isset($_SESSION['nic'])) {
               <div>
                 <a a href="/ucsc_2202_07/andum.lk/customer/hired_list.php" class="cta"><button name="hireT" class="loginbutton btn-full-w">Hire</button></a>
               </div>
+        </td></tr></table>
+            
             </form>
           </div>
 

@@ -84,9 +84,10 @@ if (!isset($_SESSION['nic'])) {
     ?>
         <div class="slider-box">
         <div class="img-box">
-
           <form method="post" action="index.php" class="dress-showcase">
+            <table><tr><td>
             <img src="product1.jpg" alt="Avatar" style="width:200px">
+      </td><td>
             <h4><b>
                 <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
                 <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
@@ -97,6 +98,7 @@ if (!isset($_SESSION['nic'])) {
             <div>
             <a href="#"><button class="loginbutton btn-full-w" s>Add To Cart</button></a>
             </div>
+      </td></tr></table>
           </form>
         </div>
         </div>

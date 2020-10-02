@@ -38,11 +38,10 @@ if(!isset($_SESSION['nic'])){
           <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
           <nav>
             <ul class="nav-area">
-            <li><a href="#">Home</a></li>
-            <li><a href="/ucsc_2202_07/andum.lk/customer/dress_showcase.php">Explore</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/customer/index.php">Home</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/customer/dress_showcase.php">Dress Showcase</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">Hired Tailors</a></li>
             <li><a href="#">Hired Fashion Designer</a></li>
-            <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">My orders</a></li>
             </ul>
           </nav>
           <div>
