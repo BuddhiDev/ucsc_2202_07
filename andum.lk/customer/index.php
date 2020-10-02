@@ -25,10 +25,10 @@ if (!isset($_SESSION['nic'])) {
       <img class="logo" src="../logo.png" alt="logo" class="img-box">
       <nav>
         <ul class="nav-area">
-          <li><a href="/ucsc_2202_07/andum.lk/customer/index.php">Home</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/customer/dress_showcase.php">Dress Showcase</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">Hired Tailors</a></li>
-          <li><a href="#">Hired Fashion Designer</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="dress_showcase.php">Dress Showcase</a></li>
+          <li><a href="hired_list.php">Hired Tailors</a></li>
+          <li><a href="#">Purchases</a></li>
         </ul>
       </nav>
 
@@ -62,33 +62,38 @@ if (!isset($_SESSION['nic'])) {
       ?>
           <div class="slider-box">
             <form method="post" action="index.php" class="tailor-form">
-              <table><tr><td>
-              <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
-        </td><td>
-              <h4><b>
-                  <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
-                  <input type="hidden" value="<?php echo $row["fname"] ?> " name="t_fname">
-                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                  <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
+              <table>
+                <tr>
+                  <td>
+                    <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
+                  </td>
+                  <td>
+                    <h4><b>
+                        <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
+                        <input type="hidden" value="<?php echo $row["fname"] ?> " name="t_fname">
+                        <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                        <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
 
-                  <?php echo $row["nic"] ?>
-                </b></h4>
-              <b>
-                <?php echo $row["fname"] ?> &nbsp;<?php echo $row["lname"] ?>
-              </b></h4>
-              <p>Tailor</p>
+                        <?php echo $row["nic"] ?>
+                      </b></h4>
+                    <b>
+                      <?php echo $row["fname"] ?> &nbsp;<?php echo $row["lname"] ?>
+                    </b></h4>
+                    <p>Tailor</p>
 
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
 
-              <div>
-                <a a href="/ucsc_2202_07/andum.lk/customer/hired_list.php" class="cta"><button name="hireT" class="loginbutton btn-full-w">Hire</button></a>
-              </div>
-        </td></tr></table>
-            
+                    <div>
+                      <a a href="/ucsc_2202_07/andum.lk/customer/hired_list.php" class="cta"><button name="hireT" class="loginbutton btn-full-w">Hire</button></a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+
             </form>
           </div>
 

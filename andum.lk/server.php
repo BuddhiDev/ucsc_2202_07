@@ -130,6 +130,23 @@
 			array_push($errors,"Hire a tailor failed, try again later");
 		}
 
+    }
+    
+    if(isset($_POST['addTocart']))
+    {
+            $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
+            $dress_id = mysqli_real_escape_string($db,$_POST['dress_id']);
+
+            $sql = "INSERT INTO cart (c_nic, dress_id) VALUES ('$c_nic','$dress_id')";
+            $result=mysqli_query($db,$sql);
+			if($result)
+			{
+				
+			}
+		    else{
+			array_push($errors,"Add to cart failed, try again later");
+		}
+
 	}
 
 
