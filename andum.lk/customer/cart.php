@@ -1,36 +1,51 @@
-<?php include("../server.php");
 
-if (!isset($_SESSION['nic'])) {
-  header("location:../login.php");
-  exit();
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-?>
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Cart</h2>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Amount</th>
+    <th>Permission</th>
+    <th>CheckOut</th>
+
+  </tr>
+  <tr>
+    <td>Frock</td>
+    <td>Wedding valentina frock</td>
+    <td>1</td>
+    <td>ok</td>
+    <td>  <button type="submit" name="cart" class="loginbutton btn-full-w">CheckOut</button></td>
+  </tr>
 
 
-<?php if (isset($_POST['Add To Cart']))
+</table>
 
-	$t_nic = mysqli_real_escape_string($db,$_POST['t_nic']);
-  $category = mysqli_real_escape_string($db,$_POST['category']);
-  $title = mysqli_real_escape_string($db,$_POST['title']);
-  $amount = mysqli_real_escape_string($db,$_POST['amount']);
-  $t_nic = mysqli_real_escape_string($db,$_POST['permission']);
-
-  echo "upa";
-
-
-?>
-
-
-
-
-
-
-<?php
-$nic = $_SESSION['nic'];
-$sql = "SELECT * FROM products";
-$result = mysqli_query($db, $sql);
-
-if ($result) {
-  while ($row = mysqli_fetch_assoc($result)) {
-?>
+</body>
+</html>
