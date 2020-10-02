@@ -10,6 +10,14 @@ require("server.php");
     <title>Andum.lk - Sign Up</title>
     <link rel="stylesheet" href="loginstyle.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+    .option{
+      background-color: #EB2188;
+      padding: 15px 50px;
+      border-radius: 50px;
+
+    }
+    </style>
 </head>
 <body>
   <div class="box">
@@ -87,13 +95,11 @@ require("server.php");
             <label for="utype" class="field-label-inline"><b>User Type</b></label>
             <!-- <input type="text" class="field-value-inline" name="utype" required> -->
 
-            <div class="btn-panel-center">
-
-              <button class="loginbutton btn-full-w" type="submit" name="ut_cus">Customer </button>
-              <button class="loginbutton btn-full-w" type="submit" name="ut_t">Tailor </button>
-              <button class="loginbutton btn-full-w" type="submit" name="ut_fd">Fashion Designer </button>
-
-            </div>
+            <select class="option" name="Usertype" id="user">
+              <option>Customer</option>
+              <option>Tailor</option>
+              <option>Fashion designer</option>
+            </select>
 
           </div>
 
