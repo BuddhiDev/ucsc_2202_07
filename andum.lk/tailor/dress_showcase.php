@@ -38,7 +38,7 @@ if (!isset($_SESSION['nic'])) {
   </div>
   <!-- <div class="wrapper">
         <aside class="bg-gra-200 border-r border-gray-300">Left</aside>
-        <main>Right</main> 
+        <main>Right</main>
     </div> -->
   <div class="search-container">
     <div class="form-field-inline">
