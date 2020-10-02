@@ -24,11 +24,10 @@ if (!isset($_SESSION['nic'])) {
       <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Hire a Fashion Designer</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/tailor/dress-showcase.php">Dress Showcase</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/tailor/Manage_order.php">Manage order</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="dress_showcase.php">Dress Showcase</a></li>
+          <li><a href="Manage_order.php">Manage Orders</a></li>
+          <li><a href="#">Manage Sales</a></li>
         </ul>
       </nav>
       <div>
@@ -83,24 +82,29 @@ if (!isset($_SESSION['nic'])) {
       while ($row = mysqli_fetch_assoc($result)) {
     ?>
         <div class="slider-box">
-        <div class="img-box">
-          <form method="post" action="index.php" class="dress-showcase">
-            <table><tr><td>
-            <img src="product1.jpg" alt="Avatar" style="width:200px">
-      </td><td>
-            <h4><b>
-                <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
-                <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
-                <?php echo $row["category"] ?> </br>
-                <?php echo $row["title"] ?>
-              </b></h4>
+          <div class="img-box">
+            <form method="post" action="index.php" class="dress-showcase">
+              <table>
+                <tr>
+                  <td>
+                    <img src="product1.jpg" alt="Avatar" style="width:200px">
+                  </td>
+                  <td>
+                    <h4><b>
+                        <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
+                        <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
+                        <?php echo $row["category"] ?> </br>
+                        <?php echo $row["title"] ?>
+                      </b></h4>
 
-            <div>
-            <a href="#"><button class="loginbutton btn-full-w" s>Add To Cart</button></a>
-            </div>
-      </td></tr></table>
-          </form>
-        </div>
+                    <div>
+                      <a href="#"><button class="loginbutton btn-full-w" s>Add To Cart</button></a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
         </div>
 
         <br />

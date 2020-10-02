@@ -24,10 +24,10 @@ if (!isset($_SESSION['nic'])) {
       <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
-        <li><a href="/ucsc_2202_07/andum.lk/customer/index.php">Home</a></li>
-        <li><a href="/ucsc_2202_07/andum.lk/customer/dress_showcase.php">Dress Showcase</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/customer/hired_list.php">Hired Tailors</a></li>
-          <li><a href="#">Hired Fashion Designer</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="dress_showcase.php">Dress Showcase</a></li>
+          <li><a href="hired_list.php">Hired Tailors</a></li>
+          <li><a href="#">Purchases</a></li>
         </ul>
       </nav>
       <div>
@@ -83,20 +83,25 @@ if (!isset($_SESSION['nic'])) {
     ?>
         <div class="slider-box">
           <form method="post" action="index.php" class="tailor-form">
-            <table><tr><td>
-            <img src="product1.jpg" alt="Avatar" style="width:200px">
-      </td><td>
-            <h4><b>
-                <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
-                <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
-                <?php echo $row["category"] ?> <br />
-                <?php echo $row["title"] ?>
-              </b></h4>
+            <table>
+              <tr>
+                <td>
+                  <img src="product1.jpg" alt="Avatar" style="width:200px">
+                </td>
+                <td>
+                  <h4><b>
+                      <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
+                      <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
+                      <?php echo $row["category"] ?> <br />
+                      <?php echo $row["title"] ?>
+                    </b></h4>
 
-            <div>
-            <a href="#"><button class="loginbutton btn-full-w" >Add To Cart</button></a>
-            </div>
-      </td></tr></table>
+                  <div>
+                    <a href="#"><button class="loginbutton btn-full-w">Add To Cart</button></a>
+                  </div>
+                </td>
+              </tr>
+            </table>
           </form>
         </div>
         <br />
