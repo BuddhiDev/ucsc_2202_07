@@ -136,8 +136,8 @@ button:hover {
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Chest" name="chest">
         <select class="option" name="Unit" id="unit">
-          <option>inch</option>
-          <option></option>
+          <option>in</option>
+          <option>cm</option>
         </select>
       </div>
    </div>
@@ -150,8 +150,8 @@ button:hover {
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Waist" name="waist">
         <select class="option" name="Unit" id="unit">
-          <option>inch</option>
-          <option></option>
+          <option>in</option>
+          <option>cm</option>
         </select>
       </div>
     </div>
@@ -164,8 +164,8 @@ button:hover {
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Seat" name="seat">
         <select class="option" name="Unit" id="unit">
-          <option>inch</option>
-          <option></option>
+          <option>in</option>
+          <option>cm</option>
         </select>
       </div>
     </div>
