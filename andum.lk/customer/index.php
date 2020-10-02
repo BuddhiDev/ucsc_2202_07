@@ -45,7 +45,8 @@ if (!isset($_SESSION['nic'])) {
   <center>
 
     <br />
-
+    <?php include("../errors.php");
+              ?>
     <div class="sliderbox-wrap">
 
       <?php
@@ -88,7 +89,7 @@ if (!isset($_SESSION['nic'])) {
                     <span class="fa fa-star"></span>
 
                     <div>
-                      <a a href="/ucsc_2202_07/andum.lk/customer/hired_list.php" class="cta"><button name="hireT" class="loginbutton btn-full-w">Hire</button></a>
+                      <button type="submit" name="hireT" class="loginbutton btn-full-w">Hire</button>
                     </div>
                   </td>
                 </tr>

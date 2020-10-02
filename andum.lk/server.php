@@ -116,14 +116,16 @@
 
 	if(isset($_POST['hireT']))
     {
-			$t_nic = mysqli_real_escape_string($db,$_POST['t_nic']);
+            $t_nic = mysqli_real_escape_string($db,$_POST['t_nic']);
+            $t_fname = mysqli_real_escape_string($db,$_POST['t_fname']);
             $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
             $c_fname = mysqli_real_escape_string($db,$_POST['c_fname']);
 
-            $sql = "INSERT INTO orders (c_nic, c_fname, t_nic, t_fname, status) VALUES ('$c_nic','$c_fname','$t_nic','Active')";
+            $sql = "INSERT INTO t_orders (c_nic, c_fname, t_nic, t_fname, status) VALUES ('$c_nic','$c_fname','$t_nic','$t_fname','Active')";
             $result=mysqli_query($db,$sql);
 			if($result)
 			{
+                echo 1;
 				header('location: hired_list.php');
 			}
 		    else{
@@ -132,16 +134,18 @@
 
     }
     
+    $cart_btn_click = "false";
     if(isset($_POST['addTocart']))
     {
             $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
             $dress_id = mysqli_real_escape_string($db,$_POST['dress_id']);
 
+
             $sql = "INSERT INTO cart (c_nic, dress_id) VALUES ('$c_nic','$dress_id')";
             $result=mysqli_query($db,$sql);
 			if($result)
 			{
-				
+                $cart_btn_name = "Added To Cart";
 			}
 		    else{
 			array_push($errors,"Add to cart failed, try again later");

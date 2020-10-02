@@ -82,7 +82,7 @@ if (!isset($_SESSION['nic'])) {
       while ($row = mysqli_fetch_assoc($result)) {
     ?>
         <div class="slider-box">
-          <form method="post" action="index.php" class="tailor-form">
+          <form method="post" action="dress_showcase.php" class="tailor-form">
             <table>
               <tr>
                 <td>
@@ -90,14 +90,14 @@ if (!isset($_SESSION['nic'])) {
                 </td>
                 <td>
                   <h4><b>
-                      <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
-                      <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
+                      <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+                      <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                       <?php echo $row["category"] ?> <br />
                       <?php echo $row["title"] ?>
                     </b></h4>
 
                   <div>
-                    <a href="#"><button class="loginbutton btn-full-w">Add To Cart</button></a>
+                    <button class="loginbutton btn-full-w" name="addTocart" <?php if ($row["amount"]=='0'){ ?> disabled <?php   } ?>>Add To Cart</button>
                   </div>
                 </td>
               </tr>
