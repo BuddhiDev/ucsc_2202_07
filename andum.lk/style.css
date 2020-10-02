@@ -83,6 +83,7 @@ button:hover {
     color: black;
 }
 
+
 .box {
     background: white;
     padding: 5px;
@@ -272,7 +273,7 @@ button:hover {
   }
 
   .cart{
-      
+
     /* position: absolute; */
     /* bottom: 0px; */
     /* height: 45px; */
