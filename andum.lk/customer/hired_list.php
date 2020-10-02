@@ -63,7 +63,7 @@ if(!isset($_SESSION['nic'])){
         <?php 
 	
     $nic = $_SESSION['nic'];
-    $sql = "SELECT * FROM orders WHERE c_nic='$nic'";
+    $sql = "SELECT * FROM t_orders WHERE c_nic='$nic'";
         $result=mysqli_query($db,$sql);
 
         if(mysqli_num_rows($result)>0)
