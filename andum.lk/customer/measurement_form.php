@@ -2,10 +2,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
 
 <style>
-
-
 .col-25 {
   float: left;
   width: 25%;
@@ -18,9 +17,8 @@
   margin-top: 6px;
 }
 
-
 .input-field {
-  width: 40%;
+  width: 60%;
   padding: 10px;
   outline: none;
   border-radius: 25px;
@@ -32,14 +30,16 @@
 }
 
 
+
+
 .option{
   background-color: #EB2188;
   padding: 8px 10px;
 }
 
 /* Set a style for the submit button */
-button{
-	padding: 9px 25px;
+button {
+    padding: 9px 25px;
     background-color:#EB2188;
     border: none;
     border-radius: 50px;
@@ -47,22 +47,44 @@ button{
     transition: all 0.3s ease 0s;
     text-align: center;
 }
+
 .button {
     display: flex 2;
     background-color:#F5F3FF;
     color: black;
 }
 
-.button:hover {
+button:hover {
     color: black;
 }
 
 </style>
 
-
 </head>
 
 <body>
+
+
+  <!--nav bar-->
+  <div class="box">
+    <header>
+
+
+      <img class="logo" src="logo.png" alt="logo">
+      <nav>
+        <ul class="nav-area">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Hire a Tailor</a></li>
+          <li><a href="#">Hire a Fashion Designer</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
+
+    </header>
+  </div>
+
+
+<!--measurement form-->
 <div class="input-container">
   <form action="/action_page.php" style="max-width:500px;margin:auto">
 
@@ -70,7 +92,7 @@ button{
 
     <div class="row">
       <div class="col-25">
-        <lable for="type">Category:</label>
+        <lable for="type" class="input-field">Category:</label>
         <img src="" class="image">
       </div>
       <div class="col-75">
@@ -91,7 +113,7 @@ button{
   <div>
     <div class="row">
       <div class="col-25">
-        <lable for="neck">Neck:</label>
+        <lable for="neck" class="input-field">Neck:</label>
         <img src="" class="image">
       </div>
 
@@ -106,7 +128,7 @@ button{
 
     <div class="row">
       <div class="col-25">
-        <lable for="chest">Chest:</label>
+        <lable for="chest" class="input-field">Chest:</label>
         <img src="" class="image">
       </div>
 
@@ -121,7 +143,7 @@ button{
 
     <div class="row">
       <div class="col-25">
-          <lable for="waist">Waist:</label>
+          <lable for="waist" class="input-field">Waist:</label>
           <img src="" class="image">
       </div>
       <div class="col-75">
@@ -135,7 +157,7 @@ button{
 
     <div class="row">
       <div class="col-25">
-        <lable for="seat">Seat:</label>
+        <lable for="seat" class="input-field">Seat:</label>
         <img src="" class="image">
       </div>
       <div class="col-75">
@@ -157,5 +179,36 @@ button{
   </form>
 </div>
 
+
+<!--footer-->
+<div class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <img class="footer-logo" src="logo.png" alt="logo"><h1 class="logo-txt"><span></span></h1>
+      <div class="socials">
+        <a href="#"><i class="fas fa-facebook"></i></a>
+        <a href="#"><i class="fas fa-instagram"></i></a>
+        <a href="#"><i class="fas fa- google+"></i></a>
+      </div>
+    </div>
+    <div class="footer-section links">
+      <ul>
+        <a href="#"><li>HIRE A TAILOR</li></a>
+        <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+        <a href="#"><li>SHIPPING AND RETURNS</li></a>
+      </ul>
+    </div>
+    <div class="footer-section links2 ">
+      <ul>
+        <a href="#"><li>HIRE A TAILOR</li></a>
+        <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
+        <a href="#"><li>SHIPPING AND RETURNS</li></a>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+        &copy; andum.lk
+  </div>
+</div>
 </body>
 </html>
