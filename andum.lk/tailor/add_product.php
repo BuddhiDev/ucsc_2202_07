@@ -20,6 +20,7 @@
 .option{
   background-color: #EB2188;
   padding: 8px 10px;
+  border-radius: 25px;
 }
 
 </style>
@@ -30,8 +31,6 @@
   <!--nav bar-->
   <div class="box">
     <header>
-
-
       <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
