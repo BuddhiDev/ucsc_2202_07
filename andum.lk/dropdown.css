@@ -1,0 +1,91 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+.navbardrop {
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: muli;
+}
+
+.navbardrop a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 10px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 5px 2px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.navbardrop a:hover, .dropdown:hover .dropbtn {
+  background-color: #EB2188;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 80%;
+  right: 0;
+  box-shadow: 0px 0px 5px 1px  rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.dropdown-content .header {
+  background: #EB2188;
+    padding: 5px;
+  color: white;
+
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 20%;
+  padding: 8px;
+  background-color: #ffffff;
+  height: 350px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.column a:hover {
+  background-color: #ffe6ff;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
