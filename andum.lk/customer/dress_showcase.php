@@ -83,24 +83,20 @@ if (!isset($_SESSION['nic'])) {
       while ($row = mysqli_fetch_assoc($result)) {
     ?>
         <div class="slider-box">
-        <div class="img-box">
-
-          <form method="post" action="index.php" class="dress-showcase">
+          <form method="post" action="index.php" class="tailor-form">
             <img src="product1.jpg" alt="Avatar" style="width:200px">
             <h4><b>
                 <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
                 <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
-                <?php echo $row["category"] ?> </br>
+                <?php echo $row["category"] ?> <br />
                 <?php echo $row["title"] ?>
               </b></h4>
 
             <div>
-            <a href="#"><button class="loginbutton btn-full-w" s>Add To Cart</button></a>
+            <a href="#"><button class="loginbutton btn-full-w" >Add To Cart</button></a>
             </div>
           </form>
         </div>
-        </div>
-
         <br />
 
     <?php
