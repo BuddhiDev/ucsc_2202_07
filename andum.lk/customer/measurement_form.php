@@ -180,7 +180,7 @@ button:hover {
 </div>
 
 
-<!--footer-->
+<!--footer
 <div class="footer">
   <div class="footer-content">
     <div class="footer-section about">
@@ -209,6 +209,6 @@ button:hover {
   <div class="footer-bottom">
         &copy; andum.lk
   </div>
-</div>
+</div>-->
 </body>
 </html>
