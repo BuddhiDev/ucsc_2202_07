@@ -35,6 +35,7 @@
 .option{
   background-color: #EB2188;
   padding: 8px 10px;
+  border-radius: 25px;
 }
 
 /* Set a style for the submit button */
@@ -180,7 +181,7 @@ button:hover {
 </div>
 
 
-<!--footer
+<!--footer-->
 <div class="footer">
   <div class="footer-content">
     <div class="footer-section about">
@@ -209,6 +210,6 @@ button:hover {
   <div class="footer-bottom">
         &copy; andum.lk
   </div>
-</div>-->
+</div>
 </body>
 </html>
