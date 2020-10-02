@@ -25,7 +25,7 @@ if(!isset($_SESSION['nic'])){
           <li><a href="#">Home</a></li>
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
-            <li><a href="dress-showcase.php">Dress Showcase</a></li>
+            <li><a href="dress_showcase.php">Dress Showcase</a></li>
             <li><a href="Manage_order.php">Manage order</a></li>
           </ul>
         </nav>
