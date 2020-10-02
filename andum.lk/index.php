@@ -16,7 +16,8 @@
             <li><a href="#">Explore</a></li>
             <li><a href="#">Hire a Tailor</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
+
         </ul>
       </nav>
       <div>
@@ -29,11 +30,11 @@
 <!-- Slideshow container -->
 <div class="slideshow-container">
   <div class="mySlides fade">
-    <img src="images/12.jpeg" style="width:100%">
+    <img src="images/pexels-ray-piedra-1478477.jpg" style="width:100%">
   </div>
 
   <div class="mySlides fade">
-    <img src="images/pexels-artem-beliaikin-1100790.jpg" style="width:100%"> 
+    <img src="images/pexels-artem-beliaikin-1100790.jpg" style="width:100%">
   </div>
   <div class="mySlides fade">
     <img src="images/pexels-cottonbro-4621921.jpg" style="width:100%">
