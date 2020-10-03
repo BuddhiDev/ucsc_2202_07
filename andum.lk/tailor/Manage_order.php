@@ -19,7 +19,7 @@ if (!isset($_SESSION['nic'])) {
     table {
       border-collapse: collapse;
       border-spacing: 0;
-      width: 100%;
+      width: 99%;
       border: 1px solid #ddd;
     }
 
@@ -80,7 +80,7 @@ if (!isset($_SESSION['nic'])) {
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
-                <a class="cta" href="#"><button>View</button></a>
+                <a href="#"><button class="loginbutton btn-full-w">View</button></a>
               </div>
             </td>
       </tr>

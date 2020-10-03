@@ -28,7 +28,7 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="index.php">Home</a></li>
           <li><a href="dress_showcase.php">Dress Showcase</a></li>
           <li><a href="hired_list.php">Hired Tailors</a></li>
-          <li><a href="#">Purchases</a></li>
+          <li><a href="purchases.php">Purchases</a></li>
         </ul>
       </nav>
 

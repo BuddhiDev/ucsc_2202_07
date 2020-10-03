@@ -13,7 +13,7 @@ if (!isset($_SESSION['nic'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>andum.lk</title>
+  <title>Andum.lk - Dress Showcase</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
 </head>
@@ -49,7 +49,8 @@ if (!isset($_SESSION['nic'])) {
   <div class="btn-panel-center">
     <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-    <button class="loginbutton btn-full-w" type="submit">All</button>
+    <button class="loginbutton btn-full-w" type="submit">All</button> <br/>
+    <a href="add_product.php"><button class="loginbutton btn-full-w">Add New Dress</button></a>
   </div>
 
   <!-- <section class="products">
@@ -82,29 +83,24 @@ if (!isset($_SESSION['nic'])) {
       while ($row = mysqli_fetch_assoc($result)) {
     ?>
         <div class="slider-box">
-          <div class="img-box">
-            <form method="post" action="index.php" class="dress-showcase">
-              <table>
-                <tr>
-                  <td>
-                    <img src="product1.jpg" alt="Avatar" style="width:200px">
-                  </td>
-                  <td>
-                    <h4><b>
-                        <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
-                        <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
-                        <?php echo $row["category"] ?> </br>
-                        <?php echo $row["title"] ?>
-                      </b></h4>
-
-                    <div>
-                      <a href="#"><button class="loginbutton btn-full-w" s>Add To Cart</button></a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </form>
-          </div>
+          <form method="post" action="index.php" class="dress-showcase">
+            <table>
+              <tr>
+                <td>
+                  <img src="product1.jpg" alt="Avatar" style="width:200px">
+                </td>
+                <td>
+                  <h4><b>
+                      <input type="hidden" value="<?php echo $row["category"] ?> " name="category">
+                      <input type="hidden" value="<?php echo $row["title"] ?> " name="title">
+                      Category: <?php echo $row["category"] ?> <br />
+                      Title: <?php echo $row["title"] ?> <br />
+                      Items in stock: <?php echo $row["amount"] ?>
+                    </b></h4>
+                </td>
+              </tr>
+            </table>
+          </form>
         </div>
 
         <br />
@@ -113,6 +109,7 @@ if (!isset($_SESSION['nic'])) {
       }
     }
     ?>
+
 
   </div>
 

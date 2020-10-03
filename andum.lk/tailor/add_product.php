@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Andum.lk - Add a dress</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
@@ -34,10 +35,10 @@
       <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Hire a Tailor</a></li>
-          <li><a href="#">Hire a Fashion Designer</a></li>
-          <li><a href="#">About Us</a></li>
+        <li><a href="index.php">Home</a></li>
+          <li><a href="dress_showcase.php">Dress Showcase</a></li>
+          <li><a href="Manage_order.php">Manage Orders</a></li>
+          <li><a href="#">Manage Sales</a></li>
         </ul>
       </nav>
 
@@ -46,9 +47,10 @@
 
 
 <!--add new product form-->
+<div class="sliderbox-wrap">
 
-
-  <form action="/action_page.php" style="max-width:800px;margin:auto">
+<center><img src="product1.jpg" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
+  <form action="/action_page.php" style="max-width:800px;margin:auto;padding:10px">
       <h2>Add Product</h2>
 
       <div class="row">
@@ -110,14 +112,15 @@
         <lable for="type" class="field-label-inline">Upload Dress image:</label>
       </div>
       <div class="col-75">
-        <input type="file" id="myFile" name="filename">
-        <input type="submit">
+        <input type="file" id="myFile" name="filename"> <br/>
       </div>
     </div>
+    <div> <center>
+<button class="loginbutton btn-full-w" type="submit"> Upload</button> </center></div>
   </form>
+</div>
 
 
-<!--footer
   <div class="footer">
     <div class="footer-content">
       <div class="footer-section about">
@@ -146,6 +149,6 @@
     <div class="footer-bottom">
           &copy; andum.lk
     </div>
-  </div>-->
+  </div>
   </body>
   </html>

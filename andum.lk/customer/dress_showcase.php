@@ -13,7 +13,7 @@ if (!isset($_SESSION['nic'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>andum.lk</title>
+  <title>Andum.lk - Dress Showcase</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
 </head>
@@ -27,7 +27,7 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="index.php">Home</a></li>
           <li><a href="dress_showcase.php">Dress Showcase</a></li>
           <li><a href="hired_list.php">Hired Tailors</a></li>
-          <li><a href="#">Purchases</a></li>
+          <li><a href="purchases.php">Purchases</a></li>
         </ul>
       </nav>
       <div>
@@ -92,12 +92,14 @@ if (!isset($_SESSION['nic'])) {
                   <h4><b>
                       <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
                       <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                      <?php echo $row["category"] ?> <br />
-                      <?php echo $row["title"] ?>
+                      Category: <?php echo $row["category"] ?> <br />
+                      Title: <?php echo $row["title"] ?> <br />
+                      Items in stock: <?php echo $row["amount"] ?>
+
                     </b></h4>
 
                   <div>
-                    <button class="loginbutton btn-full-w" name="addTocart" <?php if ($row["amount"]=='0'){ ?> disabled <?php   } ?>>Add To Cart</button>
+                    <button class="loginbutton btn-full-w" name="addTocart" <?php if ($item_added =='true'){ ?> disabled <?php   } ?>><?php if ($item_added =='true'){echo "Added To Cart";}else{echo"Add To Cart";}?></button>
                   </div>
                 </td>
               </tr>
@@ -110,6 +112,8 @@ if (!isset($_SESSION['nic'])) {
       }
     }
     ?>
+
+ <a href="cart.php"><button class="loginbutton btn-full-w" >View Cart</button></a>
 
   </div>
 

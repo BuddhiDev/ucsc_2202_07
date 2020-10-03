@@ -125,7 +125,6 @@
             $result=mysqli_query($db,$sql);
 			if($result)
 			{
-                echo 1;
 				header('location: hired_list.php');
 			}
 		    else{
@@ -134,7 +133,7 @@
 
     }
     
-    $cart_btn_click = "false";
+    $item_added = "false";
     if(isset($_POST['addTocart']))
     {
             $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
@@ -145,8 +144,36 @@
             $result=mysqli_query($db,$sql);
 			if($result)
 			{
-                $cart_btn_name = "Added To Cart";
+                $item_added = "true";
 			}
+		    else{
+			array_push($errors,"Add to cart failed, try again later");
+		}
+
+    }
+    
+    if(isset($_POST['Checkout']))
+    {
+            $c_nic =  $_SESSION['nic'];
+
+            $sql = "SELECT cart.order_id, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
+            $result = mysqli_query($db, $sql);
+        
+            if (mysqli_num_rows($result) > 0) {
+        
+              while ($row = mysqli_fetch_assoc($result)) {
+                $new_amount = $row["amount"] - 1;
+                $dress_id = $row["dress_id"];
+                $order_id = $row["order_id"];
+                $sql1 = "UPDATE dress_showcase SET amount=$new_amount WHERE dress_id=$dress_id";
+                $result1 = mysqli_query($db, $sql1);
+                $sql1 = "DELETE FROM cart WHERE order_id=$order_id";
+                $result1 = mysqli_query($db, $sql1);
+              }
+        
+              header('location: purchases.php');
+            }
+        
 		    else{
 			array_push($errors,"Add to cart failed, try again later");
 		}
