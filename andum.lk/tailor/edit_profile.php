@@ -63,6 +63,11 @@
             <input type="text" class="field-value-inline" name="contactno">
           </div>
 
+          <div class="form-field-inline">
+            <label for="category" class="field-label-inline"><b>Sewing Category</b></label>
+            <input type="text" class="field-value-inline" name="category">
+          </div>
+
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
