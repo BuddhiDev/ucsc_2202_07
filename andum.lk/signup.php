@@ -27,13 +27,13 @@ require("server.php");
 
       <img class="logo" src="logo.png" alt="logo">
       <div class="navbardrop">
-                      <div class="dropdown">
-                        <button class="dropbtn">Categories
-                        <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                          <div class="row">
-                            <div class="column">
+            <div class="dropdown">
+            <button class="dropbtn">Categories
+                  <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="row">
+                      <div class="column">
                               <h3>Ladies wear</h3>
                               <a href="#">Blouses</a>
                               <a href="#">Skirts</a>
@@ -44,26 +44,26 @@ require("server.php");
                               <a href="#">T-Shirts</a>
                               <a href="#">Party Frocks</a>
                               <a href="#">Sarees</a>
-                              <a href="#">Bridal Dress</a>
+                              <a href="#">Bridal Dresses</a>
                               <a href="#"></a>
-                            </div>
-                            <div class="column">
+                      </div>
+                      <div class="column">
                               <h3>Gents wear</h3>
                               <a href="#">Shirts</a>
                               <a href="#">Trousers</a>
                               <a href="#">Denims</a>
                               <a href="#">Shorts</a>
                               <a href="#">T-shirts</a>
-                              <a href="#">Groom Dress</a>
-                            </div>
-                          </div>
-                        </div>
+                              <a href="#">Groom Dresses</a>
                       </div>
-                    </div>
+                  </div>
+              </div>
+           </div>
+        </div>
 
       <nav>
         <ul class="nav-area">
-          
+
           <li><a href="#">Explore</a></li>
           <li><a href="#">Hire a Tailor</a></li>
           <li><a href="#">Hire a Fashion Designer</a></li>
