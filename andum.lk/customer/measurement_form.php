@@ -89,7 +89,7 @@ button:hover {
           <img src="" class="image">
         </div>
         <div class="col-75">
-          <select class="option" name="Unit" id="unit">
+          <select class="option" name="Unit" id="unit" >
             <optgroup label="Ladies wear">
               <option value="1">Blouse</option>
               <option value="2">skirt</option>
@@ -119,11 +119,8 @@ button:hover {
         </div>
   </div>
 
-  <div>
-    <div class="row">
-      <div>
 
-      </div>
+    <div class="row">
       <div class="col-25">
         <lable for="neck" class="input-field" style="color:black;">Neck:</label>
         <img src="" class="image">
