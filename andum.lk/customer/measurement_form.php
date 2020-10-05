@@ -3,8 +3,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-
 <!-- <style>
 .col-25 {
   float: left;
@@ -129,7 +127,7 @@ button:hover {
 
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Neck" name="neck">
-        <select class="option" name="Unit" id="unit" style="color:white;">
+        <select class="option" name="Unit" id="unit">
           <option>in</option>
           <option>cm</option>
         </select>
@@ -144,7 +142,7 @@ button:hover {
 
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Chest" name="chest">
-        <select class="option" name="Unit" id="unit" style="color:white;">
+        <select class="option" name="Unit" id="unit">
           <option >in</option>
           <option>cm</option>
         </select>
@@ -158,7 +156,7 @@ button:hover {
       </div>
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Waist" name="waist">
-        <select class="option" name="Unit" id="unit" style="color:white;">
+        <select class="option" name="Unit" id="unit">
           <option>in</option>
           <option>cm</option>
         </select>
@@ -172,7 +170,7 @@ button:hover {
       </div>
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Seat" name="seat">
-        <select class="option" name="Unit" id="unit" style="color:white;">
+        <select class="option" name="Unit" id="unit" >
           <option>in</option>
           <option>cm</option>
         </select>
@@ -184,6 +182,7 @@ button:hover {
       <p>other</p>
       <textarea name="message" rows="20" cols="50"></textarea>
     </div>
+    <br>
 	  <button type="submit" class="btn">Submit</button>
     </div>
   </form>
