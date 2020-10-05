@@ -6,13 +6,13 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Andum.lk - Hired Tailors</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andum.lk - Manage Orders</title>
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <style>
@@ -41,31 +41,32 @@ if (!isset($_SESSION['nic'])) {
       <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="dress_showcase.php">Dress Showcase</a></li>
-          <li><a href="hired_list.php">Hired Tailors</a></li>
-          <li><a href="purchases.php">Purchases</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Hire a Fashion Designer</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/tailor/dress_showcase.php">Dress Showcase</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/tailor/Manage_order.php">Manage order</a></li>
         </ul>
       </nav>
       <div>
-        <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
+        <a class="cta" href="/ucsc_2202_07/andum.lk"><button class="loginbutton btn-full-w" s>Sign Out</button></a>
       </div>
     </header>
   </div>
-  <div>
+  <div style="overflow-x:auto;">
     <table>
       <tr>
         <th>Order Id</th>
-        <th>Tailor NIC</th>
-        <th>Tailor Name</th>
+        <th>Customer NIC</th>
+        <th>Tailor First Name</th>
         <th>Status</th>
-
       </tr>
       <tr>
+
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic'";
+        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic'";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -76,11 +77,11 @@ if (!isset($_SESSION['nic'])) {
 
             <td><?php echo $row["id"] ?></td>
             <td><?php echo $row["t_nic"] ?></td>
-            <td><?php echo $row["c_fname"] ?></td>
+            <td><?php echo $row["t_fname"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
-                <a class="cta" href="#"><button class="loginbutton btn-full-w">View</button></a>
+                <a class="cta" href="#"><button>View</button></a>
               </div>
             </td>
       </tr>
@@ -90,6 +91,8 @@ if (!isset($_SESSION['nic'])) {
         }
 
   ?>
+
+
     </table>
   </div>
 
@@ -135,6 +138,7 @@ if (!isset($_SESSION['nic'])) {
       &copy; andum.lk
     </div>
   </div>
+
 </body>
 
 </html>

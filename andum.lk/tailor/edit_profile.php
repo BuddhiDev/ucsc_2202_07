@@ -16,8 +16,8 @@
                 <ul class="nav-area">
                   <li><a href="#">Explore</a></li>
                   <li><a href="#">Hire a Fashion Designer</a></li>
-                  <li><a href="#">Dress Showcase</a></li>
-                  <li><a href="#">About Us</a></li>
+                  <li><a href="dress_showcase.php">Dress Showcase</a></li>
+                  <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
                 </ul>
               </nav>
             </header>
@@ -61,6 +61,11 @@
           <div class="form-field-inline">
             <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
             <input type="text" class="field-value-inline" name="contactno">
+          </div>
+
+          <div class="form-field-inline">
+            <label for="category" class="field-label-inline"><b>Sewing Category</b></label>
+            <input type="text" class="field-value-inline" name="category">
           </div>
 
           <div class="btn-panel-center">

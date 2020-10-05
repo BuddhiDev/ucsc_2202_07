@@ -11,7 +11,7 @@ if (!isset($_SESSION['nic'])) {
 
 <head>
   <meta charset="utf-8">
-  <title>Andum.lk - Hired Tailors</title>
+  <title>Andum.lk - Cart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
@@ -53,36 +53,32 @@ if (!isset($_SESSION['nic'])) {
     </header>
   </div>
   <div>
+    <h2>Cart</h2>
     <table>
       <tr>
         <th>Order Id</th>
-        <th>Tailor NIC</th>
-        <th>Tailor Name</th>
-        <th>Status</th>
+        <th>Category</th>
+        <th>Title</th>
+        <th>Amount</th>
 
       </tr>
       <tr>
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic'";
+        $sql = "SELECT cart.order_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$nic' AND cart.dress_id=dress_showcase.dress_id";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
 
+
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-
-            <td><?php echo $row["id"] ?></td>
-            <td><?php echo $row["t_nic"] ?></td>
-            <td><?php echo $row["c_fname"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <a class="cta" href="#"><button class="loginbutton btn-full-w">View</button></a>
-              </div>
-            </td>
+            <td><?php echo $row["order_id"] ?></td>
+            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["title"] ?></td>
+            <td><?php echo $row["amount"] ?></td>
       </tr>
   <?php
           }
@@ -93,6 +89,15 @@ if (!isset($_SESSION['nic'])) {
     </table>
   </div>
 
+  <form method="post">
+    <!-- Checkout button click begin-->
+
+    <!-- Checkout button click end-->
+    <?php if (mysqli_num_rows($result) > 0) { ?>
+    <center><a href="purchases.php"><button class="loginbutton btn-full-w" type="submit" name="Checkout">Checkout</button></a></center>
+    <?php }  else {?>
+    <center> No Items in the cart</center> <?php } ?>
+    </form>
   <div class="footer">
     <div class="footer-content">
       <div class="footer-section about">

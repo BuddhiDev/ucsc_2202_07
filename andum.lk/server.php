@@ -17,7 +17,9 @@
         $fname = mysqli_real_escape_string($db,$_POST['fname']);
         $lname = mysqli_real_escape_string($db,$_POST['lname']);
         $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
-		$utype = mysqli_real_escape_string($db,$_POST['utype']);
+        $utype = mysqli_real_escape_string($db,$_POST['utype']);
+        $addres = mysqli_real_escape_string($db,$_POST['address']);
+        $postal = mysqli_real_escape_string($db,$_POST['postal']);
 
         if($password1!=$password2)
         {
@@ -27,7 +29,7 @@
         {
             $password=md5($password1);
             // inser to user table
-            $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype')";
+            $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
             mysqli_query($db,$sql);
 
             // insert user if tailor
@@ -114,11 +116,12 @@
 
 	if(isset($_POST['hireT']))
     {
-			$t_nic = mysqli_real_escape_string($db,$_POST['t_nic']);
+            $t_nic = mysqli_real_escape_string($db,$_POST['t_nic']);
+            $t_fname = mysqli_real_escape_string($db,$_POST['t_fname']);
             $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
             $c_fname = mysqli_real_escape_string($db,$_POST['c_fname']);
 
-            $sql = "INSERT INTO orders (c_nic, c_fname, t_nic, t_fname, status) VALUES ('$c_nic','$c_fname','$t_nic','Active')";
+            $sql = "INSERT INTO t_orders (c_nic, c_fname, t_nic, t_fname, status) VALUES ('$c_nic','$c_fname','$t_nic','$t_fname','Active')";
             $result=mysqli_query($db,$sql);
 			if($result)
 			{
@@ -126,6 +129,53 @@
 			}
 		    else{
 			array_push($errors,"Hire a tailor failed, try again later");
+		}
+
+    }
+    
+    $item_added = "false";
+    if(isset($_POST['addTocart']))
+    {
+            $c_nic = mysqli_real_escape_string($db,$_POST['c_nic']);
+            $dress_id = mysqli_real_escape_string($db,$_POST['dress_id']);
+
+
+            $sql = "INSERT INTO cart (c_nic, dress_id) VALUES ('$c_nic','$dress_id')";
+            $result=mysqli_query($db,$sql);
+			if($result)
+			{
+                $item_added = "true";
+			}
+		    else{
+			array_push($errors,"Add to cart failed, try again later");
+		}
+
+    }
+    
+    if(isset($_POST['Checkout']))
+    {
+            $c_nic =  $_SESSION['nic'];
+
+            $sql = "SELECT cart.order_id, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
+            $result = mysqli_query($db, $sql);
+        
+            if (mysqli_num_rows($result) > 0) {
+        
+              while ($row = mysqli_fetch_assoc($result)) {
+                $new_amount = $row["amount"] - 1;
+                $dress_id = $row["dress_id"];
+                $order_id = $row["order_id"];
+                $sql1 = "UPDATE dress_showcase SET amount=$new_amount WHERE dress_id=$dress_id";
+                $result1 = mysqli_query($db, $sql1);
+                $sql1 = "DELETE FROM cart WHERE order_id=$order_id";
+                $result1 = mysqli_query($db, $sql1);
+              }
+        
+              header('location: purchases.php');
+            }
+        
+		    else{
+			array_push($errors,"Add to cart failed, try again later");
 		}
 
 	}
