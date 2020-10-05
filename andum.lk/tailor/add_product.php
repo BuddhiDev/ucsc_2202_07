@@ -59,14 +59,30 @@
         </div>
         <div class="col-75">
           <select class="option" name="Unit" id="unit">
-            <optgroup label="Women">
-              <option value="1">blouse</option>
+            <optgroup label="Ladies wear">
+              <option value="1">Blouse</option>
               <option value="2">skirt</option>
               <option value="3">frock</option>
+              <option value="4">Short</option>
+              <option value="5">Trouser</option>
+              <option value="6">T-Shirt</option>
+              <option value="7">Party Frock</option>
+              <option value="8">Saree</option>
+              <option value="9">Bridal Dress</option>
             </optgroup>
-            <optgroup label="Men">
-              <option value="4">shirt</option>
-              <option value="5">trouser</option>
+            <optgroup label="Gents wear">
+              <option value="10">Shirt</option>
+              <option value="11">T-shirt</option>
+              <option value="12">Denim</option>
+              <option value="13">Trouser</option>
+              <option value="14">Groom Dress</option>
+            </optgroup>
+            <optgroup label="Kids wear">
+              <option value="15">School Uni Forms</option>
+              <option value="16">T-shirt</option>
+              <option value="17">Trouser</option>
+              <option value="18">Frocks</option>
+              <option value="19">skirts</option>
             </optgroup>
           </select>
         </div>
