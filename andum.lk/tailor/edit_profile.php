@@ -70,7 +70,7 @@
               <!--<h2>SewingCategories</h2>-->
               <div class="row">
                  <div class="column">
-                    <h3>Ladies wear</h3>
+                    <h4>Ladies wear</h4><br>
                     <label class="checkbox_container">Blouses
                       <input type="checkbox" checked="checked" >
                       <span class="checkmark"></span>
@@ -109,7 +109,7 @@
                     </label>
                 </div>
                 <div class="column">
-                  <h3>Gents wear</h3>
+                  <h4>Gents wear</h4><br>
                   <label class="checkbox_container">Shirts
                         <input type="checkbox">
                         <span class="checkmark"></span>
@@ -132,7 +132,7 @@
                       </label>
                  </div>
                  <div class="column">
-                     <h3>Kids wear</h3>
+                     <h4>Kids wear</h4><br>
                      <label class="checkbox_container">School Uni Forms
                         <input type="checkbox">
                         <span class="checkmark"></span>
@@ -158,7 +158,7 @@
 
         <br>
         <br>
-        <br>
+        
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
