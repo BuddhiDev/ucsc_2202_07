@@ -78,7 +78,6 @@ body, html {
   </div>
 </div>
 
-<p>Page Content..</p>
 
 
 
