@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
 
 </head>
+
+
+
 <body>
   <!--create nav bar -->
 
@@ -28,8 +31,9 @@
         </div>
       </header>
     </div>
+
     <!--profile-->
-    <div class="row">
+    <!-- <div class="row">
       <div class="column">
         <div class="card">
           <img src="/ucsc_2202_07/andum.lk/tailor/tailor-01.jpg" alt="John" style="width:100%">
@@ -45,7 +49,7 @@
             </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 <!--footer-->
