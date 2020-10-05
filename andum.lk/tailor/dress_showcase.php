@@ -24,9 +24,9 @@ if (!isset($_SESSION['nic'])) {
       <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/index.php">Home</a></li>
           <li><a href="dress_showcase.php">Dress Showcase</a></li>
-          <li><a href="Manage_order.php">Manage Orders</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/tailor/Manage_order.php">Manage Orders</a></li>
           <li><a href="#">Manage Sales</a></li>
         </ul>
       </nav>
