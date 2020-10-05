@@ -47,6 +47,18 @@ require("server.php");
                               <a href="#">T-shirts</a>
                               <a href="#">Groom Dresses</a>
                       </div>
+
+                      <div class="column">
+                              <h3>Casual wear</h3>
+                              <a href="#">Casual Wear blouse</a>
+                              <a href="#">Casual wear pants</a>
+                              <a href="#">Casual wear Denims</a>
+                              <a href="#">Casual wearShorts</a>
+                              <a href="#">casual wear T-shirts</a>
+
+                      </div>
+
+
                   </div>
               </div>
            </div>
