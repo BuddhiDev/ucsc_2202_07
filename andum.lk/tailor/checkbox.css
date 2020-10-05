@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 .column {
   float: left;
   padding: 10px;
@@ -19,10 +20,11 @@
 .checkbox_container {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  padding-left: 40px;
+  margin-bottom: 14px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 15px;
+  font-family: muli;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
