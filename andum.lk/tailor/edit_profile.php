@@ -6,6 +6,7 @@
     <title>andum.lk</title>
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/tailor/checkbox.css">
 
 </head>
 <body>
@@ -65,9 +66,99 @@
 
           <div class="form-field-inline">
             <label for="category" class="field-label-inline"><b>Sewing Category</b></label>
-            <input type="text" class="field-value-inline" name="category">
           </div>
+              <!--<h2>SewingCategories</h2>-->
+              <div class="row">
+                 <div class="column">
+                    <h3>Ladies wear</h3>
+                    <label class="checkbox_container">Blouses
+                      <input type="checkbox" checked="checked" >
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">skirt
+                      <input type="checkbox" >
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">frock
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">Shorts
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">Trouser
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">T-Shirt
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">Party Frock
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">Sarees
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox_container">Bridal Dress
+                      <input type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="column">
+                  <h3>Gents wear</h3>
+                  <label class="checkbox_container">Shirts
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">T-shirts
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">Denim
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">Trouser
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">Groom Dress
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                 </div>
+                 <div class="column">
+                     <h3>Kids wear</h3>
+                     <label class="checkbox_container">School Uni Forms
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">T-shirts
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">Trouser
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">Frocks
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="checkbox_container">skirts
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                 </div>
+              </div>
 
+        <br>
+        <br>
+        <br>
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
