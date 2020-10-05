@@ -56,7 +56,7 @@
         </div>
       <nav>
         <ul class="nav-area">
-            <li><a href="#">Explore</a></li>
+            <li><a href="/ucsc_2202_07/andum.lk/explore.php">Explore</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/unregistered_user_hire_tailor.php">Hire a Tailor</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>

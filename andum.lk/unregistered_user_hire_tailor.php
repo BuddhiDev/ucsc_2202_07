@@ -108,7 +108,10 @@ if (!isset($_SESSION['nic'])) {
   </center>
 
   <!--footer-->
-  <div class="footer">
+
+
+  <?php require("footer.php")?>
+  <!-- <div class="footer">
     <div class="footer-content">
       <div class="footer-section about">
         <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
@@ -149,7 +152,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="footer-bottom">
       &copy; andum.lk
     </div>
-  </div>
+  </div> -->
 </body>
 
 </html>
