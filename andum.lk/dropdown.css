@@ -30,7 +30,7 @@ body {
   font-size: 10px;
   border: none;
   outline: none;
-  color: #F5F3FF;
+  color: black;
   padding: 5px 2px;
   background-color: inherit;
   font: inherit;
@@ -53,7 +53,7 @@ body {
 
 .dropdown-content .header {
   background: #EB2188;
-    padding: 5px;
+  padding: 5px;
   color: white;
 
 }
