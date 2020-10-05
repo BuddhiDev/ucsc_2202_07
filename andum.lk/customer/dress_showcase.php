@@ -37,7 +37,7 @@ if (!isset($_SESSION['nic'])) {
   </div>
   <!-- <div class="wrapper">
         <aside class="bg-gra-200 border-r border-gray-300">Left</aside>
-        <main>Right</main> 
+        <main>Right</main>
     </div> -->
   <div class="search-container">
     <div class="form-field-inline">
@@ -119,48 +119,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-  <div class="footer">
-    <div class="footer-content">
-      <div class="footer-section about">
-        <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
-        <h1 class="logo-txt"><span></span></h1>
-        <div class="socials">
-          <a href="#"><i class="fas fa-facebook"></i></a>
-          <a href="#"><i class="fas fa-instagram"></i></a>
-          <a href="#"><i class="fas fa- google+"></i></a>
-        </div>
-      </div>
-      <div class="footer-section links">
-        <ul>
-          <a href="#">
-            <li>HIRE A TAILOR</li>
-          </a>
-          <a href="#">
-            <li>HIRE A FASHION DESIGNER</li>
-          </a>
-          <a href="#">
-            <li>SHIPPING AND RETURNS</li>
-          </a>
-        </ul>
-      </div>
-      <div class="footer-section links2 ">
-        <ul>
-          <a href="#">
-            <li>HIRE A TAILOR</li>
-          </a>
-          <a href="#">
-            <li>HIRE A FASHION DESIGNER</li>
-          </a>
-          <a href="#">
-            <li>SHIPPING AND RETURNS</li>
-          </a>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; andum.lk
-    </div>
-  </div>
+<?php require("footer.php")?>
 
 </body>
 
