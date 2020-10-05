@@ -35,6 +35,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
     </header>
   </div>
+  <?php require("footer.php")?>
 </body>
 
 </html>

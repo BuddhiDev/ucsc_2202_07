@@ -115,38 +115,6 @@ function showSlides() {
 </script>
 
 <!-- add a footer -->
-<div class="footer">
-  <div class="footer-content">
-    <div class="footer-section about">
-      <img class="logo" src="logo.png" alt="logo"><h1 class="logo-txt"><span></span></h1>
-      <div class="contact">
-        <span><i class="fas fa-phone"></i> &nbsp; 1234567891</span>
-        <span><i class="fas fa-envelope"></i> &nbsp; andum.lk</span>
-      </div>
-      <div class="socials">
-        <a href="#"><i class="fas fa-facebook"></i></a>
-        <a href="#"><i class="fas fa-instagram"></i></a>
-        <a href="#"><i class="fas fa- google+"></i></a>
-      </div>
-    </div>
-    <div class="footer-section links">
-      <ul>
-        <a href="#"><li>HIRE A TAILOR</li></a>
-        <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
-        <a href="#"><li>SHIPPING AND RETURNS</li></a>
-      </ul>
-    </div>
-    <div class="footer-section links2 ">
-      <ul>
-        <a href="#"><li>HIRE A TAILOR</li></a>
-        <a href="#"><li>HIRE A FASHION DESIGNER</li></a>
-        <a href="#"><li>SHIPPING AND RETURNS</li></a>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-        &copy; andum.lk
-  </div>
-</div>
+<?php require("footer.php")?>
 </body>
 </html>

@@ -81,7 +81,7 @@
 
 
 
-
+<?php require("footer.php")?>
 
 
 

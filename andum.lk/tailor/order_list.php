@@ -60,7 +60,7 @@ if (!isset($_SESSION['username'])) {
 
 
     </div>
-
+<?php require("footer.php")?>
 </body>
 
 </html>

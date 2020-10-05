@@ -1,4 +1,4 @@
-<?php include("../server.php"); 
+<?php include("../server.php");
 
 if(!isset($_SESSION['username'])){
 	header("location:../login.php");
@@ -17,8 +17,8 @@ if(!isset($_SESSION['username'])){
     <body>
         <div class="header">
             <h2>Tailor Inventory</h2>
-        </div>    
-        
+        </div>
+
         <div class="content">
 
         <?php if(isset($_SESSION['success'])): ?>
@@ -29,7 +29,7 @@ if(!isset($_SESSION['username'])){
                             unset ($_SESSION['success']);
                         ?>
                     </h3>
-                </div>    
+                </div>
         <?php endif ?>
 
         <?php if(isset($_SESSION['username'])): ?>
@@ -38,12 +38,12 @@ if(!isset($_SESSION['username'])){
             </p>
             <div align="right"><a href="index.php?logout='1'" style="color:red;">Logout</a></div>
 
-        <?php endif ?>    
+        <?php endif ?>
         </div>
         <div>
-		
-			<?php 
-	
+
+			<?php
+
 			$username = $_SESSION['username'];
 			$sql = "SELECT * FROM products WHERE username='$username'";
             $result=mysqli_query($db,$sql);
@@ -63,18 +63,18 @@ if(!isset($_SESSION['username'])){
             <div class="input-group">
                 <label>Price:</label><br>
                 <input type="text" name="price"><br><br>
-            </div>   
+            </div>
 			<div class="input-group">
                 <label>Category:</label><br>
                 <input type="text" name="category"><br><br>
-            </div>  
+            </div>
             <div class="input-group">
             <button type="submit" name="add_product" class="btn">Add a Product</button>
-            </div> 
-            
+            </div>
+
         </form>
 
 		</div>
-
+<?php require("footer.php")?>
     </body>
 </html>
