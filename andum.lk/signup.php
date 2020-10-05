@@ -26,7 +26,7 @@ require("server.php");
 
 
       <img class="logo" src="logo.png" alt="logo">
-      <div class="navbardrop">
+    <!--  <div class="navbardrop">
             <div class="dropdown">
             <button class="dropbtn">Categories
                   <i class="fa fa-caret-down"></i>
@@ -67,8 +67,8 @@ require("server.php");
                   </div>
               </div>
            </div>
-        </div>
-
+        </div>-->
+        <?php require("navbar_category.php")?>
       <nav>
         <ul class="nav-area">
 
