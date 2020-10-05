@@ -16,6 +16,7 @@ if (!isset($_SESSION['nic'])) {
   <title>Andum.lk - Customer</title>
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
 
 </head>
 
@@ -23,6 +24,48 @@ if (!isset($_SESSION['nic'])) {
   <div class="box">
     <header>
       <img class="logo" src="../logo.png" alt="logo" class="img-box">
+      <div class="navbardrop">
+            <div class="dropdown">
+            <button class="dropbtn">Categories
+                  <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="row">
+                      <div class="column">
+                              <h3>Ladies wear</h3>
+                              <a href="#">Blouses</a>
+                              <a href="#">Skirts</a>
+                              <a href="#">Tops</a>
+                              <a href="#">Frocks</a>
+                              <a href="#">Shorts</a>
+                              <a href="#">Trouses</a>
+                              <a href="#">T-Shirts</a>
+                              <a href="#">Party Frocks</a>
+                              <a href="#">Sarees</a>
+                              <a href="#">Bridal Dresses</a>
+                              <a href="#"></a>
+                      </div>
+                      <div class="column">
+                              <h3>Gents wear</h3>
+                              <a href="#">Shirts</a>
+                              <a href="#">Trousers</a>
+                              <a href="#">Denims</a>
+                              <a href="#">Shorts</a>
+                              <a href="#">T-shirts</a>
+                              <a href="#">Groom Dresses</a>
+                      </div>
+                      <div class="column">
+                              <h3>Kids wear</h3>
+                              <a href="#">School Uni Forms</a>
+                              <a href="#">T-shirt</a>
+                              <a href="#">Trousers</a>
+                              <a href="#">Frocks</a>
+                              <a href="#">skirts</a>
+                      </div>
+                  </div>
+              </div>
+           </div>
+        </div>
       <nav>
         <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
