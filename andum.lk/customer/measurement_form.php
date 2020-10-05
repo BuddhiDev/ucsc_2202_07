@@ -125,13 +125,13 @@ button:hover {
 
       </div>
       <div class="col-25">
-        <lable for="neck" class="input-field">Neck:</label>
+        <lable for="neck" class="input-field" style="color:black;">Neck:</label>
         <img src="" class="image">
       </div>
 
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Neck" name="neck">
-        <select class="option" name="Unit" id="unit">
+        <select class="option" name="Unit" id="unit" style="color:white;">
           <option>in</option>
           <option>cm</option>
         </select>
@@ -140,14 +140,14 @@ button:hover {
 
     <div class="row">
       <div class="col-25">
-        <lable for="chest" class="input-field">Chest:</label>
+        <lable for="chest" class="input-field" style="color:black;">Chest:</label>
         <img src="" class="image">
       </div>
 
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Chest" name="chest">
-        <select class="option" name="Unit" id="unit">
-          <option>in</option>
+        <select class="option" name="Unit" id="unit" style="color:white;">
+          <option >in</option>
           <option>cm</option>
         </select>
       </div>
@@ -155,12 +155,12 @@ button:hover {
 
     <div class="row">
       <div class="col-25">
-          <lable for="waist" class="input-field">Waist:</label>
+          <lable for="waist" class="input-field" style="color:black;">Waist:</label>
           <img src="" class="image">
       </div>
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Waist" name="waist">
-        <select class="option" name="Unit" id="unit">
+        <select class="option" name="Unit" id="unit" style="color:white;">
           <option>in</option>
           <option>cm</option>
         </select>
@@ -169,12 +169,12 @@ button:hover {
 
     <div class="row">
       <div class="col-25">
-        <lable for="seat" class="input-field">Seat:</label>
+        <lable for="seat" class="input-field" style="color:black;">Seat:</label>
         <img src="" class="image">
       </div>
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Seat" name="seat">
-        <select class="option" name="Unit" id="unit">
+        <select class="option" name="Unit" id="unit" style="color:white;">
           <option>in</option>
           <option>cm</option>
         </select>

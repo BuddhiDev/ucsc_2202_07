@@ -141,7 +141,7 @@ require("server.php");
             <label for="utype" class="field-label-inline"><b>User Type</b></label>
             <!-- <input type="text" class="field-value-inline" name="utype" required> -->
 
-            <select class="option" name="Usertype" id="user">
+            <select class="option" name="Usertype" id="user" style="color:white;">
               <option>Customer</option>
               <option>Tailor</option>
               <option>Fashion designer</option>
