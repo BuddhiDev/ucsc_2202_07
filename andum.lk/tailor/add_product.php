@@ -5,26 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
-<!--<style>
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-.option{
-  background-color: #EB2188;
-  padding: 8px 10px;
-  border-radius: 25px;
-}
-
-</style>-->
 
 </head>
 
@@ -113,7 +93,7 @@
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
-        <select class="option" name="Size" id="size" style="color:white;">
+        <select class="option" name="Size" id="size">
           <option value="1">M</option>
           <option value="2">L</option>
           <option value="3">XL</option>
@@ -138,5 +118,5 @@
 
 
   <?php require("footer.php")?>
-  </body>
-  </html>
+</body>
+</html>
