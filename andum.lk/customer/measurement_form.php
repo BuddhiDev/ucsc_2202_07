@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
 
+
 <style>
 .col-25 {
   float: left;
@@ -98,7 +99,7 @@ button:hover {
         <img src="" class="image">
       </div>
       <div class="col-75">
-        <select class="option" name="Unit" id="unit">
+        <select class="option" name="Unit" id="unit" style="color:white;">
           <optgroup label="Ladies wear">
             <option value="1">Blouse</option>
             <option value="2">skirt</option>
@@ -131,13 +132,13 @@ button:hover {
   <div>
     <div class="row">
       <div class="col-25">
-        <lable for="neck" class="input-field">Neck:</label>
+        <lable for="neck" class="input-field" style="color:black;">Neck:</label>
         <img src="" class="image">
       </div>
 
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Neck" name="neck">
-        <select class="option" name="Unit" id="unit">
+        <select class="option" name="Unit" id="unit" style="color:white;">
           <option>in</option>
           <option>cm</option>
         </select>
@@ -146,14 +147,14 @@ button:hover {
 
     <div class="row">
       <div class="col-25">
-        <lable for="chest" class="input-field">Chest:</label>
+        <lable for="chest" class="input-field" style="color:black;">Chest:</label>
         <img src="" class="image">
       </div>
 
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Chest" name="chest">
-        <select class="option" name="Unit" id="unit">
-          <option>in</option>
+        <select class="option" name="Unit" id="unit" style="color:white;">
+          <option >in</option>
           <option>cm</option>
         </select>
       </div>
@@ -161,12 +162,12 @@ button:hover {
 
     <div class="row">
       <div class="col-25">
-          <lable for="waist" class="input-field">Waist:</label>
+          <lable for="waist" class="input-field" style="color:black;">Waist:</label>
           <img src="" class="image">
       </div>
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Waist" name="waist">
-        <select class="option" name="Unit" id="unit">
+        <select class="option" name="Unit" id="unit" style="color:white;">
           <option>in</option>
           <option>cm</option>
         </select>
@@ -175,12 +176,12 @@ button:hover {
 
     <div class="row">
       <div class="col-25">
-        <lable for="seat" class="input-field">Seat:</label>
+        <lable for="seat" class="input-field" style="color:black;">Seat:</label>
         <img src="" class="image">
       </div>
       <div class="col-75">
         <input class="input-field" type="text" placeholder="Seat" name="seat">
-        <select class="option" name="Unit" id="unit">
+        <select class="option" name="Unit" id="unit" style="color:white;">
           <option>in</option>
           <option>cm</option>
         </select>
@@ -192,7 +193,7 @@ button:hover {
       <p>other</p>
       <textarea name="message" rows="20" cols="50"></textarea>
     </div>
-	  <button type="submit" class="btn">Submit</button>
+	  <button type="submit" class="btn" style="color:white;">Submit</button>
 
   </form>
 </div>

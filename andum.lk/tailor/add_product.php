@@ -58,7 +58,7 @@
           <lable for="type" class="field-label-inline">Category:</label>
         </div>
         <div class="col-75">
-          <select class="option" name="Unit" id="unit">
+          <select class="option" name="Unit" id="unit" style="color:white;">
             <optgroup label="Ladies wear">
               <option value="1">Blouse</option>
               <option value="2">skirt</option>
@@ -113,7 +113,7 @@
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
-        <select class="option" name="Size" id="size">
+        <select class="option" name="Size" id="size" style="color:white;">
           <option value="1">M</option>
           <option value="2">L</option>
           <option value="3">XL</option>
