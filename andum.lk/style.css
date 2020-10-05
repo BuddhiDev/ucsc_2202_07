@@ -325,3 +325,43 @@ button:hover {
         padding: 0 10px;
 }
 
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  .input-field {
+    width: 60%;
+    padding: 10px;
+    outline: none;
+    border-radius: 25px;
+  
+  }
+  
+  .input-field:focus {
+    border: 2px solid black;
+  }
+  
+  
+  
+  
+  .option{
+    background-color: #EB2188;
+    padding: 8px 10px;
+    border-radius: 25px;
+  }
+
+  .measure{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
