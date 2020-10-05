@@ -56,6 +56,14 @@ require("server.php");
                               <a href="#">T-shirts</a>
                               <a href="#">Groom Dresses</a>
                       </div>
+                      <div class="column">
+                              <h3>Kids wear</h3>
+                              <a href="#">School Uni Forms</a>
+                              <a href="#">T-shirt</a>
+                              <a href="#">Trousers</a>
+                              <a href="#">Frocks</a>
+                              <a href="#">skirts</a>
+                      </div>
                   </div>
               </div>
            </div>
@@ -67,7 +75,7 @@ require("server.php");
           <li><a href="#">Explore</a></li>
           <li><a href="#">Hire a Tailor</a></li>
           <li><a href="#">Hire a Fashion Designer</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
 
         </ul>
       </nav>
