@@ -100,6 +100,7 @@ if (!isset($_SESSION['nic'])) {
     </form>
 
 
+
 <?php require("footer.php")?>
 
 
