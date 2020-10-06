@@ -1,3 +1,10 @@
+<?php
+require("../server.php");
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +35,17 @@
 <!-- edit profile form-->
 
       <form>
+        <?php
+        $nic = $_SESSION['nic'];
+      $sql= "SELECT * FROM users WHERE nic=$nic";
+        // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
+        $result = mysqli_query($db, $sql);
+
+        if ($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+
         <div class="login-container">
           <h1>Edit Profile</h1>
           <center>
@@ -35,33 +53,33 @@
         </center>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
-            <input type="text" class="field-value-inline" name="nic" required>
+            <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" required>
           </div>
 
           <div class="form-field-inline">
             <label for="email" class="field-label-inline"><b>Email Address</b></label>
-            <input type="text" class="field-value-inline" name="email" required>
+            <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" required>
           </div>
 
           <div class="form-field-inline">
             <label for="fname" class="field-label-inline"><b>First Name</b></label>
-            <input type="text" class="field-value-inline" name="fname" required>
+            <input type="text" value="<?php echo $row["fname"]?>" class="field-value-inline" name="fname" required>
           </div>
 
           <div class="form-field-inline">
             <label for="lname" class="field-label-inline"><b>Last Name</b></label>
-            <input type="text" class="field-value-inline" name="lname" required>
+            <input type="text" value="<?php echo $row["lname"]?>" class="field-value-inline" name="lname" required>
           </div>
 
           <div class="form-field-inline">
             <label for="password" class="field-label-inline"><b>Passsword</b></label>
-            <input type="password" class="field-value-inline" name="password" required>
+            <input type="password" value="<?php echo $row["password"]?>"class="field-value-inline" name="password" required>
           </div>
 
 
           <div class="form-field-inline">
             <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
-            <input type="text" class="field-value-inline" name="contactno">
+            <input type="text" value="<?php echo $row["contactno"]?>" class="field-value-inline" name="contactno">
           </div>
 
           <div class="form-field-inline">
@@ -158,12 +176,16 @@
 
         <br>
         <br>
-        
+
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
             <button class="loginbutton btn-full-w" type="submit" name="register">Save</button>
           </div>
+          <?php
+            }
+          }
+          ?>
 
           <!-- <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
