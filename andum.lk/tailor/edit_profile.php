@@ -37,7 +37,8 @@ require("../server.php");
       <form>
         <?php
         $nic = $_SESSION['nic'];
-        $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
+      $sql= "SELECT * FROM users WHERE nic=$nic";
+        // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
         $result = mysqli_query($db, $sql);
 
         if ($result) {
