@@ -124,6 +124,15 @@ button:hover {
     margin: 10px auto;
 }
 
+.casual-btn{
+    padding: 9px 25px;
+    background-color:#EB2188;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
 /* footer */
 
 .footer{
@@ -237,6 +246,12 @@ button:hover {
       text-decoration: none;
       text-align: center;
   }
+
+  .image{
+    cursor: pointer;
+    height: 50px;
+
+}
 
   .img-box{
       height: 250px;
@@ -353,7 +368,7 @@ button:hover {
   
   
   .option{
-    background-color: #EB2188;
+    background-color: #ffffff;
     padding: 8px 10px;
     border-radius: 25px;
   }

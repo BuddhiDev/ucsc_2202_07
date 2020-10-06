@@ -80,9 +80,8 @@ button:hover {
 
 <!--measurement form-->
   <div class="input-container">
-    <form action="/action_page.php" style="max-width:500px;margin:auto">
-    <div class="measuer">
-      <h2>Get Measured</h2>
+    <form action="/action_page.php" style="max-width:1024px;margin:auto">
+    <h2>Get Measured</h2>
       <div class="row">
         <div class="col-25">
           <lable for="type" class="input-field">Category:</label>
@@ -117,77 +116,60 @@ button:hover {
             </optgroup>
           </select>
         </div>
-  </div>
-
+      </div>
+  
   <div>
     <div class="row">
-      <div>
-
-      </div>
-      <div class="col-25">
-        <lable for="neck" class="input-field" style="color:black;">Neck:</label>
-        <img src="" class="image">
-      </div>
-
-      <div class="col-75">
+      <div class="col-50">
+      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+        <lable for="neck" class="input-field" style="">Neck:</label>
         <input class="input-field" type="text" placeholder="Neck" name="neck">
-        <select class="option" name="Unit" id="unit" style="color:white;">
+
+        <select class="option" name="Unit" id="unit" style="">
           <option>in</option>
           <option>cm</option>
         </select>
       </div>
-    </div>
+      <div class="col-50">
+      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
 
-    <div class="row">
-      <div class="col-25">
-        <lable for="chest" class="input-field" style="color:black;">Chest:</label>
-        <img src="" class="image">
-      </div>
-
-      <div class="col-75">
-        <input class="input-field" type="text" placeholder="Chest" name="chest">
-        <select class="option" name="Unit" id="unit" style="color:white;">
-          <option >in</option>
-          <option>cm</option>
-        </select>
-      </div>
-   </div>
-
-    <div class="row">
-      <div class="col-25">
-          <lable for="waist" class="input-field" style="color:black;">Waist:</label>
-          <img src="" class="image">
-      </div>
-      <div class="col-75">
-        <input class="input-field" type="text" placeholder="Waist" name="waist">
-        <select class="option" name="Unit" id="unit" style="color:white;">
+        <lable for="neck" class="input-field" style="">Neck:</label>
+        <input class="input-field" type="text" placeholder="Neck" name="neck">
+        
+        <select class="option" name="Unit" id="unit" style="">
           <option>in</option>
           <option>cm</option>
         </select>
       </div>
-    </div>
+      <div class="col-50">
+      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+        <lable for="neck" class="input-field" style="">Neck:</label>
+        <input class="input-field" type="text" placeholder="Neck" name="neck">
 
-    <div class="row">
-      <div class="col-25">
-        <lable for="seat" class="input-field" style="color:black;">Seat:</label>
-        <img src="" class="image">
-      </div>
-      <div class="col-75">
-        <input class="input-field" type="text" placeholder="Seat" name="seat">
-        <select class="option" name="Unit" id="unit" style="color:white;">
+        <select class="option" name="Unit" id="unit" style="">
           <option>in</option>
           <option>cm</option>
         </select>
       </div>
-    </div>
+      <div class="col-50">
+      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+        <lable for="neck" class="input-field" style="">Neck:</label>
+        <input class="input-field" type="text" placeholder="Neck" name="neck">
 
+        <select class="option" name="Unit" id="unit" style="">
+          <option>in</option>
+          <option>cm</option>
+        </select>
+      </div>
+
+   
 
     <div >
       <p>other</p>
       <textarea name="message" rows="20" cols="50"></textarea>
     </div>
-	  <button type="submit" class="btn">Submit</button>
-    </div>
+	  <button type="submit" class="casual-btn">Submit</button>
+  </div>
   </form>
 </div>
 
