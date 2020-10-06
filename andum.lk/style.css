@@ -46,7 +46,7 @@ header {
 
 @font-face {
     font-family: muli;
-    src: url(C:\xampp\htdocs\ucsc_2202_07\andum.lk\fonts\Muli);
+    src: url('./fonts/Muli/static/Muli-Regular.ttf');
   }
 
 .nav-area {
@@ -371,6 +371,7 @@ button:hover {
   .input-field {
     width: 60%;
     padding: 10px;
+    font-family: muli;
     color: black;
     outline: none;
     border-radius: 25px;
@@ -387,7 +388,7 @@ button:hover {
   .option{
     background-color: #ffffff;
     padding: 8px 10px;
-    color: black;
+    color: #7b7775;
     border-radius: 25px;
     border: 1px solid #ccc;
   }
