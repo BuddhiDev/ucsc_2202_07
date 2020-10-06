@@ -26,7 +26,12 @@ form {
     font-family: muli;
     text-align: center;
     font-size: 14px;
-    font-weight: 500;
+    font-family: Muli-Bold;
+  }
+
+  .loginbutton:hover{
+    color: white;
+    font-family:Muli-Bold;
   }
 
   .tailor-form {

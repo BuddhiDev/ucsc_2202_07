@@ -49,6 +49,31 @@ header {
     src: url('./fonts/Muli/static/Muli-Regular.ttf');
   }
 
+  @font-face {
+    font-family: Muli-ExtraBold;
+    src: url('./fonts/Muli/static/Muli-ExtraBold.ttf');
+  }
+
+  @font-face {
+    font-family: Muli-Light;
+    src: url('./fonts/Muli/static/Muli-Light.ttf');
+  }
+
+  @font-face {
+    font-family: Muli-Medium;
+    src: url('./fonts/Muli/static/Muli-Medium.ttf');
+  }
+
+  @font-face {
+    font-family:Muli-Bold;
+    src: url('./fonts/Muli/static/Muli-Bold.ttf');
+  }
+
+  @font-face {
+    font-family:Muli-SemiBold;
+    src: url('./fonts/Muli/static/Muli-SemiBold.ttf');
+  }
+
 .nav-area {
     list-style: none;
 }
@@ -418,8 +443,31 @@ button:hover {
 
   .f1{
     flex: 1;
-    margin: 10px;
-    padding: 10px;
+  }
+
+  .f2{
+      flex:2;
+  }
+
+  .align-c{
+      align-items: center;
+  }
+
+  .title-lg{
+    
+    font-size: 54px;
+    font-family: Muli-ExtraBold;
+  }
+
+  .title-lg-light{
+    font-size: 22px;
+    color: #555555;
+    margin: 10px 0px;
+    font-family: Muli-Light;
+  }
+
+  .landing-text-content{
+    padding: 0 10%;
   }
 
 .txt-area{
@@ -432,6 +480,14 @@ button:hover {
 
 }
 
+button:focus{
+    outline: none;
+}
+
+.landing-btn-section{
+    margin:15px 0px;
+}
+
 .h2 {
     flex: 1;
     margin: 10px;
@@ -440,4 +496,14 @@ button:hover {
 
 .measure-card-value {
     color: #ccc;
+}
+
+
+.slideshow-container{
+    height: 90vh;
+    overflow: hidden;
+}
+
+.mySlides img{
+    width:100%;
 }

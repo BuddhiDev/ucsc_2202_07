@@ -29,27 +29,50 @@
     </header>
   </div>
 
-<!-- Slideshow container -->
-<div class="slideshow-container">
-  <div class="mySlides fade">
-    <img src="t-01.jpeg" style="width:100%">
-  </div>
-  <div class="mySlides fade">
-    <img src="t-02.jpeg" style="width:100%">
-  </div>
-  <div class="mySlides fade">
-    <img src="t-03.jpeg" style="width:100%">
-  </div>
-  <!-- <div class="mySlides fade">
-    <img src="images/pexels-ray-piedra-1478477.jpg" style="width:100%">
-  </div>
 
-  <div class="mySlides fade">
-    <img src="images/pexels-artem-beliaikin-1100790.jpg" style="width:100%">
-  </div>
-  <div class="mySlides fade">
-    <img src="images/pexels-cottonbro-4621921.jpg" style="width:100%">
-  </div> -->
+
+<div class="d-flex align-c">
+    <div class="f1">
+      <div class="landing-text-content">
+        <div class="title-lg">Are you looking for a unique dress ?</div>
+        <div class="title-lg-light">Andum.lk is a platform for all fashion designers and Tailors</div>
+        <div class="landing-btn-section">
+          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Tailor</button></a>
+          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Fashion Designer</button></a>
+        </div>
+        
+      </div>
+    </div>
+    <div class="f1">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img src="images/img22.jpg">
+          </div>
+          <div class="mySlides fade">
+            <img src="images/img55.jpg">
+          </div>
+          <div class="mySlides fade">
+            <img src="images/img66.jpg">
+          </div>
+          <div class="mySlides fade">
+            <img src="images/img33.jpg">
+          </div>
+          <div class="mySlides fade">
+            <img src="images/img11.jpg">
+          </div>
+          <!-- <div class="mySlides fade">
+            <img src="images/pexels-ray-piedra-1478477.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="images/pexels-artem-beliaikin-1100790.jpg" style="width:100%">
+          </div>
+          <div class="mySlides fade">
+            <img src="images/pexels-cottonbro-4621921.jpg" style="width:100%">
+          </div> -->
+        </div>
+    </div>
 </div>
 
 <br>
