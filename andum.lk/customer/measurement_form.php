@@ -96,11 +96,11 @@
         </div>
         <div class="f1">
           <div class="measure-card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
+            <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
           </div>
           <div class="measure-card-value">
             <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-            <input class="input-field" type="text" placeholder="Waist" name="waist">
+            <input class="input-field" type="text" placeholder="Chest" name="chest">
             <select class="option" name="Unit" id="unit" style="">
               <option>in</option>
               <option>cm</option>
@@ -113,11 +113,11 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+              <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <input class="input-field" type="text" placeholder="Waist" name="waist">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -128,44 +128,11 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+              <img src="/ucsc_2202_07/andum.lk/images/realhip-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <input class="input-field" type="text" placeholder="Seat" name="seat">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -179,11 +146,11 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+              <img src="/ucsc_2202_07/andum.lk/images/shirtl-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <input class="input-field" type="text" placeholder="Shirt Length" name="shirtlength">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -194,11 +161,11 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+              <img src="/ucsc_2202_07/andum.lk/images/back-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulderwidth">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -212,11 +179,11 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+              <img src="/ucsc_2202_07/andum.lk/images/arm-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <input class="input-field" type="text" placeholder="Arm Length" name="armlength">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -227,11 +194,44 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+              <img src="/ucsc_2202_07/andum.lk/images/cuff-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <input class="input-field" type="text" placeholder="Wrist" name="wrist">
+              <select class="option" name="Unit" id="unit" style="">
+                <option>in</option>
+                <option>cm</option>
+              </select>
+            </div>                             
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex">
+        <div class="f1">
+          <div class="measure-card">
+            <div class="measure-card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/bicep-01.png" class="body-img">
+            </div>
+            <div class="measure-card-value">
+              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+              <input class="input-field" type="text" placeholder="Biceps" name="biceps">
+              <select class="option" name="Unit" id="unit" style="">
+                <option>in</option>
+                <option>cm</option>
+              </select>
+            </div>                             
+          </div>
+        </div>
+        <div class="f1">
+          <div class="measure-card">
+            <div class="measure-card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/hip-01.png" class="body-img">
+            </div>
+            <div class="measure-card-value">
+              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+              <input class="input-field" type="text" placeholder="Hip" name="hip">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
