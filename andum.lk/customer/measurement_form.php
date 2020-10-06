@@ -83,7 +83,7 @@
       <div class="d-flex">
         <div class="f1">
           <div class="measure-card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
           </div>
           <div class="measure-card-value">
             <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -96,7 +96,7 @@
         </div>
         <div class="f1">
           <div class="measure-card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class=logo>
+            <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
           </div>
           <div class="measure-card-value">
             <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -113,7 +113,7 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -128,40 +128,7 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -179,7 +146,7 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -194,7 +161,7 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -212,7 +179,7 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -227,7 +194,40 @@
         <div class="f1">
           <div class="measure-card">
             <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+            </div>
+            <div class="measure-card-value">
+              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <select class="option" name="Unit" id="unit" style="">
+                <option>in</option>
+                <option>cm</option>
+              </select>
+            </div>                             
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex">
+        <div class="f1">
+          <div class="measure-card">
+            <div class="measure-card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+            </div>
+            <div class="measure-card-value">
+              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <select class="option" name="Unit" id="unit" style="">
+                <option>in</option>
+                <option>cm</option>
+              </select>
+            </div>                             
+          </div>
+        </div>
+        <div class="f1">
+          <div class="measure-card">
+            <div class="measure-card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->

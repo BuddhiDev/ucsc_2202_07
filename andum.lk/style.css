@@ -32,6 +32,12 @@ header {
 
 }
 
+.body-img {
+    cursor: pointer;
+    height: 100px;
+
+}
+
 .footer-logo {
     cursor: pointer;
     height: 100px;
@@ -365,6 +371,7 @@ button:hover {
   .input-field {
     width: 60%;
     padding: 10px;
+    color: black;
     outline: none;
     border-radius: 25px;
     border: 1px solid #ccc;
@@ -380,6 +387,7 @@ button:hover {
   .option{
     background-color: #ffffff;
     padding: 8px 10px;
+    color: black;
     border-radius: 25px;
     border: 1px solid #ccc;
   }
@@ -421,4 +429,8 @@ button:hover {
     flex: 1;
     margin: 10px;
     padding: 10px;
+}
+
+.measure-card-value {
+    color: #ccc;
 }
