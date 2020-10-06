@@ -126,6 +126,7 @@ button:hover {
 
 .casual-btn{
     padding: 9px 25px;
+    margin: 10px;
     background-color:#EB2188;
     border: none;
     border-radius: 50px;
@@ -404,3 +405,20 @@ button:hover {
     flex: 1;
     margin: 10px;
     padding: 10px;
+  }
+
+.txt-area{
+    background-color: #ffffff;
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+
+}
+
+.h2 {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+}
