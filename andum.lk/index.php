@@ -32,6 +32,15 @@
 <!-- Slideshow container -->
 <div class="slideshow-container">
   <div class="mySlides fade">
+    <img src="t-01.jpeg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="t-02.jpeg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="t-03.jpeg" style="width:100%">
+  </div>
+  <!-- <div class="mySlides fade">
     <img src="images/pexels-ray-piedra-1478477.jpg" style="width:100%">
   </div>
 
@@ -40,7 +49,7 @@
   </div>
   <div class="mySlides fade">
     <img src="images/pexels-cottonbro-4621921.jpg" style="width:100%">
-  </div>
+  </div> -->
 </div>
 
 <br>
