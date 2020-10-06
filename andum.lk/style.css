@@ -351,6 +351,14 @@ button:hover {
     width: 50%;
     margin: 10px;
     padding: 10px;
+    flex: 1;
+  }
+
+  .row {
+    float: inherit;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
   }
 
   .input-field {
@@ -358,7 +366,7 @@ button:hover {
     padding: 10px;
     outline: none;
     border-radius: 25px;
-
+    border: 1px solid #ccc;
   }
 
   .input-field:focus {
@@ -372,7 +380,7 @@ button:hover {
     background-color: #ffffff;
     padding: 8px 10px;
     border-radius: 25px;
-    color:white;
+    border: 1px solid #ccc;
   }
 
   .measure{
@@ -387,3 +395,12 @@ button:hover {
       padding: 10px;
 
   }
+
+  .d-flex{
+      display: flex;
+  }
+
+  .f1{
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
