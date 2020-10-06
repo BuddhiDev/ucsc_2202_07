@@ -3,60 +3,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-<!-- <style>
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-.input-field {
-  width: 60%;
-  padding: 10px;
-  outline: none;
-  border-radius: 25px;
-
-}
-
-.input-field:focus {
-  border: 2px solid black;
-}
-
-.option{
-  background-color: #EB2188;
-  padding: 8px 10px;
-  border-radius: 25px;
-}
-
-/* Set a style for the submit button */
-button {
-    padding: 9px 25px;
-    background-color:#EB2188;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    text-align: center;
-}
-
-.button {
-    display: flex 2;
-    background-color:#F5F3FF;
-    color: black;
-}
-
-button:hover {
-    color: black;
-}
-
-</style> -->
-
 </head>
 
 <body>
@@ -77,10 +23,10 @@ button:hover {
     </header>
   </div>
 
-<!--measurement form-->
+  <!--measurement form-->
   <div class="input-container">
     <form action="/action_page.php" style="max-width:1024px;margin:auto">
-    <h2>Get Measured</h2>
+      <h2>Get Measured</h2>
       <div class="row">
         <div class="col-25">
           <lable for="type" class="input-field">Category:</label>
@@ -115,63 +61,55 @@ button:hover {
             </optgroup>
           </select>
         </div>
+      </div> 
+      <div>
+        <div class="row">
+          <div class="col-75">
+            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+            <lable for="neck" class="input-field" style="">Neck:</label>
+            <input class="input-field" type="text" placeholder="Neck" name="neck">
+            <select class="option" name="Unit" id="unit" style="">
+              <option>in</option>
+              <option>cm</option>
+            </select>
+          </div>
+          <div class="col-75">
+          <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+            <lable for="neck" class="input-field" style="">Neck:</label>
+            <input class="input-field" type="text" placeholder="Neck" name="neck">
+            <select class="option" name="Unit" id="unit" style="">
+              <option>in</option>
+              <option>cm</option>
+            </select>
+          </div>
+          <div class="col-75">
+            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+            <lable for="neck" class="input-field" style="">Neck:</label>
+            <input class="input-field" type="text" placeholder="Neck" name="neck">
+            <select class="option" name="Unit" id="unit" style="">
+              <option>in</option>
+              <option>cm</option>
+            </select>
+          </div>
+          <div class="col-75">
+            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
+            <lable for="neck" class="input-field" style="">Neck:</label>
+            <input class="input-field" type="text" placeholder="Neck" name="neck">
+            <select class="option" name="Unit" id="unit" style="">
+              <option>in</option>
+              <option>cm</option>
+            </select>
+          </div>
+          <div class="text-area">
+          <lable for="other" style="">Other:</label>
+            <textarea name="message" rows="20" cols="50"></textarea>
+          </div>
+          <button type="submit" class="casual-btn">Submit</button>
+        </div>        
+               
       </div>
-  
-  <div>
-    <div class="row">
-      <div class="col-50">
-      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
-        <lable for="neck" class="input-field" style="">Neck:</label>
-        <input class="input-field" type="text" placeholder="Neck" name="neck">
-
-        <select class="option" name="Unit" id="unit" style="">
-          <option>in</option>
-          <option>cm</option>
-        </select>
-      </div>
-      <div class="col-50">
-      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
-
-        <lable for="neck" class="input-field" style="">Neck:</label>
-        <input class="input-field" type="text" placeholder="Neck" name="neck">
-        
-        <select class="option" name="Unit" id="unit" style="">
-          <option>in</option>
-          <option>cm</option>
-        </select>
-      </div>
-      <div class="col-50">
-      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
-        <lable for="neck" class="input-field" style="">Neck:</label>
-        <input class="input-field" type="text" placeholder="Neck" name="neck">
-
-        <select class="option" name="Unit" id="unit" style="">
-          <option>in</option>
-          <option>cm</option>
-        </select>
-      </div>
-      <div class="col-50">
-      <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class=logo>
-        <lable for="neck" class="input-field" style="">Neck:</label>
-        <input class="input-field" type="text" placeholder="Neck" name="neck">
-
-        <select class="option" name="Unit" id="unit" style="">
-          <option>in</option>
-          <option>cm</option>
-        </select>
-      </div>
-
-   
-
-    <div >
-      <p>other</p>
-      <textarea name="message" rows="20" cols="50"></textarea>
-    </div>
-	  <button type="submit" class="casual-btn">Submit</button>
+    </form>
   </div>
-  </form>
-</div>
-
 
 <!--footer-->
 <?php require("footer.php")?>

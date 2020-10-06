@@ -347,9 +347,10 @@ button:hover {
   }
 
   .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
+    float: inherit;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
   }
 
   .input-field {
@@ -379,4 +380,10 @@ button:hover {
     padding: 0;
     box-sizing: border-box;
     text-align: center;
+  }
+
+  .text-area{
+      margin: 10px;
+      padding: 10px;
+
   }
