@@ -24,7 +24,7 @@ if (!isset($_SESSION['nic'])) {
   <div class="box">
     <header>
       <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      <?php require("navbar_category.php")?>
+      <?php require("../navbar_category.php")?>
       <nav>
         <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
@@ -35,8 +35,13 @@ if (!isset($_SESSION['nic'])) {
       </nav>
 
       <div>
+        <a class="cta" href="cust_edit_profile.php"><button name="edit" class="loginbutton btn-full-w">Edit profile</button></a>
+      </div>
+
+      <div>
         <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
       </div>
+
 
   </div>
 

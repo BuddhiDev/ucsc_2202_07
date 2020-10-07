@@ -17,7 +17,7 @@
         $fname = mysqli_real_escape_string($db,$_POST['fname']);
         $lname = mysqli_real_escape_string($db,$_POST['lname']);
         $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
-        $utype = mysqli_real_escape_string($db,$_POST['utype']);
+        $utype = mysqli_real_escape_string($db,$_POST['Usertype']);
         $addres = mysqli_real_escape_string($db,$_POST['address']);
         $postal = mysqli_real_escape_string($db,$_POST['postal']);
 
@@ -33,9 +33,17 @@
             mysqli_query($db,$sql);
 
             // insert user if tailor
-
+            if($utype==0)
+            {
+                $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
+                mysqli_query($db,$sql1);
+            }
 
             // insert user if customer
+            else if($utype==1){
+                $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
+                mysqli_query($db,$sql1);
+            }
 
             //save session cache
             $_SESSION['nic']=$nic;

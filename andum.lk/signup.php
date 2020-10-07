@@ -100,9 +100,9 @@ require("server.php");
             <!-- <input type="text" class="field-value-inline" name="utype" required> -->
 
             <select class="option" name="Usertype" id="user">
-              <option>Customer</option>
-              <option>Tailor</option>
-              <option>Fashion designer</option>
+              <option value="1">Customer</option>
+              <option value="0">Tailor</option>
+              <option value="2">Fashion designer</option>
             </select>
 
           </div>
