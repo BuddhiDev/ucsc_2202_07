@@ -30,6 +30,11 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="#">Manage Sales</a></li>
         </ul>
       </nav>
+
+      <div>
+        <a class="cta" href="edit_profile.php"><button name="edit" class="loginbutton btn-full-w">Edit profile</button></a>
+      </div>
+
       <div>
         <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
       </div>
