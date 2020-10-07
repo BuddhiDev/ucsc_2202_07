@@ -17,7 +17,7 @@
         $fname = mysqli_real_escape_string($db,$_POST['fname']);
         $lname = mysqli_real_escape_string($db,$_POST['lname']);
         $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
-        $utype = mysqli_real_escape_string($db,$_POST['utype']);
+        $utype = mysqli_real_escape_string($db,$_POST['Usertype']);
         $addres = mysqli_real_escape_string($db,$_POST['address']);
         $postal = mysqli_real_escape_string($db,$_POST['postal']);
 
