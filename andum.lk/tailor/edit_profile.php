@@ -13,6 +13,12 @@ require("../server.php");
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/tailor/checkbox.css">
 
+    <style>
+      img {
+        border-radius: 50%;
+      }
+  </style>
+
 </head>
 <body>
           <div class="box">
