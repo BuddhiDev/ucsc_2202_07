@@ -24,7 +24,7 @@ if (!isset($_SESSION['nic'])) {
   <div class="box">
     <header>
       <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      <?php require("navbar_category.php")?>
+      <?php require("../navbar_category.php")?>
       <nav>
         <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
