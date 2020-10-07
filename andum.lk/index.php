@@ -12,13 +12,14 @@
   <div class="box">
     <header>
       <img class="logo" src="logo.png" alt="logo">
-      <?php require("navbar_category.php")?>
+      
       <nav>
         <ul class="nav-area">
             <li><a href="/ucsc_2202_07/andum.lk/explore.php">Explore</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/unregistered_user_hire_tailor.php">Hire a Tailor</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
+            <li><?php require("navbar_category.php")?></li>
 
         </ul>
       </nav>
@@ -104,6 +105,14 @@ function showSlides() {
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 </script>
+
+<div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Catering</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large">The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
 
 <!-- add a footer -->
 <?php require("footer.php")?>

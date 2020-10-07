@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/navbar_category.css">
   </head>
   <body>
     <div class="navbardrop">

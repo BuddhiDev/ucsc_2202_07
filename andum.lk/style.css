@@ -507,3 +507,10 @@ button:focus{
 .mySlides img{
     width:100%;
 }
+
+.mega-dropdown{
+    float: left;
+    padding: 50px;
+    margin: 50px;
+
+}
