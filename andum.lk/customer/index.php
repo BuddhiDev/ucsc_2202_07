@@ -17,6 +17,12 @@ if (!isset($_SESSION['nic'])) {
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+.checked {
+  color: orange;
+}
+</style>
 
 </head>
 
@@ -82,7 +88,9 @@ if (!isset($_SESSION['nic'])) {
                         <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                         <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
 
-                        <?php echo $row["nic"] ?>
+
+
+                      
                       </b></h4>
                     <b>
                       <?php echo $row["fname"] ?> &nbsp;<?php echo $row["lname"] ?>
