@@ -378,7 +378,47 @@ button:hover {
         padding: 0 10px;
 }
 
-.col-25 {
+/* --------Grid Layout------- */
+
+  .row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .col-1{
+    flex: 0 0 8.3333333%;
+    max-width: 8.3333333%;
+  }
+
+  .col-2{
+    flex: 0 0 16.666666%;
+    max-width: 16.666666%;
+  }
+
+  .col-3{
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-4{
+    flex: 0 0 33.333333%;
+    max-width: 33.333333;
+  }
+  
+  .col-5{
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .col-6{
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-25 {
     float: left;
     width: 25%;
     margin-top: 6px;
@@ -392,12 +432,7 @@ button:hover {
     flex: 1;
   }
 
-  .row {
-    float: inherit;
-    width: 50%;
-    margin: 10px;
-    padding: 10px;
-  }
+  /* --------Grid Layout Ends------- */
 
   .input-field {
     width: 60%;
@@ -514,3 +549,33 @@ button:focus{
     margin: 50px;
 
 }
+
+/* ------------Card Styles------------------- */
+
+.card-item{
+    background: #fafafa;
+    border-radius: 4px;
+    margin: 20px 10px;
+}
+
+.card-item .card-img{
+    height: 380px;
+    overflow: hidden;
+}
+
+.card-item .card-content{
+    padding: 10px;
+    font-size: 12px;
+}
+
+.card-item .card-content .card-title{
+    font-size: 14px;
+    font-family:Muli-Bold;
+    margin-bottom: 5px;
+}
+
+.card-item .card-content .card-description{
+    color: #484848;
+}
+
+/* ------------Card Styles Ends------------------- */

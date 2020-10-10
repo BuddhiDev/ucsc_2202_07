@@ -81,6 +81,10 @@ if (!isset($_SESSION['nic'])) {
     if ($result) {
       while ($row = mysqli_fetch_assoc($result)) {
     ?>
+
+    <div>
+      <div class="f1"></div>
+    </div>
         <div class="slider-box">
           <form method="post" action="dress_showcase.php" class="tailor-form">
             <table>
