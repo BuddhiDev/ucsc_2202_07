@@ -628,15 +628,15 @@ nav ul > li.dropdown > a:after{
 }
 
 
-nav > ul > li:hover{
-  background: black;
-}
+/* nav > ul > li:hover{
+  background: #fafafa;
+} */
 
 nav ul.menu-area{
   padding: 40px 40px 0 40px;
   background: #ffffff;
   text-align: left;
-  border-top: 5px solid #164c82;
+  border-top: 5px solid #ffffff;
   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
   z-index: 1;
   position: absolute;
@@ -677,7 +677,7 @@ nav ul.menu-area ul li a{
 }
 
 nav ul.menu-area ul li a:hover{
-  color: #164c82;
+  color: #ffffff;
 }
 
 /* -------------Dropdown Styles Ends-------------- */
