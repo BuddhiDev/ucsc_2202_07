@@ -566,11 +566,11 @@ button:focus{
 
 .card-item .card-content{
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .card-item .card-content .card-title{
-    font-size: 14px;
+    font-size: 18px;
     font-family:Muli-Bold;
     margin-bottom: 5px;
 }

@@ -154,8 +154,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -170,8 +172,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -186,8 +190,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -209,8 +215,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -225,8 +233,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -241,8 +251,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -264,8 +276,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -280,8 +294,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
@@ -296,8 +312,10 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    Casual Summer Top
+                </div>
+                <div class="card-description">
+                    LKR 2,500
                 </div>
               </div>
             </div>
