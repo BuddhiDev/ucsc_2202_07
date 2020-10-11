@@ -227,7 +227,7 @@ if (!isset($_SESSION['nic'])) {
     </div>
   </div>
 
-  </div> -->
+  </div> 
 <div class="container">
 <h2>Top Rated fashion Designers</h2>
   <div class="row">

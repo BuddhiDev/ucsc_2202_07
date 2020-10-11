@@ -16,29 +16,50 @@ if (!isset($_SESSION['nic'])) {
   <title>Andum.lk - Customer</title>
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-.checked {
-  color: orange;
-}
-</style>
-
 </head>
 
 <body>
   <div class="box">
     <header>
       <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      <?php require("../navbar_category.php")?>
+      <!-- <?php require("../navbar_category.php")?> -->
+      <div class="wrapper">
       <nav>
         <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
           <li><a href="dress_showcase.php">Dress Showcase</a></li>
           <li><a href="hired_list.php">Hired Tailors</a></li>
+          <li class="dropdown">
+            <a href="#">Shop Now</a>
+            <ul class="menu-area">
+              <ul>
+                <h4>Ladies wear</h4>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Dresses</a></li>
+              </ul>
+              <ul>
+                <h4>Gents wear</h4>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Dresses</a></li>
+              </ul>
+              <ul>
+                <h4>Kids wear</h4>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Dresses</a></li>
+              </ul>
+            </ul>
+
+
+          </li>
           <li><a href="purchases.php">Purchases</a></li>
         </ul>
       </nav>
+      </div>
+      
 
       <div>
         <a class="cta" href="cust_edit_profile.php"><button name="edit" class="loginbutton btn-full-w">Edit profile</button></a>
@@ -128,7 +149,7 @@ if (!isset($_SESSION['nic'])) {
           <form method="post" action="index.php" class="dress-showcase">
             <div class="card-item">
               <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
+              <a href="product.php"><img src="product1.jpg" alt="Avatar" style="width:100%"></a>
               </div>
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
