@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 10px;
+    padding: 20px 10px;
 
 }
 
@@ -673,11 +673,11 @@ nav ul.menu-area ul li{
 nav ul.menu-area ul li a{
   margin-top: 10px;
   color: #000000;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 nav ul.menu-area ul li a:hover{
-  color: #ffffff;
+    color: #EB2188;
 }
 
 /* -------------Dropdown Styles Ends-------------- */

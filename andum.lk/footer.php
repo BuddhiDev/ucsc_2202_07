@@ -9,12 +9,12 @@
       <div class="footer-content">
         <div class="footer-section about">
           <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
-          <h1 class="logo-txt"><span></span></h1>
+          <!-- <h1 class="logo-txt"><span></span></h1>
           <div class="socials">
             <a href="#"><i class="fas fa-facebook"></i></a>
             <a href="#"><i class="fas fa-instagram"></i></a>
             <a href="#"><i class="fas fa- google+"></i></a>
-          </div>
+          </div> -->
         </div>
         <div class="footer-section links">
           <ul>

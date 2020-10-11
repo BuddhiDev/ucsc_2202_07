@@ -76,7 +76,7 @@ if (!isset($_SESSION['nic'])) {
 
   </header>
   </div>
-  <center>
+  
 
     <br />
     <?php include("../errors.php");
@@ -308,7 +308,7 @@ if (!isset($_SESSION['nic'])) {
 
     </div>
 
-  </center>
+ 
 
   <!--footer-->
 <?php require("footer.php")?>
