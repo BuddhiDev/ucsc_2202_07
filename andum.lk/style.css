@@ -579,3 +579,20 @@ button:focus{
 }
 
 /* ------------Card Styles Ends------------------- */
+
+/* ------btn styles------------------ */
+
+.btn-primary-sm{
+    background-color: #EB2188;
+    color: white;
+    padding: 6px 22px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    font-family: muli;
+    text-align: center;
+    font-size: 8px;
+    font-family: Muli-Bold;
+}
+
+/* ------btn styles ends------------------ */

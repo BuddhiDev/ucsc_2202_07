@@ -39,20 +39,23 @@ if (!isset($_SESSION['nic'])) {
         <aside class="bg-gra-200 border-r border-gray-300">Left</aside>
         <main>Right</main>
     </div> -->
-  <div class="search-container">
-    <div class="form-field-inline">
-      <label for="uname" class="field-label-inline">Search by category</label>
-      <input type="text" class="field-value-inline" name="uname" required>
+
+    <div class="top-bar">
+      <div class="d-flex">
+          <div class="search-container">
+            <div class="form-field-inline">
+              <label for="uname" class="field-label-inline">Search by category</label>
+              <input type="text" class="field-value-inline" name="uname" required>
+            </div>
+          </div>
+
+          <div class="btn-panel-center">
+            <button class="loginbutton btn-full-w" type="submit">All</button> <br/>
+            <a href="add_product.php"><button class="loginbutton btn-full-w">Add New Dress</button></a>
+          </div>
+        </div>
     </div>
-  </div>
-
-  <div class="btn-panel-center">
-    <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
-            <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-    <button class="loginbutton btn-full-w" type="submit">All</button> <br/>
-    <a href="add_product.php"><button class="loginbutton btn-full-w">Add New Dress</button></a>
-  </div>
-
+ 
   <!-- <section class="products">
         <div class="product-container">
             <h1>ALL</h1>
@@ -121,10 +124,12 @@ if (!isset($_SESSION['nic'])) {
                 <img src="product1.jpg" alt="Avatar" style="width:100%">
               </div>
               <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
+                <div class="card-title">Summer casual top</div>
                 <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
+                    <span>LKR 1,500.00</span>
+                </div>
+                <div class="">
+                <a class="" href=""><button name="logout" class="btn-primary-sm">ADD TO CART</button></a>
                 </div>
               </div>
             </div>
