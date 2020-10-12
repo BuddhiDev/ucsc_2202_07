@@ -36,7 +36,7 @@ if (!isset($_SESSION['nic'])) {
               <ul>
                 <h4>Ladies wear</h4>
                 <li><a href="dresses.php">Dresses</a></li>
-                <li><a href="#">Work Wear</a></li>
+                <li><a href="workware_ladies.php">Work Wear</a></li>
                 <li><a href="#">Denims</a></li>
                 <li><a href="#">Tops</a></li>
                 <li><a href="#">T Shirts</a></li>
@@ -46,7 +46,7 @@ if (!isset($_SESSION['nic'])) {
                 <h4>Gents wear</h4>
                 <li><a href="#">Shirts</a></li>
                 <li><a href="#">Denims</a></li>
-                <li><a href="#">Work Wear</a></li>
+                <li><a href="workwear_gents.php">Work Wear</a></li>
                 <li><a href="#">T Shirts</a></li>
                 <li><a href="#">All Categories</a></li>
               </ul>
