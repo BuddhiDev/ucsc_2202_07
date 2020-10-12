@@ -12,7 +12,7 @@
   <div class="box">
     <header>
       <img class="logo" src="logo.png" alt="logo">
-      
+
       <nav>
         <ul class="nav-area">
             <li><a href="/ucsc_2202_07/andum.lk/explore.php">Explore</a></li>
@@ -24,21 +24,21 @@
             <ul class="menu-area">
               <ul>
                 <h4>Ladies wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Casual Wear</a></li>
+                <li><a href="#">Formal Wear</a></li>
+                <li><a href="#">Wedding dresses</a></li>
               </ul>
               <ul>
                 <h4>Gents wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Top Wear</a></li>
+                <li><a href="#">Bottom Wear</a></li>
+                <li><a href="#">Sports Wear</a></li>
               </ul>
               <ul>
                 <h4>Kids wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Girl's Collection</a></li>
+                <li><a href="#">Boy's Collection</a></li>
+                <li><a href="#">Baby's Collection</a></li>
               </ul>
             </ul>
 
@@ -66,7 +66,7 @@
           <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Tailor</button></a>
           <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Fashion Designer</button></a>
         </div>
-        
+
       </div>
     </div>
     <div class="f1">
