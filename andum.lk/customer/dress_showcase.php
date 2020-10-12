@@ -83,7 +83,7 @@ if (!isset($_SESSION['nic'])) {
     if ($result) {
       while ($row = mysqli_fetch_assoc($result)) {
     ?>
-
+<!-- Dress box start -->
         <div class="col-4">
           <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
@@ -106,6 +106,7 @@ if (!isset($_SESSION['nic'])) {
       }
     }
     ?>
+    <!-- Dress box end-->
     </div>
   </div>
 
