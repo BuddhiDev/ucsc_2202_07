@@ -35,21 +35,27 @@ if (!isset($_SESSION['nic'])) {
             <ul class="menu-area">
               <ul>
                 <h4>Ladies wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
+                <li><a href="dresses.php">Dresses</a></li>
+                <li><a href="#">Work Wear</a></li>
+                <li><a href="#">Denims</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">T Shirts</a></li>
+                <li><a href="#">All Categories</a></li>
               </ul>
               <ul>
                 <h4>Gents wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Denims</a></li>
+                <li><a href="#">Work Wear</a></li>
+                <li><a href="#">T Shirts</a></li>
+                <li><a href="#">All Categories</a></li>
               </ul>
               <ul>
                 <h4>Kids wear</h4>
                 <li><a href="#">Dresses</a></li>
+                <li><a href="#">T shirsts</a></li>
                 <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
+                <li><a href="#">All Categories</a></li>
               </ul>
             </ul>
 
@@ -143,7 +149,7 @@ if (!isset($_SESSION['nic'])) {
 
       <!-- </div>  -->
 <div class="container">
-<h2>New Arrivels</h2>
+  <h2>New Arrivels</h2>
   <div class="row">
         <div class="col-4">
           <form method="post" action="index.php" class="dress-showcase">
@@ -200,8 +206,8 @@ if (!isset($_SESSION['nic'])) {
           </form>
         </div>
         
-    </div>
   </div>
+</div>
 
 <div class="container">
 <h2>Top Rated Tailors</h2>

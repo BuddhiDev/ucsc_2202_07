@@ -555,6 +555,7 @@ button:focus{
 /* ------------Card Styles------------------- */
 
 .card-item{
+    width: 300px;
     background: #fafafa;
     border-radius: 4px;
     margin: 20px 10px;
@@ -687,7 +688,7 @@ nav ul.menu-area ul li a:hover{
 .slide-box{
   width: 300px;
   box-shadow: #EB2188;
-  border-radius: 10px;
+  border-radius: 20px;
   
 }
 
