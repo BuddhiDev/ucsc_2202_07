@@ -24,11 +24,38 @@ if (!isset($_SESSION['nic'])) {
         <header>
         <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
         <nav>
-            <ul class="nav-area">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="dress_showcase.php">Dress Showcase</a></li>
-            <li><a href="Manage_order.php">Manage Orders</a></li>
-            <li><a href="#">Manage Sales</a></li>
+        <ul class="nav-area">
+          <li><a href="index.php">Home</a></li>
+          <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
+          <li><a href="hired_list.php">Hired Tailors</a></li>
+          <li><a href="hired_list.php">Hired Fashion Designers</a></li>
+          <li class="dropdown">
+            <a href="#">Shop Now</a>
+            <ul class="menu-area">
+              <ul>
+                <h4>Ladies wear</h4>
+                <li><a href="dresses.php">Dresses</a></li>
+                <li><a href="#">Work Wear</a></li>
+                <li><a href="#">Denims</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">T Shirts</a></li>
+                <li><a href="#">All Categories</a></li>
+              </ul>
+              <ul>
+                <h4>Gents wear</h4>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Denims</a></li>
+                <li><a href="#">Work Wear</a></li>
+                <li><a href="#">T Shirts</a></li>
+                <li><a href="#">All Categories</a></li>
+              </ul>
+              <ul>
+                <h4>Kids wear</h4>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">T shirsts</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">All Categories</a></li>
+              </ul>
             </ul>
         </nav>
         <div>

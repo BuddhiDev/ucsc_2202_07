@@ -28,7 +28,7 @@ if (!isset($_SESSION['nic'])) {
       <nav>
         <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
-          <li><a href="dress_showcase.php">Dress Showcase</a></li>
+          <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
           <li><a href="hired_list.php">Hired Tailors</a></li>
           <li class="dropdown">
             <a href="#">Shop Now</a>
