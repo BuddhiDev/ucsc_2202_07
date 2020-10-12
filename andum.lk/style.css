@@ -6,6 +6,7 @@
 
 body{
     font-family: muli;
+    height: 100%;
 }
 
 li, a, button{
@@ -22,7 +23,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 10px;
+    padding: 20px 10px;
 
 }
 
@@ -73,6 +74,7 @@ header {
     font-family:Muli-SemiBold;
     src: url('./fonts/Muli/static/Muli-SemiBold.ttf');
   }
+
 
 .nav-area {
     list-style: none;
@@ -365,7 +367,7 @@ button:hover {
         max-width: 300px;
         margin: auto;
         text-align: center;
-        font-family: arial;
+        font-family: Muli-Light;
 }
 
 .title {
@@ -565,11 +567,11 @@ button:focus{
 
 .card-item .card-content{
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .card-item .card-content .card-title{
-    font-size: 14px;
+    font-size: 18px;
     font-family:Muli-Bold;
     margin-bottom: 5px;
 }
@@ -580,19 +582,173 @@ button:focus{
 
 /* ------------Card Styles Ends------------------- */
 
-/* ------btn styles------------------ */
+/* -------------Dropdown styles------------------- */
 
-.btn-primary-sm{
-    background-color: #EB2188;
-    color: white;
-    padding: 6px 22px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    font-family: muli;
-    text-align: center;
-    font-size: 8px;
-    font-family: Muli-Bold;
+.wrapper{
+  width: 1170px;
+  margin: 20px auto;
 }
 
-/* ------btn styles ends------------------ */
+nav > ul{
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0;
+
+}
+
+nav a{
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav ul li{
+  color: #ffffff;
+  list-style: none;
+  transition: 0.5s;
+}
+
+nav > ul > li > a{
+  padding: 15px 25px;
+}
+
+nav ul > li.dropdown > a:after{
+  position: relative;
+  float: right;
+  content: '';
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+
+/* nav > ul > li:hover{
+  background: #fafafa;
+} */
+
+nav ul.menu-area{
+  padding: 40px 40px 0 40px;
+  background: #ffffff;
+  text-align: left;
+  border-top: 5px solid #ffffff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  z-index: 1;
+  position: absolute;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1170px;
+  top: -9999px;
+  left: 0;
+}
+
+nav ul li:hover ul.menu-area{
+  top: 100%;
+}
+
+nav ul.menu-area ul{
+  width: 25%;
+  margin-bottom: 40px;
+  color: #262626;
+}
+
+nav ul.menu-area h4{
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+nav ul.menu-area ul li{
+  display: block;
+}
+
+nav ul.menu-area ul li a{
+  margin-top: 10px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+nav ul.menu-area ul li a:hover{
+    color: #EB2188;
+}
+
+/* -------------Dropdown Styles Ends-------------- */
+
+/* -------------Tailor slider-------------- */
+.slide-box{
+  width: 300px;
+  box-shadow: #EB2188;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.slide-img{
+  height: 450px;
+}
+
+.slide-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.slide-detail{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+  font-family: Muli-Light;
+}
+
+.slide-type{
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-type a{
+  color: #FAFAFA;
+  margin: 5px 0px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-right: 8px;
+}
+
+.slide-type span{
+  color: rgba(26,26,26,0.5);
+}
+
+.slide-price{
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: Muli-Light;
+  letter-spacing: 0.5px;
+}
+
+.overlay{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: ;
+}
+/* -------------Tailor slider Ends-------------- */
+

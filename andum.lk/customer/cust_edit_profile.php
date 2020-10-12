@@ -8,7 +8,7 @@ require("../server.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>andum.lk</title>
+    <title>Andum.lk - Edit Profile</title>
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/tailor/checkbox.css">
@@ -26,7 +26,7 @@ require("../server.php");
               <img class="logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
               <nav>
                 <ul class="nav-area">
-                  <li><a href="#">Explore</a></li>
+                  <li><a href="index.php">Home</a></li>
                   <li><a href="#">Hire a Fashion Designer</a></li>
                   <li><a href="dress_showcase.php">Dress Showcase</a></li>
                   <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
@@ -41,7 +41,7 @@ require("../server.php");
       <form>
         <?php
         $nic = $_SESSION['nic'];
-      $sql= "SELECT * FROM users WHERE nic=$nic";
+        $sql= "SELECT * FROM users WHERE nic=$nic";
         // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
         $result = mysqli_query($db, $sql);
 
