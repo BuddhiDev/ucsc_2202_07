@@ -42,7 +42,7 @@
             <li><a href="/ucsc_2202_07/andum.lk/unregistered_user_hire_tailor.php">Hire a Tailor</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
-<<<<<<< HEAD
+
             <li class="dropdown">
             <a href="#">Shop Now</a>
             <ul class="menu-area">
@@ -68,8 +68,7 @@
 
 
           </li>
-=======
->>>>>>> 4960dfa47dd2858f806efe689d6872a134c515d7
+
 
 
         </ul>
