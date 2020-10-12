@@ -688,15 +688,12 @@ nav ul.menu-area ul li a:hover{
   width: 300px;
   box-shadow: #EB2188;
   border-radius: 10px;
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+  
 }
 
 .slide-img{
   height: 450px;
+  position: relative;
 }
 
 .slide-img img{
@@ -742,13 +739,55 @@ nav ul.menu-area ul li a:hover{
   letter-spacing: 0.5px;
 }
 
-.overlay{
+.overlayer{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
   width: 100%;
-  height: ;
+  height: 100%;
+  background-color: rgb(92,95,236,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy-btn{
+  width: 160px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  color: #EB2188;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: Muli-Light;
+  border-radius: 20px;
+  box-shadow: 2px 2px 30px #FAFAFA;
+}
+
+.buy-btn :hover{
+  color: white;
+  background-color: whitesmoke;
+  transition: all ease 0.3s;
+}
+
+.overlayer{
+  visibility: hidden;
+}
+
+.slide-img:hover .overlayer{
+  visibility: visible;
+  animation: 0.5s;
+}
+
+@keyframes fade{
+  0%{
+    opacity: 0s;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 /* -------------Tailor slider Ends-------------- */
 
