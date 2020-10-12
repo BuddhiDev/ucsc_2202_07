@@ -7,7 +7,10 @@ require("server.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Sign In</title>
+  <title>Andum.lk</title>
+  <!-- Page-icon -->
+  <link rel="shortcut icon" href="logo.png">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="loginstyle.css">
   <link rel="stylesheet" href="dropdown.css">

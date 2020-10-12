@@ -6,6 +6,7 @@
 
 body{
     font-family: muli;
+    height: 100%;
 }
 
 li, a, button{
@@ -366,7 +367,7 @@ button:hover {
         max-width: 300px;
         margin: auto;
         text-align: center;
-        font-family: arial;
+        font-family: Muli-Light;
 }
 
 .title {
@@ -681,3 +682,73 @@ nav ul.menu-area ul li a:hover{
 }
 
 /* -------------Dropdown Styles Ends-------------- */
+
+/* -------------Tailor slider-------------- */
+.slide-box{
+  width: 300px;
+  box-shadow: #EB2188;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.slide-img{
+  height: 450px;
+}
+
+.slide-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.slide-detail{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+  font-family: Muli-Light;
+}
+
+.slide-type{
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-type a{
+  color: #FAFAFA;
+  margin: 5px 0px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding-right: 8px;
+}
+
+.slide-type span{
+  color: rgba(26,26,26,0.5);
+}
+
+.slide-price{
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: Muli-Light;
+  letter-spacing: 0.5px;
+}
+
+.overlay{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: ;
+}
+/* -------------Tailor slider Ends-------------- */
+
