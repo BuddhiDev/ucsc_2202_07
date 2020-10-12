@@ -50,6 +50,11 @@ require("../server.php");
         ?>
 
 
+
+
+
+
+
         <div class="login-container">
           <h1>Edit Profile</h1>
           <center>
@@ -181,11 +186,38 @@ require("../server.php");
         <br>
         <br>
 
+
+
+
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="register">Save</button>
+            <button class="loginbutton btn-full-w" type="submit" name="save">Save</button>
           </div>
+
+
+          <?php
+
+          if(isset($_POST['save']))
+          {
+              $nic = mysqli_real_escape_string($db,$_POST['nic']);
+              $email = mysqli_real_escape_string($db,$_POST['email']);
+              $fname = mysqli_real_escape_string($db,$_POST['fname']);
+              $lname = mysqli_real_escape_string($db,$_POST['lname']);
+              $password = mysqli_real_escape_string($db,$_POST['password']);
+              $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
+
+              $edit = "UPDATE users SET nic='$nic', email='$email', fname='$fname', lname='$lname', password='$password' contactno='$contactno' ";
+              mysqli_query($db,$edit);
+            }
+
+
+
+
+           ?>
+
+
+
           <?php
             }
           }
@@ -199,6 +231,8 @@ require("../server.php");
 
       <!--footer-->
         <?php require("footer.php")?>
+
+
 
 </body>
 </html>

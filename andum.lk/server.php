@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     session_start();
 
@@ -51,14 +51,14 @@
             $_SESSION['lname']=$lname;
             $_SESSION['success']="You are now logged in";
 			$_SESSION['utype']="$utype";
-            
+
 			if($_SESSION['utype']==0){
 					header('location: tailor/index.php');
 				}
 				else if($_SESSION['utype']==1){
 					header('location: customer/index.php');
 				}
-			
+
         }
     }
 
@@ -84,36 +84,36 @@
                     $_SESSION['fname'] =$row['fname'];
                     $_SESSION['lname'] =$row['lname'];
 				}
-                
-				
+
+
 				$sql = "SELECT type FROM users WHERE nic='$nic' AND password='$password'";
 				$result=mysqli_query($db,$sql);
-				
+
 				if($row = mysqli_fetch_assoc($result))
 				{
                   $_SESSION['utype'] = $row['type'];
 
 				}
-				
-				
+
+
 				if($_SESSION['utype']==0){
 					header('location: tailor/index.php');
 				}
 				else if($_SESSION['utype']==1){
 					header('location: customer/index.php');
 				}
-                
-                
+
+
             }
             else
             {
                 array_push($errors,"Wrong username/ password combination");
                 //header('location: login.php');
             }
-            
+
         }
 
-    }    
+    }
 
     if(isset($_GET['logout']))
     {
@@ -140,7 +140,7 @@
 		}
 
     }
-    
+
     $item_added = "false";
     if(isset($_POST['addTocart']))
     {
@@ -159,16 +159,16 @@
 		}
 
     }
-    
+
     if(isset($_POST['Checkout']))
     {
             $c_nic =  $_SESSION['nic'];
 
             $sql = "SELECT cart.order_id, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
             $result = mysqli_query($db, $sql);
-        
+
             if (mysqli_num_rows($result) > 0) {
-        
+
               while ($row = mysqli_fetch_assoc($result)) {
                 $new_amount = $row["amount"] - 1;
                 $dress_id = $row["dress_id"];
@@ -178,10 +178,10 @@
                 $sql1 = "DELETE FROM cart WHERE order_id=$order_id";
                 $result1 = mysqli_query($db, $sql1);
               }
-        
+
               header('location: purchases.php');
             }
-        
+
 		    else{
 			array_push($errors,"Add to cart failed, try again later");
 		}
@@ -189,5 +189,42 @@
 	}
 
 
-        
+
+
+          if(isset($_POST['save']))
+          {
+              $nic = mysqli_real_escape_string($db,$_POST['nic']);
+              $email = mysqli_real_escape_string($db,$_POST['email']);
+              $fname = mysqli_real_escape_string($db,$_POST['fname']);
+              $lname = mysqli_real_escape_string($db,$_POST['lname']);
+              $password = mysqli_real_escape_string($db,$_POST['password']);
+              $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
+
+              $edit = "UPDATE users SET nic='$nic', email='$email', fname='$fname', lname='$lname', password='$password' contactno='$contactno' ";
+              mysqli_query($db,$edit);
+            }
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
