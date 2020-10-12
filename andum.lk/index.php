@@ -10,11 +10,18 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/lightslider.css">
+    <script type="text/javacript" src="/ucsc_2202_07/andum.lk/jquery.js"></script>
+    <script type="text/javacript" src="/ucsc_2202_07/andum.lk/lightslider.js"></script>
+    
 </head>
 <body>
   
   <!-- Script link -->
-  <script type="text/javacript" src="/ucsc_2202_07/andum.lk/script.js"></script>
+  
+  
+ 
+  
   <!-- Script link ends-->
   <div class="box">
     <header>
@@ -187,26 +194,81 @@
   </script>
 
   <!-- Tailor Slider-->
-  <!-- Slide-box -->
-  <div class="slide-box">
-    <!-- Slide-img -->
-    <div class="slide-img">
-      <img src="product1.jpg" alt="1">
-      <!-- overlayer -->
-      <div class="overlayer"><a href="#" class="buy-btn">Buy</a></div>
-    </div>
-    <!-- Slide-detail -->
-    <div class="slide-detail">
-      <!-- slide-type -->
-      <div class="slide-type">
-        <a href="#">TTT</a>
-        <span>TTT</span>
+  <ul id="autoWidth" class="cs-hidden">
+    <li class="item-a">
+      <!-- Slide-box -->
+      <div class="slide-box">
+        <!-- Slide-img -->
+        <div class="slide-img">
+          <img src="product1.jpg" alt="1">
+          <!-- overlayer -->
+          <div class="overlayer"><a href="#" class="buy-btn">Buy</a></div>
+        </div>
+        <!-- Slide-detail -->
+        <div class="slide-detail">
+          <!-- slide-type -->
+          <div class="slide-type">
+            <a href="#">TTT</a>
+            <span>TTT</span>
+          </div>
+          <!-- slide-price -->
+          <a href="#" class="slide-price">$23</a>
+        </div>
       </div>
-      <!-- slide-price -->
-      <a href="#" class="slide-price">$23</a>
-    </div>
-  </div>
   <!-- Slide-box ends -->
+    </li>
+    
+  
+    <li class="item-a">
+      <!-- Slide-box -->
+      <div class="slide-box">
+        <!-- Slide-img -->
+        <div class="slide-img">
+          <img src="product1.jpg" alt="1">
+          <!-- overlayer -->
+          <div class="overlayer"><a href="#" class="buy-btn">Buy</a></div>
+        </div>
+        <!-- Slide-detail -->
+        <div class="slide-detail">
+          <!-- slide-type -->
+          <div class="slide-type">
+            <a href="#">TTT</a>
+            <span>TTT</span>
+          </div>
+          <!-- slide-price -->
+          <a href="#" class="slide-price">$23</a>
+        </div>
+      </div>
+  <!-- Slide-box ends -->
+    </li>
+    
+  
+    <li class="item-a">
+      <!-- Slide-box -->
+      <div class="slide-box">
+        <!-- Slide-img -->
+        <div class="slide-img">
+          <img src="product1.jpg" alt="1">
+          <!-- overlayer -->
+          <div class="overlayer"><a href="#" class="buy-btn">Buy</a></div>
+        </div>
+        <!-- Slide-detail -->
+        <div class="slide-detail">
+          <!-- slide-type -->
+          <div class="slide-type">
+            <a href="#">TTT</a>
+            <span>TTT</span>
+          </div>
+          <!-- slide-price -->
+          <a href="#" class="slide-price">$23</a>
+        </div>
+      </div>
+  <!-- Slide-box ends -->
+    </li>
+    
+  </ul>
+
+  <script type="text/javacript" src="/ucsc_2202_07/andum.lk/script.js"></script>
 
   <!-- Tailor Slider Ends-->
 
