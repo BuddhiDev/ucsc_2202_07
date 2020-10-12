@@ -15,35 +15,33 @@
       
       <nav>
         <ul class="nav-area">
-            <li><a href="/ucsc_2202_07/andum.lk/explore.php">Explore</a></li>
+            <!-- <li><a href="/ucsc_2202_07/andum.lk/explore.php">Explore</a></li> -->
+            <li class="dropdown">
+              <a href="#">Shop Now</a>
+              <ul class="menu-area">
+                <ul>
+                  <h4>Ladies wear</h4>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Dresses</a></li>
+                </ul>
+                <ul>
+                  <h4>Gents wear</h4>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Dresses</a></li>
+                </ul>
+                <ul>
+                  <h4>Kids wear</h4>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Dresses</a></li>
+                </ul>
+              </ul>
+            </li>
             <li><a href="/ucsc_2202_07/andum.lk/unregistered_user_hire_tailor.php">Hire a Tailor</a></li>
             <li><a href="#">Hire a Fashion Designer</a></li>
             <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
-            <li class="dropdown">
-            <a href="#">Shop Now</a>
-            <ul class="menu-area">
-              <ul>
-                <h4>Ladies wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-              </ul>
-              <ul>
-                <h4>Gents wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-              </ul>
-              <ul>
-                <h4>Kids wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Dresses</a></li>
-              </ul>
-            </ul>
-
-
-          </li>
 
 
         </ul>

@@ -215,10 +215,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
+                    
                 </div>
               </div>
             </div>
@@ -233,10 +230,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
+                    
                 </div>
               </div>
             </div>
@@ -251,11 +245,9 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Casual Summer Top
+                    
                 </div>
-                <div class="card-description">
-                    LKR 2,500
-                </div>
+                
               </div>
             </div>
           </form>
@@ -276,10 +268,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
+                    
                 </div>
               </div>
             </div>
@@ -294,10 +283,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
+                    
                 </div>
               </div>
             </div>
@@ -312,10 +298,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
                 <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
+                    
                 </div>
               </div>
             </div>
