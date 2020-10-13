@@ -38,8 +38,12 @@ require("../server.php");
 
 <!-- edit profile form-->
 
-      <form>
+      <form action="cust_edit_profile.php" method="post">
         <?php
+
+       include("../errors.php");
+
+
         $nic = $_SESSION['nic'];
         $sql= "SELECT * FROM users WHERE nic=$nic";
         // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
@@ -76,14 +80,28 @@ require("../server.php");
           </div>
 
           <div class="form-field-inline">
-            <label for="password" class="field-label-inline"><b>Passsword</b></label>
-            <input type="password" value="<?php echo $row["password"]?>"class="field-value-inline" name="password" required>
+            <label for="password" class="field-label-inline"><b>Password</b></label>
+            <input type="password" class="field-value-inline" name="password" required>
           </div>
 
+          <div class="form-field-inline">
+            <label for="cpassword" class="field-label-inline"><b>Confirm Password</b></label>
+            <input type="password" class="field-value-inline" name="cpassword" required>
+          </div>
 
           <div class="form-field-inline">
             <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
             <input type="text" value="<?php echo $row["contactno"]?>" class="field-value-inline" name="contactno">
+          </div>
+
+          <div class="form-field-inline">
+            <label for="address" class="field-label-inline"><b>Address</b></label>
+            <input type="text" value="<?php echo $row["address"]?>" class="field-value-inline" name="address">
+          </div>
+
+          <div class="form-field-inline">
+            <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
+            <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
           </div>
 
 
@@ -91,12 +109,12 @@ require("../server.php");
 
 
 
-
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="register">Save</button>
+            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save</button>
           </div>
+
           <?php
             }
           }
