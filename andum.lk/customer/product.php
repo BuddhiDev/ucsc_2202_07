@@ -134,8 +134,8 @@ h1{
 
 .cart-button{
 	padding: 10px;
-  margin: 20px;
-    /* margin-top: -18px; */
+  /* margin: 20px; */
+  margin-top: 10px;
   background-color: #EB2188;
     /* color: pink; */
   width: 300px;
@@ -262,11 +262,11 @@ h1{
     <div>
 
 
-		  <p style="color: black; font-size: 20px; ">WOMEN'S RUNNING SHOE</p>
+		  <p style="color: black; font-size: 20px; margin-top:10px">WOMEN'S RUNNING SHOE</p>
 		
-      <h4 style="color: black">LKR 2,400</h4>
+      <h4 style="color: black; margin-top:10px">LKR 2,400</h4>
       <div>
-      <p style="color: black; font-size: 15px; ">Color</p>
+      <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
         <div>
             <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
             <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
@@ -277,11 +277,11 @@ h1{
         </div>
       </div>
       
-
+<br>
     
 
       <div>
-      <p style="color: black; font-size: 15px; ">Size</p>
+      <p style="color: black; font-size: 15px; margin-top:10px">Size</p>
         <div>
           <a href="#"><div class="onee"><p class="text">5</p></div></a>
           <a href="#"><div class="onee"><p class="text">5</p></div></a>
