@@ -112,7 +112,7 @@ require("../server.php");
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save</button>
+            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
           </div>
 
           <?php
@@ -120,7 +120,7 @@ require("../server.php");
           }
           ?>
 
-          <!-- fdgf<label>
+          <!-- fdgfsas<label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label> -->
         </div>
