@@ -296,7 +296,7 @@ h1{
     <!-- <div>
       <img src="product1.jpg" width="300" height="200">
     </div> -->
-    <div class="p"><p>CHOOSE SIZE</p></div>
+    <!-- <div class="p"><p>CHOOSE SIZE</p></div> -->
     <!-- <a href=""><div class="one"><p class="text">5</p></div></a>
     <div class="onee">
       <p class="text">6</p> 
