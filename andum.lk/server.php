@@ -216,6 +216,29 @@ if (isset($_POST['save_user'])) {
 //   }
 //
 
+if(isset($_POST['add_product']))
+{
+  $t_nic =  $_SESSION['nic'];
+  $category = mysqli_real_escape_string($db, $_POST['Unit']);
+  $dressname = mysqli_real_escape_string($db, $_POST['dname']);
+  $price = mysqli_real_escape_string($db, $_POST['price']);
+  $size = mysqli_real_escape_string($db, $_POST['size']);
+  $amount = mysqli_real_escape_string($db, $_POST['amount']);
 
+  if($category!="" && $dressname!="" && $price!="" && $size!="" && $amount!="")
+  {
+
+    $sql = " INSERT INTO dress_showcase (category, name, price, size, amount, permission, t_nic) VALUES ('$category', '$dressname','$price', '$size', '$amount', '1', '$t_nic')";
+    $result = mysqli_query($db,$sql);
+
+    if($result)
+    {
+      echo "success";
+    }
+    else {
+      echo "Failure";
+    }
+  }
+}
 
  ?>
