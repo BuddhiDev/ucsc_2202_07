@@ -105,6 +105,81 @@ font-family: sans-serif;
 	/* margin-top: 9px; */
 }
 
+.on{
+	border: 1px solid black;
+  width: 30px;
+  background-color: pink;
+	height: 30px;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	/* margin-top: 9px; */
+}
+
+.on1{
+	border: 1px solid black;
+  width: 30px;
+  background-color: blue;
+	height: 30px;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	/* margin-top: 9px; */
+}
+
+.on2{
+	border: 1px solid black;
+  width: 30px;
+  background-color: orange;
+	height: 30px;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	/* margin-top: 9px; */
+}
+
+.on3{
+	border: 1px solid black;
+  width: 30px;
+  background-color: green;
+	height: 30px;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	/* margin-top: 9px; */
+}
+
+.on4{
+	border: 1px solid black;
+  width: 30px;
+  background-color: red;
+	height: 30px;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	/* margin-top: 9px; */
+}
+
+.on5{
+	border: 1px solid black;
+  width: 30px;
+  background-color: black;
+	height: 30px;
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	/* margin-top: 9px; */
+}
+
+
+
+
+
+
+
+
+
+
 .onee:hover{
 	border: 2px solid black;
 	width: 30px;
@@ -268,12 +343,12 @@ h1{
       <div>
       <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
         <div>
-            <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="onee"><p background-color="pink"></p></div></a>
+            <a href="#"><div class="on"></div></a>
+            <a href="#"><div class="on1"></div></a>
+            <a href="#"><div class="on2"><p background-color="pink"></p></div></a>
+            <a href="#"><div class="on3"><p background-color="pink"></p></div></a>
+            <a href="#"><div class="on4"><p background-color="pink"></p></div></a>
+            <a href="#"><div class="on5"><p background-color="pink"></p></div></a>
         </div>
       </div>
       
