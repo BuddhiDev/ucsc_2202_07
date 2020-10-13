@@ -25,45 +25,79 @@ if (!isset($_SESSION['nic'])) {
       <img class="logo" src="../logo.png" alt="logo" class="img-box">
       <!-- <?php require("../navbar_category.php")?> -->
       <div class="wrapper">
-      <nav>
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="dress_showcase.php">Dress Showcase</a></li>
-          <li><a href="hired_list.php">Hired Tailors</a></li>
-          <li class="dropdown">
-            <a href="#">Shop Now</a>
-            <ul class="menu-area">
-              <ul>
-                <h4>Ladies wear</h4>
-                <li><a href="dresses.php">Dresses</a></li>
-                <li><a href="#">Work Wear</a></li>
-                <li><a href="#">Denims</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">T Shirts</a></li>
-                <li><a href="#">All Categories</a></li>
+        <nav>
+          <ul class="nav-area">
+            <li><a href="index.php">Home</a></li>
+            <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
+            <li><a href="hired_list.php">Hired Tailors</a></li>
+            <li class="dropdown">
+              <a href="#">Shop Now</a>
+              <ul class="menu-area">
+                <ul>
+                  <h4>Ladies wear</h4>
+                  <li><a href="dresses.php">Dresses</a></li>
+                  <li><a href="workware_ladies.php">Work Wear</a></li>
+                  <li><a href="#">Denims</a></li>
+                  <li><a href="#">Tops</a></li>
+                  <li><a href="#">T Shirts</a></li>
+                  <li><a href="#">All Categories</a></li>
+                </ul>
+                <ul>
+                  <h4>Gents wear</h4>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Denims</a></li>
+                  <li><a href="workwear_gents.php">Work Wear</a></li>
+                  <li><a href="#">T Shirts</a></li>
+                  <li><a href="#">All Categories</a></li>
+                </ul>
+                <ul>
+                  <h4>Kids wear</h4>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">T shirsts</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">All Categories</a></li>
+                </ul>
               </ul>
-              <ul>
-                <h4>Gents wear</h4>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Denims</a></li>
-                <li><a href="#">Work Wear</a></li>
-                <li><a href="#">T Shirts</a></li>
-                <li><a href="#">All Categories</a></li>
-              </ul>
-              <ul>
-                <h4>Kids wear</h4>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">T shirsts</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">All Categories</a></li>
-              </ul>
+
+
+            </li>
+            <li><a href="purchases.php">Purchases</a></li>
+
+          </ul>
+        </nav>
+          <div class="nav_right">
+            <ul>
+              <li class="nr_li dd_main">
+                <img src="/ucsc_2202_07/andum.lk/images/thash.jpg" alt="profile_img" style="width:35px;"></li> 
+                
+                <div class="dd_menu">
+                  <div class="dd_left">
+                    <ul>
+                      <li><i class="fas fa-map-marker-alt"></i></li>
+                      <li><i class="far fa-star"></i></li>
+                      <li><i class="far fa-plus-square"></i></li>
+                      <li><i class="fas fa-cog"></i></li>
+                      <li><i class="fas fa-download"></i></li>
+                      <li><i class="fas fa-sign-out-alt"></i></li>
+                    </ul>
+                  </div>
+                  <div class="dd_right">
+                    <ul>
+                      <li>Location</li>
+                      <li>Favorites</li>
+                      <li>Addpeople</li>
+                      <li>Settings</li>
+                      <li>Downloads</li>
+                      <li>Logout</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="nr_li">
+                <i class="fas fa-envelope-open-text"></i>
+              </li>
             </ul>
-
-
-          </li>
-          <li><a href="purchases.php">Purchases</a></li>
-        </ul>
-      </nav>
+          </div>
       </div>
       
 

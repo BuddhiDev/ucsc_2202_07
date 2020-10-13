@@ -89,6 +89,7 @@
   /* Add padding to containers */
   .container {
     width: 100%;
+    margin: 10px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;

@@ -65,13 +65,13 @@ if (!isset($_SESSION['nic'])) {
     </div>
 
     <div class="container">
-  <h2>Dresses</h2>
+  <h2>WORK WEAR</h2>
   <div class="row">
         <div class="col-4">
           <form method="post" action="index.php" class="dress-showcase">
             <div class="card-item">
               <div class="card-img">
-              <a href="product.php"><img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="Avatar" style="width:100%"></a>
+              <a href="product.php"><img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%"></a>
               </div>
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['nic'])) {
           <form method="post" action="index.php" class="dress-showcase">
             <div class="card-item">
               <div class="card-img">
-                <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="Avatar" style="width:100%">
+                <img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%">
               </div>
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>
@@ -107,7 +107,7 @@ if (!isset($_SESSION['nic'])) {
           <form method="post" action="index.php" class="dress-showcase">
             <div class="card-item">
               <div class="card-img">
-                <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="Avatar" style="width:100%">
+                <img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%">
               </div>
               <div class="card-content">
                 <div class="card-title">Andrea Perera</div>

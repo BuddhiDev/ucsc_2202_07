@@ -65,7 +65,7 @@ if (!isset($_SESSION['nic'])) {
     </div>
 
     <div class="container">
-  <h2>Dresses</h2>
+  <h2>WORK Wear</h2>
   <div class="row">
         <div class="col-4">
           <form method="post" action="index.php" class="dress-showcase">
