@@ -32,7 +32,7 @@ if (!isset($_SESSION['nic'])) {
             <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
             <li><a href="hired_list.php">Hired Tailors</a></li>
             <li class="dropdown">
-              <a href="#">Shop Now</a>
+              <a href="dress_showcase.php">Shop Now</a>
               <ul class="menu-area">
                 <ul>
                   <h4>Ladies wear</h4>
@@ -209,7 +209,6 @@ if (!isset($_SESSION['nic'])) {
             </div>
           </form>
         </div>
-
         <?php
       }
     }

@@ -25,7 +25,6 @@ if (!isset($_SESSION['nic'])) {
       <nav>
         <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
-          <li><a href="dress_showcase.php">Dress Showcase</a></li>
           <li><a href="hired_list.php">Hired Tailors</a></li>
           <li><a href="purchases.php">Purchases</a></li>
         </ul>
@@ -41,7 +40,7 @@ if (!isset($_SESSION['nic'])) {
     </div> -->
   <div class="search-container">
     <div class="form-field-inline">
-      <label for="uname" class="field-label-inline">Search by category</label>
+      <label for="uname" class="field-label-inline">Search by Name</label>
       <input type="text" class="field-value-inline" name="uname" required>
     </div>
   </div>
