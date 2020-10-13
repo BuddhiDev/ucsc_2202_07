@@ -644,7 +644,7 @@ nav > ul > li > a{
 } */
 
 .menu-area{
-  margin: 2px;
+  margin: 0px;
   padding: 40px 40px 0 40px;
   background: #ffffff;
   text-align: left;
@@ -847,6 +847,9 @@ nav ul.menu-area ul li a:hover{
 
 }
 
+.nav_right{
+  display: flex;
+}
 
 .box .nav_right > ul li a{
   display: flex;

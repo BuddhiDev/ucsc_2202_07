@@ -16,108 +16,55 @@
     
 </head>
 <body>
-  
-  <!-- Script link -->
-  
-  
- 
-  
-  <!-- Script link ends-->
-  <div class="box">
-    <header>
-      <img class="logo" src="logo.png" alt="logo">
-      <nav>
+  <header>
+    <nav class="navbar-main">
+      <div class="navbar-logo">
+        <img class="logo" src="logo.png" alt="logo" class="img-box">
+      </div>
+      <div class="nav-item-middle">
         <ul class="nav-area">
           <li class="dropdown">
-          <a href="#">Shop Now</a>
-          <ul class="menu-area">
-            <ul>
-              <h4>Ladies wear</h4>
-              <li><a href="#">Casual Wear</a></li>
-              <li><a href="#">Formal Wear</a></li>
-              <li><a href="#">Wedding dresses</a></li>
-            </ul>
-            <ul>
-              <h4>Gents wear</h4>
-              <li><a href="#">Top Wear</a></li>
-              <li><a href="#">Bottom Wear</a></li>
-              <li><a href="#">Sports Wear</a></li>
-            </ul>
-            <ul>
-              <h4>Kids wear</h4>
-              <li><a href="#">Girl's Collection</a></li>
-              <li><a href="#">Boy's Collection</a></li>
-              <li><a href="#">Baby's Collection</a></li>
-            </ul>
-          </ul>
-
-
-        </li>
-            <!-- <li><a href="/ucsc_2202_07/andum.lk/explore.php">Explore</a></li> -->
-            <!-- <li class="dropdown">
-              <a href="#">Shop Now</a>
-              <ul class="menu-area">
-                <ul>
-                  <h4>Ladies wear</h4>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Dresses</a></li>
-                </ul>
-                <ul>
-                  <h4>Gents wear</h4>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Dresses</a></li>
-                </ul>
-                <ul>
-                  <h4>Kids wear</h4>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Dresses</a></li>
-                </ul>
-              </ul>
-            </li> -->
-            <li><a href="/ucsc_2202_07/andum.lk/unregistered_user_hire_tailor.php">Hire a Tailor</a></li>
-            <li><a href="#">Hire a Fashion Designer</a></li>
-            <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
-
-            <!-- <li class="dropdown">
             <a href="#">Shop Now</a>
             <ul class="menu-area">
               <ul>
                 <h4>Ladies wear</h4>
-                <li><a href="#">Casual Wear</a></li>
-                <li><a href="#">Formal Wear</a></li>
-                <li><a href="#">Wedding dresses</a></li>
+                <li><a href="/ucsc_2202_07/andum.lk/customer/dresses.php">Dresses</a></li>
+                <li><a href="workware_ladies.php">Work Wear</a></li>
+                <li><a href="#">Denims</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">T Shirts</a></li>
+                <li><a href="#">All Categories</a></li>
               </ul>
               <ul>
                 <h4>Gents wear</h4>
-                <li><a href="#">Top Wear</a></li>
-                <li><a href="#">Bottom Wear</a></li>
-                <li><a href="#">Sports Wear</a></li>
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Denims</a></li>
+                <li><a href="workwear_gents.php">Work Wear</a></li>
+                <li><a href="#">T Shirts</a></li>
+                <li><a href="#">All Categories</a></li>
               </ul>
               <ul>
                 <h4>Kids wear</h4>
-                <li><a href="#">Girl's Collection</a></li>
-                <li><a href="#">Boy's Collection</a></li>
-                <li><a href="#">Baby's Collection</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">T shirsts</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">All Categories</a></li>
               </ul>
             </ul>
-
-
-          </li> -->
-
-
-
+          </li>
+          <li><a href="index.php">Hire a Tailor</a></li>
+          <li><a href="index.php">Hire a Fashion Designer</a></li>
         </ul>
-      </nav>
-      <div>
-        <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a>
-        <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a>
       </div>
-    </header>
-  </div>
-
+      <div class="box">
+        <div class="nav_right">
+          <li><a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a></li>
+          <li><a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a></li>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
   <div class="d-flex align-c">
     <div class="f1">
       <div class="landing-text-content">
@@ -127,7 +74,6 @@
           <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Tailor</button></a>
           <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Fashion Designer</button></a>
         </div>
-
       </div>
     </div>
     <div class="f1">
@@ -148,16 +94,6 @@
         <div class="mySlides fade">
           <img src="images/img11.jpg">
         </div>
-        <!-- <div class="mySlides fade">
-          <img src="images/pexels-ray-piedra-1478477.jpg" style="width:100%">
-        </div>
-
-        <div class="mySlides fade">
-          <img src="images/pexels-artem-beliaikin-1100790.jpg" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-          <img src="images/pexels-cottonbro-4621921.jpg" style="width:100%">
-        </div> -->
       </div>
     </div>
   </div>

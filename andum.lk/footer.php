@@ -7,12 +7,12 @@
     <title></title>
     <style>
 .fa {
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 30px;
   width: 50px;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  /* margin: 5px 2px; */
 }
 
 .fa:hover {
@@ -20,33 +20,27 @@
 }
 
 .fa-facebook {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-twitter {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-google {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-linkedin {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-youtube {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-instagram {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 
