@@ -30,46 +30,36 @@
 <div class="sliderbox-wrap">
 
 <center><img src="product1.jpg" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
-  <form action="/action_page.php" style="max-width:800px;margin:auto;padding:10px">
+  <form method="post" action="add_product.php" style="max-width:800px;margin:auto;padding:10px">
       <h2>Add Product</h2>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-25"><br>
           <lable for="type" class="field-label-inline">Category:</label>
         </div>
         <div class="col-75">
-          <select class="option" name="Unit" id="unit" style="color:white;">
+          <select class="option" name="Unit" id="unit">
             <optgroup label="Ladies wear">
-              <option value="1">Blouse</option>
-              <option value="2">skirt</option>
-              <option value="3">frock</option>
-              <option value="4">Short</option>
-              <option value="5">Trouser</option>
-              <option value="6">T-Shirt</option>
-              <option value="7">Party Frock</option>
-              <option value="8">Saree</option>
-              <option value="9">Bridal Dress</option>
+              <option value="Casual wear">Casual wear</option>
+              <option value="2">Fomal wear</option>
+              <option value="3">Wedding dresses</option>
             </optgroup>
             <optgroup label="Gents wear">
-              <option value="10">Shirt</option>
-              <option value="11">T-shirt</option>
-              <option value="12">Denim</option>
-              <option value="13">Trouser</option>
-              <option value="14">Groom Dress</option>
+              <option value="4">Top wear</option>
+              <option value="5">Bottom wear</option>
+              <option value="6">Sports wear</option>
             </optgroup>
-            <optgroup label="Casual wear">
-              <option value="15">Casual Wear blouse</option>
-              <option value="16">Casual wear pants</option>
-              <option value="17">Casual wear Denims</option>
-              <option value="18">Casual wearShorts</option>
-              <option value="19">Casual wear T-shirts</option>
+            <optgroup label="Kids wear">
+              <option value="7">Girl's collection</option>
+              <option value="8">Boy's collection</option>
+              <option value="9">Baby's collection</option>
             </optgroup>
           </select>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-25">
+        <div class="col-25"><br>
           <label for="dname" class="field-label-inline"><b>Dress Name</b></label>
         </div>
         <div class="col-75">
@@ -80,7 +70,7 @@
 
 
     <div class="row">
-      <div class="col-25">
+      <div class="col-25"><br>
         <lable for="price" class="field-label-inline">Price: </label>
       </div>
       <div class="col-75">
@@ -89,7 +79,7 @@
     </div>
 
     <div class="row">
-      <div class="col-25">
+      <div class="col-25"><br>
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
@@ -102,6 +92,14 @@
         </select>
       </div>
     </div>
+    <div class="row">
+      <div class="col-25"><br>
+        <lable for="amount" class="field-label-inline">Amount: </label>
+      </div>
+      <div class="col-75">
+        <input class="field-label-inline" type="text"  placeholder="Amount" name="amount">
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-25">
@@ -111,8 +109,11 @@
         <input type="file" id="myFile" name="filename"> <br/>
       </div>
     </div>
+    <div>
+      <button class="loginbutton btn-full-w" type="submit" name="upload"> Upload</button>
+    </div>
     <div> <center>
-<button class="loginbutton btn-full-w" type="submit"> Upload</button> </center></div>
+      <button class="loginbutton btn-full-w" type="submit" name="submit"> Submit</button> </center></div>
   </form>
 </div>
 
