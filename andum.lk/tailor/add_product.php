@@ -34,7 +34,7 @@ require("../server.php");
 <div class="sliderbox-wrap">
 
 <center><img src="product1.jpg" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
-  <form method="post" action="add_product.php" style="max-width:800px;margin:auto;padding:10px">
+  <form method="post" action="add_product.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
       <h2>Add Product</h2>
 
       <div class="row">
@@ -110,14 +110,11 @@ require("../server.php");
         <lable for="type" class="field-label-inline">Upload Dress image:</label>
       </div>
       <div class="col-75">
-        <input type="file" id="myFile" name="filename"> <br/>
+        <input type="file" id="file" name="myimage" value=""> <br/>
       </div>
     </div>
-    <div>
-      <button class="loginbutton btn-full-w" type="submit" name="upload"> Upload</button>
-    </div>
     <div> <center>
-      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Submit</button> </center></div>
+      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Upload</button> </center></div>
   </form>
 </div>
 
