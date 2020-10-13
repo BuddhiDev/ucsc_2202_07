@@ -233,21 +233,21 @@ if(isset($_POST['add_product']))
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
   $filename = $_FILES["myimage"]["name"];
   $tempname = $_FILES["myimage"]["tmp_name"];
-      $folder = "products/".$filename;
+  $folder = "products/".$filename;
 
   if($category!="" && $dressname!="" && $price!="" && $size!="" && $amount!="")
   {
 
-    $sql = " INSERT INTO dress_showcase (category, name, price, size, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$size', '$amount', '$filename', '1', '$t_nic')";
+    $sql = " INSERT INTO dress_showcase (category, title, price, size, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$size', '$amount', '$filename', '1', '$t_nic')";
     $result = mysqli_query($db,$sql);
 
     if (move_uploaded_file($tempname, $folder))
     {
-             echo "<script>alert('Image Has Been Uploaded')</script>";
+        echo "<script>alert('Image Has Been Uploaded')</script>";
     }
     else
     {
-            echo "<script>alert('Image Does Not Uploaded')</script>";
+        echo "<script>alert('Image Does Not Uploaded')</script>";
     }
   }
 }
