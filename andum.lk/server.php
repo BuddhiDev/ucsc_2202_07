@@ -177,3 +177,80 @@ if (isset($_POST['update_user'])) {
     $result=mysqli_query($db, $sql);
     }
 }
+
+if (isset($_POST['save_user'])) {
+
+    $nic = mysqli_real_escape_string($db, $_POST['nic']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $fname = mysqli_real_escape_string($db, $_POST['fname']);
+    $lname = mysqli_real_escape_string($db, $_POST['lname']);
+    $password1 = mysqli_real_escape_string($db, $_POST['password']);
+    $password2 = mysqli_real_escape_string($db, $_POST['cpassword']);
+    $contactno = mysqli_real_escape_string($db, $_POST['contactno']);
+    $address = mysqli_real_escape_string($db, $_POST['address']);
+    $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
+
+    if ($password1 != $password2){
+        array_push($errors, "Passwords do not match");
+    }
+    else{
+    $password = md5($password1);
+    $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' WHERE nic='$nic'";
+    $result=mysqli_query($db, $sql);
+    }
+}
+
+
+
+// if(isset($_POST['save']))
+// {
+//     $nic = mysqli_real_escape_string($db,$_POST['nic']);
+//     $email = mysqli_real_escape_string($db,$_POST['email']);
+//     $fname = mysqli_real_escape_string($db,$_POST['fname']);
+//     $lname = mysqli_real_escape_string($db,$_POST['lname']);
+//     $password = mysqli_real_escape_string($db,$_POST['password']);
+//     $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
+//
+//     $edit = "UPDATE users SET nic='$nic', email='$email', fname='$fname', lname='$lname', password='$password' contactno='$contactno' ";
+//     mysqli_query($db,$edit);
+//   }
+//
+/*if (isset($_POST['upload'])) {
+
+    $filename = $_FILES["uploadfile"]["name"];
+    $tempname = $_FILES["uploadfile"]["tmp_name"];
+        $folder = "image/".$filename; */
+
+
+if(isset($_POST['add_product']))
+{
+
+  $t_nic =  $_SESSION['nic'];
+  $category = mysqli_real_escape_string($db, $_POST['Unit']);
+  $dressname = mysqli_real_escape_string($db, $_POST['dname']);
+  $price = mysqli_real_escape_string($db, $_POST['price']);
+  $size = mysqli_real_escape_string($db, $_POST['size']);
+  $amount = mysqli_real_escape_string($db, $_POST['amount']);
+  $filename = $_FILES["myimage"]["name"];
+  $tempname = $_FILES["myimage"]["tmp_name"];
+  $folder = "products/".$filename;
+
+  if($category!="" && $dressname!="" && $price!="" && $size!="" && $amount!="")
+  {
+
+    $sql = " INSERT INTO dress_showcase (category, title, price, size, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$size', '$amount', '$filename', '1', '$t_nic')";
+    $result = mysqli_query($db,$sql);
+
+    if (move_uploaded_file($tempname, $folder))
+    {
+        echo "<script>alert('Image Has Been Uploaded')</script>";
+    }
+    else
+    {
+        echo "<script>alert('Image Does Not Uploaded')</script>";
+    }
+  }
+}
+
+
+ ?>
