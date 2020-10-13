@@ -113,88 +113,51 @@ require("../server.php");
                   <div class="row">
                      <div class="column">
                         <h4>Ladies wear</h4><br>
-                        <label class="checkbox_container">Blouses
+                        <label class="checkbox_container">Casual Wear
                           <input type="checkbox" checked="checked" >
                           <span class="checkmark"></span>
                         </label>
-                        <label class="checkbox_container">skirt
+                        <label class="checkbox_container">Formal Wear
                           <input type="checkbox" >
                           <span class="checkmark"></span>
                         </label>
-                        <label class="checkbox_container">frock
+                        <label class="checkbox_container">Wedding Wear
                           <input type="checkbox">
                           <span class="checkmark"></span>
                         </label>
-                        <label class="checkbox_container">Shorts
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox_container">Trouser
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox_container">T-Shirt
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox_container">Party Frock
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox_container">Sarees
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox_container">Bridal Dress
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
+
                     </div>
                     <div class="column">
-                      <h4>Gents wear</h4><br>
-                      <label class="checkbox_container">Shirts
+                      <h4>Mens wear</h4><br>
+                      <label class="checkbox_container">Top Wear
                             <input type="checkbox">
                             <span class="checkmark"></span>
                           </label>
-                          <label class="checkbox_container">T-shirts
+                          <label class="checkbox_container">Bottom Wear
                             <input type="checkbox">
                             <span class="checkmark"></span>
                           </label>
-                          <label class="checkbox_container">Denim
+                          <label class="checkbox_container">Sports Wear
                             <input type="checkbox">
                             <span class="checkmark"></span>
                           </label>
-                          <label class="checkbox_container">Trouser
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="checkbox_container">Groom Dress
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
+
                      </div>
                      <div class="column">
                          <h4>Kids wear</h4><br>
-                         <label class="checkbox_container">School Uni Forms
+                         <label class="checkbox_container">Boy's Collection
                             <input type="checkbox">
                             <span class="checkmark"></span>
                           </label>
-                          <label class="checkbox_container">T-shirts
+                          <label class="checkbox_container">Girl's Collection
                             <input type="checkbox">
                             <span class="checkmark"></span>
                           </label>
-                          <label class="checkbox_container">Trouser
+                          <label class="checkbox_container">Baby's Collection
                             <input type="checkbox">
                             <span class="checkmark"></span>
                           </label>
-                          <label class="checkbox_container">Frocks
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="checkbox_container">skirts
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
+
                      </div>
                   </div>
 
