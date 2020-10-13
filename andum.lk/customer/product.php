@@ -27,13 +27,6 @@ margin: 0;
 padding: 0;
 }
 
-/* body{
-
-background-color: #ffff;
-
-
-} */
-
 .main{
 	width: 880px;
 	height: 500px;
@@ -54,7 +47,6 @@ background-color: #ffff;
 }
 
 .p{
-/* margin: 10px; */
 margin-left: 40px;
 margin-top: 420px;
 color: black;
@@ -78,20 +70,15 @@ font-family: sans-serif;
 	width: 30px;
 	height: 30px;
 	float: left;
-	/* margin-left: 40px; */
 	text-align: center;
 	margin-top: 9px;
 }
 
 .text{
-
-	/* margin-top: 5px; */
 	color: black;
 }
 
 .color-box{
-
-/* margin-top: 5px; */
   background-color: pink;
 }
 
@@ -102,7 +89,6 @@ font-family: sans-serif;
 	float: left;
 	margin-right: 5px;
 	text-align: center;
-	/* margin-top: 9px; */
 }
 
 .on{
@@ -113,7 +99,6 @@ font-family: sans-serif;
 	float: left;
 	margin-right: 5px;
 	text-align: center;
-	/* margin-top: 9px; */
 }
 
 .on1{
@@ -124,7 +109,6 @@ font-family: sans-serif;
 	float: left;
 	margin-right: 5px;
 	text-align: center;
-	/* margin-top: 9px; */
 }
 
 .on2{
@@ -135,7 +119,6 @@ font-family: sans-serif;
 	float: left;
 	margin-right: 5px;
 	text-align: center;
-	/* margin-top: 9px; */
 }
 
 .on3{
@@ -146,7 +129,6 @@ font-family: sans-serif;
 	float: left;
 	margin-right: 5px;
 	text-align: center;
-	/* margin-top: 9px; */
 }
 
 .on4{
@@ -157,7 +139,6 @@ font-family: sans-serif;
 	float: left;
 	margin-right: 5px;
 	text-align: center;
-	/* margin-top: 9px; */
 }
 
 .on5{
@@ -168,26 +149,14 @@ font-family: sans-serif;
 	float: left;
 	margin-right: 5px;
 	text-align: center;
-	/* margin-top: 9px; */
 }
-
-
-
-
-
-
-
-
-
 
 .onee:hover{
 	border: 2px solid black;
 	width: 30px;
 	height: 30px;
 	float: left;
-	/* margin-left: 5px; */
 	text-align: center;
-  /* margin-top: 9px; */
 }
 
 h1{
@@ -209,22 +178,14 @@ h1{
 
 .cart-button{
 	padding: 10px;
-  /* margin: 20px; */
   margin-top: 10px;
   background-color: #EB2188;
-    /* color: pink; */
-  width: 300px;
-    /* margin-left: -5px;
+  width: 150px;
 }
 
 .cart-button:hover{
-	padding: 10px;
-	margin: 10px;
-	/* margin-top: -18px; */
-	
 	color: white;
-	width: 200px;
-	/* margin-left: -5px; */
+	
 }
 
 .second{
@@ -242,155 +203,92 @@ h1{
 <body>
 
 <div class="box">
-    <header>
-      <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      <!-- <?php require("../navbar_category.php")?> -->
-      <!-- <div class="wrapper"> -->
-        <nav>
-          <ul class="nav-area">
-            <li><a href="index.php">Home</a></li>
-            <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
-            <li><a href="hired_list.php">Hired Tailors</a></li>
-            <li class="dropdown">
-              <a href="#">Shop Now</a>
-              <ul class="menu-area">
-                <ul>
-                  <h4>Ladies wear</h4>
-                  <li><a href="dresses.php">Dresses</a></li>
-                  <li><a href="workware_ladies.php">Work Wear</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="#">Tops</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
-                </ul>
-                <ul>
-                  <h4>Gents wear</h4>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="workwear_gents.php">Work Wear</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
-                </ul>
-                <ul>
-                  <h4>Kids wear</h4>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">T shirsts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">All Categories</a></li>
-                </ul>
-              </ul>
-
-
-            </li>
-            <li><a href="purchases.php">Purchases</a></li>
-
+  <header>
+    <img class="logo" src="../logo.png" alt="logo" class="img-box">
+    <nav>
+      <ul class="nav-area">
+        <li><a href="index.php">Home</a></li>
+        <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
+        <li><a href="hired_list.php">Hired Tailors</a></li>
+        <li class="dropdown">
+          <a href="#">Shop Now</a>
+          <ul class="menu-area">
+            <ul>
+              <h4>Ladies wear</h4>
+              <li><a href="dresses.php">Dresses</a></li>
+              <li><a href="workware_ladies.php">Work Wear</a></li>
+              <li><a href="#">Denims</a></li>
+              <li><a href="#">Tops</a></li>
+              <li><a href="#">T Shirts</a></li>
+              <li><a href="#">All Categories</a></li>
+            </ul>
+            <ul>
+              <h4>Gents wear</h4>
+              <li><a href="#">Shirts</a></li>
+              <li><a href="#">Denims</a></li>
+              <li><a href="workwear_gents.php">Work Wear</a></li>
+              <li><a href="#">T Shirts</a></li>
+              <li><a href="#">All Categories</a></li>
+            </ul>
+            <ul>
+              <h4>Kids wear</h4>
+              <li><a href="#">Dresses</a></li>
+              <li><a href="#">T shirsts</a></li>
+              <li><a href="#">Dresses</a></li>
+              <li><a href="#">All Categories</a></li>
+            </ul>
           </ul>
-      </nav>
-      <div>
-        <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
-      </div>
-    </header>
-  </div>
+        </li>
+        <li><a href="purchases.php">Purchases</a></li>
+      </ul>
+    </nav>
+    <div>
+      <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
+    </div>
+  </header>
+</div>
 <div class="main">
   <div class="leftside">
-    <!-- <div>
-      <img src="product1.jpg" width="300" height="200">
-    </div> -->
-    <!-- <div class="p"><p>CHOOSE SIZE</p></div> -->
-    <!-- <a href=""><div class="one"><p class="text">5</p></div></a>
-    <div class="onee">
-      <p class="text">6</p> 
-    </div>
-
-    <div class="onee">
-      <p class="text">7</p>
-    </div>
-
-    <div class="onee">
-      <p class="text">8</p>
-    </div>
-
-    <div class="onee">
-      <p class="text">9</p>
-    </div>
-
-    <div class="onee">
-      <p class="text">10</p>
-    </div>
-
-    <div class="onee">
-      <p class="text">11</p>
-    </div>
-
-    <div class="onee">
-      <p class="text">12</p>
-    </div> -->
-  </div> 
-  <!--left side close-->
-
-  <!--right side close-->
-
-<div class="rightside">
-
-
-	<div class="inside">
-    <div>
-
-
-		  <p style="color: black; font-size: 20px; margin-top:10px">WOMEN'S RUNNING SHOE</p>
-		
-      <h4 style="color: black; margin-top:10px">LKR 2,400</h4>
+    
+  </div>
+  <div class="rightside">
+    <div class="inside">
       <div>
-      <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
+        <br>
+        <p style="color: black; font-size: 20px; margin-top:10px">WOMEN'S RUNNING SHOE</p>
+        <br>
+        <h4 style="color: black; margin-top:10px">LKR 2,400</h4>
+        <br>
         <div>
+          <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
+          <div>
             <a href="#"><div class="on"></div></a>
             <a href="#"><div class="on1"></div></a>
             <a href="#"><div class="on2"><p background-color="pink"></p></div></a>
             <a href="#"><div class="on3"><p background-color="pink"></p></div></a>
             <a href="#"><div class="on4"><p background-color="pink"></p></div></a>
             <a href="#"><div class="on5"><p background-color="pink"></p></div></a>
+          </div>
+          <br>
+          <div>
+            <p style="color: black; font-size: 15px; margin-top:10px">Size</p>
+            <div>
+              <a href="#"><div class="onee"><p class="text">5</p></div></a>
+              <a href="#"><div class="onee"><p class="text">5</p></div></a>
+              <a href="#"><div class="onee"><p class="text">5</p></div></a>
+              <a href="#"><div class="onee"><p class="text">5</p></div></a>
+              <a href="#"><div class="onee"><p class="text">5</p></div></a>
+              <a href="#"><div class="onee"><p class="text">5</p></div></a>
+            </div>
+          </div>
+          <br>
+          <div>
+            <button class="cart-button">ADD TO CART</button>
+          </div>
         </div>
-      </div>
-      
-<br>
-    
-
-      <div>
-      <p style="color: black; font-size: 15px; margin-top:10px">Size</p>
-        <div>
-          <a href="#"><div class="onee"><p class="text">5</p></div></a>
-          <a href="#"><div class="onee"><p class="text">5</p></div></a>
-          <a href="#"><div class="onee"><p class="text">5</p></div></a>
-          <a href="#"><div class="onee"><p class="text">5</p></div></a>
-          <a href="#"><div class="onee"><p class="text">5</p></div></a>
-          <a href="#"><div class="onee"><p class="text">5</p></div></a>
-        </div>
-</div>
-    
-      <div>
-        <button class="cart-button">ADD TO CART</button>
-      </div>
-
+      </div>	
     </div>
-    
-    
-    
-
-		
-		<!-- <button class="second">v</button> -->
-
-
-		
   </div>
-  
-  
-	
-
-</div>
-	
-
-
-
 </div>
 
 <?php require("footer.php")?>

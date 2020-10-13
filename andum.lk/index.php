@@ -28,8 +28,6 @@
       <img class="logo" src="logo.png" alt="logo">
       <nav>
         <ul class="nav-area">
-
-
           <li class="dropdown">
           <a href="#">Shop Now</a>
           <ul class="menu-area">

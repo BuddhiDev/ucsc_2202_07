@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
 }
 
 body{
@@ -24,7 +25,8 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 10px;
+    padding: 10px 10px;
+    box-shadow: 1px 1px 4px 1px #fafafa
 
 }
 
@@ -117,11 +119,16 @@ button:hover {
     color: black;
 }
 
+.navbar-main{
+  display: flex;
+  padding: 10px 40px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .box {
     background: white;
-    padding: 5px;
-    box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.5);
 }
 
 /* form-styles */
@@ -799,11 +806,59 @@ nav ul.menu-area ul li a:hover{
   list-style: none;
 }
 
+.box .nav_right > ul li{
+  position: relative;
+  color: #EB2188;
+  font-size: 30px;
+}
+
+.box .nav_right ul li .dd_right{
+  position: absolute;
+  top: 65px;
+  right: 0;
+  background: #fafafafa;
+  padding: 10px 25px;
+  border-radius: 5px;
+  display: none;
+}
+
+.box .nav_right ul li.active .dd_right{
+  display: block;
+}
+
+.box .nav_right ul li .dd_right .fas{
+  margin-right: 10px; 
+}
+
+.box .nav_right ul li .dd_right:before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 90%;
+  transform: translateX(-50%);
+  border: 10px solid;
+  border-color: transparent transparent #fafafa transparent;
+
+}
+
+
+.box .nav_right > ul li a{
+  display: flex;
+  width: max-content;
+  height: 40px;
+  align-items: center;
+  color: black;
+}
+
+.box .nav_right > a{
+  text-align: right;
+}
+
 .box .nav_right ul li.nr_li{
-	margin : 25px;
+	margin : 0px 25px;
 	cursor: pointer;
-	color: black;
-	font-size: 20px;
+	color: #EB2188;
+	font-size: 30px;
 	position: relative;
 }
 
@@ -812,6 +867,7 @@ nav ul.menu-area ul li a:hover{
 }
 
 .box .nav_right ul li img{
+  margin: 0 10px;
 	width: 35px;
   vertical-align: middle;
   border-radius: 20px;
@@ -859,7 +915,7 @@ nav ul.menu-area ul li a:hover{
 	position: absolute;
 	top: -20px;
 	right: 30px;
-	border: 10px solid;
+	border: 20px solid;
 	border-color: transparent transparent #fff transparent;
 }
 

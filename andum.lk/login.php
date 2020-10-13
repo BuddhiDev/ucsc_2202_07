@@ -20,7 +20,7 @@ require("server.php");
   <div class="box">
     <header>
       <img class="logo" src="logo.png" alt="logo">
-      
+      <!-- <?php require("navbar_category.php")?> -->
       <nav>
         <ul class="nav-area">
           <!-- <li><a href="#">Explore</a></li> -->

@@ -14,6 +14,7 @@ if (!isset($_SESSION['nic'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Customer</title>
+  <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,12 +22,12 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-  <div class="box">
     <header>
-      <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      <!-- <?php require("../navbar_category.php")?> -->
-      <div class="wrapper">
-        <nav>
+      <nav class="navbar-main">
+        <div class="navbar-logo">
+          <img class="logo" src="../logo.png" alt="logo" class="img-box">
+        </div>
+        <div class="nav-item-middle">
           <ul class="nav-area">
             <li><a href="index.php">Home</a></li>
             <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
@@ -59,60 +60,37 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="#">All Categories</a></li>
                 </ul>
               </ul>
-
-
             </li>
             <li><a href="purchases.php">Purchases</a></li>
-
           </ul>
-        </nav>
-          
-      </div>
-
-      <div class="nav_right">
-        <ul>
-          <li class="nr_li li_main">
-            <img src="/ucsc_2202_07/andum.lk/images/thash.jpg" alt="profile_img">
-            
-            <div class="dd_menu">
-              <div class="dd_left">
-                <ul>
-                  <li><i class="fas fa-map-marker-alt"></i></li>
-                  <li><i class="fas fa-bell-slash"></i></li>
-                  <li><i class="far fa-plus-square"></i></li>
-                  <li><i class="fas fa-cog"></i></li>
-                  <li><i class="fas fa-download"></i></li>
-                  <li><i class="fas fa-sign-out-alt"></i></li>
-                </ul>
-              </div>
-              <div class="dd_right">
-                <ul>
-                  <li>Location</li>
-                  <li>Favorites</li>
-                  <li>Addpeople</li>
-                  <li>Settings</li>
-                  <li>Downloads</li>
-                  <li>Logout</li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          <li class="nr_li">
-            <i class="fas fa-envelope-open-text"></i>
-          </li>
-        </ul>   
-      </div>
-      
-      <div>
-            <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
+        </div>
+        <div class="box">
+          <div class="nav_right">
+            <ul>
+              <li><i class="fas fa-user-circle"></i>
+                <div class="dd_right">
+                  <ul>
+                    <li><a href="#"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i>Hired Tailors</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i>Sign Out</a></li>
+                  </ul>
+                </div>
+              <li class="nr_li"><i class="fas fa-envelope"></i></li>
+            </ul>   
           </div>
-      <!-- <div>
-        <a class="cta" href="cust_edit_profile.php"><button name="edit" class="loginbutton btn-full-w">Edit profile</button></a>
-      </div> -->
-  
+        </div>
+      </nav>
     </header>
-  </div>
-  
+
+
+<script>
+  document.querySelector(".nav_right ul li").addEventListener("click",
+  function(){
+    this.classList.toggle("active");
+  })
+</script>
 
     <br />
     <?php include("../errors.php");
