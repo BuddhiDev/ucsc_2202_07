@@ -168,7 +168,7 @@ if (isset($_POST['update_user'])) {
     $address = mysqli_real_escape_string($db, $_POST['address']);
     $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
 
-    if ($password1 != $password2) {
+    if ($password1 != $password2){
         array_push($errors, "Passwords do not match");
     }
     else{
