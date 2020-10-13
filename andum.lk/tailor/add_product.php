@@ -1,3 +1,7 @@
+<?php
+require("../server.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,19 +44,19 @@
         <div class="col-75">
           <select class="option" name="Unit" id="unit">
             <optgroup label="Ladies wear">
-              <option value="Casual wear">Casual wear</option>
-              <option value="2">Fomal wear</option>
-              <option value="3">Wedding dresses</option>
+              <option value="casual_wear">Casual wear</option>
+              <option value="fomal wear">Fomal wear</option>
+              <option value="wedding_dresses">Wedding dresses</option>
             </optgroup>
             <optgroup label="Gents wear">
-              <option value="4">Top wear</option>
-              <option value="5">Bottom wear</option>
-              <option value="6">Sports wear</option>
+              <option value="Top wear">Top wear</option>
+              <option value="bottom wear">Bottom wear</option>
+              <option value="sports wear">Sports wear</option>
             </optgroup>
             <optgroup label="Kids wear">
-              <option value="7">Girl's collection</option>
-              <option value="8">Boy's collection</option>
-              <option value="9">Baby's collection</option>
+              <option value="girl's_collection">Girl's collection</option>
+              <option value="boy's_collection">Boy's collection</option>
+              <option value="baby's_collection">Baby's collection</option>
             </optgroup>
           </select>
         </div>
@@ -83,12 +87,12 @@
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
-        <select class="option" name="Size" id="size">
-          <option value="1">M</option>
-          <option value="2">L</option>
-          <option value="3">XL</option>
-          <option value="4">XXL</option>
-          <option value="5">XXXL</option>
+        <select class="option" name="size" id="size">
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+          <option value="XXXL">XXXL</option>
         </select>
       </div>
     </div>
@@ -113,7 +117,7 @@
       <button class="loginbutton btn-full-w" type="submit" name="upload"> Upload</button>
     </div>
     <div> <center>
-      <button class="loginbutton btn-full-w" type="submit" name="submit"> Submit</button> </center></div>
+      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Submit</button> </center></div>
   </form>
 </div>
 
