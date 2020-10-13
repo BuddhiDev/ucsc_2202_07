@@ -177,3 +177,45 @@ if (isset($_POST['update_user'])) {
     $result=mysqli_query($db, $sql);
     }
 }
+
+if (isset($_POST['save_user'])) {
+
+    $nic = mysqli_real_escape_string($db, $_POST['nic']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $fname = mysqli_real_escape_string($db, $_POST['fname']);
+    $lname = mysqli_real_escape_string($db, $_POST['lname']);
+    $password1 = mysqli_real_escape_string($db, $_POST['password']);
+    $password2 = mysqli_real_escape_string($db, $_POST['cpassword']);
+    $contactno = mysqli_real_escape_string($db, $_POST['contactno']);
+    $address = mysqli_real_escape_string($db, $_POST['address']);
+    $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
+
+    if ($password1 != $password2){
+        array_push($errors, "Passwords do not match");
+    }
+    else{
+    $password = md5($password1);
+    $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' WHERE nic='$nic'";
+    $result=mysqli_query($db, $sql);
+    }
+}
+
+
+
+// if(isset($_POST['save']))
+// {
+//     $nic = mysqli_real_escape_string($db,$_POST['nic']);
+//     $email = mysqli_real_escape_string($db,$_POST['email']);
+//     $fname = mysqli_real_escape_string($db,$_POST['fname']);
+//     $lname = mysqli_real_escape_string($db,$_POST['lname']);
+//     $password = mysqli_real_escape_string($db,$_POST['password']);
+//     $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
+//
+//     $edit = "UPDATE users SET nic='$nic', email='$email', fname='$fname', lname='$lname', password='$password' contactno='$contactno' ";
+//     mysqli_query($db,$edit);
+//   }
+//
+
+
+
+ ?>
