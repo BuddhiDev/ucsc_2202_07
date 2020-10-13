@@ -17,6 +17,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -65,56 +66,51 @@ if (!isset($_SESSION['nic'])) {
 
           </ul>
         </nav>
-          <div class="nav_right">
-            <ul>
-              <li class="nr_li dd_main">
-                <img src="/ucsc_2202_07/andum.lk/images/thash.jpg" alt="profile_img" style="width:35px;"></li> 
-                
-                <div class="dd_menu">
-                  <div class="dd_left">
-                    <ul>
-                      <li><i class="fas fa-map-marker-alt"></i></li>
-                      <li><i class="far fa-star"></i></li>
-                      <li><i class="far fa-plus-square"></i></li>
-                      <li><i class="fas fa-cog"></i></li>
-                      <li><i class="fas fa-download"></i></li>
-                      <li><i class="fas fa-sign-out-alt"></i></li>
-                    </ul>
-                  </div>
-                  <div class="dd_right">
-                    <ul>
-                      <li>Location</li>
-                      <li>Favorites</li>
-                      <li>Addpeople</li>
-                      <li>Settings</li>
-                      <li>Downloads</li>
-                      <li>Logout</li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li class="nr_li">
-                <i class="fas fa-envelope-open-text"></i>
-              </li>
-            </ul>
-          </div>
+          
+      </div>
+
+      <div class="nav_right">
+        <ul>
+          <li class="nr_li li_main">
+            <img src="/ucsc_2202_07/andum.lk/images/thash.jpg" alt="profile_img">
+            
+            <div class="dd_menu">
+              <div class="dd_left">
+                <ul>
+                  <li><i class="fas fa-map-marker-alt"></i></li>
+                  <li><i class="fas fa-bell-slash"></i></li>
+                  <li><i class="far fa-plus-square"></i></li>
+                  <li><i class="fas fa-cog"></i></li>
+                  <li><i class="fas fa-download"></i></li>
+                  <li><i class="fas fa-sign-out-alt"></i></li>
+                </ul>
+              </div>
+              <div class="dd_right">
+                <ul>
+                  <li>Location</li>
+                  <li>Favorites</li>
+                  <li>Addpeople</li>
+                  <li>Settings</li>
+                  <li>Downloads</li>
+                  <li>Logout</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nr_li">
+            <i class="fas fa-envelope-open-text"></i>
+          </li>
+        </ul>   
       </div>
       
-
       <div>
+            <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
+          </div>
+      <!-- <div>
         <a class="cta" href="cust_edit_profile.php"><button name="edit" class="loginbutton btn-full-w">Edit profile</button></a>
-      </div>
-
-      <div>
-        <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
-      </div>
-
-
-  </div>
-
-
-
-  </header>
+      </div> -->
+  
+    </header>
   </div>
   
 
