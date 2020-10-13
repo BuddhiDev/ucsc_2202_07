@@ -33,7 +33,7 @@ if (!isset($_SESSION['nic'])) {
             <!-- <li><a href="dress_showcase.php">Dress Showcase</a></li> -->
             <li><a href="hired_list.php">Hired Tailors</a></li>
             <li class="dropdown">
-              <a href="dress_showcase.php">Shop Now</a>
+              <a href="#">Shop Now</a>
               <ul class="menu-area">
                 <ul>
                   <h4>Ladies wear</h4>
@@ -85,119 +85,77 @@ if (!isset($_SESSION['nic'])) {
     </header>
 
 
-<script>
-  document.querySelector(".nav_right ul li").addEventListener("click",
-  function(){
-    this.classList.toggle("active");
-  })
-</script>
+  <script>
+    document.querySelector(".nav_right ul li").addEventListener("click",
+    function(){
+      this.classList.toggle("active");
+    })
+  </script>
 
-    <br />
-    <?php include("../errors.php");
-              ?>
-    <div class="sliderbox-wrap">
+  <br />
+  <?php include("../errors.php");
+            ?>
+  <div class="sliderbox-wrap">
 
-      <?php
-      $nic = $_SESSION['nic'];
-      $fname = $_SESSION['fname'];
-      $lname = $_SESSION['lname'];
-      $t_type = "0";
-      $sql = "SELECT * FROM users WHERE type='$t_type'";
-      $result = mysqli_query($db, $sql);
-
-      if ($result) {
-        while ($row = mysqli_fetch_assoc($result)) {
-          $t_nic = $row["nic"];
-      ?>
-          <!-- <div class="slider-box">
-            <form method="post" action="index.php" class="tailor-form">
-              <table>
-                <tr>
-                  <td>
-                    <img src="../tailor1.jfif" alt="Avatar" style="width:200px">
-                  </td>
-                  <td>
-                    <h4><b>
-                        <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
-                        <input type="hidden" value="<?php echo $row["fname"] ?> " name="t_fname">
-                        <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                        <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
-
-
-
-                      
-                      </b></h4>
-                    <b>
-                      <?php echo $row["fname"] ?> &nbsp;<?php echo $row["lname"] ?>
-                    </b></h4>
-                    <p>Tailor</p>
-
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-
-                    <div>
-                      <button type="submit" name="hireT" class="loginbutton btn-full-w">Hire</button>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-
-            </form>
-          </div>
-
-          <br /> -->
-
-      <?php
-        }
-      }
-      ?>
-
-      <!-- </div>  -->
-      <div class="container">
-<h2>New Arrivels</h2>
-  <div class="row">
     <?php
     $nic = $_SESSION['nic'];
-    $sql = "SELECT * FROM dress_showcase";
+    $fname = $_SESSION['fname'];
+    $lname = $_SESSION['lname'];
+    $t_type = "0";
+    $sql = "SELECT * FROM users WHERE type='$t_type'";
     $result = mysqli_query($db, $sql);
 
     if ($result) {
       while ($row = mysqli_fetch_assoc($result)) {
+        $t_nic = $row["nic"];
     ?>
-<!-- Dress box start -->
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title"><?php echo $row["title"] ?></div>
-                <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
-                </div>
-                <div class="card-description">LKR 500.00</div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <?php
+
+    <?php
       }
     }
     ?>
-    <!-- Dress box end-->
+
+    <!-- </div>  -->
+    <div class="container">
+   <h2>New Arrivels</h2>
+    <div class="row">
+      <?php
+      $nic = $_SESSION['nic'];
+      $sql = "SELECT * FROM dress_showcase";
+      $result = mysqli_query($db, $sql);
+
+      if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+      ?>
+      <!-- Dress box start -->
+      <div class="col-4">
+        <form method="post" action="index.php" class="dress-showcase">
+          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+          <div class="card-item">
+            <div class="card-img">
+              <img src="product1.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title"><?php echo $row["title"] ?></div>
+              <div class="card-description">
+                      Auto-layout for flexbox grid columns also means you can set the width of one column 
+                      and have the sibling columns automatically resize around it.
+              </div>
+              <div class="card-description">LKR 500.00</div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <?php
+        }
+      }
+      ?>
+      <!-- Dress box end-->
+
     </div>
   </div>
-
-
- 
-
+  
   <!--footer-->
 <?php require("footer.php")?>
 </body>

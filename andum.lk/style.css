@@ -81,6 +81,7 @@ header {
 
 .nav-area {
     list-style: none;
+    position: relative;
 }
 
 .nav-area li{
@@ -606,7 +607,7 @@ nav > ul{
   display: -o-flex;
   display: flex;
   justify-content: center;
-  width: 1170px;
+  width: 1000px;
   margin: 0 auto;
   padding: 0;
 
@@ -629,7 +630,7 @@ nav > ul > li > a{
   padding: 15px 25px;
 }
 
-nav ul > li.dropdown > a:after{
+.nav-item-middle ul > li.dropdown > a:after{
   position: relative;
   float: right;
   content: '';
@@ -642,7 +643,7 @@ nav ul > li.dropdown > a:after{
   background: #fafafa;
 } */
 
-nav ul.menu-area{
+.menu-area{
   padding: 40px 40px 0 40px;
   background: #ffffff;
   text-align: left;
@@ -659,6 +660,10 @@ nav ul.menu-area{
   width: 1170px;
   top: -9999px;
   left: 0;
+}
+
+.menu-area li{
+  padding: 0px;
 }
 
 nav ul li:hover ul.menu-area{
