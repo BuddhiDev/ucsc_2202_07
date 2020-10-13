@@ -102,6 +102,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
           </form>
         </div>
+
         <?php
       }
     }
@@ -109,6 +110,7 @@ if (!isset($_SESSION['nic'])) {
     <!-- Dress box end-->
     </div>
   </div>
+
 
 
  <a href="cart.php"><button class="loginbutton btn-full-w" >View Cart</button></a>

@@ -178,172 +178,46 @@ if (!isset($_SESSION['nic'])) {
       ?>
 
       <!-- </div>  -->
-<div class="container">
-  <h2>New Arrivels</h2>
+      <div class="container">
+<h2>New Arrivels</h2>
   <div class="row">
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-              <a href="product.php"><img src="product1.jpg" alt="Avatar" style="width:100%"></a>
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    Casual Summer Top
-                </div>
-                <div class="card-description">
-                    LKR 2,500
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-  </div>
-</div>
+    <?php
+    $nic = $_SESSION['nic'];
+    $sql = "SELECT * FROM dress_showcase";
+    $result = mysqli_query($db, $sql);
 
-<div class="container">
-<h2>Top Rated Tailors</h2>
-  <div class="row">
+    if ($result) {
+      while ($row = mysqli_fetch_assoc($result)) {
+    ?>
+<!-- Dress box start -->
         <div class="col-4">
           <form method="post" action="index.php" class="dress-showcase">
+          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
             <div class="card-item">
               <div class="card-img">
                 <img src="product1.jpg" alt="Avatar" style="width:100%">
               </div>
               <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
+                <div class="card-title"><?php echo $row["title"] ?></div>
                 <div class="card-description">
-                    
+                    Auto-layout for flexbox grid columns also means you can set the width of one column 
+                    and have the sibling columns automatically resize around it.
                 </div>
+                <div class="card-description">LKR 500.00</div>
               </div>
             </div>
           </form>
         </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    
-                </div>
-                
-              </div>
-            </div>
-          </form>
-        </div>
+
+        <?php
+      }
+    }
+    ?>
+    <!-- Dress box end-->
     </div>
   </div>
 
-  <!-- </div>  -->
-<div class="container">
-<h2>Top Rated fashion Designers</h2>
-  <div class="row">
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-    </div>
-  </div>
-
-    </div>
 
  
 
