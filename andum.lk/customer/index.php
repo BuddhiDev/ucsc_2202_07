@@ -30,7 +30,34 @@ if (!isset($_SESSION['nic'])) {
         <div class="nav-item-middle">
           <ul class="nav-area">
             <li class="dropdown">
-              <a href="#">Shop Now</a>
+              <a href="#">Women</a>
+              <ul class="menu-area">
+                <ul>
+                  <h4>Casual Wear</h4>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="workware_ladies.php">Blouse</a></li>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Jeans</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="dresses.php">Dresses</a></li>
+                </ul>
+                <ul>
+                  <h4>Formal Wear</h4>
+                  <li><a href="#">Blouse</a></li>
+                  <li><a href="#">Skirts</a></li>
+                  <li><a href="workwear_gents.php">Pants</a></li>
+                  <li><a href="#">Dresses</a></li>
+                </ul>
+                <ul>
+                  <h4>Ethnic wear</h4>
+                  <li><a href="#">Kurthas</a></li>
+                  <li><a href="#">Shawls</a></li>
+                  <li><a href="#">Sarees</a></li>
+                </ul>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Men</a>
               <ul class="menu-area">
                 <ul>
                   <h4>Ladies wear</h4>
@@ -58,6 +85,36 @@ if (!isset($_SESSION['nic'])) {
                 </ul>
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#">Kids</a>
+              <ul class="menu-area">
+                <ul>
+                  <h4>Ladies wear</h4>
+                  <li><a href="dresses.php">Dresses</a></li>
+                  <li><a href="workware_ladies.php">Work Wear</a></li>
+                  <li><a href="#">Denims</a></li>
+                  <li><a href="#">Tops</a></li>
+                  <li><a href="#">T Shirts</a></li>
+                  <li><a href="#">All Categories</a></li>
+                </ul>
+                <ul>
+                  <h4>Gents wear</h4>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Denims</a></li>
+                  <li><a href="workwear_gents.php">Work Wear</a></li>
+                  <li><a href="#">T Shirts</a></li>
+                  <li><a href="#">All Categories</a></li>
+                </ul>
+                <ul>
+                  <h4>Kids wear</h4>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">T shirsts</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">All Categories</a></li>
+                </ul>
+              </ul>
+            </li>
+            
             <li><a href="index.php">Hire a Tailor</a></li>
             <li><a href="index.php">Hire a Fashion Designer</a></li>
           </ul>
