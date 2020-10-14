@@ -129,11 +129,14 @@
 
 
   <!-- Tailor Slider-->
+
+
+  
   <div class="tslider">
+    
     <ul id="autoWidth" class="cs-hidden">
       <li class="item-a">
         <div class="tslider-box">
-          <p class="product">TTT</p>\
           <!-- model -->
           <div class="slide-img">
               <img src="product1.jpg" alt="1">   
@@ -147,10 +150,9 @@
       </li>
       <li class="item-b">
         <div class="tslider-box">
-          <p class="product">TTT</p>\
           <!-- model -->
           <div class="slide-img">
-            <img src="product1.jpg" alt="1">   
+            <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="1">   
           </div>
           <!-- details -->
           <div class="details">
@@ -161,7 +163,6 @@
       </li>
       <li class="item-c">
         <div class="tslider-box">
-          <p class="product">TTT</p>\
           <!-- model -->
           <div class="slide-img">
             <img src="product1.jpg" alt="1">   
@@ -175,7 +176,6 @@
       </li>
       <li class="item-d">
         <div class="tslider-box">
-          <p class="product">TTT</p>\
           <!-- model -->
           <div class="slide-img">
             <img src="product1.jpg" alt="1">   
@@ -189,10 +189,9 @@
       </li>
       <li class="item-e">
         <div class="tslider-box">
-          <p class="product">TTT</p>\
           <!-- model -->
           <div class="slide-img">
-            <img src="product1.jpg" alt="1">   
+            <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="1">   
           </div>
           <!-- details -->
           <div class="details">
@@ -203,6 +202,9 @@
       </li>
     </ul>
   </div>
+
+
+  
 
   
 
