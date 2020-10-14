@@ -14,6 +14,7 @@ if (!isset($_SESSION['nic'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Dress Showcase</title>
+  <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,36 +30,86 @@ if (!isset($_SESSION['nic'])) {
         </div>
         <div class="nav-item-middle">
           <ul class="nav-area">
-            <li><a href="index.php">Explore</a></li>
             <li class="dropdown">
-              <a href="dress_showcase.php">Shop Now</a>
+              <a href="#">Women</a>
               <ul class="menu-area">
                 <ul>
-                  <h4>Ladies wear</h4>
-                  <li><a href="dresses.php">Dresses</a></li>
-                  <li><a href="workware_ladies.php">Work Wear</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="#">Tops</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
-                </ul>
-                <ul>
-                  <h4>Gents wear</h4>
+                  <h4>Casual Wear</h4>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="workware_ladies.php">Blouse</a></li>
                   <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="workwear_gents.php">Work Wear</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
+                  <li><a href="#">Jeans</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="dresses.php">Dresses</a></li>
                 </ul>
                 <ul>
-                  <h4>Kids wear</h4>
+                  <h4>Formal Wear</h4>
+                  <li><a href="#">Blouse</a></li>
+                  <li><a href="#">Skirts</a></li>
+                  <li><a href="workwear_gents.php">Pants</a></li>
                   <li><a href="#">Dresses</a></li>
-                  <li><a href="#">T shirsts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">All Categories</a></li>
+                </ul>
+                <ul>
+                  <h4>Ethnic wear</h4>
+                  <li><a href="#">Kurthas</a></li>
+                  <li><a href="#">Shawls</a></li>
+                  <li><a href="#">Sarees</a></li>
                 </ul>
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#">Men</a>
+              <ul class="menu-area">
+                <ul>
+                  <h4>Casual Wear</h4>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Jeans</a></li>
+                  <li><a href="#">Trousers</a></li>
+                  <li><a href="#">Bottoms</a></li>
+                  <li><a href="#">Sarongs</a></li>
+                </ul>
+                <ul>
+                  <h4>Active Wear</h4>
+                  <li><a href="#">Active Hoodies</a></li>
+                  <li><a href="#">Active T shirts</a></li>
+                  <li><a href="#">Active Tank Tops</a></li>
+                  <li><a href="#">Active Track Bottoms</a></li>
+                  <li><a href="#">Active Shorts</a></li>
+                </ul>
+                <ul>
+                  <h4>Inner Wear</h4>
+                  <li><a href="#">Brief</a></li>
+                  <li><a href="#">Trunks</a></li>
+                  <li><a href="#">Vests</a></li>
+                </ul>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Kids</a>
+              <ul class="menu-area">
+                <ul>
+                  <h4>Girls</h4>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Tank Tops</a></li>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+                <ul>
+                  <h4>Boys</h4>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Kurta</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </ul>
+            </li>
+            
+            <li><a href="index.php">Hire a Tailor</a></li>
+            <li><a href="index.php">Hire a Fashion Designer</a></li>
           </ul>
         </div>
         <div class="box">
@@ -83,12 +134,12 @@ if (!isset($_SESSION['nic'])) {
     </header>
 
 
-<script>
-  document.querySelector(".nav_right ul li").addEventListener("click",
-  function(){
-    this.classList.toggle("active");
-  })
-</script>
+  <script>
+    document.querySelector(".nav_right ul li").addEventListener("click",
+    function(){
+      this.classList.toggle("active");
+    })
+  </script>
 
     <br />
 
@@ -116,12 +167,6 @@ if (!isset($_SESSION['nic'])) {
       <label for="uname" class="field-label-inline">Search by Name</label>
       <input type="text" class="field-value-inline" name="uname" required>
     </div>
-  </div>
-
-  <div class="btn-panel-center">
-    <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
-            <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-    <button class="loginbutton btn-full-w" type="submit">All</button>
   </div>
 
   <!-- <section class="products">
@@ -166,10 +211,7 @@ if (!isset($_SESSION['nic'])) {
               </div>
               <div class="card-content">
                 <div class="card-title"><?php echo $row["title"] ?></div>
-                <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
-                </div>
+                <div class="card-description">LKR 2,500.00</div>
               </div>
             </div>
           </form>
@@ -182,10 +224,6 @@ if (!isset($_SESSION['nic'])) {
     <!-- Dress box end-->
     </div>
   </div>
-
-
-
- <a href="cart.php"><button class="loginbutton btn-full-w" >View Cart</button></a>
 
  <!--</div>-->
 
