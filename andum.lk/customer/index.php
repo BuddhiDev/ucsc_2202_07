@@ -146,63 +146,8 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </form>
       </div>
-      <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-          <div class="card-item">
-            <div class="card-img">
-              <img src="product1.jpg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column 
-                      and have the sibling columns automatically resize around it.
-              </div> -->
-              <div class="card-description">LKR 2,500.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-          <div class="card-item">
-            <div class="card-img">
-              <img src="product1.jpg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column 
-                      and have the sibling columns automatically resize around it.
-              </div> -->
-              <div class="card-description">LKR 2,500.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-          <div class="card-item">
-            <div class="card-img">
-              <img src="product1.jpg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column 
-                      and have the sibling columns automatically resize around it.
-              </div> -->
-              <div class="card-description">LKR 2,500.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
+
+
       <?php
         }
       }
