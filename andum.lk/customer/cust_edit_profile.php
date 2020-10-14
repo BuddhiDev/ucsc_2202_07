@@ -130,6 +130,7 @@ require("../server.php");
                   </ul>
                 </div>
               <li class="nr_li"><i class="fas fa-envelope"></i></li>
+              <a href="cart.php"><li class="nr_li"><i class="fas fa-shopping-cart"></i></li></a>
             </ul>   
           </div>
         </div>
