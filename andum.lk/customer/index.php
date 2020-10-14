@@ -29,6 +29,7 @@ if (!isset($_SESSION['nic'])) {
         </div>
         <div class="nav-item-middle">
           <ul class="nav-area">
+          <li><a href="index.php">Explore</a></li>
             <li class="dropdown">
               <a href="#">Women</a>
               <ul class="menu-area">
@@ -60,28 +61,27 @@ if (!isset($_SESSION['nic'])) {
               <a href="#">Men</a>
               <ul class="menu-area">
                 <ul>
-                  <h4>Ladies wear</h4>
-                  <li><a href="dresses.php">Dresses</a></li>
-                  <li><a href="workware_ladies.php">Work Wear</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="#">Tops</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
-                </ul>
-                <ul>
-                  <h4>Gents wear</h4>
+                  <h4>Casual Wear</h4>
+                  <li><a href="#">T shirts</a></li>
                   <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="workwear_gents.php">Work Wear</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
+                  <li><a href="#">Jeans</a></li>
+                  <li><a href="#">Trousers</a></li>
+                  <li><a href="#">Bottoms</a></li>
+                  <li><a href="#">Sarongs</a></li>
                 </ul>
                 <ul>
-                  <h4>Kids wear</h4>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">T shirsts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">All Categories</a></li>
+                  <h4>Active Wear</h4>
+                  <li><a href="#">Active Hoodies</a></li>
+                  <li><a href="#">Active T shirts</a></li>
+                  <li><a href="#">Active Tank Tops</a></li>
+                  <li><a href="#">Active Track Bottoms</a></li>
+                  <li><a href="#">Active Shorts</a></li>
+                </ul>
+                <ul>
+                  <h4>Inner Wear</h4>
+                  <li><a href="#">Brief</a></li>
+                  <li><a href="#">Trunks</a></li>
+                  <li><a href="#">Vests</a></li>
                 </ul>
               </ul>
             </li>
@@ -89,28 +89,21 @@ if (!isset($_SESSION['nic'])) {
               <a href="#">Kids</a>
               <ul class="menu-area">
                 <ul>
-                  <h4>Ladies wear</h4>
-                  <li><a href="dresses.php">Dresses</a></li>
-                  <li><a href="workware_ladies.php">Work Wear</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="#">Tops</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
-                </ul>
-                <ul>
-                  <h4>Gents wear</h4>
+                  <h4>Girls</h4>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Tank Tops</a></li>
                   <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Denims</a></li>
-                  <li><a href="workwear_gents.php">Work Wear</a></li>
-                  <li><a href="#">T Shirts</a></li>
-                  <li><a href="#">All Categories</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="#">Sleepware</a></li>
                 </ul>
                 <ul>
-                  <h4>Kids wear</h4>
+                  <h4>Boys</h4>
+                  <li><a href="#">T shirts</a></li>
                   <li><a href="#">Dresses</a></li>
-                  <li><a href="#">T shirsts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">All Categories</a></li>
+                  <li><a href="#">Kurta</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Sleepware</a></li>
                 </ul>
               </ul>
             </li>
@@ -149,6 +142,14 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <br />
+
+  <div class="search-container">
+    <div class="form-field-inline">
+      <label for="uname" class="field-label-inline">Search by Name</label>
+      <input type="text" class="field-value-inline" name="uname" required>
+    </div>
+  </div>
+
   <?php include("../errors.php");
             ?>
   <div class="sliderbox-wrap">
