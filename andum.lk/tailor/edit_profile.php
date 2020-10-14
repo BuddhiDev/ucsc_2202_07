@@ -106,11 +106,11 @@ require("../server.php");
 
 
               <!--<h2>SewingCategories</h2>-->
-              <div class="form-field-inline">
+              <!-- <div class="form-field-inline">
                 <label for="category" class="field-label-inline"><b>Sewing Category</b></label>
-              </div>
+              </div> -->
                   <!--<h2>SewingCategories</h2>-->
-                  <div class="row">
+                  <!-- <div class="row">
                      <div class="column">
                         <h4>Ladies wear</h4><br>
                         <label class="checkbox_container">Casual Wear
@@ -162,7 +162,7 @@ require("../server.php");
                   </div>
 
               <br>
-              <br>
+              <br> -->
 
 
           <div class="btn-panel-center">
