@@ -131,11 +131,13 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-              </div>
-            <li class="nr_li"><i class="fas fa-envelope"></i></li>
+
+            <li><i class="fas fa-envelope"></i></li>
             <a href="cart.php">
-              <li class="nr_li"><i class="fas fa-shopping-cart"></i></li>
+              <li><i class="fas fa-shopping-cart"></i></li>
             </a>
+              </div>
+            
           </ul>
         </div>
       </div>
