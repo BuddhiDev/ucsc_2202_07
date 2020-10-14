@@ -83,7 +83,7 @@
     padding: 0 5px;
 }
 .lSSlideOuter .lSPager.lSpg > li a {
-    background-color: #222222;
+    background-color: #888282fa;
     border-radius: 30px;
     display: inline-block;
     height: 8px;
@@ -96,7 +96,7 @@
     transition: all 0.5s linear 0s;
 }
 .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
-    background-color: #428bca;
+    background-color: #EB2188;
 }
 .lSSlideOuter .media {
     opacity: 0.8;
