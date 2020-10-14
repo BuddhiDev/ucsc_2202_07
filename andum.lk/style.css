@@ -952,10 +952,11 @@ a{
 
 .box .nav_right > ul li a{
   display: flex;
-  width: max-content;
-  height: 40px;
-  align-items: center;
-  color: black;
+    width: max-content;
+    height: 40px;
+    align-items: center;
+    color: black;
+    font-size: 10px;
 }
 
 .box .nav_right > a{
