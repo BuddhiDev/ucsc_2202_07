@@ -118,12 +118,6 @@ if (!isset($_SESSION['nic'])) {
     </div>
   </div>
 
-  <div class="btn-panel-center">
-    <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
-            <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-    <button class="loginbutton btn-full-w" type="submit">All</button>
-  </div>
-
   <!-- <section class="products">
         <div class="product-container">
             <h1>ALL</h1>
@@ -166,10 +160,7 @@ if (!isset($_SESSION['nic'])) {
               </div>
               <div class="card-content">
                 <div class="card-title"><?php echo $row["title"] ?></div>
-                <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
-                </div>
+                <div class="card-description">LKR 2,500.00</div>
               </div>
             </div>
           </form>
@@ -182,10 +173,6 @@ if (!isset($_SESSION['nic'])) {
     <!-- Dress box end-->
     </div>
   </div>
-
-
-
- <a href="cart.php"><button class="loginbutton btn-full-w" >View Cart</button></a>
 
  <!--</div>-->
 
