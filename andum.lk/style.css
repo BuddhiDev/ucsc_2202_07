@@ -324,9 +324,10 @@ nav ul.menu-area ul li a:hover{
 }
 
 .footer-section ul > a > li{
-    font-size: 13px;
-    font-weight: 600;
-    color: black;
+  font-size: 13px;
+  font-weight: 600;
+  color: black;
+  margin: 20px;
 }
 
 .footer .footer-bottom{
