@@ -2,16 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
     <style>
 .fa {
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 30px;
   width: 50px;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  /* margin: 5px 2px; */
 }
 
 .fa:hover {
@@ -19,33 +20,27 @@
 }
 
 .fa-facebook {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-twitter {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-google {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-linkedin {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-youtube {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-instagram {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 
@@ -56,46 +51,15 @@
       <div class="footer-content">
         <div class="footer-section about">
           <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
+
           <h1 class="logo-txt"><span></span></h1>
-
-
-
-
-              <a href="#" class="fa fa-facebook"></a>
-              <a href="#" class="fa fa-twitter"></a>
-              <a href="#" class="fa fa-google"></a>
-              <a href="#" class="fa fa-linkedin"></a>
-              <a href="#" class="fa fa-youtube"></a>
-              <a href="#" class="fa fa-instagram"></a>
-
-
-
-
-
-
-
-
-
-
-
-          <!-- <div class="socials">
-            <a href="#"><i class="fas fa-facebook"></i></a>
-            <a href="#"><i class="fas fa-instagram"></i></a>
-            <a href="#"><i class="fas fa- google+"></i></a>
-          </div> -->
-
-
-
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-google"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
         </div>
-
-
-
-
-
-
-
-
-
         <div class="footer-section links">
           <ul>
             <a href="#">
