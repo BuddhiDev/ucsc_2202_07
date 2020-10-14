@@ -7,12 +7,12 @@
     <title></title>
     <style>
 .fa {
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 30px;
   width: 50px;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  /* margin: 5px 2px; */
 }
 
 .fa:hover {
@@ -20,33 +20,27 @@
 }
 
 .fa-facebook {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-twitter {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-google {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-linkedin {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-youtube {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 .fa-instagram {
-  background: #000000;
-  color: white;
+  color: black;
 }
 
 
@@ -57,6 +51,7 @@
       <div class="footer-content">
         <div class="footer-section about">
           <img class="footer-logo" src="/ucsc_2202_07/andum.lk/logo.png" alt="logo">
+
           <h1 class="logo-txt"><span></span></h1>
           <a href="#" class="fa fa-facebook"></a>
           <a href="#" class="fa fa-twitter"></a>
@@ -64,7 +59,6 @@
           <a href="#" class="fa fa-linkedin"></a>
           <a href="#" class="fa fa-youtube"></a>
           <a href="#" class="fa fa-instagram"></a>
-
         </div>
         <div class="footer-section links">
           <ul>
