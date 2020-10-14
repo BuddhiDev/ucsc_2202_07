@@ -804,6 +804,69 @@ nav ul.menu-area ul li a:hover{
     opacity: 1;
   }
 }
+
+
+
+.tslider{
+  width: 100%;
+  height: 90vh;
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tslider-box{
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  margin: 20px 10px;
+
+
+}
+
+.model{
+  height: 450px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.details p{
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.product{
+  color: #868686;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.tslider-box:hover{
+  background-color: white;
+  transform-style: preserve-3d;
+  transform: scale(1.02);
+  transition: all ease 0.3s;
+}
+
+
+
+
 /* -------------Tailor slider Ends-------------- */
 
 .box .nav_right > ul{
@@ -931,3 +994,8 @@ nav ul.menu-area ul li a:hover{
 .box .dd_main.active .dd_menu{
 	display: flex;
 }
+
+
+
+
+

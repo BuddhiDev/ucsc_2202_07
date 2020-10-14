@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/lightslider.css">
-    <script type="text/javacript" src="/ucsc_2202_07/andum.lk/jquery.js"></script>
-    <script type="text/javacript" src="/ucsc_2202_07/andum.lk/lightslider.js"></script>
+    <script type="text/javascript" src="/ucsc_2202_07/andum.lk/jquery.js"></script>
+    <script type="text/javascript" src="/ucsc_2202_07/andum.lk/lightslider.js"></script>
     
 </head>
 <body>
@@ -98,7 +98,6 @@
     </div>
   </div>
 
-  <br>
 
   <div style="text-align:center">
     <span class="dot" onclick="currentSlide(1)"></span>
@@ -127,88 +126,91 @@
     }
   </script>
 
-  <!-- Tailor Slider-->
-  <ul id="autoWidth" class="cs-hidden">
-    <li class="item-a">
-      <!-- Slide-box -->
-      <div class="slide-box">
-        <!-- Slide-img -->
-        <div class="slide-img">
-          <img src="product1.jpg" alt="1">
-          <!-- overlayer -->
-          <div class="overlayer"><a href="#" class="buy-btn">Buy</a></div>
-        </div>
-        <!-- Slide-detail -->
-        <div class="slide-detail">
-          <!-- slide-type -->
-          <div class="slide-type">
-            <a href="#">TTT</a>
-            <span>TTT</span>
-          </div>
-          <!-- slide-price -->
-          <a href="#" class="slide-price">$23</a>
-        </div>
-      </div>
-  <!-- Slide-box ends -->
-    </li>
-    
-  
-    <li class="item-a">
-      <!-- Slide-box -->
-      <div class="slide-box">
-        <!-- Slide-img -->
-        <div class="slide-img">
-          <img src="product1.jpg" alt="1">
-          <!-- overlayer -->
-          <div class="overlayer"><a href="#" class="buy-btn">Buy</a></div>
-        </div>
-        <!-- Slide-detail -->
-        <div class="slide-detail">
-          <!-- slide-type -->
-          <div class="slide-type">
-            <a href="#">TTT</a>
-            <span>TTT</span>
-          </div>
-          <!-- slide-price -->
-          <a href="#" class="slide-price">$23</a>
-        </div>
-      </div>
-  <!-- Slide-box ends -->
-    </li>
-    
-  
-    <li class="item-a">
-      <!-- Slide-box -->
-      <div class="slide-box">
-        <!-- Slide-img -->
-        <div class="slide-img">
-          <img src="product1.jpg" alt="1">
-          <!-- overlayer -->
-          <div class="overlayer"><a href="#" class="buy-btn">Buy</a></div>
-        </div>
-        <!-- Slide-detail -->
-        <div class="slide-detail">
-          <!-- slide-type -->
-          <div class="slide-type">
-            <a href="#">TTT</a>
-            <span>TTT</span>
-          </div>
-          <!-- slide-price -->
-          <a href="#" class="slide-price">$23</a>
-        </div>
-      </div>
-  <!-- Slide-box ends -->
-    </li>
-    
-  </ul>
 
-  <script type="text/javacript" src="/ucsc_2202_07/andum.lk/script.js"></script>
+
+  <!-- Tailor Slider-->
+  <div class="tslider">
+    <ul id="autoWidth" class="cs-hidden">
+      <li class="item-a">
+        <div class="tslider-box">
+          <p class="product">TTT</p>\
+          <!-- model -->
+          <div class="slide-img">
+              <img src="product1.jpg" alt="1">   
+          </div>
+          <!-- details -->
+          <div class="details">
+            <!-- character details -->
+            <p>ttt</p>
+          </div>
+        </div>
+      </li>
+      <li class="item-b">
+        <div class="tslider-box">
+          <p class="product">TTT</p>\
+          <!-- model -->
+          <div class="slide-img">
+            <img src="product1.jpg" alt="1">   
+          </div>
+          <!-- details -->
+          <div class="details">
+            <!-- character details -->
+            <p>ttt</p>
+          </div>
+        </div>
+      </li>
+      <li class="item-c">
+        <div class="tslider-box">
+          <p class="product">TTT</p>\
+          <!-- model -->
+          <div class="slide-img">
+            <img src="product1.jpg" alt="1">   
+          </div>
+          <!-- details -->
+          <div class="details">
+            <!-- character details -->
+            <p>ttt</p>
+          </div>
+        </div>
+      </li>
+      <li class="item-d">
+        <div class="tslider-box">
+          <p class="product">TTT</p>\
+          <!-- model -->
+          <div class="slide-img">
+            <img src="product1.jpg" alt="1">   
+          </div>
+          <!-- details -->
+          <div class="details">
+            <!-- character details -->
+            <p>ttt</p>
+          </div>
+        </div>
+      </li>
+      <li class="item-e">
+        <div class="tslider-box">
+          <p class="product">TTT</p>\
+          <!-- model -->
+          <div class="slide-img">
+            <img src="product1.jpg" alt="1">   
+          </div>
+          <!-- details -->
+          <div class="details">
+            <!-- character details -->
+            <p>ttt</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  
 
   <!-- Tailor Slider Ends-->
 
   <!-- add a footer -->
   <?php require("footer.php")?>
 
-  
+  <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
