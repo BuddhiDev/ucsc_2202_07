@@ -73,12 +73,10 @@ require("../server.php");
                   <li><a href="#">Sarongs</a></li>
                 </ul>
                 <ul>
-                  <h4>Active Wear</h4>
-                  <li><a href="#">Active Hoodies</a></li>
-                  <li><a href="#">Active T shirts</a></li>
-                  <li><a href="#">Active Tank Tops</a></li>
-                  <li><a href="#">Active Track Bottoms</a></li>
-                  <li><a href="#">Active Shorts</a></li>
+                <h4>Formal Wear</h4>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Trousers</a></li>
+                  <li><a href="#">Blazers</a></li>
                 </ul>
                 <ul>
                   <h4>Inner Wear</h4>
