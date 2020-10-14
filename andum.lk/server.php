@@ -252,5 +252,11 @@ if(isset($_POST['add_product']))
   }
 }
 
+$search=false;
+if(isset($_POST['search'])){
+ $search=true;
+ $keyword= mysqli_real_escape_string($db, $_POST['q']);
+
+}
 
  ?>
