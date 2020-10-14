@@ -36,8 +36,8 @@ require("../server.php");
             <li class="dropdown">
               <a href="#">Women</a>
               <ul class="menu-area">
-                <ul>
-                  <h4>Casual Wear</h4>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Casual Wear</li>
                   <li><a href="#">T shirts</a></li>
                   <li><a href="workware_ladies.php">Blouse</a></li>
                   <li><a href="#">Shirts</a></li>
@@ -45,15 +45,15 @@ require("../server.php");
                   <li><a href="#">Pants</a></li>
                   <li><a href="dresses.php">Dresses</a></li>
                 </ul>
-                <ul>
-                  <h4>Formal Wear</h4>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Formal Wear</li>
                   <li><a href="#">Blouse</a></li>
                   <li><a href="#">Skirts</a></li>
                   <li><a href="workwear_gents.php">Pants</a></li>
                   <li><a href="#">Dresses</a></li>
                 </ul>
-                <ul>
-                  <h4>Ethnic wear</h4>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Ethnic wear</li>
                   <li><a href="#">Kurthas</a></li>
                   <li><a href="#">Shawls</a></li>
                   <li><a href="#">Sarees</a></li>
@@ -63,7 +63,7 @@ require("../server.php");
             <li class="dropdown">
               <a href="#">Men</a>
               <ul class="menu-area">
-                <ul>
+                <ul class="inner-menu">
                   <h4>Casual Wear</h4>
                   <li><a href="#">T shirts</a></li>
                   <li><a href="#">Shirts</a></li>
@@ -72,13 +72,13 @@ require("../server.php");
                   <li><a href="#">Bottoms</a></li>
                   <li><a href="#">Sarongs</a></li>
                 </ul>
-                <ul>
+                <ul class="inner-menu">
                 <h4>Formal Wear</h4>
                   <li><a href="#">Shirts</a></li>
                   <li><a href="#">Trousers</a></li>
                   <li><a href="#">Blazers</a></li>
                 </ul>
-                <ul>
+                <ul class="inner-menu">
                   <h4>Inner Wear</h4>
                   <li><a href="#">Brief</a></li>
                   <li><a href="#">Trunks</a></li>
@@ -89,8 +89,8 @@ require("../server.php");
             <li class="dropdown">
               <a href="#">Kids</a>
               <ul class="menu-area">
-                <ul>
-                  <h4>Girls</h4>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Girls</li>
                   <li><a href="#">T shirts</a></li>
                   <li><a href="#">Tank Tops</a></li>
                   <li><a href="#">Shirts</a></li>
@@ -98,8 +98,8 @@ require("../server.php");
                   <li><a href="#">Pants</a></li>
                   <li><a href="#">Sleepware</a></li>
                 </ul>
-                <ul>
-                  <h4>Boys</h4>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Boys</li>
                   <li><a href="#">T shirts</a></li>
                   <li><a href="#">Dresses</a></li>
                   <li><a href="#">Kurta</a></li>

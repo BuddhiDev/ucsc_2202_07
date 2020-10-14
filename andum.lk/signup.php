@@ -37,7 +37,7 @@ require("server.php");
 
         </ul>
       </nav>
-      <div>
+      <div class="login-btn-panel">
         <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a>
         <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a>
       </div>

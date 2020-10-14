@@ -29,8 +29,8 @@ require("server.php");
           <li class="dropdown">
               <a href="#">Shop Now</a>
               <ul class="menu-area">
-                <ul>
-                  <h4>Ladies wear</h4>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Ladies wear</li>
                   <li><a href="dresses.php">Dresses</a></li>
                   <li><a href="workware_ladies.php">Work Wear</a></li>
                   <li><a href="#">Denims</a></li>
@@ -38,16 +38,16 @@ require("server.php");
                   <li><a href="#">T Shirts</a></li>
                   <li><a href="#">All Categories</a></li>
                 </ul>
-                <ul>
-                  <h4>Gents wear</h4>
+                <ul class="inner-menu"> 
+                  <li class="inner-list-header">Gents wear</li>
                   <li><a href="#">Shirts</a></li>
                   <li><a href="#">Denims</a></li>
                   <li><a href="workwear_gents.php">Work Wear</a></li>
                   <li><a href="#">T Shirts</a></li>
                   <li><a href="#">All Categories</a></li>
                 </ul>
-                <ul>
-                  <h4>Kids wear</h4>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Kids wear</li>
                   <li><a href="#">Dresses</a></li>
                   <li><a href="#">T shirsts</a></li>
                   <li><a href="#">Dresses</a></li>
@@ -60,7 +60,7 @@ require("server.php");
           <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
         </ul>
       </nav>
-      <div>
+      <div class="login-btn-panel">
       <!--  <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a>-->
         <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a>
       </div>

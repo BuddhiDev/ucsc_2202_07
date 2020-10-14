@@ -21,6 +21,7 @@
     text-align: center;
     font-size: 14px;
     font-family: Muli-Bold;
+    border-radius: 20px;
   }
 
   .loginbutton:hover{
@@ -60,6 +61,18 @@
     font-size: 14px;
     font-weight: 500;
   }
+
+  .login-container{
+    width: 58%;
+    box-shadow: 0px 1px 4px 1px #f4f4f4;
+    border-radius: 8px;
+    padding: 30px 40px;
+    margin: 100px auto;
+}
+
+.login-btn-panel button{
+    margin: 0px 10px;
+}
 
 
   /* Add a hover effect for buttons */

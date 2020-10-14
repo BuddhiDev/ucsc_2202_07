@@ -71,7 +71,7 @@ body, html {
     <h1 style="font-size:50px">Create Your Style</h1>
     <p>with</p>
     <h2>Andum.lk</h2>
-    <div>
+    <div class="login-btn-panel">
       <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a>
       <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a>
     </div>

@@ -6,6 +6,9 @@
     text-decoration: none;
 }
 
+
+/* -----Generic Styles----- */
+
 body{
     font-family: muli;
     height: 100%;
@@ -13,13 +16,25 @@ body{
 
 li, a, button{
         font-family: muli;
-        font-weight: 160px;
-        font-size: 16px;
-        text-decoration: none;
-        padding: 0px 5px;
         cursor: pointer;
-
 }
+
+a{
+  text-decoration: none;
+}
+
+button:hover {
+  color: black;
+}
+
+button:focus{
+  outline: none;
+  border: none;
+}
+
+/* -----Generic Styles Ends----- */
+
+/* -----Navbar Styles----- */
 
 header {
     display: flex;
@@ -47,6 +62,143 @@ header {
     height: 100px;
 
 }
+
+.nav-area {
+  list-style: none;
+  position: relative;
+}
+
+.nav-area li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-area li a{
+  color: rgb(160, 156, 156);
+  transition: all 0.3s ease 0s;
+  font-weight: 600;
+  color: #121212;
+  font-size: 14px;
+}
+
+.nav-area li a:hover{
+  color: rgb(0, 0, 0);
+}
+
+.navbar-main{
+  display: flex;
+  padding: 10px 40px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > ul{
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+
+}
+
+nav a{
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav ul li{
+  list-style: none;
+  transition: 0.5s;
+}
+
+nav > ul > li > a{
+  padding: 15px 25px;
+}
+
+.nav-item-middle ul > li.dropdown > a:after{
+  position: relative;
+  float: right;
+  content: '';
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.menu-area{
+  margin: 0px;
+  padding: 30px;
+  background: #ffffff;
+  text-align: left;
+  border-top: 5px solid #ffffff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  z-index: 1;
+  position: absolute;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap;
+  top: -9999px;
+  left: 0;
+  border-radius: 4px;
+  width:600px;
+}
+
+.menu-area li{
+  padding: 0px;
+}
+
+nav ul li:hover ul.menu-area{
+  top: 100%;
+}
+
+nav ul.menu-area .inner-menu{
+  color: #262626;
+  font-size: 13px;;
+  padding: 0px 36px;
+}
+
+nav ul.menu-area ul li.inner-list-header{
+  text-transform: uppercase;
+  font-family: Muli-ExtraBold;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+nav ul.menu-area h4{
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+nav ul.menu-area ul li{
+  display: block;
+}
+
+nav ul.menu-area ul li a{
+  margin: 10px 0px;
+  color: #484848;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 0px;
+}
+
+nav ul.menu-area ul li a:hover{
+    color: #EB2188;
+}
+
+/* -----Navbar Styles Ends----- */
+
+
+/* -----Font Styles----- */
 
 @font-face {
     font-family: muli;
@@ -78,29 +230,11 @@ header {
     src: url('./fonts/Muli/static/Muli-SemiBold.ttf');
   }
 
+  /* -----Font Styles Ends----- */
 
-.nav-area {
-    list-style: none;
-    position: relative;
-}
+/* -----Button Styles----- */
 
-.nav-area li{
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.nav-area li a{
-    color: rgb(160, 156, 156);
-    transition: all 0.3s ease 0s;
-    font-weight: 600;
-    color: #121212;
-    font-size: 14px;
-}
-
-.nav-area li a:hover{
-    color: rgb(0, 0, 0);
-}
-button {
+.btn-primary {
     padding: 9px 25px;
     background-color:#EB2188;
     border: none;
@@ -108,31 +242,42 @@ button {
     cursor: pointer;
     transition: all 0.3s ease 0s;
     text-align: center;
+    -webkit-appearance: none;
 }
 
-button {
-    display: flex 2;
-    background-color:#F5F3FF;
-    color: black;
+.btn-panel-center{
+  text-align: left;
 }
 
-button:hover {
-    color: black;
+.btn-full-w{
+  margin: 10px auto;
 }
 
-.navbar-main{
-  display: flex;
-  padding: 10px 40px;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+.casual-btn{
+  padding: 9px 25px;
+  margin: 10px;
+  color: white;
+  background-color:#EB2188;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  text-align: center;
 }
 
-.box {
-    background: white;
+.casual-btn :hover{
+  color: black;
+
 }
 
-/* form-styles */
+.search-btn{
+  border: none;
+}
+
+
+/* -----Button Styles Ends----- */
+
+/* -----Form Styles ----- */
 
 .form-field-inline{
     display: flex;
@@ -149,40 +294,10 @@ button:hover {
     border-radius: 8px;
 }
 
-.login-container{
-    width: 58%;
-    box-shadow: 0px 1px 4px 1px #f4f4f4;
-    border-radius: 8px;
-    padding: 30px 40px;
-    margin: 100px auto;
-}
+/* -----Form Styles Ends----- */
 
-.btn-panel-center{
-    text-align: left;
-}
 
-.btn-full-w{
-    /* width: 15%; */
-    margin: 10px auto;
-}
-
-.casual-btn{
-    padding: 9px 25px;
-    margin: 10px;
-    color: white;
-    background-color:#EB2188;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    text-align: center;
-}
-
-.casual-btn :hover{
-    color: black;
-
-}
-/* footer */
+/* -----Footer Styles ----- */
 
 .footer{
     background:  #FAFAFA;
@@ -229,6 +344,9 @@ button:hover {
     /* display: block;
     margin-bottom: 16px;
 } */
+
+
+/* -----Footer Styles Ends----- */
 
 .search-container{
     width: 58%;
@@ -459,9 +577,6 @@ button:hover {
     border: 2px solid black;
   }
 
-
-
-
   .option{
     background-color: #ffffff;
     padding: 8px 10px;
@@ -526,24 +641,13 @@ button:hover {
 
 }
 
-button:focus{
-    outline: none;
-}
-
 .landing-btn-section{
     margin:15px 0px;
-}
-
-.h2 {
-    flex: 1;
-    margin: 10px;
-    padding: 10px;
 }
 
 .measure-card-value {
     color: #ccc;
 }
-
 
 .slideshow-container{
     height: 90vh;
@@ -597,103 +701,6 @@ button:focus{
 .wrapper{
   width: 1170px;
   margin: 20px auto;
-}
-
-nav > ul{
-  position: relative;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  justify-content: center;
-  width: 1000px;
-  margin: 0 auto;
-  padding: 0;
-
-}
-
-nav a{
-  display: block;
-  color: #ffffff;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-nav ul li{
-  color: #ffffff;
-  list-style: none;
-  transition: 0.5s;
-}
-
-nav > ul > li > a{
-  padding: 15px 25px;
-}
-
-.nav-item-middle ul > li.dropdown > a:after{
-  position: relative;
-  float: right;
-  content: '';
-  margin-left: 10px;
-  margin-top: 8px;
-}
-
-
-/* nav > ul > li:hover{
-  background: #fafafa;
-} */
-
-.menu-area{
-  margin: 0px;
-  padding: 40px 40px 0 40px;
-  background: #ffffff;
-  text-align: left;
-  border-top: 5px solid #ffffff;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-  z-index: 1;
-  position: absolute;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-wrap: wrap;
-  width: 600px;
-  top: -9999px;
-  left: 0;
-}
-
-.menu-area li{
-  padding: 0px;
-}
-
-nav ul li:hover ul.menu-area{
-  top: 100%;
-}
-
-nav ul.menu-area ul{
-  width: 33.33%;
-  margin-bottom: 40px;
-  color: #262626;
-}
-
-nav ul.menu-area h4{
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-nav ul.menu-area ul li{
-  display: block;
-}
-
-nav ul.menu-area ul li a{
-  margin-top: 10px;
-  color: #000000;
-  text-transform: uppercase;
-}
-
-nav ul.menu-area ul li a:hover{
-    color: #EB2188;
 }
 
 /* -------------Dropdown Styles Ends-------------- */
@@ -865,11 +872,6 @@ nav ul.menu-area ul li a:hover{
   transition: all ease 0.3s;
 }
 
-ul{
-  list-style: none;
-  display: flex;
-}
-
 a{
   text-decoration: none;
 } */
@@ -902,6 +904,17 @@ a{
   position: relative;
   color: #EB2188;
   font-size: 30px;
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+.nav_right i{
+  color: #EB2188;
+  font-size: 22px;
+}
+
+.nav_right li{
+  margin: 0px 10px;
 }
 
 .box .nav_right ul li .dd_right{
