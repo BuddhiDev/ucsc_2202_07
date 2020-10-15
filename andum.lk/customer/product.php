@@ -315,7 +315,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
+        <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
         </div>
       </div>
       <div class="rightside">

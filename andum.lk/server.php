@@ -7,6 +7,8 @@ session_start();
 $nic = "";
 $email = "";
 $errors = array();
+$search=false;
+$category_filter=false;
 
 //connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'andum');
@@ -269,14 +271,18 @@ if(isset($_POST['add_product']))
   }
 }
 
-
-$search=false;
-
 //search by a keyword
 if(isset($_POST['search'])){
  $search=true;
  $keyword= mysqli_real_escape_string($db, $_POST['q']);
 
+}
+
+//search by dress category
+if(isset($_GET['dcategory']) ){
+    $search=true;
+    $category_filter=true;
+    $selected_dress_category = mysqli_real_escape_string($db, $_GET['dcategory']);
 }
 
  ?>
