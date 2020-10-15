@@ -19,7 +19,12 @@ if (!isset($_SESSION['nic'])) {
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
-
+  <style>
+    .search-btn {
+      background-color: white;
+      color: #EB2188;
+    }
+  </style>
 </head>
 
 <body>
@@ -140,6 +145,19 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
+<div class="search-container">
+    <form method="post">
+      <div class="form-field-inline">
+        <label for="searchname" class="field-label-inline">Search by Category</label>
+        <input type="text" class="field-value-inline" name="q">
+        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
+      </div>
+    </form>
+  </div>
+
+  <?php include("../errors.php");
+  ?>
+
 <div class="container">
       <h2>New Arrivals</h2>
       <div class="row">
@@ -164,7 +182,7 @@ if (!isset($_SESSION['nic'])) {
 
                   <div class="card-item">
                     <div class="card-img">
-                      <a href="index.php?dress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
+                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
                     </div>
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["title"] ?></div>
@@ -200,7 +218,7 @@ if (!isset($_SESSION['nic'])) {
                     <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                     <div class="card-item">
                       <div class="card-img">
-                      <a href="index.php?dress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
+                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
                       </div>
                       <div class="card-content">
                         <div class="card-title"><?php echo $row["title"] ?></div>
@@ -233,7 +251,7 @@ if (!isset($_SESSION['nic'])) {
                     <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                     <div class="card-item">
                       <div class="card-img">
-                      <a href="index.php?dress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
+                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
                       </div>
                       <div class="card-content">
                         <div class="card-title"><?php echo $row["title"] ?></div>
