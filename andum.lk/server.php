@@ -118,7 +118,14 @@ if (isset($_POST['hireT'])) {
 }
 
 $item_added = "false";
-$selected_dress_id;
+
+if(isset($_GET['dress_id']) ){
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['dress_id']);
+    $_SESSION['selected_dress_id']=$selected_dress_id;
+    header('location: product.php');
+}
+
+
 if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
@@ -231,21 +238,28 @@ if(isset($_POST['add_product']))
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
   $price = mysqli_real_escape_string($db, $_POST['price']);
 //  $size = mysqli_real_escape_string($db, $_POST['size']);
-  $checkbox1 = $_POST['size'];
-  $chk="";
-  foreach($checkbox1 as $chk1)
+  $size1 = $_POST['size'];
+  $schk="";
+  foreach($size1 as $schk1)
      {
-        $chk.= $chk1.",";
+        $schk.= $schk1.",";
+     }
+
+  $colors1 = $_POST['color'];
+  $clchk="";
+  foreach($colors1 as $clchk1)
+     {
+        $clchk.= $clchk1.",";
      }
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
   $filename = $_FILES["myimage"]["name"];
   $tempname = $_FILES["myimage"]["tmp_name"];
   $folder = "products/".$filename;
 
-  if($category!="" && $dressname!="" && $price!="" && $chk!="" && $amount!="")
+  if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
   {
 
-    $sql = " INSERT INTO dress_showcase (category, title, price, size, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$chk', '$amount', '$filename', '1', '$t_nic')";
+    $sql = " INSERT INTO dress_showcase (category, title, price, size, color, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$schk', '$clchk', '$amount', '$filename', '1', '$t_nic')";
     $result = mysqli_query($db,$sql);
 
     if (move_uploaded_file($tempname, $folder))
