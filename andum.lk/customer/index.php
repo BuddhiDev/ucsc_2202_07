@@ -132,11 +132,11 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
-                <li><i class="fas fa-envelope"></i></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div>
-          </ul>
+            <li><i class="fas fa-envelope"></i></li>
+            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         </div>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
@@ -167,12 +167,14 @@ if (!isset($_SESSION['nic'])) {
 
     <!-- </div>  -->
     <div class="container">
-      <h2>New Arrivels</h2>
+      <h2>New Arrivals</h2>
       <div class="row">
         <?php
         $nic = $_SESSION['nic'];
+
         // Check condition if this is search request or not
         if ($search != true) {
+
           // Read all dressess
           $sql = "SELECT * FROM dress_showcase";
           $result = mysqli_query($db, $sql);
@@ -188,14 +190,14 @@ if (!isset($_SESSION['nic'])) {
 
                   <div class="card-item">
                     <div class="card-img">
-                    <a href="index.php?dress_id=<?php echo $row["dress_id"]?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
-                  </div>
+                      <a href="index.php?dress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
+                    </div>
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["title"] ?></div>
                       <!-- <div class="card-description">
                       Auto-layout for flexbox grid columns also means you can set the width of one column
                       and have the sibling columns automatically resize around it.
-              </div>-->
+                    </div>-->
                       <div class="card-description"><?php echo $row["price"] ?></div>
                     </div>
                   </div>
@@ -203,42 +205,79 @@ if (!isset($_SESSION['nic'])) {
               </div>
               <!-- Dress box end-->
 
-            <?php
+              <?php
             }
           }
         } else {
 
-          //Read using search keyword
-          $sql = "SELECT * FROM dress_showcase WHERE title LIKE '%$keyword%'";
-          $result = mysqli_query($db, $sql);
+          //check whether this request is for category filter or keyword search
+          if (!$category_filter) {
 
-          if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) { ?>
+            //Read using search keyword
+            $sql = "SELECT * FROM dress_showcase WHERE title LIKE '%$keyword%'";
+            $result = mysqli_query($db, $sql);
+            if ($result) {
+              while ($row = mysqli_fetch_assoc($result)) { ?>
 
-
-              <!-- Dress box start -->
-              <div class="col-4">
-                <form method="post" action="index.php" class="dress-showcase">
-                  <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                  <div class="card-item">
-                    <div class="card-img">
-                    <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
-                    </div>
-                    <div class="card-content">
-                      <div class="card-title"><?php echo $row["title"] ?></div>
-                      <!-- <div class="card-description">
+                <!-- Dress box start -->
+                <div class="col-4">
+                  <form method="post" action="index.php" class="dress-showcase">
+                    <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+                    <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                    <div class="card-item">
+                      <div class="card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
+                      </div>
+                      <div class="card-content">
+                        <div class="card-title"><?php echo $row["title"] ?></div>
+                        <!-- <div class="card-description">
                       Auto-layout for flexbox grid columns also means you can set the width of one column
                       and have the sibling columns automatically resize around it.
-              </div> -->
-                      <div class="card-description">LKR 2,500.00</div>
+                      </div> -->
+                        <div class="card-description">LKR 2,500.00</div>
+                      </div>
                     </div>
-                  </div>
-                </form>
-              </div>
+                  </form>
+                </div>
 
-              <!-- Dress box end-->
-        <?php }
+                <!-- Dress box end-->
+              <?php
+              }
+            }
+          } else {
+
+            //Read using selected category
+            $sql = "SELECT * FROM dress_showcase WHERE category LIKE '%$selected_dress_category%'";
+            $result = mysqli_query($db, $sql);
+            if ($result) {
+              while ($row = mysqli_fetch_assoc($result)) { ?>
+              
+                <!-- Dress box start -->
+                <div class="col-4">
+                  <form method="post" action="index.php" class="dress-showcase">
+                    <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+                    <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                    <div class="card-item">
+                      <div class="card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
+                      </div>
+                      <div class="card-content">
+                        <div class="card-title"><?php echo $row["title"] ?></div>
+                        <!-- <div class="card-description">
+            Auto-layout for flexbox grid columns also means you can set the width of one column
+            and have the sibling columns automatically resize around it.
+            </div> -->
+                        <div class="card-description">LKR 2,500.00</div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Dress box end-->
+        <?php
+
+              }
+            }
           }
         }
         ?>
