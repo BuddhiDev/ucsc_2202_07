@@ -73,7 +73,7 @@ if (!isset($_SESSION['nic'])) {
                 <li><a href="#">T shirts</a></li>
                 <li><a href="#">Shirts</a></li>
                 <li><a href="#">Jeans</a></li>
-                <li><a href="index.php?dcategory?=trouser">Trousers</a></li>
+                <li><a href="index.php?dcategory=trouser">Trousers</a></li>
                 <li><a href="#">Bottoms</a></li>
                 <li><a href="#">Sarongs</a></li>
               </ul>
@@ -245,7 +245,7 @@ if (!isset($_SESSION['nic'])) {
               }
             }
           } else {
-
+            
             //Read using selected category
             $sql = "SELECT * FROM dress_showcase WHERE category LIKE '%$selected_dress_category%'";
             $result = mysqli_query($db, $sql);
