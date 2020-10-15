@@ -185,7 +185,7 @@ h1{
 </head>
 <body>
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -296,64 +296,65 @@ h1{
     </nav>
   </header>
 
-    <script>
+  <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
     function(){
       this.classList.toggle("active");
     })
   </script>
-<div class="main">
-  <div class="leftside">
-    <!-- <form method="post" action="index.php" class="dress-showcase"> -->
-      
-        <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
-        </div>
-      
-      <!-- </form> -->
-  </div>
-  <div class="rightside">
-    <div class="inside">
-      <div>
-        <br>
-        <p style="color: black; font-size: 20px; margin-top:10px">Casual Summer Dress</p>
-        <br>
-        <h4 style="color: black; margin-top:10px">LKR 2,400</h4>
-        <br>
+
+  <div class="main">
+    <div class="leftside">
+      <div class="card-img">
+        <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
+      </div>
+    </div>
+    <div class="rightside">
+      <div class="inside">
         <div>
-          <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
-          <div>
-            <a href="#"><div class="on"></div></a>
-            <a href="#"><div class="on1"></div></a>
-            <a href="#"><div class="on2"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="on3"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="on4"><p background-color="pink"></p></div></a>
-            <a href="#"><div class="on5"><p background-color="pink"></p></div></a>
-          </div>
+          <br>
+          <p style="color: black; font-size: 20px; margin-top:10px">Casual Summer Dress</p>
+          <br>
+          <h4 style="color: black; margin-top:10px">LKR 2,400</h4>
           <br>
           <div>
-            <p style="color: black; font-size: 15px; margin-top:10px">Size</p>
+            <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
             <div>
-              <a href="#"><div class="onee"><p class="text">UK8</p></div></a>
-              <a href="#"><div class="onee"><p class="text">UK10</p></div></a>
-              <a href="#"><div class="onee"><p class="text">UK12</p></div></a>
-              <a href="#"><div class="onee"><p class="text">UK14</p></div></a>
-              <a href="#"><div class="onee"><p class="text">UK16</p></div></a>
-              <a href="#"><div class="onee"><p class="text">UK18</p></div></a>
+              <a href="#"><div class="on"></div></a>
+              <a href="#"><div class="on1"></div></a>
+              <a href="#"><div class="on2"><p background-color="pink"></p></div></a>
+              <a href="#"><div class="on3"><p background-color="pink"></p></div></a>
+              <a href="#"><div class="on4"><p background-color="pink"></p></div></a>
+              <a href="#"><div class="on5"><p background-color="pink"></p></div></a>
+            </div>
+            <br>
+            <div>
+              <p style="color: black; font-size: 15px; margin-top:10px">Size</p>
+              <div>
+                <a href="#"><div class="onee"><p class="text">UK8</p></div></a>
+                <a href="#"><div class="onee"><p class="text">UK10</p></div></a>
+                <a href="#"><div class="onee"><p class="text">UK12</p></div></a>
+                <a href="#"><div class="onee"><p class="text">UK14</p></div></a>
+                <a href="#"><div class="onee"><p class="text">UK16</p></div></a>
+                <a href="#"><div class="onee"><p class="text">UK18</p></div></a>
+              </div>
+            </div>
+            <br>
+
+            <div class="quantity">
+              <input type="number" value="1" class="quentity-input">  
+            </div>
+            <div>
+              <br>
+              <br>
+              <button class="cart-button">ADD TO CART</button>
             </div>
           </div>
-          <br>
-          <div>
-            <br>
-            <br>
-            <button class="cart-button">ADD TO CART</button>
-          </div>
-        </div>
-      </div>	
+        </div>	
+      </div>
     </div>
   </div>
-</div>
 
-<?php require("../footer.php")?>
+  <?php require("../footer.php")?>
 </body>
 </html>
