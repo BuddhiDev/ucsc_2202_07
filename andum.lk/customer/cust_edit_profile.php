@@ -32,7 +32,7 @@ require("../server.php");
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <!-- <li><a href="index.php">Explore</a></li> -->
+          <a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <ul class="menu-area">

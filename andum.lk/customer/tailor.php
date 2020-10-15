@@ -14,14 +14,13 @@ if (!isset($_SESSION['nic'])) {
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Product</title>
+  <title>Andum.lk - Hire a Tailor</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
-  <title>ADD TO CART</title>
   <style type="text/css">
     * {
       margin: 0;
@@ -304,9 +303,9 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <?php
-  $selected_dress_id = $_SESSION['selected_dress_id'];
+  $selected_t_nic = $_SESSION['selected_t_nic'];
   $nic = $_SESSION['nic'];
-  $sql = "SELECT * FROM dress_showcase WHERE dress_id=$selected_dress_id";
+  $sql = "SELECT * FROM users WHERE nic=$selected_t_nic";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result)
@@ -323,11 +322,7 @@ if (!isset($_SESSION['nic'])) {
           <div>
             <form method="post">
               <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["title"] ?></p>
-              <br>
-              <h4 style="color: black; margin-top:10px">Price: <?php echo $row["price"] ?></h4>
-              <br>
-                <h4 style="color: black; margin-top:10px">Available in stock: <?php if($item_added=="true"){echo $row["amount"]-1;}else{echo $row["amount"];} ?></h4>
+              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
               <br>
               <div>
                 <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
@@ -403,9 +398,7 @@ if (!isset($_SESSION['nic'])) {
                 <div>
                   <br>
                   <br>
-                  <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                  <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button>
+                  <button class="cart-button" type="submit" name="hireT">Hire Me</button>
                 </div>
               </div>
             </form>
