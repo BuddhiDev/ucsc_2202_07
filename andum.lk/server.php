@@ -229,16 +229,22 @@ if(isset($_POST['add_product']))
   $category = mysqli_real_escape_string($db, $_POST['Unit']);
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
   $price = mysqli_real_escape_string($db, $_POST['price']);
-  $size = mysqli_real_escape_string($db, $_POST['size']);
+//  $size = mysqli_real_escape_string($db, $_POST['size']);
+  $checkbox1 = $_POST['size'];
+  $chk="";
+  foreach($checkbox1 as $chk1)
+     {
+        $chk.= $chk1.",";
+     }
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
   $filename = $_FILES["myimage"]["name"];
   $tempname = $_FILES["myimage"]["tmp_name"];
   $folder = "products/".$filename;
 
-  if($category!="" && $dressname!="" && $price!="" && $size!="" && $amount!="")
+  if($category!="" && $dressname!="" && $price!="" && $chk!="" && $amount!="")
   {
 
-    $sql = " INSERT INTO dress_showcase (category, title, price, size, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$size', '$amount', '$filename', '1', '$t_nic')";
+    $sql = " INSERT INTO dress_showcase (category, title, price, size, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$chk', '$amount', '$filename', '1', '$t_nic')";
     $result = mysqli_query($db,$sql);
 
     if (move_uploaded_file($tempname, $folder))
