@@ -182,19 +182,20 @@ if (!isset($_SESSION['nic'])) {
         ?>
               <!-- Dress box start -->
               <div class="col-4">
-                <form method="post" action="index.php" class="dress-showcase">
+                <form method="get" action="index.php" class="dress-showcase">
                   <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
                   <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                  
                   <div class="card-item">
                     <div class="card-img">
-                      <a href="product.php" onclick="<?php $selected_dress_id= $row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%"></a>
+                    <a href="index.php?dress_id=<?php echo $row["dress_id"]?>"><img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%"></a>
                     </div>
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["title"] ?></div>
                       <!-- <div class="card-description">
                       Auto-layout for flexbox grid columns also means you can set the width of one column 
                       and have the sibling columns automatically resize around it.
-              </div> -->
+              </div>-->
                       <div class="card-description">LKR 2,500.00</div>
                     </div>
                   </div>

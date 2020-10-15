@@ -118,7 +118,14 @@ if (isset($_POST['hireT'])) {
 }
 
 $item_added = "false";
-$selected_dress_id;
+
+if(isset($_GET['dress_id']) ){
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['dress_id']);
+    $_SESSION['selected_dress_id']=$selected_dress_id;
+    header('location: product.php');
+}
+
+
 if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
