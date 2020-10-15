@@ -24,8 +24,6 @@ require("server.php");
       <nav>
         <ul class="nav-area">
           <!-- <li><a href="#">Explore</a></li> -->
-          <li><a href="#">Hire a Tailor</a></li>
-          <li><a href="#">Hire a Fashion Designer</a></li>
           <li class="dropdown">
               <a href="#">Shop Now</a>
               <ul class="menu-area">
@@ -57,11 +55,13 @@ require("server.php");
 
 
             </li>
+          <li><a href="#">Hire a Tailor</a></li>
+          <li><a href="#">Hire a Fashion Designer</a></li>
           <li><a href="/ucsc_2202_07/andum.lk/about_us.php">About Us</a></li>
         </ul>
       </nav>
       <div class="login-btn-panel">
-      <!--  <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a>-->
+        <a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button>
         <a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a>
       </div>
     </header>
