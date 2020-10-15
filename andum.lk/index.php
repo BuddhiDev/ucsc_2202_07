@@ -206,12 +206,6 @@
     </ul>
   </div>
 
-
-
-  
-
-  
-
   <script type="text/javascript" src="script.js"></script>
 
   <!-- Tailor Slider Ends-->

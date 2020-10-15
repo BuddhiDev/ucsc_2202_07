@@ -1045,5 +1045,25 @@ a{
 }
 
 
+.quantity
+{
+  position: relative;
+  top: 50%;
+  padding: 10px;
+  /* left: 50%; */
+  /* transform: translate(-50%,-50%); */
+}
+
+.quentity-input{
+  border: none;
+  outline: none;
+  padding: 20px:;
+  border-radius: 20px;
+  background: #EB2188;
+}
+
+
+
+
 
 
