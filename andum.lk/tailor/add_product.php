@@ -144,7 +144,7 @@ require("../server.php");
           <input type="checkbox" name="color[]" value="#ffc0cb">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">other
+        <label class="checkbox_container">Other
           <input type="checkbox" name="color[]" value="#">
           <span class="checkmark"></span>
         </label>
