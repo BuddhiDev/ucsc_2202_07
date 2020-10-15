@@ -47,7 +47,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <!-- <li><a href="index.php">Explore</a></li> -->
+        <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <ul class="menu-area">
@@ -124,7 +124,7 @@ if (!isset($_SESSION['nic'])) {
             </ul>
           </li>
 
-          <li><a href="index.php">Hire a Tailor</a></li>
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="index.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
@@ -162,10 +162,11 @@ if (!isset($_SESSION['nic'])) {
     <h2>Cart</h2>
     <table>
       <tr>
-        <th>Order Id</th>
+        <th>Order No</th>
         <th>Category</th>
         <th>Title</th>
-        <th>Amount</th>
+        <th>Quantity</th>
+        <th>Price</th>
 
       </tr>
       <tr>
