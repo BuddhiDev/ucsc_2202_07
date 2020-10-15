@@ -118,6 +118,7 @@ if (isset($_POST['hireT'])) {
 }
 
 $item_added = "false";
+$selected_dress_id;
 if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
