@@ -9,6 +9,7 @@ require("../server.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
+<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/tailor/checkbox.css">
 
 </head>
 
@@ -87,13 +88,33 @@ require("../server.php");
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
-        <select class="option" name="size" id="size">
+        <label class="checkbox_container">X
+          <input type="checkbox" name="size[]" value="x">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">L
+          <input type="checkbox" name="size[]" value="l">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">XL
+          <input type="checkbox" name="size[]" value="xl">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">XXL
+          <input type="checkbox" name="size[]" value="xxl">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">XXXL
+          <input type="checkbox" name="size[]" value="xxxl">
+          <span class="checkmark"></span>
+        </label>
+      <!--  <select class="option" name="size" id="size">
           <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
           <option value="XXL">XXL</option>
           <option value="XXXL">XXXL</option>
-        </select>
+        </select>-->
       </div>
     </div>
     <div class="row">
