@@ -130,7 +130,10 @@
 
   <!-- Tailor Slider-->
 
-
+  <div  class="tailor-headding">
+    <h3>TOP RATED TAILORS</h3>
+  </div>
+  
   
   <div class="tslider">
     
@@ -204,15 +207,18 @@
   </div>
 
 
+
   
 
   
+
+  <script type="text/javascript" src="script.js"></script>
 
   <!-- Tailor Slider Ends-->
 
   <!-- add a footer -->
   <?php require("footer.php")?>
 
-  <script type="text/javascript" src="script.js"></script>
+  
 </body>
 </html>

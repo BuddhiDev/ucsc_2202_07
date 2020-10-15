@@ -37,7 +37,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="index.php">Explore</a></li>
+          <!-- <li><a href="index.php">Explore</a></li> -->
           <li class="dropdown">
             <a href="#">Women</a>
             <ul class="menu-area">
@@ -54,7 +54,7 @@ if (!isset($_SESSION['nic'])) {
                 <li class="inner-list-header">Formal Wear</li>
                 <li><a href="#">Blouse</a></li>
                 <li><a href="#">Skirts</a></li>
-                <!-- <li><a href="workwear_gents.php">Pants</a></li> -->
+                <li><a href="workwear_gents.php">Pants</a></li>
                 <li><a href="#">Dresses</a></li>
               </ul>
               <ul class="inner-menu">

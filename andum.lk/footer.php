@@ -8,12 +8,18 @@
     <style>
     
 .fa {
-  /* padding: 20px; */
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  /* margin: 5px 2px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 1px;
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border: solid;
+    border-width: 2px;
+    border-radius: 100px;
+    border-color: white;
+    background: white;
 }
 
 .fa:hover {
@@ -56,9 +62,9 @@
           <h1 class="logo-txt"><span></span></h1>
           <a href="#" class="fa fa-facebook"></a>
           <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-google"></a>
+          <!-- <a href="#" class="fa fa-google"></a>
           <a href="#" class="fa fa-linkedin"></a>
-          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-youtube"></a> -->
           <a href="#" class="fa fa-instagram"></a>
         </div>
         <div class="footer-section links">
