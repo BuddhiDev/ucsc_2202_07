@@ -37,7 +37,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <!-- <li><a href="index.php">Explore</a></li> -->
+          <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <ul class="menu-area">
@@ -154,7 +154,7 @@ if (!isset($_SESSION['nic'])) {
   <div class="search-container">
     <form method="post">
       <div class="form-field-inline">
-        <label for="searchname" class="field-label-inline">Search by Name</label>
+        <label for="searchname" class="field-label-inline">Search by Category</label>
         <input type="text" class="field-value-inline" name="q">
         <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
       </div>
