@@ -126,7 +126,7 @@ if (!isset($_SESSION['nic'])) {
             </ul>
           </li>
 
-          <li><a href="index.php">Hire a Tailor</a></li>
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="index.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
@@ -170,8 +170,6 @@ if (!isset($_SESSION['nic'])) {
   <div>
     <table>
       <tr>
-        <th>Order Id</th>
-        <th>Tailor NIC</th>
         <th>Tailor Name</th>
         <th>Status</th>
 
@@ -188,9 +186,6 @@ if (!isset($_SESSION['nic'])) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-
-            <td><?php echo $row["id"] ?></td>
-            <td><?php echo $row["t_nic"] ?></td>
             <td><?php echo $row["c_fname"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
