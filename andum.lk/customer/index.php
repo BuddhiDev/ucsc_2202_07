@@ -114,7 +114,7 @@ if (!isset($_SESSION['nic'])) {
             </ul>
           </li>
 
-          <li><a href="index.php">Hire a Tailor</a></li>
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="index.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
@@ -188,7 +188,7 @@ if (!isset($_SESSION['nic'])) {
 
                   <div class="card-item">
                     <div class="card-img">
-                    <a href="index.php?dress_id=<?php echo $row["dress_id"]?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/" + <?php echo $row["image"]; ?>  alt="Avatar" style="width:100%"></a>
+                    <a href="index.php?dress_id=<?php echo $row["dress_id"]?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
                   </div><!-- img src="../images/"+<?php// echo $row["image"]?>-->
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["title"] ?></div>
