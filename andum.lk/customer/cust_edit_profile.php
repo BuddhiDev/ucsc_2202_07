@@ -236,7 +236,7 @@ require("../server.php");
       </form>
 
       <!--footer-->
-        <?php require("footer.php")?>
+      <?php require("../footer.php")?>
 
 </body>
 </html>
