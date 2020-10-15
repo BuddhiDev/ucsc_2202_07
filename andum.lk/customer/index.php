@@ -73,7 +73,7 @@ if (!isset($_SESSION['nic'])) {
                 <li><a href="#">T shirts</a></li>
                 <li><a href="#">Shirts</a></li>
                 <li><a href="#">Jeans</a></li>
-                <li><a href="#">Trousers</a></li>
+                <li><a href="index.php?dcategory?=trouser">Trousers</a></li>
                 <li><a href="#">Bottoms</a></li>
                 <li><a href="#">Sarongs</a></li>
               </ul>
@@ -226,7 +226,7 @@ if (!isset($_SESSION['nic'])) {
                     <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                     <div class="card-item">
                       <div class="card-img">
-                        <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
+                      <a href="index.php?dress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
                       </div>
                       <div class="card-content">
                         <div class="card-title"><?php echo $row["title"] ?></div>
@@ -251,7 +251,7 @@ if (!isset($_SESSION['nic'])) {
             $result = mysqli_query($db, $sql);
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) { ?>
-              
+
                 <!-- Dress box start -->
                 <div class="col-4">
                   <form method="post" action="index.php" class="dress-showcase">
@@ -259,7 +259,7 @@ if (!isset($_SESSION['nic'])) {
                     <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                     <div class="card-item">
                       <div class="card-img">
-                        <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
+                      <a href="index.php?dress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
                       </div>
                       <div class="card-content">
                         <div class="card-title"><?php echo $row["title"] ?></div>
