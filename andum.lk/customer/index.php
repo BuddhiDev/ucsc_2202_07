@@ -188,8 +188,8 @@ if (!isset($_SESSION['nic'])) {
 
                   <div class="card-item">
                     <div class="card-img">
-                    <a href="index.php?dress_id=<?php echo $row["dress_id"]?>"> <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
-                    </div>
+                    <a href="index.php?dress_id=<?php echo $row["dress_id"]?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/" + <?php echo $row["image"]; ?>  alt="Avatar" style="width:100%"></a>
+                  </div><!-- img src="../images/"+<?php// echo $row["image"]?>-->
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["title"] ?></div>
                       <!-- <div class="card-description">
