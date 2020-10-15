@@ -9,7 +9,7 @@ require("../server.php");
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
 <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
-<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/tailor/checkbox.css">
+<link rel="stylesheet" href="checkbox.css">
 
 </head>
 
@@ -65,7 +65,7 @@ require("../server.php");
 
       <div class="row">
         <div class="col-25"><br>
-          <label for="dname" class="field-label-inline"><b>Dress Name</b></label>
+          <label for="dname" class="field-label-inline">Dress Name: </label>
         </div>
         <div class="col-75">
           <input type="text" class="field-value-inline" placeholder="Name" name="dname">
@@ -88,14 +88,19 @@ require("../server.php");
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
-        <label class="checkbox_container">X
-          <input type="checkbox" name="size[]" value="x">
+        <label class="checkbox_container">S
+          <input type="checkbox" name="size[]" value="s">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">M
+          <input type="checkbox" name="size[]" value="m">
           <span class="checkmark"></span>
         </label>
         <label class="checkbox_container">L
           <input type="checkbox" name="size[]" value="l">
           <span class="checkmark"></span>
         </label>
+
         <label class="checkbox_container">XL
           <input type="checkbox" name="size[]" value="xl">
           <span class="checkmark"></span>
@@ -108,13 +113,42 @@ require("../server.php");
           <input type="checkbox" name="size[]" value="xxxl">
           <span class="checkmark"></span>
         </label>
-      <!--  <select class="option" name="size" id="size">
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-          <option value="XXL">XXL</option>
-          <option value="XXXL">XXXL</option>
-        </select>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25"><br>
+        <lable for="type" class="field-label-inline">Colors:</label>
+      </div>
+
+      <div class="col-75">
+      <!--  <div class="column">-->
+        <label class="checkbox_container">Red
+          <input type="checkbox" name="color[]" value="#ff0000">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Black
+          <input type="checkbox" name="color[]" value="#000000">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">White
+          <input type="checkbox" name="color[]" value="#ffffff">
+          <span class="checkmark"></span>
+        </label>
+      <!--  </div>
+        <div class="column">-->
+        <label class="checkbox_container">Blue
+          <input type="checkbox" name="color[]" value="#0000ff">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Pink
+          <input type="checkbox" name="color[]" value="#ffc0cb">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">other
+          <input type="checkbox" name="color[]" value="#">
+          <span class="checkmark"></span>
+        </label>
+      <!--  </div>-->
       </div>
     </div>
     <div class="row">
