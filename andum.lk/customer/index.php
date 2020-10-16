@@ -198,7 +198,7 @@ if (!isset($_SESSION['nic'])) {
                       Auto-layout for flexbox grid columns also means you can set the width of one column
                       and have the sibling columns automatically resize around it.
                     </div>-->
-                      <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+                      <div class="card-description">LKR <?php echo $row["price"]?>LKR</div>
                     </div>
                   </div>
                 </form>
@@ -245,7 +245,7 @@ if (!isset($_SESSION['nic'])) {
               }
             }
           } else {
-            
+
             //Read using selected category
             $sql = "SELECT * FROM dress_showcase WHERE category LIKE '%$selected_dress_category%'";
             $result = mysqli_query($db, $sql);
