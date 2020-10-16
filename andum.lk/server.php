@@ -1,13 +1,19 @@
 <?php
 
+//session start
 session_start();
 
+//initialize global variables
 $nic = "";
 $email = "";
 $errors = array();
+$search=false;
+$category_filter=false;
 
+//connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'andum');
 
+//register
 if (isset($_POST['register'])) {
     $nic = mysqli_real_escape_string($db, $_POST['nic']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -56,7 +62,7 @@ if (isset($_POST['register'])) {
     }
 }
 
-
+//login
 if (isset($_POST['login'])) {
 
     $nic = mysqli_real_escape_string($db, $_POST['nic']);
@@ -96,12 +102,14 @@ if (isset($_POST['login'])) {
     }
 }
 
+//logout
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['nic']);
     header('location: ../login.php');
 }
 
+//hire a tailor
 if (isset($_POST['hireT'])) {
     $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
     $t_fname = mysqli_real_escape_string($db, $_POST['t_fname']);
@@ -119,13 +127,21 @@ if (isset($_POST['hireT'])) {
 
 $item_added = "false";
 
+//select a dress
 if(isset($_GET['dress_id']) ){
     $selected_dress_id = mysqli_real_escape_string($db, $_GET['dress_id']);
     $_SESSION['selected_dress_id']=$selected_dress_id;
     header('location: product.php');
 }
 
+//select a tailor
+if(isset($_GET['t_nic']) ){
+    $selected_t_nic = mysqli_real_escape_string($db, $_GET['t_nic']);
+    $_SESSION['selected_t_nic']=$selected_t_nic;
+    header('location: tailor.php');
+}
 
+//add to cart a dress
 if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
@@ -140,6 +156,7 @@ if (isset($_POST['addTocart'])) {
     }
 }
 
+//checkout from cart
 if (isset($_POST['Checkout'])) {
     $c_nic =  $_SESSION['nic'];
 
@@ -164,6 +181,8 @@ if (isset($_POST['Checkout'])) {
     }
 }
 
+
+//update user data
 if (isset($_POST['update_user'])) {
 
     $nic = mysqli_real_escape_string($db, $_POST['nic']);
@@ -208,28 +227,7 @@ if (isset($_POST['save_user'])) {
     }
 }
 
-
-
-// if(isset($_POST['save']))
-// {
-//     $nic = mysqli_real_escape_string($db,$_POST['nic']);
-//     $email = mysqli_real_escape_string($db,$_POST['email']);
-//     $fname = mysqli_real_escape_string($db,$_POST['fname']);
-//     $lname = mysqli_real_escape_string($db,$_POST['lname']);
-//     $password = mysqli_real_escape_string($db,$_POST['password']);
-//     $contactno = mysqli_real_escape_string($db,$_POST['contactno']);
-//
-//     $edit = "UPDATE users SET nic='$nic', email='$email', fname='$fname', lname='$lname', password='$password' contactno='$contactno' ";
-//     mysqli_query($db,$edit);
-//   }
-//
-/*if (isset($_POST['upload'])) {
-
-    $filename = $_FILES["uploadfile"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
-        $folder = "image/".$filename; */
-
-
+//add a new dress
 if(isset($_POST['add_product']))
 {
 
@@ -273,11 +271,18 @@ if(isset($_POST['add_product']))
   }
 }
 
-$search=false;
+//search by a keyword
 if(isset($_POST['search'])){
  $search=true;
  $keyword= mysqli_real_escape_string($db, $_POST['q']);
 
+}
+
+//search by dress category
+if(isset($_GET['dcategory']) ){
+    $search=true;
+    $category_filter=true;
+    $selected_dress_category = mysqli_real_escape_string($db, $_GET['dcategory']);
 }
 
  ?>

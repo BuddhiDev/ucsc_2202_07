@@ -6,40 +6,31 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Manage Orders</title>
+  <title>Andum.lk - Hire a Tailor</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-      width: 99%;
-      border: 1px solid #ddd;
-    }
-
-    th,
-    td {
-      text-align: left;
-      padding: 8px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2
+    .search-btn {
+      background-color: white;
+      color: #EB2188;
     }
   </style>
+
+
 </head>
 
 <body>
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -123,8 +114,8 @@ if (!isset($_SESSION['nic'])) {
             </ul>
           </li>
 
-          <li><a href="add_product.php">Add a New Dress</a></li>
-          
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
+          <li><a href="#">Hire a Fashion Designer</a></li>
         </ul>
       </div>
       <div class="box">
@@ -133,15 +124,17 @@ if (!isset($_SESSION['nic'])) {
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="Manage_order.php"><i class="fas fa-users"></i>Customer Orders</a></li>
-                  <li><a href="purchases.php"><i class="fas fa-money"></i>Sales</a></li>
+                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
+                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
+                  <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
                 <li><i class="fas fa-envelope"></i></li>
-              </div> 
+                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+              </div>
           </ul>
         </div>
       </div>
@@ -156,47 +149,102 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
+  <br />
 
-  <div style="overflow-x:auto;">
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Status</th>
-      </tr>
-      <tr>
-
-        <?php
-
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic'";
-        $result = mysqli_query($db, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-
-            <td><?php echo $row["c_fname"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="#"><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-  <?php
-          }
-        } else {
-        }
-
-  ?>
-
-
-    </table>
+  <div class="search-container">
+    <form method="post">
+      <div class="form-field-inline">
+        <label for="searchname" class="field-label-inline">Search by Category</label>
+        <input type="text" class="field-value-inline" name="q">
+        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
+      </div>
+    </form>
   </div>
 
-<?php require("footer.php")?>
+  <?php include("../errors.php");
+  ?>
+  <div class="sliderbox-wrap">
 
+    <!-- </div>  -->
+    <div class="container">
+      <h2>All Categories</h2>
+      <div class="row">
+        <?php
+        $nic = $_SESSION['nic'];
+        // Check condition if this is search request or not
+        if ($search != true) {
+          // Read all dressess
+          $sql = "SELECT * FROM users WHERE type='0'";
+          $result = mysqli_query($db, $sql);
+
+          if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+              <!-- Dress box start -->
+              <div class="col-4">
+                <form method="get" action="index.php" class="dress-showcase">
+                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                  <div class="card-item">
+                    <div class="card-img">
+                    <a href="hire_tailor.php?t_nic=<?php echo $row["nic"]?>"><img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%"></a>
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                      <!-- <div class="card-description">
+                      Auto-layout for flexbox grid columns also means you can set the width of one column
+                      and have the sibling columns automatically resize around it.
+              </div>-->
+                      <div class="card-description"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- Dress box end-->
+
+            <?php
+            }
+          }
+        } else {
+
+          //Read using search keyword
+          $sql = "SELECT * FROM tailors WHERE category LIKE '%$keyword%'";
+          $result = mysqli_query($db, $sql);
+
+          if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) { ?>
+
+
+              <!-- Dress box start -->
+              <div class="col-4">
+                <form method="get" action="index.php" class="dress-showcase">
+                  <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+                  <div class="card-item">
+                    <div class="card-img">
+                    <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
+                      <!-- <div class="card-description">
+                      Auto-layout for flexbox grid columns also means you can set the width of one column
+                      and have the sibling columns automatically resize around it.
+              </div>-->
+                      <div class="card-description"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- Dress box end-->
+        <?php }
+          }
+        }
+        ?>
+
+
+      </div>
+    </div>
+
+    <!--footer-->
+    <?php require("../footer.php") ?>
 </body>
 
 </html>

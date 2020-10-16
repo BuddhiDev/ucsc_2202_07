@@ -32,7 +32,7 @@ require("../server.php");
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <!-- <li><a href="index.php">Explore</a></li> -->
+    <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <ul class="menu-area">
@@ -109,7 +109,7 @@ require("../server.php");
             </ul>
           </li>
 
-          <li><a href="index.php">Hire a Tailor</a></li>
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="index.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
@@ -129,7 +129,7 @@ require("../server.php");
 
                 <li><i class="fas fa-envelope"></i></li>
                 <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div> 
+              </div>
           </ul>
         </div>
       </div>
@@ -220,8 +220,7 @@ require("../server.php");
 
 
           <div class="btn-panel-center">
-            <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
-            <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
+
             <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
           </div>
 
@@ -230,9 +229,7 @@ require("../server.php");
           }
           ?>
 
-          <!-- fdgfsas<label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label> -->
+          
         </div>
       </form>
 
