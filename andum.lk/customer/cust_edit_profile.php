@@ -166,7 +166,8 @@ require("../server.php");
         <div class="login-container">
           <h1>Edit Profile</h1>
           <center>
-          <img src="/ucsc_2202_07/andum.lk/images/pexels-joy-deb-1580270.jpg" alt="Jeny" style="width:25%"; >
+          <div class="avatar"></div>
+          <!-- <img src=" " alt="Jeny" style="width:25%"; > -->
         </center>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>

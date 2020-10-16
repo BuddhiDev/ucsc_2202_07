@@ -1062,6 +1062,13 @@ a{
   background: #EB2188;
 }
 
+.avatar{
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background-image: url("/ucsc_2202_07/andum.lk/images/pexels-joy-deb-1580270.jpg");
+  background-size: cover;
+}
 
 
 
