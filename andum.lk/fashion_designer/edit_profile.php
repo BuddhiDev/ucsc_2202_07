@@ -1,5 +1,5 @@
 <?php
-require("../server.php");
+require("fd_controller.php");
 ?>
 
 
