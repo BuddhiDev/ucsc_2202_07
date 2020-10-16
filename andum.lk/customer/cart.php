@@ -158,7 +158,7 @@ if (!isset($_SESSION['nic'])) {
       this.classList.toggle("active");
     })
   </script>
-  <div>
+  <div class="container">
     <h2>Cart</h2>
     <table>
       <tr>
@@ -187,12 +187,12 @@ if (!isset($_SESSION['nic'])) {
             <td><?php echo $row["title"] ?></td>
             <td><?php echo $row["amount"] ?></td>
       </tr>
-  <?php
+    <?php
           }
         } else {
         }
 
-  ?>
+    ?>
     </table>
   </div>
 
@@ -208,7 +208,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-<?php require("footer.php")?>
+<?php require("../footer.php")?>
 
 
 </body>

@@ -42,7 +42,7 @@ if (!isset($_SESSION['nic'])) {
 <body>
 
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -167,7 +167,7 @@ if (!isset($_SESSION['nic'])) {
     })
   </script>
 
-  <div>
+  <div class="container">
     <table>
       <tr>
         <th>Tailor Name</th>
@@ -194,15 +194,15 @@ if (!isset($_SESSION['nic'])) {
               </div>
             </td>
       </tr>
-  <?php
+    <?php
           }
         } else {
         }
 
-  ?>
+    ?>
     </table>
   </div>
 
-<?php require("footer.php")?>
+<?php require("../footer.php")?>
 
 </html>
