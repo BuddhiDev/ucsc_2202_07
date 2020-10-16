@@ -307,7 +307,7 @@ nav ul.menu-area ul li a:hover{
     right: 0px;
     left: 0px;
     margin-top: 80px;
-
+    height: 100px;
 }
 
 .footer .footer-content{
@@ -1070,6 +1070,17 @@ a{
   background-size: cover;
 }
 
+.container{
+  min-height: calc(100vh - 211px - 58px);
+  width: 90vW;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.main{
+  overflow: auto;
+  padding-bottom: 100px;
+}
 
 
 

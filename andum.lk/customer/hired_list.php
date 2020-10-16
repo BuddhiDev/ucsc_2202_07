@@ -151,7 +151,7 @@ if (!isset($_SESSION['nic'])) {
         </div>
       </div>
     </nav>
-  </header>
+</header>
 
 
 
@@ -167,7 +167,7 @@ if (!isset($_SESSION['nic'])) {
     })
   </script>
 
-  <div>
+  <div class="container">
     <table>
       <tr>
         <th>Tailor Name</th>
@@ -194,15 +194,15 @@ if (!isset($_SESSION['nic'])) {
               </div>
             </td>
       </tr>
-  <?php
+    <?php
           }
         } else {
         }
 
-  ?>
+    ?>
     </table>
   </div>
 
-<?php require("footer.php")?>
+<?php require("../footer.php")?>
 
 </html>

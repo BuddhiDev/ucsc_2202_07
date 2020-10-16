@@ -16,7 +16,7 @@
     
 </head>
 <body>
-  <header>
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="logo.png" alt="logo" class="img-box">
@@ -64,7 +64,7 @@
       </div>
     </nav>
   </header>
-  
+
   <div class="d-flex align-c">
     <div class="f1">
       <div class="landing-text-content">
@@ -125,6 +125,11 @@
       setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
   </script>
+<div class="container">
+<!-- <div class="main"> -->
+  
+  
+  
 
 
 
@@ -209,6 +214,9 @@
   <script type="text/javascript" src="script.js"></script>
 
   <!-- Tailor Slider Ends-->
+<!-- </div> -->
+</div>
+ 
 
   <!-- add a footer -->
   <?php require("footer.php")?>
