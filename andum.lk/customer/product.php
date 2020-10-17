@@ -185,7 +185,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -312,6 +312,7 @@ if (!isset($_SESSION['nic'])) {
     $row = mysqli_fetch_assoc($result)
   ?>
 
+  <div class="container">
     <div class="main">
       <div class="leftside">
         <div class="card-img">
@@ -413,7 +414,10 @@ if (!isset($_SESSION['nic'])) {
         </div>
       </div>
     </div>
-  <?php } ?>
+    <?php } ?>
+  </div>
+
+  
   <?php require("../footer.php") ?>
 </body>
 

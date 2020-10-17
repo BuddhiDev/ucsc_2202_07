@@ -168,7 +168,7 @@ require("../server.php");
           <center>
           <div class="avatar"></div>
           <!-- <img src=" " alt="Jeny" style="width:25%"; > -->
-        </center>
+          </center>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
             <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" required>
