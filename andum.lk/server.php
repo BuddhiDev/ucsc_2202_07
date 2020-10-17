@@ -47,6 +47,15 @@ if (isset($_POST['register'])) {
             mysqli_query($db, $sql1);
         }
 
+        //insert user if fashion Designer
+
+        // else if ($utype == 2) {
+        //     $sql1 = "INSERT INTO fa (nic) VALUES ('$nic')";
+        //     mysqli_query($db, $sql1);
+        // }
+        // 
+
+
         //save session cache
         $_SESSION['nic'] = $nic;
         $_SESSION['fname'] = $fname;
