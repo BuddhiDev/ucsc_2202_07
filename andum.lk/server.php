@@ -90,12 +90,24 @@ if (isset($_POST['login'])) {
             }
 
 
-            if ($_SESSION['utype'] == 0) {
+            if ($_SESSION['utype'] == 0)
+            {
                 header('location: tailor/index.php');
-            } else if ($_SESSION['utype'] == 1) {
+            }
+            else if ($_SESSION['utype'] == 1)
+            {
                 header('location: customer/index.php');
             }
-        } else {
+            else if ($_SESSION['utype'] == 2)
+            {
+                header('location: fashion_designer/index.php');
+            }
+
+
+
+            }
+            else
+        {
             array_push($errors, "Wrong username/ password combination");
             //header('location: login.php');
         }
