@@ -38,12 +38,12 @@
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-
+              </div>
+            </li>
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+          </ul>
         </div>
-        </ul>
-      </div>
       </div>
     </nav>
   </header>
@@ -77,16 +77,16 @@
     </header> -->
 
     <div class="col-4">
-                <form method="get" action="index.php" class="dress-showcase">
+                <form method="post" action="index.php" class="dress-showcase">
                   <input type="hidden"  name="dress_id">
                   <input type="hidden"  name="c_nic">
 
                   <div class="card-item">
                     <div class="card-img">
-                      <img src="../product1.jpg> " alt="Avatar" style="width:100%">
+                      <img src="../d-01.jpg"  style="width:100%">
                     </div>
                     <div class="card-content">
-                      <div class="card-title"><?php echo $row["title"] ?></div>
+                      <div class="card-title">Dress1</div>
                       <!-- <div class="card-description">
                       Auto-layout for flexbox grid columns also means you can set the width of one column
                       and have the sibling columns automatically resize around it.
