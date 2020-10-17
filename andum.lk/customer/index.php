@@ -190,6 +190,7 @@ if (!isset($_SESSION['nic'])) {
 
                   <div class="card-item">
                     <div class="card-img">
+                    <!-- this is product link -->
                       <a href="index.php?dress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
                     </div>
                     <div class="card-content">
