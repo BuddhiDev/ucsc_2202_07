@@ -77,7 +77,7 @@
     </header> -->
 
     <div class="col-4">
-                <form method="post" action="index.php" class="dress-showcase">
+                <form method="get" action="index.php" class="dress-showcase">
                   <input type="hidden"  name="dress_id">
                   <input type="hidden"  name="c_nic">
 
