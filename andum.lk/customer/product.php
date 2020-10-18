@@ -326,7 +326,7 @@ if (!isset($_SESSION['nic'])) {
               <br>
               <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["title"] ?></p>
               <br>
-              <h4 style="color: black; margin-top:10px">Price: <?php echo $row["price"] ?></h4>
+              <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"] ?>.00</h4>
               <br>
                 <h4 style="color: black; margin-top:10px">Available in stock: <?php if($item_added=="true"){echo $row["amount"]-1;}else{echo $row["amount"];} ?></h4>
               <br>

@@ -32,6 +32,17 @@ button:focus{
   border: none;
 }
 
+.error{
+  width: 100%%;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #fafafafa;
+    border-radius: 10px;
+    text-align: left;
+    background: #fafafafa;
+   
+}
+
 /* -----Generic Styles Ends----- */
 
 /* -----Navbar Styles----- */

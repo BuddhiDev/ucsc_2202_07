@@ -47,6 +47,11 @@ if (isset($_POST['register'])) {
             mysqli_query($db, $sql1);
         }
 
+        else if ($utype == 2) {
+            $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
+            mysqli_query($db, $sql1);
+        }
+
         //save session cache
         $_SESSION['nic'] = $nic;
         $_SESSION['fname'] = $fname;
@@ -56,8 +61,12 @@ if (isset($_POST['register'])) {
 
         if ($_SESSION['utype'] == 0) {
             header('location: tailor/index.php');
-        } else if ($_SESSION['utype'] == 1) {
+        } 
+        else if ($_SESSION['utype'] == 1) {
             header('location: customer/index.php');
+        }
+        else if ($_SESSION['utype'] == 2) {
+            header('location: fashion_designer/index.php');
         }
     }
 }
@@ -92,10 +101,15 @@ if (isset($_POST['login'])) {
 
             if ($_SESSION['utype'] == 0) {
                 header('location: tailor/index.php');
-            } else if ($_SESSION['utype'] == 1) {
+            } 
+            else if ($_SESSION['utype'] == 1) {
                 header('location: customer/index.php');
             }
-        } else {
+            else if ($_SESSION['utype'] == 2) {
+                header('location: fashion_designer/index.php');
+            }
+        }
+         else {
             array_push($errors, "Wrong username/ password combination");
             //header('location: login.php');
         }
