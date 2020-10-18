@@ -99,7 +99,8 @@ if (isset($_POST['login'])) {
             }
 
 
-            if ($_SESSION['utype'] == 0) {
+            if ($_SESSION['utype'] == 0)
+            {
                 header('location: tailor/index.php');
             } 
             else if ($_SESSION['utype'] == 1) {
