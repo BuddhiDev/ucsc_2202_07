@@ -1,5 +1,5 @@
 <?php
-require("../server.php");
+require("fd_controller.php");
 ?>
 
 <!DOCTYPE html>
@@ -139,8 +139,8 @@ require("../server.php");
 <div class="sliderbox-wrap">
 
 <center><img src="design1.jpg" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
-  <form method="post" action="add_product.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
-      <h2>Add Product</h2>
+  <form method="post" action="add_sample_design.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
+      <h2>Add Design</h2>
 
       <div class="row">
         <div class="col-25"><br>
@@ -169,10 +169,10 @@ require("../server.php");
 
       <div class="row">
         <div class="col-25"><br>
-          <label for="dname" class="field-label-inline">Design Name: </label>
+          <label for="dename" class="field-label-inline">Design Name: </label>
         </div>
         <div class="col-75">
-          <input type="text" class="field-value-inline" placeholder="Name" name="dname">
+          <input type="text" class="field-value-inline" placeholder="Name" name="dename">
         </div>
       </div>
 
@@ -192,11 +192,11 @@ require("../server.php");
         <lable for="type" class="field-label-inline">Upload Design image:</label>
       </div>
       <div class="col-75">
-        <input type="file" id="file" name="myimage" value=""> <br/>
+        <input type="file" id="file" name="mydesign" value=""> <br/>
       </div>
     </div>
     <div> <center>
-      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Upload</button> </center></div>
+      <button class="loginbutton btn-full-w" type="submit" name="add_design"> Upload</button> </center></div>
   </form>
 </div>
 
