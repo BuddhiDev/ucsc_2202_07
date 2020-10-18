@@ -103,8 +103,8 @@ if (isset($_POST['login'])) {
             //header('location: login.php');
         }
     }
+  }
 }
-
 //logout
 if (isset($_GET['logout'])) {
     session_destroy();
@@ -135,3 +135,40 @@ if (isset($_POST['update_user'])) {
     $result=mysqli_query($db, $sql);
     }
 }
+
+if(isset($_POST['add_design']))
+{
+
+  $f_nic =  $_SESSION['nic'];
+  $category = mysqli_real_escape_string($db, $_POST['Unit']);
+  $designname = mysqli_real_escape_string($db, $_POST['dename']);
+  $price = mysqli_real_escape_string($db, $_POST['price']);
+
+  $filename = $_FILES["mydesign"]["name"];
+  $tempname = $_FILES["mydesign"]["tmp_name"];
+  $folder = "designs/".$filename;
+
+  if($category!="" && $designname!="" && $price!="")
+  {
+
+    $sql = " INSERT INTO design_showcase (category, design_name, price, image, permission, f_nic) VALUES ('$category', '$designname','$price', '$filename', '1', '$f_nic')";
+    $result = mysqli_query($db,$sql);
+
+    if (move_uploaded_file($tempname, $folder))
+    {
+        echo "<script>alert('Image Has Been Uploaded')</script>";
+    }
+    else
+    {
+        echo "<script>alert('Image Does Not Uploaded')</script>";
+    }
+  }
+}
+
+
+
+
+
+
+
+?>
