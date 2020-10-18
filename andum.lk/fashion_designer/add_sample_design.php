@@ -201,6 +201,6 @@ require("fd_controller.php");
 </div>
 
 
-  <?php require("footer.php")?>
+  <?php require("footer1.php")?>
 </body>
 </html>
