@@ -89,7 +89,25 @@ if (!isset($_SESSION['nic'])) {
       </div>
     </header> -->
 
-    
+    <div class="col-4">
+                <form method="get" action="index.php" class="dress-showcase">
+                  <input type="hidden"  name="dress_id">
+                  <input type="hidden"  name="c_nic">
+                  <div class="card-item">
+                    <div class="card-img">
+                      <img src="../d-01.jpg"  style="width:100%">
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title">Dress1</div>
+                      <!-- <div class="card-description">
+                      Auto-layout for flexbox grid columns also means you can set the width of one column
+                      and have the sibling columns automatically resize around it.
+                      </div>-->
+                      <div class="card-description">LKR 25000</div>
+                    </div>
+                  </div>
+                </form>
+    </div>
 
   </div>
 

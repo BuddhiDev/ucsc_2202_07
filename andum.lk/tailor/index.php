@@ -28,7 +28,7 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -139,7 +139,6 @@ if (!isset($_SESSION['nic'])) {
     </nav>
   </header>
 
-
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
@@ -147,12 +146,12 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<div class="search-container">
+  <div class="search-container">
     <form method="post">
       <div class="form-field-inline">
         <label for="searchname" class="field-label-inline">Search by Category</label>
         <input type="text" class="field-value-inline" name="q">
-        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
+        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
       </div>
     </form>
   </div>
@@ -160,46 +159,43 @@ if (!isset($_SESSION['nic'])) {
   <?php include("../errors.php");
   ?>
 
-<div class="container-box">
-      <h2>New Arrivals</h2>
-      <div class="row">
-        <?php
+  <div class="container-box">
+    <h2>New Arrivals</h2>
+    <div class="row">
+      <?php
         $nic = $_SESSION['nic'];
 
         // Check condition if this is search request or not
         if ($search != true) {
 
-          // Read all dressess
-          $sql = "SELECT * FROM dress_showcase";
-          $result = mysqli_query($db, $sql);
+        // Read all dressess
+        $sql = "SELECT * FROM dress_showcase";
+        $result = mysqli_query($db, $sql);
 
-          if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-              <!-- Dress box start -->
-              <div class="col-4">
-                <form method="get" action="index.php" class="dress-showcase">
-                  <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+        if ($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+      ?>
 
-                  <div class="card-item">
-                    <div class="card-img">
-                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-                    </div>
-                    <div class="card-content">
-                      <div class="card-title"><?php echo $row["title"] ?></div>
-                      <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column
-                      and have the sibling columns automatically resize around it.
-                    </div>-->
-                      <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <!-- Dress box end-->
+      <!-- Dress box start -->
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
 
-              <?php
+          <div class="card-item">
+            <div class="card-img">
+              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title"><?php echo $row["title"] ?></div>
+              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Dress box end-->
+
+      <?php
             }
           }
         } else {
@@ -211,31 +207,28 @@ if (!isset($_SESSION['nic'])) {
             $sql = "SELECT * FROM dress_showcase WHERE title LIKE '%$keyword%'";
             $result = mysqli_query($db, $sql);
             if ($result) {
-              while ($row = mysqli_fetch_assoc($result)) { ?>
+              while ($row = mysqli_fetch_assoc($result)) {
+      ?>
 
-                <!-- Dress box start -->
-                <div class="col-4">
-                  <form method="post" action="index.php" class="dress-showcase">
-                    <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-                    <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                    <div class="card-item">
-                      <div class="card-img">
-                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-                      </div>
-                      <div class="card-content">
-                        <div class="card-title"><?php echo $row["title"] ?></div>
-                        <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column
-                      and have the sibling columns automatically resize around it.
-                      </div> -->
-                      <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+      <!-- Dress box start -->
+      <div class="col-4">
+        <form method="post" action="index.php" class="dress-showcase">
+          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+          <div class="card-item">
+            <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title"><?php echo $row["title"] ?></div>
+            <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Dress box end-->
 
-                <!-- Dress box end-->
-              <?php
+      <?php
               }
             }
           } else {
@@ -246,35 +239,31 @@ if (!isset($_SESSION['nic'])) {
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) { ?>
 
-                <!-- Dress box start -->
-                <div class="col-4">
-                  <form method="post" action="index.php" class="dress-showcase">
-                    <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-                    <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                    <div class="card-item">
-                      <div class="card-img">
-                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-                      </div>
-                      <div class="card-content">
-                        <div class="card-title"><?php echo $row["title"] ?></div>
-                        <!-- <div class="card-description">
-            Auto-layout for flexbox grid columns also means you can set the width of one column
-            and have the sibling columns automatically resize around it.
-            </div> -->
-            <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+  <!-- Dress box start -->
+  <div class="col-4">
+    <form method="post" action="index.php" class="dress-showcase">
+      <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+      <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+      <div class="card-item">
+        <div class="card-img">
+          <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+        </div>
+        <div class="card-content">
+          <div class="card-title"><?php echo $row["title"] ?></div>
+          <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Dress box end-->
 
-                <!-- Dress box end-->
-        <?php
+  <?php
 
-              }
-            }
-          }
         }
-        ?>
+      }
+    }
+  }
+  ?>
 
 
       </div>
