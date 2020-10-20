@@ -157,6 +157,13 @@ if(isset($_GET['t_nic']) ){
     header('location: tailor.php');
 }
 
+//select a customer order from tailor
+if(isset($_GET['order_id']) ){
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: order.php');
+}
+
 //add to cart a dress
 if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
