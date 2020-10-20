@@ -158,7 +158,7 @@ if (!isset($_SESSION['nic'])) {
   <?php include("../errors.php");
   ?>
 
-<div class="container">
+<div class="container-box">
       <h2>New Arrivals</h2>
       <div class="row">
         <?php

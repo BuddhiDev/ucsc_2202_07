@@ -166,7 +166,7 @@ if (!isset($_SESSION['nic'])) {
   <div class="sliderbox-wrap">
 
     <!-- </div>  -->
-    <div class="container">
+    <div class="container-box">
       <h2>All Categories</h2>
       <div class="row">
         <?php

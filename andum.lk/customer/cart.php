@@ -158,7 +158,7 @@ if (!isset($_SESSION['nic'])) {
       this.classList.toggle("active");
     })
   </script>
-  <div class="container">
+  <div class="container-box">
     <h2>Cart</h2>
     <table>
       <tr>

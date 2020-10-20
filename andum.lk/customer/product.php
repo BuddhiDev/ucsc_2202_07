@@ -312,7 +312,7 @@ if (!isset($_SESSION['nic'])) {
     $row = mysqli_fetch_assoc($result)
   ?>
 
-  <div class="container">
+  <div class="container-box">
     <div class="main">
       <div class="leftside">
         <div class="card-img">

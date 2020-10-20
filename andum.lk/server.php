@@ -46,9 +46,10 @@ if (isset($_POST['register'])) {
             $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
             mysqli_query($db, $sql1);
         }
-
+        
+        // insert user if fashion designer
         else if ($utype == 2) {
-            $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
+            $sql1 = "INSERT INTO fashiondesigner (nic) VALUES ('$nic')";
             mysqli_query($db, $sql1);
         }
 
@@ -263,7 +264,7 @@ if(isset($_POST['add_product']))
   $clchk="";
   foreach($colors1 as $clchk1)
      {
-        $clchk.= $clchk1.",";
+        $clchk.= $clchk1.","; 
      }
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
   $filename = $_FILES["myimage"]["name"];

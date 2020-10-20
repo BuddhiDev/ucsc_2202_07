@@ -167,7 +167,7 @@ if (!isset($_SESSION['nic'])) {
     })
   </script>
 
-  <div class="container">
+  <div class="container-box">
     <table>
       <tr>
         <th>Tailor Name</th>

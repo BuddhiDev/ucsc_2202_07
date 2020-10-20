@@ -125,7 +125,7 @@
       setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
   </script>
-<div class="container">
+<div class="container-box">
 <!-- <div class="main"> -->
   
   
@@ -210,6 +210,8 @@
       </li>
     </ul>
   </div>
+
+  
 
   <script type="text/javascript" src="script.js"></script>
 

@@ -189,7 +189,7 @@ if (!isset($_SESSION['nic'])) {
   <p><button>Add to Cart</button></p> -->
   <!-- </div> -->
   <!--<div class="sliderbox-wrap"> -->
-  <div class="container">
+  <div class="container-box">
 <h2>New Arrivels</h2>
   <div class="row">
     <?php

@@ -140,7 +140,7 @@ if (!isset($_SESSION['nic'])) {
     })
   </script>
 
-    <div class="container">
+    <div class="container-box">
   <h2>Dresses</h2>
   <div class="row">
         <div class="col-4">

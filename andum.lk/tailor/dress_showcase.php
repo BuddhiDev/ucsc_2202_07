@@ -115,7 +115,7 @@ if (!isset($_SESSION['nic'])) {
 
 
   </div> -->
-<div class="container">
+<div class="container-box">
   <div class="row">
         <div class="col-4">
           <form method="post" action="index.php" class="dress-showcase">

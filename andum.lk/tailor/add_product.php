@@ -272,8 +272,10 @@ require("../server.php");
         <input type="file" id="file" name="myimage" value=""> <br/>
       </div>
     </div>
-    <div> <center>
-      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Upload</button> </center></div>
+    <div> 
+    <center>
+      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Upload</button>
+      </center></div>
   </form>
 </div>
 
