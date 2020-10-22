@@ -217,7 +217,7 @@ if (!isset($_SESSION['nic'])) {
           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
             </div>
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
@@ -239,35 +239,34 @@ if (!isset($_SESSION['nic'])) {
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) { ?>
 
-  <!-- Dress box start -->
-  <div class="col-4">
-    <form method="post" action="index.php" class="dress-showcase">
-      <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-      <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-      <div class="card-item">
-        <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-        </div>
-        <div class="card-content">
-          <div class="card-title"><?php echo $row["title"] ?></div>
-          <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-        </div>
+      <!-- Dress box start -->
+      <div class="col-4">
+        <form method="post" action="index.php" class="dress-showcase">
+          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+          <div class="card-item">
+            <div class="card-img">
+              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title"><?php echo $row["title"] ?></div>
+              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-  <!-- Dress box end-->
+      <!-- Dress box end-->
 
-  <?php
+      <?php
 
+            }
+          }
         }
       }
-    }
-  }
-  ?>
+      ?>
 
-
-      </div>
     </div>
+  </div>
 
 
   <?php require("../footer.php")?>
