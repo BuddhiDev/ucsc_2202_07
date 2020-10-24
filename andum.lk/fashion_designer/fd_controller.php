@@ -148,11 +148,13 @@ if(isset($_POST['add_design']))
   $tempname = $_FILES["mydesign"]["tmp_name"];
   $folder = "designs/".$filename;
 
+
   if($category!="" && $designname!="" && $price!="")
   {
 
-    $sql = " INSERT INTO design_showcase(category, design_name, price, image, permission, f_nic) VALUES ('$category', '$designname','$price', '$filename', '1', '$f_nic')";
+    $sql = " INSERT INTO design_showcase (category, design_name, price, image, permission, f_nic) VALUES ('$category', '$designname','$price', '$filename', '1', '$f_nic')";
     $result = mysqli_query($db,$sql);
+
 
     if (move_uploaded_file($tempname, $folder))
     {
