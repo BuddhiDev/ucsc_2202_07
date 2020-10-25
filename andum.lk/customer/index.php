@@ -199,7 +199,7 @@ if (!isset($_SESSION['nic'])) {
                       Auto-layout for flexbox grid columns also means you can set the width of one column
                       and have the sibling columns automatically resize around it.
                     </div>-->
-                      <div class="card-description">LKR <?php echo $row["price"]?>LKR</div>
+                      <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
                     </div>
                   </div>
                 </form>

@@ -406,7 +406,9 @@ if (!isset($_SESSION['nic'])) {
                   <br>
                   <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
                   <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                  <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button>
+                  <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button> <br />
+                  <br/>
+                  <a href="product.php?t_nic=<?php echo $row["t_nic"]?>">Custom Order</a>
                 </div>
               </div>
             </form>
