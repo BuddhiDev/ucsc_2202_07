@@ -276,16 +276,17 @@ if (!isset($_SESSION['nic'])) {
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="Manage_order.php"><i class="fas fa-users"></i>Customer Orders</a></li>
-                  <li><a href="purchases.php"><i class="fas fa-money"></i>Sales</a></li>
+                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
+                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
+                  <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
                 <li><i class="fas fa-envelope"></i></li>
                 <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div>
+              </div> 
           </ul>
         </div>
       </div>
@@ -320,7 +321,7 @@ if (!isset($_SESSION['nic'])) {
           <div>
             <form method="post">
               <br>
-              <p style="color: black; font-size: 20px; margin-top:10px">Customer Name: <?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
+              <p style="color: black; font-size: 20px; margin-top:10px">Tailor Name: <?php echo $row["t_fname"]." ".$row["t_lname"] ?></p>
               <br>
               <p style="color: black; font-size: 20px; margin-top:10px">Status: <?php echo $row["status"]?></p>
               <br>
@@ -341,7 +342,7 @@ if (!isset($_SESSION['nic'])) {
 
   <!--measurement form-->
   <div class="input-container">
-    <form action="/action_page.php" style="max-width:1024px;margin:auto">
+    <form action="order.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Measurements</h2>
       <div class="d-flex">
         <div class="f1">
@@ -403,7 +404,7 @@ if (!isset($_SESSION['nic'])) {
           <div class="measure-card-value">
             <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
             <input class="input-field" type="text" placeholder="Chest" name="chest" value="<?php echo $row["chest"]?>" disabled >
-            <select class="option" name="Unit" id="unit" style=""disabled>
+            <select class="option" name="Unit" id="unit" style="" disabled>
             <option>in</option>
               <option>cm</option>
             </select>
@@ -420,7 +421,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
               <input class="input-field" type="text" placeholder="Waist" name="waist" value="<?php echo $row["waist"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
+              <select class="option" name="Unit" id="unit" style="" disabled>
                 <option>in</option>
                 <option>cm</option>
               </select>
@@ -435,7 +436,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
               <input class="input-field" type="text" placeholder="Seat" name="seat" value="<?php echo $row["seat"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
+              <select class="option" name="Unit" id="unit" style="" disabled>
               <option>in</option>
               <option>cm</option>
               </select>
@@ -453,7 +454,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
               <input class="input-field" type="text" placeholder="Shirt Length" name="shirt_length" value="<?php echo $row["shirt_length"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
+              <select class="option" name="Unit" id="unit" style="" disabled>
               <option>in</option>
               <option>cm</option>
               </select>
@@ -468,7 +469,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
               <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulder_width" value="<?php echo $row["shoulder_width"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
+              <select class="option" name="Unit" id="unit" style="" disabled> 
               <option>in</option>
               <option>cm</option>
               </select>
@@ -486,7 +487,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
               <input class="input-field" type="text" placeholder="Arm Length" name="arm_length" value="<?php echo $row["arm_length"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
+              <select class="option" name="Unit" id="unit" style="" disabled>
               <option>in</option>
               <option>cm</option>
               </select>
@@ -519,7 +520,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
               <input class="input-field" type="text" placeholder="Biceps" name="biceps" value="<?php echo $row["biceps"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
+              <select class="option" name="Unit" id="unit" style="" disabled>
               <option>in</option>
               <option>cm</option>
               </select>
@@ -534,7 +535,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
               <input class="input-field" type="text" placeholder="Hip" name="hip" value="<?php echo $row["hip"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
+              <select class="option" name="Unit" id="unit" style="" disabled>
               <option>in</option>
               <option>cm</option>
               </select>
@@ -547,17 +548,7 @@ if (!isset($_SESSION['nic'])) {
         <!-- <lable for="other" style="">Other:</label> -->
         <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
       </div>
-
-      <div class="search-container">
-    <form method="post">
-      <div class="form-field-inline">
-        <label for="searchname" class="field-label-inline">Submit order price: </label>
-        <input type="text" class="field-value-inline" name="">
-      </div>
-    </form>
-  </div>
-
-      <center><button class="cart-button" type="submit">Submit</button></center>
+      <center><button class="cart-button" type="submit">Make Payment</button></center>
     </form>
   </div>
 

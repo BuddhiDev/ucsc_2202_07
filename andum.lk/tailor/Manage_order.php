@@ -161,7 +161,9 @@ if (!isset($_SESSION['nic'])) {
     <table>
       <tr>
         <th>Customer Name</th>
+        <th>Category</th>
         <th>Status</th>
+        <th><center>Action</center></th>
       </tr>
       <tr>
 
@@ -176,7 +178,8 @@ if (!isset($_SESSION['nic'])) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-            <td><?php echo $row["c_fname"] ?></td>
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>

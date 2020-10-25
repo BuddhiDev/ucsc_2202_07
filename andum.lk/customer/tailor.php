@@ -305,6 +305,8 @@ if (!isset($_SESSION['nic'])) {
   <?php
   $selected_t_nic = $_SESSION['selected_t_nic'];
   $nic = $_SESSION['nic'];
+  $fname = $_SESSION['fname'];
+  $lname = $_SESSION['lname'];
   $sql = "SELECT * FROM users WHERE nic=$selected_t_nic";
   $result = mysqli_query($db, $sql);
   if ($result) {
@@ -314,7 +316,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/images/p1.jpg" alt="Avatar" style="width:100%">
+          <img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%">
         </div>
       </div>
       <div class="rightside">
@@ -341,7 +343,7 @@ if (!isset($_SESSION['nic'])) {
 
   <!--measurement form-->
   <div class="input-container">
-    <form action="/action_page.php" style="max-width:1024px;margin:auto">
+    <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Get Measured</h2>
       <div class="d-flex">
         <div class="f1">
@@ -349,17 +351,17 @@ if (!isset($_SESSION['nic'])) {
           <img src="" class="image">
               <!-- </div>
               <div class="f1"> -->
-          <select class="option" name="Unit" id="unit" >
+          <select class="option" name="category" id="unit" >
             <optgroup label="Ladies wear">
-              <option value="1">Blouse</option>
-              <option value="2">skirt</option>
-              <option value="3">frock</option>
-              <option value="4">Short</option>
-              <option value="5">Trouser</option>
-              <option value="6">T-Shirt</option>
-              <option value="7">Party Frock</option>
-              <option value="8">Saree</option>
-              <option value="9">Bridal Dress</option>
+              <option value="l-blouse">Blouse</option>
+              <option value="l-skirt">skirt</option>
+              <option value="l-frock">frock</option>
+              <option value="l-short">Short</option>
+              <option value="l-trouser">Trouser</option>
+              <option value="l-tshirt">T-Shirt</option>
+              <option value="l-partyfrock">Party Frock</option>
+              <option value="l-saree">Saree</option>
+              <option value="l-bridaldress">Bridal Dress</option>
             </optgroup>
             <optgroup label="Gents wear">
               <option value="10">Shirt</option>
@@ -466,7 +468,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Shirt Length" name="shirtlength">
+              <input class="input-field" type="text" placeholder="Shirt Length" name="shirt_length">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -481,7 +483,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulderwidth">
+              <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulder_width">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -499,7 +501,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Arm Length" name="armlength">
+              <input class="input-field" type="text" placeholder="Arm Length" name="arm_length">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -559,8 +561,14 @@ if (!isset($_SESSION['nic'])) {
 
       <div class="d-flex">
         <!-- <lable for="other" style="">Other:</label> -->
-        <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area"></textarea>
+        <textarea name="other" rows="20" cols="50" placeholder="Other" class="txt-area"></textarea>
       </div>
+      <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
+      <input type="hidden" value="<?php echo $row["fname"] ?> " name="t_fname">
+      <input type="hidden" value="<?php echo $row["lname"] ?> " name="t_lname">
+      <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+      <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
+      <input type="hidden" value="<?php echo $lname ?> " name="c_lname">
       <center><button class="cart-button" type="submit" name="hireT">Submit Tailor Request</button></center>
     </form>
   </div>
