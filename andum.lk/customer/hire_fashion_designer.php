@@ -13,7 +13,7 @@ if (!isset($_SESSION['nic'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Hire a Tailor</title>
+  <title>Andum.lk - Hire a fashion designer</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
@@ -182,11 +182,11 @@ if (!isset($_SESSION['nic'])) {
         ?>
               <!-- Dress box start -->
               <div class="col-4">
-                <form method="get" action="index.php" class="dress-showcase">
-                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                <form method="get" action="index.php" class="design-showcase">
+                  <input type="hidden" value="<?php echo $nic ?> " name="f_id">
                   <div class="card-item">
                     <div class="card-img">
-                    <a href="hire_tailor.php?t_nic=<?php echo $row["nic"]?>"><img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%"></a>
+                    <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"]?>"><img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%"></a>
                     </div>
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
@@ -216,8 +216,8 @@ if (!isset($_SESSION['nic'])) {
 
               <!-- Dress box start -->
               <div class="col-4">
-                <form method="get" action="index.php" class="dress-showcase">
-                  <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+                <form method="get" action="index.php" class="design-showcase">
+                  <input type="hidden" value="<?php echo $nic ?> " name="f_id">
                   <div class="card-item">
                     <div class="card-img">
                     <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
