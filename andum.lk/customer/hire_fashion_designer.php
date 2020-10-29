@@ -13,7 +13,7 @@ if (!isset($_SESSION['nic'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
+  <title>Andum.lk - Hire a fashion designer</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
@@ -25,6 +25,8 @@ if (!isset($_SESSION['nic'])) {
       color: #EB2188;
     }
   </style>
+
+
 </head>
 
 <body>
@@ -111,34 +113,34 @@ if (!isset($_SESSION['nic'])) {
               </ul>
             </ul>
           </li>
-          <li><a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">Add New</button></a></li>
 
-          <!-- <li><a href="add_product.php">Add a New Dress</a></li> -->
-          
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
+          <li><a href="#">Hire a Fashion Designer</a></li>
         </ul>
       </div>
       <div class="box">
         <div class="nav_right">
           <ul>
-          
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  
-                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="Manage_order.php"><i class="fas fa-users"></i>Customer Orders</a></li>
-                  <li><a href="purchases.php"><i class="fas fa-money"></i>Sales</a></li>
+                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
+                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
+                  <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
                 <li><i class="fas fa-envelope"></i></li>
-              </div> 
+                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+              </div>
           </ul>
         </div>
       </div>
     </nav>
   </header>
+
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -147,130 +149,102 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
+  <br />
+
   <div class="search-container">
     <form method="post">
       <div class="form-field-inline">
         <label for="searchname" class="field-label-inline">Search by Category</label>
         <input type="text" class="field-value-inline" name="q">
-        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
       </div>
     </form>
   </div>
 
   <?php include("../errors.php");
   ?>
+  <div class="sliderbox-wrap">
 
-  <div class="container-box">
-    <h2>New Arrivals</h2>
-    <div class="row">
-      <?php
+    <!-- </div>  -->
+    <div class="container-box">
+      <h2>All Categories</h2>
+      <div class="row">
+        <?php
         $nic = $_SESSION['nic'];
-
         // Check condition if this is search request or not
         if ($search != true) {
+          // Read all dressess
+          $sql = "SELECT * FROM users WHERE type='2'";
+          $result = mysqli_query($db, $sql);
 
-        // Read all dressess
-        $sql = "SELECT * FROM dress_showcase";
-        $result = mysqli_query($db, $sql);
+          if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+              <!-- Dress box start -->
+              <div class="col-4">
+                <form method="get" action="index.php" class="design-showcase">
+                  <input type="hidden" value="<?php echo $nic ?> " name="f_id">
+                  <div class="card-item">
+                    <div class="card-img">
+                    <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"]?>"><img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%"></a>
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                      <!-- <div class="card-description">
+                      Auto-layout for flexbox grid columns also means you can set the width of one column
+                      and have the sibling columns automatically resize around it.
+              </div>-->
+                      <div class="card-description"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- Dress box end-->
 
-        if ($result) {
-          while ($row = mysqli_fetch_assoc($result)) {
-      ?>
-
-      <!-- Dress box start -->
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-
-          <div class="card-item">
-            <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- Dress box end-->
-
-      <?php
+            <?php
             }
           }
         } else {
 
-          //check whether this request is for category filter or keyword search
-          if (!$category_filter) {
+          //Read using search keyword
+          $sql = "SELECT * FROM fashion_designer WHERE category LIKE '%$keyword%'";
+          $result = mysqli_query($db, $sql);
 
-            //Read using search keyword
-            $sql = "SELECT * FROM dress_showcase WHERE title LIKE '%$keyword%'";
-            $result = mysqli_query($db, $sql);
-            if ($result) {
-              while ($row = mysqli_fetch_assoc($result)) {
-      ?>
+          if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) { ?>
 
-      <!-- Dress box start -->
-      <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-          <div class="card-item">
-            <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-            <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- Dress box end-->
 
-      <?php
-              }
-            }
-          } else {
-            
-            //Read using selected category
-            $sql = "SELECT * FROM dress_showcase WHERE category LIKE '%$selected_dress_category%'";
-            $result = mysqli_query($db, $sql);
-            if ($result) {
-              while ($row = mysqli_fetch_assoc($result)) { ?>
-
-      <!-- Dress box start -->
-      <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-          <div class="card-item">
-            <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- Dress box end-->
-
-      <?php
-
-            }
+              <!-- Dress box start -->
+              <div class="col-4">
+                <form method="get" action="index.php" class="design-showcase">
+                  <input type="hidden" value="<?php echo $nic ?> " name="f_id">
+                  <div class="card-item">
+                    <div class="card-img">
+                    <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
+                    </div>
+                    <div class="card-content">
+                      <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
+                      <!-- <div class="card-description">
+                      Auto-layout for flexbox grid columns also means you can set the width of one column
+                      and have the sibling columns automatically resize around it.
+              </div>-->
+                      <div class="card-description"></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- Dress box end-->
+        <?php }
           }
         }
-      }
-      ?>
+        ?>
 
+
+      </div>
     </div>
-  </div>
 
-
-  <?php require("../footer.php")?>
+    <!--footer-->
+    <?php require("../footer.php") ?>
 </body>
 
 </html>

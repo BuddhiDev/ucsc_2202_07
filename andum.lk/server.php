@@ -46,10 +46,10 @@ if (isset($_POST['register'])) {
             $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
             mysqli_query($db, $sql1);
         }
-        
+
         // insert user if fashion designer
         else if ($utype == 2) {
-            $sql1 = "INSERT INTO fashiondesigner (nic) VALUES ('$nic')";
+            $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
             mysqli_query($db, $sql1);
         }
 
@@ -62,7 +62,7 @@ if (isset($_POST['register'])) {
 
         if ($_SESSION['utype'] == 0) {
             header('location: tailor/index.php');
-        } 
+        }
         else if ($_SESSION['utype'] == 1) {
             header('location: customer/index.php');
         }
@@ -103,7 +103,7 @@ if (isset($_POST['login'])) {
             if ($_SESSION['utype'] == 0)
             {
                 header('location: tailor/index.php');
-            } 
+            }
             else if ($_SESSION['utype'] == 1) {
                 header('location: customer/index.php');
             }
@@ -129,10 +129,27 @@ if (isset($_GET['logout'])) {
 if (isset($_POST['hireT'])) {
     $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
     $t_fname = mysqli_real_escape_string($db, $_POST['t_fname']);
+    $t_lname = mysqli_real_escape_string($db, $_POST['t_lname']);
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $c_fname = mysqli_real_escape_string($db, $_POST['c_fname']);
+    $c_lname = mysqli_real_escape_string($db, $_POST['c_lname']);
+    $category = mysqli_real_escape_string($db, $_POST['category']);
+    $material = mysqli_real_escape_string($db, $_POST['material']);
+    $color = mysqli_real_escape_string($db, $_POST['color']);
+    $neck = mysqli_real_escape_string($db, $_POST['neck']);
+    $chest = mysqli_real_escape_string($db, $_POST['chest']);
+    $waist = mysqli_real_escape_string($db, $_POST['waist']);
+    $seat = mysqli_real_escape_string($db, $_POST['seat']);
+    $shirt_length = mysqli_real_escape_string($db, $_POST['shirt_length']);
+    $shoulder_width = mysqli_real_escape_string($db, $_POST['shoulder_width']);
+    $arm_length = mysqli_real_escape_string($db, $_POST['arm_length']);
+    $wrist = mysqli_real_escape_string($db, $_POST['wrist']);
+    $biceps = mysqli_real_escape_string($db, $_POST['biceps']);
+    $hips = mysqli_real_escape_string($db, $_POST['hips']);
+    $other = mysqli_real_escape_string($db, $_POST['other']);
 
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, t_nic, t_fname, status) VALUES ('$c_nic','$c_fname','$t_nic','$t_fname','Active')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         header('location: hired_list.php');
@@ -271,7 +288,7 @@ if(isset($_POST['add_product']))
   $clchk="";
   foreach($colors1 as $clchk1)
      {
-        $clchk.= $clchk1.","; 
+        $clchk.= $clchk1.",";
      }
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
   $filename = $_FILES["myimage"]["name"];

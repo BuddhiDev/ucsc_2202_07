@@ -171,7 +171,9 @@ if (!isset($_SESSION['nic'])) {
     <table>
       <tr>
         <th>Tailor Name</th>
+        <th>Category</th>
         <th>Status</th>
+        <th><center>Action</center></th>
 
       </tr>
       <tr>
@@ -186,11 +188,12 @@ if (!isset($_SESSION['nic'])) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-            <td><?php echo $row["c_fname"] ?></td>
+            <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
-                <center><a class="cta" href="#"><button class="loginbutton btn-full-w">View</button></a></center>
+                <center><a class="cta" href="hired_list.php?order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
               </div>
             </td>
       </tr>
