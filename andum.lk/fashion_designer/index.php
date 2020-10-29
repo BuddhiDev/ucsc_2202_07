@@ -20,6 +20,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 </head>
@@ -32,11 +33,17 @@ if (!isset($_SESSION['nic'])) {
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
       <div class="nav-item-middle">
-        <ul class="nav-area">
+        <!-- <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
           <li><a href="hire_tailor.php">My Orders</a></li>
           <li><a href="hire_tailor.php">My Designs</a></li>
-        </ul>
+        </ul> -->
+        <form class="input-search">
+          <div class="search-input-group">
+            input
+
+          </div>
+        </form>
       </div>
       <div class="box">
         <div class="nav_right">
@@ -69,46 +76,52 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <div class="container-box">
-    <!-- <header>
-      <img class="logo" src="../logo.png" alt="logo">
-      <nav>
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="dress_showcase.php">Design Showcase</a></li>
-          <li><a href="Manage_order.php">Manage Orders</a></li>
-          <li><a href="#">Manage Sales</a></li>
-        </ul>
-      </nav>
-
-      <div>
-        <a class="cta" href="edit_profile.php"><button name="edit" class="loginbutton btn-full-w">Edit profile</button></a>
-      </div>
-
-      <div>
-        <a class="cta" href="index.php?logout='1'"><button name="logout" class="loginbutton btn-full-w">Sign Out</button></a>
-      </div>
-    </header> -->
-
-    <div class="col-4">
-                <form method="get" action="index.php" class="dress-showcase">
-                  <input type="hidden"  name="dress_id">
-                  <input type="hidden"  name="c_nic">
-                  <div class="card-item">
-                    <div class="card-img">
-                      <img src="../d-01.jpg"  style="width:100%">
-                    </div>
-                    <div class="card-content">
-                      <div class="card-title">Dress1</div>
-                      <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column
-                      and have the sibling columns automatically resize around it.
-                      </div>-->
-                      <div class="card-description">LKR 25000</div>
-                    </div>
-                  </div>
-                </form>
-    </div>
-
+    <!-- <div class="nav_right"> -->
+    <ul class="sidebar">
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-columns"></i>
+            <span class="sidebar-text">Dashboard</span>
+          </div>
+          
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="index.php">
+        <div class="sidebar-icon">
+          <i class="fas fa-user-circle"></i>
+          <span class="sidebar-text">My Profile</span>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="index.php">
+        <div class="sidebar-icon">
+          <i class="fas fa-tshirt"></i>
+          <span class="sidebar-text">My Designs</span>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="index.php">
+        <div class="sidebar-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="sidebar-text">My Orders</span>
+          </div>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="index.php">
+        <div class="sidebar-icon">
+          <i class="fas fa-comments"></i>
+          <span class="sidebar-text">Chat</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <!-- </div> -->
+    
   </div>
 
   <?php require("../footer.php")?>

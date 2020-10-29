@@ -1,0 +1,32 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    list-style: none;
+    background-color: #fafafafa;
+    background-size: cover;
+    width: 280px;
+    min-height: 100%;
+    border-radius: 20px;
+}
+
+.sidebar-item{
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+}
+
+.sidebar-link{
+    color: black;
+}
+
+.sidebar-text{
+    padding: 10px;
+    margin: 10px;
+}
+
+.sidebar-icon{
+    color: #EB2188;
+    font-size: 16px;
+}
