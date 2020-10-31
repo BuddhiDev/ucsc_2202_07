@@ -30,3 +30,12 @@
     color: #EB2188;
     font-size: 16px;
 }
+
+.fd-container{
+    min-height: calc(100vh - 211px - 58px);
+    width: 90vW;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+
+

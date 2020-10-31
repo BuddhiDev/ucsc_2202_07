@@ -40,7 +40,7 @@ if (!isset($_SESSION['nic'])) {
         </ul> -->
         <form class="input-search">
           <div class="search-input-group">
-            input
+            inputzz
 
           </div>
         </form>
