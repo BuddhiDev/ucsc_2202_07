@@ -11,7 +11,6 @@ if (!isset($_SESSION['nic'])) {
 <html>
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Order</title>
@@ -128,8 +127,6 @@ if (!isset($_SESSION['nic'])) {
       text-align: center;
     }
 
-
-
     .onee:hover {
       border: 2px solid black;
       width: 42px;
@@ -179,7 +176,6 @@ if (!isset($_SESSION['nic'])) {
       background-color: #fab7cc;
     }
   </style>
-
 </head>
 
 <body>

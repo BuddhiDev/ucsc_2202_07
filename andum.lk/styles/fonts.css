@@ -1,29 +1,29 @@
 @font-face {
     font-family: muli;
-    src: url('./fonts/Muli/static/Muli-Regular.ttf');
+    src: url('/ucsc_2202_07/andum.lk/fonts/Muli/static/Muli-Regular.ttf');
   }
 
   @font-face {
     font-family: Muli-ExtraBold;
-    src: url('./fonts/Muli/static/Muli-ExtraBold.ttf');
+    src: url('/ucsc_2202_07/andum.lk/fonts/Muli/static/Muli-ExtraBold.ttf');
   }
 
   @font-face {
     font-family: Muli-Light;
-    src: url('./fonts/Muli/static/Muli-Light.ttf');
+    src: url('/ucsc_2202_07/andum.lk/fonts/Muli/static/Muli-Light.ttf');
   }
 
   @font-face {
     font-family: Muli-Medium;
-    src: url('./fonts/Muli/static/Muli-Medium.ttf');
+    src: url('/ucsc_2202_07/andum.lk/fonts/Muli/static/Muli-Medium.ttf');
   }
 
   @font-face {
     font-family:Muli-Bold;
-    src: url('./fonts/Muli/static/Muli-Bold.ttf');
+    src: url('/ucsc_2202_07/andum.lk/fonts/Muli/static/Muli-Bold.ttf');
   }
 
   @font-face {
     font-family:Muli-SemiBold;
-    src: url('./fonts/Muli/static/Muli-SemiBold.ttf');
+    src: url('/ucsc_2202_07/andum.lk/fonts/Muli/static/Muli-SemiBold.ttf');
   }
