@@ -77,7 +77,7 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-  <div class="container-box">
+  <div class="fd-container-box">
     <!-- <div class="nav_right"> -->
     <div class="side-bar-wrapper">
       <ul class="sidebar">

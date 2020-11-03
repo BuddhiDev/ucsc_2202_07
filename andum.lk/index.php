@@ -9,14 +9,14 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
+    <!-- <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css"> -->
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/lightslider.css">
     <script type="text/javascript" src="/ucsc_2202_07/andum.lk/jquery.js"></script>
     <script type="text/javascript" src="/ucsc_2202_07/andum.lk/lightslider.js"></script>
     
 </head>
 <body>
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="logo.png" alt="logo" class="img-box">
@@ -96,7 +96,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
 
   <div style="text-align:center">
@@ -125,85 +125,263 @@
       setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
   </script>
-<div class="container-box">
-  <div  class="tailor-headding">
-    <h3>TOP RATED TAILORS</h3>
+  <div class="container-box">
+  <div>
+    <div  class="tailor-headding">
+      <h3>TOP RATED TAILORS</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div  class="text-view-more">
+      <h3>+ View More</h3>
+    </div>
   </div>
+
+  <div>
+    <div  class="tailor-headding">
+      <h3>TOP RATED FASHION DESIGNERS</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div  class="text-view-more">
+      <h3>+ View More</h3>
+    </div>
+  </div>
+
+  <div>
+    <div  class="tailor-headding">
+      <h3>NEW ARRIVALS</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">TTTT</div>
+            <div class="card-description">LKR </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div  class="text-view-more">
+      <h3>+ View More</h3>
+    </div>
+  </div>
+
+
+
   
-  <div class="tslider">
     
-    <ul id="autoWidth" class="cs-hidden">
-      <li class="item-a">
-        <div class="tslider-box">
-          <!-- model -->
-          <div class="slide-img">
+    
+    <!-- <div class="tslider">
+      
+      <ul id="autoWidth" class="cs-hidden">
+        <li class="item-a">
+          <div class="tslider-box"> -->
+            <!-- model -->
+            <!-- <div class="slide-img">
+                <img src="product1.jpg" alt="1">    -->
+            <!-- </div> -->
+            <!-- details -->
+            <!-- <div class="details"> -->
+              <!-- character details -->
+              <!-- <p>ttt</p>
+            </div>
+          </div>
+        </li>
+        <li class="item-b">
+          <div class="tslider-box"> -->
+            <!-- model -->
+            <!-- <div class="slide-img">
+              <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="1">   
+            </div> -->
+            <!-- details -->
+            <!-- <div class="details"> -->
+              <!-- character details -->
+              <!-- <p>ttt</p>
+            </div>
+          </div>
+        </li>
+        <li class="item-c">
+          <div class="tslider-box"> -->
+            <!-- model -->
+            <!-- <div class="slide-img">
               <img src="product1.jpg" alt="1">   
+            </div> -->
+            <!-- details -->
+            <!-- <div class="details"> -->
+              <!-- character details -->
+              <!-- <p>ttt</p>
+            </div>
           </div>
-          <!-- details -->
-          <div class="details">
-            <!-- character details -->
-            <p>ttt</p>
+        </li> -->
+        <!-- <li class="item-d">
+          <div class="tslider-box"> -->
+            <!-- model -->
+            <!-- <div class="slide-img">
+              <img src="product1.jpg" alt="1">   
+            </div> -->
+            <!-- details -->
+            <!-- <div class="details"> -->
+              <!-- character details -->
+              <!-- <p>ttt</p>
+            </div>
           </div>
-        </div>
-      </li>
-      <li class="item-b">
-        <div class="tslider-box">
-          <!-- model -->
-          <div class="slide-img">
-            <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="1">   
+        </li>
+        <li class="item-e">
+          <div class="tslider-box"> -->
+            <!-- model -->
+            <!-- <div class="slide-img">
+              <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="1">    -->
+            <!-- </div> -->
+            <!-- details -->
+            <!-- <div class="details"> -->
+              <!-- character details -->
+              <!-- <p>ttt</p>
+            </div>
           </div>
-          <!-- details -->
-          <div class="details">
-            <!-- character details -->
-            <p>ttt</p>
-          </div>
-        </div>
-      </li>
-      <li class="item-c">
-        <div class="tslider-box">
-          <!-- model -->
-          <div class="slide-img">
-            <img src="product1.jpg" alt="1">   
-          </div>
-          <!-- details -->
-          <div class="details">
-            <!-- character details -->
-            <p>ttt</p>
-          </div>
-        </div>
-      </li>
-      <li class="item-d">
-        <div class="tslider-box">
-          <!-- model -->
-          <div class="slide-img">
-            <img src="product1.jpg" alt="1">   
-          </div>
-          <!-- details -->
-          <div class="details">
-            <!-- character details -->
-            <p>ttt</p>
-          </div>
-        </div>
-      </li>
-      <li class="item-e">
-        <div class="tslider-box">
-          <!-- model -->
-          <div class="slide-img">
-            <img src="/ucsc_2202_07/andum.lk/images/d-01.jpg" alt="1">   
-          </div>
-          <!-- details -->
-          <div class="details">
-            <!-- character details -->
-            <p>ttt</p>
-          </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script> -->
+
   </div>
-
-  <script type="text/javascript" src="script.js"></script>
-
-</div>
  
 
   <!-- add a footer -->
