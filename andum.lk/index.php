@@ -128,7 +128,7 @@
   <div class="container-box">
   <div>
     <div  class="tailor-headding">
-      <h3>TOP RATED TAILORS</h3>
+      <h3>OUR TAILORS</h3>
     </div>
 
     <div class="row">
@@ -187,14 +187,14 @@
 
   <div>
     <div  class="tailor-headding">
-      <h3>TOP RATED FASHION DESIGNERS</h3>
+      <h3>OUR FASHION DESIGNERS</h3>
     </div>
 
     <div class="row">
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -205,7 +205,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -216,7 +216,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -227,7 +227,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -253,7 +253,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -264,7 +264,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -275,7 +275,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -286,7 +286,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
