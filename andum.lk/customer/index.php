@@ -15,8 +15,8 @@ if (!isset($_SESSION['nic'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Customer</title>
   <link rel="shortcut icon" href="logo.png">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
@@ -156,7 +156,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="form-field-inline">
         <label for="searchname" class="field-label-inline">Search by Category</label>
         <input type="text" class="field-value-inline" name="q">
-        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
+        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
       </div>
     </form>
   </div>

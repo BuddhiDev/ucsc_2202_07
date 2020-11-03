@@ -7,10 +7,10 @@
     <!-- Page-icon -->
     <link rel="shortcut icon" href="logo.png">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/lightslider.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/lightslider.css">
     <script type="text/javascript" src="/ucsc_2202_07/andum.lk/jquery.js"></script>
     <script type="text/javascript" src="/ucsc_2202_07/andum.lk/lightslider.js"></script>
     
@@ -126,19 +126,9 @@
     }
   </script>
 <div class="container-box">
-<!-- <div class="main"> -->
-  
-  
-  
-
-
-
-  <!-- Tailor Slider-->
-
   <div  class="tailor-headding">
     <h3>TOP RATED TAILORS</h3>
   </div>
-  
   
   <div class="tslider">
     
@@ -211,12 +201,8 @@
     </ul>
   </div>
 
-  
-
   <script type="text/javascript" src="script.js"></script>
 
-  <!-- Tailor Slider Ends-->
-<!-- </div> -->
 </div>
  
 

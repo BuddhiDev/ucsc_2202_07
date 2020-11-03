@@ -18,9 +18,9 @@ if (!isset($_SESSION['nic'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Tailor</title>
   <link rel="shortcut icon" href="../logo.png">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/fashion-designer.css">
+  <link rel="stylesheet" href="ucsc_2202_07/andum.lk/styles/style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 </head>
@@ -32,23 +32,25 @@ if (!isset($_SESSION['nic'])) {
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
-      <div class="nav-item-middle">
+      <!-- <div class="nav-item-middle"> -->
         <!-- <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
           <li><a href="hire_tailor.php">My Orders</a></li>
           <li><a href="hire_tailor.php">My Designs</a></li>
         </ul> -->
-        <form class="input-search">
-          <div class="search-input-group">
-            inputzz
-
-          </div>
-        </form>
+        <div class="search-container">
+    <form method="post">
+      <div class="form-field-inline">
+        <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+        <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
       </div>
+    </form>
+  </div>
+      <!-- </div> -->
       <div class="box">
         <div class="nav_right">
           <ul>
-            <li><a class="cta" href="design_showcase.php"><button class="loginbutton btn-full-w">Add New</button></a></li>
+            <li><a class="cta" href="design_showcase.php"><button class="add-new-btn">Add New</button></a></li>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
@@ -77,49 +79,108 @@ if (!isset($_SESSION['nic'])) {
 
   <div class="container-box">
     <!-- <div class="nav_right"> -->
-    <ul class="sidebar">
-      <li class="sidebar-item">
-        <a class="sidebar-link" href="index.php">
+    <div class="side-bar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+            <div class="sidebar-icon">
+              <i class="fas fa-columns"></i>
+              <span class="sidebar-text">Dashboard</span>
+            </div>
+            
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
           <div class="sidebar-icon">
-            <i class="fas fa-columns"></i>
-            <span class="sidebar-text">Dashboard</span>
+            <i class="fas fa-user-circle"></i>
+            <span class="sidebar-text">My Profile</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-tshirt"></i>
+            <span class="sidebar-text">My Designs</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="sidebar-text">My Orders</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-comments"></i>
+            <span class="sidebar-text">Chat</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="fd-content-wrapper">
+      <div class=row>
+        <div class=col-4>
+          <div class="fd-block-1">
+            <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Total Orders</h3>
           </div>
-          
-        </a>
-      </li>
-      <li class="sidebar-item">
-        <a class="sidebar-link" href="index.php">
-        <div class="sidebar-icon">
-          <i class="fas fa-user-circle"></i>
-          <span class="sidebar-text">My Profile</span>
+        </div>
+        <div class=col-4>
+          <div class="fd-block-2">
+          <h3 class="fd-block-font-size">200</h3>
+            <Br>
+            <h3>Product Views</h3>
           </div>
-        </a>
-      </li>
-      <li class="sidebar-item">
-        <a class="sidebar-link" href="index.php">
-        <div class="sidebar-icon">
-          <i class="fas fa-tshirt"></i>
-          <span class="sidebar-text">My Designs</span>
+        </div>
+        <div class=col-4>
+          <div class="fd-block-3">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>New Messages</h3>
           </div>
-        </a>
-      </li>
-      <li class="sidebar-item">
-        <a class="sidebar-link" href="index.php">
-        <div class="sidebar-icon">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="sidebar-text">My Orders</span>
+        </div>
+      </div>
+      <div class=row>
+        <div class=col-3>
+          <div class="fd-block-3">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Pending</h3>
           </div>
-        </a>
-      </li>
-      <li class="sidebar-item">
-        <a class="sidebar-link" href="index.php">
-        <div class="sidebar-icon">
-          <i class="fas fa-comments"></i>
-          <span class="sidebar-text">Chat</span>
+        </div>
+        <div class=col-3>
+          <div class="fd-block-2">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>On Going</h3>
           </div>
-        </a>
-      </li>
-    </ul>
+        </div>
+        <div class=col-3>
+          <div class="fd-block-1">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Completed</h3>
+          </div>
+        </div>
+        <div class=col-3>
+          <div class="fd-block-4">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Delivered</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- </div> -->
     
   </div>

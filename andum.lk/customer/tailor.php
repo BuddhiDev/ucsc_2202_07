@@ -16,9 +16,9 @@ if (!isset($_SESSION['nic'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Hire a Tailor</title>
   <link rel="shortcut icon" href="logo.png">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/dropdown.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style type="text/css">
@@ -184,7 +184,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -301,7 +301,8 @@ if (!isset($_SESSION['nic'])) {
         this.classList.toggle("active");
       })
   </script>
-
+  
+  <div class="container-box">
   <?php
   $selected_t_nic = $_SESSION['selected_t_nic'];
   $nic = $_SESSION['nic'];
@@ -575,6 +576,9 @@ if (!isset($_SESSION['nic'])) {
 
 
   <?php } ?>
+  </div>
+
+  
   <?php require("../footer.php") ?>
 </body>
 

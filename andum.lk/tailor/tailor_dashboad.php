@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>andum.lk</title>
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/stlyes/style/style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
 
 </head>
 
