@@ -17,16 +17,16 @@
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    font-family: muli;
+    /* font-family: muli; */
     text-align: center;
     font-size: 14px;
-    font-family: Muli-Bold;
+    /* font-family: Muli-Bold; */
     border-radius: 20px;
   }
 
   .loginbutton:hover{
     color: white;
-    font-family:Muli-Bold;
+    /* font-family:Muli-Bold; */
   }
 
   .tailor-form {
@@ -41,7 +41,7 @@
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    font-family: muli;
+    /* font-family: muli; */
     text-align: center;
     font-size: 14px;
     font-weight: 500;
@@ -56,7 +56,7 @@
     cursor: pointer;
     /* width: 800px; */
     border: 1px solid #ccc;
-    font-family: muli;
+    /* font-family: muli; */
     text-align: center;
     font-size: 14px;
     font-weight: 500;

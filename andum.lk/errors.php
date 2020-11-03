@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
+<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
 <?php if(count($errors)>0): ?>
 
 <div class="error">

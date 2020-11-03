@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="loginstyle.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body, html {

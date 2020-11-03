@@ -15,7 +15,6 @@ body{
 }
 
 li, a, button{
-        font-family: muli;
         cursor: pointer;
 }
 
@@ -179,7 +178,7 @@ nav ul.menu-area .inner-menu{
 
 nav ul.menu-area ul li.inner-list-header{
   text-transform: uppercase;
-  font-family: Muli-ExtraBold;
+  /* font-family: Muli-ExtraBold; */
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -318,7 +317,6 @@ nav ul.menu-area ul li a:hover{
     right: 0px;
     left: 0px;
     margin-top: 80px;
-    height: 100%;
 }
 
 .footer .footer-content{
@@ -506,7 +504,7 @@ nav ul.menu-area ul li a:hover{
         max-width: 300px;
         margin: auto;
         text-align: center;
-        font-family: Muli-Light;
+        /* font-family: Muli-Light; */
 }
 
 .title {
@@ -525,8 +523,6 @@ nav ul.menu-area ul li a:hover{
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
   }
 
   .col-1{
@@ -546,7 +542,7 @@ nav ul.menu-area ul li a:hover{
 
   .col-4{
     flex: 0 0 33.333333%;
-    max-width: 33.333333;
+    max-width: 33.333333%;
   }
   
   .col-5{
@@ -578,7 +574,7 @@ nav ul.menu-area ul li a:hover{
   .input-field {
     width: 60%;
     padding: 10px;
-    font-family: muli;
+    /* font-family: muli; */
     color: black;
     outline: none;
     border-radius: 25px;
@@ -629,14 +625,14 @@ nav ul.menu-area ul li a:hover{
   .title-lg{
     
     font-size: 54px;
-    font-family: Muli-ExtraBold;
+    /* font-family: Muli-ExtraBold; */
   }
 
   .title-lg-light{
     font-size: 22px;
     color: #555555;
     margin: 10px 0px;
-    font-family: Muli-Light;
+    /* font-family: Muli-Light; */
   }
 
   .landing-text-content{
@@ -698,7 +694,7 @@ nav ul.menu-area ul li a:hover{
 
 .card-item .card-content .card-title{
     font-size: 18px;
-    font-family:Muli-Bold;
+    /* font-family:Muli-Bold; */
     margin-bottom: 5px;
 }
 
@@ -745,7 +741,7 @@ nav ul.menu-area ul li a:hover{
   padding: 10px 20px;
   box-sizing: border-box;
   background-color: #FAFAFA;
-  font-family: Muli-Light;
+  /* font-family: Muli-Light; */
 }
 
 .slide-type{
@@ -769,7 +765,7 @@ nav ul.menu-area ul li a:hover{
   color: #000000;
   font-weight: 600;
   font-size: 1.1rem;
-  font-family: Muli-Light;
+  /* font-family: Muli-Light; */
   letter-spacing: 0.5px;
 }
 
@@ -795,7 +791,7 @@ nav ul.menu-area ul li a:hover{
   color: #EB2188;
   font-weight: 700;
   letter-spacing: 1px;
-  font-family: Muli-Light;
+  /* font-family: Muli-Light; */
   border-radius: 20px;
   box-shadow: 2px 2px 30px #FAFAFA;
 }

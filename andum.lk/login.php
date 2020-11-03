@@ -11,9 +11,9 @@ require("server.php");
   <!-- Page-icon -->
   <link rel="shortcut icon" href="logo.png">
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="loginstyle.css">
-  <link rel="stylesheet" href="dropdown.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
 </head>
 
 <body>

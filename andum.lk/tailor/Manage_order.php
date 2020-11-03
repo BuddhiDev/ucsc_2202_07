@@ -14,8 +14,8 @@ if (!isset($_SESSION['nic'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Manage Orders</title>
   <link rel="shortcut icon" href="logo.png">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
@@ -39,7 +39,7 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -148,7 +148,6 @@ if (!isset($_SESSION['nic'])) {
     </nav>
   </header>
 
-
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
@@ -156,7 +155,7 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-
+  <div class="container-box">
   <div style="overflow-x:auto;">
     <table>
       <tr>
@@ -187,18 +186,20 @@ if (!isset($_SESSION['nic'])) {
               </div>
             </td>
       </tr>
-  <?php
-          }
-        } else {
-        }
+      <?php
+              }
+            } else {
+            }
 
-  ?>
+      ?>
 
 
     </table>
   </div>
+  </div>
+  
 
-<?php require("footer.php")?>
+<?php require("../footer.php")?>
 
 </body>
 
