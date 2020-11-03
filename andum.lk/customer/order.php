@@ -198,11 +198,6 @@ if (!isset($_SESSION['nic'])) {
               <ul class="inner-menu">
                 <li class="inner-list-header">Casual Wear</li>
                 <li><a href="#">T shirts</a></li>
-                <!-- <li><a href="workware_ladies.php">Blouse</a></li> -->
-                <!-- <li><a href="#">Shirts</a></li>
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="dresses.php">Dresses</a></li> -->
               </ul>
               <ul class="inner-menu">
                 <li class="inner-list-header">Formal Wear</li>
