@@ -684,8 +684,15 @@ nav ul.menu-area ul li a:hover{
 
 .card-item .card-img{
   width: 100%;
-  height: 380px;
+  height: 300px;
   overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-img-style{
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .card-item .card-content{
@@ -1074,8 +1081,8 @@ a{
 
 .avatar{
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background-image: url("/ucsc_2202_07/andum.lk/images/pexels-joy-deb-1580270.jpg");
   background-size: cover;
 }
@@ -1092,6 +1099,10 @@ a{
     padding: 10px;
     text-align: right;
     font-size: 14px;
+}
+
+.edit-headding{
+
 }
 
 

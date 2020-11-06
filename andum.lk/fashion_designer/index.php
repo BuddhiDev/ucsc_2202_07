@@ -39,13 +39,13 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="hire_tailor.php">My Designs</a></li>
         </ul> -->
         <div class="search-container">
-    <form method="post">
-      <div class="form-field-inline">
-        <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-        <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </div>
-    </form>
-  </div>
+          <form method="post">
+            <div class="form-field-inline">
+              <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+              <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+          </form>
+        </div>
       <!-- </div> -->
       <div class="box">
         <div class="nav_right">
@@ -99,7 +99,7 @@ if (!isset($_SESSION['nic'])) {
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
+          <a class="sidebar-link" href="design_showcase.php">
           <div class="sidebar-icon">
             <i class="fas fa-tshirt"></i>
             <span class="sidebar-text">My Designs</span>
@@ -179,7 +179,37 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </div>
       </div>
+      <div calss="row">
+    <table class="fd-table">
+    <tr class="fd-tr">
+      <th class="fd-th">Order Id</th>
+      <th class="fd-th">Date</th>
+      <th class="fd-th">Customer</th>
+      <th class="fd-th">Payment</th>
+    </tr>
+    <tr >
+      <td class="fd-th">Jill</td>
+      <td class="fd-th">Smith</td>
+      <td class="fd-th">50</td>
+    </tr>
+    <tr class="fd-th">
+      <td class="fd-th">Eve</td>
+      <td class="fd-th">Jackson</td>
+      <td class="fd-th">94</td>
+    </tr>
+    <tr class="fd-th">
+      <td class="fd-th">Adam</td>
+      <td class="fd-th">Johnson</td>
+      <td class="fd-th">67</td>
+    </tr>
+  </table>
+
     </div>
+    </div>
+
+    
+
+  
 
     <!-- </div> -->
     

@@ -209,74 +209,74 @@ if (!isset($_SESSION['nic'])) {
   </div> -->
 <div class="container-box">
   <div class="row">
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Summer casual top</div>
-                <div class="card-description">
-                    <span>LKR 1,500.00</span>
-                </div>
-                <div class="">
-                <a class="" href=""><button name="logout" class="btn-primary-sm">ADD TO CART</button></a>
-                </div>
-              </div>
+    <div class="col-4">
+      <form method="post" action="index.php" class="dress-showcase">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="product1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Summer casual top</div>
+            <div class="card-description">
+                <span>LKR 1,500.00</span>
             </div>
-          </form>
-        </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
-                </div>
-              </div>
+            <div class="">
+              <a class="" href=""><button name="logout" class="btn-primary-sm">ADD TO CART</button></a>
             </div>
-          </form>
+          </div>
         </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
-                </div>
-              </div>
+      </form>
+    </div>
+    <div class="col-4">
+      <form method="post" action="index.php" class="dress-showcase">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="product1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Andrea Perera</div>
+            <div class="card-description">
+                Auto-layout for flexbox grid columns also means you can set the width of one column 
+                and have the sibling columns automatically resize around it.
             </div>
-          </form>
+          </div>
         </div>
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title">Andrea Perera</div>
-                <div class="card-description">
-                    Auto-layout for flexbox grid columns also means you can set the width of one column 
-                    and have the sibling columns automatically resize around it.
-                </div>
-              </div>
+      </form>
+    </div>
+    <div class="col-4">
+      <form method="post" action="index.php" class="dress-showcase">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="product1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Andrea Perera</div>
+            <div class="card-description">
+                Auto-layout for flexbox grid columns also means you can set the width of one column 
+                and have the sibling columns automatically resize around it.
             </div>
-          </form>
+          </div>
         </div>
+      </form>
+    </div>
+    <div class="col-4">
+      <form method="post" action="index.php" class="dress-showcase">
+        <div class="card-item">
+          <div class="card-img">
+            <img src="product1.jpg" alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+            <div class="card-title">Andrea Perera</div>
+            <div class="card-description">
+                Auto-layout for flexbox grid columns also means you can set the width of one column 
+                and have the sibling columns automatically resize around it.
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
+</div>
 
 
 <?php require("footer.php")?>

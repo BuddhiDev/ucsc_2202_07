@@ -162,9 +162,13 @@ require("../server.php");
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-
+        <div class="conrainer-box">
         <div class="login-container">
+          <div class="edit-heading">
           <h1>Edit Profile</h1>
+
+          </div>
+          
           <center>
           <div class="avatar"></div>
           <!-- <img src=" " alt="Jeny" style="width:25%"; > -->
@@ -231,6 +235,11 @@ require("../server.php");
 
           
         </div>
+          
+          
+
+        </div>
+        
       </form>
 
       <!--footer-->
