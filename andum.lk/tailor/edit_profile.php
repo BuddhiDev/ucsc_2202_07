@@ -212,19 +212,11 @@ require("../server.php");
 
 
 
-          <!-- <div class="form-field-inline">
-          <lable for="type" class="field-label-inline">Upload Dress image:</label>
-      
-      
-        <input type="file" id="file" name="myimage" value=""> <br/>
-     
-    <center>
-      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Upload</button>
-      </center></div> -->
+    
 
       <div class="row">
       <div class="col-25">
-        <lable for="type" class="field-label-inline">Upload Dress image:</label>
+        <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
       </div>
       <div class="col-75">
         <input type="file" id="file" name="myimage" value=""> <br/>
@@ -232,7 +224,7 @@ require("../server.php");
     </div>
     <div> 
     <center>
-      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Upload</button>
+      <button class="loginbutton btn-full-w" type="submit" name="profile_pic"> Upload</button>
       </center></div>
 
 
