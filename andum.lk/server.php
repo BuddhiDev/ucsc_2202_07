@@ -237,7 +237,7 @@ if (isset($_POST['update_user'])) {
 
     $filename = $_FILES["myimage"]["name"];
   $tempname = $_FILES["myimage"]["tmp_name"];
-  $folder = "products/".$filename;
+  $folder = "profile_pictures/".$filename;
 
     if ($password1 != $password2){
         array_push($errors, "Passwords do not match");
