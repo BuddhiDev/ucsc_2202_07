@@ -237,14 +237,14 @@ if (isset($_POST['update_user'])) {
 
     $filename = $_FILES["myimage"]["name"];
   $tempname = $_FILES["myimage"]["tmp_name"];
-  $folder = "products/".$filename;
+  $folder = "profile_pictures/".$filename;
 
     if ($password1 != $password2){
         array_push($errors, "Passwords do not match");
     }
     else{
     $password = md5($password1);
-    $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' WHERE nic='$nic'";
+    $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' , image = '$filename' WHERE nic='$nic'";
     $result=mysqli_query($db, $sql);
 
     if (move_uploaded_file($tempname, $folder))
@@ -277,7 +277,7 @@ if (isset($_POST['save_user'])) {
     }
     else{
     $password = md5($password1);
-    $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' WHERE nic='$nic'";
+    $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' , image = '$filename'WHERE nic='$nic'";
     $result=mysqli_query($db, $sql);
     }
 }

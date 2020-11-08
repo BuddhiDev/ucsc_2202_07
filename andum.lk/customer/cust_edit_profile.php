@@ -219,6 +219,26 @@ require("../server.php");
           </div>
 
 
+
+          <div class="row">
+      <div class="col-25">
+        <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
+      </div>
+      <div class="col-75">
+        <input type="file" id="file" name="myimage" value=""> <br/>
+      </div>
+    </div>
+    <!-- <div> 
+    <center>
+      <button class="loginbutton btn-full-w" type="submit" name="profile_pic"> Upload</button>
+      </center></div> -->
+
+
+
+
+
+
+
               <!--<h2>SewingCategories</h2>-->
 
 
