@@ -230,21 +230,39 @@ require("../server.php");
           <input type="checkbox" name="color[]" value="#ff0000">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">Black
+        <label class="checkbox_container">Orange
           <input type="checkbox" name="color[]" value="#000000">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">White
+        <label class="checkbox_container">Yelllow
           <input type="checkbox" name="color[]" value="#ffffff">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Green
+          <input type="checkbox" name="color[]" value="#0000ff">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Blue
+          <input type="checkbox" name="color[]" value="#ffc0cb">
           <span class="checkmark"></span>
         </label>
       <!--  </div>
         <div class="column">-->
-        <label class="checkbox_container">Blue
-          <input type="checkbox" name="color[]" value="#0000ff">
+        
+        
+        <label class="checkbox_container">Purple
+          <input type="checkbox" name="color[]" value="#">
           <span class="checkmark"></span>
         </label>
         <label class="checkbox_container">Pink
+          <input type="checkbox" name="color[]" value="#">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Black
+          <input type="checkbox" name="color[]" value="#">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">White
           <input type="checkbox" name="color[]" value="#ffc0cb">
           <span class="checkmark"></span>
         </label>
