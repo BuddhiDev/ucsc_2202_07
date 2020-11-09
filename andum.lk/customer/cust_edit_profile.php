@@ -220,6 +220,10 @@ require("../server.php");
 
 
 
+
+
+
+
           <div class="row">
       <div class="col-25">
         <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
@@ -228,6 +232,9 @@ require("../server.php");
         <input type="file" id="file" name="myimage" value=""> <br/>
       </div>
     </div>
+
+
+    
     <!-- <div> 
     <center>
       <button class="loginbutton btn-full-w" type="submit" name="profile_pic"> Upload</button>
