@@ -125,15 +125,31 @@ if (isset($_POST['update_fd'])) {
     $contactno = mysqli_real_escape_string($db, $_POST['contactno']);
     $address = mysqli_real_escape_string($db, $_POST['address']);
     $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
+    
+    $filename = $_FILES["profilepic"]["name"];
+    $tempname = $_FILES["profilepic"]["tmp_name"];
+    $folder = "profile_pictures/".$filename;
 
     if ($password1 != $password2){
         array_push($errors, "Passwords do not match");
     }
     else{
-    $password = md5($password1);
-    $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' WHERE nic='$nic'";
-    $result=mysqli_query($db, $sql);
+        $password = md5($password1);
+        $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' image = '$filename' WHERE nic='$nic'";
+        $result=mysqli_query($db, $sql);
+
+        if (move_uploaded_file($tempname, $folder))
+        {
+            echo "<script>alert('Image Has Been Uploaded')</script>";
+        }
+        else
+        {
+            echo "<script>alert('Image Does Not Uploaded')</script>";
+        }
+
     }
+
+
 }
 
 if(isset($_POST['add_design']))

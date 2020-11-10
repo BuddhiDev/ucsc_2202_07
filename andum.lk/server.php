@@ -236,8 +236,8 @@ if (isset($_POST['update_user'])) {
     $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
 
     $filename = $_FILES["myimage"]["name"];
-  $tempname = $_FILES["myimage"]["tmp_name"];
-  $folder = "profile_pictures/".$filename;
+    $tempname = $_FILES["myimage"]["tmp_name"];
+    $folder = "profile_pictures/".$filename;
 
     if ($password1 != $password2){
         array_push($errors, "Passwords do not match");

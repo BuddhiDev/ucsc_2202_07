@@ -145,60 +145,92 @@ require("fd_controller.php");
     })
   </script>
 
+  <?php
+    if(!empty($msg)):
+  ?>
+
+  <div>
+      <?php echo $msg;?>
+  </div>
+    <?php endif; ?> 
 
 <!-- edit profile form-->
 <div class="container-box">
-  <div class="fd-cover-box">
-    <div class="fd-row">
-      <h3 class="fd-edit-heading">Edit Profile</h3>
-    </div>
-    <div class="fd-form-container">
-      <div class="fd-form-container-block1">
-        ttttttttt
+  <form action="edit_profile.php" method="post" enctype="multipart/form-data">
+  <?php
+
+    include("../errors.php");
+
+
+    $nic = $_SESSION['nic'];
+    $sql= "SELECT * FROM users WHERE nic=$nic";
+    // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
+    $result = mysqli_query($db, $sql);
+
+    if ($result) {
+      while ($row = mysqli_fetch_assoc($result)) {
+  ?>
+
+    <div class="fd-cover-box">
+      <div class="fd-row">
+        <h3 class="fd-edit-heading">Edit Profile</h3>
       </div>
-      <div class="fd-form-container-block2">
-        <div class="form-field-inline">
-          <label for="uname" class="field-label-inline">NIC Number</label>
-          <input type="text" value="" class="field-value-inline" name="nic" required>
+      <div class="fd-form-container">
+        <div class="fd-form-container-block1">
+          <div class="profile-pic">
+            <label for="profile_pictures">Profile Image</label>
+            <input type="file" name="profilepic" id="profilepic" class="profile-pic-control">
+          </div>
         </div>
-        <div class="form-field-inline">
-          <label for="email" class="field-label-inline"><b>Email Address</b></label>
-          <input type="text" value="" class="field-value-inline" name="email" required>
-        </div>
-        <div class="form-field-inline">
-          <label for="fname" class="field-label-inline"><b>First Name</b></label>
-          <input type="text" value="" class="field-value-inline" name="fname" required>
-        </div>
-        <div class="form-field-inline">
-          <label for="lname" class="field-label-inline"><b>Last Name</b></label>
-          <input type="text" value="" class="field-value-inline" name="lname" required>
-        </div>
-        <div class="form-field-inline">
-          <label for="password" class="field-label-inline"><b>Password</b></label>
-          <input type="password" class="field-value-inline" name="password" required>
-        </div>
-        <div class="form-field-inline">
-          <label for="cpassword" class="field-label-inline"><b>Confirm Password</b></label>
-          <input type="password" class="field-value-inline" name="cpassword" required>
-        </div>
-        <div class="form-field-inline">
-          <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
-          <input type="text" value="" class="field-value-inline" name="contactno">
-        </div>
-        <div class="form-field-inline">
-          <label for="address" class="field-label-inline"><b>Address</b></label>
-          <input type="text" value="" class="field-value-inline" name="address">
-        </div>
-        <div class="form-field-inline">
-          <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
-          <input type="text" value="" class="field-value-inline" name="postalcode">
-        </div>
-        <div class="btn-panel-center">
-          <button class="loginbutton btn-full-w" type="submit" name="update_fd">Save Data</button>
+        <div class="fd-form-container-block2">
+          <div class="form-field-inline">
+            <label for="uname" class="field-label-inline">NIC Number</label>
+            <input type="text" value="" class="field-value-inline" name="nic" required>
+          </div>
+          <div class="form-field-inline">
+            <label for="email" class="field-label-inline"><b>Email Address</b></label>
+            <input type="text" value="" class="field-value-inline" name="email" required>
+          </div>
+          <div class="form-field-inline">
+            <label for="fname" class="field-label-inline"><b>First Name</b></label>
+            <input type="text" value="" class="field-value-inline" name="fname" required>
+          </div>
+          <div class="form-field-inline">
+            <label for="lname" class="field-label-inline"><b>Last Name</b></label>
+            <input type="text" value="" class="field-value-inline" name="lname" required>
+          </div>
+          <div class="form-field-inline">
+            <label for="password" class="field-label-inline"><b>Password</b></label>
+            <input type="password" class="field-value-inline" name="password" required>
+          </div>
+          <div class="form-field-inline">
+            <label for="cpassword" class="field-label-inline"><b>Confirm Password</b></label>
+            <input type="password" class="field-value-inline" name="cpassword" required>
+          </div>
+          <div class="form-field-inline">
+            <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
+            <input type="text" value="" class="field-value-inline" name="contactno">
+          </div>
+          <div class="form-field-inline">
+            <label for="address" class="field-label-inline"><b>Address</b></label>
+            <input type="text" value="" class="field-value-inline" name="address">
+          </div>
+          <div class="form-field-inline">
+            <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
+            <input type="text" value="" class="field-value-inline" name="postalcode">
+          </div>
+          <div class="btn-panel-center">
+            <button class="loginbutton btn-full-w" type="submit" name="update_fd">Save Data</button>
+          </div>
+          <?php
+            }
+          }
+          ?>
         </div>
       </div>
     </div>
-  </div>
+  </form>
+  
   
 </div>
 
@@ -210,6 +242,3 @@ require("fd_controller.php");
 </body>
 </html>
 
-<?php
-
-?>

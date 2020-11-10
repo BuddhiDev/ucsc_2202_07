@@ -147,10 +147,10 @@ require("../server.php");
 
 <!-- edit profile form-->
 
-      <form action="cust_edit_profile.php" method="post" enctype="multipart/form-data">
-        <?php
+    <form action="cust_edit_profile.php" method="post" enctype="multipart/form-data">
+      <?php
 
-       include("../errors.php");
+        include("../errors.php");
 
 
         $nic = $_SESSION['nic'];
@@ -160,17 +160,16 @@ require("../server.php");
 
         if ($result) {
           while ($row = mysqli_fetch_assoc($result)) {
-        ?>
+      ?>
 
-        <div class="conrainer-box">
+      <div class="conrainer-box">
         <div class="login-container">
           <div class="edit-heading">
-          <h1>Edit Profile</h1>
-
+            <h1>Edit Profile</h1>
           </div>
           
           <center>
-          <div class="avatar"></div>
+            <div class="avatar"></div>
           <!-- <img src=" " alt="Jeny" style="width:25%"; > -->
           </center>
           <div class="form-field-inline">
@@ -217,41 +216,17 @@ require("../server.php");
             <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
             <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
           </div>
-
-
-
-
-
-
-
+          
           <div class="row">
-      <div class="col-25">
-        <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
-      </div>
-      <div class="col-75">
-        <input type="file" id="myimage" name="myimage" value=""> <br/>
-      </div>
-    </div>
-
-
-    
-    <!-- <div> 
-    <center>
-      <button class="loginbutton btn-full-w" type="submit" name="profile_pic"> Upload</button>
-      </center></div> -->
-
-
-
-
-
-
-
-              <!--<h2>SewingCategories</h2>-->
-
-
+            <div class="col-25">
+              <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
+            </div>
+            <div class="col-75">
+              <input type="file" id="myimage" name="myimage" value=""> <br/>
+            </div>
+          </div>
 
           <div class="btn-panel-center">
-
             <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
           </div>
 
@@ -262,12 +237,9 @@ require("../server.php");
 
           
         </div>
-          
-          
-
-        </div>
+      </div>
         
-      </form>
+    </form>
 
       <!--footer-->
       <?php require("../footer.php")?>
