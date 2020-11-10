@@ -186,7 +186,9 @@ if (!isset($_SESSION['nic'])) {
                   <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                   <div class="card-item">
                     <div class="card-img">
-                    <a href="hire_tailor.php?t_nic=<?php echo $row["nic"]?>"><img src="/ucsc_2202_07/andum.lk/images/wg-01.jpg" alt="Avatar" style="width:100%"></a>
+                   
+
+                    <a href="hire_tailor.php?nic=<?php echo $row["nic"]?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/ <?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
                     </div>
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
