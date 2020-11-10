@@ -182,13 +182,13 @@ if (!isset($_SESSION['nic'])) {
         ?>
               <!-- Dress box start -->
               <div class="col-4">
-                <form method="get" action="index.php" class="dress-showcase">
-                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                <form method="get" action="hire_tailor.php" class="dress-showcase">
+                  <input type="hidden" value="<?php echo $nic ?> " name="nic">
                   <div class="card-item">
                     <div class="card-img">
                    
 
-                    <a href="hire_tailor.php?nic=<?php echo $row["nic"]?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/ <?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
+                    <a href="hire_tailor.php?nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/ <?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>
                     </div>
                     <div class="card-content">
                       <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
