@@ -123,6 +123,7 @@ if (!isset($_SESSION['nic'])) {
             </ul>
           </li>
 
+          <li><a href="index.php">My Dress Showcase</a></li>
           <li><a href="add_product.php">Add a New Dress</a></li>
           
         </ul>

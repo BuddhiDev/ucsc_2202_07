@@ -185,7 +185,7 @@ if (!isset($_SESSION['nic'])) {
 <body>
 
   <header>
-    <nav class="navbar-main">
+  <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
@@ -198,6 +198,11 @@ if (!isset($_SESSION['nic'])) {
               <ul class="inner-menu">
                 <li class="inner-list-header">Casual Wear</li>
                 <li><a href="#">T shirts</a></li>
+                <!-- <li><a href="workware_ladies.php">Blouse</a></li> -->
+                <!-- <li><a href="#">Shirts</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="dresses.php">Dresses</a></li> -->
               </ul>
               <ul class="inner-menu">
                 <li class="inner-list-header">Formal Wear</li>
@@ -222,7 +227,7 @@ if (!isset($_SESSION['nic'])) {
                 <li><a href="#">T shirts</a></li>
                 <li><a href="#">Shirts</a></li>
                 <li><a href="#">Jeans</a></li>
-                <li><a href="#">Trousers</a></li>
+                <li><a href="index.php?dcategory=trouser">Trousers</a></li>
                 <li><a href="#">Bottoms</a></li>
                 <li><a href="#">Sarongs</a></li>
               </ul>
@@ -263,6 +268,8 @@ if (!isset($_SESSION['nic'])) {
             </ul>
           </li>
 
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
+          <li><a href="index.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
       <div class="box">
@@ -279,11 +286,11 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
-                <li><i class="fas fa-envelope"></i></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div> 
-          </ul>
+            <li><i class="fas fa-envelope"></i></li>
+            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         </div>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>

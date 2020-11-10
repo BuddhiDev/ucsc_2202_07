@@ -147,7 +147,7 @@ require("../server.php");
 
 <!-- edit profile form-->
 
-      <form action="cust_edit_profile.php" method="post">
+      <form action="cust_edit_profile.php" method="post" enctype="multipart/form-data">
         <?php
 
        include("../errors.php");
@@ -229,7 +229,7 @@ require("../server.php");
         <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
       </div>
       <div class="col-75">
-        <input type="file" id="file" name="myimage" value=""> <br/>
+        <input type="file" id="myimage" name="myimage" value=""> <br/>
       </div>
     </div>
 
