@@ -114,7 +114,7 @@ if (isset($_GET['logout'])) {
 
 
 
-if (isset($_POST['update_user'])) {
+if (isset($_POST['update_fd'])) {
 
     $nic = mysqli_real_escape_string($db, $_POST['nic']);
     $email = mysqli_real_escape_string($db, $_POST['email']);

@@ -66,9 +66,9 @@
 
   .search-input-group-btn{
     color: #EB2188;
-    background-color: white;
+    background-color: #fafafa;
     border: none;
-    border-color: white;
+    border-color: #fafafa;
   }
 
   .add-new-btn{
@@ -211,6 +211,45 @@
   .fd-dropdown:hover .fd-dropdown-content {display: block;}
   
   .fd-dropdown:hover .fd-dropbtn {background-color: #fafafa;}
+
+  .fd-row{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    color: white;
+    flex-wrap: wrap;
+    margin: 10px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+    background-color: #EB2188;
+  }
+
+  .fd-edit-heading{
+    color: "white";
+  }
+
+  .fd-cover-box{
+    background-color: white;
+    padding: 50px;
+    margin: 50px;
+  }
+
+  .fd-form-container{
+    display: inline-block;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    margin: 5px;
+  }
+
+  .fd-form-container-block1{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+  }
+
+  .fd-form-container-block2{
+    width: 79%;
+    display: inline-block;
+  }
 
   
 

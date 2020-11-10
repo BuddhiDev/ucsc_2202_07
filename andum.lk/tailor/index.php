@@ -17,6 +17,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
@@ -120,20 +121,16 @@ if (!isset($_SESSION['nic'])) {
       <div class="box">
         <div class="nav_right">
           <ul>
-          <li><a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">Add New</button></a></li>
-          
+            <li><a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">Add New</button></a></li>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
-                
                 <ul>
-                  
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="Manage_order.php"><i class="fas fa-users"></i>Customer Orders</a></li>
                   <li><a href="purchases.php"><i class="fas fa-money"></i>Sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-
                 <li><i class="fas fa-envelope"></i></li>
               </div> 
           </ul>
@@ -149,21 +146,27 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-  <div class="search-container">
-    <form method="post">
-      <div class="form-field-inline">
-        <label for="searchname" class="field-label-inline">Search by Category</label>
-        <input type="text" class="field-value-inline" name="q">
-        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </div>
-    </form>
-  </div>
-
-  <?php include("../errors.php");
+  <?php 
+    include("../errors.php");
   ?>
 
-  <div class="container-box">
-    <h2>New Arrivals</h2>
+<div class="tailor-container-box">
+  <div class="row">
+    <div class="search-container">
+      <form method="post">
+        <div class="form-field-inline">
+          <label for="searchname" class="field-label-inline">Search...</label>
+          <input type="text" class="field-value-inline" name="q">
+          <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="tailor-cover">
+    <div class="row">
+      <h2 class="tailor-heading">New Arrivals</h2>
+    </div>
     <div class="row">
       <?php
         $nic = $_SESSION['nic'];
@@ -240,7 +243,8 @@ if (!isset($_SESSION['nic'])) {
             $sql = "SELECT * FROM dress_showcase WHERE category LIKE '%$selected_dress_category%'";
             $result = mysqli_query($db, $sql);
             if ($result) {
-              while ($row = mysqli_fetch_assoc($result)) { ?>
+              while ($row = mysqli_fetch_assoc($result)) { 
+      ?>
 
       <!-- Dress box start -->
       <div class="col-4">
@@ -267,9 +271,10 @@ if (!isset($_SESSION['nic'])) {
         }
       }
       ?>
-
     </div>
   </div>
+    
+</div>
 
 
   <?php require("../footer.php")?>

@@ -1,0 +1,21 @@
+.tailor-container-box{
+    min-height: calc(100vh - 211px - 58px);
+  width: 90vW;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.tailor-cover{
+    width: 100%;
+    display: inline-block;
+}
+
+.tailor-heading{
+    padding: 0px 0px 0px 61px;
+    margin: 10px;
+}
+
+.dress-showcase{
+    padding: 10px;
+    margin: 50px;
+}

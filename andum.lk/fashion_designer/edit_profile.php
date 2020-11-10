@@ -12,6 +12,7 @@ require("fd_controller.php");
     <link rel="shortcut icon" href="logo.png">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/checkbox.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
@@ -25,14 +26,14 @@ require("fd_controller.php");
 </head>
 <body>
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-    <li><a href="index.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <ul class="menu-area">
@@ -146,95 +147,69 @@ require("fd_controller.php");
 
 
 <!-- edit profile form-->
-
-      <form action="cust_edit_profile.php" method="post">
-        <?php
-
-       include("../errors.php");
-
-
-        $nic = $_SESSION['nic'];
-        $sql= "SELECT * FROM users WHERE nic=$nic";
-        // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
-        $result = mysqli_query($db, $sql);
-
-        if ($result) {
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-
-
-        <div class="login-container">
-          <h1>Edit Profile</h1>
-          <center>
-          <div class="avatar"></div>
-          <!-- <img src=" " alt="Jeny" style="width:25%"; > -->
-        </center>
-          <div class="form-field-inline">
-            <label for="uname" class="field-label-inline">NIC Number</label>
-            <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="email" class="field-label-inline"><b>Email Address</b></label>
-            <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="fname" class="field-label-inline"><b>First Name</b></label>
-            <input type="text" value="<?php echo $row["fname"]?>" class="field-value-inline" name="fname" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="lname" class="field-label-inline"><b>Last Name</b></label>
-            <input type="text" value="<?php echo $row["lname"]?>" class="field-value-inline" name="lname" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="password" class="field-label-inline"><b>Password</b></label>
-            <input type="password" class="field-value-inline" name="password" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="cpassword" class="field-label-inline"><b>Confirm Password</b></label>
-            <input type="password" class="field-value-inline" name="cpassword" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
-            <input type="text" value="<?php echo $row["contactno"]?>" class="field-value-inline" name="contactno">
-          </div>
-
-          <div class="form-field-inline">
-            <label for="address" class="field-label-inline"><b>Address</b></label>
-            <input type="text" value="<?php echo $row["address"]?>" class="field-value-inline" name="address">
-          </div>
-
-          <div class="form-field-inline">
-            <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
-            <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
-          </div>
-
-
-              <!--<h2>SewingCategories</h2>-->
-
-
-
-          <div class="btn-panel-center">
-
-            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
-          </div>
-
-          <?php
-            }
-          }
-          ?>
-
-
+<div class="container-box">
+  <div class="fd-cover-box">
+    <div class="fd-row">
+      <h3 class="fd-edit-heading">Edit Profile</h3>
+    </div>
+    <div class="fd-form-container">
+      <div class="fd-form-container-block1">
+        ttttttttt
+      </div>
+      <div class="fd-form-container-block2">
+        <div class="form-field-inline">
+          <label for="uname" class="field-label-inline">NIC Number</label>
+          <input type="text" value="" class="field-value-inline" name="nic" required>
         </div>
-      </form>
+        <div class="form-field-inline">
+          <label for="email" class="field-label-inline"><b>Email Address</b></label>
+          <input type="text" value="" class="field-value-inline" name="email" required>
+        </div>
+        <div class="form-field-inline">
+          <label for="fname" class="field-label-inline"><b>First Name</b></label>
+          <input type="text" value="" class="field-value-inline" name="fname" required>
+        </div>
+        <div class="form-field-inline">
+          <label for="lname" class="field-label-inline"><b>Last Name</b></label>
+          <input type="text" value="" class="field-value-inline" name="lname" required>
+        </div>
+        <div class="form-field-inline">
+          <label for="password" class="field-label-inline"><b>Password</b></label>
+          <input type="password" class="field-value-inline" name="password" required>
+        </div>
+        <div class="form-field-inline">
+          <label for="cpassword" class="field-label-inline"><b>Confirm Password</b></label>
+          <input type="password" class="field-value-inline" name="cpassword" required>
+        </div>
+        <div class="form-field-inline">
+          <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
+          <input type="text" value="" class="field-value-inline" name="contactno">
+        </div>
+        <div class="form-field-inline">
+          <label for="address" class="field-label-inline"><b>Address</b></label>
+          <input type="text" value="" class="field-value-inline" name="address">
+        </div>
+        <div class="form-field-inline">
+          <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
+          <input type="text" value="" class="field-value-inline" name="postalcode">
+        </div>
+        <div class="btn-panel-center">
+          <button class="loginbutton btn-full-w" type="submit" name="update_fd">Save Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+      
 
       <!--footer-->
       <?php require("../footer.php")?>
 
 </body>
 </html>
+
+<?php
+
+?>
