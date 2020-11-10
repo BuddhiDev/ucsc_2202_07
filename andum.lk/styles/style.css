@@ -282,6 +282,7 @@ nav ul.menu-area ul li a:hover{
 
 .search-btn{
   border: none;
+  background-color: #fafafa;
 }
 
 
@@ -301,6 +302,8 @@ nav ul.menu-area ul li a:hover{
 
 .field-value-inline{
     flex:3;
+    background-color: #fafafa;
+    border-color: #fafafa;
     border-radius: 8px;
 }
 
@@ -359,11 +362,14 @@ nav ul.menu-area ul li a:hover{
 /* -----Footer Styles Ends----- */
 
 .search-container{
-    width: 58%;
-    box-shadow: 0px 1px 4px 1px #f4f4f4;
-    border-radius: 8px;
-    padding: 0px 40px;
-    margin: 10px auto;
+  width: 50%;
+  box-shadow: 0px 1px 4px 1px #fafafa;
+  background-color: #fafafa;
+  border-radius: 20px;
+  padding: 0px 20px;
+  margin: 10px auto;
+  float: left;
+  display: inline-block;
 }
 
 /* .product-container{
@@ -937,8 +943,8 @@ a{
 
 .box .nav_right ul li .dd_right{
   position: absolute;
-  top: 65px;
-  right: 0;
+  top: 45px;
+  right: -10px;
   background: #fafafafa;
   padding: 10px 25px;
   border-radius: 5px;

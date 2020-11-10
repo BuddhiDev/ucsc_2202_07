@@ -32,29 +32,22 @@ if (!isset($_SESSION['nic'])) {
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
-      <!-- <div class="nav-item-middle"> -->
-        <!-- <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="hire_tailor.php">My Orders</a></li>
-          <li><a href="hire_tailor.php">My Designs</a></li>
-        </ul> -->
-        <div class="search-container">
-          <form method="post">
-            <div class="form-field-inline">
-              <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-              <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </div>
-          </form>
-        </div>
+      <div class="search-container">
+        <form method="post">
+          <div class="form-field-inline">
+            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
       <!-- </div> -->
       <div class="box">
         <div class="nav_right">
           <ul>
-            <li><a class="cta" href="design_showcase.php"><button class="add-new-btn">Add New</button></a></li>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="#"><i class="fas fa-chart-line"></i>Dashboard</a></li>
                   <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
@@ -78,7 +71,6 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <div class="fd-container-box">
-    <!-- <div class="nav_right"> -->
     <div class="side-bar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-item">
@@ -86,8 +78,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="sidebar-icon">
               <i class="fas fa-columns"></i>
               <span class="sidebar-text">Dashboard</span>
-            </div>
-            
+            </div>           
           </a>
         </li>
         <li class="sidebar-item">
