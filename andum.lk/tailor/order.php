@@ -181,7 +181,7 @@ if (!isset($_SESSION['nic'])) {
 <body>
 
   <header>
-    <nav class="navbar-main">
+  <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
@@ -264,6 +264,9 @@ if (!isset($_SESSION['nic'])) {
             </ul>
           </li>
 
+          <li><a href="index.php">My Dress Showcase</a></li>
+          <li><a href="add_product.php">Add a New Dress</a></li>
+          
         </ul>
       </div>
       <div class="box">
@@ -272,7 +275,7 @@ if (!isset($_SESSION['nic'])) {
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="Manage_order.php"><i class="fas fa-users"></i>Customer Orders</a></li>
                   <li><a href="purchases.php"><i class="fas fa-money"></i>Sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
@@ -280,8 +283,7 @@ if (!isset($_SESSION['nic'])) {
                 </ul>
 
                 <li><i class="fas fa-envelope"></i></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div>
+              </div> 
           </ul>
         </div>
       </div>
