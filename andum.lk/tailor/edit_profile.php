@@ -144,7 +144,7 @@ require("../server.php");
 
 <!-- edit profile form-->
 
-      <form action="edit_profile.php" method="post">
+      <form action="edit_profile.php" method="post" enctype="multipart/form-data">
         <?php
 
        include("../errors.php");
@@ -214,18 +214,16 @@ require("../server.php");
 
     
 
-      <div class="row">
+          <div class="row">
       <div class="col-25">
         <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
       </div>
       <div class="col-75">
-        <input type="file" id="file" name="myimage" value=""> <br/>
+        <input type="file" id="myimage" name="myimage" value=""> <br/>
       </div>
     </div>
-    <div> 
-    <center>
-      <button class="loginbutton btn-full-w" type="submit" name="profile_pic"> Upload</button>
-      </center></div>
+
+    
 
 
 
@@ -237,71 +235,12 @@ require("../server.php");
 
 
 
-
-              <!--<h2>SewingCategories</h2>-->
-              <!-- <div class="form-field-inline">
-                <label for="category" class="field-label-inline"><b>Sewing Category</b></label>
-              </div> -->
-                  <!--<h2>SewingCategories</h2>-->
-                  <!-- <div class="row">
-                     <div class="column">
-                        <h4>Ladies wear</h4><br>
-                        <label class="checkbox_container">Casual Wear
-                          <input type="checkbox" checked="checked" >
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox_container">Formal Wear
-                          <input type="checkbox" >
-                          <span class="checkmark"></span>
-                        </label>
-                        <label class="checkbox_container">Wedding Wear
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-
-                    </div>
-                    <div class="column">
-                      <h4>Mens wear</h4><br>
-                      <label class="checkbox_container">Top Wear
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="checkbox_container">Bottom Wear
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="checkbox_container">Sports Wear
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-
-                     </div>
-                     <div class="column">
-                         <h4>Kids wear</h4><br>
-                         <label class="checkbox_container">Boy's Collection
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="checkbox_container">Girl's Collection
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-                          <label class="checkbox_container">Baby's Collection
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                          </label>
-
-                     </div>
-                  </div>
-
-              <br>
-              <br> -->
 
 
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="save_user">Save Data</button>
+            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
           </div>
 
           <?php
