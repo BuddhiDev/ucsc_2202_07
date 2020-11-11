@@ -135,7 +135,7 @@ if (isset($_POST['update_fd'])) {
     }
     else{
         $password = md5($password1);
-        $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' image = '$filename' WHERE nic='$nic'";
+        $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode',image ='$filename' WHERE nic='$nic'";
         $result=mysqli_query($db, $sql);
 
         if (move_uploaded_file($tempname, $folder))
@@ -152,7 +152,34 @@ if (isset($_POST['update_fd'])) {
 
 }
 
-if(isset($_POST['add_design']))
+// add sample design
+//if upload design button is pressed
+// if(issets($_POST['uploaddesign'])){
+    
+//     //the path to store the uploaded image
+//     $folder = "profile_pictures/".$filename;
+
+//     //Get all the submitted data from the form
+//     $filename = $_FILES["profilepic"]["name"];
+//     $tempname = $_FILES["profilepic"]["tmp_name"];
+//     $text = $_POST['text'];
+
+//     $sql = "INSERT INTO design_showcase (category, design_name, price, image, permission, f_nic) VALUES ('$category','$price','$filename','1','$f_nic')";
+//     $result = mysqli_query($db,$sql);
+    
+//     if (move_uploaded_file($tempname, $folder))
+//     {
+//         echo "<script>alert('Image Has Been Uploaded')</script>";
+//     }
+//     else
+//     {
+//         echo "<script>alert('Image Does Not Uploaded')</script>";
+//     }
+
+
+// }
+
+if(isset($_POST['uploaddesign']))
 {
 
   $f_nic =  $_SESSION['nic'];
