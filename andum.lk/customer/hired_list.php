@@ -42,7 +42,7 @@ if (!isset($_SESSION['nic'])) {
 <body>
 
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -52,82 +52,101 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
-            <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Casual Wear</li>
-                <li><a href="#">T shirts</a></li>
-                <!-- <li><a href="workware_ladies.php">Blouse</a></li> -->
-                <!-- <li><a href="#">Shirts</a></li>
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="dresses.php">Dresses</a></li> -->
+            
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Skirts</a></li>
+                    <li><a href="workwear_gents.php">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Ethnic wear</li>
+                    <li><a href="#">Kurthas</a></li>
+                    <li><a href="#">Shlwas</a></li>
+                    <li><a href="#">Sarees</a></li>
+                  </ul>
+                </div>
               </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Formal Wear</li>
-                <li><a href="#">Blouse</a></li>
-                <li><a href="#">Skirts</a></li>
-                <li><a href="workwear_gents.php">Pants</a></li>
-                <li><a href="#">Dresses</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Ethnic wear</li>
-                <li><a href="#">Kurthas</a></li>
-                <li><a href="#">Shawls</a></li>
-                <li><a href="#">Sarees</a></li>
-              </ul>
-            </ul>
+            </div>
+              
+            
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
-            <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Casual Wear</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Trousers</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Sarongs</a></li>
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
+                    <li><a href="#">Sarong</a></li>
+                    <li><a href="#">Shorts</a></li>
+                  </ul>  
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Trousers</a></li>
+                    <li><a href="#">Blazers</a></li>
+                  </ul>
+                </div> 
               </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Formal Wear</li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Trousers</a></li>
-                <li><a href="#">Blazers</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Inner Wear</li>
-                <li><a href="#">Brief</a></li>
-                <li><a href="#">Trunks</a></li>
-                <li><a href="#">Vests</a></li>
-              </ul>
-            </ul>
+            </div>            
           </li>
           <li class="dropdown">
             <a href="#">Kids</a>
+            <div class="row">
             <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Girls</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Tank Tops</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Shorts</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="#">Sleepware</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Boys</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Kurta</a></li>
-                <li><a href="#">Shorts</a></li>
-                <li><a href="#">Sleepware</a></li>
-              </ul>
+              <div class=col-6>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Boys</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Tank Tops</a></li>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Girls</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>             
             </ul>
+              
+
+            </div>
+            
           </li>
 
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="index.php">Hire a Fashion Designer</a></li>
+          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
       <div class="box">
@@ -144,14 +163,14 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
-                <li><i class="fas fa-envelope"></i></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div> 
-          </ul>
+            <li><i class="fas fa-envelope"></i></li>
+            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         </div>
+        </ul>
+      </div>
       </div>
     </nav>
-</header>
+  </header>
 
 
 

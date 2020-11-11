@@ -154,7 +154,7 @@ if (isset($_POST['update_fd'])) {
 
 // add sample design
 //if upload design button is pressed
-// if(issets($_POST['uploaddesign'])){
+// if(issets($_POST['upload_design'])){
     
 //     //the path to store the uploaded image
 //     $folder = "profile_pictures/".$filename;
