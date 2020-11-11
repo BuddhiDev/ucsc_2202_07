@@ -174,7 +174,7 @@ require("fd_controller.php");
             <div class="pic">
               <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
             </div>        
-            <label for="profile_pictures">Profile Image</label>
+            <label for="profile_pictures"></label>
             <input type="file" name="profilepic" value="<?php echo $row["image"]?>" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
           </div>
         </div>
@@ -215,7 +215,16 @@ require("fd_controller.php");
             <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
             <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
           </div>
-          <div class="add-design-cover">
+        
+          
+          
+          
+          <?php
+            }
+          }
+          ?>
+        </div>
+        <div class="add-design-cover">
           <div class="add-design-row">
             <h3 class="fd-edit-heading">Add Designs</h3>
           </div>
@@ -260,17 +269,10 @@ require("fd_controller.php");
             </div> -->
           </div>
 
-          </div>
-          
-          
-          <div class="btn-panel-center">
+        </div>
+        <div class="btn-panel-center">
             <button class="loginbutton btn-full-w" type="submit" name="update_fd">Save Data</button>
           </div>
-          <?php
-            }
-          }
-          ?>
-        </div>
       </div>
     </div>
   </form>
