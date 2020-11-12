@@ -125,6 +125,7 @@ if (isset($_GET['logout'])) {
     header('location: ../login.php');
 }
 
+
 //hire a tailor
 if (isset($_POST['hireT'])) {
     $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
