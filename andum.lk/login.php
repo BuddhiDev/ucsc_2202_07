@@ -88,6 +88,15 @@ require("server.php");
         <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
         <button class="loginbutton btn-full-w" type="submit" name="login">SIGN IN </button>
       </div>
+
+
+      <div class="btn-panel-center">
+        <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
+        <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
+        <button class="loginbutton btn-full-w" type="submit" name="forgot_password">Forgot password</button>
+      </div>
+
+
       <!-- <div> -->
       <span class="psw">Don't you have an account? <a href="/ucsc_2202_07/andum.lk/signup.php">SIGN UP</a> now!</span>
       <!-- </div> -->
