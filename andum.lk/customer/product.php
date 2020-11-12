@@ -333,7 +333,30 @@ if (!isset($_SESSION['nic'])) {
               <div>
                 <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
                 <div>
-                  <a href="#">
+                <?php
+                  $selected_dress_id = $_SESSION['selected_dress_id'];
+                  $nic = $_SESSION['nic'];
+                  $sql = "SELECT color FROM dress_showcase WHERE dress_id=$selected_dress_id";
+                  
+                  $mystring = mysqli_query($db, $sql);
+                  if ($mystring) {
+                    print_r (explode(",",$mystring));
+                  }
+                 // if ($mystring) {
+                   // $myArray = explode(',', $mystring);
+                    //foreach ($my_Array as $mycolor)
+                    
+                 // }
+                  //print_r($myArray);
+                 // foreach ($mycolor as $my_Array){
+                    
+                  //  <div class="on">
+                   //   <p background-color="$mycolor"></p>
+                  //  </div>
+                
+                  ?>
+                
+                 <!-- <a href="#">
                     <div class="on"></div>
                   </a>
                   <a href="#">
@@ -358,7 +381,7 @@ if (!isset($_SESSION['nic'])) {
                     <div class="on5">
                       <p background-color="pink"></p>
                     </div>
-                  </a>
+                  </a>-->
                 </div>
                 <br>
                 <div>
