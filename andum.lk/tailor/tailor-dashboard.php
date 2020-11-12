@@ -1,24 +1,33 @@
-<?php
-require("../server.php");
-?>
+<?php include("../server.php");
+
+if (!isset($_SESSION['nic'])) {
+  header("location:../login.php");
+  exit();
+}
+
+?>  
+
+<?php include("../errors.php");
+  ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Andum.lk - Add a dress</title>
-  <link rel="shortcut icon" href="logo.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andum.lk - Tailor</title>
+  <link rel="shortcut icon" href="../logo.png">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
-<link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/checkbox.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
+
   <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
@@ -159,7 +168,6 @@ require("../server.php");
     </nav>
   </header>
 
-
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
@@ -167,170 +175,143 @@ require("../server.php");
       })
   </script>
 
-
-<!--add new product form-->
-<div class="sliderbox-wrap">
-
-<center><img src="product1.jpg" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
-  <form method="post" action="add_product.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
-      <h2>Add Product</h2>
-
-      <div class="row">
-        <div class="col-25"><br>
-          <lable for="type" class="field-label-inline">Category:</label>
+  <div class="fd-container-box">
+    <div class="side-bar-wrapper">
+      <ul class="sidebar">
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+            <div class="sidebar-icon">
+              <i class="fas fa-columns"></i>
+              <span class="sidebar-text">Dashboard</span>
+            </div>           
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-user-circle"></i>
+            <span class="sidebar-text">My Profile</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-tshirt"></i>
+            <span class="sidebar-text">My Showcase</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="fd-manage-orders.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="sidebar-text">My Orders</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-comments"></i>
+            <span class="sidebar-text">Chat</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="fd-content-wrapper">
+      <div class=row>
+        <div class=col-4>
+          <div class="fd-block-1">
+            <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Total Orders</h3>
+          </div>
         </div>
-        <div class="col-75">
-          <select class="option" name="Unit" id="unit">
-            <optgroup label="Ladies wear">
-              <option value="casual_wear">Casual wear</option>
-              <option value="fomal wear">Fomal wear</option>
-              <option value="wedding_dresses">Wedding dresses</option>
-            </optgroup>
-            <optgroup label="Gents wear">
-              <option value="Top wear">Top wear</option>
-              <option value="bottom wear">Bottom wear</option>
-              <option value="sports wear">Sports wear</option>
-            </optgroup>
-            <optgroup label="Kids wear">
-              <option value="girl's_collection">Girl's collection</option>
-              <option value="boy's_collection">Boy's collection</option>
-              <option value="baby's_collection">Baby's collection</option>
-            </optgroup>
-          </select>
+        <div class=col-4>
+          <div class="fd-block-2">
+          <h3 class="fd-block-font-size">200</h3>
+            <Br>
+            <h3>Product Views</h3>
+          </div>
+        </div>
+        <div class=col-4>
+          <div class="fd-block-3">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>New Messages</h3>
+          </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-25"><br>
-          <label for="dname" class="field-label-inline">Dress Name: </label>
+      <div class=row>
+        <div class=col-3>
+          <div class="fd-block-3">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Pending</h3>
+          </div>
         </div>
-        <div class="col-75">
-          <input type="text" class="field-value-inline" placeholder="Name" name="dname">
+        <div class=col-3>
+          <div class="fd-block-2">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>On Going</h3>
+          </div>
+        </div>
+        <div class=col-3>
+          <div class="fd-block-1">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Completed</h3>
+          </div>
+        </div>
+        <div class=col-3>
+          <div class="fd-block-4">
+          <h3 class="fd-block-font-size">24</h3>
+            <Br>
+            <h3>Delivered</h3>
+          </div>
         </div>
       </div>
+      <div calss="row">
+    <table class="fd-table">
+    <tr class="fd-tr">
+      <th class="fd-th">Order Id</th>
+      <th class="fd-th">Date</th>
+      <th class="fd-th">Customer</th>
+      <th class="fd-th">Payment</th>
+    </tr>
+    <tr >
+      <td class="fd-th">Jill</td>
+      <td class="fd-th">Smith</td>
+      <td class="fd-th">50</td>
+    </tr>
+    <tr class="fd-th">
+      <td class="fd-th">Eve</td>
+      <td class="fd-th">Jackson</td>
+      <td class="fd-th">94</td>
+    </tr>
+    <tr class="fd-th">
+      <td class="fd-th">Adam</td>
+      <td class="fd-th">Johnson</td>
+      <td class="fd-th">67</td>
+    </tr>
+  </table>
 
-
-
-    <div class="row">
-      <div class="col-25"><br>
-        <lable for="price" class="field-label-inline">Price: </label>
-      </div>
-      <div class="col-75">
-        <input class="field-label-inline" type="text"  placeholder="Price" name="price">
-      </div>
+    </div>
     </div>
 
-    <div class="row">
-      <div class="col-25"><br>
-        <lable for="type" class="field-label-inline">Size:</label>
-      </div>
-      <div class="col-75">
-        <label class="checkbox_container">S
-          <input type="checkbox" name="size[]" value="s">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">M
-          <input type="checkbox" name="size[]" value="m">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">L
-          <input type="checkbox" name="size[]" value="l">
-          <span class="checkmark"></span>
-        </label>
+    
 
-        <label class="checkbox_container">XL
-          <input type="checkbox" name="size[]" value="xl">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">XXL
-          <input type="checkbox" name="size[]" value="xxl">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">XXXL
-          <input type="checkbox" name="size[]" value="xxxl">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25"><br>
-        <lable for="type" class="field-label-inline">Colors:</label>
-      </div>
+  
 
-      <div class="col-75">
-      <!--  <div class="column">-->
-        <label class="checkbox_container">Red
-          <input type="checkbox" name="color[]" value="#ff0000">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">Orange
-          <input type="checkbox" name="color[]" value="#000000">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">Yelllow
-          <input type="checkbox" name="color[]" value="#ffffff">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">Green
-          <input type="checkbox" name="color[]" value="#0000ff">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">Blue
-          <input type="checkbox" name="color[]" value="#ffc0cb">
-          <span class="checkmark"></span>
-        </label>
-      <!--  </div>
-        <div class="column">-->
-        
-        
-        <label class="checkbox_container">Purple
-          <input type="checkbox" name="color[]" value="#">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">Pink
-          <input type="checkbox" name="color[]" value="#">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">Black
-          <input type="checkbox" name="color[]" value="#">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">White
-          <input type="checkbox" name="color[]" value="#ffc0cb">
-          <span class="checkmark"></span>
-        </label>
-        <label class="checkbox_container">Other
-          <input type="checkbox" name="color[]" value="#">
-          <span class="checkmark"></span>
-        </label>
-      <!--  </div>-->
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25"><br>
-        <lable for="amount" class="field-label-inline">Amount: </label>
-      </div>
-      <div class="col-75">
-        <input class="field-label-inline" type="text"  placeholder="Amount" name="amount">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-25">
-        <lable for="type" class="field-label-inline">Upload Dress image:</label>
-      </div>
-      <div class="col-75">
-        <input type="file" id="file" name="myimage" value=""> <br/>
-      </div>
-    </div>
-    <div> 
-    <center>
-      <button class="loginbutton btn-full-w" type="submit" name="add_product"> Upload</button>
-      </center></div>
-  </form>
-</div>
-
+    <!-- </div> -->
+    
+  </div>
 
   <?php require("../footer.php")?>
+
 </body>
 </html>

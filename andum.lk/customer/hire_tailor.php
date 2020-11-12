@@ -25,8 +25,6 @@ if (!isset($_SESSION['nic'])) {
       color: #EB2188;
     }
   </style>
-
-
 </head>
 
 <body>
@@ -40,82 +38,101 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
-            <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Casual Wear</li>
-                <li><a href="#">T shirts</a></li>
-                <!-- <li><a href="workware_ladies.php">Blouse</a></li> -->
-                <!-- <li><a href="#">Shirts</a></li>
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="dresses.php">Dresses</a></li> -->
+            
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Skirts</a></li>
+                    <li><a href="workwear_gents.php">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Ethnic wear</li>
+                    <li><a href="#">Kurthas</a></li>
+                    <li><a href="#">Shlwas</a></li>
+                    <li><a href="#">Sarees</a></li>
+                  </ul>
+                </div>
               </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Formal Wear</li>
-                <li><a href="#">Blouse</a></li>
-                <li><a href="#">Skirts</a></li>
-                <li><a href="workwear_gents.php">Pants</a></li>
-                <li><a href="#">Dresses</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Ethnic wear</li>
-                <li><a href="#">Kurthas</a></li>
-                <li><a href="#">Shawls</a></li>
-                <li><a href="#">Sarees</a></li>
-              </ul>
-            </ul>
+            </div>
+              
+            
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
-            <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Casual Wear</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Trousers</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Sarongs</a></li>
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
+                    <li><a href="#">Sarong</a></li>
+                    <li><a href="#">Shorts</a></li>
+                  </ul>  
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Trousers</a></li>
+                    <li><a href="#">Blazers</a></li>
+                  </ul>
+                </div> 
               </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Formal Wear</li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Trousers</a></li>
-                <li><a href="#">Blazers</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Inner Wear</li>
-                <li><a href="#">Brief</a></li>
-                <li><a href="#">Trunks</a></li>
-                <li><a href="#">Vests</a></li>
-              </ul>
-            </ul>
+            </div>            
           </li>
           <li class="dropdown">
             <a href="#">Kids</a>
+            <div class="row">
             <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Girls</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Tank Tops</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Shorts</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="#">Sleepware</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Boys</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Kurta</a></li>
-                <li><a href="#">Shorts</a></li>
-                <li><a href="#">Sleepware</a></li>
-              </ul>
+              <div class=col-6>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Boys</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Tank Tops</a></li>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Girls</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>             
             </ul>
+              
+
+            </div>
+            
           </li>
 
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="#">Hire a Fashion Designer</a></li>
+          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
       <div class="box">
@@ -132,15 +149,14 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
-                <li><i class="fas fa-envelope"></i></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div>
-          </ul>
+            <li><i class="fas fa-envelope"></i></li>
+            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         </div>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
-
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -149,100 +165,95 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-  <br />
-
-  <div class="search-container">
-    <form method="post">
-      <div class="form-field-inline">
-        <label for="searchname" class="field-label-inline">Search by Category</label>
-        <input type="text" class="field-value-inline" name="q">
-        <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
-      </div>
-    </form>
-  </div>
+  
 
   <?php include("../errors.php");
   ?>
   <div class="sliderbox-wrap">
-
-    <!-- </div>  -->
     <div class="container-box">
-      <h2>All Categories</h2>
+      <div class="row">
+        <div class="search-container">
+          <form method="post">
+            <div class="form-field-inline">
+              <label for="searchname" class="field-label-inline">Search...</label>
+              <input type="text" class="field-value-inline" name="q">
+              <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <div class="customer-cover">
+      <div class="row">
+        <h2>All Categories</h2>
+      </div>
+      
       <div class="row">
         <?php
-        $nic = $_SESSION['nic'];
-        // Check condition if this is search request or not
-        if ($search != true) {
-          // Read all dressess
-          $sql = "SELECT * FROM users WHERE type='0'";
-          $result = mysqli_query($db, $sql);
+          $nic = $_SESSION['nic'];
+          // Check condition if this is search request or not
+          if ($search != true) {
+            // Read all dressess
+            $sql = "SELECT * FROM users WHERE type='0'";
+            $result = mysqli_query($db, $sql);
 
-          if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
+            if ($result) {
+              while ($row = mysqli_fetch_assoc($result)) {
         ?>
-              <!-- Dress box start -->
-              <div class="col-4">
-                <form method="get" action="hire_tailor.php" class="dress-showcase">
-                  <input type="hidden" value="<?php echo $nic ?> " name="nic">
-                  <div class="card-item">
-                    <div class="card-img">
-                   
-
-                    <a href="hire_tailor.php?nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/ <?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>
-                    </div>
-                    <div class="card-content">
-                      <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
-                      <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column
-                      and have the sibling columns automatically resize around it.
-              </div>-->
-                      <div class="card-description"></div>
-                    </div>
-                  </div>
-                </form>
+        <!-- Dress box start -->
+        <div class="col-4">
+          <form method="get" action="hire_tailor.php" class="dress-showcase">
+            <input type="hidden" value="<?php echo $nic ?> " name="nic">
+            <div class="card-item">
+              <div class="card-img">
+                <a href="hire_tailor.php?nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/ <?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>
               </div>
-              <!-- Dress box end-->
+              <div class="card-content">
+                <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                <div class="card-description"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Dress box end-->
 
-            <?php
+        <?php
+              }
             }
-          }
-        } else {
+          } else {
 
-          //Read using search keyword
-          $sql = "SELECT * FROM tailors WHERE category LIKE '%$keyword%'";
-          $result = mysqli_query($db, $sql);
+            //Read using search keyword
+            $sql = "SELECT * FROM tailors WHERE category LIKE '%$keyword%'";
+            $result = mysqli_query($db, $sql);
 
-          if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) { ?>
+            if ($result) {
+              while ($row = mysqli_fetch_assoc($result)) { 
+        ?>
 
-
-              <!-- Dress box start -->
-              <div class="col-4">
-                <form method="get" action="index.php" class="dress-showcase">
-                  <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
-                  <div class="card-item">
-                    <div class="card-img">
-                    <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
-                    </div>
-                    <div class="card-content">
-                      <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
-                      <!-- <div class="card-description">
-                      Auto-layout for flexbox grid columns also means you can set the width of one column
-                      and have the sibling columns automatically resize around it.
-              </div>-->
-                      <div class="card-description"></div>
-                    </div>
-                  </div>
-                </form>
+        <div class="col-4">
+          <form method="get" action="index.php" class="dress-showcase">
+            <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+            <div class="card-item">
+              <div class="card-img">
+              <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
               </div>
-              <!-- Dress box end-->
+              <div class="card-content">
+                <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
+                <div class="card-description"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+
         <?php }
           }
         }
         ?>
-
+      </div>
 
       </div>
+    
+      
     </div>
 
     <!--footer-->
