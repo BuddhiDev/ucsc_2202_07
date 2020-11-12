@@ -1,4 +1,4 @@
-<?php include("../server.php");
+<?php include("server.php");
 
 
 
@@ -32,19 +32,19 @@ if (isset($_POST['forgot_password']))
     mail($email, "Send Code", $message);
     $mail->Body= $message="You activation link is:http://localhost/ForgotPassword/resetpassword.php?email=code=$code";
 
-    if (mysqli_num_rows ($query)==1)
-    {
-        if($mail->send())
-        {
+    // if (mysqli_num_rows ($query)==1)
+    // {
+    //     if($mail->send())
+    //     {
            
-        }
-        $query2 = mysqli_query($con,"UPDATE password SET passsword='$password' WHERE email='$email'")
-        or die(mysqli_error($con)); 
-        }
-        else
-        {
-       $errors = '<div class="alert alert-danger" role="alert">Sorry, Your emails does not exists in our record database</div>';
-    }
+    //     }
+    //     $query2 = mysqli_query($con,"UPDATE password SET passsword='$password' WHERE email='$email'")
+    //     or die(mysqli_error($con)); 
+    //     }
+    //     else
+    //     {
+    //    $errors = '<div class="alert alert-danger" role="alert">Sorry, Your emails does not exists in our record database</div>';
+    // }
 }
 
 ?>
@@ -136,7 +136,7 @@ if (isset($_POST['forgot_password']))
 
          
 
-          <div class="form-field-inline">
+          <!-- <div class="form-field-inline">
             <label for="password" class="field-label-inline"><b>Choose Passsword</b></label>
             <input type="password" class="field-value-inline" name="password" required>
           </div>
@@ -144,7 +144,7 @@ if (isset($_POST['forgot_password']))
           <div class="form-field-inline">
             <label for="c_password" class="field-label-inline"><b>Re-enter Password</b></label>
             <input type="password" class="field-value-inline" name="c_password" required>
-          </div>
+          </div> -->
 
          
         
@@ -158,7 +158,7 @@ if (isset($_POST['forgot_password']))
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="save">Save </button>
+            <button class="loginbutton btn-full-w" type="submit" name="save">Send code to email </button>
           </div>
 
           <!-- <label>
