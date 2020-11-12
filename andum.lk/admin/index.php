@@ -189,7 +189,7 @@
         <li class="sidebar-item">
           <a class="sidebar-link" href="index.php">
           <div class="sidebar-icon">
-            <i class="fas fa-tshirt"></i>
+            <i class="fas fa-user-circle"></i>
             <span class="sidebar-text">Manage Tailor</span>
             </div>
           </a>
@@ -197,7 +197,7 @@
         <li class="sidebar-item">
           <a class="sidebar-link" href="fd-manage-orders.php">
           <div class="sidebar-icon">
-            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-user-circle"></i>
             <span class="sidebar-text">Manage Fashion Designer</span>
             </div>
           </a>
