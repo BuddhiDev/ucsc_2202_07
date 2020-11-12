@@ -61,7 +61,7 @@ if (isset($_POST['register'])) {
         $_SESSION['utype'] = "$utype";
 
         if ($_SESSION['utype'] == 0) {
-            header('location: tailor/index.php');
+            header('location: tailor/tailor-dashboard.php');
         }
         else if ($_SESSION['utype'] == 1) {
             header('location: customer/index.php');
@@ -102,7 +102,7 @@ if (isset($_POST['login'])) {
 
             if ($_SESSION['utype'] == 0)
             {
-                header('location: tailor/index.php');
+                header('location: tailor/tailor-dashboard.php');
             }
             else if ($_SESSION['utype'] == 1) {
                 header('location: customer/index.php');

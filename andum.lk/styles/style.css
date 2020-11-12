@@ -4,6 +4,7 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-weight: 500;
 }
 
 
@@ -294,6 +295,7 @@ nav ul.menu-area ul li a:hover{
 .form-field-inline{
     display: flex;
     align-items: center;
+    font-weight: 500;
 }
 
 .field-label-inline{
@@ -363,14 +365,12 @@ nav ul.menu-area ul li a:hover{
 /* -----Footer Styles Ends----- */
 
 .search-container{
-  width: 50%;
-  box-shadow: 0px 1px 4px 1px #fafafa;
-  background-color: #fafafa;
-  border-radius: 20px;
-  padding: 0px 20px;
-  margin: 10px auto;
-  float: left;
-  display: inline-block;
+  width: 100%;
+    box-shadow: 0px 1px 4px 1px #fafafa;
+    background-color: #fafafa;
+    border-radius: 20px;
+    padding: 0px 20px;
+    margin: 0px auto;
 }
 
 /* .product-container{
