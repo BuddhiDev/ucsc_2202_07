@@ -1,3 +1,4 @@
+<?php include("../server.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,25 @@
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+  </style>
 </head>
 
 <body>
@@ -154,12 +174,58 @@
       </div>
     </nav>
   </header>
+  <div class="container-box">
+    <div style="overflow-x:auto;">
+      <table>
+        <tr>
+          <th>Nic</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Postalcode</th>
+          <th>Profile</th>
+        </tr>
+        <tr>
+        
+        <?php
+
+          $sql = "SELECT * FROM users WHERE type='1'";
+          $result = mysqli_query($db, $sql);
+
+          if (mysqli_num_rows($result) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+          ?>
 
 
 
 
 
+        <td><?php echo $row["nic"] ?></td>
+              <td><?php echo $row["fname"] ?></td>
+              <td><?php echo $row["lname"] ?></td>
+              <td><?php echo $row["email"] ?></td>
+              <td><?php echo $row["address"] ?></td>
+              <td><?php echo $row["postalcode"] ?></td>
+              <td>
+              <td>
+                <div>
+                  <a class="cta" href="#"><button>view profile</button></a>
+                </div>
+              </td>
 
+
+              </tr>
+        <?php
+                }
+              } else {
+              }
+
+        ?>
+      </table>
+    </div>
+  </div>
 
 
 
