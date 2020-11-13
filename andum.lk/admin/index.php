@@ -179,7 +179,7 @@
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
+          <a class="sidebar-link" href="manage_customer.php">
           <div class="sidebar-icon">
             <i class="fas fa-user-circle"></i>
             <span class="sidebar-text">Manage Customer</span>
@@ -227,6 +227,13 @@
           <h3 class="fd-block-font-size">200</h3>
             <Br>
             <h3>Total Customers</h3>
+          </div>
+        </div>
+        <div class=col-4>
+          <div class="fd-block-2">
+          <h3 class="fd-block-font-size">200</h3>
+            <Br>
+            <h3>Total Fashion designers</h3>
           </div>
         </div>
         <div class=col-4>
