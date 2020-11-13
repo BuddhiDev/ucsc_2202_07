@@ -194,21 +194,21 @@ if (!isset($_SESSION['nic'])) {
           // Check condition if this is search request or not
           if ($search != true) {
             // Read all dressess
-            $sql = "SELECT * FROM users WHERE type='0'";
-            $result = mysqli_query($db, $sql);
+            $s = "SELECT * FROM users WHERE type='0'";
+            $res = mysqli_query($db, $s);
 
-            if ($result) {
-              while ($row = mysqli_fetch_assoc($result)) {
+            if ($res) {
+              while ($row = mysqli_fetch_assoc($res)) {
         ?>
         <!-- Dress box start -->
         <div class="col-4">
           <form method="get" action="hire_tailor.php" class="users">
             <input type="hidden" value="<?php echo $nic ?> " name="nic">
-            <input type="hidden" value="<?php echo $nic ?> " name="t_id">
+            
 
             <div class="card-item">
               <div class="card-img">
-                <a href="hire_tailor.php?nic=<?php echo $row["nic"] ?>"><img src="../profile_pictures <?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>
+                <a href="hire_tailor.php?nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/ <?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>
               
               </div>
               <div class="card-content">
