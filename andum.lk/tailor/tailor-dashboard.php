@@ -154,7 +154,7 @@ if (!isset($_SESSION['nic'])) {
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Purchases</a></li>
+                  <li><a href=".php"><i class="fas fa-money"></i>sells</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
@@ -181,29 +181,29 @@ if (!isset($_SESSION['nic'])) {
         <li class="sidebar-item">
           <a class="sidebar-link" href="index.php">
             <div class="sidebar-icon">
-              <i class="fas fa-columns"></i>
-              <span class="sidebar-text">Dashboard</span>
+              <i class="fas fa-user-circle"></i>
+              <span class="sidebar-text">My Profile</span>
             </div>           
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-user-circle"></i>
-            <span class="sidebar-text">My Profile</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
+          <a class="sidebar-link" href="my_showcase.php">
           <div class="sidebar-icon">
             <i class="fas fa-tshirt"></i>
-            <span class="sidebar-text">My Showcase</span>
+            <span class="sidebar-text">My Dress Showcase</span>
             </div>
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="fd-manage-orders.php">
+          <a class="sidebar-link" href="add_product.php">
+          <div class="sidebar-icon">
+            <i class="fa fa-plus-circle"></i>
+            <span class="sidebar-text">Add new dress</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="order_list.php">
           <div class="sidebar-icon">
             <i class="fas fa-shopping-cart"></i>
             <span class="sidebar-text">My Orders</span>
