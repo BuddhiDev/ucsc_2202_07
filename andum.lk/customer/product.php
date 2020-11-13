@@ -334,9 +334,9 @@ if (!isset($_SESSION['nic'])) {
                 <?php
                   $selected_dress_id = $_SESSION['selected_dress_id'];
                   $nic = $_SESSION['nic'];
-                  $sql = "SELECT color FROM dress_showcase WHERE dress_id=$selected_dress_id";
-                  $result = mysqli_query($db,$sql);
-                  $row = mysqli_fetch_assoc($result);
+                  $sqlc = "SELECT color FROM dress_showcase WHERE dress_id=$selected_dress_id";
+                  $resultc = mysqli_query($db,$sql);
+                  $rowc = mysqli_fetch_assoc($result);
                   $mystring = $row['color'];
                   if ($mystring) {
                     print_r (explode(",",$mystring));
