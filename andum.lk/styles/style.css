@@ -1073,17 +1073,23 @@ a{
 {
   position: relative;
   top: 50%;
-  padding: 10px;
+  padding: 10px 0px;
   /* left: 50%; */
   /* transform: translate(-50%,-50%); */
 }
 
 .quentity-input{
+  width: 70px;
+  height: 30px;
   border: none;
   outline: none;
   padding: 20px:;
-  border-radius: 20px;
-  background: #EB2188;
+  border-radius: 10px;
+  border-color: #ccc;
+  background: #ccc;
+  padding-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
 }
 
 .avatar{
@@ -1110,6 +1116,26 @@ a{
 
 .edit-headding{
 
+}
+
+.img1{
+  width: 100%;
+  padding: 60px;
+  height: 490px;
+  object-fit: contain;
+}
+}
+
+.product-select{
+  display: block;
+    padding: 8px;
+    margin: 20px 0px;
+    border-radius: 20px;
+    border-color: #ccc;
+}
+
+.product-detail-box{
+  padding: 60px 0px;
 }
 
 

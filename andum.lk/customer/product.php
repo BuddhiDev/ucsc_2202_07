@@ -313,26 +313,24 @@ if (!isset($_SESSION['nic'])) {
   ?>
 
   <div class="container-box">
-    <div class="main">
-      <div class="leftside">
-        <div class="card-img">
-        <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-        </div>
+    <div class="row">
+      
+      <div class="col-6">
+        <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%" class="img1">         
       </div>
-      <div class="rightside">
-        <div class="inside">
-          <div>
-            <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["title"] ?></p>
-              <br>
-              <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"] ?>.00</h4>
-              <br>
-                <h4 style="color: black; margin-top:10px">Available in stock: <?php if($item_added=="true"){echo $row["amount"]-1;}else{echo $row["amount"];} ?></h4>
-              <br>
+      
+      <div class="col-6">
+        <div class="product-detail-box">
+          <form method="post">
+            <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["title"] ?></p>
+            
+            <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"] ?>.00</h4>
+            
+            <h4 style="color: black; margin-top:10px">Available in stock: <?php if($item_added=="true"){echo $row["amount"]-1;}else{echo $row["amount"];} ?></h4>
+            
+            <div>
+              <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
               <div>
-                <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
-                <div>
                 <?php
                   $selected_dress_id = $_SESSION['selected_dress_id'];
                   $nic = $_SESSION['nic'];
@@ -343,101 +341,70 @@ if (!isset($_SESSION['nic'])) {
                   if ($mystring) {
                     print_r (explode(",",$mystring));
                   }
-                 // if ($mystring) {
-                   // $myArray = explode(',', $mystring);
-                    //foreach ($my_Array as $mycolor)
-                    
-                 // }
-                  //print_r($myArray);
-                 // foreach ($mycolor as $my_Array){
-                    
-                  //  <div class="on">
-                   //   <p background-color="$mycolor"></p>
-                  //  </div>
-                
                   ?>
-                
-                 <!-- <a href="#">
-                    <div class="on"></div>
-                  </a>
-                  <a href="#">
-                    <div class="on1"></div>
-                  </a>
-                  <a href="#">
-                    <div class="on2">
-                      <p background-color="pink"></p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="on3">
-                      <p background-color="pink"></p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="on4">
-                      <p background-color="pink"></p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="on5">
-                      <p background-color="pink"></p>
-                    </div>
-                  </a>-->
-                </div>
-                <br>
-                <div>
-                  <p style="color: black; font-size: 15px; margin-top:10px">Size</p>
-                  <div>
-                    <a href="#">
-                      <div class="onee">
-                        <p class="text">UK8</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div class="onee">
-                        <p class="text">UK10</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div class="onee">
-                        <p class="text">UK12</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div class="onee">
-                        <p class="text">UK14</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div class="onee">
-                        <p class="text">UK16</p>
-                      </div>
-                    </a>
-                    <a href="#">
-                      <div class="onee">
-                        <p class="text">UK18</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <br>
-
-                <div class="quantity">
-                  <input type="number" value="1" class="quentity-input">
-                </div>
-                <div>
-                  <br>
-                  <br>
-                  <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-                  <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                  <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button> <br />
-                  <br/>
-                  <a href="product.php?t_nic=<?php echo $row["t_nic"]?>">Custom Order</a>
-                </div>
+              
               </div>
-            </form>
-          </div>
+              <div>
+                <!-- <div>
+                  <a href="#">
+                    <div class="onee">
+                      <p class="text">UK8</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <div class="onee">
+                      <p class="text">UK10</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <div class="onee">
+                      <p class="text">UK12</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <div class="onee">
+                      <p class="text">UK14</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <div class="onee">
+                      <p class="text">UK16</p>
+                    </div>
+                  </a>
+                  <a href="#">
+                    <div class="onee">
+                      <p class="text">UK18</p>
+                    </div>
+                  </a>
+                </div> -->
+              </div>
+
+              <select name="" id="" class="product-select">
+                <option value="">Select Size</option>
+                <option value="">UK8</option>
+                <option value="">UK10</option>
+                <option value="">UK12</option>
+                <option value="">UK14</option>
+                <option value="">UK16</option>
+              </select>
+              
+
+              <div class="quantity">
+                <input type="number" value="1" class="quentity-input">
+              </div>
+              <div>
+                <br>
+                <br>
+                <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+                <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button> <br />
+                <br/>
+                <a href="product.php?t_nic=<?php echo $row["t_nic"]?>">Custom Order</a>
+              </div>
+            </div>
+          </form>
         </div>
+        
       </div>
     </div>
     <?php } ?>
