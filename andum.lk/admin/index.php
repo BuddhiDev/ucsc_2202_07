@@ -215,28 +215,28 @@
     
     <div class="fd-content-wrapper">
       <div class=row>
-        <div class=col-4>
+        <div class=col-3>
           <div class="fd-block-1">
             <h3 class="fd-block-font-size">24</h3>
             <Br>
             <h3>Total Tailors</h3>
           </div>
         </div>
-        <div class=col-4>
+        <div class=col-3>
           <div class="fd-block-2">
           <h3 class="fd-block-font-size">200</h3>
             <Br>
             <h3>Total Customers</h3>
           </div>
         </div>
-        <div class=col-4>
-          <div class="fd-block-2">
+        <div class=col-3>
+          <div class="fd-block-1">
           <h3 class="fd-block-font-size">200</h3>
             <Br>
             <h3>Total Fashion designers</h3>
           </div>
         </div>
-        <div class=col-4>
+        <div class=col-3>
           <div class="fd-block-3">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
