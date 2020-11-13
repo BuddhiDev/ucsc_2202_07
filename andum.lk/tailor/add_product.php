@@ -112,6 +112,7 @@ require("../server.php");
               <div class="dd_right">
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
                   <li><a href="Manage_order.php"><i class="fas fa-users"></i>Customer Orders</a></li>
                   <li><a href="purchases.php"><i class="fas fa-money"></i>Sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
