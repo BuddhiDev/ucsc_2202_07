@@ -316,20 +316,25 @@ if (!isset($_SESSION['nic'])) {
     <div class="row">
       
       <div class="col-6">
-        <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%" class="img1">         
+        <div  class="img1">
+          <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">         
+        </div>
       </div>
       
       <div class="col-6">
         <div class="product-detail-box">
           <form method="post">
-            <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["title"] ?></p>
+            <p style="color: black; font-size: 30px; margin-top:10px"><?php echo $row["title"] ?></p>
             
             <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"] ?>.00</h4>
             
-            <h4 style="color: black; margin-top:10px">Available in stock: <?php if($item_added=="true"){echo $row["amount"]-1;}else{echo $row["amount"];} ?></h4>
+            <!-- <h4 style="color: black; margin-top:10px">Available in stock: <?php if($item_added=="true"){echo $row["amount"]-1;}else{echo $row["amount"];} ?></h4> -->
             
             <div>
-              <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
+              <div>
+                <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
+              </div>
+
               <div>
                 <?php
                   $selected_dress_id = $_SESSION['selected_dress_id'];
@@ -341,43 +346,21 @@ if (!isset($_SESSION['nic'])) {
                   if ($mystring) {
                     print_r (explode(",",$mystring));
                   }
-                  ?>
-              
+                  ?>              
               </div>
-              <div>
-                <!-- <div>
-                  <a href="#">
-                    <div class="onee">
-                      <p class="text">UK8</p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="onee">
-                      <p class="text">UK10</p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="onee">
-                      <p class="text">UK12</p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="onee">
-                      <p class="text">UK14</p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="onee">
-                      <p class="text">UK16</p>
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="onee">
-                      <p class="text">UK18</p>
-                    </div>
-                  </a>
-                </div> -->
+
+              <!-- <form action="" method="post">
+                  HEX <input type="text" name="hex" value="<?php echo(isset($_POST['hex']))?$_POST['hex']:'';?>">
+                  <input type="submit" values="Convert To RGB">
+              </form> -->
+                      
+            </div>
+
+            <div class="product-cont">
+              <div class="quantity">
+                <input type="number" value="1" class="quentity-input">
               </div>
+
 
               <select name="" id="" class="product-select">
                 <option value="">Select Size</option>
@@ -387,20 +370,17 @@ if (!isset($_SESSION['nic'])) {
                 <option value="">UK14</option>
                 <option value="">UK16</option>
               </select>
-              
+            </div>
+            
+            
 
-              <div class="quantity">
-                <input type="number" value="1" class="quentity-input">
-              </div>
-              <div>
-                <br>
-                <br>
-                <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-                <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button> <br />
-                <br/>
-                <a href="product.php?t_nic=<?php echo $row["t_nic"]?>">Custom Order</a>
-              </div>
+            <div class="customized">
+              <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+              <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+              <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button> <br />
+            </div>
+            <div>
+              <a href="product.php?t_nic=<?php echo $row["t_nic"]?>" class="costomize-text">Customize MY Dress</a>
             </div>
           </form>
         </div>
