@@ -135,14 +135,7 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="hire_tailor.php">Explore Tailors</a></li>
           <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li>
-          <div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
+          
           </li>
         </ul>
       </div>
@@ -169,6 +162,15 @@ if (!isset($_SESSION['nic'])) {
       </div>
     </nav>
   </header>
+
+  <div class="search-container">
+        <form method="post">
+          <div class="form-field-inline">
+            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",

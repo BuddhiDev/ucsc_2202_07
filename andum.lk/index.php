@@ -23,37 +23,106 @@
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
+          <li><a href="tailor-dashboard.php">Home</a></li>
           <li class="dropdown">
-            <a href="#">Shop Now</a>
-            <ul class="menu-area">
-              <ul class="inner-menu"> 
-                <li class="inner-list-header">Ladies wear</li>
-                <li><a href="/ucsc_2202_07/andum.lk/customer/dresses.php">Dresses</a></li>
-                <li><a href="workware_ladies.php">Work Wear</a></li>
-                <li><a href="#">Denims</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">T Shirts</a></li>
-                <li><a href="#">All Categories</a></li>
+            <a href="#">Women</a>
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Skirts</a></li>
+                    <li><a href="workwear_gents.php">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Ethnic wear</li>
+                    <li><a href="#">Kurthas</a></li>
+                    <li><a href="#">Shlwas</a></li>
+                    <li><a href="#">Sarees</a></li>
+                  </ul>
+                </div>
               </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Gents wear</li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Denims</a></li>
-                <li><a href="workwear_gents.php">Work Wear</a></li>
-                <li><a href="#">T Shirts</a></li>
-                <li><a href="#">All Categories</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Kids wear</li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">T shirsts</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">All Categories</a></li>
-              </ul>
-            </ul>
+            </div>
+              
+            
           </li>
-          <li><a href="index.php">Hire a Tailor</a></li>
-          <li><a href="index.php">Hire a Fashion Designer</a></li>
+          <li class="dropdown">
+            <a href="#">Men</a>
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
+                    <li><a href="#">Sarong</a></li>
+                    <li><a href="#">Shorts</a></li>
+                  </ul>  
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Trousers</a></li>
+                    <li><a href="#">Blazers</a></li>
+                  </ul>
+                </div> 
+              </ul>
+            </div>            
+          </li>
+          <li class="dropdown">
+            <a href="#">Kids</a>
+            <div class="row">
+            <ul class="menu-area">
+              <div class=col-6>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Boys</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Tank Tops</a></li>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Girls</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>             
+            </ul>
+              
+
+            </div>
+            
+          </li>
+
+          <li><a href="hire_tailor.php">Explore Tailors</a></li>
+          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li>
+          
+          </li>
         </ul>
       </div>
       <div class="box">

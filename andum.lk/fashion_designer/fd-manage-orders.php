@@ -32,14 +32,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
-      <div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
+      
       <!-- </div> -->
       <div class="box">
         <div class="nav_right">
@@ -69,6 +62,15 @@ if (!isset($_SESSION['nic'])) {
         this.classList.toggle("active");
       })
   </script>
+
+<div class="search-container">
+        <form method="post">
+          <div class="form-field-inline">
+            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
 
 <div class="container-box">
 </div>
