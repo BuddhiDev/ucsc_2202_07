@@ -143,7 +143,8 @@ if (!isset($_SESSION['nic'])) {
       <!-- </div> -->
       <div class="box">
         <div class="nav_right">
-          <ul>
+          <ul><li><a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a></li>
+
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
