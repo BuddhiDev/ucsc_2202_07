@@ -132,6 +132,9 @@ require("../server.php");
           <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li>
           
+          </li>
+        </ul>
+      </div>
       
       <!-- </div> -->
       <div class="box">
@@ -174,7 +177,7 @@ require("../server.php");
       </div>
           </li>
         </ul>
-      </div>s
+      </div>
 
 
 <!-- edit profile form-->
@@ -197,9 +200,18 @@ require("../server.php");
 
         <div class="login-container">
           <h1>Edit Profile</h1>
-          <center>
+          <!-- <center>
           <img src="/ucsc_2202_07/andum.lk/images/pexels-joy-deb-1580270.jpg" alt="Jeny" style="width:25%"; >
-        </center>
+        </center> -->
+        <div class="fd-form-container-block1">
+              <div class="profile-pic">
+                <div class="pic">
+                  <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
+                </div>        
+                <label for="profile_pictures"></label>
+                <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
+              </div>
+            </div>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
             <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" required>
@@ -250,12 +262,9 @@ require("../server.php");
     
 
           <div class="row">
-      <div class="col-25">
-        <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
-      </div>
-      <div class="col-75">
+      <!-- <div class="col-75">
         <input type="file" id="myimage" name="myimage" value=""> <br/>
-      </div>
+      </div> -->
     </div>
 
     
@@ -289,8 +298,10 @@ require("../server.php");
         </div>
       </form>
 
+      <script src="../script.js"></script> 
+
       <!--footer-->
-        <?php require("footer.php")?>
+        <?php require("../footer.php")?>
 
 </body>
 </html>
