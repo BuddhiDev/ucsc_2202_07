@@ -210,7 +210,7 @@ if (!isset($_SESSION['nic'])) {
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="order_list.php">
+          <a class="sidebar-link" href="Manage_order.php">
           <div class="sidebar-icon">
             <i class="fas fa-shopping-cart"></i>
             <span class="sidebar-text">My Orders</span>
