@@ -284,19 +284,19 @@ if (!isset($_SESSION['nic'])) {
       <th class="fd-th">Payment</th>
     </tr>
     <tr >
-      <td class="fd-th">Jill</td>
-      <td class="fd-th">Smith</td>
-      <td class="fd-th">50</td>
+      <td class="fd-th"></td>
+      <td class="fd-th"></td>
+      <td class="fd-th"></td>
     </tr>
     <tr class="fd-th">
-      <td class="fd-th">Eve</td>
-      <td class="fd-th">Jackson</td>
-      <td class="fd-th">94</td>
+      <td class="fd-th"></td>
+      <td class="fd-th"></td>
+      <td class="fd-th"></td>
     </tr>
     <tr class="fd-th">
-      <td class="fd-th">Adam</td>
-      <td class="fd-th">Johnson</td>
-      <td class="fd-th">67</td>
+      <td class="fd-th"></td>
+      <td class="fd-th"></td>
+      <td class="fd-th"></td>
     </tr>
   </table>
 
