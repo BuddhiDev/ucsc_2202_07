@@ -139,7 +139,7 @@ require("../server.php");
 <!--add new product form-->
 <div class="sliderbox-wrap">
 
-<center><img src="product1.jpg" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
+<center><img src="icon.png" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
   <form method="post" action="add_product.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
       <h2>Add Product</h2>
 
