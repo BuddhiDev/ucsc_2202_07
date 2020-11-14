@@ -10,9 +10,11 @@ require("../server.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andum.lk - Edit Profile</title>
     <link rel="shortcut icon" href="logo.png">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/checkbox.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles//checkbox.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 
@@ -24,7 +26,6 @@ require("../server.php");
 
 </head>
 <body>
-
   <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
@@ -32,10 +33,9 @@ require("../server.php");
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="tailor-dashboard.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
-            
             <div class="row">
               <ul class="menu-area">
                 <div class="col-4">
@@ -128,29 +128,33 @@ require("../server.php");
             
           </li>
 
-          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
+          <li><a href="hire_tailor.php">Explore Tailors</a></li>
+          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li>
+          
+          </li>
         </ul>
       </div>
+      
+      <!-- </div> -->
       <div class="box">
         <div class="nav_right">
           <ul>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
-                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
-                  <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
+                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-
+              </div>
+            </li>
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+          </ul>
         </div>
-        </ul>
-      </div>
       </div>
     </nav>
   </header>
@@ -158,18 +162,30 @@ require("../server.php");
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
-    function(){
-      this.classList.toggle("active");
-    })
+      function() {
+        this.classList.toggle("active");
+      })
   </script>
+
+<div class="search-container">
+        <form method="post">
+          <div class="form-field-inline">
+            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
+          </li>
+        </ul>
+      </div>
 
 
 <!-- edit profile form-->
 
-    <form action="cust_edit_profile.php" method="post" enctype="multipart/form-data">
-      <?php
+      <form action="cust_edit_profile.php" method="post" enctype="multipart/form-data">
+        <?php
 
-        include("../errors.php");
+       include("../errors.php");
 
 
         $nic = $_SESSION['nic'];
@@ -179,18 +195,23 @@ require("../server.php");
 
         if ($result) {
           while ($row = mysqli_fetch_assoc($result)) {
-      ?>
+        ?>
 
-      <div class="conrainer-box">
+
         <div class="login-container">
-          <div class="edit-heading">
-            <h1>Edit Profile</h1>
-          </div>
-          
-          <center>
-            <div class="avatar"></div>
-          <!-- <img src=" " alt="Jeny" style="width:25%"; > -->
-          </center>
+          <h1>Edit Profile</h1>
+          <!-- <center>
+          <img src="/ucsc_2202_07/andum.lk/images/pexels-joy-deb-1580270.jpg" alt="Jeny" style="width:25%"; >
+        </center> -->
+        <div class="fd-form-container-block1">
+              <div class="profile-pic">
+                <div class="pic">
+                  <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
+                </div>        
+                <label for="profile_pictures"></label>
+                <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
+              </div>
+            </div>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
             <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" required>
@@ -235,17 +256,34 @@ require("../server.php");
             <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
             <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
           </div>
-          
+
+
+
+    
+
           <div class="row">
-            <div class="col-25">
-              <lable for="type" class="field-label-inline">Upload Profile Picture:</label>
-            </div>
-            <div class="col-75">
-              <input type="file" id="myimage" name="myimage" value=""> <br/>
-            </div>
-          </div>
+      <!-- <div class="col-75">
+        <input type="file" id="myimage" name="myimage" value=""> <br/>
+      </div> -->
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
           <div class="btn-panel-center">
+            <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
+            <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
             <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
           </div>
 
@@ -254,14 +292,16 @@ require("../server.php");
           }
           ?>
 
-          
+          <!-- fdgfsas<label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label> -->
         </div>
-      </div>
-        
-    </form>
+      </form>
+
+      <script src="../script.js"></script> 
 
       <!--footer-->
-      <?php require("../footer.php")?>
+        <?php require("../footer.php")?>
 
 </body>
 </html>
