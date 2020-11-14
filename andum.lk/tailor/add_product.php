@@ -31,11 +31,11 @@ require("../server.php");
               <ul class="inner-menu">
                 <li class="inner-list-header">Casual Wear</li>
                 <li><a href="#">T shirts</a></li>
-                <!-- <li><a href="workware_ladies.php">Blouse</a></li> -->
-                <!-- <li><a href="#">Shirts</a></li>
+                <li><a href="workware_ladies.php">Blouse</a></li>
+                <li><a href="#">Shirts</a></li>
                 <li><a href="#">Jeans</a></li>
                 <li><a href="#">Pants</a></li>
-                <li><a href="dresses.php">Dresses</a></li> -->
+                <li><a href="dresses.php">Dresses</a></li> 
               </ul>
               <ul class="inner-menu">
                 <li class="inner-list-header">Formal Wear</li>
@@ -149,20 +149,19 @@ require("../server.php");
         </div>
         <div class="col-75">
           <select class="option" name="Unit" id="unit">
-            <optgroup label="Ladies wear">
+            <optgroup label="WOMEN">
               <option value="casual_wear">Casual wear</option>
               <option value="fomal wear">Fomal wear</option>
-              <option value="wedding_dresses">Wedding dresses</option>
+              <option value="wedding_dresses">Ethnic wear</option>
             </optgroup>
-            <optgroup label="Gents wear">
-              <option value="Top wear">Top wear</option>
-              <option value="bottom wear">Bottom wear</option>
-              <option value="sports wear">Sports wear</option>
+            <optgroup label="MEN">
+              <option value="Top wear">Casual wear</option>
+              <option value="bottom wear">Fomal wear</option>
+              <option value="sports wear">Inner wear</option>
             </optgroup>
-            <optgroup label="Kids wear">
-              <option value="girl's_collection">Girl's collection</option>
-              <option value="boy's_collection">Boy's collection</option>
-              <option value="baby's_collection">Baby's collection</option>
+            <optgroup label="KIDS">
+              <option value="girl's_collection">Girls</option>
+              <option value="boy's_collection">Boys</option>
             </optgroup>
           </select>
         </div>
