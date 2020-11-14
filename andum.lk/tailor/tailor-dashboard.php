@@ -142,6 +142,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="box">
         <div class="nav_right">
           <ul>
+          <li><a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a></li>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
@@ -198,14 +199,6 @@ if (!isset($_SESSION['nic'])) {
           <div class="sidebar-icon">
             <i class="fas fa-tshirt"></i>
             <span class="sidebar-text">My Dress Showcase</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="add_product.php">
-          <div class="sidebar-icon">
-            <i class="fa fa-plus-circle"></i>
-            <span class="sidebar-text">Add new dress</span>
             </div>
           </a>
         </li>

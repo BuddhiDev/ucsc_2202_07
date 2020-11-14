@@ -1,6 +1,14 @@
+<?php include("../server.php");
 
+if (!isset($_SESSION['nic'])) {
+  header("location:../login.php");
+  exit();
+}
 
+?>  
 
+<?php include("../errors.php");
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +16,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Admin</title>
+  <title>Andum.lk - Tailor</title>
   <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
@@ -125,14 +133,7 @@
           <li><a href="hire_tailor.php">Explore Tailors</a></li>
           <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li>
-          <div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
+          
           </li>
         </ul>
       </div>
@@ -146,7 +147,7 @@
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Purchases</a></li>
+                  <li><a href=".php"><i class="fas fa-money"></i>sells</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
@@ -167,38 +168,52 @@
       })
   </script>
 
+<div class="search-container">
+        <form method="post">
+          <div class="form-field-inline">
+            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
+
+
+
   <div class="fd-container-box">
+
+  
+
     <div class="side-bar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-item">
           <a class="sidebar-link" href="index.php">
             <div class="sidebar-icon">
-              <i class="fas fa-columns"></i>
-              <span class="sidebar-text">Dashboard</span>
+              <i class="fas fa-user-circle"></i>
+              <span class="sidebar-text">My Profile</span>
             </div>           
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="manage_customer.php">
+          <a class="sidebar-link" href="my_showcase.php">
           <div class="sidebar-icon">
-            <i class="fas fa-user-circle"></i>
-            <span class="sidebar-text">Manage Customer</span>
+            <i class="fas fa-tshirt"></i>
+            <span class="sidebar-text">My Dress Showcase</span>
             </div>
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="manage_tailor.php">
+          <a class="sidebar-link" href="add_product.php">
           <div class="sidebar-icon">
-            <i class="fas fa-user-circle"></i>
-            <span class="sidebar-text">Manage Tailor</span>
+            <i class="fa fa-plus-circle"></i>
+            <span class="sidebar-text">Add new dress</span>
             </div>
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="manage_fdesigner.php">
+          <a class="sidebar-link" href="Manage_order.php">
           <div class="sidebar-icon">
-            <i class="fas fa-user-circle"></i>
-            <span class="sidebar-text">Manage Fashion Designer</span>
+            <i class="fas fa-shopping-cart"></i>
+            <span class="sidebar-text">My Orders</span>
             </div>
           </a>
         </li>
@@ -215,28 +230,21 @@
     
     <div class="fd-content-wrapper">
       <div class=row>
-        <div class=col-3>
+        <div class=col-4>
           <div class="fd-block-1">
             <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>Total Tailors</h3>
+            <h3>Total Orders</h3>
           </div>
         </div>
-        <div class=col-3>
+        <div class=col-4>
           <div class="fd-block-2">
           <h3 class="fd-block-font-size">200</h3>
             <Br>
-            <h3>Total Customers</h3>
+            <h3>Product Views</h3>
           </div>
         </div>
-        <div class=col-3>
-          <div class="fd-block-1">
-          <h3 class="fd-block-font-size">200</h3>
-            <Br>
-            <h3>Total Fashion designers</h3>
-          </div>
-        </div>
-        <div class=col-3>
+        <div class=col-4>
           <div class="fd-block-3">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
@@ -249,21 +257,21 @@
           <div class="fd-block-3">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>Restricted List</h3>
+            <h3>Pending</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-2">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>Manage Transactions</h3>
+            <h3>On Going</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-1">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>Requests</h3>
+            <h3>Completed</h3>
           </div>
         </div>
         <div class=col-3>
@@ -274,7 +282,7 @@
           </div>
         </div>
       </div>
-      <!-- <div calss="row">
+      <div calss="row">
     <table class="fd-table">
     <tr class="fd-tr">
       <th class="fd-th">Order Id</th>
@@ -299,7 +307,7 @@
     </tr>
   </table>
 
-    </div> -->
+    </div>
     </div>
 
     
