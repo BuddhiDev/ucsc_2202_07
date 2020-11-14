@@ -28,7 +28,7 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-  <header>
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -38,7 +38,6 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
-            
             <div class="row">
               <ul class="menu-area">
                 <div class="col-4">
@@ -208,12 +207,13 @@ if (!isset($_SESSION['nic'])) {
 
             <div class="card-item">
               <div class="card-img">
-                <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>
-              
+                <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>    
               </div>
               <div class="card-content">
                 <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
-                <div class="card-description"></div>
+                <div class="card-description">
+                  <a href="tailor.php"><button class="hire-button">Hire Me</button></a>
+                </div>
               </div>
             </div>
           </form>

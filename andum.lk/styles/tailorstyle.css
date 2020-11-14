@@ -21,3 +21,20 @@
     
 }
 
+.main {
+    width: 880px;
+  height: 200px;
+  margin-top: 86px;
+  margin-left: 270px;
+  /* background: #fafafafa; */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #fff;
+}
+
+.tailor-row{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+}
+

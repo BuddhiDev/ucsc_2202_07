@@ -143,8 +143,6 @@ if (!isset($_SESSION['nic'])) {
       <!-- </div> -->
       <div class="box">
         <div class="nav_right">
-          <ul><li><a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a></li>
-
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
@@ -174,6 +172,10 @@ if (!isset($_SESSION['nic'])) {
   <?php 
     include("../errors.php");
   ?>
+
+<div class="add-new-position">
+  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
+</div>
 
 <div class="tailor-container-box">
 

@@ -237,6 +237,10 @@ if (!isset($_SESSION['nic'])) {
 
 
   </div> -->
+
+  <div class="add-new-position">
+  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
+</div>
 <div class="container-box">
   <div class="row">
     <div class="col-4">

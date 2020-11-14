@@ -27,7 +27,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">

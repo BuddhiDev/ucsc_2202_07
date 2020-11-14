@@ -23,7 +23,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-  <header>
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -33,7 +33,6 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
-            
             <div class="row">
               <ul class="menu-area">
                 <div class="col-4">

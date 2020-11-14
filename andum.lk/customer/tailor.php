@@ -18,6 +18,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
@@ -27,15 +28,7 @@ if (!isset($_SESSION['nic'])) {
       padding: 0;
     }
 
-    .main {
-      width: 880px;
-      height: 500px;
-      margin-top: 86px;
-      margin-left: 270px;
-      /* background: #fafafafa; */
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px 0px #fff;
-    }
+    
 
     .leftside {
       position: absolute;
@@ -184,7 +177,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-  <header>
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -194,82 +187,100 @@ if (!isset($_SESSION['nic'])) {
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
-            <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Casual Wear</li>
-                <li><a href="#">T shirts</a></li>
-                <!-- <li><a href="workware_ladies.php">Blouse</a></li> -->
-                <!-- <li><a href="#">Shirts</a></li>
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="dresses.php">Dresses</a></li> -->
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="#">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Blouse</a></li>
+                    <li><a href="#">Skirts</a></li>
+                    <li><a href="workwear_gents.php">Pants</a></li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Ethnic wear</li>
+                    <li><a href="#">Kurthas</a></li>
+                    <li><a href="#">Shlwas</a></li>
+                    <li><a href="#">Sarees</a></li>
+                  </ul>
+                </div>
               </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Formal Wear</li>
-                <li><a href="#">Blouse</a></li>
-                <li><a href="#">Skirts</a></li>
-                <li><a href="workwear_gents.php">Pants</a></li>
-                <li><a href="#">Dresses</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Ethnic wear</li>
-                <li><a href="#">Kurthas</a></li>
-                <li><a href="#">Shawls</a></li>
-                <li><a href="#">Sarees</a></li>
-              </ul>
-            </ul>
+            </div>
+              
+            
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
-            <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Casual Wear</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Jeans</a></li>
-                <li><a href="#">Trousers</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Sarongs</a></li>
+            <div class="row">
+              <ul class="menu-area">
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Casual Wear</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jeans</a></li>
+                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
+                    <li><a href="#">Sarong</a></li>
+                    <li><a href="#">Shorts</a></li>
+                  </ul>  
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Formal Wear</li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Trousers</a></li>
+                    <li><a href="#">Blazers</a></li>
+                  </ul>
+                </div> 
               </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Formal Wear</li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Trousers</a></li>
-                <li><a href="#">Blazers</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Inner Wear</li>
-                <li><a href="#">Brief</a></li>
-                <li><a href="#">Trunks</a></li>
-                <li><a href="#">Vests</a></li>
-              </ul>
-            </ul>
+            </div>            
           </li>
           <li class="dropdown">
             <a href="#">Kids</a>
+            <div class="row">
             <ul class="menu-area">
-              <ul class="inner-menu">
-                <li class="inner-list-header">Girls</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Tank Tops</a></li>
-                <li><a href="#">Shirts</a></li>
-                <li><a href="#">Shorts</a></li>
-                <li><a href="#">Pants</a></li>
-                <li><a href="#">Sleepware</a></li>
-              </ul>
-              <ul class="inner-menu">
-                <li class="inner-list-header">Boys</li>
-                <li><a href="#">T shirts</a></li>
-                <li><a href="#">Dresses</a></li>
-                <li><a href="#">Kurta</a></li>
-                <li><a href="#">Shorts</a></li>
-                <li><a href="#">Sleepware</a></li>
-              </ul>
+              <div class=col-6>
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Boys</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Tank Tops</a></li>
+                  <li><a href="#">Shirts</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Pants</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="inner-menu">
+                  <li class="inner-list-header">Girls</li>
+                  <li><a href="#">T shirts</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Shorts</a></li>
+                  <li><a href="#">Sleepware</a></li>
+                </ul>
+              </div>             
             </ul>
+              
+
+            </div>
+            
           </li>
 
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="index.php">Hire a Fashion Designer</a></li>
+          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
       <div class="box">
@@ -286,11 +297,11 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
-                <li><i class="fas fa-envelope"></i></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-              </div>
-          </ul>
+            <li><i class="fas fa-envelope"></i></li>
+            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         </div>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
@@ -346,12 +357,17 @@ if (!isset($_SESSION['nic'])) {
   <div class="input-container">
     <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Get Measured</h2>
-      <div class="d-flex">
-        <div class="f1">
-          <lable for="type" >Category:</label>
-          <img src="" class="image">
+      <div class="category-label">
+            <lable for="type" >Category:</label>
+          </div>
+      <div class="tailor-row">
+        <div class="col-4">
+          
+          
+          <!-- <img src="" class="image"> -->
               <!-- </div>
               <div class="f1"> -->
+        <div class="measure-card">
           <select class="option" name="category" id="unit" >
             <optgroup label="Ladies wear">
               <option value="l-blouse">Blouse</option>
@@ -379,9 +395,12 @@ if (!isset($_SESSION['nic'])) {
               <option value="19">Casual wear T-shirts</option>
             </optgroup>
           </select>
+
+                </div>
+          
         </div>
 
-        <div class="f1">
+        <div class="col-4">
           <div class="measure-card">
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -389,7 +408,7 @@ if (!isset($_SESSION['nic'])) {
             </div>                             
           </div>
         </div>
-        <div class="f1">
+        <div class="col-4">
           <div class="measure-card">
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -401,30 +420,34 @@ if (!isset($_SESSION['nic'])) {
 
       <div class="d-flex">
         <div class="f1">
-          <div class="measure-card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
-          </div>
-          <div class="measure-card-value">
-            <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-            <input class="input-field" type="text" placeholder="Neck" name="neck">
-            <select class="option" name="Unit" id="unit" style="">
-              <option>in</option>
-              <option>cm</option>
-            </select>
+          <div class="measure-card">
+            <div class="measure-card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+            </div>
+            <div class="measure-card-value">
+              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+              <input class="input-field" type="text" placeholder="Neck" name="neck">
+              <select class="option" name="Unit" id="unit" style="">
+                <option>in</option>
+                <option>cm</option>
+              </select>
+            </div>  
           </div>
         </div>
         <div class="f1">
-          <div class="measure-card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
-          </div>
-          <div class="measure-card-value">
-            <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-            <input class="input-field" type="text" placeholder="Chest" name="chest">
-            <select class="option" name="Unit" id="unit" style="">
-              <option>in</option>
-              <option>cm</option>
-            </select>
-          </div>
+          <div class="measure-card">
+            <div class="measure-card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
+            </div>
+            <div class="measure-card-value">
+              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+              <input class="input-field" type="text" placeholder="Chest" name="chest">
+              <select class="option" name="Unit" id="unit" style="">
+                <option>in</option>
+                <option>cm</option>
+              </select>
+            </div>
+          </div>         
         </div>
       </div>
                         
