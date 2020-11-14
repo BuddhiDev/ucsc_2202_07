@@ -186,9 +186,10 @@ if(isset($_GET['order_id']) ){
 if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
+    $quantity1 = mysqli_real_escape_string($db, $_POST['quant']);
 
 
-    $sql = "INSERT INTO cart (c_nic, dress_id) VALUES ('$c_nic','$dress_id')";
+    $sql = "INSERT INTO cart (c_nic, dress_id, quantity) VALUES ('$c_nic','$dress_id','$quantity1')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         $item_added = "true";
@@ -196,6 +197,8 @@ if (isset($_POST['addTocart'])) {
         array_push($errors, "Add to cart failed, try again later");
     }
 }
+
+
 
 //checkout from cart
 if (isset($_POST['Checkout'])) {

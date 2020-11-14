@@ -358,10 +358,9 @@ if (!isset($_SESSION['nic'])) {
 
             <div class="product-cont">
               <div class="quantity">
-                <input type="number" value="1" class="quentity-input">
+                <input type="number"  name="quant" value="1" class="quentity-input">
               </div>
-
-
+              
               <select name="" id="" class="product-select">
                 <option value="">Select Size</option>
                 <option value="">UK8</option>

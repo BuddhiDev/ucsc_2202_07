@@ -182,32 +182,43 @@ if (!isset($_SESSION['nic'])) {
     <table>
       <tr>
         <th>Order No</th>
-        <th>Category</th>
-        <th>Title</th>
+        <th>Description</th>
         <th>Quantity</th>
         <th>Price</th>
-
+        <th>Total Price</th>
       </tr>
       <tr>
         <?php
-
         $nic = $_SESSION['nic'];
-        $sql = "SELECT cart.order_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$nic' AND cart.dress_id=dress_showcase.dress_id";
+        $total = 0;
+        $sql = "SELECT cart.order_id, cart.quantity, dress_showcase.category, dress_showcase.title, dress_showcase.price, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$nic' AND cart.dress_id=dress_showcase.dress_id";
         $result = mysqli_query($db, $sql);
-
+        
         if (mysqli_num_rows($result) > 0) {
-
-
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
             <td><?php echo $row["order_id"] ?></td>
-            <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["title"] ?></td>
-            <td><?php echo $row["amount"] ?></td>
+            <td><?php echo $row["quantity"]?></td>
+            <td><?php echo $row["price"] ?></td>
+            <td><?php echo number_format($row["quantity"]*$row["price"],2);?></td>
       </tr>
+      
+      <?php
+                    $total = $total + ($row["quantity"]*$row["price"]);
+                    }
+                ?>
+                <tr>
+                        <td colspan="4" align="right">Total</td>
+                        <td align="right"><?php echo number_format($total,2);?></td>
+                </tr>
+
+
+
+
     <?php
-          }
+          
         } else {
         }
 
