@@ -44,7 +44,7 @@ if (isset($_POST['update_fd'])) {
 
   $filename1 = $_FILES["addpic1"]["name"];
   $tempname1 = $_FILES["addpic1"]["tmp_name"];
-  $folder1 = "profile_pictures/".$filename1;
+  $folder1 = "sample_images/".$filename1;
 
       $sql1 = "UPDATE fashion_designer SET  image1='$filename1' WHERE nic='$nic'";
       $result1=mysqli_query($db, $sql1);
@@ -61,7 +61,7 @@ if (isset($_POST['update_fd'])) {
      //design2
       $filename2 = $_FILES["addpic2"]["name"];
       $tempname2 = $_FILES["addpic2"]["tmp_name"];
-      $folder2 = "profile_pictures/".$filename2;
+      $folder2 = "sample_images/".$filename2;
   
      
      
@@ -82,7 +82,7 @@ if (isset($_POST['update_fd'])) {
 
           $filename3 = $_FILES["addpic3"]["name"];
           $tempname3 = $_FILES["addpic3"]["tmp_name"];
-          $folder3 = "profile_pictures/".$filename3;
+          $folder3 = "sample_images/".$filename3;
       
           $sql3 = "UPDATE fashion_designer SET  image3='$filename3' WHERE nic='$nic'";
           $result3=mysqli_query($db, $sql3);
