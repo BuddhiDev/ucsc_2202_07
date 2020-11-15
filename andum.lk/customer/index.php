@@ -83,12 +83,12 @@ if (!isset($_SESSION['nic'])) {
                 <div class="col-6">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
+                    <li><a href="index.php?dcategory=tshirts">T shirts</a></li>
+                    <li><a href="index.php?dcategory=shirts">Shirts</a></li>
+                    <li><a href="index.php?dcategory=jeans">Jeans</a></li>
                     <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
+                    <li><a href="index.php?dcategory=sarong">Sarong</a></li>
+                    <li><a href="index.php?dcategory=shorts">Shorts</a></li>
                   </ul>  
                 </div>
                 <div class="col-6">
