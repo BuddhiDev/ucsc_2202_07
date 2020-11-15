@@ -81,7 +81,7 @@ require("server.php");
         <input type="password" class="field-value-inline" name="password" required>
       </div>
       <div>
-        <span class="psw">Forgot<a href="#">password?</a></span>
+        <span class="psw">Forgot<a href="#">&nbsppassword?</a></span>
       </div>
       <div class="btn-panel-center">
         <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
@@ -90,11 +90,11 @@ require("server.php");
       </div>
 
 
-      <div class="btn-panel-center">
+      <!-- <div class="btn-panel-center"> -->
         <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
         <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
-        <button class="loginbutton btn-full-w" type="submit" name="forgot_password">Forgot password</button>
-      </div>
+        <!-- <button class="loginbutton btn-full-w" type="submit" name="forgot_password">Forgot password</button>
+      </div> -->
 
 
       <!-- <div> -->
