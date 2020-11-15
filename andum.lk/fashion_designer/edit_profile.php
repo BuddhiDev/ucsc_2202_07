@@ -288,7 +288,7 @@ if (isset($_POST['update_fd'])) {
 
 
         $nic = $_SESSION['nic'];
-        $sql= "SELECT * FROM users WHERE nic=$nic";
+        $sql= "SELECT * FROM users WHERE nic='$nic' ";
         // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
         $result = mysqli_query($db, $sql);
 
