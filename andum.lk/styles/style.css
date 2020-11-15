@@ -1201,6 +1201,16 @@ a{
   width: 72px;
 }
 
+.checkout-box{
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-box-block{
+  padding: 10px;
+  margin: 10px;
+}
+
 
 
 

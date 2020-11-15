@@ -185,6 +185,7 @@ if (!isset($_SESSION['nic'])) {
         <th>Quantity</th>
         <th> Unit Price</th>
         <th>Total Price</th>
+        <th>Remove</th>
       </tr>
       <tr>
         <?php
@@ -203,13 +204,21 @@ if (!isset($_SESSION['nic'])) {
             <form action="cart.php" method='GET'>
               <input type="number" value="<?php echo $row["quantity"]?>" name="quantity2" class="submit-quantity">
               <input type="hidden" value="<?php echo $row["order_id"]?>" name="oid">
-              <input type="submit" class="submit-button">
+              <input type="submit" value="Confirm Quantity" class="submit-button">
             </form>
             </td>
             
             
             <td><?php echo $row["price"] ?></td>
             <td><?php echo number_format($row["quantity"]*$row["price"],2);?></td>
+
+            <td>
+              
+            <form action="cart.php" method='GET'>
+              <input type="hidden" value="<?php echo $row["order_id"]?>" name="odid">
+              <input type="submit" value="Remove" class="submit-button">
+            </form>
+            </td>
       </tr>
       
       <?php
@@ -232,15 +241,25 @@ if (!isset($_SESSION['nic'])) {
     ?>
     </table>
 
-    <form method="post">
-    <!-- Checkout button click begin-->
+    <div class="checkout-box">
+      <div class="checkout-box-block">
+        <form method="post">
+      <!-- Checkout button click begin-->
 
-    <!-- Checkout button click end-->
-    <?php if (mysqli_num_rows($result) > 0) { ?>
-    <center><a href="purchases.php"><button class="loginbutton btn-full-w" type="submit" name="Checkout">Checkout</button></a></center>
-    <?php }  else {?>
-    <center> No Items in the cart</center> <?php } ?>
-    </form>
+      <!-- Checkout button click end-->
+      <?php if (mysqli_num_rows($result) > 0) { ?>
+      <center><a href="purchases.php"><button class="loginbutton btn-full-w" type="submit" name="Checkout">Checkout</button></a></center>
+      <?php }  else {?>
+      <center> No Items in the cart</center> <?php } ?>
+      </form>
+      </div>
+      <div class="checkout-box-block">
+        <a href="index.php"><button class="loginbutton btn-full-w">Continue Shopping</button></a>
+      </div>
+
+    </div>
+
+    
   </div>
 
   

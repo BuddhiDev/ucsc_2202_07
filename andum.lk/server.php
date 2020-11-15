@@ -212,6 +212,18 @@ if (isset($_GET['oid'])) {
     }
 }
 
+if (isset($_GET['odid'])) {
+    $order_id = $_GET['odid'];
+
+
+    $sql = "DELETE FROM cart WHERE order_id=$order_id";
+    $result = mysqli_query($db, $sql);
+    if ($result) {
+        $item_added = "true";
+    } else {
+        array_push($errors, "Delete cart failed, try again later");
+    }
+}
 
 
 //checkout from cart
