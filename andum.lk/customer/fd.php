@@ -341,7 +341,7 @@ if (!isset($_SESSION['nic'])) {
               <br>
               <div>
                 <div>
-                  Please fill down below application with your dress requirements to hire me.
+                  Please explore below Featured images to get Idea about me..!
                   <br>
                   <br>
                   
@@ -352,6 +352,65 @@ if (!isset($_SESSION['nic'])) {
         </div>
       </div>
     </div>
+
+    <div class=fd-profile-row>
+    
+       <h3 class=tailor-headding>My Designs</h3>
+  </div>
+
+   <div class=fd-profile-row2>
+    <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+        <div class="card-item">
+            <div class="card-img">
+            <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
+            </div>
+            <div class="card-content">
+            <div class="card-title"></div>
+            <div class="card-description"></div>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+
+    <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+        <div class="card-item">
+            <div class="card-img">
+            <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
+            </div>
+            <div class="card-content">
+            <div class="card-title"></div>
+            <div class="card-description"></div>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+        <div class="card-item">
+            <div class="card-img">
+            <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
+            </div>
+            <div class="card-content">
+            <div class="card-title"></div>
+            <div class="card-description"></div>
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
  
