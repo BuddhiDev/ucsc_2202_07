@@ -8,28 +8,175 @@ if (!isset($_SESSION['nic'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Hire a fashion designer</title>
+  <title>Andum.lk - Hire a Tailor</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
-  <style>
-    .search-btn {
-      background-color: white;
-      color: #EB2188;
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    
+
+    .leftside {
+      position: absolute;
+      height: 500px;
+      border-radius: 10px;
+      width: 300px;
+      /* background-image: url('/ucsc_2202_07/andum.lk/images/d-01.jpg'); */
+      background-size: cover;
+    }
+
+    .p {
+      margin-left: 40px;
+      margin-top: 420px;
+      color: black;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .one {
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      float: left;
+      margin-left: 40px;
+      margin-right: 40px;
+      text-align: center;
+      margin-top: 9px;
+    }
+
+    .one:hover {
+      border: 2px solid black;
+      width: 30px;
+      height: 30px;
+      float: left;
+      text-align: center;
+      margin-top: 9px;
+    }
+
+    .text {
+      color: black;
+    }
+
+    .color-box {
+      background-color: pink;
+    }
+
+    .onee {
+      border: 1px solid black;
+      width: 42px;
+      font-size: 14px;
+      height: 22px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: pink;
+      width: 30px;
+      background-color: pink;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on1 {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: blue;
+      width: 30px;
+      background-color: blue;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on2 {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: black;
+      width: 30px;
+      background-color: black;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+
+
+    .onee:hover {
+      border: 2px solid black;
+      width: 42px;
+      height: 22px;
+      float: left;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .rightside {
+      width: 385px;
+      height: 500px;
+      border-radius: 10px;
+      float: right;
+      background: #fff;
+    }
+
+    .inside {
+      padding: 18px;
+    }
+
+    .cart-button {
+      padding: 9px 25px;
+      background-color: #EB2188;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      text-align: center;
+      -webkit-appearance: none;
+    }
+
+    .cart-button:hover {
+      color: black;
+    }
+
+    .second {
+      width: 50px;
+    }
+
+    .second:hover {
+      width: 50px;
+      background-color: #fab7cc;
     }
   </style>
-
 
 </head>
 
 <body>
+
 <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
@@ -165,101 +312,56 @@ if (!isset($_SESSION['nic'])) {
         this.classList.toggle("active");
       })
   </script>
-
-
-
-  <?php include("../errors.php");
+  
+  <div class="container-box">
+  <?php
+  $selected_f_id = $_SESSION['selected_f_id'];
+  $nic = $_SESSION['nic'];
+  $fname = $_SESSION['fname'];
+  $lname = $_SESSION['lname'];
+  $sql = "SELECT * FROM users WHERE nic=$selected_f_id";
+  $result = mysqli_query($db, $sql);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result)
+   
   ?>
 
-  <div class="sliderbox-wrap">
-    <div class="container-box">
-      <div class="row">
-        <div class="search-container">
-          <form method="post">
-            <div class="form-field-inline">
-              <label for="searchname" class="field-label-inline">Search...</label>
-              <input type="text" class="field-value-inline" name="q">
-              <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
-            </div>
-          </form>
+    <div class="main">
+      <div class="leftside">
+        <div class="card-img">
+          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%">
         </div>
       </div>
-
-      <div class="customer-cover">
-        <div class="row">
-          <h2>All Categories</h2>
-        </div>
-        <div class="row">
-          <?php
-            $nic = $_SESSION['nic'];
-            // Check condition if this is search request or not
-            if ($search != true) {
-              // Read all dressess
-              $sql = "SELECT * FROM users WHERE type='2'";
-              $result = mysqli_query($db, $sql);
-
-              if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) {
-          ?>
-          <!-- Dress box start -->
-          <div class="col-4">
-            <form method="get" action="index.php" class="design-showcase">
-              <input type="hidden" value="<?php echo $nic ?> " name="f_id">
-              <div class="card-item">
-                <div class="card-img">
-              
-                <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
-                </div>
-                <div class="card-content">
-                  <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
-                  <div class="card-description"></div>
+      <div class="rightside">
+        <div class="inside">
+          <div>
+            <form method="post">
+              <br>
+              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <br>
+              <div>
+                <div>
+                  Please fill down below application with your dress requirements to hire me.
+                  <br>
+                  <br>
+                  
                 </div>
               </div>
             </form>
           </div>
-          <!-- Dress box end-->
-
-          <?php
-                }
-              }
-            } else {
-
-              //Read using search keyword
-              $sql = "SELECT * FROM fashion_designer WHERE category LIKE '%$keyword%'";
-              $result = mysqli_query($db, $sql);
-
-              if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) { 
-          ?>
-
-          <!-- Dress box start -->
-          <div class="col-4">
-            <form method="get" action="index.php" class="design-showcase">
-              <input type="hidden" value="<?php echo $nic ?> " name="f_id">
-              <div class="card-item">
-                <div class="card-img">
-                <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
-                </div>
-                <div class="card-content">
-                  <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
-                  <div class="card-description"></div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <!-- Dress box end-->
-          
-          <?php }
-              }
-            }
-          ?>
         </div>
       </div>
-      
     </div>
 
-    <!--footer-->
-    <?php require("../footer.php") ?>
+
+ 
+
+
+  <?php } ?>
+  </div>
+
+  
+  <?php require("../footer.php") ?>
 </body>
 
 </html>
