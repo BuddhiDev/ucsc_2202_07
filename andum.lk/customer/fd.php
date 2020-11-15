@@ -355,7 +355,7 @@ if (!isset($_SESSION['nic'])) {
 
     <div class=fd-profile-row>
     
-       <h3 class=tailor-headding>My Designs</h3>
+       <h3 class=tailor-headding>My Featured Images</h3>
   </div>
 
    <div class=fd-profile-row2>
