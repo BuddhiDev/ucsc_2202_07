@@ -319,7 +319,7 @@ if (!isset($_SESSION['nic'])) {
   $nic = $_SESSION['nic'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
-  $sql = "SELECT * FROM users WHERE nic=$selected_f_id";
+  $sql = "SELECT * FROM users WHERE nic= '$selected_f_id'";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result)
