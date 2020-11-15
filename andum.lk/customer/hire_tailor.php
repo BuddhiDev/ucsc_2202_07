@@ -212,7 +212,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
                 <div class="card-description">
-                  <a href="tailor.php"><button class="hire-button">Hire Me</button></a>
+                  <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><button class="hire-button">Hire Me</button></a>
                 </div>
               </div>
             </div>
