@@ -20,6 +20,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
@@ -167,150 +168,82 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<div class="search-container">
+    <div class="search-container">
         <form method="post">
           <div class="form-field-inline">
             <input type="text" class="field-value-inline" name="q" placeholder="Search...">
             <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
           </div>
         </form>
-      </div>
-
-  <div class="fd-container-box">
-    <div class="side-bar-wrapper">
-      <ul class="sidebar">
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-            <div class="sidebar-icon">
-              <i class="fas fa-columns"></i>
-              <span class="sidebar-text">Dashboard</span>
-            </div>           
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="fd-profile.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-user-circle"></i>
-            <span class="sidebar-text">My Profile</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="design_showcase.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-tshirt"></i>
-            <span class="sidebar-text">My Designs</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="fd-manage-orders.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="sidebar-text">My Orders</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-comments"></i>
-            <span class="sidebar-text">Chat</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="fd-content-wrapper">
-      <div class=row>
-        <div class=col-4>
-          <div class="fd-block-1">
-            <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Total Orders</h3>
-          </div>
-        </div>
-        <div class=col-4>
-          <div class="fd-block-2">
-          <h3 class="fd-block-font-size">200</h3>
-            <Br>
-            <h3>Product Views</h3>
-          </div>
-        </div>
-        <div class=col-4>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>New Messages</h3>
-          </div>
-        </div>
-      </div>
-      <div class=row>
-        <div class=col-3>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Pending</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-2">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>On Going</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-1">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Completed</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-4">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Delivered</h3>
-          </div>
-        </div>
-      </div>
-      <div calss="row">
-    <table class="fd-table">
-    <tr class="fd-tr">
-      <th class="fd-th">Order Id</th>
-      <th class="fd-th">Date</th>
-      <th class="fd-th">Customer</th>
-      <th class="fd-th">Payment</th>
-    </tr>
-    <tr >
-      <td class="fd-th">Jill</td>
-      <td class="fd-th">Smith</td>
-      <td class="fd-th">50</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Eve</td>
-      <td class="fd-th">Jackson</td>
-      <td class="fd-th">94</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Adam</td>
-      <td class="fd-th">Johnson</td>
-      <td class="fd-th">67</td>
-    </tr>
-  </table>
-
-    </div>
     </div>
 
-    
+<div class="fd-container-box">
 
-  
-
-    <!-- </div> -->
-    
+  <div class=fd-profile-row>
+    <div class="profile-pic">
+        <div class="pic">
+            <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
+        </div>        
+        <label for="profile_pictures"></label>
+        <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
+        <div>
+            <label for="">Thashwini</label>
+        </div>
+    </div>
   </div>
+
+  <div class=fd-profile-row>
+       <h3 class=tailor-headding>My Designs</h3>
+  </div>
+
+   <div class=fd-profile-row2>
+    <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+        <div class="card-item">
+            <div class="card-img">
+            <a href=""> <img src="/ucsc_2202_07/andum.lk/images/tailors//t6.jpg" alt="Avatar" style="width:100%"></a>
+            </div>
+            <div class="card-content">
+            <div class="card-title"></div>
+            <div class="card-description"></div>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+
+    <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+        <div class="card-item">
+            <div class="card-img">
+            <a href=""> <img src="/ucsc_2202_07/andum.lk/images/tailors//t6.jpg" alt="Avatar" style="width:100%"></a>
+            </div>
+            <div class="card-content">
+            <div class="card-title"></div>
+            <div class="card-description"></div>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+        <div class="card-item">
+            <div class="card-img">
+            <a href=""> <img src="/ucsc_2202_07/andum.lk/images/tailors//t6.jpg" alt="Avatar" style="width:100%"></a>
+            </div>
+            <div class="card-content">
+            <div class="card-title"></div>
+            <div class="card-description"></div>
+            </div>
+        </div>
+        </form>
+    </div>
+        
+        
+    
+    </div>
+
+</div>
 
   <?php require("../footer.php")?>
 
