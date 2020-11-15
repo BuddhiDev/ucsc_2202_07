@@ -328,7 +328,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%">
+          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
       </div>
       <div class="rightside">
@@ -352,7 +352,9 @@ if (!isset($_SESSION['nic'])) {
       </div>
     </div>
 
-
+<br/>
+<br/>
+<div></div>
   <!--measurement form-->
   <div class="input-container">
     <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
