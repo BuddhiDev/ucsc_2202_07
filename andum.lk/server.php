@@ -174,6 +174,12 @@ if(isset($_GET['t_nic']) ){
     $_SESSION['selected_t_nic']=$selected_t_nic;
     header('location: tailor.php');
 }
+//select a fashion designer
+if(isset($_GET['f_id']) ){
+    $selected_f_id = mysqli_real_escape_string($db, $_GET['f_id']);
+    $_SESSION['selected_f_id']=$selected_f_id;
+    header('location: fd.php');
+}
 
 //select a customer order from tailor
 if(isset($_GET['order_id']) ){
