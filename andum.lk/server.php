@@ -198,6 +198,20 @@ if (isset($_POST['addTocart'])) {
     }
 }
 
+if (isset($_GET['oid'])) {
+    $order_id = $_GET['oid'];
+    $quantity2 = $_GET['quantity2'];
+
+
+    $sql = "UPDATE cart SET quantity='$quantity2' WHERE order_id=$order_id";
+    $result = mysqli_query($db, $sql);
+    if ($result) {
+        $item_added = "true";
+    } else {
+        array_push($errors, "Update cart failed, try again later");
+    }
+}
+
 
 
 //checkout from cart

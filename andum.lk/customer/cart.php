@@ -183,7 +183,7 @@ if (!isset($_SESSION['nic'])) {
         <th>Order No</th>
         <th>Description</th>
         <th>Quantity</th>
-        <th>Price</th>
+        <th> Unit Price</th>
         <th>Total Price</th>
       </tr>
       <tr>
@@ -199,7 +199,15 @@ if (!isset($_SESSION['nic'])) {
 
             <td><?php echo $row["order_id"] ?></td>
             <td><?php echo $row["title"] ?></td>
-            <td><?php echo $row["quantity"]?></td>
+            <td>
+            <form action="cart.php" method='GET'>
+              <input type="number" value="<?php echo $row["quantity"]?>" name="quantity2" class="submit-quantity">
+              <input type="hidden" value="<?php echo $row["order_id"]?>" name="oid">
+              <input type="submit" class="submit-button">
+            </form>
+            </td>
+            
+            
             <td><?php echo $row["price"] ?></td>
             <td><?php echo number_format($row["quantity"]*$row["price"],2);?></td>
       </tr>

@@ -1186,6 +1186,21 @@ a{
     margin: 20px 50px 0px 20px;
 }
 
+.submit-button{
+  padding: 10px;
+    border: none;
+    hight: 15px;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: #eb2188;
+}
+
+.submit-quantity{
+  padding: 5px;
+  margin: 5px;
+  width: 72px;
+}
+
 
 
 
