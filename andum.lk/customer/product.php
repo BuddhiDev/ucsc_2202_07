@@ -359,9 +359,9 @@ if (!isset($_SESSION['nic'])) {
                   $selected_dress_id = $_SESSION['selected_dress_id'];
                   $nic = $_SESSION['nic'];
                   $sqlc = "SELECT color FROM dress_showcase WHERE dress_id=$selected_dress_id";
-                  $resultc = mysqli_query($db,$sql);
-                  $rowc = mysqli_fetch_assoc($result);
-                  $mystring = $row['color'];
+                  $resultc = mysqli_query($db,$sqlc);
+                  $rowc = mysqli_fetch_assoc($resultc);
+                  $mystring = $rowc['color'];
                   if ($mystring) {
                     print_r (explode(",",$mystring));
                   }
@@ -398,7 +398,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="customized">
               <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
               <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-              <a href="cart.php"><button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button></a>
+              <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button>
             </div>
             <div>
               <a href="product.php?t_nic=<?php echo $row["t_nic"]?>" class="costomize-text"><button class="cart-button">Customize MY Dress</button></a>
