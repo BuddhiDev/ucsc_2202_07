@@ -23,7 +23,7 @@
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="tailor-dashboard.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
@@ -118,8 +118,8 @@
             
           </li>
 
-          <li><a href="hire_tailor.php">Explore Tailors</a></li>
-          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
+          <li><a href="customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li>
           
           </li>
@@ -317,19 +317,19 @@
             <img src="/ucsc_2202_07/andum.lk/images/dresses/dress1.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Casual Summer Dress</div>
+            <div class="card-description">2500 LKR </div>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress3.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/dresses/6.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Floral Summer Dress</div>
+            <div class="card-description">2600 LKR </div>
           </div>
         </div>
       </div>
@@ -339,8 +339,8 @@
             <img src="/ucsc_2202_07/andum.lk/images/dresses/dress4.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">A Line Dress</div>
+            <div class="card-description">3000 LKR </div>
           </div>
         </div>
       </div>
@@ -350,8 +350,8 @@
             <img src="/ucsc_2202_07/andum.lk/images/dresses/dress5.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Casual Floral Dress</div>
+            <div class="card-description">2500 LKR </div>
           </div>
         </div>
       </div>

@@ -169,13 +169,12 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
+  <div>
+    <div class="add-new-position">
+      <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
+    </div>
 
-
-<div class="add-new-position">
-  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
-</div>
-
-<div class="search-container">
+    <div class="search-container">
         <form method="post">
           <div class="form-field-inline">
             <input type="text" class="field-value-inline" name="q" placeholder="Search...">
@@ -183,6 +182,12 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </form>
       </div>
+    
+  </div>
+
+
+
+      
 
 
 
