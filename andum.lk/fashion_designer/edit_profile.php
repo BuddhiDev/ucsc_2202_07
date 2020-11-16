@@ -117,11 +117,11 @@ if (isset($_POST['update_fd'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 
-    <style>
+    <!-- <style>
       img {
         border-radius: 50%;
       }
-</style>
+</style> -->
 
 </head>
 <body>
@@ -361,7 +361,7 @@ if (isset($_POST['update_fd'])) {
                 <div class="col-4">
                   <div class="add-design-pic">
                     <div class="design-pic">
-                      <img src="/ucsc_2202_07/andum.lk/images/profile/photo.png" id="profileDisplay1" name="profileDisplay1" onclick="triggerClick1()" alt="" class="designDisp">
+                      <img src="/ucsc_2202_07/andum.lk/images/profile/photo3.jpg" id="profileDisplay1" name="profileDisplay1" onclick="triggerClick1()" alt="" class="designDisp">
                     </div>
                     <input type="file" name="addpic1" value="" onchange="displayImage1(this)" id="addpic1" class="fd-profile-pic-control">
                   </div>
@@ -369,7 +369,7 @@ if (isset($_POST['update_fd'])) {
                 <div class="col-4">
                   <div class="add-design-pic">
                     <div class="design-pic">
-                      <img src="/ucsc_2202_07/andum.lk/images/profile/photo.png" id="profileDisplay2" name="profileDisplay2" onclick="triggerClick2()" alt="" class="designDisp">
+                      <img src="/ucsc_2202_07/andum.lk/images/profile/photo3.jpg" id="profileDisplay2" name="profileDisplay2" onclick="triggerClick2()" alt="" class="designDisp">
                     </div>
                     <input type="file" name="addpic2" value="" onchange="displayImage2(this)" id="addpic2" class="fd-profile-pic-control">
                   </div>
@@ -377,7 +377,7 @@ if (isset($_POST['update_fd'])) {
                 <div class="col-4">
                   <div class="add-design-pic">
                     <div class="design-pic">
-                      <img src="/ucsc_2202_07/andum.lk/images/profile/photo.png" id="profileDisplay3" name="profileDisplay3" onclick="triggerClick3()" alt="" class="designDisp">
+                      <img src="/ucsc_2202_07/andum.lk/images/profile/photo3.jpg" id="profileDisplay3" name="profileDisplay3" onclick="triggerClick3()" alt="" class="designDisp">
                     </div>
                     <input type="file" name="addpic3" value="" onchange="displayImage3(this)" id="addpic3" class="fd-profile-pic-control">
                   </div>
