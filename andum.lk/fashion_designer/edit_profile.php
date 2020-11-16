@@ -313,12 +313,12 @@ if (isset($_POST['update_fd'])) {
             </div>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
-            <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" required>
+            <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" readonly>
           </div>
 
           <div class="form-field-inline">
             <label for="email" class="field-label-inline"><b>Email Address</b></label>
-            <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" required>
+            <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>
           </div>
 
           <div class="form-field-inline">
