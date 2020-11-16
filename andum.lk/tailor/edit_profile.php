@@ -144,8 +144,8 @@ require("../server.php");
               <div class="dd_right">
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Purchases</a></li>
+                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="Manage_order.php"><i class="fas fa-money"></i>Sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
@@ -218,12 +218,12 @@ require("../server.php");
             </div>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
-            <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" required>
+            <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" disabled>
           </div>
 
           <div class="form-field-inline">
             <label for="email" class="field-label-inline"><b>Email Address</b></label>
-            <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" required>
+            <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" disabled>
           </div>
 
           <div class="form-field-inline">
