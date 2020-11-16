@@ -357,7 +357,7 @@ if (!isset($_SESSION['nic'])) {
 <div></div>
   <!--measurement form-->
   <div class="input-container">
-    <form action="/action_page.php" style="max-width:1024px;margin:auto">
+    <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Get Measured</h2>
       <div class="d-flex">
         <div class="f1">
@@ -365,7 +365,7 @@ if (!isset($_SESSION['nic'])) {
           <!-- <img src="" class="image"> -->
               <!-- </div>
               <div class="f1"> -->
-          <select class="option" name="Unit" id="unit" >
+          <select class="option" name="category" id="category" >
             <optgroup label="WOMEN CASUAL WEAR">
               <option value="1">DRESSES</option>
               <option value="2">T SHIRTS</option>
@@ -634,9 +634,15 @@ if (!isset($_SESSION['nic'])) {
 
       <div class="d-flex">
         <!-- <lable for="other" style="">Other:</label> -->
-        <textarea name="message" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
+        <textarea name="other" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
       </div>
-      <button type="submit" class="casual-btn">Submit</button>
+      <input type="hidden" value=<?php echo $row["nic"]; ?> name="t_nic">
+      <input type="hidden" value=<?php echo $row["fname"]; ?> name="t_fname">
+      <input type="hidden" value=<?php echo $row["lname"]; ?> name="t_lname">
+      <input type="hidden" value=<?php echo $nic; ?> name="c_nic">
+      <input type="hidden" value=<?php echo $fname; ?> name="c_fname">
+      <input type="hidden" value=<?php echo $lname; ?> name="c_lname">
+      <button type="submit" class="casual-btn" name="hireT">Submit</button>
     </form>
   </div>
 

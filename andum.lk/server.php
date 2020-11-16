@@ -128,6 +128,7 @@ if (isset($_GET['logout'])) {
 
 //hire a tailor
 if (isset($_POST['hireT'])) {
+    echo "fuck";
     $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
     $t_fname = mysqli_real_escape_string($db, $_POST['t_fname']);
     $t_lname = mysqli_real_escape_string($db, $_POST['t_lname']);
@@ -149,6 +150,7 @@ if (isset($_POST['hireT'])) {
     $hips = mysqli_real_escape_string($db, $_POST['hips']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
 
+    echo $t_nic,$t_fname,$chest;
     $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other)
     VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other')";
     $result = mysqli_query($db, $sql);
