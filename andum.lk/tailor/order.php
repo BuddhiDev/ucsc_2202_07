@@ -593,13 +593,13 @@ if (!isset($_SESSION['nic'])) {
 
       <div class="form-field-inline">
         <label for="searchname" class="field-label-inline">Submit order price: </label>
-        <input type="text" class="field-value-inline" name="">
+        <input type="text" class="field-value-inline" name="" <?php if($row["status"]=="Accepted") echo "disabled"?>>
       </div>
 
   </div>
   <input type="hidden" class="field-value-inline" name="order_id" value=<?php echo $row["id"] ?>>
 
-      <center><button class="cart-button" type="submit" name="order-accept">Submit</button></center>
+      <center><button class="cart-button" type="submit" name="order-accept" <?php if($row["status"]=="Accepted") echo "disabled"?>>Submit</button></center>
     </form>
   </div>
 
