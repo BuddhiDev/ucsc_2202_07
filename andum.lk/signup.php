@@ -140,7 +140,7 @@ require("server.php");
 
 
 <!-- -->
-
+<!-- -->
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
