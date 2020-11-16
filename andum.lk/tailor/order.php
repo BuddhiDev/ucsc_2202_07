@@ -382,7 +382,7 @@ if (!isset($_SESSION['nic'])) {
 
   <!--measurement form-->
   <div class="input-container">
-    <form action="/action_page.php" style="max-width:1024px;margin:auto">
+    <form method="post" action="order.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Measurements</h2>
       <div class="d-flex">
         <div class="f1">
@@ -590,15 +590,16 @@ if (!isset($_SESSION['nic'])) {
       </div>
 
       <div class="search-container">
-    <form method="post">
+
       <div class="form-field-inline">
         <label for="searchname" class="field-label-inline">Submit order price: </label>
         <input type="text" class="field-value-inline" name="">
       </div>
-    </form>
-  </div>
 
-      <center><button class="cart-button" type="submit">Submit</button></center>
+  </div>
+  <input type="hidden" class="field-value-inline" name="order_id" value=<?php echo $row["id"] ?>>
+
+      <center><button class="cart-button" type="submit" name="order-accept">Submit</button></center>
     </form>
   </div>
 

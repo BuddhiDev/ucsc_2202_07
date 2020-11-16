@@ -380,4 +380,14 @@ if(isset($_GET['dcategory']) ){
     $selected_dress_category = mysqli_real_escape_string($db, $_GET['dcategory']);
 }
 
+//update order statues
+if (isset($_POST['order-accept'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Accepted' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+
  ?>
