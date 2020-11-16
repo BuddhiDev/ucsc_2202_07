@@ -362,8 +362,11 @@ if (!isset($_SESSION['nic'])) {
                   $resultc = mysqli_query($db,$sqlc);
                   $rowc = mysqli_fetch_assoc($resultc);
                   $mystring = $rowc['color'];
+                  $mycolors = (explode(",",$mystring));
                   if ($mystring) {
-                    print_r (explode(",",$mystring));
+                    foreach ($mycolors as $my_color){
+                      echo $my_color;
+                    }
                   }
                   ?>              
               </div>
