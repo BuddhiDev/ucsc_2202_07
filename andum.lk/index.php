@@ -190,7 +190,7 @@
         dots[i].className = dots[i].className.replace(" active", "");
       }
       slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
+      dots[slideIndex-1].className = "active";
       setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
   </script>
@@ -203,45 +203,41 @@
     <div class="row">
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t12.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Nirosha Perera</div>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t4.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Shermila Gamage</div>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t2.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Kanthi Gamage</div>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t1.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/tailors/t3.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Anusha Perera</div>
           </div>
         </div>
       </div>
@@ -262,45 +258,41 @@
     <div class="row">
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis1.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Diluksha Weerawardhana</div>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis3.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Ayodya Balasuriya</div>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis6.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Dilini Weerasinghe</div>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t6.jpg" alt="Avatar" style="width:100%">
+          <div class="card-img2">
+            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis7.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
-            <div class="card-title">TTTT</div>
-            <div class="card-description">LKR </div>
+            <div class="card-title">Maneesha Muthuweera</div>
           </div>
         </div>
       </div>
@@ -322,7 +314,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress1.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -333,7 +325,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress3.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -344,7 +336,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress4.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
@@ -355,7 +347,7 @@
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t8.jpg" alt="Avatar" style="width:100%">
+            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress5.jpg" alt="Avatar" style="width:100%">
           </div>
           <div class="card-content">
             <div class="card-title">TTTT</div>
