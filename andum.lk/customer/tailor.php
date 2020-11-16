@@ -401,7 +401,6 @@ if (!isset($_SESSION['nic'])) {
                 </div>
           
         </div>
-
         <div class="col-4">
           <div class="measure-card">
             <div class="measure-card-value">
