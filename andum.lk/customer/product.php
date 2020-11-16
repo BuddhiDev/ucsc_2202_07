@@ -385,11 +385,12 @@ if (!isset($_SESSION['nic'])) {
               <div class="product-s">
               <select name="" id="" class="option">
                 <option value="">Select Size</option>
-                <option value="">UK8</option>
-                <option value="">UK10</option>
-                <option value="">UK12</option>
-                <option value="">UK14</option>
-                <option value="">UK16</option>
+                <option value="">S</option>
+                <option value="">M</option>
+                <option value="">L</option>
+                <option value="">XL</option>
+                <option value="">XXL</option>
+                <option value="">XXXL</option>
               </select>
               </div>
               
