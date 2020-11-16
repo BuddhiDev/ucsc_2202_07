@@ -193,7 +193,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="side-bar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
+          <a class="sidebar-link" href="tailor-dashboard.php">
             <div class="sidebar-icon">
               <i class="fas fa-user-circle"></i>
               <span class="sidebar-text">My Profile</span>
