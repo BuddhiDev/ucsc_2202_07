@@ -33,7 +33,7 @@ require("../server.php");
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="tailor-dashboard.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
