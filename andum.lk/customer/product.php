@@ -366,6 +366,7 @@ if (!isset($_SESSION['nic'])) {
                   if ($mystring) {
                     foreach ($mycolors as $my_color){
                       echo $my_color;
+                      echo "<br>";
                     }
                   }
                   ?>              
