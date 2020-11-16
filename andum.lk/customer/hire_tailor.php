@@ -211,6 +211,10 @@ if (!isset($_SESSION['nic'])) {
               </div>
               <div class="card-content">
               <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
                 <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
                 <div class="card-description">
                   
