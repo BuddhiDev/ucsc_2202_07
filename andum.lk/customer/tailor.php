@@ -357,59 +357,78 @@ if (!isset($_SESSION['nic'])) {
 <div></div>
   <!--measurement form-->
   <div class="input-container">
-    <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
+    <form action="/action_page.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Get Measured</h2>
-      <div class="category-label">
-            <lable for="type" >Category:</label>
-          </div>
-      <div class="tailor-row">
-        <div class="col-4">
-          
-          
+      <div class="d-flex">
+        <div class="f1">
+          <lable for="type" >Category:</label>
           <!-- <img src="" class="image"> -->
               <!-- </div>
               <div class="f1"> -->
-        <div class="measure-card">
-          <select class="option" name="category" id="unit" >
-            <optgroup label="Ladies wear">
-              <option value="l-blouse">Blouse</option>
-              <option value="l-skirt">skirt</option>
-              <option value="l-frock">frock</option>
-              <option value="l-short">Short</option>
-              <option value="l-trouser">Trouser</option>
-              <option value="l-tshirt">T-Shirt</option>
-              <option value="l-partyfrock">Party Frock</option>
-              <option value="l-saree">Saree</option>
-              <option value="l-bridaldress">Bridal Dress</option>
+          <select class="option" name="Unit" id="unit" >
+            <optgroup label="WOMEN CASUAL WEAR">
+              <option value="1">DRESSES</option>
+              <option value="2">T SHIRTS</option>
+              <option value="3">BLOUSE</option>
+              <option value="4">SHIRTS</option>
+              <option value="5">JEANS</option>
+              <option value="6">PANTS</option>
+              <!-- <option value="7">Party Frock</option>
+              <option value="8">Saree</option>
+              <option value="9">Bridal Dress</option> -->
             </optgroup>
-            <optgroup label="Gents wear">
-              <option value="10">Shirt</option>
-              <option value="11">T-shirt</option>
-              <option value="12">Denim</option>
-              <option value="13">Trouser</option>
-              <option value="14">Groom Dress</option>
+            <optgroup label="WOMEN FORMAL WEAR">
+              <option value="10">DRESSES</option>
+              <option value="11">BLOUSE</option>
+              <option value="12">SKIRTS</option>
+              <option value="13">PANTS</option>
             </optgroup>
-            <optgroup label="Casual wear">
-              <option value="15">Casual Wear blouse</option>
-              <option value="16">Casual wear pants</option>
-              <option value="17">Casual wear Denims</option>
-              <option value="18">Casual wearShorts</option>
-              <option value="19">Casual wear T-shirts</option>
+            <optgroup label="WOMEN ETHNIC WEAR">
+              <option value="14">KURTHAS</option>
+              <option value="15">SAWLS</option>
+              <option value="16">SAREES</option>
+            </optgroup>
+            <optgroup label="MEN CASUAL WEAR">
+              <option value="17">T SHIRTS</option>
+              <option value="18">SHIRTS</option>
+              <option value="19">JEANS</option>
+              <option value="20">TROUSERSS</option>
+              <option value="21">SARONG</option>
+              <option value="22">SHORTS</option>
+            </optgroup>
+            <optgroup label="MEN FORMAL WEAR">
+              <option value="23">SHIRTS</option>
+              <option value="24">TROUSERSS</option>
+              <option value="25">BLAZERS</option>
+            </optgroup>
+            <optgroup label="KIDS BOYS">
+              <option value="26">T SHIRTS</option>
+              <option value="27">TANK TOPS</option>
+              <option value="28">SHIRTS</option>
+              <option value="29">SHORTS</option>
+              <option value="30">PANTS</option>
+              <option value="31">SLEEP WEAR</option>
+            </optgroup>
+            <optgroup label="KIDS BOYS">
+              <option value="32">T SHIRTS</option>
+              <option value="33">DRESSES</option>
+              <option value="34">SHORTS</option>
+              <option value="35">SLEEP WEAR</option>
             </optgroup>
           </select>
-
-                </div>
-          
         </div>
-        <div class="col-4">
+
+        <div class="f1">
           <div class="measure-card">
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Material" name="material">
+              <!-- <input class="input-field" type="text" placeholder="Material" name="material"> -->
+              <input class="input-field" type="text"  placeholder="Material" name="material">
             </div>                             
           </div>
         </div>
-        <div class="col-4">
+        
+        <div class="f1">
           <div class="measure-card">
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
@@ -418,6 +437,35 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </div>
       </div> 
+
+      <!-- <div class="d-flex">
+        <div class="f1">
+          <div class="measure-card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+          </div>
+          <div class="measure-card-value"> -->
+            <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+            <!-- <input class="input-field" type="text" placeholder="Neck" name="neck">
+            <select class="option" name="Unit" id="unit" style="">
+              <option>in</option>
+              <option>cm</option>
+            </select>
+          </div>
+        </div>
+        <div class="f1">
+          <div class="measure-card-img">
+            <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
+          </div>
+          <div class="measure-card-value"> -->
+            <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+            <!-- <input class="input-field" type="text" placeholder="Chest" name="chest">
+            <select class="option" name="Unit" id="unit" style="">
+              <option>in</option>
+              <option>cm</option>
+            </select>
+          </div>
+        </div>
+      </div> -->
 
       <div class="d-flex">
         <div class="f1">
@@ -432,7 +480,7 @@ if (!isset($_SESSION['nic'])) {
                 <option>in</option>
                 <option>cm</option>
               </select>
-            </div>  
+            </div>                             
           </div>
         </div>
         <div class="f1">
@@ -447,8 +495,8 @@ if (!isset($_SESSION['nic'])) {
                 <option>in</option>
                 <option>cm</option>
               </select>
-            </div>
-          </div>         
+            </div>                             
+          </div>
         </div>
       </div>
                         
@@ -493,7 +541,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Shirt Length" name="shirt_length">
+              <input class="input-field" type="text" placeholder="Shirt Length" name="shirtlength">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -508,7 +556,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulder_width">
+              <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulderwidth">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -526,7 +574,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="measure-card-value">
               <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Arm Length" name="arm_length">
+              <input class="input-field" type="text" placeholder="Arm Length" name="armlength">
               <select class="option" name="Unit" id="unit" style="">
                 <option>in</option>
                 <option>cm</option>
@@ -586,15 +634,9 @@ if (!isset($_SESSION['nic'])) {
 
       <div class="d-flex">
         <!-- <lable for="other" style="">Other:</label> -->
-        <textarea name="other" rows="20" cols="50" placeholder="Other" class="txt-area"></textarea>
+        <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area"></textarea>
       </div>
-      <input type="hidden" value="<?php echo $row["nic"] ?> " name="t_nic">
-      <input type="hidden" value="<?php echo $row["fname"] ?> " name="t_fname">
-      <input type="hidden" value="<?php echo $row["lname"] ?> " name="t_lname">
-      <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-      <input type="hidden" value="<?php echo $fname ?> " name="c_fname">
-      <input type="hidden" value="<?php echo $lname ?> " name="c_lname">
-      <center><button class="cart-button" type="submit" name="hireT">Submit Tailor Request</button></center>
+      <button type="submit" class="casual-btn">Submit</button>
     </form>
   </div>
 

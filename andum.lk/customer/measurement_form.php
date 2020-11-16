@@ -152,30 +152,54 @@
               <!-- </div>
               <div class="f1"> -->
           <select class="option" name="Unit" id="unit" >
-            <optgroup label="Ladies wear">
-              <option value="1">Blouse</option>
-              <option value="2">skirt</option>
-              <option value="3">frock</option>
-              <option value="4">Short</option>
-              <option value="5">Trouser</option>
-              <option value="6">T-Shirt</option>
-              <option value="7">Party Frock</option>
+            <optgroup label="WOMEN CASUAL WEAR">
+              <option value="1">DRESSES</option>
+              <option value="2">T SHIRTS</option>
+              <option value="3">BLOUSE</option>
+              <option value="4">SHIRTS</option>
+              <option value="5">JEANS</option>
+              <option value="6">PANTS</option>
+              <!-- <option value="7">Party Frock</option>
               <option value="8">Saree</option>
-              <option value="9">Bridal Dress</option>
+              <option value="9">Bridal Dress</option> -->
             </optgroup>
-            <optgroup label="Gents wear">
-              <option value="10">Shirt</option>
-              <option value="11">T-shirt</option>
-              <option value="12">Denim</option>
-              <option value="13">Trouser</option>
-              <option value="14">Groom Dress</option>
+            <optgroup label="WOMEN FORMAL WEAR">
+              <option value="10">DRESSES</option>
+              <option value="11">BLOUSE</option>
+              <option value="12">SKIRTS</option>
+              <option value="13">PANTS</option>
             </optgroup>
-            <optgroup label="Casual wear">
-              <option value="15">Casual Wear blouse</option>
-              <option value="16">Casual wear pants</option>
-              <option value="17">Casual wear Denims</option>
-              <option value="18">Casual wearShorts</option>
-              <option value="19">Casual wear T-shirts</option>
+            <optgroup label="WOMEN ETHNIC WEAR">
+              <option value="14">KURTHAS</option>
+              <option value="15">SAWLS</option>
+              <option value="16">SAREES</option>
+            </optgroup>
+            <optgroup label="MEN CASUAL WEAR">
+              <option value="17">T SHIRTS</option>
+              <option value="18">SHIRTS</option>
+              <option value="19">JEANS</option>
+              <option value="20">TROUSERSS</option>
+              <option value="21">SARONG</option>
+              <option value="22">SHORTS</option>
+            </optgroup>
+            <optgroup label="MEN FORMAL WEAR">
+              <option value="23">SHIRTS</option>
+              <option value="24">TROUSERSS</option>
+              <option value="25">BLAZERS</option>
+            </optgroup>
+            <optgroup label="KIDS BOYS">
+              <option value="26">T SHIRTS</option>
+              <option value="27">TANK TOPS</option>
+              <option value="28">SHIRTS</option>
+              <option value="29">SHORTS</option>
+              <option value="30">PANTS</option>
+              <option value="31">SLEEP WEAR</option>
+            </optgroup>
+            <optgroup label="KIDS BOYS">
+              <option value="32">T SHIRTS</option>
+              <option value="33">DRESSES</option>
+              <option value="34">SHORTS</option>
+              <option value="35">SLEEP WEAR</option>
             </optgroup>
           </select>
         </div>
