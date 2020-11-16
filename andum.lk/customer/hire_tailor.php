@@ -249,6 +249,11 @@ if (!isset($_SESSION['nic'])) {
               <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
               </div>
               <div class="card-content">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
                 <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
                 <div class="card-description"></div>
               </div>
