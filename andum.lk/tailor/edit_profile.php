@@ -270,25 +270,10 @@ require("../server.php");
         <input type="file" id="myimage" name="myimage" value=""> <br/>
       </div> -->
     </div>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
+            <a href="tailor-dasboard.php"><button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button></a>
           </div>
 
           <?php

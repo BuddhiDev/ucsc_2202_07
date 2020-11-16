@@ -185,16 +185,7 @@ if (!isset($_SESSION['nic'])) {
     
   </div>
 
-
-
-      
-
-
-
   <div class="fd-container-box">
-
-  
-
     <div class="side-bar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-item">
