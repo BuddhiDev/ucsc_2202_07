@@ -631,11 +631,19 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </div>
       </div>
+      
 
       <div class="d-flex">
         <!-- <lable for="other" style="">Other:</label> -->
         <textarea name="other" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
+        </div>
+        <div class="d-flex">
+        <lable for="type" class="field-label-inline">Upload Dress image:</label>
+      <div class="measure-card-value">
+        <input type="file" id="file" name="myimage" value=""> <br/>
       </div>
+      </div>
+      
       <input type="hidden" value=<?php echo $row["nic"]; ?> name="t_nic">
       <input type="hidden" value=<?php echo $row["fname"]; ?> name="t_fname">
       <input type="hidden" value=<?php echo $row["lname"]; ?> name="t_lname">
