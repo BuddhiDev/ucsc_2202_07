@@ -634,7 +634,7 @@ if (!isset($_SESSION['nic'])) {
 
       <div class="d-flex">
         <!-- <lable for="other" style="">Other:</label> -->
-        <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area"></textarea>
+        <textarea name="message" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
       </div>
       <button type="submit" class="casual-btn">Submit</button>
     </form>

@@ -212,7 +212,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-content">
                 <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
                 <div class="card-description">
-                  <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><button class="hire-button">Hire Me</button></a>
+                  
                 </div>
               </div>
             </div>
@@ -240,6 +240,11 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-img">
               <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
               </div>
+              <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
               <div class="card-content">
                 <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
                 <div class="card-description"></div>

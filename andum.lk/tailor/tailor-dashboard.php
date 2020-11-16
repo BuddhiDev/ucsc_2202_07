@@ -147,8 +147,8 @@ if (!isset($_SESSION['nic'])) {
               <div class="dd_right">
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href=".php"><i class="fas fa-money"></i>sells</a></li>
+                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="Manage_order.php"><i class="fas fa-money"></i>sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
@@ -193,7 +193,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="side-bar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
+          <a class="sidebar-link" href="tailor-dashboard.php">
             <div class="sidebar-icon">
               <i class="fas fa-user-circle"></i>
               <span class="sidebar-text">My Profile</span>
