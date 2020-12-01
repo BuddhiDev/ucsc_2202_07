@@ -17,6 +17,8 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fonts.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
@@ -204,15 +206,16 @@ if (!isset($_SESSION['nic'])) {
         ?>
         <!-- Dress box start -->
         <div class="col-4">
+          <div class="designer-box">
           <form method="get" action="hire_tailor.php" class="users">
             <input type="hidden" value="<?php echo $nic ?> " name="nic">
             
 
-            <div class="card-item">
-              <div class="card-img">
-                <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%"></a>    
+            <div class="fd-card-item">
+              <div class="fd-card-img">
+                <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
               </div>
-              <div class="card-content">
+              <div class="fd-card-content">
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
@@ -225,6 +228,9 @@ if (!isset($_SESSION['nic'])) {
               </div>
             </div>
           </form>
+
+          </div>
+          
         </div>
         <!-- Dress box end-->
 

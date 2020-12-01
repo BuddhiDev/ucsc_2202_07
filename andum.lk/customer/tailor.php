@@ -633,9 +633,9 @@ if (!isset($_SESSION['nic'])) {
       </div>
       
 
-      <div class="d-flex">
-        <!-- <lable for="other" style="">Other:</label> -->
-        <textarea name="other" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
+        <div class="d-flex">
+          <!-- <lable for="other" style="">Other:</label> -->
+          <textarea name="other" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
         </div>
         <div class="d-flex">
         <lable for="type" class="field-label-inline">Upload Dress image:</label>

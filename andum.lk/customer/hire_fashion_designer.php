@@ -17,6 +17,8 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fonts.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
@@ -33,7 +35,7 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -169,8 +171,6 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-
-
   <?php include("../errors.php");
   ?>
 
@@ -190,7 +190,7 @@ if (!isset($_SESSION['nic'])) {
 
       <div class="customer-cover">
         <div class="row">
-          <h2>All Categories</h2>
+          <h2 class="fashion-designer-headding">Our Fashion Designers</h2>
         </div>
         <div class="row">
           <?php
@@ -206,24 +206,26 @@ if (!isset($_SESSION['nic'])) {
           ?>
           <!-- Dress box start -->
           <div class="col-4">
-            <form method="get" action="index.php" class="design-showcase">
-              <input type="hidden" value="<?php echo $nic ?> " name="f_id">
-              <div class="card-item">
-                <div class="card-img">
-              
-                <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
+            <div class="designer-box">
+              <form method="get" action="index.php" class="fd-showcase">
+                <input type="hidden" value="<?php echo $nic ?> " name="f_id">
+                <div class="fd-card-item">
+                  <div class="fd-card-img">               
+                    <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%" class="proDisp"></a>
+                  </div>
+                  <div class="fd-card-content">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                    <div class="card-description"></div>
+                    <button class="hire-btn">Hire me</button>
+                  </div>                 
                 </div>
-                <div class="card-content">
-                <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-                  <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
-                  <div class="card-description"></div>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>           
           </div>
           <!-- Dress box end-->
 
