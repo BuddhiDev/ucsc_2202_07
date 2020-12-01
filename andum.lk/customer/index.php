@@ -145,7 +145,7 @@ if (!isset($_SESSION['nic'])) {
                 <ul>
                   <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
-                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
+                  <li><a href="hired_fd_list.php"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
                   <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>

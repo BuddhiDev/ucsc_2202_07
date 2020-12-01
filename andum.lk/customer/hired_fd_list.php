@@ -6,36 +6,43 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Hire a fashion designer</title>
+  <meta charset="utf-8">
+  <title>Andum.lk - Hired Tailors</title>
   <link rel="shortcut icon" href="logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fonts.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
-    .search-btn {
-      background-color: white;
-      color: #EB2188;
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 99%;
+      border: 1px solid #ddd;
     }
-    .checked {
-  color: orange;
-}
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
   </style>
-
-
 </head>
 
 <body>
-  <header>
+
+
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -166,115 +173,47 @@ if (!isset($_SESSION['nic'])) {
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
-      function() {
-        this.classList.toggle("active");
-      })
+    function(){
+      this.classList.toggle("active");
+    })
   </script>
 
-  <?php include("../errors.php");
-  ?>
+  <div class="container-box">
+    <table>
+      <tr>
+        <th>Tailor Name</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+      <tr>
+        <?php
 
-  <div class="sliderbox-wrap">
-    <div class="container-box">
-      <div class="row">
-        <div class="search-container">
-          <form method="post">
-            <div class="form-field-inline">
-              <label for="searchname" class="field-label-inline">Search...</label>
-              <input type="text" class="field-value-inline" name="q">
-              <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></abutton>
-            </div>
-          </form>
-        </div>
-      </div>
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE c_nic='$nic'";
+        $result = mysqli_query($db, $sql);
 
-      <div class="customer-cover">
-        <div class="row">
-          <h2 class="fashion-designer-headding">Our Fashion Designers</h2>
-        </div>
-        <div class="row">
-          <?php
-            $nic = $_SESSION['nic'];
-            // Check condition if this is search request or not
-            if ($search != true) {
-              // Read all dressess
-              $sql = "SELECT * FROM users WHERE type='2'";
-              $result = mysqli_query($db, $sql);
+        if (mysqli_num_rows($result) > 0) {
 
-              if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) {
-          ?>
-          <!-- Dress box start -->
-          <div class="col-4">
-            <div class="designer-box">
-              <form method="get" action="index.php" class="fd-showcase">
-                <input type="hidden" value="<?php echo $nic ?> " name="f_id">
-                <div class="fd-card-item">
-                  <div class="fd-card-img">               
-                    <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%" class="proDisp"></a>
-                  </div>
-                  <div class="fd-card-content">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
-                    <div class="card-description"></div>
-                    <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><button class="hire-btn">Hire me</button></a>
-                  </div>                 
-                </div>
-              </form>
-            </div>           
-          </div>
-          <!-- Dress box end-->
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
 
-          <?php
-                }
-              }
-            } else {
-
-              //Read using search keyword
-              $sql = "SELECT * FROM fashion_designer WHERE category LIKE '%$keyword%'";
-              $result = mysqli_query($db, $sql);
-
-              if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) { 
-          ?>
-
-          <!-- Dress box start -->
-          <div class="col-4">
-            <form method="get" action="index.php" class="design-showcase">
-              <input type="hidden" value="<?php echo $nic ?> " name="f_id">
-              <div class="card-item">
-                <div class="card-img">
-                <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
-                </div>
-                <div class="card-content">
-                <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-                  <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
-                  <div class="card-description"></div>
-                </div>
+            <td><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a class="cta" href="hired_fd_list.php?fd_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
               </div>
-            </form>
-          </div>
-          <!-- Dress box end-->
-          
-          <?php }
-              }
-            }
-          ?>
-        </div>
-      </div>
-      
-    </div>
+            </td>
+      </tr>
+    <?php
+          }
+        } else {
+        }
 
-    <!--footer-->
-    <?php require("../footer.php") ?>
-</body>
+    ?>
+    </table>
+  </div>
+
+<?php require("../footer.php")?>
 
 </html>

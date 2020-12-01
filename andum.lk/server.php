@@ -161,6 +161,26 @@ if (isset($_POST['hireT'])) {
     }
 }
 
+//hire a fashion designer
+if (isset($_POST['hireFD'])) {
+    $fd_nic = mysqli_real_escape_string($db, $_POST['fd_nic']);
+    $fd_fname = mysqli_real_escape_string($db, $_POST['fd_fname']);
+    $fd_lname = mysqli_real_escape_string($db, $_POST['fd_lname']);
+    $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
+    $c_fname = mysqli_real_escape_string($db, $_POST['c_fname']);
+    $c_lname = mysqli_real_escape_string($db, $_POST['c_lname']);
+    $other = mysqli_real_escape_string($db, $_POST['other']);
+
+    echo $fd_nic,$fd_fname;
+    $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other')";
+    $result = mysqli_query($db, $sql);
+    if ($result) {
+        header('location: hired_fd_list.php');
+    } else {
+        array_push($errors, "Hire a fashion designer failed, try again later");
+    }
+}
+
 $item_added = "false";
 
 //select a dress
@@ -188,6 +208,13 @@ if(isset($_GET['order_id']) ){
     $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
+}
+
+//select a customer order from fashion designer
+if(isset($_GET['fd_order_id']) ){
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: fd-order.php');
 }
 
 //add to cart a dress
@@ -386,6 +413,15 @@ if (isset($_POST['order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $sql = "UPDATE t_orders SET status='Accepted' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update fashion designer order statues
+if (isset($_POST['fd-order-accept'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['fd_order_id']);
+    $sql = "UPDATE fd_orders SET status='Accepted' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }

@@ -5,24 +5,179 @@ if (!isset($_SESSION['nic'])) {
   exit();
 }
 
-?>  
-
-<?php include("../errors.php");
-  ?>
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
-  <link rel="shortcut icon" href="../logo.png">
-  <link rel="stylesheet" href="ucsc_2202_07/andum.lk/styles/style.css">
+  <title>Andum.lk - Order</title>
+  <link rel="shortcut icon" href="logo.png">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      width: 880px;
+      height: 500px;
+      margin-top: 86px;
+      margin-left: 270px;
+      /* background: #fafafafa; */
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px #fff;
+    }
+
+    .leftside {
+      position: absolute;
+      height: 500px;
+      border-radius: 10px;
+      width: 300px;
+      /* background-image: url('/ucsc_2202_07/andum.lk/images/d-01.jpg'); */
+      background-size: cover;
+    }
+
+    .p {
+      margin-left: 40px;
+      margin-top: 420px;
+      color: black;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .one {
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      float: left;
+      margin-left: 40px;
+      margin-right: 40px;
+      text-align: center;
+      margin-top: 9px;
+    }
+
+    .one:hover {
+      border: 2px solid black;
+      width: 30px;
+      height: 30px;
+      float: left;
+      text-align: center;
+      margin-top: 9px;
+    }
+
+    .text {
+      color: black;
+    }
+
+    .color-box {
+      background-color: pink;
+    }
+
+    .onee {
+      border: 1px solid black;
+      width: 42px;
+      font-size: 14px;
+      height: 22px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: pink;
+      width: 30px;
+      background-color: pink;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on1 {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: blue;
+      width: 30px;
+      background-color: blue;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on2 {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: black;
+      width: 30px;
+      background-color: black;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .onee:hover {
+      border: 2px solid black;
+      width: 42px;
+      height: 22px;
+      float: left;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .rightside {
+      width: 385px;
+      height: 500px;
+      border-radius: 10px;
+      float: right;
+      background: #fff;
+    }
+
+    .inside {
+      padding: 18px;
+    }
+
+    .cart-button {
+      padding: 9px 25px;
+      background-color: #EB2188;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      text-align: center;
+      -webkit-appearance: none;
+    }
+
+    .cart-button:hover {
+      color: black;
+    }
+
+    .second {
+      width: 50px;
+    }
+
+    .second:hover {
+      width: 50px;
+      background-color: #fab7cc;
+    }
+  </style>
 </head>
 
 <body>
@@ -145,8 +300,8 @@ if (!isset($_SESSION['nic'])) {
               <div class="dd_right">
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd_manage_order.php"><i class="fas fa-money"></i>sells</a></li>
+                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
@@ -167,6 +322,12 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
+<div class="add-new-position">
+  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
+</div>
+
+
+
 <div class="search-container">
         <form method="post">
           <div class="form-field-inline">
@@ -176,143 +337,80 @@ if (!isset($_SESSION['nic'])) {
         </form>
       </div>
 
-  <div class="fd-container-box">
-    <div class="side-bar-wrapper">
-      <ul class="sidebar">
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-            <div class="sidebar-icon">
-              <i class="fas fa-columns"></i>
-              <span class="sidebar-text">Dashboard</span>
-            </div>           
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="fd-profile.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-user-circle"></i>
-            <span class="sidebar-text">My Profile</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="design_showcase.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-tshirt"></i>
-            <span class="sidebar-text">My Designs</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="fd-manage-orders.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="sidebar-text">My Orders</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-comments"></i>
-            <span class="sidebar-text">Chat</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="fd-content-wrapper">
-      <div class=row>
-        <div class=col-4>
-          <div class="fd-block-1">
-            <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Total Orders</h3>
-          </div>
+
+      
+  <div class="container-box">
+  <?php
+  $selected_o_id = $_SESSION['selected_o_id'];
+  $nic = $_SESSION['nic'];
+  $sql = "SELECT * FROM fd_orders WHERE id=$selected_o_id";
+  $result = mysqli_query($db, $sql);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result)
+  ?>
+
+    <div class="main">
+      <div class="">
+        <div class="card-img">
+          
         </div>
-        <div class=col-4>
-          <div class="fd-block-2">
-          <h3 class="fd-block-font-size">200</h3>
-            <Br>
-            <h3>Product Views</h3>
-          </div>
-        </div>
-        <div class=col-4>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>New Messages</h3>
+      </div>
+      <div class="">
+        <div >
+          <h2>ORDER DETAILS</h2>
+          <div>
+            <form method="post">
+              <br>
+              <p style="color: black; font-size: 20px; margin-top:10px">Customer Name: <?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
+              <br>
+              <p style="color: black; font-size: 20px; margin-top:10px">Status: <?php echo $row["status"]?></p>
+              <br>
+              <div>
+                <div>
+                  
+                  <br>
+                  <br>
+                  
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-      <div class=row>
-        <div class=col-3>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Pending</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-2">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>On Going</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-1">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Completed</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-4">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Delivered</h3>
-          </div>
-        </div>
+    </div>
+
+
+  <!--measurement form-->
+  <div class="input-container">
+    <form method="post" action="order.php" style="max-width:1024px;margin:auto">
+      <h2 class="measure-headding">Measurements</h2>
+      
+     <div class="d-flex">
+        <!-- <lable for="other" style="">Other:</label> -->
+        <textarea name="message" rows="20" cols="50" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
       </div>
-      <div calss="row">
-    <table class="fd-table">
-    <tr class="fd-tr">
-      <th class="fd-th">Order Id</th>
-      <th class="fd-th">Date</th>
-      <th class="fd-th">Customer</th>
-      <th class="fd-th">Payment</th>
-    </tr>
-    <tr >
-      <td class="fd-th">Jill</td>
-      <td class="fd-th">Smith</td>
-      <td class="fd-th">50</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Eve</td>
-      <td class="fd-th">Jackson</td>
-      <td class="fd-th">94</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Adam</td>
-      <td class="fd-th">Johnson</td>
-      <td class="fd-th">67</td>
-    </tr>
-  </table>
 
-    </div>
-    </div>
+      <div class="search-container">
 
-    
+      <div class="form-field-inline">
+        <label for="searchname" class="field-label-inline">Submit order price: </label>
+        <input type="text" class="field-value-inline" name="" <?php if($row["status"]=="Accepted") echo "disabled"?>>
+      </div>
 
-  
+  </div>
+  <input type="hidden" class="field-value-inline" name="fd_order_id" value=<?php echo $row["id"] ?>>
 
-    <!-- </div> -->
-    
+      <center><button class="cart-button" type="submit" name="fd-order-accept" <?php if($row["status"]=="Accepted") echo "disabled"?>>Submit</button></center>
+    </form>
   </div>
 
-  <?php require("../footer.php")?>
 
+  <?php } ?>
+   
+  </div>
+
+  
+  <?php require("../footer.php") ?>
 </body>
+
 </html>

@@ -5,28 +5,42 @@ if (!isset($_SESSION['nic'])) {
   exit();
 }
 
-?>  
-
-<?php include("../errors.php");
-  ?>
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
-  <link rel="shortcut icon" href="../logo.png">
-  <link rel="stylesheet" href="ucsc_2202_07/andum.lk/styles/style.css">
+  <title>Andum.lk - Fashion Designer Manage Orders</title>
+  <link rel="shortcut icon" href="logo.png">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 99%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+  </style>
 </head>
 
 <body>
-
   <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
@@ -145,8 +159,8 @@ if (!isset($_SESSION['nic'])) {
               <div class="dd_right">
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd_manage_order.php"><i class="fas fa-money"></i>sells</a></li>
+                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="Manage_order.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
@@ -167,6 +181,10 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
+<div class="add-new-position">
+  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
+</div>
+
 <div class="search-container">
         <form method="post">
           <div class="form-field-inline">
@@ -176,143 +194,51 @@ if (!isset($_SESSION['nic'])) {
         </form>
       </div>
 
-  <div class="fd-container-box">
-    <div class="side-bar-wrapper">
-      <ul class="sidebar">
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-            <div class="sidebar-icon">
-              <i class="fas fa-columns"></i>
-              <span class="sidebar-text">Dashboard</span>
-            </div>           
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="fd-profile.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-user-circle"></i>
-            <span class="sidebar-text">My Profile</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="design_showcase.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-tshirt"></i>
-            <span class="sidebar-text">My Designs</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="fd-manage-orders.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="sidebar-text">My Orders</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-comments"></i>
-            <span class="sidebar-text">Chat</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-    
-    <div class="fd-content-wrapper">
-      <div class=row>
-        <div class=col-4>
-          <div class="fd-block-1">
-            <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Total Orders</h3>
-          </div>
-        </div>
-        <div class=col-4>
-          <div class="fd-block-2">
-          <h3 class="fd-block-font-size">200</h3>
-            <Br>
-            <h3>Product Views</h3>
-          </div>
-        </div>
-        <div class=col-4>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>New Messages</h3>
-          </div>
-        </div>
-      </div>
-      <div class=row>
-        <div class=col-3>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Pending</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-2">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>On Going</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-1">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Completed</h3>
-          </div>
-        </div>
-        <div class=col-3>
-          <div class="fd-block-4">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Delivered</h3>
-          </div>
-        </div>
-      </div>
-      <div calss="row">
-    <table class="fd-table">
-    <tr class="fd-tr">
-      <th class="fd-th">Order Id</th>
-      <th class="fd-th">Date</th>
-      <th class="fd-th">Customer</th>
-      <th class="fd-th">Payment</th>
-    </tr>
-    <tr >
-      <td class="fd-th">Jill</td>
-      <td class="fd-th">Smith</td>
-      <td class="fd-th">50</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Eve</td>
-      <td class="fd-th">Jackson</td>
-      <td class="fd-th">94</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Adam</td>
-      <td class="fd-th">Johnson</td>
-      <td class="fd-th">67</td>
-    </tr>
-  </table>
+  <div class="container-box">
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
 
-    </div>
-    </div>
+        <?php
 
-    
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic'";
+        $result = mysqli_query($db, $sql);
+        
 
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?fd_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+  </div>
+  </div>
   
 
-    <!-- </div> -->
-    
-  </div>
-
-  <?php require("../footer.php")?>
+<?php require("../footer.php")?>
 
 </body>
+
 </html>

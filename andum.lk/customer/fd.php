@@ -367,7 +367,7 @@ if (!isset($_SESSION['nic'])) {
         <form method="get" action="index.php" class="dress-showcase">
           <div class="fd-featured-card-item">
             <div class="card-img">
-              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
+              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
             </div>
             <div class="card-content">
             <div class="card-title"></div>
@@ -389,12 +389,18 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </form>
       </div>
-      <form action="" style="width:100%">
+      <form method="post" action="fd.php" style="width:100%">
         <div class="d-flex">
           <!-- <lable for="other" style="">Other:</label> -->
           <textarea name="other" rows="20" cols="50" placeholder="Your message to Fashion Designer" class="txt-area"></textarea>
         </div>
-        <button type="submit" class="casual-btn" name="hireT">Send</button>
+        <input type="hidden" value=<?php echo $row["nic"]; ?> name="fd_nic">
+        <input type="hidden" value=<?php echo $row["fname"]; ?> name="fd_fname">
+        <input type="hidden" value=<?php echo $row["lname"]; ?> name="fd_lname">
+        <input type="hidden" value=<?php echo $nic; ?> name="c_nic">
+        <input type="hidden" value=<?php echo $fname; ?> name="c_fname">
+        <input type="hidden" value=<?php echo $lname; ?> name="c_lname">
+        <button type="submit" class="casual-btn" name="hireFD">Send</button>
       </form>
       
       <?php } ?>
