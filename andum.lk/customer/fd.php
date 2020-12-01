@@ -274,8 +274,6 @@ if (!isset($_SESSION['nic'])) {
                 </ul>
               </div>             
             </ul>
-              
-
             </div>
             
           </li>
@@ -391,10 +389,14 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </form>
       </div>
-      <div class="d-flex">
+      <form action="" style="width:100%">
+        <div class="d-flex">
           <!-- <lable for="other" style="">Other:</label> -->
           <textarea name="other" rows="20" cols="50" placeholder="Your message to Fashion Designer" class="txt-area"></textarea>
         </div>
+        <button type="submit" class="casual-btn" name="hireT">Send</button>
+      </form>
+      
       <?php } ?>
     </div>
     
