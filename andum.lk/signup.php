@@ -118,12 +118,8 @@ require("server.php");
                 </ul>
               </div>             
             </ul>
-              
-
-            </div>
-            
+            </div>            
           </li>
-
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li>

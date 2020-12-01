@@ -176,6 +176,7 @@ if (!isset($_SESSION['nic'])) {
       this.classList.toggle("active");
     })
   </script>
+
   <div class="container-box">
     <h2>Cart</h2>
     <table>
@@ -198,41 +199,33 @@ if (!isset($_SESSION['nic'])) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-            <td><?php echo $row["order_id"] ?></td>
-            <td><?php echo $row["title"] ?></td>
-            <td>
-            <form action="cart.php" method='GET'>
-              <input type="number" value="<?php echo $row["quantity"]?>" name="quantity2" class="submit-quantity">
-              <input type="hidden" value="<?php echo $row["order_id"]?>" name="oid">
-              <input type="submit" value="Confirm Quantity" class="submit-button">
-            </form>
-            </td>
-            
-            
-            <td><?php echo $row["price"] ?></td>
-            <td><?php echo number_format($row["quantity"]*$row["price"],2);?></td>
-
-            <td>
-              
-            <form action="cart.php" method='GET'>
-              <input type="hidden" value="<?php echo $row["order_id"]?>" name="odid">
-              <input type="submit" value="Remove" class="submit-button">
-            </form>
-            </td>
+        <td><?php echo $row["order_id"] ?></td>
+        <td><?php echo $row["title"] ?></td>
+        <td>
+        <form action="cart.php" method='GET'>
+          <input type="number" value="<?php echo $row["quantity"]?>" name="quantity2" class="submit-quantity">
+          <input type="hidden" value="<?php echo $row["order_id"]?>" name="oid">
+          <input type="submit" value="Confirm Quantity" class="submit-button">
+        </form>
+        </td>            
+        <td><?php echo $row["price"] ?></td>
+        <td><?php echo number_format($row["quantity"]*$row["price"],2);?></td>
+        <td>              
+          <form action="cart.php" method='GET'>
+            <input type="hidden" value="<?php echo $row["order_id"]?>" name="odid">
+            <input type="submit" value="Remove" class="submit-button">
+          </form>
+        </td>
       </tr>
       
       <?php
-                    $total = $total + ($row["quantity"]*$row["price"]);
-                    }
-                ?>
-                <tr>
-                        <td colspan="4" align="right">Total</td>
-                        <td align="right"><?php echo number_format($total,2);?></td>
-                </tr>
-
-
-
-
+      $total = $total + ($row["quantity"]*$row["price"]);
+      }
+      ?>
+      <tr>
+              <td colspan="4" align="right">Total</td>
+              <td align="right"><?php echo number_format($total,2);?></td>
+      </tr>
     <?php
           
         } else {

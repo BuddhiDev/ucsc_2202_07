@@ -206,10 +206,10 @@ if (isset($_POST['addTocart'])) {
     }
 }
 
+//update quantity
 if (isset($_GET['oid'])) {
     $order_id = $_GET['oid'];
     $quantity2 = $_GET['quantity2'];
-
 
     $sql = "UPDATE cart SET quantity='$quantity2' WHERE order_id=$order_id";
     $result = mysqli_query($db, $sql);
@@ -220,10 +220,9 @@ if (isset($_GET['oid'])) {
     }
 }
 
+//delete a cart item
 if (isset($_GET['odid'])) {
     $order_id = $_GET['odid'];
-
-
     $sql = "DELETE FROM cart WHERE order_id=$order_id";
     $result = mysqli_query($db, $sql);
     if ($result) {
@@ -368,7 +367,7 @@ if(isset($_POST['add_product']))
   }
 }
 
-//search by a keyword
+// by a keyword
 if(isset($_POST['search'])){
  $search=true;
  $keyword= mysqli_real_escape_string($db, $_POST['q']);

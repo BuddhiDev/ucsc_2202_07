@@ -302,15 +302,15 @@ if (isset($_POST['update_fd'])) {
           <!-- <center>
           <img src="/ucsc_2202_07/andum.lk/images/pexels-joy-deb-1580270.jpg" alt="Jeny" style="width:25%"; >
         </center> -->
-        <div class="fd-form-container-block1">
-              <div class="profile-pic">
-                <div class="pic">
-                  <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
-                </div>        
-                <label for="profile_pictures"></label>
-                <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
-              </div>
+          <div class="fd-form-container-block1">
+            <div class="profile-pic">
+              <div class="pic">
+                <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
+              </div>        
+              <label for="profile_pictures"></label>
+              <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
             </div>
+          </div>
           <div class="form-field-inline">
             <label for="uname" class="field-label-inline">NIC Number</label>
             <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" readonly>

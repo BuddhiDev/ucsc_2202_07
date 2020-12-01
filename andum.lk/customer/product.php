@@ -4,14 +4,11 @@ if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Product</title>
@@ -180,12 +177,12 @@ if (!isset($_SESSION['nic'])) {
       background-color: #fab7cc;
     }
   </style>
-
+ 
 </head>
 
 <body>
 
- <header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -227,9 +224,7 @@ if (!isset($_SESSION['nic'])) {
                   </ul>
                 </div>
               </ul>
-            </div>
-              
-            
+            </div>          
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
@@ -260,34 +255,30 @@ if (!isset($_SESSION['nic'])) {
           <li class="dropdown">
             <a href="#">Kids</a>
             <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
+              <ul class="menu-area">
+                <div class=col-6>
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Boys</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Tank Tops</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Girls</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>             
+              </ul>
+            </div> 
           </li>
-
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
         </ul>
@@ -305,7 +296,6 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         </div>
@@ -343,7 +333,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-6">
         <div class="product-detail-box">
           <form method="post">
-            <p style="color: black; font-size: 30px; margin-top:10px"><?php echo $row["title"] ?></p>
+            <p style="color: black; font-size: 30px; margin-top:10px"><?php echo $row["title"]?></p>
             
             <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"] ?>.00</h4>
             
@@ -393,13 +383,8 @@ if (!isset($_SESSION['nic'])) {
                 <option value="">XXL</option>
                 <option value="">XXXL</option>
               </select>
-              </div>
-              
-              
+              </div> 
             </div>
-            
-            
-
             <div class="customized">
               <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
               <input type="hidden" value="<?php echo $nic ?> " name="c_nic">

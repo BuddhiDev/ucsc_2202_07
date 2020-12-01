@@ -260,11 +260,6 @@ require("../server.php");
             <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
             <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
           </div>
-
-
-
-    
-
           <div class="row">
       <!-- <div class="col-75">
         <input type="file" id="myimage" name="myimage" value=""> <br/>
