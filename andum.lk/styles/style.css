@@ -618,6 +618,7 @@ nav ul.menu-area ul li a:hover{
   .d-flex{
       display: flex;
       width: 100%;
+      align-items: center;
   }
 
   .f1{
@@ -652,7 +653,7 @@ nav ul.menu-area ul li a:hover{
 .txt-area{
     background-color: #ffffff;
     flex: 1;
-    margin: 10px;
+    margin: 20px 156px 20px 0px;
     padding: 10px;
     border-radius: 25px;
     border: 1px solid #ccc;
@@ -1257,6 +1258,85 @@ a{
     transition: all 0.3s ease 0s;
     text-align: center;
 }
+
+.order-detail-box{
+  background-color: #FFCDE5;
+    padding: 40px;
+    width: 25%;
+    margin: 40px 560px 40px 40px;
+    border-radius: 30px;
+}
+
+.order-input-container{
+  width: 92%;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  padding: 50px 60px 50px 60px;
+  margin: 40px;
+}
+
+.order-measure-headding{
+  margin: 40px 40px 40px 0px;
+}
+
+#form-2{
+  left: 450px;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+}
+
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* Style images */
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+
+
+
 
 /* .tailor-headding{
   padding: 200px 200px 0px 200px;

@@ -17,7 +17,6 @@ if (!isset($_SESSION['nic'])) {
   <title>Andum.lk - Order</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
@@ -158,6 +157,7 @@ if (!isset($_SESSION['nic'])) {
     .cart-button {
       padding: 9px 25px;
       background-color: #EB2188;
+      color: white;
       border: none;
       border-radius: 50px;
       cursor: pointer;
@@ -184,7 +184,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -321,50 +321,34 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <div class="container-box">
-  <?php
-  $selected_o_id = $_SESSION['selected_o_id'];
-  $nic = $_SESSION['nic'];
-  $sql = "SELECT * FROM t_orders WHERE id=$selected_o_id";
-  $result = mysqli_query($db, $sql);
-  if ($result) {
-    $row = mysqli_fetch_assoc($result)
-  ?>
+    <?php
+      $selected_o_id = $_SESSION['selected_o_id'];
+      $nic = $_SESSION['nic'];
+      $sql = "SELECT * FROM t_orders WHERE id=$selected_o_id";
+      $result = mysqli_query($db, $sql);
+      if ($result) 
+      {
+        $row = mysqli_fetch_assoc($result)
+        ?>
 
-    <div class="main">
-      <div class="">
-        <div class="card-img">
-          
+      <div class="order-detail-box">
+        <h2>ORDER DETAILS</h2>
+        <div>
+          <form method="post">
+            <p style="color: black; font-size: 20px; margin-top:10px">Tailor Name | &nbsp <?php echo $row["t_fname"]." ".$row["t_lname"] ?></p>
+            <p style="color: black; font-size: 20px; margin-top:10px">Status &nbsp &nbsp &nbsp &nbsp &nbsp | &nbsp <?php echo $row["status"]?></p>
+          </form>
         </div>
       </div>
-      <div class="">
-        <div >
-          <h2>ORDER DETAILS</h2>
-          <div>
-            <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px">Tailor Name: <?php echo $row["t_fname"]." ".$row["t_lname"] ?></p>
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px">Status: <?php echo $row["status"]?></p>
-              <br>
-              <div>
-                <div>
-                  
-                  <br>
-                  <br>
-                  
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
   <!--measurement form-->
-  <div class="input-container">
-    <form action="order.php" style="max-width:1024px;margin:auto">
-      <h2 class="measure-headding">Measurements</h2>
+  
+  <button class="cart-button" onclick="myFunction()">My Conversation</button>
+  <button class="cart-button" onclick="myFunction2()">My Measurements</button>
+  <div class="order-input-container" id="div-1">
+    <form action="order.php" id=form-1>
+      <h2 class="order-measure-headding">Measurements</h2>
       <div class="d-flex">
         <div class="f1">
           <lable for="type" >Category:</label>
@@ -569,10 +553,62 @@ if (!isset($_SESSION['nic'])) {
         <!-- <lable for="other" style="">Other:</label> -->
         <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
       </div>
-      <center><button class="cart-button" type="submit">Make Payment</button></center>
+      <div>
+        <button class="cart-button" type="submit">Make Payment</button>
+      </div>
+      
     </form>
   </div>
 
+  <div class="container" id=div-2>
+    <img src="/w3images/bandmember.jpg" alt="Avatar">
+    <p>Hello. How are you today?</p>
+    <span class="time-right">11:00</span>
+  </div>
+
+<!-- <div class="container darker">
+  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
+  <p>Hey! I'm fine. Thanks for asking!</p>
+  <span class="time-left">11:01</span>
+</div>
+
+<div class="container">
+  <img src="/w3images/bandmember.jpg" alt="Avatar">
+  <p>Sweet! So, what do you wanna do today?</p>
+  <span class="time-right">11:02</span>
+</div>
+
+<div class="container darker">
+  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
+  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+  <span class="time-left">11:05</span>
+</div> -->
+
+
+  <script>
+function myFunction() {
+  var x = document.getElementById("div-1");
+  var y = document.getElementById("div-2");
+  if (x.style.display === "none") {
+    y.style.display = "block";
+  } else {
+    x.style.display = "none";
+    y.style.display = "block";
+  }
+}
+
+function myFunction2() {
+  var x = document.getElementById("div-1");
+  var y = document.getElementById("div-2");
+  if (y.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    y.style.display = "none";
+    x.style.display = "block";
+  }
+}
+
+</script>
 
   <?php } ?>
 
