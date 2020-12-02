@@ -200,7 +200,10 @@
           <td><?php echo $row["contactno"] ?></td>
           <td>
             <div>
-              <a href="customer_view.php"><button class="view-button" name="view_user" >View</button></a>
+              <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+             
+             
+
             </div>
           </td>
           <td>
