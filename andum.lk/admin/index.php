@@ -194,26 +194,26 @@ if (!isset($_SESSION['nic'])) {
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="my_showcase.php">
+          <a class="sidebar-link" href="Manage_order.php">
           <div class="sidebar-icon">
-            <i class="fas fa-tshirt"></i>
-            <span class="sidebar-text">My Dress Showcase</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="add_product.php">
-          <div class="sidebar-icon">
-            <i class="fa fa-plus-circle"></i>
-            <span class="sidebar-text">Add new dress</span>
+            <i class="fas fa-users"></i>
+            <span class="sidebar-text">Customer List</span>
             </div>
           </a>
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link" href="Manage_order.php">
           <div class="sidebar-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="sidebar-text">My Orders</span>
+            <i class="fas fa-users"></i>
+            <span class="sidebar-text">Tailor List</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="Manage_order.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-users"></i>
+            <span class="sidebar-text">Fashion Designer List</span>
             </div>
           </a>
         </li>
@@ -221,8 +221,32 @@ if (!isset($_SESSION['nic'])) {
           <a class="sidebar-link" href="index.php">
           <div class="sidebar-icon">
             <i class="fas fa-comments"></i>
-            <span class="sidebar-text">Chat</span>
+            <span class="sidebar-text">Feedback</span>
             </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+          <i class="fas fa-bell"></i>
+            <span class="sidebar-text">Notifications</span>
+          </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-users"></i>
+            <span class="sidebar-text">Deleted Users</span>
+          </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="index.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-download"></i>
+            <span class="sidebar-text">Download User List</span>
+          </div>
           </a>
         </li>
       </ul>
@@ -230,55 +254,32 @@ if (!isset($_SESSION['nic'])) {
     
     <div class="fd-content-wrapper">
       <div class=row>
-        <div class=col-4>
-          <div class="fd-block-1">
-            <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>Total Orders</h3>
-          </div>
-        </div>
-        <div class=col-4>
-          <div class="fd-block-2">
-          <h3 class="fd-block-font-size">200</h3>
-            <Br>
-            <h3>Product Views</h3>
-          </div>
-        </div>
-        <div class=col-4>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
-            <Br>
-            <h3>New Messages</h3>
-          </div>
-        </div>
-      </div>
-      <div class=row>
         <div class=col-3>
           <div class="fd-block-3">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>Pending</h3>
+            <h3>Total Users</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-2">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>On Going</h3>
+            <h3>Feedback Messages</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-1">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>Completed</h3>
+            <h3>Notifications</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-4">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
-            <h3>Delivered</h3>
+            <h3>Deleted Users</h3>
           </div>
         </div>
       </div>

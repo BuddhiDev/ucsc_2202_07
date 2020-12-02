@@ -34,7 +34,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="tailor-dashboard.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
@@ -101,35 +101,33 @@ if (!isset($_SESSION['nic'])) {
           <li class="dropdown">
             <a href="#">Kids</a>
             <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
+              <ul class="menu-area">
+                <div class=col-6>
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Boys</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Tank Tops</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Girls</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>             
+              </ul>
             </div>
             
           </li>
 
-          <li><a href="hire_tailor.php">Explore Tailors</a></li>
+          <!-- <li><a href="hire_tailor.php">Explore Tailors</a></li> -->
           <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li>
           

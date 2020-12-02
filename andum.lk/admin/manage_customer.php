@@ -13,18 +13,15 @@
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
-
   <style>
     table {
-      border-collapse: collapse;
-      border-spacing: 0;
-      width: 100%;
-      border: 1px solid #ddd;
+      border-spacing: 10px;
+    width: 100%;
     }
 
     th,
     td {
-      text-align: left;
+      text-align: center;
       padding: 8px;
     }
 
@@ -140,16 +137,6 @@
 
           <li><a href="hire_tailor.php">Explore Tailors</a></li>
           <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
-          <li>
-          <div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
-          </li>
         </ul>
       </div>
 
@@ -159,10 +146,8 @@
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Purchases</a></li>
-                  <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
+                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Orders</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -175,48 +160,57 @@
     </nav>
   </header>
   <div class="container-box">
+    <div class="fd-container-box">
+      <div class="row">
+      <div class="admin-search-container">
+            <form method="post">
+              <div class="form-field-inline">
+                <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+                <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </div>
+            </form>
+          </div>
+
+      </div>
     <div style="overflow-x:auto;">
       <table>
         <tr>
           <th>Nic</th>
-          <th>First name</th>
-          <th>Last name</th>
+          <th>Name</th>
           <th>Email</th>
-          <th>Address</th>
-          <th>Postalcode</th>
+          <th>Phone</th>
           <th>Profile</th>
+          <th></th>
         </tr>
         <tr>
         
-        <?php
+          <?php
 
-          $sql = "SELECT * FROM users WHERE type='1'";
-          $result = mysqli_query($db, $sql);
+            $sql = "SELECT * FROM users WHERE type='1'";
+            $result = mysqli_query($db, $sql);
 
-          if (mysqli_num_rows($result) > 0) {
+            if (mysqli_num_rows($result) > 0) {
 
-            while ($row = mysqli_fetch_assoc($result)) {
-          ?>
+              while ($row = mysqli_fetch_assoc($result)) {
+            ?>
 
-
-
-
-
-        <td><?php echo $row["nic"] ?></td>
-              <td><?php echo $row["fname"] ?></td>
-              <td><?php echo $row["lname"] ?></td>
-              <td><?php echo $row["email"] ?></td>
-              <td><?php echo $row["address"] ?></td>
-              <td><?php echo $row["postalcode"] ?></td>
-              <td>
-              <td>
-                <div>
-                  <a class="cta" href="#"><button>view profile</button></a>
-                </div>
-              </td>
+          <td><?php echo $row["nic"] ?></td>
+          <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
+          <td><?php echo $row["email"] ?></td>
+          <td><?php echo $row["contactno"] ?></td>
+          <td>
+            <div>
+              <a href="#"><button class="view-button" >View</button></a>
+            </div>
+          </td>
+          <td>
+            <div>
+              <a class="cta" href="#"><button class="view-button">Delete</button></a>
+            </div>
+          </td>
 
 
-              </tr>
+        </tr>
         <?php
                 }
               } else {
@@ -225,6 +219,9 @@
         ?>
       </table>
     </div>
+
+    </div>
+    
   </div>
 
 
