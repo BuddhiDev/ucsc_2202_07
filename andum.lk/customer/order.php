@@ -560,29 +560,66 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
 
-  <div class="container" id=div-2>
-    <img src="/w3images/bandmember.jpg" alt="Avatar">
-    <p>Hello. How are you today?</p>
-    <span class="time-right">11:00</span>
+  <div id=div-2>
+    
+
+    <!-- <div id="conversation-list">
+      <div class="conversation active">
+        <img src="" alt="">
+        <div class="title-text">
+          Thashwini Wattuhewa
+        </div>
+        <div class="created-date">
+         December 3
+        </div>
+        <div class="conversation-message">
+          AHi
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div id="new-message-cotainer">
+      <a href="#">+</a>
+    </div> -->
+
+    <!-- <div class="chat-row">
+      <div class="chat-name">
+        <span>Thashwini Wattuhewa</span>
+      </div>
+      
+      <div class="chat-right">
+        <div id="chat-search-container">
+          <input type="text" placeholder="Search" />
+        </div>
+        <img src="../images/icons/delete.svg" alt="Delete Conversation" class="delete-image">
+      </div>
+      
+    </div> -->
+
+    <!-- <div id="chat-message-list">
+      <div class="message-row you-message">
+        <div class="message-content">
+        <img src="" alt="">
+        <div class="message-text">Ok</div>
+        <div class="message-time">December 3</div>
+        </div>      
+      </div>
+      <div class="message-row other-message">
+        <div class="message-content">
+        <div class="message-text">Yeah</div>
+        <div class="message-time">December 3</div>
+        </div>
+        
+      </div>
+
+    </div>
+    
+    <div id="chat-form">
+    </div> -->
+
   </div>
 
-<!-- <div class="container darker">
-  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
-  <p>Hey! I'm fine. Thanks for asking!</p>
-  <span class="time-left">11:01</span>
-</div>
-
-<div class="container">
-  <img src="/w3images/bandmember.jpg" alt="Avatar">
-  <p>Sweet! So, what do you wanna do today?</p>
-  <span class="time-right">11:02</span>
-</div>
-
-<div class="container darker">
-  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
-  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-  <span class="time-left">11:05</span>
-</div> -->
+  
 
 
   <script>
