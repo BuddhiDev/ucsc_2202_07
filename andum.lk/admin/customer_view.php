@@ -316,11 +316,11 @@ if (!isset($_SESSION['nic'])) {
   
   <div class="container-box">
   <?php
-  $selected_t_nic = $_SESSION['selected_t_nic'];
+  $selected_c_id = $_SESSION['selected_c_id'];
   $nic = $_SESSION['nic'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
-  $sql = "SELECT * FROM users WHERE nic='$selected_t_nic' ";
+  $sql = "SELECT * FROM users WHERE nic='$selected_c_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result);
@@ -329,7 +329,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          <img src="/ucsc_2202_07/andum.lk/customer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
       </div>
 
