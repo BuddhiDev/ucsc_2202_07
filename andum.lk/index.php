@@ -120,6 +120,7 @@
 
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
           <li><a href="customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li><a href="contact_us.php">Contact Us</a></li>
           <li>
           
           </li>

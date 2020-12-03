@@ -7,21 +7,19 @@ require("server.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andum.lk - Sign Up</title>
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+    <title>Andum.lk</title>
+    <!-- Page-icon -->
+    <link rel="shortcut icon" href="logo.png">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
-    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
-    <style>
-    /*.option{
-      background-color: #EB2188;
-      padding: 15px 50px;
-      border-radius: 50px;
-
-    }*/
-    </style>
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+    <!-- <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css"> -->
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/lightslider.css">
+    <script type="text/javascript" src="/ucsc_2202_07/andum.lk/jquery.js"></script>
+    <script type="text/javascript" src="/ucsc_2202_07/andum.lk/lightslider.js"></script>
+    
 </head>
 <body>
-  <div class="box">
   <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
@@ -118,13 +116,15 @@ require("server.php");
                 </ul>
               </div>             
             </ul>
-            </div>            
+              
+
+            </div>
+            
           </li>
+
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
-          <li>
-          
-          </li>
+          <li><a href="customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li><a href="contact_us.php">Contact Us</a></li>
         </ul>
       </div>
       <div class="box">
@@ -135,88 +135,70 @@ require("server.php");
       </div>
     </nav>
   </header>
-  </div>
+  <div class="container-box">
+      <div class="row">
+        <div class="col-8">
+            <form action="contact_us.php" method="post">
 
-  <form action="signup.php" method="post">
-        <!-- errors display -->
-            <?php include("errors.php");
-            ?>
-        <div class="login-container">
+                <!-- errors display -->
+                <?php include("errors.php");
+                ?>
 
-          <div class="form-field-inline">
-            <label for="uname" class="field-label-inline">NIC Number</label>
-            <input type="text" class="field-value-inline" name="nic" required>
-          </div>
+                <div class="contact-us-container">
+                    <div class="form-field-inline">
+                    <label for="uname" class="field-label-inline">What is Your Issue</label>
+                    <input type="text" class="field-value-inline" name="issue" required>
+                    </div>
 
-          <div class="form-field-inline">
-            <label for="email" class="field-label-inline"><b>Email Address</b></label>
-            <input type="text" class="field-value-inline" name="email" required>
-          </div>
+                    <div class="form-field-inline">
+                    <label for="fname" class="field-label-inline"><b>Your Name</b></label>
+                    <input type="text" class="field-value-inline" name="cust_name" required>
+                    </div>
 
-          <div class="form-field-inline">
-            <label for="fname" class="field-label-inline"><b>First Name</b></label>
-            <input type="text" class="field-value-inline" name="fname" required>
-          </div>
+                    <div class="form-field-inline">
+                    <label for="email" class="field-label-inline"><b>Email Address</b></label>
+                    <input type="text" class="field-value-inline" name="email" required>
+                    </div>
 
-          <div class="form-field-inline">
-            <label for="lname" class="field-label-inline"><b>Last Name</b></label>
-            <input type="text" class="field-value-inline" name="lname" required>
-          </div>
+                    <div class="form-field-inline">
+                    <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
+                    <input type="text" class="field-value-inline" name="contactno">
+                    </div>
 
-          <div class="form-field-inline">
-            <label for="password" class="field-label-inline"><b>Choose Passsword</b></label>
-            <input type="password" class="field-value-inline" name="password" required>
-          </div>
+                    <div class="form-field-inline">
+                    <label for="address" class="field-label-inline"><b>Message</b></label>
+                    <textarea name="c-msg" rows="5" cols="50" placeholder="" class="txt-area2"></textarea>
+                    </div>
 
-          <div class="form-field-inline">
-            <label for="c_password" class="field-label-inline"><b>Re-enter Password</b></label>
-            <input type="password" class="field-value-inline" name="c_password" required>
-          </div>
+                    <div class="btn-panel-center">
+                    <button class="loginbutton btn-full-w" type="submit" name="message_send">Submit</button>
+                    </div>
+                </div>
 
-          <div class="form-field-inline">
-            <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
-            <input type="text" class="field-value-inline" name="contactno">
-          </div>
-
-          <div class="form-field-inline">
-            <label for="address" class="field-label-inline"><b>Address</b></label>
-            <input type="text" class="field-value-inline" name="address">
-          </div>
-
-          <div class="form-field-inline">
-            <label for="postal" class="field-label-inline"><b>Postal Code</b></label>
-            <input type="text" class="field-value-inline" name="postal">
-          </div>
-
-          <div class="form-field-inline">
-            <label for="utype" class="field-label-inline"><b>User Type</b></label>
-            <!-- <input type="text" class="field-value-inline" name="utype" required> -->
-
-            <select class="option" name="Usertype" id="user">
-              <option value="1">Customer</option>
-              <option value="0">Tailor</option>
-              <option value="2">Fashion designer</option>
-            </select>
-
-          </div>
-
-
-        <!-- -->
-        <!-- -->
-        <!-- -->
-          <div class="btn-panel-center">
-            <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
-            <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="register">SIGN UP </button>
-          </div>
-
-          <!-- <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label> -->
+            </form>
+        </div>
+        <div class="col-4">
+            <div class="contact-detail-box">
+                <div>
+                    <div class="contact-text1">Customer Care Hotline</div>
+                    <div class="contact-text2">+9477123456</div>
+                    <div class="contact-text1">Address</div>
+                    <div></div>
+                </div>
+                
+                
+            </div>
+            <div></div>
         </div>
 
-  </form>
+      </div>
+  
+  </div>
+ 
 
-<?php require("footer.php")?>
+  <!-- add a footer -->
+  <?php require("footer.php")?>
+
+  
 </body>
 </html>
