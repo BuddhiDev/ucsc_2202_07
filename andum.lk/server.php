@@ -233,6 +233,22 @@ if (isset($_POST['addTocart'])) {
     }
 }
 
+//add chat message on conversations
+if (isset($_POST['chatBtn'])) {
+    $s_nic = mysqli_real_escape_string($db, $_POST['s_nic']);
+    $r_nic = mysqli_real_escape_string($db, $_POST['r_nic']);
+    $msg = mysqli_real_escape_string($db, $_POST['msg']);
+    $type = mysqli_real_escape_string($db, $_POST['type']);
+    $date = date('Y-m-d H:i:s');
+
+    $sql = "INSERT INTO conversations (sender_nic, reciever_nic, message, type, date) VALUES ('$s_nic','$$r_nic','$msg','$type','$date')";
+    $result = mysqli_query($db, $sql);
+    if ($result) {
+    } else {
+        array_push($errors, "Message send failed, try again later");
+    }
+}
+
 //update quantity
 if (isset($_GET['oid'])) {
     $order_id = $_GET['oid'];
