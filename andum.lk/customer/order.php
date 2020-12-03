@@ -561,26 +561,55 @@ if (!isset($_SESSION['nic'])) {
   </div>
 
   <div id=div-2>
-    
 
-    <!-- <div id="conversation-list">
+  <div class="d-flex">
+        <!-- <lable for="other" style="">Other:</label> -->
+        <form method="post" action="order.php">
+          <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
+          <input type="hidden" name="r_nic" value=<?php echo $row["t_nic"] ?>>
+          <input type="hidden" name="type" value="1">
+        <textarea name="msg" rows="5" cols="50" placeholder="" class="txt-area"></textarea>
+      </div>
+      <div>
+        <button class="cart-button" type="submit" name="chatBtn">Send</button>
+      </form>
+      </div>
+      <br/><br/>
+
+      <?php } ?>
+
+<!-- retrieve messages from conversations -->
+<?php
+      $sql_chat = "SELECT * FROM conversations c INNER JOIN users u WHERE c.type=1  AND c.sender_nic='$nic' AND c.sender_nic=u.nic" ;
+      $result_chat = mysqli_query($db, $sql_chat);
+      if ($result_chat) 
+      {
+        while($row_chat = mysqli_fetch_assoc($result_chat))
+        {
+
+?>
+
+
+
+<div id="conversation-list">
       <div class="conversation active">
         <img src="" alt="">
         <div class="title-text">
-          Thashwini Wattuhewa
+        <?php echo $row_chat["fname"]." ".$row_chat["lname"] ?>
         </div>
         <div class="created-date">
-         December 3
+        <?php echo $row_chat["date"] ?>
         </div>
         <div class="conversation-message">
-          AHi
+        <?php echo $row_chat["message"] ?>
         </div>
       </div>
-    </div> -->
+    </div>
 
-    <!-- <div id="new-message-cotainer">
-      <a href="#">+</a>
-    </div> -->
+    <?php } } ?>
+  
+
+
 
     <!-- <div class="chat-row">
       <div class="chat-name">
@@ -594,9 +623,9 @@ if (!isset($_SESSION['nic'])) {
         <img src="../images/icons/delete.svg" alt="Delete Conversation" class="delete-image">
       </div>
       
-    </div> -->
+    </div>
 
-    <!-- <div id="chat-message-list">
+    <div id="chat-message-list">
       <div class="message-row you-message">
         <div class="message-content">
         <img src="" alt="">
@@ -647,7 +676,7 @@ function myFunction2() {
 
 </script>
 
-  <?php } ?>
+
 
   </div>
 
