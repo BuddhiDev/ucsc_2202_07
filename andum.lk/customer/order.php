@@ -332,286 +332,283 @@ if (!isset($_SESSION['nic'])) {
         $row = mysqli_fetch_assoc($result)
         ?>
 
-      <div class="order-detail-box">
-        <h2>ORDER DETAILS</h2>
-        <div>
-          <form method="post">
-            <p style="color: black; font-size: 20px; margin-top:10px">Tailor Name | &nbsp <?php echo $row["t_fname"]." ".$row["t_lname"] ?></p>
-            <p style="color: black; font-size: 20px; margin-top:10px">Status &nbsp &nbsp &nbsp &nbsp &nbsp | &nbsp <?php echo $row["status"]?></p>
+        <div class="order-detail-box">
+          <h2>ORDER DETAILS</h2>
+          <div>
+            <form method="post">
+              <p style="color: black; font-size: 20px; margin-top:10px">Tailor Name | &nbsp <?php echo $row["t_fname"]." ".$row["t_lname"] ?></p>
+              <p style="color: black; font-size: 20px; margin-top:10px">Status &nbsp &nbsp &nbsp &nbsp &nbsp | &nbsp <?php echo $row["status"]?></p>
+            </form>
+          </div>
+        </div>
+
+
+        <!--measurement form-->
+  
+        <button class="cart-button" onclick="myFunction()">My Conversation</button>
+        <button class="cart-button" onclick="myFunction2()">My Measurements</button>
+        <div class="order-input-container" id="div-1">
+          <form action="order.php" id=form-1>
+            <h2 class="order-measure-headding">Measurements</h2>
+            <div class="d-flex">
+              <div class="f1">
+                <lable for="type" >Category:</label>
+                <img src="" class="image">
+                    <!-- </div>
+                    <div class="f1"> -->
+                <select class="option" name="Unit" id="unit" value="<?php echo $row["category"]?>" disabled >
+                <optgroup label="Ladies wear">
+                    <option value="l-blouse">Blouse</option>
+                    <option value="l-skirt">skirt</option>
+                    <option value="l-frock">frock</option>
+                    <option value="l-short">Short</option>
+                    <option value="l-trouser">Trouser</option>
+                    <option value="l-tshirt">T-Shirt</option>
+                    <option value="l-partyfrock">Party Frock</option>
+                    <option value="l-saree">Saree</option>
+                    <option value="l-bridaldress">Bridal Dress</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Material" name="material" value="<?php echo $row["material"]?>" disabled >
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Color" name="color" value="<?php echo $row["color"]?>" disabled >
+                  </div>                             
+                </div>
+              </div>
+            </div> 
+
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card-img">
+                  <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+                </div>
+                <div class="measure-card-value">
+                  <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                  <input class="input-field" type="text" placeholder="Neck" name="neck" value="<?php echo $row["neck"]?>" disabled >
+                  <select class="option" name="Unit" id="unit" style="" disabled>
+                    <option>in</option>
+                    <option>cm</option>
+                  </select>
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card-img">
+                  <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
+                </div>
+                <div class="measure-card-value">
+                  <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                  <input class="input-field" type="text" placeholder="Chest" name="chest" value="<?php echo $row["chest"]?>" disabled >
+                  <select class="option" name="Unit" id="unit" style="" disabled>
+                  <option>in</option>
+                    <option>cm</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+                              
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Waist" name="waist" value="<?php echo $row["waist"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style="" disabled>
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/realhip-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Seat" name="seat" value="<?php echo $row["seat"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style="" disabled>
+                    <option>in</option>
+                    <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/shirtl-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Shirt Length" name="shirt_length" value="<?php echo $row["shirt_length"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style="" disabled>
+                    <option>in</option>
+                    <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/back-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulder_width" value="<?php echo $row["shoulder_width"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style="" disabled> 
+                    <option>in</option>
+                    <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/arm-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Arm Length" name="arm_length" value="<?php echo $row["arm_length"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style="" disabled>
+                    <option>in</option>
+                    <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/cuff-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Wrist" name="wrist" value="<?php echo $row["wrist"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style=""disabled>
+                    <option>in</option>
+                    <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/bicep-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Biceps" name="biceps" value="<?php echo $row["biceps"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style="" disabled>
+                    <option>in</option>
+                    <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/hip-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
+                    <input class="input-field" type="text" placeholder="Hip" name="hip" value="<?php echo $row["hip"]?>" disabled >
+                    <select class="option" name="Unit" id="unit" style="" disabled>
+                    <option>in</option>
+                    <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex">
+              <!-- <lable for="other" style="">Other:</label> -->
+              <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
+            </div>
+            <div>
+              <button class="cart-button" type="submit">Make Payment</button>
+            </div>
+            
           </form>
         </div>
-      </div>
 
+        <div id=div-2>
+          <div class="d-flex">
+            <!-- <lable for="other" style="">Other:</label> -->
+            <form method="post" action="order.php">
+              <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
+              <input type="hidden" name="r_nic" value=<?php echo $row["t_nic"] ?>>
+              <input type="hidden" name="type" value="1">
+              <textarea name="msg" rows="5" cols="50" placeholder="" class="txt-area"></textarea>
+              <button class="cart-button" type="submit" name="chatBtn">Send</button>
+            </form>
+          </div>
 
-  <!--measurement form-->
-  
-  <button class="cart-button" onclick="myFunction()">My Conversation</button>
-  <button class="cart-button" onclick="myFunction2()">My Measurements</button>
-  <div class="order-input-container" id="div-1">
-    <form action="order.php" id=form-1>
-      <h2 class="order-measure-headding">Measurements</h2>
-      <div class="d-flex">
-        <div class="f1">
-          <lable for="type" >Category:</label>
-          <img src="" class="image">
-              <!-- </div>
-              <div class="f1"> -->
-          <select class="option" name="Unit" id="unit" value="<?php echo $row["category"]?>" disabled >
-          <optgroup label="Ladies wear">
-              <option value="l-blouse">Blouse</option>
-              <option value="l-skirt">skirt</option>
-              <option value="l-frock">frock</option>
-              <option value="l-short">Short</option>
-              <option value="l-trouser">Trouser</option>
-              <option value="l-tshirt">T-Shirt</option>
-              <option value="l-partyfrock">Party Frock</option>
-              <option value="l-saree">Saree</option>
-              <option value="l-bridaldress">Bridal Dress</option>
-            </optgroup>
-          </select>
-        </div>
+          <?php
+      } 
+          ?>
 
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Material" name="material" value="<?php echo $row["material"]?>" disabled >
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Color" name="color" value="<?php echo $row["color"]?>" disabled >
-            </div>                             
-          </div>
-        </div>
-      </div> 
-
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
-          </div>
-          <div class="measure-card-value">
-            <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-            <input class="input-field" type="text" placeholder="Neck" name="neck" value="<?php echo $row["neck"]?>" disabled >
-            <select class="option" name="Unit" id="unit" style="" disabled>
-              <option>in</option>
-              <option>cm</option>
-            </select>
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
-          </div>
-          <div class="measure-card-value">
-            <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-            <input class="input-field" type="text" placeholder="Chest" name="chest" value="<?php echo $row["chest"]?>" disabled >
-            <select class="option" name="Unit" id="unit" style="" disabled>
-            <option>in</option>
-              <option>cm</option>
-            </select>
-          </div>
-        </div>
-      </div>
-                        
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Waist" name="waist" value="<?php echo $row["waist"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style="" disabled>
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/realhip-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Seat" name="seat" value="<?php echo $row["seat"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style="" disabled>
-              <option>in</option>
-              <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/shirtl-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Shirt Length" name="shirt_length" value="<?php echo $row["shirt_length"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style="" disabled>
-              <option>in</option>
-              <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/back-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulder_width" value="<?php echo $row["shoulder_width"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style="" disabled> 
-              <option>in</option>
-              <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/arm-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Arm Length" name="arm_length" value="<?php echo $row["arm_length"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style="" disabled>
-              <option>in</option>
-              <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/cuff-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Wrist" name="wrist" value="<?php echo $row["wrist"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style=""disabled>
-              <option>in</option>
-              <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/bicep-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Biceps" name="biceps" value="<?php echo $row["biceps"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style="" disabled>
-              <option>in</option>
-              <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/hip-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <!-- <lable for="neck" class="input-field" style="">Neck:</label> -->
-              <input class="input-field" type="text" placeholder="Hip" name="hip" value="<?php echo $row["hip"]?>" disabled >
-              <select class="option" name="Unit" id="unit" style="" disabled>
-              <option>in</option>
-              <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex">
-        <!-- <lable for="other" style="">Other:</label> -->
-        <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
-      </div>
-      <div>
-        <button class="cart-button" type="submit">Make Payment</button>
-      </div>
-      
-    </form>
-  </div>
-
-  <div id=div-2>
-
-  <div class="d-flex">
-        <!-- <lable for="other" style="">Other:</label> -->
-        <form method="post" action="order.php">
-          <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
-          <input type="hidden" name="r_nic" value=<?php echo $row["t_nic"] ?>>
-          <input type="hidden" name="type" value="1">
-        <textarea name="msg" rows="5" cols="50" placeholder="" class="txt-area"></textarea>
-      </div>
-      <div>
-        <button class="cart-button" type="submit" name="chatBtn">Send</button>
-      </form>
-      </div>
-      <br/><br/>
-
-      <?php } ?>
-
-<!-- retrieve messages from conversations -->
-<?php
-      $sql_chat = "SELECT * FROM conversations c INNER JOIN users u WHERE c.type=1  AND c.sender_nic='$nic' AND c.sender_nic=u.nic" ;
-      $result_chat = mysqli_query($db, $sql_chat);
-      if ($result_chat) 
-      {
-        while($row_chat = mysqli_fetch_assoc($result_chat))
+      <!-- retrieve messages from conversations -->
+      <?php
+        $sql_chat = "SELECT * FROM conversations c INNER JOIN users u WHERE c.type=1  AND c.sender_nic='$nic' AND c.sender_nic=u.nic" ;
+        $result_chat = mysqli_query($db, $sql_chat);
+        if ($result_chat) 
         {
+          while($row_chat = mysqli_fetch_assoc($result_chat))
+          {
+      ?>
+            <div id="chat-message-list">
+              <div class="message-row you-message">
+                <img src="" alt="">
+                <div class="message-content">
+                  <?php echo $row_chat["fname"]." ".$row_chat["lname"] ?>
+                </div>
+                <div class="message-content">
+                <div class="message-time">
+                  <?php echo $row_chat["date"] ?>
+                </div>
+                <div class="message-text">
+                  <?php echo $row_chat["message"] ?>
+                </div>
+                </div>
+                
+              </div>
+            </div>
 
-?>
-
-
-
-<div id="conversation-list">
-      <div class="conversation active">
-        <img src="" alt="">
-        <div class="title-text">
-        <?php echo $row_chat["fname"]." ".$row_chat["lname"] ?>
-        </div>
-        <div class="created-date">
-        <?php echo $row_chat["date"] ?>
-        </div>
-        <div class="conversation-message">
-        <?php echo $row_chat["message"] ?>
-        </div>
-      </div>
-    </div>
-
-    <?php } } ?>
+            <?php 
+          }
+        }
+            ?>
   
-
-
-
     <!-- <div class="chat-row">
       <div class="chat-name">
         <span>Thashwini Wattuhewa</span>
@@ -622,26 +619,23 @@ if (!isset($_SESSION['nic'])) {
           <input type="text" placeholder="Search" />
         </div>
         <img src="../images/icons/delete.svg" alt="Delete Conversation" class="delete-image">
-      </div>
-      
+      </div>      
     </div>
 
     <div id="chat-message-list">
       <div class="message-row you-message">
         <div class="message-content">
-        <img src="" alt="">
-        <div class="message-text">Ok</div>
-        <div class="message-time">December 3</div>
+          <img src="" alt="">
+          <div class="message-text">Ok</div>
+          <div class="message-time">December 3</div>
         </div>      
       </div>
       <div class="message-row other-message">
         <div class="message-content">
         <div class="message-text">Yeah</div>
         <div class="message-time">December 3</div>
-        </div>
-        
+        </div>        
       </div>
-
     </div>
     
     <div id="chat-form">
@@ -649,33 +643,37 @@ if (!isset($_SESSION['nic'])) {
 
   </div>
 
-  
+    <script>
+      function myFunction() 
+      {
+        var x = document.getElementById("div-1");
+        var y = document.getElementById("div-2");
+        if (x.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+      }
 
-
-  <script>
-function myFunction() {
-  var x = document.getElementById("div-1");
-  var y = document.getElementById("div-2");
-  if (x.style.display === "none") {
-    y.style.display = "block";
-  } else {
-    x.style.display = "none";
-    y.style.display = "block";
-  }
-}
-
-function myFunction2() {
-  var x = document.getElementById("div-1");
-  var y = document.getElementById("div-2");
-  if (y.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    y.style.display = "none";
-    x.style.display = "block";
-  }
-}
-
-</script>
+      function myFunction2() 
+      {
+        var x = document.getElementById("div-1");
+        var y = document.getElementById("div-2");
+        if (y.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          x.style.display = "block";
+        }
+      }
+    </script>
 
 
 
