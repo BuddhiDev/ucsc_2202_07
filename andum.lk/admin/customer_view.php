@@ -317,7 +317,7 @@ if (!isset($_SESSION['nic'])) {
   <div class="container-box">
   <?php
   $selected_c_id = $_SESSION['selected_c_id'];
-  $nic = $_SESSION['nic'];
+  $nic = $_SESSION['selected_c_id'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
   $sql = "SELECT * FROM users WHERE nic='$selected_c_id' ";
