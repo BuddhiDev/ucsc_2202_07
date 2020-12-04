@@ -355,7 +355,7 @@ if (!isset($_SESSION['nic'])) {
           
         </div>
       </div>
-      <div class="">
+      <div class="order-detail-box">
         <div >
           <h2>ORDER DETAILS</h2>
           <div>
@@ -374,14 +374,21 @@ if (!isset($_SESSION['nic'])) {
                 </div>
               </div>
             </form>
+            <form>
+            <p style="color: black; font-size: 20px; margin-top:10px">Change Status:</p><br/>
+  <?php if($row["status"]=="Accepted"){?><button class="cart-button">WORKING ON</button><?php } ?> 
+  <br/><br/>
+  <?php if($row["status"]=="Working On"){?><button class="cart-button">DELIVERED</button> <?php } ?> 
+            </form>
           </div>
         </div>
       </div>
     </div>
 
-
+    <button class="cart-button" onclick="myFunction()">My Conversation</button>
+    <button class="cart-button" onclick="myFunction2()">My Measurements</button>
   <!--measurement form-->
-  <div class="input-container">
+  <div class="input-container" id="div-1">
     <form method="post" action="order.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Measurements</h2>
       <div class="d-flex">
@@ -604,8 +611,88 @@ if (!isset($_SESSION['nic'])) {
   </div>
 
 
+  <div id=div-2>
+          <div class="d-flex">
+            <!-- <lable for="other" style="">Other:</label> -->
+            <form method="post" action="order.php">
+              <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
+              <input type="hidden" name="r_nic" value=<?php echo $row["c_nic"] ?>>
+              <input type="hidden" name="type" value="1">
+              <textarea name="msg" rows="5" cols="50" placeholder="" class="txt-area"></textarea>
+              <button class="cart-button" type="submit" name="chatBtn">Send</button>
+            </form>
+          </div>
+
   <?php } ?>
    
+      <!-- retrieve messages from conversations -->
+      <?php
+        $sql_chat = "SELECT * FROM conversations c INNER JOIN users u WHERE c.type=1  AND (c.sender_nic='$nic' OR c.reciever_nic='$nic') AND (c.sender_nic=u.nic)" ;
+        $result_chat = mysqli_query($db, $sql_chat);
+        if ($result_chat) 
+        {
+          while($row_chat = mysqli_fetch_assoc($result_chat))
+          {
+      ?>
+            <div id="chat-message-list">
+              <div class="message-row you-message">
+                <img src="" alt="">
+                <div class="message-content">
+                  <?php echo $row_chat["fname"]." ".$row_chat["lname"] ?>
+                </div>
+                <div class="message-content">
+                <div class="message-time">
+                  <?php echo $row_chat["date"] ?>
+                </div>
+                <div class="message-text">
+                  <?php echo $row_chat["message"] ?>
+                </div>
+                </div>
+                
+              </div>
+            </div>
+
+            <?php 
+          }
+        }
+            ?>
+
+
+
+<!-- toggle panel script -->
+<script>
+      function myFunction() 
+      {
+        var x = document.getElementById("div-1");
+        var y = document.getElementById("div-2");
+        if (x.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+      }
+
+      function myFunction2() 
+      {
+        var x = document.getElementById("div-1");
+        var y = document.getElementById("div-2");
+        if (y.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          x.style.display = "block";
+        }
+      }
+    </script>
+
+
   </div>
 
   

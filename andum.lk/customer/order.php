@@ -339,6 +339,8 @@ if (!isset($_SESSION['nic'])) {
               <p style="color: black; font-size: 20px; margin-top:10px">Tailor Name | &nbsp <?php echo $row["t_fname"]." ".$row["t_lname"] ?></p>
               <p style="color: black; font-size: 20px; margin-top:10px">Status &nbsp &nbsp &nbsp &nbsp &nbsp | &nbsp <?php echo $row["status"]?></p>
             </form>
+            <br/> <br/>
+      <?php if($row["status"]=="Delivered"){?><button class="cart-button">Delivery Retreived! Complete Order</button><?php } ?>
           </div>
         </div>
 
