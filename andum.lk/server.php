@@ -448,5 +448,21 @@ if (isset($_POST['fd-order-accept'])) {
 
 }
 
+//send message
+if(isset($_POST['message_send'])){
+    $issue = $_POST['issue'];
+    $name = $_POST['cust_name'];
+    $email = $_POST['email'];
+    $contactno = $_POST['contactno'];
+    $c_msg = $_POST['c_msg'];
+
+    $mailTo = "thashwiniwattuhewa@gmail.com";
+    $headers = "From: ".$email;
+    $txt = "You have received an e-mail from ".$name.".\n\n".$c_msg;
+
+    mail($mailTo, $issue, $txt, $headers);
+    header("Location: index.php?mailsend");
+}
+
 
  ?>

@@ -17,6 +17,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/wizard-styles.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
@@ -349,16 +350,93 @@ if (!isset($_SESSION['nic'])) {
     $row = mysqli_fetch_assoc($result)
   ?>
 
-    <div class="main">
+    <!-- <div class="main">
       <div class="">
         <div class="card-img">
           
         </div>
-      </div>
-      <div class="order-detail-box">
-        <div >
-          <h2>ORDER DETAILS</h2>
+      </div> -->
+      <div class="container">
+        <header>Order Details</header>
+        <form method="post">
           <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Customer Name</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
+            </div>
+          </div>
+          <!-- <div>
+            <p style="color: black; font-size: 20px; margin-top:10px">Status: <?php echo $row["status"]?></p>
+          </div> -->
+          
+               
+        </form>
+
+        <div class="progress-bar">
+          <div class="step">
+              <p>Pending</p>
+              <div class="bullet">
+                  <span>1</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Ongoing</p>
+              <div class="bullet">
+                  <span>2</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Complete</p>
+              <div class="bullet">
+                  <span>3</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Deliverd</p>
+              <div class="bullet">
+                  <span>4</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+        </div>
+        <div class="form-outer">
+          <form action="#">
+            <div class="page slide-page">
+                <div class="field">
+                  <button class="firstNext next">Pending</button>
+                </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                <!-- <button class="prev-1 prev">On going</button> -->
+                <button class="next-1 next">On going</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                  <!-- <button class="prev-2 prev">Complete</button> -->
+                  <button class="next-2 next">Complete</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                  <!-- <button class="prev-3 prev">Delivered</button> -->
+                  <button class="submit">Delevered</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- <div class="order-detail-box">
+        <div >
+          <h2>ORDER DETAILS</h2> -->
+  
+          <!-- <div>
             <form method="post">
               <br>
               <p style="color: black; font-size: 20px; margin-top:10px">Customer Name: <?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
@@ -374,19 +452,20 @@ if (!isset($_SESSION['nic'])) {
                 </div>
               </div>
             </form>
-            <form>
-            <p style="color: black; font-size: 20px; margin-top:10px">Change Status:</p><br/>
-  <?php if($row["status"]=="Accepted"){?><button class="cart-button">WORKING ON</button><?php } ?> 
-  <br/><br/>
-  <?php if($row["status"]=="Working On"){?><button class="cart-button">DELIVERED</button> <?php } ?> 
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <button class="cart-button" onclick="myFunction()">My Conversation</button>
-    <button class="cart-button" onclick="myFunction2()">My Measurements</button>
+            <form>
+              <p style="color: black; font-size: 20px; margin-top:10px">Change Status:</p><br/>
+              <?php if($row["status"]=="Accepted"){?><button class="cart-button">WORKING ON</button><?php } ?> 
+              <br/><br/>
+               <?php if($row["status"]=="Working On"){?><button class="cart-button">DELIVERED</button> <?php } ?> 
+            </form>
+          </div> -->
+        <!-- </div>  
+      </div> -->
+    <!-- </div> -->
+
+    <button class="toggle-btn" onclick="myFunction()">My Conversation</button>
+    <button class="toggle-btn" onclick="myFunction2()">My Measurements</button>
   <!--measurement form-->
   <div class="input-container" id="div-1">
     <form method="post" action="order.php" style="max-width:1024px;margin:auto">
@@ -691,6 +770,83 @@ if (!isset($_SESSION['nic'])) {
         }
       }
     </script>
+
+<script>
+      <!-- Created By CodingNepal -->
+    const slidePage = document.querySelector(".slide-page");
+    const nextBtnFirst = document.querySelector(".firstNext");
+    const prevBtnSec = document.querySelector(".prev-1");
+    const nextBtnSec = document.querySelector(".next-1");
+    const prevBtnThird = document.querySelector(".prev-2");
+    const nextBtnThird = document.querySelector(".next-2");
+    const prevBtnFourth = document.querySelector(".prev-3");
+    const submitBtn = document.querySelector(".submit");
+    const progressText = document.querySelectorAll(".step p");
+    const progressCheck = document.querySelectorAll(".step .check");
+    const bullet = document.querySelectorAll(".step .bullet");
+    let current = 1;
+
+    nextBtnFirst.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-25%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    });
+    nextBtnSec.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-50%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    });
+    nextBtnThird.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-75%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    });
+    submitBtn.addEventListener("click", function(){
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    setTimeout(function(){
+        alert("Your Form Successfully Signed up");
+        location.reload();
+    },800);
+    });
+
+    prevBtnSec.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "0%";
+    bullet[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    progressText[current - 2].classList.remove("active");
+    current -= 1;
+    });
+    prevBtnThird.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-25%";
+    bullet[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    progressText[current - 2].classList.remove("active");
+    current -= 1;
+    });
+    prevBtnFourth.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-50%";
+    bullet[current - 2].classList.remove("active");
+    progressCheck[current - 2].classList.remove("active");
+    progressText[current - 2].classList.remove("active");
+    current -= 1;
+    });
+
+  </script>
 
 
   </div>

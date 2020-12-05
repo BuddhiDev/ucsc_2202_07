@@ -167,11 +167,11 @@ require("server.php");
 
                     <div class="form-field-inline">
                     <label for="address" class="field-label-inline"><b>Message</b></label>
-                    <textarea name="c-msg" rows="5" cols="50" placeholder="" class="txt-area2"></textarea>
+                    <textarea name="c_msg" rows="5" cols="50" placeholder="" class="txt-area2"></textarea>
                     </div>
 
                     <div class="btn-panel-center">
-                    <button class="loginbutton btn-full-w" type="submit" name="message_send">Submit</button>
+                    <button class="loginbutton btn-full-w" type="submit" name="message_send">Send</button>
                     </div>
                 </div>
 

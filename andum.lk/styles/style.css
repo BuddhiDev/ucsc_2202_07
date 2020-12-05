@@ -1267,9 +1267,12 @@ a{
 .order-detail-box{
   background-color: #FFCDE5;
     padding: 40px;
-    width: 25%;
-    margin: 40px 560px 40px 40px;
+    width: 32%;
+    margin: 40px 400px 40px 300px;
     border-radius: 30px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .order-input-container{
@@ -1597,6 +1600,69 @@ a{
     border: 1px solid #ccc;
     width: 100%;
 }
+
+/* ---------- Order Status Styles ---------- */
+
+.next-box{
+  padding: 10px;
+    margin: 5px;
+}
+
+.form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-outer form{
+  display: flex;
+  width: 400%;
+}
+
+.f1{
+  display: flex;
+}
+
+.field{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+.cust-n{
+  text-align: left;
+}
+
+.title-n{
+  font-weight: bold;
+  text-align: left;
+}
+
+.toggle-btn{
+  padding: 8px 20px;
+    background-color: #EB2188;
+    margin: 10px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+
+
+
+
+
+
 
 
 
