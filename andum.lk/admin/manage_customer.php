@@ -209,7 +209,7 @@
           </td>
           <td>
             <div>
-              <a class="cta" href="#"><button class="view-button" name="delete_user">Delete</button></a>
+              <a class="cta" href="banned_user.php"><button class="view-button" name="delete_user">Delete</button></a>
             </div>
           </td>
 
