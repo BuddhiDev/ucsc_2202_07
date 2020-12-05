@@ -1,4 +1,5 @@
 <?php include("../server.php"); ?>
+<?php include("admin_controller.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
