@@ -449,20 +449,137 @@ if (isset($_POST['fd-order-accept'])) {
 }
 
 //send message
-if(isset($_POST['message_send'])){
-    $issue = $_POST['issue'];
+
+// use PHPMailer\PHPMailer\PHPMailer\PHPMailer\;
+
+// if(isset($_POST['message_send'])){
+    // $issue = $_POST['issue'];
+    // $name = $_POST['cust_name'];
+    // $email = $_POST['email'];
+    // $contactno = $_POST['contactno'];
+    // $c_msg = $_POST['c_msg'];
+
+    // require_once "PHPMailer/PHPMailer.php";
+    // require_once "PHPMailer/SMTP.php";
+    // require_once "PHPMailer/Exception.php";
+
+    // $mail = new PHPMailer();
+
+    // //smtp settings
+
+    // $mail->isSMTP();
+    // $mail->Host = " "
+
+
+    // $mailTo = "thashwiniwattuhewa@gmail.com";
+    // $headers = "From: ".$email;
+    // $txt = "You have received an e-mail from ".$name.".\n\n".$c_msg;
+
+    // mail($mailTo, $issue, $txt, $headers);
+    // header("Location: index.php?mailsend");
+
+        // use PHPMailer\PHPMailer\PHPMailer;
+        // use PHPMailer\PHPMailer\SMTP;
+        // use PHPMailer\PHPMailer\Exception;
+
+        // Load Composer's autoloader
+        // require 'vendor/autoload.php';
+
+        // Instantiation and passing `true` enables exceptions
+        // $mail = new PHPMailer(true);
+
+        // try {
+            //Server settings
+            // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+            // $mail->isSMTP();                                            // Send using SMTP
+            // $mail->Host       = 'smtp1.example.com';                    // Set the SMTP server to send through
+            // $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            // $mail->Username   = 'thashwiniwattuhewa@gmail.com';                     // SMTP username
+            // $mail->Password   = 'imdabest';                               // SMTP password
+            // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            // $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+            //Recipients
+            // $mail->setFrom('thashwiniwattuhewa@gmail.com', 'Mailer');
+            // $mail->addAddress('thashwiniwattuhewa@gmail.com', 'Joe User');     // Add a recipient
+            // $mail->addAddress('ellen@example.com');               // Name is optional
+            // $mail->addReplyTo('info@example.com', 'Information');
+            // $mail->addCC('cc@example.com');
+            // $mail->addBCC('bcc@example.com');
+
+            // Attachments
+            // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+            // Content
+        //     $mail->isHTML(true);                                  // Set email format to HTML
+        //     $mail->Subject = 'Here is the subject';
+        //     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+        //     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        //     $mail->send();
+        //     echo 'Message has been sent';
+        // } catch (Exception $e) {
+        //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // }
+    //}
+
+
+    require_once "PHPMailer/PHPMailer.php";
+    require_once "PHPMailer/SMTP.php";
+    require_once "PHPMailer/Exception.php";
+
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\SMTP;
+        use PHPMailer\PHPMailer\Exception;
+        if(isset($_POST['message_send'])){
+
+            $issue = $_POST['issue'];
     $name = $_POST['cust_name'];
     $email = $_POST['email'];
     $contactno = $_POST['contactno'];
     $c_msg = $_POST['c_msg'];
 
-    $mailTo = "thashwiniwattuhewa@gmail.com";
-    $headers = "From: ".$email;
-    $txt = "You have received an e-mail from ".$name.".\n\n".$c_msg;
+        // Load Composer's autoloader
+        // require 'vendor/autoload.php';
 
-    mail($mailTo, $issue, $txt, $headers);
-    header("Location: index.php?mailsend");
-}
+        // Instantiation and passing `true` enables exceptions
+
+        $mail = new PHPMailer();
+
+        $mail->isSMTP();
+
+        $mail->Host = "smtp.gmail.com";
+
+        $mail->SMTPAuth = "true";
+
+        $mail->SMTPSecure = "tls";
+
+        $mail->Port = "587";
+
+        $mail->Username = "thashwiniwattuhewa@gmail.com";
+
+        $mail->Password = "imdabest";
+
+        $mail->isHTML(true);
+
+        $mail->Subject = "$issue";
+
+        $mail->setFrom("thashwiniwattuhewa@gmail.com");
+
+        $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $c_msg</h3>";
+
+        $mail->addAddress("thashwiniwattuhewa@gmail.com");
+
+        if($mail->Send()){
+            echo "Email sent";
+        }
+        else{
+            "Error";
+        }
+
+        $mail->smtpClose();
+    }
 
 
  ?>
