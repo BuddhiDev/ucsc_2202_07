@@ -217,11 +217,11 @@ if(isset($_GET['fd_order_id']) ){
     header('location: fd-order.php');
 }
 //select admin customer
-if(isset($_GET['nic']) ){
-    $selected_c_id = mysqli_real_escape_string($db, $_GET['nic']);
-    $_SESSION['selected_c_id']=$selected_c_id;
-    header('location: customer_view.php');
-}
+// if(isset($_GET['nic']) ){
+//     $selected_c_id = mysqli_real_escape_string($db, $_GET['nic']);
+//     $_SESSION['selected_c_id']=$selected_c_id;
+//     header('location: customer_view.php');
+// }
 
 //add to cart a dress
 if (isset($_POST['addTocart'])) {

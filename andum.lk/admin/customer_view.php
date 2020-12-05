@@ -7,7 +7,7 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-
+<?php include("admin_controller.php"); ?>
 <!DOCTYPE html>
 <html>
 
@@ -364,6 +364,47 @@ if (!isset($_SESSION['nic'])) {
        
     </form>
   </div>
+
+<center><p> Order details of the customer </p></center>
+
+<div class="container-box">
+    <table>
+      <tr>
+        <th>Tailor Name</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+
+      </tr>
+      <tr>
+        <?php
+
+        $nic = $_SESSION['selected_c_id'];
+        $sql1 = "SELECT * FROM t_orders WHERE c_nic='$nic'";
+        $result1 = mysqli_query($db, $sql1);
+
+        if (mysqli_num_rows($result1) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result1)) {
+        ?>
+
+            <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              
+            </td>
+      </tr>
+        <?php
+              }
+            } else {
+            }
+
+        ?>
+    </table>
+  </div>
+
+
 
 
   <?php } ?>
