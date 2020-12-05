@@ -413,19 +413,19 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="page">
               <div class="field btns">
-                <!-- <button class="prev-1 prev">On going</button> -->
+                <button class="prev-1 prev">Pending</button>
                 <button class="next-1 next">On going</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
-                  <!-- <button class="prev-2 prev">Complete</button> -->
+                  <button class="prev-2 prev">On going</button>
                   <button class="next-2 next">Complete</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
-                  <!-- <button class="prev-3 prev">Delivered</button> -->
+                  <button class="prev-3 prev">Complete</button>
                   <button class="submit">Delevered</button>
               </div>
             </div>
