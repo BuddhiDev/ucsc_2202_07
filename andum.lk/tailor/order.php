@@ -383,23 +383,37 @@ if (!isset($_SESSION['nic'])) {
               <div class="check fas fa-check"></div>
           </div>
           <div class="step">
-              <p>Ongoing</p>
+              <p>Accept</p>
               <div class="bullet">
                   <span>2</span>
               </div>
               <div class="check fas fa-check"></div>
           </div>
           <div class="step">
-              <p>Complete</p>
+              <p>Paid</p>
               <div class="bullet">
                   <span>3</span>
               </div>
               <div class="check fas fa-check"></div>
           </div>
           <div class="step">
-              <p>Deliverd</p>
+              <p>Ongoing</p>
               <div class="bullet">
                   <span>4</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Complete</p>
+              <div class="bullet">
+                  <span>5</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Deliverd</p>
+              <div class="bullet">
+                  <span>6</span>
               </div>
               <div class="check fas fa-check"></div>
           </div>
@@ -413,19 +427,31 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <div class="page">
               <div class="field btns">
-                <button class="prev-1 prev">Pending</button>
-                <button class="next-1 next">On going</button>
+                <!-- <button class="prev-1 prev">Pending</button> -->
+                <button class="next-1 next">Accept</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
-                  <button class="prev-2 prev">On going</button>
-                  <button class="next-2 next">Complete</button>
+                <!-- <button class="prev-1 prev">Pending</button> -->
+                <button class="next-2 next">Paid</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
-                  <button class="prev-3 prev">Complete</button>
+                  <!-- <button class="prev-2 prev">On going</button> -->
+                  <button class="next-3 next">On Going</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                  <!-- <button class="prev-2 prev">On going</button> -->
+                  <button class="next-4 next">Complete</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                  <!-- <button class="prev-3 prev">Complete</button> -->
                   <button class="submit">Delevered</button>
               </div>
             </div>
@@ -779,7 +805,11 @@ if (!isset($_SESSION['nic'])) {
     const nextBtnSec = document.querySelector(".next-1");
     const prevBtnThird = document.querySelector(".prev-2");
     const nextBtnThird = document.querySelector(".next-2");
-    const prevBtnFourth = document.querySelector(".prev-3");
+    const prevBtnForth = document.querySelector(".prev-3");
+    const nextBtnForth = document.querySelector(".next-3");
+    const prevBtnFifth = document.querySelector(".prev-4");
+    const nextBtnFifth = document.querySelector(".next-4");
+    const prevBtnsixth = document.querySelector(".prev-5");
     const submitBtn = document.querySelector(".submit");
     const progressText = document.querySelectorAll(".step p");
     const progressCheck = document.querySelectorAll(".step .check");
@@ -805,6 +835,22 @@ if (!isset($_SESSION['nic'])) {
     nextBtnThird.addEventListener("click", function(event){
     event.preventDefault();
     slidePage.style.marginLeft = "-75%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    });
+    nextBtnForth.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-100%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    });
+    nextBtnFifth.addEventListener("click", function(event){
+    event.preventDefault();
+    slidePage.style.marginLeft = "-125%";
     bullet[current - 1].classList.add("active");
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
