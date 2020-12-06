@@ -566,6 +566,10 @@ if (!isset($_SESSION['nic'])) {
     bullet[4].classList.add("active");
     progressCheck[4].classList.add("active");
     progressText[4].classList.add("active");
+
+    bullet[5].classList.add("active");
+    progressCheck[5].classList.add("active");
+    progressText[5].classList.add("active");
     slidePage.style.marginLeft = "-125%";
     }
   </script>
@@ -586,8 +590,10 @@ if (!isset($_SESSION['nic'])) {
 <?php } ?>
 <?php if($status=="Ongoing"){ ?>
     <div class="alert">
+      <form action="order.php" method="post">
       <p>Did you finish your work? wanna deliver it now?</p> <br />
-      <button class="accept-button">YES</button>
+      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <button name="order-deliver" class="accept-button">YES</button>
     </div>
 <?php } ?>
 <?php if($status=="Delivered"){ ?>

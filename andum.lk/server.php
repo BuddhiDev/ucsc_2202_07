@@ -292,22 +292,33 @@ if (isset($_GET['odid'])) {
 if (isset($_POST['Checkout'])) {
     $c_nic =  $_SESSION['nic'];
 
-    $sql = "SELECT cart.order_id, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
+    $sql = "SELECT cart.order_id, cart.quantity, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount, dress_showcase.price FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
     $result = mysqli_query($db, $sql);
 
     if (mysqli_num_rows($result) > 0) {
 
         while ($row = mysqli_fetch_assoc($result)) {
-            $new_amount = $row["amount"] - 1;
+
             $dress_id = $row["dress_id"];
+            $date = date('Y-m-d H:i:s');
+            $quantity = $row["quantity"];
+            $tot = $row["price"];
+            $sql_ = "INSERT INTO dress_sales (c_nic,dress_id,quantity,total_price,date,status) VALUES('$c_nic','$dress_id','$quantity','$tot','$date','Paid' )";
+            $result_ = mysqli_query($db, $sql_);
+
+            $new_amount = $row["amount"] - $row["quantity"];
+
             $order_id = $row["order_id"];
             $sql1 = "UPDATE dress_showcase SET amount=$new_amount WHERE dress_id=$dress_id";
             $result1 = mysqli_query($db, $sql1);
             $sql1 = "DELETE FROM cart WHERE order_id=$order_id";
             $result1 = mysqli_query($db, $sql1);
+
         }
 
+
         header('location: purchases.php');
+
     } else {
         array_push($errors, "Add to cart failed, try again later");
     }
@@ -459,6 +470,24 @@ if (isset($_POST['order-ongoing'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $sql = "UPDATE t_orders SET status='Ongoing' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update tailor order statues as DELIVERED
+if (isset($_POST['order-deliver'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Delivered' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update tailor order statues as completed
+if (isset($_POST['order-complete'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Completed' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }

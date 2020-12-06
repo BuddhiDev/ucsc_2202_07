@@ -561,6 +561,10 @@ if (!isset($_SESSION['nic'])) {
     bullet[4].classList.add("active");
     progressCheck[4].classList.add("active");
     progressText[4].classList.add("active");
+
+    bullet[5].classList.add("active");
+    progressCheck[5].classList.add("active");
+    progressText[5].classList.add("active");
     slidePage.style.marginLeft = "-125%";
     }
 
@@ -588,14 +592,15 @@ if (!isset($_SESSION['nic'])) {
 <?php } ?>
 <?php if($status=="Delivered"){ ?>
     <div class="alert">
+      <form action="order.php" method="post">
       <p>Tailor delivered the order, Did you recieve the delivery?</p> <br/>
-      <button class="accept-button">Mark as Completed</button>
+      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <button name="order-complete" class="accept-button">Mark as Completed</button>
     </div>
 <?php } ?>
 <?php if($status=="Completed"){ ?>
     <div class="alert">
       <p>You marked this order as Completed!</p>
-      <button class="accept-button">OK</button>
     </div>
 <?php } ?>
 

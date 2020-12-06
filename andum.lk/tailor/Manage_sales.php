@@ -6,20 +6,21 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Andum.lk - Purchases</title>
-  <link rel="shortcut icon" href="logo.png">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andum.lk - Manage Sales</title>
+  <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
-
     table {
       border-collapse: collapse;
       border-spacing: 0;
@@ -40,16 +41,14 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-
-
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="tailor-dashboard.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
@@ -144,61 +143,76 @@ if (!isset($_SESSION['nic'])) {
             
           </li>
 
-          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
+          <li><a href="hire_tailor.php">Explore Tailors</a></li>
+          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li>
+          
+          </li>
         </ul>
       </div>
+      
+      <!-- </div> -->
       <div class="box">
         <div class="nav_right">
           <ul>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
-                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
-                  <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
+                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="Manage_sales.php"><i class="fas fa-money"></i>Sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-
+              </div>
+            </li>
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+          </ul>
         </div>
-        </ul>
-      </div>
       </div>
     </nav>
   </header>
 
-
-
-
- 
-
-
-
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
-    function(){
-      this.classList.toggle("active");
-    })
+      function() {
+        this.classList.toggle("active");
+      })
   </script>
 
+<div class="add-new-position">
+  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
+</div>
+
+  
+
+
+
+<div class="search-container">
+        <form method="post">
+          <div class="form-field-inline">
+            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
+
   <div class="container-box">
+  <div style="overflow-x:auto;">
     <table>
       <tr>
-        <th>Tailor Name</th>
+        <th>Customer Name</th>
         <th>Category</th>
         <th>Status</th>
         <th><center>Action</center></th>
-
       </tr>
       <tr>
+
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic)";
+        $sql = "SELECT * FROM dress_sales s INNER JOIN dress_showcase d WHERE s.dress_id=d.dress_id AND d.t_nic='$nic'";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -206,24 +220,30 @@ if (!isset($_SESSION['nic'])) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
             <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
-                <center><a class="cta" href="#"><button class="loginbutton btn-full-w">View</button></a></center>
+                <center><a href="Manage_order.php?order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
               </div>
             </td>
       </tr>
-    <?php
-          }
-        } else {
-        }
+      <?php
+              }
+            } else {
+            }
 
-    ?>
+      ?>
+
+
     </table>
   </div>
+  </div>
+  
 
 <?php require("../footer.php")?>
+
+</body>
 
 </html>
