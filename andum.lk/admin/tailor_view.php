@@ -15,7 +15,7 @@ if (!isset($_SESSION['nic'])) {
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Hire a Tailor</title>
+  <title>Andum.lk - Admin</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
@@ -361,7 +361,7 @@ if (!isset($_SESSION['nic'])) {
               <br>
               <div>
                 <div>
-                  Activities of Customer
+                  Activities of Tailor
                   <br>
                   <br>
                   
@@ -378,11 +378,15 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
 
-
+  <center><p> Tailor's Dressshowcase</p></center>
+ <center> <div>
+              <a class="cta" href="tailor_dresses.php"><button class="view-button">Dress Showcase</button></a>
+            </div>
+            </center>
 
   
 
-<center><p>Customer's Payments</p></center>
+<center><p> Payments</p></center>
 
 <div class="container-box">
 
