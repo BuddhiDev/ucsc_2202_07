@@ -1666,6 +1666,15 @@ a{
   margin: 100px auto;
 }
 
+.container-2{
+  background-color: #fafafa;
+  padding: 20px;
+  margin: 50px;
+  border-radius: 10px;
+  display: grid;
+  justify-content: center;
+}
+
 
 
 
