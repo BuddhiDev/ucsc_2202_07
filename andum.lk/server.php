@@ -436,7 +436,7 @@ if(isset($_GET['dcategory']) ){
     $selected_dress_category = mysqli_real_escape_string($db, $_GET['dcategory']);
 }
 
-//update order statues
+//update tailor order statues as accepted
 if (isset($_POST['order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
@@ -445,7 +445,25 @@ if (isset($_POST['order-accept'])) {
 
 }
 
-//update fashion designer order statues
+//update tailor order statues as paid
+if (isset($_POST['order-paid'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Paid' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update tailor order statues as Ongoing
+if (isset($_POST['order-ongoing'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Ongoing' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update fashion designer order statues as accepted
 if (isset($_POST['fd-order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['fd_order_id']);

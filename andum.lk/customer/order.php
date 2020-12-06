@@ -430,31 +430,31 @@ if (!isset($_SESSION['nic'])) {
                   <button class="firstNext next">Pending</button>
                 </div>
             </div>
-            <div class="page">
-              <div class="field btns">
+            <div class="page slide-page">
+              <div class="field">
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="">Accepted</button>
+                <button class="firstNext next">Accepted</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="">Paid</button>
+                <button class="firstNext next">Paid</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
                   <button class="">On Going</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
                   <button class="">Delivered</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                   <!-- <button class="prev-3 prev">Complete</button> -->
                   <button class="">Completed</button>
@@ -471,7 +471,6 @@ if (!isset($_SESSION['nic'])) {
     const progressCheck = document.querySelectorAll(".step .check");
     const bullet = document.querySelectorAll(".step .bullet");
     var status = "<?php echo $status ?>";
-    slidePage.style.marginLeft = "-25%";
 
     if(status=="Pending"){
     bullet[0].classList.add("active");
@@ -486,6 +485,21 @@ if (!isset($_SESSION['nic'])) {
     bullet[1].classList.add("active");
     progressCheck[1].classList.add("active");
     progressText[1].classList.add("active");
+    slidePage.style.marginLeft = "-25%";
+    }
+    if(status=="Paid"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+    slidePage.style.marginLeft = "-50%";
     }
     if(status=="Ongoing"){
     bullet[0].classList.add("active");
@@ -499,6 +513,11 @@ if (!isset($_SESSION['nic'])) {
     bullet[2].classList.add("active");
     progressCheck[2].classList.add("active");
     progressText[2].classList.add("active");
+
+    bullet[3].classList.add("active");
+    progressCheck[3].classList.add("active");
+    progressText[3].classList.add("active");
+    slidePage.style.marginLeft = "-75%";
     }
     if(status=="Delivered"){
     bullet[0].classList.add("active");
@@ -516,6 +535,11 @@ if (!isset($_SESSION['nic'])) {
     bullet[3].classList.add("active");
     progressCheck[3].classList.add("active");
     progressText[3].classList.add("active");
+
+    bullet[4].classList.add("active");
+    progressCheck[4].classList.add("active");
+    progressText[4].classList.add("active");
+    slidePage.style.marginLeft = "-100%";
     }
     if(status=="Completed"){
     bullet[0].classList.add("active");
@@ -537,6 +561,7 @@ if (!isset($_SESSION['nic'])) {
     bullet[4].classList.add("active");
     progressCheck[4].classList.add("active");
     progressText[4].classList.add("active");
+    slidePage.style.marginLeft = "-125%";
     }
 
   </script>
@@ -580,7 +605,7 @@ if (!isset($_SESSION['nic'])) {
         <button class="cart-button" onclick="myFunction()">Conversation</button>
         <button class="cart-button" onclick="myFunction2()">Measurements</button>
         <div class="order-input-container" id="div-1">
-          <form action="order.php" id=form-1>
+          <form action="order.php" method="post" id=form-1>
             <h2 class="order-measure-headding">Measurements</h2>
             <div class="d-flex">
               <div class="f1">
@@ -786,10 +811,12 @@ if (!isset($_SESSION['nic'])) {
               <!-- <lable for="other" style="">Other:</label> -->
               <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
             </div>
+            <?php if($status=="Accepted"){ ?>
             <div>
-              <button class="cart-button" type="submit">Make Payment</button>
+              <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+              <button name="order-paid" class="cart-button" type="submit">Make Payment</button>
             </div>
-            
+            <?php } ?>
           </form>
         </div>
 
