@@ -335,11 +335,11 @@ if (!isset($_SESSION['nic'])) {
   
   <div class="container-box">
   <?php
-  $selected_c_id = $_SESSION['selected_c_id'];
-  $nic = $_SESSION['selected_c_id'];
+  $selected_tailor_id = $_SESSION['selected_tailor_id'];
+  $nic = $_SESSION['selected_tailor_id'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
-  $sql = "SELECT * FROM users WHERE nic='$selected_c_id' ";
+  $sql = "SELECT * FROM users WHERE nic='$selected_tailor_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result);
@@ -348,7 +348,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/customer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
       </div>
 
@@ -378,84 +378,9 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
 
-<center><p> Hired taiors' details of the customer </p></center>
-
-<div class="container-box">
-    <table>
-      <tr>
-        <th>Tailor Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-
-      </tr>
-      <tr>
-        <?php
-
-        $nic = $_SESSION['selected_c_id'];
-        $sql1 = "SELECT * FROM t_orders WHERE c_nic='$nic'";
-        $result1 = mysqli_query($db, $sql1);
-
-        if (mysqli_num_rows($result1) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result1)) {
-        ?>
-
-            <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              
-            </td>
-      </tr>
-        <?php
-              }
-            } else {
-            }
-
-        ?>
-    </table>
-  </div>
 
 
-  <center><p> Hired Fashion Designers' details of the customer </p></center>
-
-<div class="container-box">
-    <table>
-      <tr>
-        <th>Fashion designer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-
-      </tr>
-      <tr>
-        <?php
-
-        $nic = $_SESSION['selected_c_id'];
-        $sql1 = "SELECT * FROM t_orders WHERE c_nic='$nic'";
-        $result1 = mysqli_query($db, $sql1);
-
-        if (mysqli_num_rows($result1) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result1)) {
-        ?>
-
-            <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              
-            </td>
-      </tr>
-        <?php
-              }
-            } else {
-            }
-
-        ?>
-    </table>
-  </div>
+  
 
 <center><p>Customer's Payments</p></center>
 
