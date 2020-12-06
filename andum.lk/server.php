@@ -210,6 +210,20 @@ if(isset($_GET['order_id']) ){
     header('location: order.php');
 }
 
+//select a sale from tailor
+if(isset($_GET['sale_id']) ){
+    $selected_s_id = mysqli_real_escape_string($db, $_GET['sale_id']);
+    $_SESSION['selected_s_id']=$selected_s_id;
+    header('location: sale.php');
+}
+
+//select a purchase from customer
+if(isset($_GET['purchase_id']) ){
+    $selected_p_id = mysqli_real_escape_string($db, $_GET['purchase_id']);
+    $_SESSION['selected_p_id']=$selected_p_id;
+    header('location: purchase.php');
+}
+
 //select a customer order from fashion designer
 if(isset($_GET['fd_order_id']) ){
     $selected_o_id = mysqli_real_escape_string($db, $_GET['fd_order_id']);

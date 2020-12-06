@@ -212,7 +212,7 @@ if (!isset($_SESSION['nic'])) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM dress_sales s INNER JOIN dress_showcase d WHERE s.dress_id=d.dress_id AND d.t_nic='$nic'";
+        $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -220,12 +220,12 @@ if (!isset($_SESSION['nic'])) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
             <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
-                <center><a href="Manage_order.php?order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+                <center><a href="Manage_sales.php?sale_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
               </div>
             </td>
       </tr>

@@ -211,7 +211,7 @@ if (!isset($_SESSION['nic'])) {
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
-                <center><a class="cta" href="#"><button class="loginbutton btn-full-w">View</button></a></center>
+                <center><a class="cta" href=purchases.php?purchase_id=<?php echo $row["id"]?>><button class="loginbutton btn-full-w">View</button></a></center>
               </div>
             </td>
       </tr>
