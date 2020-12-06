@@ -178,6 +178,24 @@ if (!isset($_SESSION['nic'])) {
       width: 50px;
       background-color: #fab7cc;
     }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px; 
+    }
+
+    .accept-button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
   </style>
 </head>
 
@@ -327,18 +345,6 @@ if (!isset($_SESSION['nic'])) {
   <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
 </div>
 
-
-
-<div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
-
-
       
   <div class="container-box">
   <?php
@@ -347,15 +353,10 @@ if (!isset($_SESSION['nic'])) {
   $sql = "SELECT * FROM t_orders WHERE id=$selected_o_id";
   $result = mysqli_query($db, $sql);
   if ($result) {
-    $row = mysqli_fetch_assoc($result)
+    $row = mysqli_fetch_assoc($result);
+    $status=$row["status"];
   ?>
 
-    <!-- <div class="main">
-      <div class="">
-        <div class="card-img">
-          
-        </div>
-      </div> -->
       <div class="container">
         <header>Order Details</header>
         <form method="post">
@@ -367,11 +368,18 @@ if (!isset($_SESSION['nic'])) {
               <p ><?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
             </div>
           </div>
-          <!-- <div>
-            <p style="color: black; font-size: 20px; margin-top:10px">Status: <?php echo $row["status"]?></p>
-          </div> -->
+          <?php if($status!="Pending"){ ?>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Order Price</p>
+            </div>
+            <div class="cust-n">
+              <p >Rs. 1000.00</p>
+            </div>
+          </div>
+          <?php } ?> 
           
-               
         </form>
 
         <div class="progress-bar">
@@ -383,7 +391,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="check fas fa-check"></div>
           </div>
           <div class="step">
-              <p>Accept</p>
+              <p>Accepted</p>
               <div class="bullet">
                   <span>2</span>
               </div>
@@ -404,14 +412,14 @@ if (!isset($_SESSION['nic'])) {
               <div class="check fas fa-check"></div>
           </div>
           <div class="step">
-              <p>Complete</p>
+              <p>Delivered</p>
               <div class="bullet">
                   <span>5</span>
               </div>
               <div class="check fas fa-check"></div>
           </div>
           <div class="step">
-              <p>Deliverd</p>
+              <p>Completed</p>
               <div class="bullet">
                   <span>6</span>
               </div>
@@ -428,75 +436,144 @@ if (!isset($_SESSION['nic'])) {
             <div class="page">
               <div class="field btns">
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="next-1 next">Accept</button>
+                <button class="">Accepted</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="next-2 next">Paid</button>
+                <button class="">Paid</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
-                  <button class="next-3 next">On Going</button>
+                  <button class="">On Going</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
-                  <button class="next-4 next">Complete</button>
+                  <button class="">Delivered</button>
               </div>
             </div>
             <div class="page">
               <div class="field btns">
                   <!-- <button class="prev-3 prev">Complete</button> -->
-                  <button class="submit">Delevered</button>
+                  <button class="">Completed</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-      <!-- <div class="order-detail-box">
-        <div >
-          <h2>ORDER DETAILS</h2> -->
-  
-          <!-- <div>
-            <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px">Customer Name: <?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px">Status: <?php echo $row["status"]?></p>
-              <br>
-              <div>
-                <div>
-                  
-                  <br>
-                  <br>
-                  
-                </div>
-              </div>
-            </form>
 
-            <form>
-              <p style="color: black; font-size: 20px; margin-top:10px">Change Status:</p><br/>
-              <?php if($row["status"]=="Accepted"){?><button class="cart-button">WORKING ON</button><?php } ?> 
-              <br/><br/>
-               <?php if($row["status"]=="Working On"){?><button class="cart-button">DELIVERED</button> <?php } ?> 
-            </form>
-          </div> -->
-        <!-- </div>  
-      </div> -->
-    <!-- </div> -->
 
-    <div class="container-2">
-      <p>TTTTTTTTTTTTTTTTTTTTTTTTTTTTT</p>
-      <button class="toggle-btn">YES</button>
+    <script>
+    const slidePage = document.querySelector(".slide-page");
+    const submitBtn = document.querySelector(".submit");
+    const progressText = document.querySelectorAll(".step p");
+    const progressCheck = document.querySelectorAll(".step .check");
+    const bullet = document.querySelectorAll(".step .bullet");
+    var status = "<?php echo $status ?>";
+    slidePage.style.marginLeft = "-25%";
+
+    if(status=="Pending"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+    }
+    if(status=="Accepted"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+    }
+    if(status=="Ongoing"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+    }
+    if(status=="Delivered"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+
+    bullet[3].classList.add("active");
+    progressCheck[3].classList.add("active");
+    progressText[3].classList.add("active");
+    }
+    if(status=="Completed"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+
+    bullet[3].classList.add("active");
+    progressCheck[3].classList.add("active");
+    progressText[3].classList.add("active");
+
+    bullet[4].classList.add("active");
+    progressCheck[4].classList.add("active");
+    progressText[4].classList.add("active");
+    }
+
+  </script>
+
+<?php if($status=="Accepted"){ ?>
+    <div class="alert">
+      <p>You have been estimated a price for this order, waiting for customer's payment.</p>
     </div>
-
-    <button class="toggle-btn" onclick="myFunction()">My Conversation</button>
-    <button class="toggle-btn" onclick="myFunction2()">My Measurements</button>
+<?php } ?>
+<?php if($status=="Paid"){ ?>
+    <div class="alert">
+      <p>Customer has been paid for this order, Did you start working on it?</p><br/>
+      <button class="accept-button">YES</button>
+    </div>
+<?php } ?>
+<?php if($status=="Ongoing"){ ?>
+    <div class="alert">
+      <p>Did you finish your work? wanna deliver it now?</p> <br />
+      <button class="accept-button">YES</button>
+    </div>
+<?php } ?>
+<?php if($status=="Delivered"){ ?>
+    <div class="alert">
+      <p>You delivered this order, waiting for customer to mark it as completed</p>
+    </div>
+<?php } ?>
+<?php if($status=="Completed"){ ?>
+    <div class="alert">
+      <p>Customer marked this order as Completed!</p>
+    </div>
+<?php } ?>
+    <button class="toggle-btn" onclick="myFunction()">Conversation</button>
+    <button class="toggle-btn" onclick="myFunction2()">Measurements</button>
   <!--measurement form-->
   <div class="input-container" id="div-1">
     <form method="post" action="order.php" style="max-width:1024px;margin:auto">
@@ -706,20 +783,24 @@ if (!isset($_SESSION['nic'])) {
         <textarea name="message" rows="20" cols="50" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
       </div>
 
-      <div class="search-container">
-
-      <div class="form-field-inline">
-        <label for="searchname" class="field-label-inline">Submit order price: </label>
-        <input type="text" class="field-value-inline" name="" <?php if($row["status"]=="Accepted") echo "disabled"?>>
-      </div>
-
-  </div>
-  <input type="hidden" class="field-value-inline" name="order_id" value=<?php echo $row["id"] ?>>
-
-      <center><button class="cart-button" type="submit" name="order-accept" <?php if($row["status"]=="Accepted") echo "disabled"?>>Submit</button></center>
     </form>
   </div>
-
+  <div id="div-3" class="alert">
+  <?php if($status=="Pending"){ ?>
+      <p>Customer is waiting for your price, Please estimate your price for this order!</p>
+      <?php } else { ?> 
+      <p>You estimated a price for this order earlier!</p>
+      <?php } ?>
+        <br/><br />
+      <?php if($status=="Pending"){ ?>
+      <center><label for="searchname" class="field-label-inline">Estimate Order Price: </label></center>
+      <?php } else { ?>
+      <center><label for="searchname" class="field-label-inline">Estimated Order Price: </label></center>
+      <?php } ?>
+      <center><input type="text" style=" width: 50%"  name="" <?php if($row["status"]=="Accepted") echo "disabled"?> ></center>
+      <center><input type="hidden" class="field-value-inline" name="order_id" value=<?php echo $row["id"] ?>></center>
+      <center><button class="accept-button" type="submit" name="order-accept" <?php if($row["status"]=="Accepted") echo "disabled"?>>Submit</button></center>    
+    </div>
 
   <div id=div-2>
           <div class="d-flex">
@@ -775,6 +856,7 @@ if (!isset($_SESSION['nic'])) {
       {
         var x = document.getElementById("div-1");
         var y = document.getElementById("div-2");
+        var z = document.getElementById("div-3");
         if (x.style.display === "none") 
         {
           y.style.display = "block";
@@ -783,6 +865,7 @@ if (!isset($_SESSION['nic'])) {
         {
           x.style.display = "none";
           y.style.display = "block";
+          z.style.display = "none";
         }
       }
 
@@ -790,115 +873,20 @@ if (!isset($_SESSION['nic'])) {
       {
         var x = document.getElementById("div-1");
         var y = document.getElementById("div-2");
+        var z = document.getElementById("div-3");
         if (y.style.display === "none") 
         {
           x.style.display = "block";
+          z.style.display = "block";
         } 
         else 
         {
           y.style.display = "none";
           x.style.display = "block";
+          z.style.display = "block";
         }
       }
     </script>
-
-<script>
-      <!-- Created By CodingNepal -->
-    const slidePage = document.querySelector(".slide-page");
-    const nextBtnFirst = document.querySelector(".firstNext");
-    const prevBtnSec = document.querySelector(".prev-1");
-    const nextBtnSec = document.querySelector(".next-1");
-    const prevBtnThird = document.querySelector(".prev-2");
-    const nextBtnThird = document.querySelector(".next-2");
-    const prevBtnForth = document.querySelector(".prev-3");
-    const nextBtnForth = document.querySelector(".next-3");
-    const prevBtnFifth = document.querySelector(".prev-4");
-    const nextBtnFifth = document.querySelector(".next-4");
-    const prevBtnsixth = document.querySelector(".prev-5");
-    const submitBtn = document.querySelector(".submit");
-    const progressText = document.querySelectorAll(".step p");
-    const progressCheck = document.querySelectorAll(".step .check");
-    const bullet = document.querySelectorAll(".step .bullet");
-    let current = 1;
-
-    nextBtnFirst.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-25%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-    });
-    nextBtnSec.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-50%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-    });
-    nextBtnThird.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-75%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-    });
-    nextBtnForth.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-100%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-    });
-    nextBtnFifth.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-125%";
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-    });
-    submitBtn.addEventListener("click", function(){
-    bullet[current - 1].classList.add("active");
-    progressCheck[current - 1].classList.add("active");
-    progressText[current - 1].classList.add("active");
-    current += 1;
-    setTimeout(function(){
-        alert("Your Form Successfully Signed up");
-        location.reload();
-    },800);
-    });
-
-    prevBtnSec.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "0%";
-    bullet[current - 2].classList.remove("active");
-    progressCheck[current - 2].classList.remove("active");
-    progressText[current - 2].classList.remove("active");
-    current -= 1;
-    });
-    prevBtnThird.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-25%";
-    bullet[current - 2].classList.remove("active");
-    progressCheck[current - 2].classList.remove("active");
-    progressText[current - 2].classList.remove("active");
-    current -= 1;
-    });
-    prevBtnFourth.addEventListener("click", function(event){
-    event.preventDefault();
-    slidePage.style.marginLeft = "-50%";
-    bullet[current - 2].classList.remove("active");
-    progressCheck[current - 2].classList.remove("active");
-    progressText[current - 2].classList.remove("active");
-    current -= 1;
-    });
-
-  </script>
-
 
   </div>
 
