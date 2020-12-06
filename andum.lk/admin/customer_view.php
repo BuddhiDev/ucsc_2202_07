@@ -172,6 +172,25 @@ if (!isset($_SESSION['nic'])) {
       width: 50px;
       background-color: #fab7cc;
     }
+ 
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 99%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+
   </style>
 
 </head>
@@ -365,7 +384,7 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
 
-<center><p> Order details of the customer </p></center>
+<center><p> Hired taiors' details of the customer </p></center>
 
 <div class="container-box">
     <table>
