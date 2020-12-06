@@ -383,11 +383,11 @@ if (!isset($_SESSION['nic'])) {
   <!--measurement form-->
   <div class="input-container">
     <form method="post" action="order.php" style="max-width:1024px;margin:auto">
-      <h2 class="measure-headding">Measurements</h2>
       
      <div class="d-flex">
         <!-- <lable for="other" style="">Other:</label> -->
-        <textarea name="message" rows="20" cols="50" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
+        <!-- <textarea name="message" rows="20" cols="50" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea> -->
+        <input type="text" value="<?php echo $row["other"]?>">
       </div>
 
       <div class="search-container">

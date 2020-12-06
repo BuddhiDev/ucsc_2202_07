@@ -212,9 +212,15 @@ if(isset($_GET['order_id']) ){
 
 //select a customer order from fashion designer
 if(isset($_GET['fd_order_id']) ){
-    $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id']);
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['fd_order_id']);
     $_SESSION['selected_o_id']=$selected_o_id;
-    header('location: fd-order.php');
+    header('location: fdesigner-order.php');
+}
+
+if(isset($_GET['f_order_id']) ){
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['f_order_id']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: order.php');
 }
 //select admin customer
 // if(isset($_GET['nic']) ){
