@@ -335,11 +335,11 @@ if (!isset($_SESSION['nic'])) {
   
   <div class="container-box">
   <?php
-  $selected_tailor_id = $_SESSION['selected_tailor_id'];
-  $nic = $_SESSION['selected_tailor_id'];
+  $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
+  $nic = $_SESSION['selected_fdesigner_id'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
-  $sql = "SELECT * FROM users WHERE nic='$selected_tailor_id' ";
+  $sql = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result);
@@ -348,7 +348,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
       </div>
 
@@ -361,7 +361,7 @@ if (!isset($_SESSION['nic'])) {
               <br>
               <div>
                 <div>
-                  Activities of Tailor
+                  Activities of Fashion Designer
                   <br>
                   <br>
                   
@@ -378,7 +378,7 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
 
-  <center><p> Tailor's Dressshowcase</p></center>
+  <center><p> Fashion Designer's Order details</p></center>
  
 
   
@@ -390,7 +390,7 @@ if (!isset($_SESSION['nic'])) {
 <table>
 
 <tr>
-        <th>Tailor Name</th>
+        <th>Customer Name</th>
         <th>Patment Date</th>
         <th>Delivered Status</th>
         <th><center>Action</center></th>

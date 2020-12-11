@@ -14,7 +14,11 @@ if(isset($_GET['nic']) ){
     header('location: tailor_view.php');
 }
 
-
+if(isset($_GET['nic']) ){
+    $selected_fdesigner_id = mysqli_real_escape_string($db, $_GET['nic']);
+    $_SESSION['selected_fdesigner_id']=$selected_fdesigner_id;
+    header('location: fdesigner_view.php');
+}
 
 
 
