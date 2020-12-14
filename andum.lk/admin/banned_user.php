@@ -1,9 +1,9 @@
 <?php include("../server.php");
 
-if (!isset($_SESSION['nic'])) {
+/*if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
-}
+}*/
 
 ?>  
 
@@ -246,7 +246,7 @@ if (!isset($_SESSION['nic'])) {
             <li><a class="cta" href="send_mail.php"><button class="loginbutton btn-full-w">Warning message</button></a></li>
           </div>
           <div>
-            <li><a class="cta" href="#"><button class="loginbutton btn-full-w">Delete User</button></a></li>
+            <li><a class="cta" href="#"><button class="loginbutton btn-full-w">Suspend User Account</button></a></li>
           </div>
         </div>
       </div>
