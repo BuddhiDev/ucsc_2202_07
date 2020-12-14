@@ -5,43 +5,14 @@ if (!isset($_SESSION['nic'])) {
   exit();
 }
 
-?>  
+?>
+<?php include("admin_controller.php"); ?> 
+
 
 <?php include("../errors.php");
   ?>
 
-<?php 
-	
-	// checking if the form is submit
-	if ( isset($_POST['send_mail']) ) {
-		$adminname	= $_POST['aname'];
-	  $toemail    = $_POST['email'];
-		$subject   	= $_POST['subject'];
-		$message	  = $_POST['message'];
 
-    $to	 	         = $toemail;
-    $email         = 'lakmali9852@gmail.com';
-		$mail_subject  = 'Message from Website';
-		$email_body    = "Message from Contact Us Page of the Website: <br>";
-		$email_body   .= "<b>From:</b> {$adminname} <br>";
-		$email_body   .= "<b>Subject:</b> {$subject} <br>";
-		$email_body   .= "<b>Message:</b><br>" . nl2br(strip_tags($message));
-
-		$header        = "From: {$email}\r\nContent-Type: text/html;";
-
-		$send_mail_result = mail($to, $mail_subject, $email_body, $header);
-
-		if ( $send_mail_result ) {
-            echo "Message Sent.";
-            //echo "<script>alert('Email Sent.')</script>";
-		} else {
-            echo "Message not Sent.";
-			//echo "<script>alert('Email Not Sent.')</script>";
-        }
-       
-      
-	} 
-    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +79,12 @@ if (!isset($_SESSION['nic'])) {
     </nav>
   </header>
 
-
+  <script>
+    document.querySelector(".nav_right ul li").addEventListener("click",
+      function() {
+        this.classList.toggle("active");
+      })
+  </script>
 
 <div class="container">
 <?php
