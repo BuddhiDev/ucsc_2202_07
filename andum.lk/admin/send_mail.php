@@ -1,9 +1,9 @@
 <?php  include("../server.php");
-
+/*
 if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
-}
+}*/
 
 ?>
 <?php include("admin_controller.php"); ?> 
@@ -115,8 +115,8 @@ if (!isset($_SESSION['nic'])) {
 			</p>
 
 			<p>
-				<label for="message">Message *: </label>
-				<textarea name="message" id="message" cols="30" rows="10" required></textarea>
+				<label for="body">Message *: </label>
+				<textarea name="body" id="body" cols="30" rows="10" required></textarea>
 			</p>
 			<p>
             <button type="submit" name="send_mail" class="loginbutton btn-full-w">Send Message</button>
