@@ -209,7 +209,7 @@
           </td>
           <td>
             <div>
-              <a class="cta" href="banned_user.php"><button class="view-button" name="delete_user">Delete</button></a>
+            <a href="banned_user.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="delete_user">Delete</button></a>
             </div>
           </td>
 
