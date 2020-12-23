@@ -201,7 +201,7 @@
           <td><?php echo $row["contactno"] ?></td>
           <td>
             <div>
-            <a href="manage_tailor.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+            <a href="manage_tailor.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_tailor" >View</button></a>
 
               <!-- <a href="#"><button class="view-button" >View</button></a> -->
             </div>
