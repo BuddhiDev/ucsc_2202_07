@@ -377,9 +377,56 @@ if (!isset($_SESSION['nic'])) {
 <br/> 
     </form>
   </div>
-
+  <?php } ?>
   <center><p> Tailor's Dressshowcase</p></center>
- 
+
+
+
+
+
+
+
+
+
+
+  <?php
+  $selected_tailor_id = $_SESSION['selected_tailor_id'];
+  $nic = $_SESSION['selected_tailor_id'];
+  $fname = $_SESSION['fname'];
+  $lname = $_SESSION['lname'];
+  $sql1 = "SELECT * FROM dress_showcase WHERE t_nic='$selected_tailor_id' ";
+  $result1 = mysqli_query($db, $sql1);
+  if ($result1) {
+   while( $row = mysqli_fetch_assoc($result1)){
+ ?>
+
+     <div class="col-4">
+        <form method="get" action="tailor_view.php" class="dress-showcase">
+          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+
+          <div class="card-item">
+            <div class="card-img">
+              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title"><?php echo $row["title"] ?></div>
+              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+<?php
+
+  }
+  }
+
+?>
+
+
+
+
 
   
 
@@ -415,7 +462,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-  <?php } ?>
+ 
   </div>
 
   
