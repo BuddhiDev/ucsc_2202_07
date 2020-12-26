@@ -91,17 +91,17 @@ if(isset($_POST['send_mail'])){
         $mail->Password='Admin@123';
 
         $mail->setFrom('andumdotlk@gmail.com');
-        $mail->addAddress('upadhiviveka@gmail.com');
+        $mail->addAddress($email);
 
         $mail->isSMTP(true);
         $mail->Subject = "$subject";
         $mail->Body =$body;
 
         if($mail->Send()){
-            echo "Email sent";
+            <a href="banned_user.php"> echo "<script>alert('Email Sent.')</script>"</a>;
         }
         else{
-            "Error";
+            echo "<script>alert('### Email Not Sent!')</script>";
         }
     }  
 ?>

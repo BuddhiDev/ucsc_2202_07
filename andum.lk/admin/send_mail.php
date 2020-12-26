@@ -98,7 +98,7 @@ if (!isset($_SESSION['nic'])) {
   ?>
     
 		<h1>Warning message</h1>
-		<form action="send_mail.php" method="post">
+		<form action="banned_user.php" method="post">
 			<p>
 				<label for="fullname">From *:</label>
 				<input type="text" value="<?php echo "Andum.lk Admin-"?>" class="field-value-inline" name="aname" require>
@@ -119,7 +119,7 @@ if (!isset($_SESSION['nic'])) {
 				<textarea name="body" id="body" cols="30" rows="10" required></textarea>
 			</p>
 			<p>
-            <button type="submit" name="send_mail" class="loginbutton btn-full-w">Send Message</button>
+        <button type="submit" name="send_mail" class="loginbutton btn-full-w">Send Message</button>
 			</p>
 
 
@@ -128,6 +128,22 @@ if (!isset($_SESSION['nic'])) {
 
 	</div>
   <?php } } ?>
+   
+  <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        function sendEmail(){
+            var name = $(#aname);
+            var email = $(#email);
+            var subject = $(#subject);
+            var body = $(#body);
+        }
+    </script>
+ 
 
   <?php require("../footer.php") ?>
 </body>
