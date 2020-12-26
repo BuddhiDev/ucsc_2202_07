@@ -7,7 +7,7 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-<?php include("admin_controller.php"); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -377,7 +377,7 @@ if (!isset($_SESSION['nic'])) {
 <br/> 
     </form>
   </div>
-  <?php } ?>
+ <?php } ?>
   <center><p> Tailor's Dressshowcase</p></center>
 
 
