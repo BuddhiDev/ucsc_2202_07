@@ -464,6 +464,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="check fas fa-check"></div>
           </div>
         </div>
+
         <div class="form-outer">
           <form action="#">
             <div class="page slide-page">
@@ -471,31 +472,31 @@ if (!isset($_SESSION['nic'])) {
                   <button class="firstNext next">Pending</button>
                 </div>
             </div>
-            <div class="page">
-              <div class="field btns">
+            <div class="page slide-page">
+              <div class="field">
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="">Accepted</button>
+                <button class="firstNext next">Accepted</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="">Paid</button>
+                <button class="firstNext next">Paid</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
                   <button class="">On Going</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
                   <button class="">Delivered</button>
               </div>
             </div>
-            <div class="page">
+            <div class="page slide-page">
               <div class="field btns">
                   <!-- <button class="prev-3 prev">Complete</button> -->
                   <button class="">Completed</button>
@@ -515,21 +516,6 @@ if (!isset($_SESSION['nic'])) {
     var status = "<?php echo $status ?>";
     slidePage.style.marginLeft = "-25%";
 
-    if(status=="Pending"){
-    bullet[0].classList.add("active");
-    progressCheck[0].classList.add("active");
-    progressText[0].classList.add("active");
-    }
-    if(status=="Accepted"){
-    bullet[0].classList.add("active");
-    progressCheck[0].classList.add("active");
-    progressText[0].classList.add("active");
-
-    bullet[1].classList.add("active");
-    progressCheck[1].classList.add("active");
-    progressText[1].classList.add("active");
-    slidePage.style.marginLeft = "-25%";
-    }
     if(status=="Paid"){
     bullet[0].classList.add("active");
     progressCheck[0].classList.add("active");
@@ -543,24 +529,6 @@ if (!isset($_SESSION['nic'])) {
     progressCheck[2].classList.add("active");
     progressText[2].classList.add("active");
     slidePage.style.marginLeft = "-50%";
-    }
-    if(status=="Ongoing"){
-    bullet[0].classList.add("active");
-    progressCheck[0].classList.add("active");
-    progressText[0].classList.add("active");
-
-    bullet[1].classList.add("active");
-    progressCheck[1].classList.add("active");
-    progressText[1].classList.add("active");
-
-    bullet[2].classList.add("active");
-    progressCheck[2].classList.add("active");
-    progressText[2].classList.add("active");
-
-    bullet[3].classList.add("active");
-    progressCheck[3].classList.add("active");
-    progressText[3].classList.add("active");
-    slidePage.style.marginLeft = "-75%";
     }
     if(status=="Delivered"){
     bullet[0].classList.add("active");
@@ -612,37 +580,23 @@ if (!isset($_SESSION['nic'])) {
     }
   </script>
 
-<?php if($status=="Accepted"){ ?>
-    <div class="alert">
-      <p>You have been estimated a price for this order, waiting for customer's payment.</p>
-    </div>
-<?php } ?>
 <?php if($status=="Paid"){ ?>
     <div class="alert">
-      <form action="order.php" method="post">
-      <p>You have beed paid for this item, Did you recieve it? Wanna close the order?</p><br/>
-      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="" class="accept-button" type="submit">YES</button>
-      </form>
+      <p>You have beed paid for this item, Wait until tailor will be delivered it</p><br/>
     </div>
 <?php } ?>
-<?php if($status=="Ongoing"){ ?>
-    <div class="alert">
-      <form action="order.php" method="post">
-      <p>Did you finish your work? wanna deliver it now?</p> <br />
-      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="order-deliver" class="accept-button">YES</button>
-    </form>
-    </div>
-    <?php } ?>
     <?php if($status=="Delivered"){ ?>
     <div class="alert">
-      <p>You delivered this order, waiting for customer to mark it as completed</p>
+    <form action="purchase.php" method="post">
+      <p>Tailor has been delivered the order, Did you recieve it?</p>
+      <input type="hidden" name="sale_id" value=<?php echo $row["id"]?> >
+      <button name="sale-complete" class="accept-button">Mark as Completed</button>
+      </form>
     </div>
     <?php } ?>
     <?php if($status=="Completed"){ ?>
     <div class="alert">
-      <p>Customer marked this order as Completed!</p>
+      <p>You marked this order as Completed!</p>
     </div>
     <?php } ?>
   

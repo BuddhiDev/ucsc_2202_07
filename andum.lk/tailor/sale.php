@@ -619,29 +619,15 @@ if (!isset($_SESSION['nic'])) {
     }
   </script>
 
-<?php if($status=="Accepted"){ ?>
-    <div class="alert">
-      <p>You have been estimated a price for this order, waiting for customer's payment.</p>
-    </div>
-<?php } ?>
 <?php if($status=="Paid"){ ?>
     <div class="alert">
       <form action="order.php" method="post">
-      <p>Customer has been paid for this order, Did you start working on it?</p><br/>
+      <p>Customer has been paid for this order, Deliver it now!</p><br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="order-ongoing" class="accept-button" type="submit">YES</button>
+      <button name="" class="accept-button" type="submit">DELIVER</button>
       </form>
     </div>
 <?php } ?>
-<?php if($status=="Ongoing"){ ?>
-    <div class="alert">
-      <form action="order.php" method="post">
-      <p>Did you finish your work? wanna deliver it now?</p> <br />
-      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="order-deliver" class="accept-button">YES</button>
-    </form>
-    </div>
-    <?php } ?>
     <?php if($status=="Delivered"){ ?>
     <div class="alert">
       <p>You delivered this order, waiting for customer to mark it as completed</p>
