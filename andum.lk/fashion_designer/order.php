@@ -17,6 +17,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/wizard-styles.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
@@ -163,6 +164,13 @@ if (!isset($_SESSION['nic'])) {
       transition: all 0.3s ease 0s;
       text-align: center;
       -webkit-appearance: none;
+    }
+
+    .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px; 
     }
 
     .cart-button:hover {
@@ -346,38 +354,259 @@ if (!isset($_SESSION['nic'])) {
   $sql = "SELECT * FROM fd_orders WHERE id=$selected_o_id";
   $result = mysqli_query($db, $sql);
   if ($result) {
-    $row = mysqli_fetch_assoc($result)
+    $row = mysqli_fetch_assoc($result);
+    $status=$row["status"];
   ?>
 
-    <div class="main">
-      <div class="">
-        <div class="card-img">
-          
-        </div>
-      </div>
-      <div class="">
-        <div >
-          <h2>ORDER DETAILS</h2>
+<div class="container">
+        <header>Order Details</header>
+        <form method="post">
           <div>
-            <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px">Customer Name: <?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px">Status: <?php echo $row["status"]?></p>
-              <br>
-              <div>
-                <div>
-                  
-                  <br>
-                  <br>
-                  
-                </div>
+            <div class="title-n">
+              <p style="font-weight:bold">Customer Name</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["c_fname"]." ".$row["c_lname"] ?></p>
+            </div>
+          </div>
+          <?php if($status!="Pending"){ ?>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Order Price</p>
+            </div>
+            <div class="cust-n">
+              <p >Rs. 1000.00</p>
+            </div>
+          </div>
+          <?php } ?> 
+          
+        </form>
+
+        <div class="progress-bar">
+          <div class="step">
+              <p>Pending</p>
+              <div class="bullet">
+                  <span>1</span>
               </div>
-            </form>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Accepted</p>
+              <div class="bullet">
+                  <span>2</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Paid</p>
+              <div class="bullet">
+                  <span>3</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Ongoing</p>
+              <div class="bullet">
+                  <span>4</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Delivered</p>
+              <div class="bullet">
+                  <span>5</span>
+              </div>
+              <div class="check fas fa-check"></div>
+          </div>
+          <div class="step">
+              <p>Completed</p>
+              <div class="bullet">
+                  <span>6</span>
+              </div>
+              <div class="check fas fa-check"></div>
           </div>
         </div>
+        <div class="form-outer">
+          <form action="#">
+            <div class="page slide-page">
+                <div class="field">
+                  <button class="firstNext next">Pending</button>
+                </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                <!-- <button class="prev-1 prev">Pending</button> -->
+                <button class="">Accepted</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                <!-- <button class="prev-1 prev">Pending</button> -->
+                <button class="">Paid</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                  <!-- <button class="prev-2 prev">On going</button> -->
+                  <button class="">On Going</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                  <!-- <button class="prev-2 prev">On going</button> -->
+                  <button class="">Delivered</button>
+              </div>
+            </div>
+            <div class="page">
+              <div class="field btns">
+                  <!-- <button class="prev-3 prev">Complete</button> -->
+                  <button class="">Completed</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+
+
+    <script>
+    const slidePage = document.querySelector(".slide-page");
+    const submitBtn = document.querySelector(".submit");
+    const progressText = document.querySelectorAll(".step p");
+    const progressCheck = document.querySelectorAll(".step .check");
+    const bullet = document.querySelectorAll(".step .bullet");
+    var status = "<?php echo $status ?>";
+    slidePage.style.marginLeft = "-25%";
+
+    if(status=="Pending"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+    }
+    if(status=="Accepted"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+    slidePage.style.marginLeft = "-25%";
+    }
+    if(status=="Paid"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+    slidePage.style.marginLeft = "-50%";
+    }
+    if(status=="Ongoing"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+
+    bullet[3].classList.add("active");
+    progressCheck[3].classList.add("active");
+    progressText[3].classList.add("active");
+    slidePage.style.marginLeft = "-75%";
+    }
+    if(status=="Delivered"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+
+    bullet[3].classList.add("active");
+    progressCheck[3].classList.add("active");
+    progressText[3].classList.add("active");
+
+    bullet[4].classList.add("active");
+    progressCheck[4].classList.add("active");
+    progressText[4].classList.add("active");
+    slidePage.style.marginLeft = "-100%";
+    }
+    if(status=="Completed"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+
+    bullet[3].classList.add("active");
+    progressCheck[3].classList.add("active");
+    progressText[3].classList.add("active");
+
+    bullet[4].classList.add("active");
+    progressCheck[4].classList.add("active");
+    progressText[4].classList.add("active");
+
+    bullet[5].classList.add("active");
+    progressCheck[5].classList.add("active");
+    progressText[5].classList.add("active");
+    slidePage.style.marginLeft = "-125%";
+    }
+  </script>
+
+<?php if($status=="Accepted"){ ?>
+    <div class="alert">
+      <p>You have been estimated a price for this order, waiting for customer's payment.</p>
     </div>
+<?php } ?>
+<?php if($status=="Paid"){ ?>
+    <div class="alert">
+      <form action="order.php" method="post">
+      <p>Customer has been paid for this order, Did you start working on it?</p><br/>
+      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <button name="order-ongoing" class="accept-button" type="submit">YES</button>
+      </form>
+    </div>
+<?php } ?>
+<?php if($status=="Ongoing"){ ?>
+    <div class="alert">
+      <form action="order.php" method="post">
+      <p>Did you finish your work? wanna deliver it now?</p> <br />
+      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <button name="order-deliver" class="accept-button">YES</button>
+    </div>
+<?php } ?>
+<?php if($status=="Delivered"){ ?>
+    <div class="alert">
+      <p>You delivered this order, waiting for customer to mark it as completed</p>
+    </div>
+<?php } ?>
+<?php if($status=="Completed"){ ?>
+    <div class="alert">
+      <p>Customer marked this order as Completed!</p>
+    </div>
+<?php } ?>
 
 
   <!--measurement form-->
