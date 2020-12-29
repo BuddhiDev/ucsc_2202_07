@@ -185,6 +185,41 @@ if (!isset($_SESSION['nic'])) {
     
   </div>
 
+<!-- retrieve order data -->
+<?php
+$nic=$_SESSION['nic'];
+
+//get total orders sql
+$sql = "SELECT COUNT(id) FROM t_orders WHERE t_nic='$nic' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$total_orders = $row[0];
+
+//get pending orders sql
+$sql = "SELECT COUNT(id) FROM t_orders WHERE t_nic='$nic' AND status='Pending' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$pending_orders = $row[0];
+
+//get ongoing orders sql
+$sql = "SELECT COUNT(id) FROM t_orders WHERE t_nic='$nic' AND status='Ongoing' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$ongoing_orders = $row[0];
+
+//get completed orders sql
+$sql = "SELECT COUNT(id) FROM t_orders WHERE t_nic='$nic' AND status='Completed' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$completed_orders = $row[0];
+
+//get delivered orders sql
+$sql = "SELECT COUNT(id) FROM t_orders WHERE t_nic='$nic' AND status='Delivered' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$delivered_orders = $row[0];
+
+?>
   <div class="fd-container-box">
     <div class="side-bar-wrapper">
       <ul class="sidebar">
@@ -227,7 +262,7 @@ if (!isset($_SESSION['nic'])) {
       <div class=row>
         <div class=col-4>
           <div class="fd-block-1">
-            <h3 class="fd-block-font-size">24</h3>
+            <h3 class="fd-block-font-size"><?php echo $total_orders; ?></h3>
             <Br>
             <h3>Total Orders</h3>
           </div>
@@ -250,28 +285,28 @@ if (!isset($_SESSION['nic'])) {
       <div class=row>
         <div class=col-3>
           <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $pending_orders; ?></h3>
             <Br>
             <h3>Pending</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-2">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $ongoing_orders; ?></h3>
             <Br>
             <h3>On Going</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-1">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $completed_orders; ?></h3>
             <Br>
             <h3>Completed</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-4">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $delivered_orders; ?></h3>
             <Br>
             <h3>Delivered</h3>
           </div>
