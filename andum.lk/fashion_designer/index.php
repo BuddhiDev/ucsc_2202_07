@@ -165,14 +165,41 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
+<!-- retrieve order data -->
+<?php
+$nic=$_SESSION['nic'];
+
+//get total orders sql
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$total_orders = $row[0];
+
+//get pending orders sql
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND status='Pending' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$pending_orders = $row[0];
+
+//get ongoing orders sql
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND status='Ongoing' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$ongoing_orders = $row[0];
+
+//get completed orders sql
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND status='Completed' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$completed_orders = $row[0];
+
+//get delivered orders sql
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND status='Delivered' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$delivered_orders = $row[0];
+
+?>
 
   <div class="fd-container-box">
     <div class="side-bar-wrapper">
@@ -224,7 +251,7 @@ if (!isset($_SESSION['nic'])) {
       <div class=row>
         <div class=col-4>
           <div class="fd-block-1">
-            <h3 class="fd-block-font-size">24</h3>
+            <h3 class="fd-block-font-size"><?php echo $total_orders; ?></h3>
             <Br>
             <h3>Total Orders</h3>
           </div>
@@ -247,64 +274,128 @@ if (!isset($_SESSION['nic'])) {
       <div class=row>
         <div class=col-3>
           <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $pending_orders; ?></h3>
             <Br>
             <h3>Pending</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-2">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $ongoing_orders; ?></h3>
             <Br>
             <h3>On Going</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-1">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $completed_orders; ?></h3>
             <Br>
             <h3>Completed</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-4">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $delivered_orders; ?></h3>
             <Br>
             <h3>Delivered</h3>
           </div>
         </div>
       </div>
-      <div calss="row">
-    <table class="fd-table">
-    <tr class="fd-tr">
-      <th class="fd-th">Order Id</th>
-      <th class="fd-th">Date</th>
-      <th class="fd-th">Customer</th>
-      <th class="fd-th">Payment</th>
-    </tr>
-    <tr >
-      <td class="fd-th">Jill</td>
-      <td class="fd-th">Smith</td>
-      <td class="fd-th">50</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Eve</td>
-      <td class="fd-th">Jackson</td>
-      <td class="fd-th">94</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Adam</td>
-      <td class="fd-th">Johnson</td>
-      <td class="fd-th">67</td>
-    </tr>
-  </table>
 
-    </div>
-    </div>
 
     
+      <!-- order chart -->
+      <?php
+//initialize previouse 6 months
+  for ($i = 0; $i <= 6; $i++) 
+  {
+    $months[] = date("m", strtotime( date( 'Y-m-01' )." -$i months"));
+  }
+  $year = date('Y');
+//sql to get last month order count
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[0]' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$mon1=$row[0];
 
-  
+//sql to get last 2 month order count
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[1]' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$mon2=$row[0];
+
+//sql to get last 3month order count
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[2]' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$mon3=$row[0];
+
+//sql to get last 4month order count
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[3]' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$mon4=$row[0];
+
+//sql to get last 5month order count
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[4]' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$mon5=$row[0];
+
+//sql to get last 6month order count
+$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[5]' ";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$mon6=$row[0];
+
+?>
+<br />
+
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Total Orders From Past 6 Months"
+	},
+  axisX:{  
+  //Try Changing to MMMM
+  title: "Month",
+  interval: 1,
+  intervalType: "month",
+  },
+  axisY:{
+  title: "Total Orders",
+  interval: 1,
+  },
+  data: [
+  {        
+  type: "line",
+  lineThickness: 2,
+  dataPoints: [
+  { x: new Date(<?php echo $year ?>,<?php echo $months[1]?>), y:<?php echo $mon1?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[2]?>), y:<?php echo $mon2?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[3]?>), y:<?php echo $mon3?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[4]?>), y:<?php echo $mon4?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[5]?>), y:<?php echo $mon5?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[6]?>), y:<?php echo $mon6?> },
+    ]
+      }    
+      ]
+});
+chart.render();
+ 
+}
+</script>
+
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+</div>
 
     <!-- </div> -->
     

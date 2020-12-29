@@ -149,10 +149,11 @@ if (isset($_POST['hireT'])) {
     $biceps = mysqli_real_escape_string($db, $_POST['biceps']);
     $hips = mysqli_real_escape_string($db, $_POST['hips']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
+    $date = date('m');
 
     echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         header('location: hired_list.php');
@@ -170,9 +171,10 @@ if (isset($_POST['hireFD'])) {
     $c_fname = mysqli_real_escape_string($db, $_POST['c_fname']);
     $c_lname = mysqli_real_escape_string($db, $_POST['c_lname']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
+    $date = date('m');
 
     echo $fd_nic,$fd_fname;
-    $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other')";
+    $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other, date) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other','$date')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         header('location: hired_fd_list.php');
