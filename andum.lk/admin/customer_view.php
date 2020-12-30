@@ -7,7 +7,7 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-<?php include("admin_controller.php"); ?>
+
 <!DOCTYPE html>
 <html>
 
