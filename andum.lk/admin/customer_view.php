@@ -420,40 +420,39 @@ if (!isset($_SESSION['nic'])) {
 
   <center><p> Hired Fashion Designers' details of the customer </p></center>
 
-<div class="container-box">
+  <div class="container-box">
     <table>
       <tr>
-        <th>Fashion designer Name</th>
-        <th>Category</th>
+        <th>Tailor Name</th>
         <th>Status</th>
-        <th><center>Action</center></th>
-
+        <th></th>
       </tr>
       <tr>
         <?php
 
         $nic = $_SESSION['selected_c_id'];
-        $sql1 = "SELECT * FROM t_orders WHERE c_nic='$nic'";
-        $result1 = mysqli_query($db, $sql1);
+        $sql2 = "SELECT * FROM fd_orders WHERE c_nic='$nic'";
+        $result2 = mysqli_query($db, $sql2);
 
-        if (mysqli_num_rows($result1) > 0) {
+        if (mysqli_num_rows($result2) > 0) {
 
-          while ($row = mysqli_fetch_assoc($result1)) {
+          while ($row = mysqli_fetch_assoc($result2)) {
         ?>
 
-            <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
-              
+              <div>
+                <center><a class="cta" href="hired_fd_list.php?fd_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
             </td>
       </tr>
-        <?php
-              }
-            } else {
-            }
+    <?php
+          }
+        } else {
+        }
 
-        ?>
+    ?>
     </table>
   </div>
 
