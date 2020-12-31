@@ -14,63 +14,11 @@
 //     header('location: tailor_view.php');
 // }
 
-if(isset($_GET['nic']) ){
-    $selected_fdesigner_id = mysqli_real_escape_string($db, $_GET['nic']);
-    $_SESSION['selected_fdesigner_id']=$selected_fdesigner_id;
-    header('location: fdesigner_view.php');
-}
- 
- /*   
-use PHPMailer\PHPMailer\PHPMailer;
-//use PHPMailer\PHPMailer\SMTP;
-//use PHPMailer\PHPMailer\Exception;
-
-if(isset($_POST['send_mail'])){
-    $name = $_POST['aname'];
-    $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $body = $_POST['body'];
-
-    require_once "PHPMailer/PHPMailer.php";
-    require_once "PHPMailer/SMTP.php";
-    require_once "PHPMailer/Exception.php";
-   
-    $mail = new PHPMailer();
-
-        $mail->isSMTP();
-
-        $mail->Host = "smtp.gmail.com";
-
-        $mail->SMTPAuth = "true";
-
-        $mail->SMTPSecure = "tls";
-
-        $mail->Port = "587";
-
-        $mail->Username = "nimeshikalakmali960@gmail.com";
-
-        $mail->Password = "123456";
-
-        $mail->isHTML(true);
-
-        $mail->Subject = "$subject";
-
-        $mail->setFrom("nimeshikalakmali960@gmail.com");
-
-        $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $body</h3>";
-
-        $mail->addAddress("nimeshikalakmali960@gmail.com");
-
-        if($mail->Send()){
-            echo "Email sent";
-        }
-        else{
-            "Error";
-        }
-
-        $mail->smtpClose();
-    }
-*/
+//if(isset($_GET['nic']) ){
+ //   $selected_fdesigner_id = mysqli_real_escape_string($db, $_GET['nic']);
+ //   $_SESSION['selected_fdesigner_id']=$selected_fdesigner_id;
+ //   header('location: fdesigner_view.php');
+//}
 
 
 if(isset($_POST['send_mail'])){
@@ -98,7 +46,7 @@ if(isset($_POST['send_mail'])){
         $mail->Body =$body;
 
         if($mail->Send()){
-            <a href="banned_user.php"> echo "<script>alert('Email Sent.')</script>"</a>;
+            echo "<script>alert('Email Sent.')</script>";
         }
         else{
             echo "<script>alert('### Email Not Sent!')</script>";

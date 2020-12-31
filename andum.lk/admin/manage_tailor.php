@@ -4,6 +4,11 @@
     $selected_tailor_id = mysqli_real_escape_string($db, $_GET['nic']);
     $_SESSION['selected_tailor_id']=$selected_tailor_id;
     header('location: tailor_view.php');
+}
+if(isset($_GET['d_nic']) ){
+  $selected_tailor_id = mysqli_real_escape_string($db, $_GET['d_nic']);
+  $_SESSION['selected_tailor_id']=$selected_tailor_id;
+  header('location: banned_tailor.php');
 }?>
 
 <!DOCTYPE html>
@@ -215,7 +220,7 @@
           </td>
           <td>
             <div>
-              <a class="cta" href="#"><button class="view-button">Delete</button></a>
+              <a href="manage_tailor.php?d_nic=<?php echo $row["nic"]?>"><button class="view-button">Suspend</button></a>
             </div>
           </td>
 

@@ -67,6 +67,7 @@ if (!isset($_SESSION['nic'])) {
                 <ul>
                   <!--<li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>-->
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="manage_fdesigner.php"><i class="fas fa-users"></i>Manage Customers</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -88,17 +89,17 @@ if (!isset($_SESSION['nic'])) {
 
 <div class="container">
 <?php
-  $selected_c_id = $_SESSION['selected_c_id'];
-  $nic = $_SESSION['selected_c_id'];
+  $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
+  $nic = $_SESSION['selected_fdesigner_id'];
  
-  $sql_sm = "SELECT * FROM users WHERE nic='$selected_c_id' ";
+  $sql_sm = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
   $result = mysqli_query($db, $sql_sm);
   if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
   ?>
     
 		<h1>Warning message</h1>
-		<form action="banned_user.php" method="post">
+		<form action="#" method="post">
 			<p>
 				<label for="fullname">From *:</label>
 				<input type="text" value="<?php echo "Andum.lk Admin-"?>" class="field-value-inline" name="aname" require>

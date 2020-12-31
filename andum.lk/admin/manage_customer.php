@@ -3,6 +3,11 @@
     $selected_c_id = mysqli_real_escape_string($db, $_GET['nic']);
     $_SESSION['selected_c_id']=$selected_c_id;
     header('location: customer_view.php');
+}
+    if(isset($_GET['d_nic']) ){
+      $selected_c_id = mysqli_real_escape_string($db, $_GET['d_nic']);
+      $_SESSION['selected_c_id']=$selected_c_id;
+      header('location: banned_cust.php');
 } ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -213,7 +218,7 @@
           </td>
           <td>
             <div>
-            <a href="banned_user.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="delete_user">Delete</button></a>
+            <a href="manage_customer.php?d_nic=<?php echo $row["nic"]?>"><button class="view-button" name="delete_user">Suspend</button></a>
             </div>
           </td>
 

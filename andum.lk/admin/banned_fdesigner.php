@@ -214,10 +214,10 @@
   
   <div class="container-box">
   <?php
-  $selected_c_id = $_SESSION['selected_c_id'];
-  $nic = $_SESSION['selected_c_id'];
+  $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
+  $nic = $_SESSION['selected_fdesigner_id'];
  
-  $sql = "SELECT * FROM users WHERE nic='$selected_c_id' ";
+  $sql = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
