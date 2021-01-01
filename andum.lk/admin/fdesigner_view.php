@@ -421,6 +421,74 @@ if (!isset($_SESSION['nic'])) {
     </table>
   </div>
   </div>
+  <center><p> Uploaded Designs</p></center>
+
+
+
+  <?php
+ 
+  $nic = $_SESSION['selected_fdesigner_id'];
+  
+  $sql2 = "SELECT * FROM fashion_designer WHERE nic='$selected_fdesigner_id' ";
+  $result2 = mysqli_query($db, $sql2);
+  if ($result2) {
+   while( $row = mysqli_fetch_assoc($result2)){
+ ?>
+
+<div class=fd-profile-row2>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="fd-featured-card-item">
+              <div class="card-img">
+              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
+              </div>
+              <div class="card-content">
+              <div class="card-title"></div>
+              <div class="card-description"></div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="fd-featured-card-item">
+            <div class="card-img">
+              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
+            </div>
+            <div class="card-content">
+            <div class="card-title"></div>
+            <div class="card-description"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="cfd-featured-card-item">
+              <div class="card-img">
+              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image3"]; ?>" alt="Avatar" style="width:100%"></a>
+              </div>
+              <div class="card-content">
+              <div class="card-title"></div>
+              <div class="card-description"></div>
+              </div>
+          </div>
+        </form>
+      </div>
+
+<?php
+
+  }
+  }
+
+?>
+  </div>
+    </div>
+      
+      
+  </div>
+
+
   
 
 <center><p> Payments</p></center>
