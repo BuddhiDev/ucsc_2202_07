@@ -380,7 +380,47 @@ if (!isset($_SESSION['nic'])) {
 
   <center><p> Fashion Designer's Order details</p></center>
  
+  <div class="container-box">
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
 
+        <?php
+
+        $nic = $_SESSION['selected_fdesigner_id'];
+        $sql1 = "SELECT * FROM fd_orders WHERE fd_nic='$nic'";
+        $result1 = mysqli_query($db, $sql1);
+        
+
+        if (mysqli_num_rows($result1) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result1)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+  </div>
+  </div>
   
 
 <center><p> Payments</p></center>
