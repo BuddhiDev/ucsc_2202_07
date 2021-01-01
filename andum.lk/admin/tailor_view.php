@@ -383,7 +383,11 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-
+  <div class="customer-cover">
+        <div class="row">
+          <h2 class="customer-heading">Readymade Dresses</h2>
+        </div>
+        <div class="row">
 
 
 
@@ -423,7 +427,11 @@ if (!isset($_SESSION['nic'])) {
   }
 
 ?>
-
+  </div>
+    </div>
+      
+      
+  </div>
 <center><p> Orders</p></center>
 
 <div class="container-box">
@@ -451,6 +459,7 @@ if (!isset($_SESSION['nic'])) {
             <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
             <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
+            <td>pending</td>
             
       </tr>
       <?php
