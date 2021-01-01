@@ -14,7 +14,7 @@ if (!isset($_SESSION['nic'])) {
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Hire a Tailor</title>
+  <title>Andum.lk - Hire a Fashion Designer</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
@@ -380,7 +380,7 @@ if (!isset($_SESSION['nic'])) {
         <form method="get" action="index.php" class="dress-showcase">
           <div class="cfd-featured-card-item">
               <div class="card-img">
-              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
+              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image3"]; ?>" alt="Avatar" style="width:100%"></a>
               </div>
               <div class="card-content">
               <div class="card-title"></div>
