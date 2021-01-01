@@ -424,6 +424,47 @@ if (!isset($_SESSION['nic'])) {
 
 ?>
 
+<center><p> Orders</p></center>
+
+<div class="container-box">
+
+<table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['selected_tailor_id'];
+        $sql2 = "SELECT * FROM t_orders WHERE t_nic='$nic'";
+        $result2 = mysqli_query($db, $sql2);
+
+        if (mysqli_num_rows($result2) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result2)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+
+</div>
 
 
 
@@ -458,6 +499,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 </div>
+
 
 
 
