@@ -118,6 +118,28 @@ if (isset($_POST['login'])) {
     }
 }
 
+//reset password
+if(isset($_POST['resetpwd'])){
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $sql = "SELECT * from users WHERE email='$email'";
+    $run = mysqli_query($db,$sql);
+    if(mysqli_num_rows($run)>0)
+    {
+        $row = mysqli_fetch_array($run);
+        $db_email = $row['email'];
+        $db_email = $row['id'];
+        $token = uniqid(md5(time())); //Random Token
+        $sql = "INSERT INTO password_reset (id,email,token) VALUES (NULL,'$email','$token')";
+        if(mysqli_query($db,$sql))
+        {
+            $to = $db_email;
+            $subject = "Password reset link";
+            $message = "Click <a href='http://localhost/ucsc_2202_07/andum.lk/reset.php?token=$token'>here</a> to reset your password."
+            mail($to,$subject,$message);
+        }
+    }
+}
+
 //logout
 if (isset($_GET['logout'])) {
     session_destroy();

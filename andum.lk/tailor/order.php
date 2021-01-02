@@ -890,6 +890,8 @@ if (!isset($_SESSION['nic'])) {
 
   </div>
 
+    </div>
+
   
   <?php require("../footer.php") ?>
 </body>

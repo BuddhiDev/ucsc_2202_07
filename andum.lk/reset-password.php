@@ -7,7 +7,7 @@ require("server.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk</title>
+  <title>Andum.lk-Forgot Password</title>
   <!-- Page-icon -->
   <link rel="shortcut icon" href="logo.png">
   <!-- Stylesheets -->
@@ -137,26 +137,19 @@ require("server.php");
   </header>
   </div>
 
-  <form action="login.php" method="post">
+  <form action="" method="post">
     <?php include("errors.php");
     ?>
 
     <div class="login-container">
       <div class="form-field-inline">
-        <label for="nic" class="field-label-inline">NIC Number</label>
-        <input type="text" class="field-value-inline" name="nic" required>
-      </div>
-      <div class="form-field-inline">
-        <label for="password" class="field-label-inline"><b>Password</b></label>
-        <input type="password" class="field-value-inline" name="password" required>
-      </div>
-      <div>
-        <span class="psw">Forgot<a href="reset-password.php">&nbsppassword?</a></span>
+        <label for="email" class="field-label-inline">Email</label>
+        <input type="text" class="field-value-inline" name="email" required>
       </div>
       <div class="btn-panel-center">
         <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
         <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
-        <button class="loginbutton btn-full-w" type="submit" name="login">SIGN IN </button>
+        <button class="loginbutton btn-full-w" type="submit" name="resetpwd">Reset</button>
       </div>
 
 

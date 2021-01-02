@@ -33,7 +33,7 @@ button:focus{
 }
 
 .error{
-  width: 100%%;
+  width: 100%;
     margin: 20px;
     padding: 10px;
     border: 1px solid #fafafafa;
@@ -53,25 +53,21 @@ header {
     align-items: center;
     padding: 10px 10px;
     box-shadow: 1px 1px 4px 1px #fafafa
-
 }
 
 .logo {
     cursor: pointer;
     height: 50px;
-
 }
 
 .body-img {
     cursor: pointer;
     height: 100px;
-
 }
 
 .footer-logo {
     cursor: pointer;
     height: 100px;
-
 }
 
 .nav-area {
@@ -81,7 +77,18 @@ header {
 
 .nav-area li{
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0px 20px; 
+}
+
+@media screen and (max-width:480px)
+{
+  header {
+    display: block;
+    
+}
+  .nav-area li{
+    display: block;
+  }
 }
 
 .nav-area li a{
@@ -102,8 +109,15 @@ header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+ 
 }
-
+@media screen and (max-width:480px) {
+  .navbar-main{
+    display: block;
+    
+   
+  }
+}
 nav > ul{
   position: relative;
   display: -webkit-flex;
@@ -206,6 +220,9 @@ nav ul.menu-area ul li a{
 nav ul.menu-area ul li a:hover{
     color: #EB2188;
 }
+
+
+
 
 /* -----Navbar Styles Ends----- */
 
@@ -532,6 +549,13 @@ nav ul.menu-area ul li a:hover{
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+  }
+
+  @media screen and (max-width:480px)
+  {
+    .row {
+      display: block;
+    }
   }
 
   .col-1{
