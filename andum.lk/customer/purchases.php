@@ -189,14 +189,16 @@ if (!isset($_SESSION['nic'])) {
     <table>
       <tr>
         <th>Tailor Name</th>
+        <th>Category</th>
         <th>Status</th>
+        <th><center>Action</center></th>
 
       </tr>
       <tr>
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic'";
+        $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic)";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -204,11 +206,12 @@ if (!isset($_SESSION['nic'])) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
-            <td><?php echo $row["c_fname"] ?></td>
+            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
-                <center><a class="cta" href="#"><button class="loginbutton btn-full-w">View</button></a></center>
+                <center><a class="cta" href=purchases.php?purchase_id=<?php echo $row["id"]?>><button class="loginbutton btn-full-w">View</button></a></center>
               </div>
             </td>
       </tr>

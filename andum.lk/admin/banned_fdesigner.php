@@ -1,9 +1,9 @@
 <?php include("../server.php");
 
-if (!isset($_SESSION['nic'])) {
+/*if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
-}
+}*/
 
 ?>  
 
@@ -214,10 +214,10 @@ if (!isset($_SESSION['nic'])) {
   
   <div class="container-box">
   <?php
-  $selected_c_id = $_SESSION['selected_c_id'];
-  $nic = $_SESSION['selected_c_id'];
+  $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
+  $nic = $_SESSION['selected_fdesigner_id'];
  
-  $sql = "SELECT * FROM users WHERE nic='$selected_c_id' ";
+  $sql = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -246,7 +246,7 @@ if (!isset($_SESSION['nic'])) {
             <li><a class="cta" href="send_mail.php"><button class="loginbutton btn-full-w">Warning message</button></a></li>
           </div>
           <div>
-            <li><a class="cta" href="#"><button class="loginbutton btn-full-w">Delete User</button></a></li>
+            <li><a class="cta" href="#"><button class="loginbutton btn-full-w">Suspend User Account</button></a></li>
           </div>
         </div>
       </div>

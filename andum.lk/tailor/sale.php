@@ -11,17 +11,16 @@ if (!isset($_SESSION['nic'])) {
 <html>
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Fashion Designer Order</title>
+  <title>Andum.lk - Sale</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/wizard-styles.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style type="text/css">
@@ -131,8 +130,6 @@ if (!isset($_SESSION['nic'])) {
       text-align: center;
     }
 
-
-
     .onee:hover {
       border: 2px solid black;
       width: 42px;
@@ -161,7 +158,6 @@ if (!isset($_SESSION['nic'])) {
     .cart-button {
       padding: 9px 25px;
       background-color: #EB2188;
-      color: white;
       border: none;
       border-radius: 50px;
       cursor: pointer;
@@ -170,12 +166,6 @@ if (!isset($_SESSION['nic'])) {
       -webkit-appearance: none;
     }
 
-    .alert {
-    padding: 20px;
-    background-color: #f44336; /* Red */
-    color: white;
-    margin-bottom: 15px; 
-    }
     .cart-button:hover {
       color: black;
     }
@@ -188,8 +178,25 @@ if (!isset($_SESSION['nic'])) {
       width: 50px;
       background-color: #fab7cc;
     }
-  </style>
 
+    .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px; 
+    }
+
+    .accept-button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
+  </style>
 </head>
 
 <body>
@@ -201,7 +208,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="tailor-dashboard.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
@@ -296,30 +303,33 @@ if (!isset($_SESSION['nic'])) {
             
           </li>
 
-          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
-          <li><a href="contact_us.php">Contact Us</a></li>
+          <li><a href="hire_tailor.php">Explore Tailors</a></li>
+          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li>
+          
+          </li>
         </ul>
       </div>
+      
+      <!-- </div> -->
       <div class="box">
         <div class="nav_right">
           <ul>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
-                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
-                  <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
+                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="Manage_sales.php"><i class="fas fa-money"></i>Sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-
+              </div>
+            </li>
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+          </ul>
         </div>
-        </ul>
-      </div>
       </div>
     </nav>
   </header>
@@ -331,50 +341,86 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-  <div class="container-box">
-    <?php
-      $selected_o_id = $_SESSION['selected_o_id'];
-      $nic = $_SESSION['nic'];
-      $sql = "SELECT * FROM fd_orders WHERE id=$selected_o_id";
-      $result = mysqli_query($db, $sql);
-      if ($result) 
-      {
-        $row = mysqli_fetch_assoc($result);
-        $status=$row["status"];
-        ?>
+<div class="add-new-position">
+  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
+</div>
 
-      <!--  <div class="order-detail-box">
-          <h2>ORDER DETAILS</h2>
-          <div>
-            <form method="post">
-              <p style="color: black; font-size: 20px; margin-top:10px">Fashion Designer Name | &nbsp <?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></p>
-              <p style="color: black; font-size: 20px; margin-top:10px">Status &nbsp &nbsp &nbsp &nbsp &nbsp | &nbsp <?php echo $row["status"]?></p>
-            </form>
-            <br/> <br/>
-      <?php if($row["status"]=="Delivered"){?><button class="cart-button">Delivery Retreived! Complete Order</button><?php } ?>
-          </div>
-        </div>
-      -->
+      
+  <div class="container-box">
+  <?php
+  $selected_s_id = $_SESSION['selected_s_id'];
+  $nic = $_SESSION['nic'];
+  $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.id=$selected_s_id AND (s.dress_id=d.dress_id AND s.c_nic=u.nic)";
+  $result = mysqli_query($db, $sql);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $status=$row["status"];
+  ?>
 
       <div class="container">
-        <header>Order Details</header>
+        <header>Sale Details</header>
         <form method="post">
           <div>
             <div class="title-n">
-              <p style="font-weight:bold">Fashion Designer Name</p>
+              <p style="font-weight:bold">Customer Name</p>
             </div>
             <div class="cust-n">
-              <p ><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></p>
+              <p ><?php echo $row["fname"]." ".$row["lname"] ?></p>
             </div>
           </div>
           <?php if($status!="Pending"){ ?>
+            <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Dress Title</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["title"] ?></p>
+            </div>
+          </div>
           <br/><br/>
           <div>
             <div class="title-n">
-              <p style="font-weight:bold">Order Price</p>
+              <p style="font-weight:bold">Category</p>
             </div>
             <div class="cust-n">
-              <p >Rs. 1000.00</p>
+              <p ><?php echo $row["category"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Colours</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["color"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Sizes</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["size"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Item Price</p>
+            </div>
+            <div class="cust-n">
+              <p >Rs. <?php echo $row["total_price"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Quantity</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["quantity"] ?></p>
             </div>
           </div>
           <?php } ?> 
@@ -432,31 +478,31 @@ if (!isset($_SESSION['nic'])) {
                   <button class="firstNext next">Pending</button>
                 </div>
             </div>
-            <div class="page slide-page">
-              <div class="field">
-                <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="firstNext next">Accepted</button>
-              </div>
-            </div>
-            <div class="page slide-page">
+            <div class="page">
               <div class="field btns">
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="firstNext next">Paid</button>
+                <button class="">Accepted</button>
               </div>
             </div>
-            <div class="page slide-page">
+            <div class="page">
+              <div class="field btns">
+                <!-- <button class="prev-1 prev">Pending</button> -->
+                <button class="">Paid</button>
+              </div>
+            </div>
+            <div class="page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
                   <button class="">On Going</button>
               </div>
             </div>
-            <div class="page slide-page">
+            <div class="page">
               <div class="field btns">
                   <!-- <button class="prev-2 prev">On going</button> -->
                   <button class="">Delivered</button>
               </div>
             </div>
-            <div class="page slide-page">
+            <div class="page">
               <div class="field btns">
                   <!-- <button class="prev-3 prev">Complete</button> -->
                   <button class="">Completed</button>
@@ -466,13 +512,15 @@ if (!isset($_SESSION['nic'])) {
         </div>
       </div>
 
-      <script>
+
+    <script>
     const slidePage = document.querySelector(".slide-page");
     const submitBtn = document.querySelector(".submit");
     const progressText = document.querySelectorAll(".step p");
     const progressCheck = document.querySelectorAll(".step .check");
     const bullet = document.querySelectorAll(".step .bullet");
     var status = "<?php echo $status ?>";
+    slidePage.style.marginLeft = "-25%";
 
     if(status=="Pending"){
     bullet[0].classList.add("active");
@@ -569,107 +617,31 @@ if (!isset($_SESSION['nic'])) {
     progressText[5].classList.add("active");
     slidePage.style.marginLeft = "-125%";
     }
-
   </script>
 
-<?php if($status=="Pending"){ ?>
-    <div class="alert">
-      <p>Your order has been placed, Please wait until fashion designer accepted and estimate a price</p>
-    </div>
-<?php } ?>
-<?php if($status=="Accepted"){ ?>
-    <div class="alert">
-      <p>Fashion designer has been accepted and estimated a price for the order, Please make your payment to start</p>
-    </div>
-<?php } ?>
 <?php if($status=="Paid"){ ?>
     <div class="alert">
-      <p>You have been paid for this order! Fashion Designer will be responded it as soon</p>
-    </div>
-<?php } ?>
-<?php if($status=="Ongoing"){ ?>
-    <div class="alert">
-      <p>Fashion Designer is working on it</p>
-    </div>
-<?php } ?>
-<?php if($status=="Delivered"){ ?>
-    <div class="alert">
       <form action="order.php" method="post">
-      <p>Fashion Designer delivered the order, Did you recieve the delivery?</p> <br/>
+      <p>Customer has been paid for this order, Deliver it now!</p><br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="order-complete" class="accept-button">Mark as Completed</button>
+      <button name="" class="accept-button" type="submit">DELIVER</button>
+      </form>
     </div>
 <?php } ?>
-<?php if($status=="Completed"){ ?>
+    <?php if($status=="Delivered"){ ?>
     <div class="alert">
-      <p>You marked this order as Completed!</p>
+      <p>You delivered this order, waiting for customer to mark it as completed</p>
     </div>
-
-<?php } ?>
-
-        <!--measurement form-->
+    <?php } ?>
+    <?php if($status=="Completed"){ ?>
+    <div class="alert">
+      <p>Customer marked this order as Completed!</p>
+    </div>
+    <?php } ?>
   
-        <div class="d-flex">
-            <!-- <lable for="other" style="">Other:</label> -->
-            <form method="post" action="order.php">
-              <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
-              <input type="hidden" name="r_nic" value=<?php echo $row["fd_nic"] ?>>
-              <input type="hidden" name="type" value="1">
-              <textarea name="msg" rows="5" cols="50" placeholder="" class="txt-area"></textarea>
-              <button class="cart-button" type="submit" name="chatBtn">Send</button>
-            </form>
-          </div>
-        
-
-          <?php
-      } 
-          ?>
-      
-<!-- retrieve messages from conversations -->
-<?php
-        $sql_chat = "SELECT * FROM conversations c INNER JOIN users u WHERE c.type=2  AND c.sender_nic='$nic' AND c.sender_nic=u.nic" ;
-        $result_chat = mysqli_query($db, $sql_chat);
-        if ($result_chat) 
-        {
-          while($row_chat = mysqli_fetch_assoc($result_chat))
-          {
-      ?>
-            <div id="chat-message-list">
-              <div class="message-row you-message">
-                <img src="" alt="">
-                <div class="message-content">
-                  <?php echo $row_chat["fname"]." ".$row_chat["lname"] ?>
-                </div>
-                <div class="message-content">
-                <div class="message-time">
-                  <?php echo $row_chat["date"] ?>
-                </div>
-                <div class="message-text">
-                  <?php echo $row_chat["message"] ?>
-                </div>
-                </div>
-                
-              </div>
-            </div>
-
-            <?php 
-          }
-        }
-            ?>
-
-
-  </div>
-
-
-
-
-
-
-  
-
-
-
-  <?php require("../footer.php") ?>
-</body>
+    <?php } ?>
+     <?php require("../footer.php") ?>
+    </div>
+  </body>
 
 </html>

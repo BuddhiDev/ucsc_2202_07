@@ -320,7 +320,7 @@ if (!isset($_SESSION['nic'])) {
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Purchases</a></li>
+                  <li><a href="Manage_sales.php"><i class="fas fa-money"></i>Sales</a></li>
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
@@ -490,6 +490,21 @@ if (!isset($_SESSION['nic'])) {
     bullet[1].classList.add("active");
     progressCheck[1].classList.add("active");
     progressText[1].classList.add("active");
+    slidePage.style.marginLeft = "-25%";
+    }
+    if(status=="Paid"){
+    bullet[0].classList.add("active");
+    progressCheck[0].classList.add("active");
+    progressText[0].classList.add("active");
+
+    bullet[1].classList.add("active");
+    progressCheck[1].classList.add("active");
+    progressText[1].classList.add("active");
+
+    bullet[2].classList.add("active");
+    progressCheck[2].classList.add("active");
+    progressText[2].classList.add("active");
+    slidePage.style.marginLeft = "-50%";
     }
     if(status=="Ongoing"){
     bullet[0].classList.add("active");
@@ -503,6 +518,11 @@ if (!isset($_SESSION['nic'])) {
     bullet[2].classList.add("active");
     progressCheck[2].classList.add("active");
     progressText[2].classList.add("active");
+
+    bullet[3].classList.add("active");
+    progressCheck[3].classList.add("active");
+    progressText[3].classList.add("active");
+    slidePage.style.marginLeft = "-75%";
     }
     if(status=="Delivered"){
     bullet[0].classList.add("active");
@@ -520,6 +540,11 @@ if (!isset($_SESSION['nic'])) {
     bullet[3].classList.add("active");
     progressCheck[3].classList.add("active");
     progressText[3].classList.add("active");
+
+    bullet[4].classList.add("active");
+    progressCheck[4].classList.add("active");
+    progressText[4].classList.add("active");
+    slidePage.style.marginLeft = "-100%";
     }
     if(status=="Completed"){
     bullet[0].classList.add("active");
@@ -541,8 +566,12 @@ if (!isset($_SESSION['nic'])) {
     bullet[4].classList.add("active");
     progressCheck[4].classList.add("active");
     progressText[4].classList.add("active");
-    }
 
+    bullet[5].classList.add("active");
+    progressCheck[5].classList.add("active");
+    progressText[5].classList.add("active");
+    slidePage.style.marginLeft = "-125%";
+    }
   </script>
 
 <?php if($status=="Accepted"){ ?>
@@ -552,14 +581,19 @@ if (!isset($_SESSION['nic'])) {
 <?php } ?>
 <?php if($status=="Paid"){ ?>
     <div class="alert">
+      <form action="order.php" method="post">
       <p>Customer has been paid for this order, Did you start working on it?</p><br/>
-      <button class="accept-button">YES</button>
+      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <button name="order-ongoing" class="accept-button" type="submit">YES</button>
+      </form>
     </div>
 <?php } ?>
 <?php if($status=="Ongoing"){ ?>
     <div class="alert">
+      <form action="order.php" method="post">
       <p>Did you finish your work? wanna deliver it now?</p> <br />
-      <button class="accept-button">YES</button>
+      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <button name="order-deliver" class="accept-button">YES</button>
     </div>
 <?php } ?>
 <?php if($status=="Delivered"){ ?>
@@ -797,9 +831,9 @@ if (!isset($_SESSION['nic'])) {
       <?php } else { ?>
       <center><label for="searchname" class="field-label-inline">Estimated Order Price: </label></center>
       <?php } ?>
-      <center><input type="text" style=" width: 50%"  name="" <?php if($row["status"]=="Accepted") echo "disabled"?> ></center>
+      <center><input type="text" style=" width: 50%"  name="" <?php if($row["status"]!="Pending") echo "disabled"?> ></center>
       <center><input type="hidden" class="field-value-inline" name="order_id" value=<?php echo $row["id"] ?>></center>
-      <center><button class="accept-button" type="submit" name="order-accept" <?php if($row["status"]=="Accepted") echo "disabled"?>>Submit</button></center>    
+      <center><button class="accept-button" type="submit" name="order-accept" <?php if($row["status"]!="Pending") echo "disabled"?>>Submit</button></center>    
     </div>
 
   <div id=div-2>

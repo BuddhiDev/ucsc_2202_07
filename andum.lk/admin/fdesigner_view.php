@@ -7,7 +7,7 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-
+<?php include("admin_controller.php"); ?>
 <!DOCTYPE html>
 <html>
 
@@ -335,11 +335,11 @@ if (!isset($_SESSION['nic'])) {
   
   <div class="container-box">
   <?php
-  $selected_tailor_id = $_SESSION['selected_tailor_id'];
-  $nic = $_SESSION['selected_tailor_id'];
+  $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
+  $nic = $_SESSION['selected_fdesigner_id'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
-  $sql = "SELECT * FROM users WHERE nic='$selected_tailor_id' ";
+  $sql = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result);
@@ -348,7 +348,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
       </div>
 
@@ -361,7 +361,7 @@ if (!isset($_SESSION['nic'])) {
               <br>
               <div>
                 <div>
-                  Activities of Tailor
+                  Activities of Fashion Designer
                   <br>
                   <br>
                   
@@ -377,46 +377,101 @@ if (!isset($_SESSION['nic'])) {
 <br/> 
     </form>
   </div>
- <?php } ?>
-  <center><p> Tailor's Dressshowcase</p></center>
+
+  <center><p> Fashion Designer's Order details</p></center>
+ 
+  <div class="container-box">
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['selected_fdesigner_id'];
+        $sql1 = "SELECT * FROM fd_orders WHERE fd_nic='$nic'";
+        $result1 = mysqli_query($db, $sql1);
+        
+
+        if (mysqli_num_rows($result1) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result1)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
 
 
-
-
-  <div class="customer-cover">
-        <div class="row">
-          <h2 class="customer-heading">Readymade Dresses</h2>
-        </div>
-        <div class="row">
-
-
+    </table>
+  </div>
+  </div>
+  <center><p> Uploaded Designs</p></center>
 
 
 
   <?php
-  $selected_tailor_id = $_SESSION['selected_tailor_id'];
-  $nic = $_SESSION['selected_tailor_id'];
-  $fname = $_SESSION['fname'];
-  $lname = $_SESSION['lname'];
-  $sql1 = "SELECT * FROM dress_showcase WHERE t_nic='$selected_tailor_id' ";
-  $result1 = mysqli_query($db, $sql1);
-  if ($result1) {
-   while( $row = mysqli_fetch_assoc($result1)){
+ 
+  $nic = $_SESSION['selected_fdesigner_id'];
+  
+  $sql2 = "SELECT * FROM fashion_designer WHERE nic='$selected_fdesigner_id' ";
+  $result2 = mysqli_query($db, $sql2);
+  if ($result2) {
+   while( $row = mysqli_fetch_assoc($result2)){
  ?>
 
-     <div class="col-4">
-        <form method="get" action="tailor_view.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-
-          <div class="card-item">
+<div class=fd-profile-row2>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="fd-featured-card-item">
+              <div class="card-img">
+              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
+              </div>
+              <div class="card-content">
+              <div class="card-title"></div>
+              <div class="card-description"></div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="fd-featured-card-item">
             <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
             </div>
             <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+            <div class="card-title"></div>
+            <div class="card-description"></div>
             </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="cfd-featured-card-item">
+              <div class="card-img">
+              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image3"]; ?>" alt="Avatar" style="width:100%"></a>
+              </div>
+              <div class="card-content">
+              <div class="card-title"></div>
+              <div class="card-description"></div>
+              </div>
           </div>
         </form>
       </div>
@@ -432,50 +487,6 @@ if (!isset($_SESSION['nic'])) {
       
       
   </div>
-<center><p> Orders</p></center>
-
-<div class="container-box">
-
-<table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-      </tr>
-      <tr>
-
-        <?php
-
-        $nic = $_SESSION['selected_tailor_id'];
-        $sql2 = "SELECT * FROM t_orders WHERE t_nic='$nic'";
-        $result2 = mysqli_query($db, $sql2);
-
-        if (mysqli_num_rows($result2) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result2)) {
-        ?>
-
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>pending</td>
-            
-      </tr>
-      <?php
-              }
-            } else {
-            }
-
-      ?>
-
-
-    </table>
-
-
-</div>
-
-
 
 
   
@@ -487,7 +498,7 @@ if (!isset($_SESSION['nic'])) {
 <table>
 
 <tr>
-        <th>Tailor Name</th>
+        <th>Customer Name</th>
         <th>Patment Date</th>
         <th>Delivered Status</th>
         <th><center>Action</center></th>
@@ -512,8 +523,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-
- 
+  <?php } ?>
   </div>
 
   

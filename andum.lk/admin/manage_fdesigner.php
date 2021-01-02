@@ -1,4 +1,15 @@
 <?php include("../server.php"); ?>
+<?php if(isset($_GET['nic']) ){
+   $selected_fdesigner_id = mysqli_real_escape_string($db, $_GET['nic']);
+   $_SESSION['selected_fdesigner_id']=$selected_fdesigner_id;
+   header('location: fdesigner_view.php');
+}
+if(isset($_GET['d_nic']) ){
+  $selected_fdesigner_id = mysqli_real_escape_string($db, $_GET['nic']);
+  $_SESSION['selected_fdesigner_id']=$selected_fdesigner_id;
+  header('location: banned_fdesigner.php');
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -200,12 +211,13 @@
           <td><?php echo $row["contactno"] ?></td>
           <td>
             <div>
-              <a href="#"><button class="view-button" >View</button></a>
+            <a href="manage_fdesigner.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+
             </div>
           </td>
           <td>
             <div>
-              <a class="cta" href="#"><button class="view-button">Delete</button></a>
+            <a href="manage_fdesigner.php?d_nic=<?php echo $row["nic"]?>"><button class="view-button">Suspend</button></a>
             </div>
           </td>
 

@@ -11,17 +11,16 @@ if (!isset($_SESSION['nic'])) {
 <html>
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Fashion Designer Order</title>
+  <title>Andum.lk - Purchase</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/wizard-styles.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style type="text/css">
@@ -131,8 +130,6 @@ if (!isset($_SESSION['nic'])) {
       text-align: center;
     }
 
-
-
     .onee:hover {
       border: 2px solid black;
       width: 42px;
@@ -161,7 +158,6 @@ if (!isset($_SESSION['nic'])) {
     .cart-button {
       padding: 9px 25px;
       background-color: #EB2188;
-      color: white;
       border: none;
       border-radius: 50px;
       cursor: pointer;
@@ -170,12 +166,6 @@ if (!isset($_SESSION['nic'])) {
       -webkit-appearance: none;
     }
 
-    .alert {
-    padding: 20px;
-    background-color: #f44336; /* Red */
-    color: white;
-    margin-bottom: 15px; 
-    }
     .cart-button:hover {
       color: black;
     }
@@ -188,13 +178,30 @@ if (!isset($_SESSION['nic'])) {
       width: 50px;
       background-color: #fab7cc;
     }
-  </style>
 
+    .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px; 
+    }
+
+    .accept-button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <header>
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -331,50 +338,82 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
+      
   <div class="container-box">
-    <?php
-      $selected_o_id = $_SESSION['selected_o_id'];
-      $nic = $_SESSION['nic'];
-      $sql = "SELECT * FROM fd_orders WHERE id=$selected_o_id";
-      $result = mysqli_query($db, $sql);
-      if ($result) 
-      {
-        $row = mysqli_fetch_assoc($result);
-        $status=$row["status"];
-        ?>
-
-      <!--  <div class="order-detail-box">
-          <h2>ORDER DETAILS</h2>
-          <div>
-            <form method="post">
-              <p style="color: black; font-size: 20px; margin-top:10px">Fashion Designer Name | &nbsp <?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></p>
-              <p style="color: black; font-size: 20px; margin-top:10px">Status &nbsp &nbsp &nbsp &nbsp &nbsp | &nbsp <?php echo $row["status"]?></p>
-            </form>
-            <br/> <br/>
-      <?php if($row["status"]=="Delivered"){?><button class="cart-button">Delivery Retreived! Complete Order</button><?php } ?>
-          </div>
-        </div>
-      -->
+  <?php
+  $selected_p_id = $_SESSION['selected_p_id'];
+  $nic = $_SESSION['nic'];
+  $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.id=$selected_p_id AND (s.dress_id=d.dress_id AND d.t_nic=u.nic)";
+  $result = mysqli_query($db, $sql);
+  if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $status=$row["status"];
+  ?>
 
       <div class="container">
-        <header>Order Details</header>
+        <header>Sale Details</header>
         <form method="post">
           <div>
             <div class="title-n">
-              <p style="font-weight:bold">Fashion Designer Name</p>
+              <p style="font-weight:bold">Tailor Name</p>
             </div>
             <div class="cust-n">
-              <p ><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></p>
+              <p ><?php echo $row["fname"]." ".$row["lname"] ?></p>
             </div>
           </div>
           <?php if($status!="Pending"){ ?>
+            <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Dress Title</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["title"] ?></p>
+            </div>
+          </div>
           <br/><br/>
           <div>
             <div class="title-n">
-              <p style="font-weight:bold">Order Price</p>
+              <p style="font-weight:bold">Category</p>
             </div>
             <div class="cust-n">
-              <p >Rs. 1000.00</p>
+              <p ><?php echo $row["category"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Colours</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["color"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Sizes</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["size"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Item Price</p>
+            </div>
+            <div class="cust-n">
+              <p >Rs. <?php echo $row["total_price"] ?></p>
+            </div>
+          </div>
+          <br/><br/>
+          <div>
+            <div class="title-n">
+              <p style="font-weight:bold">Quantity</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["quantity"] ?></p>
             </div>
           </div>
           <?php } ?> 
@@ -425,6 +464,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="check fas fa-check"></div>
           </div>
         </div>
+
         <div class="form-outer">
           <form action="#">
             <div class="page slide-page">
@@ -466,29 +506,16 @@ if (!isset($_SESSION['nic'])) {
         </div>
       </div>
 
-      <script>
+
+    <script>
     const slidePage = document.querySelector(".slide-page");
     const submitBtn = document.querySelector(".submit");
     const progressText = document.querySelectorAll(".step p");
     const progressCheck = document.querySelectorAll(".step .check");
     const bullet = document.querySelectorAll(".step .bullet");
     var status = "<?php echo $status ?>";
-
-    if(status=="Pending"){
-    bullet[0].classList.add("active");
-    progressCheck[0].classList.add("active");
-    progressText[0].classList.add("active");
-    }
-    if(status=="Accepted"){
-    bullet[0].classList.add("active");
-    progressCheck[0].classList.add("active");
-    progressText[0].classList.add("active");
-
-    bullet[1].classList.add("active");
-    progressCheck[1].classList.add("active");
-    progressText[1].classList.add("active");
     slidePage.style.marginLeft = "-25%";
-    }
+
     if(status=="Paid"){
     bullet[0].classList.add("active");
     progressCheck[0].classList.add("active");
@@ -502,24 +529,6 @@ if (!isset($_SESSION['nic'])) {
     progressCheck[2].classList.add("active");
     progressText[2].classList.add("active");
     slidePage.style.marginLeft = "-50%";
-    }
-    if(status=="Ongoing"){
-    bullet[0].classList.add("active");
-    progressCheck[0].classList.add("active");
-    progressText[0].classList.add("active");
-
-    bullet[1].classList.add("active");
-    progressCheck[1].classList.add("active");
-    progressText[1].classList.add("active");
-
-    bullet[2].classList.add("active");
-    progressCheck[2].classList.add("active");
-    progressText[2].classList.add("active");
-
-    bullet[3].classList.add("active");
-    progressCheck[3].classList.add("active");
-    progressText[3].classList.add("active");
-    slidePage.style.marginLeft = "-75%";
     }
     if(status=="Delivered"){
     bullet[0].classList.add("active");
@@ -569,107 +578,31 @@ if (!isset($_SESSION['nic'])) {
     progressText[5].classList.add("active");
     slidePage.style.marginLeft = "-125%";
     }
-
   </script>
 
-<?php if($status=="Pending"){ ?>
-    <div class="alert">
-      <p>Your order has been placed, Please wait until fashion designer accepted and estimate a price</p>
-    </div>
-<?php } ?>
-<?php if($status=="Accepted"){ ?>
-    <div class="alert">
-      <p>Fashion designer has been accepted and estimated a price for the order, Please make your payment to start</p>
-    </div>
-<?php } ?>
 <?php if($status=="Paid"){ ?>
     <div class="alert">
-      <p>You have been paid for this order! Fashion Designer will be responded it as soon</p>
+      <p>You have beed paid for this item, Wait until tailor will be delivered it</p><br/>
     </div>
 <?php } ?>
-<?php if($status=="Ongoing"){ ?>
+    <?php if($status=="Delivered"){ ?>
     <div class="alert">
-      <p>Fashion Designer is working on it</p>
+    <form action="purchase.php" method="post">
+      <p>Tailor has been delivered the order, Did you recieve it?</p>
+      <input type="hidden" name="sale_id" value=<?php echo $row["id"]?> >
+      <button name="sale-complete" class="accept-button">Mark as Completed</button>
+      </form>
     </div>
-<?php } ?>
-<?php if($status=="Delivered"){ ?>
-    <div class="alert">
-      <form action="order.php" method="post">
-      <p>Fashion Designer delivered the order, Did you recieve the delivery?</p> <br/>
-      <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="order-complete" class="accept-button">Mark as Completed</button>
-    </div>
-<?php } ?>
-<?php if($status=="Completed"){ ?>
+    <?php } ?>
+    <?php if($status=="Completed"){ ?>
     <div class="alert">
       <p>You marked this order as Completed!</p>
     </div>
-
-<?php } ?>
-
-        <!--measurement form-->
+    <?php } ?>
   
-        <div class="d-flex">
-            <!-- <lable for="other" style="">Other:</label> -->
-            <form method="post" action="order.php">
-              <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
-              <input type="hidden" name="r_nic" value=<?php echo $row["fd_nic"] ?>>
-              <input type="hidden" name="type" value="1">
-              <textarea name="msg" rows="5" cols="50" placeholder="" class="txt-area"></textarea>
-              <button class="cart-button" type="submit" name="chatBtn">Send</button>
-            </form>
-          </div>
-        
-
-          <?php
-      } 
-          ?>
-      
-<!-- retrieve messages from conversations -->
-<?php
-        $sql_chat = "SELECT * FROM conversations c INNER JOIN users u WHERE c.type=2  AND c.sender_nic='$nic' AND c.sender_nic=u.nic" ;
-        $result_chat = mysqli_query($db, $sql_chat);
-        if ($result_chat) 
-        {
-          while($row_chat = mysqli_fetch_assoc($result_chat))
-          {
-      ?>
-            <div id="chat-message-list">
-              <div class="message-row you-message">
-                <img src="" alt="">
-                <div class="message-content">
-                  <?php echo $row_chat["fname"]." ".$row_chat["lname"] ?>
-                </div>
-                <div class="message-content">
-                <div class="message-time">
-                  <?php echo $row_chat["date"] ?>
-                </div>
-                <div class="message-text">
-                  <?php echo $row_chat["message"] ?>
-                </div>
-                </div>
-                
-              </div>
-            </div>
-
-            <?php 
-          }
-        }
-            ?>
-
-
-  </div>
-
-
-
-
-
-
-  
-
-
-
-  <?php require("../footer.php") ?>
-</body>
+    <?php } ?>
+     <?php require("../footer.php") ?>
+    </div>
+  </body>
 
 </html>

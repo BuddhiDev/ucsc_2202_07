@@ -1,5 +1,5 @@
 <?php include("../server.php");
-/*
+
 if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
@@ -8,7 +8,7 @@ if (!isset($_SESSION['nic'])) {
 ?>  
 
 <?php include("../errors.php");
- */ ?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -202,7 +202,7 @@ if (!isset($_SESSION['nic'])) {
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="Manage_order.php">
+          <a class="sidebar-link" href="manage_tailor.php">
           <div class="sidebar-icon">
             <i class="fas fa-users"></i>
             <span class="sidebar-text">Tailor List</span>
@@ -210,7 +210,7 @@ if (!isset($_SESSION['nic'])) {
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="Manage_order.php">
+          <a class="sidebar-link" href="manage_fdesignerS.php">
           <div class="sidebar-icon">
             <i class="fas fa-users"></i>
             <span class="sidebar-text">Fashion Designer List</span>

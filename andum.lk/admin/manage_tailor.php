@@ -1,5 +1,16 @@
 <?php include("../server.php"); ?>
-<?php include("admin_controller.php"); ?>
+
+<?php if(isset($_GET['nic']) ){
+    $selected_tailor_id = mysqli_real_escape_string($db, $_GET['nic']);
+    $_SESSION['selected_tailor_id']=$selected_tailor_id;
+    header('location: tailor_view.php');
+}
+if(isset($_GET['d_nic']) ){
+  $selected_tailor_id = mysqli_real_escape_string($db, $_GET['d_nic']);
+  $_SESSION['selected_tailor_id']=$selected_tailor_id;
+  header('location: banned_tailor.php');
+}?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -201,14 +212,15 @@
           <td><?php echo $row["contactno"] ?></td>
           <td>
             <div>
-            <a href="manage_tailor.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+
+            <a href="manage_tailor.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_tailor" >View</button></a>
 
               <!-- <a href="#"><button class="view-button" >View</button></a> -->
             </div>
           </td>
           <td>
             <div>
-              <a class="cta" href="#"><button class="view-button">Delete</button></a>
+              <a href="manage_tailor.php?d_nic=<?php echo $row["nic"]?>"><button class="view-button">Suspend</button></a>
             </div>
           </td>
 

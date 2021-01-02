@@ -1,47 +1,18 @@
 <?php  include("../server.php");
-
+/*
 if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
-}
+}*/
 
-?>  
+?>
+<?php include("admin_controller.php"); ?> 
+
 
 <?php include("../errors.php");
   ?>
 
-<?php 
-	
-	// checking if the form is submit
-	if ( isset($_POST['send_mail']) ) {
-		$adminname	= $_POST['aname'];
-	  $toemail    = $_POST['email'];
-		$subject   	= $_POST['subject'];
-		$message	  = $_POST['message'];
 
-    $to	 	         = $toemail;
-    $email         = 'lakmali9852@gmail.com';
-		$mail_subject  = 'Message from Website';
-		$email_body    = "Message from Contact Us Page of the Website: <br>";
-		$email_body   .= "<b>From:</b> {$adminname} <br>";
-		$email_body   .= "<b>Subject:</b> {$subject} <br>";
-		$email_body   .= "<b>Message:</b><br>" . nl2br(strip_tags($message));
-
-		$header        = "From: {$email}\r\nContent-Type: text/html;";
-
-		$send_mail_result = mail($to, $mail_subject, $email_body, $header);
-
-		if ( $send_mail_result ) {
-            echo "Message Sent.";
-            //echo "<script>alert('Email Sent.')</script>";
-		} else {
-            echo "Message not Sent.";
-			//echo "<script>alert('Email Not Sent.')</script>";
-        }
-       
-      
-	} 
-    ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,6 +67,7 @@ if (!isset($_SESSION['nic'])) {
                 <ul>
                   <!--<li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>-->
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                  <li><a href="manage_fdesigner.php"><i class="fas fa-users"></i>Manage Customers</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -108,21 +80,26 @@ if (!isset($_SESSION['nic'])) {
     </nav>
   </header>
 
-
+  <script>
+    document.querySelector(".nav_right ul li").addEventListener("click",
+      function() {
+        this.classList.toggle("active");
+      })
+  </script>
 
 <div class="container">
 <?php
-  $selected_c_id = $_SESSION['selected_c_id'];
-  $nic = $_SESSION['selected_c_id'];
+  $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
+  $nic = $_SESSION['selected_fdesigner_id'];
  
-  $sql_sm = "SELECT * FROM users WHERE nic='$selected_c_id' ";
+  $sql_sm = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
   $result = mysqli_query($db, $sql_sm);
   if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
   ?>
     
 		<h1>Warning message</h1>
-		<form action="send_mail.php" method="post">
+		<form action="#" method="post">
 			<p>
 				<label for="fullname">From *:</label>
 				<input type="text" value="<?php echo "Andum.lk Admin-"?>" class="field-value-inline" name="aname" require>
@@ -139,11 +116,11 @@ if (!isset($_SESSION['nic'])) {
 			</p>
 
 			<p>
-				<label for="message">Message *: </label>
-				<textarea name="message" id="message" cols="30" rows="10" required></textarea>
+				<label for="body">Message *: </label>
+				<textarea name="body" id="body" cols="30" rows="10" required></textarea>
 			</p>
 			<p>
-            <button type="submit" name="send_mail" class="loginbutton btn-full-w">Send Message</button>
+        <button type="submit" name="send_mail" class="loginbutton btn-full-w">Send Message</button>
 			</p>
 
 
@@ -152,6 +129,22 @@ if (!isset($_SESSION['nic'])) {
 
 	</div>
   <?php } } ?>
+   
+  <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        function sendEmail(){
+            var name = $(#aname);
+            var email = $(#email);
+            var subject = $(#subject);
+            var body = $(#body);
+        }
+    </script>
+ 
 
   <?php require("../footer.php") ?>
 </body>

@@ -171,10 +171,11 @@ if (isset($_POST['hireT'])) {
     $biceps = mysqli_real_escape_string($db, $_POST['biceps']);
     $hips = mysqli_real_escape_string($db, $_POST['hips']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
+    $date = date('m');
 
     echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         header('location: hired_list.php');
@@ -192,9 +193,10 @@ if (isset($_POST['hireFD'])) {
     $c_fname = mysqli_real_escape_string($db, $_POST['c_fname']);
     $c_lname = mysqli_real_escape_string($db, $_POST['c_lname']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
+    $date = date('m');
 
     echo $fd_nic,$fd_fname;
-    $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other')";
+    $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other, date) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other','$date')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         header('location: hired_fd_list.php');
@@ -230,6 +232,20 @@ if(isset($_GET['order_id']) ){
     $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
+}
+
+//select a sale from tailor
+if(isset($_GET['sale_id']) ){
+    $selected_s_id = mysqli_real_escape_string($db, $_GET['sale_id']);
+    $_SESSION['selected_s_id']=$selected_s_id;
+    header('location: sale.php');
+}
+
+//select a purchase from customer
+if(isset($_GET['purchase_id']) ){
+    $selected_p_id = mysqli_real_escape_string($db, $_GET['purchase_id']);
+    $_SESSION['selected_p_id']=$selected_p_id;
+    header('location: purchase.php');
 }
 
 //select a customer order from fashion designer
@@ -314,22 +330,33 @@ if (isset($_GET['odid'])) {
 if (isset($_POST['Checkout'])) {
     $c_nic =  $_SESSION['nic'];
 
-    $sql = "SELECT cart.order_id, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
+    $sql = "SELECT cart.order_id, cart.quantity, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount, dress_showcase.price FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
     $result = mysqli_query($db, $sql);
 
     if (mysqli_num_rows($result) > 0) {
 
         while ($row = mysqli_fetch_assoc($result)) {
-            $new_amount = $row["amount"] - 1;
+
             $dress_id = $row["dress_id"];
+            $date = date('Y-m-d H:i:s');
+            $quantity = $row["quantity"];
+            $tot = $row["price"];
+            $sql_ = "INSERT INTO dress_sales (c_nic,dress_id,quantity,total_price,date,status) VALUES('$c_nic','$dress_id','$quantity','$tot','$date','Paid' )";
+            $result_ = mysqli_query($db, $sql_);
+
+            $new_amount = $row["amount"] - $row["quantity"];
+
             $order_id = $row["order_id"];
             $sql1 = "UPDATE dress_showcase SET amount=$new_amount WHERE dress_id=$dress_id";
             $result1 = mysqli_query($db, $sql1);
             $sql1 = "DELETE FROM cart WHERE order_id=$order_id";
             $result1 = mysqli_query($db, $sql1);
+
         }
 
+
         header('location: purchases.php');
+
     } else {
         array_push($errors, "Add to cart failed, try again later");
     }
@@ -458,7 +485,7 @@ if(isset($_GET['dcategory']) ){
     $selected_dress_category = mysqli_real_escape_string($db, $_GET['dcategory']);
 }
 
-//update order statues
+//update tailor order statues as accepted
 if (isset($_POST['order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
@@ -467,7 +494,43 @@ if (isset($_POST['order-accept'])) {
 
 }
 
-//update fashion designer order statues
+//update tailor order statues as paid
+if (isset($_POST['order-paid'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Paid' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update tailor order statues as Ongoing
+if (isset($_POST['order-ongoing'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Ongoing' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update tailor order statues as DELIVERED
+if (isset($_POST['order-deliver'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Delivered' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update tailor order statues as completed
+if (isset($_POST['order-complete'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Completed' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update fashion designer order statues as accepted
 if (isset($_POST['fd-order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['fd_order_id']);

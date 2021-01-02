@@ -6,14 +6,13 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
+  <title>Andum.lk - Manage Sales</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
@@ -22,9 +21,21 @@ if (!isset($_SESSION['nic'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
   <style>
-    .search-btn {
-      background-color: white;
-      color: #EB2188;
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 99%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
     }
   </style>
 </head>
@@ -37,7 +48,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="tailor-dashboard.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
@@ -144,7 +155,6 @@ if (!isset($_SESSION['nic'])) {
       <div class="box">
         <div class="nav_right">
           <ul>
-          
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
@@ -171,15 +181,13 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-  <?php 
-    include("../errors.php");
-  ?>
-
 <div class="add-new-position">
   <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
 </div>
 
-<div class="tailor-container-box">
+  
+
+
 
 <div class="search-container">
         <form method="post">
@@ -189,122 +197,53 @@ if (!isset($_SESSION['nic'])) {
           </div>
         </form>
       </div>
-  
-  <div class="tailor-cover">
-    <div class="row">
-      <h2 class="tailor-heading">New Arrivals</h2>
-    </div>
-    <div class="row">
-      <?php
+
+  <div class="container-box">
+  <div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
         $nic = $_SESSION['nic'];
-
-        // Check condition if this is search request or not
-        if ($search != true) {
-
-        // Read all dressess
-        $sql = "SELECT * FROM dress_showcase";
+        $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic";
         $result = mysqli_query($db, $sql);
 
-        if ($result) {
+        if (mysqli_num_rows($result) > 0) {
+
           while ($row = mysqli_fetch_assoc($result)) {
-      ?>
+        ?>
 
-      <!-- Dress box start -->
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-
-          <div class="card-item">
-            <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- Dress box end-->
-
-      <?php
-            }
-          }
-        } else {
-
-          //check whether this request is for category filter or keyword search
-          if (!$category_filter) {
-
-            //Read using search keyword
-            $sql = "SELECT * FROM dress_showcase WHERE title LIKE '%$keyword%'";
-            $result = mysqli_query($db, $sql);
-            if ($result) {
-              while ($row = mysqli_fetch_assoc($result)) {
-      ?>
-
-      <!-- Dress box start -->
-      <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-          <div class="card-item">
-            <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-            <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- Dress box end-->
-
+            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="Manage_sales.php?sale_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
       <?php
               }
+            } else {
             }
-          } else {
-            
-            //Read using selected category
-            $sql = "SELECT * FROM dress_showcase WHERE category LIKE '%$selected_dress_category%'";
-            $result = mysqli_query($db, $sql);
-            if ($result) {
-              while ($row = mysqli_fetch_assoc($result)) { 
+
       ?>
 
-      <!-- Dress box start -->
-      <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
-          <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-          <div class="card-item">
-            <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
-            </div>
-            <div class="card-content">
-              <div class="card-title"><?php echo $row["title"] ?></div>
-              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!-- Dress box end-->
 
-      <?php
-
-            }
-          }
-        }
-      }
-      ?>
-    </div>
+    </table>
   </div>
-    
-</div>
+  </div>
+  
 
+<?php require("../footer.php")?>
 
-  <?php require("../footer.php")?>
 </body>
 
 </html>
