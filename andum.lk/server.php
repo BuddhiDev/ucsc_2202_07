@@ -119,7 +119,9 @@ if (isset($_POST['login'])) {
 }
 
 //reset password
+
 if(isset($_POST['resetpwd'])){
+    
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $sql = "SELECT * from users WHERE email='$email'";
     $run = mysqli_query($db,$sql);
@@ -127,15 +129,41 @@ if(isset($_POST['resetpwd'])){
     {
         $row = mysqli_fetch_array($run);
         $db_email = $row['email'];
-        $db_email = $row['id'];
+        $db_nic = $row['nic'];
         $token = uniqid(md5(time())); //Random Token
         $sql = "INSERT INTO password_reset (id,email,token) VALUES (NULL,'$email','$token')";
         if(mysqli_query($db,$sql))
         {
             $to = $db_email;
             $subject = "Password reset link";
-            $message = "Click <a href='http://localhost/ucsc_2202_07/andum.lk/reset.php?token=$token'>here</a> to reset your password."
-            mail($to,$subject,$message);
+            $message = "Click <a href='http://localhost/ucsc_2202_07/andum.lk/reset.php?token=$token'>here</a> to reset your password.";
+            require 'admin/phpmailer/PHPMailerAutoload.php';
+
+            $mail = new PHPMailer();
+            $mail->isSMTP();
+            $mail->Host = "smtp.gmail.com";
+            $mail->SMTPAuth = "true";
+            $mail->SMTPSecure = "tls";
+            $mail->Port = "587";
+            $mail->Username = 'andumdotlk@gmail.com';
+            $mail->Password = 'Admin@123';
+            $mail->isHTML(true);
+            $mail->Subject = "$subject";
+
+            $mail->setFrom('andumdotlk@gmail.com');
+            $mail->addAddress($to);
+
+            $mail->Body = "<h3>Message : $message</h3>";
+
+            if($mail->Send()){
+                echo "Password link has been send to the email";
+            }
+            else{
+                "User Not Found";
+            }
+
+            $mail->smtpClose();
+                //mail($to,$subject,$message);
         }
     }
 }
@@ -625,11 +653,11 @@ if (isset($_POST['fd-order-accept'])) {
         use PHPMailer\PHPMailer\Exception;
         if(isset($_POST['message_send'])){
 
-            $issue = $_POST['issue'];
-    $name = $_POST['cust_name'];
-    $email = $_POST['email'];
-    $contactno = $_POST['contactno'];
-    $c_msg = $_POST['c_msg'];
+        $issue = $_POST['issue'];
+        $name = $_POST['cust_name'];
+        $email = $_POST['email'];
+        $contactno = $_POST['contactno'];
+        $c_msg = $_POST['c_msg'];
 
         // Load Composer's autoloader
         // require 'vendor/autoload.php';
@@ -641,26 +669,23 @@ if (isset($_POST['fd-order-accept'])) {
         $mail->isSMTP();
 
         $mail->Host = "smtp.gmail.com";
-
         $mail->SMTPAuth = "true";
-
         $mail->SMTPSecure = "tls";
-
         $mail->Port = "587";
 
-        $mail->Username = "thashwiniwattuhewa@gmail.com";
-
-        $mail->Password = "imdabest";
+        $mail->Username = 'andumdotlk@gmail.com';
+        $mail->Password = 'Admin@123';
 
         $mail->isHTML(true);
 
         $mail->Subject = "$issue";
 
-        $mail->setFrom("thashwiniwattuhewa@gmail.com");
+        $mail->setFrom('andumdotlk@gmail.com');
+        $mail->addAddress('andumdotlk@gmail.com');
 
         $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $c_msg</h3>";
 
-        $mail->addAddress("thashwiniwattuhewa@gmail.com");
+        
 
         if($mail->Send()){
             echo "Email sent";
