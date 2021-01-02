@@ -98,8 +98,6 @@ if (isset($_POST['login'])) {
             if ($row = mysqli_fetch_assoc($result)) {
                 $_SESSION['utype'] = $row['type'];
             }
-
-
             if ($_SESSION['utype'] == 0)
             {
                 header('location: tailor/tailor-dashboard.php');

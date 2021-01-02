@@ -80,15 +80,39 @@ header {
   padding: 0px 20px; 
 }
 
-@media screen and (max-width:480px)
+@media (max-width:480px)
 {
-  header {
-    display: block;
-    
-}
-  .nav-area li{
+  header 
+  {
+    display: block;    
+  }
+  .nav-area li
+  {
     display: block;
   }
+  .logo {
+    font-size: 32px;
+    padding: 60px;
+  }
+  nav ul{
+    margin-right: 20px;
+  }
+  nav a{
+    font-size: 17px;
+  }
+}
+
+@media (max-width:909px)
+
+#icon{
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1048px){
+
 }
 
 .nav-area li a{
@@ -114,8 +138,6 @@ header {
 @media screen and (max-width:480px) {
   .navbar-main{
     display: block;
-    
-   
   }
 }
 nav > ul{
@@ -345,6 +367,13 @@ nav ul.menu-area ul li a:hover{
 .footer .footer-content{
     display: flex;
 }
+
+@media screen and (max-width:480px) {
+  .footer .footer-content{
+    display: block;
+}
+}
+
 
 .footer .footer-content .footer-section{
     flex: 1;
@@ -649,6 +678,15 @@ nav ul.menu-area ul li a:hover{
       width: 100%;
       align-items: center;
   }
+
+  @media screen and (max-width:480px) {
+    .d-flex{
+      display: block;
+      width: 100%;
+      align-items: center;
+  }
+  }
+
 
   .f1{
     flex: 1;

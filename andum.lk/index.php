@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
     <!-- <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css"> -->
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/lightslider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/ucsc_2202_07/andum.lk/jquery.js"></script>
     <script type="text/javascript" src="/ucsc_2202_07/andum.lk/lightslider.js"></script>
     
@@ -132,20 +134,16 @@
           <li><a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a></li>
         </div>
       </div>
+      <div>
+        <label id="icon">
+          <i class="fas fa-bars"></i>
+        </label>
+      </div>
     </nav>
   </header>
 
   <div class="d-flex align-c">
-    <div class="f1">
-      <div class="landing-text-content">
-        <div class="title-lg">Are you looking for a unique dress ?</div>
-        <div class="title-lg-light">Andum.lk is a platform for all fashion designers and Tailors</div>
-        <div class="landing-btn-section">
-          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Tailor</button></a>
-          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Fashion Designer</button></a>
-        </div>
-      </div>
-    </div>
+    
     <div class="f1">
       <!-- Slideshow container -->
       <div class="slideshow-container">
@@ -163,6 +161,16 @@
         </div>
         <div class="mySlides fade">
           <img src="images/img11.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="f1">
+      <div class="landing-text-content">
+        <div class="title-lg">Are you looking for a unique dress ?</div>
+        <div class="title-lg-light">Andum.lk is a platform for all fashion designers and Tailors</div>
+        <div class="landing-btn-section">
+          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Tailor</button></a>
+          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Fashion Designer</button></a>
         </div>
       </div>
     </div>
