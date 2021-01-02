@@ -132,11 +132,12 @@ if(isset($_POST['resetpwd'])){
         $db_nic = $row['nic'];
         $token = uniqid(md5(time())); //Random Token
         $sql = "INSERT INTO password_reset (id,email,token) VALUES (NULL,'$email','$token')";
+        $url = "http://localhost/ucsc_2202_07/andum.lk/reset.php?=" .$token;
         if(mysqli_query($db,$sql))
         {
             $to = $db_email;
             $subject = "Password reset link";
-            $message = "Click <a href='http://localhost/ucsc_2202_07/andum.lk/reset.php?token=$token'>here</a> to reset your password.";
+            $message = 'Click <a href="'.$url.'">'.$url.'</a>';
             require 'admin/phpmailer/PHPMailerAutoload.php';
 
             $mail = new PHPMailer();
@@ -155,16 +156,65 @@ if(isset($_POST['resetpwd'])){
 
             $mail->Body = "<h3>Message : $message</h3>";
 
+            
+
             if($mail->Send()){
                 echo "Password link has been send to the email";
             }
             else{
-                "User Not Found";
+                echo "User Not Found";
             }
+
+
 
             $mail->smtpClose();
                 //mail($to,$subject,$message);
+
         }
+    }
+}
+
+if(isset($_GET['token']))
+{
+    $token = mysqli_real_escape_string($db,$_GET['token']);
+    $sql = "SELECT * FROM password_reset WHERE token=$token";
+    $run = mysqli_query($db,$sql);
+    if(mysqli_num_rows($run)>0)
+    {
+        $row = mysqli_fetch_array($run);
+        $token = $row['token'];
+        $email = $row['email'];
+    }
+    else
+    {
+        header("location:login.php");
+    } 
+}
+
+if(isset($_POST['resetp']))
+{
+    $nic = mysqli_real_escape_string($db, $_POST['nic']);
+    $password = mysqli_real_escape_string($db,$_POST['password']);
+    $confirmpassword = mysqli_real_escape_string($db,$_POST['confirmpassword']);
+    $hashed = md5($password);
+    if($password!=$confirmpassword)
+    {
+        $msg= "Sorry, password not matched";
+        echo $msg;
+    }
+    elseif(strlen($password)<6)
+    {
+        $msg = "<div>Password must be 6 characters long</div>";
+        echo $msg;
+    }
+    else
+    {
+        $sql = "UPDATE users SET password='$hashed' WHERE nic='$nic'";
+        mysqli_query($db,$sql);
+        $sql = "DELETE FROM password_reset WHERE nic=$email";
+        mysqli_query($db,$sql);
+        $msg = "<div>Password Updated</div>";
+        echo $msg;
     }
 }
 
