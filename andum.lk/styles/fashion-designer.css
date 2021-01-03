@@ -50,6 +50,21 @@
     align-items: stretch;
   }
 
+  .rate-container{
+    padding: 10px;
+    background: #fafafa;
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  .rate-fd-container{
+    min-height: calc(78vh - 211px - 58px);
+    width: 90vW;
+    margin: 30 auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
   .search-input-group-text{
     width: 100%;
     padding: 12px 20px;
