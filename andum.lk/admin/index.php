@@ -210,7 +210,7 @@ if (!isset($_SESSION['nic'])) {
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="manage_fdesignerS.php">
+          <a class="sidebar-link" href="manage_fdesigner.php">
           <div class="sidebar-icon">
             <i class="fas fa-users"></i>
             <span class="sidebar-text">Fashion Designer List</span>
