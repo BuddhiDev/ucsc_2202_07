@@ -321,6 +321,7 @@ $delivered_orders = $row[0];
     $months[] = date("m", strtotime( date( 'Y-m-01' )." -$i months"));
   }
   $year = date('Y');
+  $year=$year-1;
 //sql to get last month order count
 $sql = "SELECT COUNT(id) FROM t_orders WHERE t_nic='$nic' AND date='$months[0]' ";
 $result = mysqli_query($db, $sql);

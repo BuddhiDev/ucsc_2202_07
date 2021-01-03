@@ -185,6 +185,16 @@ if (!isset($_SESSION['nic'])) {
       width: 50px;
       background-color: #fab7cc;
     }
+    .accept-button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
   </style>
 </head>
 
@@ -585,7 +595,7 @@ if (!isset($_SESSION['nic'])) {
       <form action="order.php" method="post">
       <p>Customer has been paid for this order, Did you start working on it?</p><br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="order-ongoing" class="accept-button" type="submit">YES</button>
+      <button name="fd-order-ongoing" class="accept-button" type="submit">YES</button>
       </form>
     </div>
 <?php } ?>
@@ -594,7 +604,8 @@ if (!isset($_SESSION['nic'])) {
       <form action="order.php" method="post">
       <p>Did you finish your work? wanna deliver it now?</p> <br />
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="order-deliver" class="accept-button">YES</button>
+      <button name="fd-order-deliver" class="accept-button">YES</button>
+      </form>
     </div>
 <?php } ?>
 <?php if($status=="Delivered"){ ?>
@@ -616,22 +627,28 @@ if (!isset($_SESSION['nic'])) {
      <div class="d-flex">
         <!-- <lable for="other" style="">Other:</label> -->
         <!-- <textarea name="message" rows="20" cols="50" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea> -->
-        <input type="text" value="<?php echo $row["other"]?>">
+        <input type="text" value="<?php echo $row["other"]?>" disabled>
+      </div>
       </div>
 
-      <div class="search-container">
-
-      <div class="form-field-inline">
-        <label for="searchname" class="field-label-inline">Submit order price: </label>
-        <input type="text" class="field-value-inline" name="" <?php if($row["status"]=="Accepted") echo "disabled"?>>
+      <div class="alert">
+    <form method="post" action="order.php">
+  <?php if($status=="Pending"){ ?>
+      <p>Customer is waiting for your price, Please estimate your price for this order!</p>
+      <?php } else { ?> 
+      <p>You estimated a price for this order earlier!</p>
+      <?php } ?>
+        <br/><br />
+        <?php if($status=="Pending"){ ?>
+      <center><label for="searchname" class="field-label-inline">Estimate Order Price: </label></center>
+      <?php } else { ?>
+      <center><label for="searchname" class="field-label-inline">Estimated Order Price: </label></center>
+      <?php } ?>
+      <center><input type="text" style=" width: 50%"  name="" <?php if($row["status"]!="Pending") echo "disabled"?> ></center>
+      <center><input type="hidden" class="field-value-inline" name="fd_order_id" value=<?php echo $row["id"] ?>></center>
+      <center><button class="cart-button" type="submit" name="fd-order-accept" <?php if($row["status"]!="Pending") echo "disabled"?>>Submit</button></center>    
+      </form>
       </div>
-
-  </div>
-  <input type="hidden" class="field-value-inline" name="fd_order_id" value=<?php echo $row["id"] ?>>
-
-      <center><button class="cart-button" type="submit" name="fd-order-accept" <?php if($row["status"]=="Accepted") echo "disabled"?>>Submit</button></center>
-    </form>
-  </div>
 
 
   <?php } ?>

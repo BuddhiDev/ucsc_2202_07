@@ -597,6 +597,8 @@ if (!isset($_SESSION['nic'])) {
       <form action="order.php" method="post">
       <p>Fashion Designer delivered the order, Did you recieve the delivery?</p> <br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <input type="hidden" name="fd_nic" value=<?php echo $row["fd_nic"]?> >
+      <p>Please give your rate <input type="number" name="fd_rate" min="1" max="5"> /5</p>
       <button name="order-complete" class="accept-button">Mark as Completed</button>
     </div>
 <?php } ?>
@@ -608,6 +610,15 @@ if (!isset($_SESSION['nic'])) {
 <?php } ?>
 
         <!--measurement form-->
+
+            <?php if($status=="Accepted"){ ?>
+              <form action="fdesigner-order.php" method="post">
+            <div>
+              <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+              <button name="fd-order-paid" class="cart-button" type="submit">Make Payment</button>
+            </div>
+            </form>
+            <?php } ?>
   
         <div class="d-flex">
             <!-- <lable for="other" style="">Other:</label> -->

@@ -595,7 +595,10 @@ if (!isset($_SESSION['nic'])) {
       <form action="order.php" method="post">
       <p>Tailor delivered the order, Did you recieve the delivery?</p> <br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+      <input type="hidden" name="tailor_nic" value=<?php echo $row["t_nic"]?> >
+      <p>Please give your rate <input type="number" name="t_rate" min="1" max="5"> /5</p>
       <button name="order-complete" class="accept-button">Mark as Completed</button>
+      </form>
     </div>
 <?php } ?>
 <?php if($status=="Completed"){ ?>
@@ -821,6 +824,10 @@ if (!isset($_SESSION['nic'])) {
               <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
               <button name="order-paid" class="cart-button" type="submit">Make Payment</button>
             </div>
+
+
+
+
             <?php } ?>
           </form>
         </div>

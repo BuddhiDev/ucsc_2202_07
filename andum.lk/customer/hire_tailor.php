@@ -195,6 +195,8 @@ if (!isset($_SESSION['nic'])) {
       <div class="row">
         <?php
           $nic = $_SESSION['nic'];
+
+
           // Check condition if this is search request or not
           if ($search != true) {
             // Read all dressess
@@ -203,6 +205,13 @@ if (!isset($_SESSION['nic'])) {
 
             if ($res) {
               while ($row = mysqli_fetch_assoc($res)) {
+
+          //retrieve tailor table data
+          $loop_nic=$row["nic"];
+          $t_sql="SELECT * FROM tailors WHERE nic='$loop_nic' ";
+          $t_res=mysqli_query($db, $t_sql);
+          $t_row=mysqli_fetch_assoc($t_res);
+
         ?>
         <!-- Dress box start -->
         <div class="col-4">
@@ -216,11 +225,11 @@ if (!isset($_SESSION['nic'])) {
                 <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
               </div>
               <div class="fd-card-content">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+              <?php if($t_row["rate"]>0) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>1) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>2) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>3) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>4) { ?><span class="fa fa-star checked">(<?php echo $t_row["total_fb"] ?>)</span><?php } else { ?> <span class="fa fa-star">(<?php echo $t_row["total_fb"] ?>)</span><?php } ?>
                 <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
                 <div class="card-description">
                   
@@ -240,27 +249,34 @@ if (!isset($_SESSION['nic'])) {
           } else {
 
             //Read using search keyword
-            $sql = "SELECT * FROM tailors WHERE category LIKE '%$keyword%'";
+            $sql = "SELECT * FROM users WHERE fname LIKE '%$keyword%' OR lname LIKE '%$keyword%' ";
             $result = mysqli_query($db, $sql);
 
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) { 
+
+                //retrieve tailor table data
+          $loop_nic=$row["nic"];
+          $t_sql="SELECT * FROM tailors WHERE nic='$loop_nic' ";
+          $t_res=mysqli_query($db, $t_sql);
+          $t_row=mysqli_fetch_assoc($t_res);
+
         ?>
 
         <div class="col-4">
           <form method="get" action="index.php" class="dress-showcase">
             <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
-            <div class="card-item">
-              <div class="card-img">
-              <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
+            <div class="fd-card-item">
+              <div class="fd-card-img">
+              <a href="hire_tailor.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>
               </div>
-              <div class="card-content">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-                <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
+              <div class="fd-card-content">
+              <?php if($t_row["rate"]>0) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>1) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>2) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>3) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>4) { ?><span class="fa fa-star checked">(<?php echo $t_row["total_fb"] ?>)</span><?php } else { ?> <span class="fa fa-star">(<?php echo $t_row["total_fb"] ?>)</span><?php } ?>
+                <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
                 <div class="card-description"></div>
               </div>
             </div>
