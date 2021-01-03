@@ -475,7 +475,7 @@ if (!isset($_SESSION['nic'])) {
     const progressCheck = document.querySelectorAll(".step .check");
     const bullet = document.querySelectorAll(".step .bullet");
     var status = "<?php echo $status ?>";
-    slidePage.style.marginLeft = "-25%";
+    slidePage.style.marginLeft = "0%";
 
     if(status=="Pending"){
     bullet[0].classList.add("active");
@@ -820,6 +820,7 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
   <div id="div-3" class="alert">
+    <form method="post" action="order.php">
   <?php if($status=="Pending"){ ?>
       <p>Customer is waiting for your price, Please estimate your price for this order!</p>
       <?php } else { ?> 
@@ -834,6 +835,7 @@ if (!isset($_SESSION['nic'])) {
       <center><input type="text" style=" width: 50%"  name="" <?php if($row["status"]!="Pending") echo "disabled"?> ></center>
       <center><input type="hidden" class="field-value-inline" name="order_id" value=<?php echo $row["id"] ?>></center>
       <center><button class="accept-button" type="submit" name="order-accept" <?php if($row["status"]!="Pending") echo "disabled"?>>Submit</button></center>    
+      </form>
     </div>
 
   <div id=div-2>
