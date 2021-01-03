@@ -673,7 +673,7 @@ if (isset($_POST['fd-order-complete'])) {
         $rate=$row["rate"];
         $tot_fb=(int)$row["total_fb"];
         $tot_fb=$tot_fb+1;
-        $rate=($rate+$t_rate)/$tot_fb;
+        $rate=($rate+$fd_rate)/$tot_fb;
     }    
     $sql = "UPDATE fashion_designer SET rate=$rate,total_fb=$tot_fb WHERE nic='$fd_nic'";
     $result=mysqli_query($db, $sql);

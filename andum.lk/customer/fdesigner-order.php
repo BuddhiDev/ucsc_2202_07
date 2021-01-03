@@ -188,6 +188,16 @@ if (!isset($_SESSION['nic'])) {
       width: 50px;
       background-color: #fab7cc;
     }
+    .accept-button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    }
   </style>
 
 </head>
@@ -594,12 +604,12 @@ if (!isset($_SESSION['nic'])) {
 <?php } ?>
 <?php if($status=="Delivered"){ ?>
     <div class="alert">
-      <form action="order.php" method="post">
+      <form action="fdesigner-order.php" method="post">
       <p>Fashion Designer delivered the order, Did you recieve the delivery?</p> <br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
       <input type="hidden" name="fd_nic" value=<?php echo $row["fd_nic"]?> >
       <p>Please give your rate <input type="number" name="fd_rate" min="1" max="5"> /5</p>
-      <button name="order-complete" class="accept-button">Mark as Completed</button>
+      <button name="fd-order-complete" class="accept-button">Mark as Completed</button>
     </div>
 <?php } ?>
 <?php if($status=="Completed"){ ?>
@@ -609,7 +619,7 @@ if (!isset($_SESSION['nic'])) {
 
 <?php } ?>
 
-        <!--measurement form-->
+
 
             <?php if($status=="Accepted"){ ?>
               <form action="fdesigner-order.php" method="post">
@@ -622,7 +632,7 @@ if (!isset($_SESSION['nic'])) {
   
         <div class="d-flex">
             <!-- <lable for="other" style="">Other:</label> -->
-            <form method="post" action="order.php">
+            <form method="post" action="fdesigner-order.php">
               <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
               <input type="hidden" name="r_nic" value=<?php echo $row["fd_nic"] ?>>
               <input type="hidden" name="type" value="1">

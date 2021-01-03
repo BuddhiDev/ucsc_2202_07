@@ -203,25 +203,31 @@ if (!isset($_SESSION['nic'])) {
 
               if ($result) {
                 while ($row = mysqli_fetch_assoc($result)) {
+
+                //retrieve fd table data
+                $loop_nic=$row["nic"];
+                $fd_sql="SELECT * FROM fashion_designer WHERE nic='$loop_nic' ";
+                $fd_res=mysqli_query($db, $fd_sql);
+                $t_row=mysqli_fetch_assoc($fd_res);
           ?>
           <!-- Dress box start -->
           <div class="col-4">
             <div class="designer-box">
-              <form method="get" action="index.php" class="fd-showcase">
+              <form method="get" action="hire_fashion_designer.php" class="fd-showcase">
                 <input type="hidden" value="<?php echo $nic ?> " name="f_id">
                 <div class="fd-card-item">
                   <div class="fd-card-img">               
                     <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%" class="proDisp"></a>
                   </div>
                   <div class="fd-card-content">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                    <?php if($t_row["rate"]>0) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>1) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>2) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>3) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>4) { ?><span class="fa fa-star checked">(<?php echo $t_row["total_fb"] ?>)</span><?php } else { ?> <span class="fa fa-star">(<?php echo $t_row["total_fb"] ?>)</span><?php } ?>
                     <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
                     <div class="card-description"></div>
-                    <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><button class="hire-btn">Hire me</button></a>
+                    
                   </div>                 
                 </div>
               </form>
@@ -235,28 +241,34 @@ if (!isset($_SESSION['nic'])) {
             } else {
 
               //Read using search keyword
-              $sql = "SELECT * FROM fashion_designer WHERE category LIKE '%$keyword%'";
+              $sql = "SELECT * FROM users WHERE fname LIKE '%$keyword%' OR lname LIKE '%$keyword%' ";
               $result = mysqli_query($db, $sql);
 
               if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) { 
+                while ($row = mysqli_fetch_assoc($result)) {
+                  
+                  //retrieve fd table data
+                  $loop_nic=$row["nic"];
+                  $fd_sql="SELECT * FROM fashion_designer WHERE nic='$loop_nic' ";
+                  $fd_res=mysqli_query($db, $fd_sql);
+                  $t_row=mysqli_fetch_assoc($fd_res);
           ?>
 
           <!-- Dress box start -->
           <div class="col-4">
-            <form method="get" action="index.php" class="design-showcase">
+            <form method="get" action="hire_fashion_designer.php" class="design-showcase">
               <input type="hidden" value="<?php echo $nic ?> " name="f_id">
-              <div class="card-item">
-                <div class="card-img">
-                <img src="<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%"></a>
-                </div>
+              <div class="fd-card-item">
+              <div class="fd-card-img">               
+                    <a href="hire_fashion_designer.php?f_id=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%" class="proDisp"></a>
+                  </div>
                 <div class="card-content">
-                <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-                  <div class="card-title"><?php echo $row["fname"]+" "+$row["lname"] ?></div>
+                <?php if($t_row["rate"]>0) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>1) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>2) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>3) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>4) { ?><span class="fa fa-star checked">(<?php echo $t_row["total_fb"] ?>)</span><?php } else { ?> <span class="fa fa-star">(<?php echo $t_row["total_fb"] ?>)</span><?php } ?>
+                  <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
                   <div class="card-description"></div>
                 </div>
               </div>
