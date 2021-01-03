@@ -209,10 +209,11 @@ if(isset($_POST['resetp']))
     {
         $sql = "UPDATE users SET password='$hashed' WHERE nic='$nic'";
         mysqli_query($db,$sql);
-        $sql = "DELETE FROM password_reset WHERE nic=$email";
+        $sql = "DELETE FROM password_reset WHERE nic=$nic";
         mysqli_query($db,$sql);
         $msg = "<div>Password Updated</div>";
         echo $msg;
+        header("location:login.php");
     }
 }
 
