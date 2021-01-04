@@ -6,7 +6,7 @@
 }*/
 
 ?>  
-
+<?php include("admin_controller.php"); ?>
 <?php include("../errors.php");
   ?>
 
@@ -226,7 +226,7 @@
     <div class="main">
       <div class="leftside">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/customer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
       </div>
 
@@ -246,7 +246,7 @@
             <li><a class="cta" href="send_mail.php"><button class="loginbutton btn-full-w">Warning message</button></a></li>
           </div>
           <div>
-            <li><a class="cta" href="#"><button class="loginbutton btn-full-w">Suspend User Account</button></a></li>
+          <li><a href="banned_fdesigner.php?delete_nic=<?php echo $row["nic"]?>"><button class="loginbutton btn-full-w">Suspend User Account</button></a></li>
           </div>
         </div>
       </div>
