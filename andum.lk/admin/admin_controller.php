@@ -20,6 +20,29 @@
  //   header('location: fdesigner_view.php');
 //}
 
+if(isset($_GET['delete_nic'])){
+    $delete_nic = mysqli_real_escape_string($db, $_GET['delete_nic']);
+    $sql = "INSERT INTO banned_users(nic, fname, email, lname, contactno, password, type, address, postalcode, image) SELECT*FROM users WHERE nic='$delete_nic' ";
+    mysqli_query($db,$sql);
+    $sql = "DELETE FROM users WHERE nic='$delete_nic' ";
+    mysqli_query($db,$sql);
+    //echo "<script>alert('Suspend User Account')</script>";
+    header('location: deleted_user.php');
+    //$msg = "<div>Suspend User Account</div>";
+    //echo $msg;
+/*if ($result) {
+    
+   echo "<script>alert('Suspend User Account')</script>";
+    //header('location: deleted_user.php');
+ } else {
+    //array_push($errors, " failed, try again later");
+    echo "<script>alert('Suspend User Account is Unsuccessful')</script>";
+}*/
+}
+
+
+
+
 
 if(isset($_POST['send_mail'])){
     $name = $_POST['aname'];
@@ -44,7 +67,7 @@ if(isset($_POST['send_mail'])){
         $mail->isSMTP(true);
         $mail->Subject = "$subject";
         $mail->Body =$body;
-
+        
         if($mail->Send()){
             echo "<script>alert('Email Sent.')</script>";
         }
@@ -52,6 +75,9 @@ if(isset($_POST['send_mail'])){
             echo "<script>alert('### Email Not Sent!')</script>";
         }
     }  
+
+
+    
 ?>
                            
 
