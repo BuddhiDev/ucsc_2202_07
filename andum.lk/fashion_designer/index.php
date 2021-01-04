@@ -258,16 +258,16 @@ $delivered_orders = $row[0];
         </div>
         <div class=col-4>
           <div class="fd-block-2">
-          <h3 class="fd-block-font-size">200</h3>
+          <h3 class="fd-block-font-size">0</h3>
             <Br>
-            <h3>Product Views</h3>
+            <h3>Profile Rate</h3>
           </div>
         </div>
         <div class=col-4>
           <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size">0</h3>
             <Br>
-            <h3>New Messages</h3>
+            <h3>Total Feedbacks</h3>
           </div>
         </div>
       </div>
@@ -312,6 +312,7 @@ $delivered_orders = $row[0];
     $months[] = date("m", strtotime( date( 'Y-m-01' )." -$i months"));
   }
   $year = date('Y');
+  $year=$year-1;
 //sql to get last month order count
 $sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[0]' ";
 $result = mysqli_query($db, $sql);
