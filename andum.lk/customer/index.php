@@ -197,7 +197,7 @@ if (!isset($_SESSION['nic'])) {
 
           //retrieve tailor table data
           $loop_nic=$row["nic"];
-          $t_sql="SELECT * FROM tailors WHERE nic='$loop_nic' ";
+          $t_sql="SELECT * FROM tailors WHERE nic='$loop_nic' ORDER BY rate DESC";
           $t_res=mysqli_query($db, $t_sql);
           $t_row=mysqli_fetch_assoc($t_res);
 

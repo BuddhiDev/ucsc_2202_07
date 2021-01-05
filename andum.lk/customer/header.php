@@ -13,29 +13,29 @@
                 <div class="col-4">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="index.php?dcategory=w-cas-dresses">Dresses</a></li>
-                    <li><a href="index.php?dcategory=w-cas-tshirts">T shirts</a></li>
-                    <li><a href="index.php?dcategory=w-cas-blouse">Blouse</a></li>
-                    <li><a href="index.php?dcategory=w-cas-shirts">Shirts</a></li>
-                    <li><a href="index.php?dcategory=w-cas-jeans">Jeans</a></li>
-                    <li><a href="index.php?dcategory=w-cas-pants">Pants</a></li>
+                    <li><a href="product-view.php?dcategory=w-cas-dresses">Dresses</a></li>
+                    <li><a href="product-view.php?dcategory=w-cas-tshirts">T shirts</a></li>
+                    <li><a href="product-view.php?dcategory=w-cas-blouse">Blouse</a></li>
+                    <li><a href="product-view.php?dcategory=w-cas-shirts">Shirts</a></li>
+                    <li><a href="product-view.php?dcategory=w-cas-jeans">Jeans</a></li>
+                    <li><a href="product-view.php?dcategory=w-cas-pants">Pants</a></li>
                   </ul>
                 </div>
                 <div class="col-4">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="index.php?dcategory=w-for-dresses">Dresses</a></li>
-                    <li><a href="index.php?dcategory=w-for-blouse">Blouse</a></li>
-                    <li><a href="index.php?dcategory=w-for-skirts">Skirts</a></li>
-                    <li><a href="index.php?dcategory=w-for-pants">Pants</a></li>
+                    <li><a href="product-view.php?dcategory=w-for-dresses">Dresses</a></li>
+                    <li><a href="product-view.php?dcategory=w-for-blouse">Blouse</a></li>
+                    <li><a href="product-view.php?dcategory=w-for-skirts">Skirts</a></li>
+                    <li><a href="product-view.php?dcategory=w-for-pants">Pants</a></li>
                   </ul>
                 </div>
                 <div class="col-4">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="index.php?dcategory=w-eth-kurthas">Kurthas</a></li>
-                    <li><a href="index.php?dcategory=w-eth-sawls">Shlwas</a></li>
-                    <li><a href="index.php?dcategory=w-eth-sarees">Sarees</a></li>
+                    <li><a href="product-view.php?dcategory=w-eth-kurthas">Kurthas</a></li>
+                    <li><a href="product-view.php?dcategory=w-eth-sawls">Shlwas</a></li>
+                    <li><a href="product-view.php?dcategory=w-eth-sarees">Sarees</a></li>
                   </ul>
                 </div>
               </ul>
@@ -48,20 +48,20 @@
                 <div class="col-6">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="index.php?dcategory=m-cas-tshirts">T shirts</a></li>
-                    <li><a href="index.php?dcategory=m-cas-shirts">Shirts</a></li>
-                    <li><a href="index.php?dcategory=m-cas-jeans">Jeans</a></li>
-                    <li><a href="index.php?dcategory=m-cas-trousers">Trousers</a></li>
-                    <li><a href="index.php?dcategory=m-cas-sarong">Sarong</a></li>
-                    <li><a href="index.php?dcategory=m-cas-shorts">Shorts</a></li>
+                    <li><a href="product-view.php?dcategory=m-cas-tshirts">T shirts</a></li>
+                    <li><a href="product-view.php?dcategory=m-cas-shirts">Shirts</a></li>
+                    <li><a href="product-view.php?dcategory=m-cas-jeans">Jeans</a></li>
+                    <li><a href="product-view.php?dcategory=m-cas-trousers">Trousers</a></li>
+                    <li><a href="product-view.php?dcategory=m-cas-sarong">Sarong</a></li>
+                    <li><a href="product-view.php?dcategory=m-cas-shorts">Shorts</a></li>
                   </ul>  
                 </div>
                 <div class="col-6">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="index.php?dcategory=m-for-shirts">Shirts</a></li>
-                    <li><a href="index.php?dcategory=m-for-trousers">Trousers</a></li>
-                    <li><a href="index.php?dcategory=m-for-blazers">Blazers</a></li>
+                    <li><a href="product-view.php?dcategory=m-for-shirts">Shirts</a></li>
+                    <li><a href="product-view.php?dcategory=m-for-trousers">Trousers</a></li>
+                    <li><a href="product-view.php?dcategory=m-for-blazers">Blazers</a></li>
                   </ul>
                 </div> 
               </ul>
@@ -74,22 +74,22 @@
                 <div class=col-6>
                   <ul class="inner-menu">
                     <li class="inner-list-header">Boys</li>
-                    <li><a href="index.php?dcategory=k-b-tshirts">T shirts</a></li>
-                    <li><a href="index.php?dcategory=k-b-tanktops">Tank Tops</a></li>
-                    <li><a href="index.php?dcategory=k-b-shirts">Shirts</a></li>
-                    <li><a href="index.php?dcategory=k-b-shorts">Shorts</a></li>
-                    <li><a href="index.php?dcategory=k-b-pants">Pants</a></li>
-                    <li><a href="index.php?dcategory=k-b-romper">Rompers</a></li>
-                    <li><a href="index.php?dcategory=k-b-sleepwear">Sleepware</a></li>
+                    <li><a href="product-view.php?dcategory=k-b-tshirts">T shirts</a></li>
+                    <li><a href="product-view.php?dcategory=k-b-tanktops">Tank Tops</a></li>
+                    <li><a href="product-view.php?dcategory=k-b-shirts">Shirts</a></li>
+                    <li><a href="product-view?dcategory=k-b-shorts">Shorts</a></li>
+                    <li><a href="product-view?dcategory=k-b-pants">Pants</a></li>
+                    <li><a href="product-view?dcategory=k-b-romper">Rompers</a></li>
+                    <li><a href="product-view?dcategory=k-b-sleepwear">Sleepware</a></li>
                   </ul>
                 </div>
                 <div class="col-6">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Girls</li>
-                    <li><a href="index.php?dcategory=k-g-tshirts">T shirts</a></li>
-                    <li><a href="index.php?dcategory=k-g-dresses">Dresses</a></li>
-                    <li><a href="index.php?dcategory=k-g-shorts">Shorts</a></li>
-                    <li><a href="index.php?dcategory=k-g-sleepwear">Sleepware</a></li>
+                    <li><a href="product-view.php?dcategory=k-g-tshirts">T shirts</a></li>
+                    <li><a href="product-view.php?dcategory=k-g-dresses">Dresses</a></li>
+                    <li><a href="product-view.php?dcategory=k-g-shorts">Shorts</a></li>
+                    <li><a href="product-view.php?dcategory=k-g-sleepwear">Sleepware</a></li>
                   </ul>
                 </div>             
               </ul>
