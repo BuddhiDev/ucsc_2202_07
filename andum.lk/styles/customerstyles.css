@@ -16,8 +16,10 @@
 }
 
 .dress-showcase{
-    padding: 10px;
-    margin: 50px;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  display: flex;
 }
 
 .cust-dropdown {

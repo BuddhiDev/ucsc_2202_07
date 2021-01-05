@@ -374,7 +374,6 @@ nav ul.menu-area ul li a:hover{
 
 .search-btn{
   border: none;
-  background-color: #fafafa;
 }
 
 
@@ -389,8 +388,10 @@ nav ul.menu-area ul li a:hover{
 }
 
 .field-label-inline{
-    flex:1;
-    font-weight: 500;
+  flex: 1;
+  font-weight: 500;
+  padding: 10px;
+  margin: 10px;
 }
 
 .field-value-inline{
@@ -808,7 +809,15 @@ nav ul.menu-area ul li a:hover{
   width: 300px;
   background: white;
   border-radius: 4px;
-  margin: 20px 10px;
+  margin: 20px;
+}
+
+.card-item-1{
+  width: 100%;
+    background: white;
+    display: flex 1;
+    border-radius: 4px;
+    margin: 20px;
 }
 
 .card-item .card-img{
@@ -819,7 +828,23 @@ nav ul.menu-area ul li a:hover{
   object-position: center;
 }
 
+.card-item-1 .card-img{
+  width: 100%;
+    height: 271px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
 .card-item .card-img2{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-item-1 .card-img2{
   width: 100%;
   height: 200px;
   overflow: hidden;
@@ -839,14 +864,33 @@ nav ul.menu-area ul li a:hover{
   text-align: center;
 }
 
+.card-item-1 .card-content{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
 .card-item .card-content .card-title{
     font-size: 18px;
     /* font-family:Muli-Bold; */
     margin-bottom: 5px;
 }
 
+.card-item-1 .card-content .card-title{
+  font-size: 14px;
+  /* font-family:Muli-Bold; */
+  margin-bottom: 5px;
+}
+
 .card-item .card-content .card-description{
     color: #484848;
+    font-size: 14px;
+}
+
+.card-item-1 .card-content .card-description{
+  color: #484848;
+  font-size: 14px;
 }
 
 /* ------------Card Styles Ends------------------- */
@@ -1253,6 +1297,7 @@ a{
     padding: 10px;
     text-align: right;
     font-size: 14px;
+    text-transform: uppercase;
 }
 
 .edit-headding{

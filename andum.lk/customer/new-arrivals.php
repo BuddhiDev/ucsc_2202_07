@@ -13,7 +13,7 @@ if (!isset($_SESSION['nic'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Customer - Dresses</title>
+  <title>Andum.lk - Customer</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
@@ -72,7 +72,9 @@ if (!isset($_SESSION['nic'])) {
                   </ul>
                 </div>
               </ul>
-            </div> 
+            </div>
+              
+            
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
@@ -130,6 +132,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             
           </li>
+
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
         </ul>
@@ -147,11 +150,12 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-              </div>
+
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
         </div>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
@@ -181,7 +185,7 @@ if (!isset($_SESSION['nic'])) {
       
       <div class="customer-cover">
         <div class="row">
-          <h2 class="customer-heading">Dresses</h2>
+          <h2 class="customer-heading">New Arrivals</h2>
         </div>
         <div class="row">
         <?php
@@ -191,7 +195,7 @@ if (!isset($_SESSION['nic'])) {
           if ($search != true) {
 
             // Read all dressess
-            $sql = "SELECT * FROM dress_showcase WHERE title LIKE '%Dress%' OR category='dress'";
+            $sql = "SELECT * FROM dress_showcase ORDER BY dress_id DESC";
             $result = mysqli_query($db, $sql);
 
             if ($result) {

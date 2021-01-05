@@ -46,7 +46,7 @@ if (!isset($_SESSION['nic'])) {
                 <div class="col-4">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
+                    <li><a href="/ucsc_2202_07/andum.lk/customer/dresses.php">Dresses</a></li>
                     <li><a href="#">T shirts</a></li>
                     <li><a href="#">Blouse</a></li>
                     <li><a href="#">Shirts</a></li>
@@ -195,14 +195,14 @@ if (!isset($_SESSION['nic'])) {
           if ($search != true) {
 
             // Read all dressess
-            $sql = "SELECT * FROM dress_showcase";
+            $sql = "SELECT * FROM dress_showcase ORDER BY dress_id DESC LIMIT 0,4";
             $result = mysqli_query($db, $sql);
 
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                <div class="col-4">
-                  <form method="get" action="index.php" class="dress-showcase">
+                <div class="col-3">
+                  <form method="get" action="index.php">
                     <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
                     <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                     
@@ -234,7 +234,7 @@ if (!isset($_SESSION['nic'])) {
                 while ($row = mysqli_fetch_assoc($result)) { 
                 ?>
 
-                <div class="col-4">
+                <div class="col-3">
                   <form method="post" action="index.php" class="dress-showcase">
                     <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
                     <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
@@ -263,7 +263,7 @@ if (!isset($_SESSION['nic'])) {
                       while ($row = mysqli_fetch_assoc($result)) { 
                       ?>
 
-                      <div class="col-4">
+                      <div class="col-3">
                         <form method="post" action="index.php" class="dress-showcase">
                           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
                           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
@@ -288,6 +288,9 @@ if (!isset($_SESSION['nic'])) {
         ?>
       </div>
     </div>
+    <div class="text-view-more">
+    <a href="new-arrivals.php">view more +</a>
+  </div>
       
       
   </div>
