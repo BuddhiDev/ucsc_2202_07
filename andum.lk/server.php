@@ -366,9 +366,10 @@ if (isset($_POST['chatBtn'])) {
     $r_nic = mysqli_real_escape_string($db, $_POST['r_nic']);
     $msg = mysqli_real_escape_string($db, $_POST['msg']);
     $type = mysqli_real_escape_string($db, $_POST['type']);
+    $o_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $date = date('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO conversations (sender_nic, reciever_nic, message, type, date) VALUES ('$s_nic','$$r_nic','$msg','$type','$date')";
+    $sql = "INSERT INTO conversations (sender_nic, reciever_nic, message, type, date, order_id) VALUES ('$s_nic','$r_nic','$msg','$type','$date','$o_id')";
     $result = mysqli_query($db, $sql);
     if ($result) {
     } else {
@@ -580,6 +581,15 @@ if (isset($_POST['order-paid'])) {
 
 }
 
+//customer can request for price change from tailor
+if (isset($_POST['order-appeal'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Pending' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
 //update tailor order statues as Ongoing
 if (isset($_POST['order-ongoing'])) {
 
@@ -639,6 +649,15 @@ if (isset($_POST['fd-order-paid'])) {
 
 }
 
+//customer can request for price change from fashion designer
+if (isset($_POST['fd-order-appeal'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE fd_orders SET status='Pending' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
 //update fashion designer order statues as Ongoing
 if (isset($_POST['fd-order-ongoing'])) {
 
@@ -676,6 +695,38 @@ if (isset($_POST['fd-order-complete'])) {
         $rate=($rate+$fd_rate)/$tot_fb;
     }    
     $sql = "UPDATE fashion_designer SET rate=$rate,total_fb=$tot_fb WHERE nic='$fd_nic'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update tailor sale statues as DELIVERED
+if (isset($_POST['sale-deliver'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE dress_sales SET status='Delivered' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//update purchase statues as COMPLETED
+if (isset($_POST['sale-complete'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['sale_id']);
+    $t_rate = mysqli_real_escape_string($db, $_POST['t_rate']);
+    $ta_nic = mysqli_real_escape_string($db, $_POST['tailor_nic']);
+    $sql = "UPDATE dress_sales SET status='Completed' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+    $sql = "SELECT * FROM tailors WHERE nic='$ta_nic'";
+    $result=mysqli_query($db, $sql);
+    if ($result) 
+    {
+        $row = mysqli_fetch_assoc($result);
+        $rate=$row["rate"];
+        $tot_fb=(int)$row["total_fb"];
+        $tot_fb=$tot_fb+1;
+        $rate=($rate+$t_rate)/$tot_fb;
+    }    
+    $sql = "UPDATE tailors SET rate=$rate,total_fb=$tot_fb WHERE nic='$ta_nic'";
     $result=mysqli_query($db, $sql);
 
 }

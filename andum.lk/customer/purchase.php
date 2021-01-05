@@ -589,7 +589,9 @@ if (!isset($_SESSION['nic'])) {
     <div class="alert">
     <form action="purchase.php" method="post">
       <p>Tailor has been delivered the order, Did you recieve it?</p>
-      <input type="hidden" name="sale_id" value=<?php echo $row["id"]?> >
+      <input type="hidden" name="sale_id" value=<?php echo $row["id"]?> > <br/>
+      <input type="hidden" name="tailor_nic" value=<?php echo $row["t_nic"]?> >
+      <p>Please give your rate <input type="number" name="t_rate" min="1" max="5"> /5</p>
       <button name="sale-complete" class="accept-button">Mark as Completed</button>
       </form>
     </div>

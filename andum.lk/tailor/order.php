@@ -844,6 +844,7 @@ if (!isset($_SESSION['nic'])) {
             <form method="post" action="order.php">
               <input type="hidden" name="s_nic" value=<?php echo $nic ?>>
               <input type="hidden" name="r_nic" value=<?php echo $row["c_nic"] ?>>
+              <input type="hidden" name="order_id" value=<?php echo $row["id"] ?>>
               <input type="hidden" name="type" value="1">
               <textarea name="msg" rows="5" cols="50" placeholder="" class="txt-area"></textarea>
               <button class="cart-button" type="submit" name="chatBtn">Send</button>
@@ -854,7 +855,9 @@ if (!isset($_SESSION['nic'])) {
    
       <!-- retrieve messages from conversations -->
       <?php
-        $sql_chat = "SELECT * FROM conversations c INNER JOIN users u WHERE c.type=1  AND (c.sender_nic='$nic' OR c.reciever_nic='$nic') AND (c.sender_nic=u.nic)" ;
+        $cus_nic=$row["c_nic"];
+        $chat_order_id=$row["id"];
+        $sql_chat = "SELECT * FROM conversations c, users u WHERE c.type=1  AND ((c.sender_nic='$nic' AND c.reciever_nic='$cus_nic') OR (c.sender_nic='$cus_nic' AND c.reciever_nic='$nic') )AND c.order_id='$chat_order_id' AND c.sender_nic=u.nic ORDER BY c.date DESC" ;
         $result_chat = mysqli_query($db, $sql_chat);
         if ($result_chat) 
         {

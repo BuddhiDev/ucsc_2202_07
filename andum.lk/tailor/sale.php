@@ -621,10 +621,10 @@ if (!isset($_SESSION['nic'])) {
 
 <?php if($status=="Paid"){ ?>
     <div class="alert">
-      <form action="order.php" method="post">
+      <form action="sale.php" method="post">
       <p>Customer has been paid for this order, Deliver it now!</p><br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
-      <button name="" class="accept-button" type="submit">DELIVER</button>
+      <button name="sale-deliver" class="accept-button" type="submit">DELIVER</button>
       </form>
     </div>
 <?php } ?>
