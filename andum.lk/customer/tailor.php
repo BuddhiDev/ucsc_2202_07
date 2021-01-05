@@ -407,6 +407,7 @@ if (!isset($_SESSION['nic'])) {
               <option value="k-b-shirts">SHIRTS</option>
               <option value="k-b-shorts">SHORTS</option>
               <option value="k-b-pants">PANTS</option>
+              <option value="k-b-romper">Romper</option>
               <option value="k-b-sleepwear">SLEEP WEAR</option>
             </optgroup>
             <optgroup label="KIDS GIRLS">
