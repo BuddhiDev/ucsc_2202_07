@@ -366,9 +366,10 @@ if (isset($_POST['chatBtn'])) {
     $r_nic = mysqli_real_escape_string($db, $_POST['r_nic']);
     $msg = mysqli_real_escape_string($db, $_POST['msg']);
     $type = mysqli_real_escape_string($db, $_POST['type']);
+    $o_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $date = date('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO conversations (sender_nic, reciever_nic, message, type, date) VALUES ('$s_nic','$$r_nic','$msg','$type','$date')";
+    $sql = "INSERT INTO conversations (sender_nic, reciever_nic, message, type, date, order_id) VALUES ('$s_nic','$r_nic','$msg','$type','$date','$o_id')";
     $result = mysqli_query($db, $sql);
     if ($result) {
     } else {

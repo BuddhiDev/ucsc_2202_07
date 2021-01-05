@@ -229,12 +229,12 @@ if (!isset($_SESSION['nic'])) {
                 <div class="col-6">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
+                    <li><a href="index.php?dcategory=m-cas-tshirts">T shirts</a></li>
+                    <li><a href="index.php?dcategory=m-cas-shirts">Shirts</a></li>
+                    <li><a href="index.php?dcategory=m-cas-jeans">Jeans</a></li>
+                    <li><a href="index.php?dcategory=m-cas-trousers">Trousers</a></li>
+                    <li><a href="index.php?dcategory=m-cas-sarong">Sarong</a></li>
+                    <li><a href="index.php?dcategory=m-cas-shorts">Shorts</a></li>
                   </ul>  
                 </div>
                 <div class="col-6">
@@ -367,53 +367,53 @@ if (!isset($_SESSION['nic'])) {
               <div class="f1"> -->
           <select class="option" name="category" id="category" >
             <optgroup label="WOMEN CASUAL WEAR">
-              <option value="1">DRESSES</option>
-              <option value="2">T SHIRTS</option>
-              <option value="3">BLOUSE</option>
-              <option value="4">SHIRTS</option>
-              <option value="5">JEANS</option>
-              <option value="6">PANTS</option>
+              <option value="w-cas-dresses">DRESSES</option>
+              <option value="w-cas-tshirts">T SHIRTS</option>
+              <option value="w-cas-blouse">BLOUSE</option>
+              <option value="w-cas-shirts">SHIRTS</option>
+              <option value="w-cas-jeans">JEANS</option>
+              <option value="w-cas-pants">PANTS</option>
               <!-- <option value="7">Party Frock</option>
               <option value="8">Saree</option>
               <option value="9">Bridal Dress</option> -->
             </optgroup>
             <optgroup label="WOMEN FORMAL WEAR">
-              <option value="10">DRESSES</option>
-              <option value="11">BLOUSE</option>
-              <option value="12">SKIRTS</option>
-              <option value="13">PANTS</option>
+              <option value="w-for-dresses">DRESSES</option>
+              <option value="w-for-blouse">BLOUSE</option>
+              <option value="w-for-skirts">SKIRTS</option>
+              <option value="w-for-pants">PANTS</option>
             </optgroup>
             <optgroup label="WOMEN ETHNIC WEAR">
-              <option value="14">KURTHAS</option>
-              <option value="15">SAWLS</option>
-              <option value="16">SAREES</option>
+              <option value="w-eth-kurthas">KURTHAS</option>
+              <option value="w-eth-sawls">SAWLS</option>
+              <option value="w-eth-sarees">SAREES</option>
             </optgroup>
             <optgroup label="MEN CASUAL WEAR">
-              <option value="17">T SHIRTS</option>
-              <option value="18">SHIRTS</option>
-              <option value="19">JEANS</option>
-              <option value="20">TROUSERSS</option>
-              <option value="21">SARONG</option>
-              <option value="22">SHORTS</option>
+              <option value="m-cas-tshirts">T SHIRTS</option>
+              <option value="m-cas-shirts">SHIRTS</option>
+              <option value="m-cas-jeans">JEANS</option>
+              <option value="m-cas-trousers">TROUSERS</option>
+              <option value="m-cas-sarong">SARONG</option>
+              <option value="m-cas-shorts">SHORTS</option>
             </optgroup>
             <optgroup label="MEN FORMAL WEAR">
-              <option value="23">SHIRTS</option>
-              <option value="24">TROUSERSS</option>
-              <option value="25">BLAZERS</option>
+              <option value="m-for-shirts">SHIRTS</option>
+              <option value="m-for-trousers">TROUSERS</option>
+              <option value="m-for-blazers">BLAZERS</option>
             </optgroup>
             <optgroup label="KIDS BOYS">
-              <option value="26">T SHIRTS</option>
-              <option value="27">TANK TOPS</option>
-              <option value="28">SHIRTS</option>
-              <option value="29">SHORTS</option>
-              <option value="30">PANTS</option>
-              <option value="31">SLEEP WEAR</option>
+              <option value="k-b-tshirts">T SHIRTS</option>
+              <option value="k-b-tanktops">TANK TOPS</option>
+              <option value="k-b-shirts">SHIRTS</option>
+              <option value="k-b-shorts">SHORTS</option>
+              <option value="k-b-pants">PANTS</option>
+              <option value="k-b-sleepwear">SLEEP WEAR</option>
             </optgroup>
-            <optgroup label="KIDS BOYS">
-              <option value="32">T SHIRTS</option>
-              <option value="33">DRESSES</option>
-              <option value="34">SHORTS</option>
-              <option value="35">SLEEP WEAR</option>
+            <optgroup label="KIDS GIRLS">
+              <option value="k-g-tshirts">T SHIRTS</option>
+              <option value="k-g-dresses">DRESSES</option>
+              <option value="k-g-shorts">SHORTS</option>
+              <option value="k-g-sleepwear">SLEEP WEAR</option>
             </optgroup>
           </select>
         </div>
