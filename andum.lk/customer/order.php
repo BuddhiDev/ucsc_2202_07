@@ -823,6 +823,7 @@ if (!isset($_SESSION['nic'])) {
             <div>
               <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
               <button name="order-paid" class="cart-button" type="submit">Make Payment</button>
+              <button name="order-appeal" class="cart-button" type="submit">Request to change the price</button>
             </div>
 
 

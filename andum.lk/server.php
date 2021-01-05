@@ -581,6 +581,15 @@ if (isset($_POST['order-paid'])) {
 
 }
 
+//customer can request for price change from tailor
+if (isset($_POST['order-appeal'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE t_orders SET status='Pending' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
 //update tailor order statues as Ongoing
 if (isset($_POST['order-ongoing'])) {
 
@@ -636,6 +645,15 @@ if (isset($_POST['fd-order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $sql = "UPDATE fd_orders SET status='Paid' WHERE id='$order_id'";
+    $result=mysqli_query($db, $sql);
+
+}
+
+//customer can request for price change from fashion designer
+if (isset($_POST['fd-order-appeal'])) {
+
+    $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $sql = "UPDATE fd_orders SET status='Pending' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }

@@ -626,6 +626,7 @@ if (!isset($_SESSION['nic'])) {
             <div>
               <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
               <button name="fd-order-paid" class="cart-button" type="submit">Make Payment</button>
+              <button name="fd-order-appeal" class="cart-button" type="submit">Request for price change</button>
             </div>
             </form>
             <?php } ?>
