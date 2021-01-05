@@ -40,8 +40,6 @@
                 </div>
               </ul>
             </div>
-              
-            
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
@@ -72,35 +70,31 @@
           <li class="dropdown">
             <a href="#">Kids</a>
             <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="index.php?dcategory=k-b-tshirts">T shirts</a></li>
-                  <li><a href="index.php?dcategory=k-b-tanktops">Tank Tops</a></li>
-                  <li><a href="index.php?dcategory=k-b-shirts">Shirts</a></li>
-                  <li><a href="index.php?dcategory=k-b-shorts">Shorts</a></li>
-                  <li><a href="index.php?dcategory=k-b-pants">Pants</a></li>
-                  <li><a href="index.php?dcategory=k-b-romper">Rompers</a></li>
-                  <li><a href="index.php?dcategory=k-b-sleepwear">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="index.php?dcategory=k-g-tshirts">T shirts</a></li>
-                  <li><a href="index.php?dcategory=k-g-dresses">Dresses</a></li>
-                  <li><a href="index.php?dcategory=k-g-shorts">Shorts</a></li>
-                  <li><a href="index.php?dcategory=k-g-sleepwear">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
+              <ul class="menu-area">
+                <div class=col-6>
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Boys</li>
+                    <li><a href="index.php?dcategory=k-b-tshirts">T shirts</a></li>
+                    <li><a href="index.php?dcategory=k-b-tanktops">Tank Tops</a></li>
+                    <li><a href="index.php?dcategory=k-b-shirts">Shirts</a></li>
+                    <li><a href="index.php?dcategory=k-b-shorts">Shorts</a></li>
+                    <li><a href="index.php?dcategory=k-b-pants">Pants</a></li>
+                    <li><a href="index.php?dcategory=k-b-romper">Rompers</a></li>
+                    <li><a href="index.php?dcategory=k-b-sleepwear">Sleepware</a></li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Girls</li>
+                    <li><a href="index.php?dcategory=k-g-tshirts">T shirts</a></li>
+                    <li><a href="index.php?dcategory=k-g-dresses">Dresses</a></li>
+                    <li><a href="index.php?dcategory=k-g-shorts">Shorts</a></li>
+                    <li><a href="index.php?dcategory=k-g-sleepwear">Sleepware</a></li>
+                  </ul>
+                </div>             
+              </ul>
+            </div> 
           </li>
-
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
         </ul>
@@ -117,12 +111,11 @@
                   <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-
+              </div>
             <li><a href="inbox.php"><i class="fas fa-envelope"></i></a></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+          </ul>
         </div>
-        </ul>
-      </div>
       </div>
     </nav>
   </header>
