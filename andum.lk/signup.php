@@ -188,17 +188,81 @@ require("server.php");
             <input type="text" class="field-value-inline" name="postal">
           </div>
 
-          <div class="form-field-inline">
-            <label for="utype" class="field-label-inline"><b>User Type</b></label>
-            <!-- <input type="text" class="field-value-inline" name="utype" required> -->
+          <div class="tailor-headding">
+              <h3>What Brings You to Andum.lk</h3>
+            </div>
 
-            <select class="option" name="Usertype" id="user">
+          <div class="row">
+            
+            <div class="col-4">
+              
+              <div class="user-type-box">
+              <div class="user-card-img">
+                <img src="images/user-type/tailor.png" alt="" style="width:100%">
+              </div>
+              <center>
+                <h4>I'm a Tailor</h4>
+              </center>
+              <center>
+              <div class="radio">
+                  <label><input type="radio" name="optradio"  value="0" checked ></label>
+                </div>
+
+              </center>
+                
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="user-type-box">
+              <div class="user-card-img">
+                <img src="images/user-type/customer.png" alt="" style="width:100%">
+              </div>
+              <center>
+                <h4>I'm a Customer</h4>
+              </center>
+              <center>
+              <div class="radio">
+                  <label><input type="radio" name="optradio" value="1"></label>
+                </div>
+                
+              </center>
+                
+              </div>  
+            </div>
+            <div class="col-4">
+              <div class="user-type-box">
+              <div class="user-card-img">
+                <center>
+                <img src="images/user-type/fd.png" alt="" style="width:56%">
+
+                </center>
+                
+              </div>
+              <center>
+                <h4>I'm a Fashion Designer</h4>
+              </center>
+              <center>
+              <div class="radio">
+                  <label><input type="radio" name="optradio" value="2"></label>
+                </div>
+
+              </center>
+                
+              </div> 
+            </div>
+          </div>
+
+          <!-- <div class="form-field-inline">
+            <label for="utype" class="field-label-inline"><b>User Type</b></label> -->
+            <!-- ------- <input type="text" class="field-value-inline" name="utype" required> ------  -->
+
+            <!-- <select class="option" name="Usertype" id="user">
               <option value="1">Customer</option>
               <option value="0">Tailor</option>
               <option value="2">Fashion designer</option>
             </select>
 
-          </div>
+          </div> -->
 
 
         <!-- -->
