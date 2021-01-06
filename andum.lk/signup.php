@@ -188,7 +188,7 @@ require("server.php");
             <input type="text" class="field-value-inline" name="postal">
           </div>
 
-          <div class="tailor-headding">
+          <div class="user-type-headding">
               <h3>What Brings You to Andum.lk</h3>
             </div>
 
