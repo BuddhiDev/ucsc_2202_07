@@ -205,7 +205,7 @@ require("server.php");
               </center>
               <center>
               <div class="radio">
-                  <label><input type="radio" name="optradio"  value="0" checked ></label>
+                  <label><input type="radio" name="optradio"  value="0" required></label>
                 </div>
 
               </center>
