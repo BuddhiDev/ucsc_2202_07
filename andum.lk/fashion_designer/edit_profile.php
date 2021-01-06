@@ -266,17 +266,6 @@ if (isset($_POST['update_fd'])) {
       })
   </script>
 
-<div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
-          </li>
-        </ul>
-      </div>
 
 
 <!-- edit profile form-->

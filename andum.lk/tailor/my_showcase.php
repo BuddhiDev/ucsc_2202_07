@@ -92,11 +92,9 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
               <div>
-              <a href="product.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
-              <a href="product.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
-            </div>
-            <div>
-            </div>
+                <a href="product.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
+                <a href="product.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
+              </div>
             </div>
           </div>
         </form>
@@ -130,6 +128,10 @@ if (!isset($_SESSION['nic'])) {
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+              <div>
+                <a href="product.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
+                <a href="product.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
+              </div>
             </div>
           </div>
         </form>
@@ -160,6 +162,10 @@ if (!isset($_SESSION['nic'])) {
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+              <div>
+                <a href="my_showcase.php?edit_dress_id=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
+                <a href="my_showcase.php?rem_dress_id=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
+              </div>
             </div>
           </div>
         </form>

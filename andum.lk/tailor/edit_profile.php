@@ -36,9 +36,7 @@ require("../server.php");
       })
   </script>
 
-<div class="add-new-position">
-  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
-</div>
+
 
 
           </li>

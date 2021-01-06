@@ -26,8 +26,8 @@ require("../server.php");
 
 </head>
 <body>
-<?php require("header.php") ?>
-
+  
+<?php require("header.php")?>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -37,20 +37,22 @@ require("../server.php");
   </script>
 
 
+
 <!-- edit profile form-->
 
-      <form action="cust_edit_profile.php" method="post" enctype="multipart/form-data">
+      <form action="edit_profile.php" method="post" enctype="multipart/form-data">
         <?php
 
        include("../errors.php");
 
+       $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_nic']);
+       $_SESSION['edit_dress_id']=$selected_dress_id;
+       $sqle = "SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id' ";
+       $resulte=mysqli_query($db, $sqle);
+       
+    
 
-        $nic = $_SESSION['nic'];
-        $sql= "SELECT * FROM users WHERE nic='$nic'";
-        // $sql = "SELECT nic, email,fname,lname,password,contactno FROM users";
-        $result = mysqli_query($db, $sql);
-
-        if ($result) {
+        if ($resulte) {
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
@@ -79,69 +81,11 @@ require("../server.php");
             <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>
           </div>
 
-          <div class="form-field-inline">
-            <label for="fname" class="field-label-inline"><b>First Name</b></label>
-            <input type="text" value="<?php echo $row["fname"]?>" class="field-value-inline" name="fname" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="lname" class="field-label-inline"><b>Last Name</b></label>
-            <input type="text" value="<?php echo $row["lname"]?>" class="field-value-inline" name="lname" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="password" class="field-label-inline"><b>Password</b></label>
-            <input type="password" class="field-value-inline" name="password" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="cpassword" class="field-label-inline"><b>Confirm Password</b></label>
-            <input type="password" class="field-value-inline" name="cpassword" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
-            <input type="text" value="<?php echo $row["contactno"]?>" class="field-value-inline" name="contactno">
-          </div>
-
-          <div class="form-field-inline">
-            <label for="address" class="field-label-inline"><b>Address</b></label>
-            <input type="text" value="<?php echo $row["address"]?>" class="field-value-inline" name="address">
-          </div>
-
-          <div class="form-field-inline">
-            <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
-            <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
-          </div>
-
-
-
-    
-
+          
           <div class="row">
-      <!-- <div class="col-75">
-        <input type="file" id="myimage" name="myimage" value=""> <br/>
-      </div> -->
-    </div>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
+          </div>
           <div class="btn-panel-center">
-            <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
-            <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
+            <a href="my_dhowcase.php"><button class="loginbutton btn-full-w" type="submit" name="update_dress">Save</button></a>
           </div>
 
           <?php

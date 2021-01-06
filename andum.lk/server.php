@@ -513,7 +513,7 @@ if(isset($_POST['add_product']))
   $category = mysqli_real_escape_string($db, $_POST['Unit']);
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
   $price = mysqli_real_escape_string($db, $_POST['price']);
-//  $size = mysqli_real_escape_string($db, $_POST['size']);
+
   $size1 = $_POST['size'];
   $schk="";
   foreach($size1 as $schk1)
@@ -548,6 +548,32 @@ if(isset($_POST['add_product']))
     }
   }
 }
+
+//Update  dress detaills
+if(isset($_POST['update_dress']) ){
+    $nic = mysqli_real_escape_string($db, $_POST['nic']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $fname = mysqli_real_escape_string($db, $_POST['fname']);
+    $lname = mysqli_real_escape_string($db, $_POST['lname']);
+
+
+    $sqle = "UPDATE dress_showcase SET WHERE dress_id='$edit_dress_id' ";
+    $resulte=mysqli_query($db, $sqle);
+
+    if($resulte)
+    {
+        echo "<script>alert('Dress has been updated successfuly')</script>";
+    }
+    else{
+        echo "<script>alert('Sorry! Update Unsuccessful')</script>";
+    }
+}
+
+
+
+
+
+
 
 // by a keyword
 if(isset($_POST['search'])){
