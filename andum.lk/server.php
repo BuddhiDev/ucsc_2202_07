@@ -567,7 +567,8 @@ if(isset($_GET['dcategory']) ){
 if (isset($_POST['order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Accepted' WHERE id='$order_id'";
+    $order_price = mysqli_real_escape_string($db, $_POST['t-order-price']);
+    $sql = "UPDATE t_orders SET status='Accepted',price=$order_price WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -603,8 +604,19 @@ if (isset($_POST['order-ongoing'])) {
 if (isset($_POST['order-deliver'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Delivered' WHERE id='$order_id'";
+    $filename = $_FILES["t_output"]["name"];
+    $tempname = $_FILES["t_output"]["tmp_name"];
+    $folder = "../orders/tailor/".$order_id.$filename;
+    $sql = "UPDATE t_orders SET status='Delivered',doc='$order_id$filename' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
+    if (move_uploaded_file($tempname, $folder))
+    {
+        echo "<script>alert('Document has been uploaded')</script>";
+    }
+    else
+    {
+        echo "<script>alert('Document has not been uploaded')</script>";
+    }
 
 }
 
@@ -624,7 +636,7 @@ if (isset($_POST['order-complete'])) {
         $rate=$row["rate"];
         $tot_fb=(int)$row["total_fb"];
         $tot_fb=$tot_fb+1;
-        $rate=($rate+$t_rate)/$tot_fb;
+        $rate=((int)$rate+(int)$t_rate)/$tot_fb;
     }    
     $sql = "UPDATE tailors SET rate=$rate,total_fb=$tot_fb WHERE nic='$ta_nic'";
     $result=mysqli_query($db, $sql);
@@ -635,7 +647,8 @@ if (isset($_POST['order-complete'])) {
 if (isset($_POST['fd-order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['fd_order_id']);
-    $sql = "UPDATE fd_orders SET status='Accepted' WHERE id='$order_id'";
+    $order_price = mysqli_real_escape_string($db, $_POST['fd-order-price']);
+    $sql = "UPDATE fd_orders SET status='Accepted',price=$order_price WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -671,8 +684,19 @@ if (isset($_POST['fd-order-ongoing'])) {
 if (isset($_POST['fd-order-deliver'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE fd_orders SET status='Delivered' WHERE id='$order_id'";
+    $filename = $_FILES["fd_output"]["name"];
+    $tempname = $_FILES["fd_output"]["tmp_name"];
+    $folder = "../orders/fashion/".$order_id.$filename;
+    $sql = "UPDATE fd_orders SET status='Delivered',doc='$order_id$filename' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
+    if (move_uploaded_file($tempname, $folder))
+    {
+        echo "<script>alert('Document has been uploaded')</script>";
+    }
+    else
+    {
+        echo "<script>alert('Document has not been uploaded')</script>";
+    }
 
 }
 
@@ -692,7 +716,7 @@ if (isset($_POST['fd-order-complete'])) {
         $rate=$row["rate"];
         $tot_fb=(int)$row["total_fb"];
         $tot_fb=$tot_fb+1;
-        $rate=($rate+$fd_rate)/$tot_fb;
+        $rate=((int)$rate+(INT)$fd_rate)/$tot_fb;
     }    
     $sql = "UPDATE fashion_designer SET rate=$rate,total_fb=$tot_fb WHERE nic='$fd_nic'";
     $result=mysqli_query($db, $sql);

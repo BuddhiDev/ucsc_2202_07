@@ -480,7 +480,10 @@ if (!isset($_SESSION['nic'])) {
       <p>Fashion Designer delivered the order, Did you recieve the delivery?</p> <br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
       <input type="hidden" name="fd_nic" value=<?php echo $row["fd_nic"]?> >
-      <p>Please give your rate <input type="number" name="fd_rate" min="1" max="5"> /5</p>
+      <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/orders/fashion/<?php echo $row["doc"]; ?> " alt="delivery" style="width:500px">
+      </div>
+      <p>Please give your rate <input type="number" name="fd_rate" min="1" max="5"> /5</p> <br />
       <button name="fd-order-complete" class="accept-button">Mark as Completed</button>
     </div>
 <?php } ?>

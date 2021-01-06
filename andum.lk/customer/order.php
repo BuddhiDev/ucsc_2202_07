@@ -468,7 +468,13 @@ if (!isset($_SESSION['nic'])) {
       <p>Tailor delivered the order, Did you recieve the delivery?</p> <br/>
       <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
       <input type="hidden" name="tailor_nic" value=<?php echo $row["t_nic"]?> >
+      <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/orders/tailor/<?php echo $row["doc"]; ?> " alt="delivery" style="width:500px">
+      </div>
       <p>Please give your rate <input type="number" name="t_rate" min="1" max="5"> /5</p>
+      <!-- star rating -->
+      
+     <br/>
       <button name="order-complete" class="accept-button">Mark as Completed</button>
       </form>
     </div>
