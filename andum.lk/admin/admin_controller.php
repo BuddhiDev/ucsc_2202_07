@@ -21,23 +21,26 @@
 //}
 
 if(isset($_GET['delete_nic'])){
-    $delete_nic = mysqli_real_escape_string($db, $_GET['delete_nic']);
-    $sql = "INSERT INTO banned_users(nic, fname, email, lname, contactno, password, type, address, postalcode, image) SELECT*FROM users WHERE nic='$delete_nic' ";
-    mysqli_query($db,$sql);
-    $sql = "DELETE FROM users WHERE nic='$delete_nic' ";
-    mysqli_query($db,$sql);
+    
+   $delete_nic = mysqli_real_escape_string($db, $_GET['delete_nic']);
+   $sql = "INSERT INTO banned_users(nic, fname, email, lname, contactno, password, type, address, postalcode, image) SELECT*FROM users WHERE nic='$delete_nic' ";
+   $result=mysqli_query($db, $sql);
+   $sql = "DELETE FROM users WHERE nic='$delete_nic' ";
+   $result=mysqli_query($db, $sql);
     //echo "<script>alert('Suspend User Account')</script>";
-    header('location: deleted_user.php');
+   // header('location: deleted_user.php');
     //$msg = "<div>Suspend User Account</div>";
     //echo $msg;
-/*if ($result) {
+if ($result) {
     
-   echo "<script>alert('Suspend User Account')</script>";
-    //header('location: deleted_user.php');
+        echo "Suspend User Account";
+        header('location: deleted_users.php');
+
+    
  } else {
     //array_push($errors, " failed, try again later");
-    echo "<script>alert('Suspend User Account is Unsuccessful')</script>";
-}*/
+    echo "<script>alert('Sorry! Suspend User Account is Unsuccessful')</script>";
+}
 }
 
 

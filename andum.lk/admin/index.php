@@ -234,7 +234,7 @@ if (!isset($_SESSION['nic'])) {
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="deleted_user.php">
+          <a class="sidebar-link" href="deleted_users.php">
           <div class="sidebar-icon">
             <i class="fas fa-users"></i>
             <span class="sidebar-text">Deleted Users</span>

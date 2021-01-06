@@ -6,8 +6,7 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>  
-<?php include("admin_controller.php");
-?>
+<?php include("admin_controller.php"); ?>
 
 <?php include("../errors.php");
   ?>
@@ -194,8 +193,8 @@ if (!isset($_SESSION['nic'])) {
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
+                  <li><a href="manage_customer.php"><i class="fas fa-users"></i>Manage Customers</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>

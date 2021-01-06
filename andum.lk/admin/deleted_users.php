@@ -153,7 +153,6 @@
               <div class="dd_right">
                 <ul>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Orders</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -178,6 +177,7 @@
           </div>
 
       </div>
+      <h1>Banned Users</h1>
     <div style="overflow-x:auto;">
       <table>
         <tr>
@@ -199,7 +199,7 @@
 
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
-          <h1>Banned Users</h1>
+          
           <td><?php echo $row["nic"] ?></td>
           <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
           <td><?php echo $row["email"] ?></td>
@@ -213,7 +213,7 @@
           </td>
           <td>
             <div>
-              <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="#" >Restore</button></a>
+              <a href="manage_customer.php?restore_nic=<?php echo $row["nic"]?>"><button class="view-button" name="#" >Restore</button></a>
             </div>
           </td>
           
