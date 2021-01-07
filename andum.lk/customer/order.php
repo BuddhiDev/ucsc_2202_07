@@ -183,10 +183,10 @@ if (!isset($_SESSION['nic'])) {
       background-color: #fab7cc;
     }
     .alert {
-    padding: 20px;
-    background-color: #f44336; /* Red */
+      padding: 20px;
+    margin: 20px;
+    background-color: #eb2188;
     color: white;
-    margin-bottom: 15px; 
     }
 
     .accept-button{
@@ -298,39 +298,39 @@ if (!isset($_SESSION['nic'])) {
         <div class="form-outer">
           <form action="#">
             <div class="page slide-page">
-                <div class="field">
+                <!-- <div class="field">
                   <button class="firstNext next">Pending</button>
-                </div>
+                </div> -->
             </div>
             <div class="page slide-page">
-              <div class="field">
+              <!-- <div class="field"> -->
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="firstNext next">Accepted</button>
-              </div>
+                <!-- <button class="firstNext next">Accepted</button>
+              </div> -->
             </div>
             <div class="page slide-page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="firstNext next">Paid</button>
-              </div>
+                <!-- <button class="firstNext next">Paid</button>
+              </div> -->
             </div>
             <div class="page slide-page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                   <!-- <button class="prev-2 prev">On going</button> -->
-                  <button class="">On Going</button>
-              </div>
+                  <!-- <button class="">On Going</button>
+              </div> -->
             </div>
             <div class="page slide-page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                   <!-- <button class="prev-2 prev">On going</button> -->
-                  <button class="">Delivered</button>
-              </div>
+                  <!-- <button class="">Delivered</button>
+              </div> -->
             </div>
             <div class="page slide-page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                   <!-- <button class="prev-3 prev">Complete</button> -->
-                  <button class="">Completed</button>
-              </div>
+                  <!-- <button class="">Completed</button>
+              </div> -->
             </div>
           </form>
         </div>
@@ -487,9 +487,12 @@ if (!isset($_SESSION['nic'])) {
 
 
         <!--measurement form-->
-  
+        <div class="btn-container">
         <button class="cart-button" onclick="myFunction()">Conversation</button>
         <button class="cart-button" onclick="myFunction2()">Measurements</button>
+        </div>
+  
+        
         <div class="order-input-container" id="div-1">
           <form action="order.php" method="post" id=form-1>
             <h2 class="order-measure-headding">Measurements</h2>
