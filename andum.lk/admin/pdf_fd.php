@@ -1,8 +1,8 @@
 <?php include("../server.php"); ?> 
 <?php
 
-$sql = "SELECT * FROM users WHERE type='1'";
- $result = mysqli_query($db, $sql);
+$sql = "SELECT * FROM users WHERE type='2'";
+$result = mysqli_query($db, $sql);
 
 
 require("../fpdf181/fpdf.php");
