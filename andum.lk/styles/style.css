@@ -85,8 +85,13 @@ header {
 }
 
 .nav-area li{
-  display: inline-block;
+  display: inline-grid;
   padding: 0px 20px; 
+}
+
+.text-box{
+  padding: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 10px;
 }
 
 #icon{
@@ -1092,6 +1097,9 @@ nav ul.menu-area ul li a:hover{
 a{
   text-decoration: none;
 } */
+
+
+}
 
 /*--responsive for mobile phone--*/
 /* @media(max-width:720px){

@@ -150,7 +150,7 @@ require("server.php");
         <label for="password" class="field-label-inline"><b>Password</b></label>
         <input type="password" class="field-value-inline" name="password" required>
       </div>
-      <div>
+      <div class="text-box">
         <span class="psw">Forgot<a href="reset-password.php">&nbsppassword?</a></span>
       </div>
       <div class="btn-panel-center">
@@ -167,9 +167,9 @@ require("server.php");
       </div> -->
 
 
-      <!-- <div> -->
+      <div class="text-box">
       <span class="psw">Don't you have an account? <a href="/ucsc_2202_07/andum.lk/signup.php">SIGN UP</a> now!</span>
-      <!-- </div> -->
+      </div>
       <!-- <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label> -->

@@ -5,6 +5,19 @@ if (!isset($_SESSION['nic'])) {
   exit();
 }
 
+$sql = "SELECT COUNT(id) As count1 FROM star";
+$result = mysqli_query($db,$sql);
+$row1 = mysqli_fetch_assoc($result);
+$numR = $row1['count1'];
+
+$sql1 = "SELECT SUM(rate_index) AS total FROM star";
+
+$rData = mysqli_query($db,$sql1);
+$row = mysqli_fetch_assoc($rData);
+$total = $row['total'];
+
+$avg = $total/$numR;
+
 ?>  
 
 <?php include("../errors.php");
@@ -28,150 +41,91 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-  <header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Women</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="workwear_gents.php">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="#">Kurthas</a></li>
-                    <li><a href="#">Shlwas</a></li>
-                    <li><a href="#">Sarees</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-              
-            
-          </li>
-          <li class="dropdown">
-            <a href="#">Men</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
-                  </ul>  
-                </div>
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Trousers</a></li>
-                    <li><a href="#">Blazers</a></li>
-                  </ul>
-                </div> 
-              </ul>
-            </div>            
-          </li>
-          <li class="dropdown">
-            <a href="#">Kids</a>
-            <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
-          </li>
-
-          <li><a href="hire_tailor.php">Explore Tailors</a></li>
-          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
-          <li>
-          
-          </li>
-        </ul>
-      </div>
-      
-      <!-- </div> -->
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-          
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="tailor-dashboard.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="Manage_sales.php"><i class="fas fa-money"></i>Sales</a></li>
-                  <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><i class="fas fa-envelope"></i></li>
-            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <script>
-    document.querySelector(".nav_right ul li").addEventListener("click",
-      function() {
-        this.classList.toggle("active");
-      })
-  </script>
+  
 
   <div class="fd-container-box">
-
+    <i class="fas fa-star fa-2x" data-index="0"></i>
+    <i class="fas fa-star fa-2x" data-index="1"></i>
+    <i class="fas fa-star fa-2x" data-index="2"></i>
+    <i class="fas fa-star fa-2x" data-index="3"></i>
+    <i class="fas fa-star fa-2x" data-index="4"></i>
+    <br>
+    <?php echo $avg?>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+  <script>
+    var ratedIndex=-1, uID=0;
+
+    $(document).ready(function(){
+      resetStarColors();
+
+      if(localStorage.getItem('ratedIndex')!= null)
+      {
+        setStars(parseInt(localStorage.getItem('ratedIndex')));
+        uID = localStorage.getItem('uID');
+      }
+
+      $('.fa-star').on('click',function (){
+
+        ratedIndex = parseInt($(this).data('index'));
+        localStorage.setItem('ratedIndex',ratedIndex); 
+        saveToTheDB();
+
+      });
+
+      $('.fa-star').mouseover(function (){
+
+        resetStarColors();
+        var currentIndex = parseInt($(this).data('index'));
+        setStars(currentIndex);
+
+      });
+
+      $('.fa-star').mouseleave(function (){
+
+        resetStarColors();
+        if(ratedIndex!=-1)
+        {
+          setStars(ratedIndex);
+        }
+          
+      });
+
+    });
+
+    function saveToTheDB(){
+      $.ajax({
+        url: "rating.php",
+        method: "POST",
+        dataType: 'json',
+        data: 
+        {
+          save: 1,
+          uID: uID,
+          ratedIndex: ratedIndex
+        }, 
+        success: function(r)
+        {
+          uID = r.id;
+          localStorage.setItem('uID',uID);
+        }
+      });
+    }
+    
+
+    function setStars(max){
+      for(var i=0; i<= max; i++)
+        $('.fa-star:eq('+i+')').css('color','yellow');
+    }
+
+    function resetStarColors(){
+      $('.fa-star').css('color','black');
+    }
+
+
+  </script>
 
   <?php require("../footer.php")?>
 
