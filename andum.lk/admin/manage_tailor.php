@@ -169,6 +169,11 @@ if(isset($_GET['d_nic']) ){
           </ul>
         </div>
       </div>
+
+      <div class="add-new-position">
+      <a class="cta" href="pdf_tailor.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+    </div>
+
     </nav>
   </header>
   <div class="container-box">
