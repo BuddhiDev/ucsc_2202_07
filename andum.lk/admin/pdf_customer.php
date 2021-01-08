@@ -5,7 +5,7 @@ $sql = "SELECT * FROM users WHERE type='1'";
  $result = mysqli_query($db, $sql);
 
 
-require("fpdf181/fpdf.php");
+require("../fpdf181/fpdf.php");
 
 $pdf= new FPDF('p' , 'mm' , 'A4');
 
