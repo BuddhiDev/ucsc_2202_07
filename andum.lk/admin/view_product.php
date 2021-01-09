@@ -182,7 +182,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<?php require("header.php") ?>
+
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -194,7 +194,7 @@ if (!isset($_SESSION['nic'])) {
   <?php
   $selected_dress_id = $_SESSION['selected_dress_id'];
   $nic = $_SESSION['nic'];
-  $sql = "SELECT * FROM dress_showcase WHERE dress_id=$selected_dress_id";
+  $sql = "SELECT * FROM review_dress WHERE dress_id=$selected_dress_id";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result)
@@ -205,7 +205,7 @@ if (!isset($_SESSION['nic'])) {
       
       <div class="col-6">
         <div  class="img1">
-          <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">         
+        <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">         
         </div>
       </div>
       

@@ -44,11 +44,12 @@ require("../server.php");
         <?php
 
        include("../errors.php");
-      
-       $selected_dress_id1 = $_SESSION['$selected_dress_id1'];
-       $edit_dress_id=$_SESSION['$selected_dress_id1'];
-       $sqle = "SELECT*FROM dress_showcase WHERE t_nic='$selected_dress_id1' ";
-       $resulte=mysqli_query($db, $sqle);
+
+      $selected_dress_id1 = $_SESSION['selected_dress_id1'];
+      $nic = $_SESSION['nic'];
+    
+      $sqle = "SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
+      $resulte=mysqli_query($db, $sqle);
        
     
 
@@ -167,12 +168,7 @@ require("../server.php");
   
 
               
-          <div class="row">
-          </div>
-          <div class="btn-panel-center">
-            <a href="my_dhowcase.php"><button class="loginbutton btn-full-w" type="submit" name="update_dress">Save</button></a>
-          </div>
-
+         
           <?php
             }
           }
@@ -181,11 +177,18 @@ require("../server.php");
           <!-- fdgfsas<label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label> -->
+
+         
+
         </div>
       </form>
-
+      <div class="row">
+          </div>
+          <div class="btn-panel-center">
+            <a href="my_dhowcase.php"><button class="loginbutton btn-full-w" type="submit" name="update_dress">Save</button></a>
+          </div>
       <script src="../script.js"></script> 
-
+</div>
       <!--footer-->
         <?php require("../footer.php")?>
 

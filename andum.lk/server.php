@@ -550,8 +550,8 @@ if(isset($_POST['add_product']))
 }
 //edit  dress detaills
 if(isset($_GET['edit_dress_id']) ){
-    $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
-    $_SESSION['selected_dress_id']=$selected_dress_id;
+    $selected_dress_id1 = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
+    $_SESSION['selected_dress_id1']=$selected_dress_id1;
     header('location: edit_dress.php');
 }
 
