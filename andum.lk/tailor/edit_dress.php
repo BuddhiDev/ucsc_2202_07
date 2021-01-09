@@ -45,14 +45,15 @@ require("../server.php");
 
        include("../errors.php");
       
-       $selected_dress_id = $_SESSION['edit_dress_id'];
-       $sqle = "SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id' ";
+       $selected_dress_id1 = $_SESSION['$selected_dress_id1'];
+       $edit_dress_id=$_SESSION['$selected_dress_id1'];
+       $sqle = "SELECT*FROM dress_showcase WHERE t_nic='$selected_dress_id1' ";
        $resulte=mysqli_query($db, $sqle);
        
     
 
         if ($resulte) {
-          while ($row = mysqli_fetch_assoc($result)) {
+          while ($row = mysqli_fetch_assoc($resulte)) {
         ?>
 
 
