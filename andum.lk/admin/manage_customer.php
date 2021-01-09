@@ -167,7 +167,7 @@
           </ul>
         </div>
       </div>
-
+<!-- generate pdf -->
       <div>
     <div class="add-new-position">
       <a class="cta" href="pdf_customer.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
