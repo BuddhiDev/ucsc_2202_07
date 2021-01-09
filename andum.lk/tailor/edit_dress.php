@@ -40,13 +40,12 @@ require("../server.php");
 
 <!-- edit profile form-->
 
-      <form action="edit_profile.php" method="post" enctype="multipart/form-data">
+      <form action="edit_dress.php" method="post" enctype="multipart/form-data">
         <?php
 
        include("../errors.php");
-
-       $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_nic']);
-       $_SESSION['edit_dress_id']=$selected_dress_id;
+      
+       $selected_dress_id = $_SESSION['edit_dress_id'];
        $sqle = "SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id' ";
        $resulte=mysqli_query($db, $sqle);
        
@@ -58,30 +57,115 @@ require("../server.php");
 
 
         <div class="login-container">
-          <h1>Edit Profile</h1>
-          <!-- <center>
-          <img src="/ucsc_2202_07/andum.lk/images/pexels-joy-deb-1580270.jpg" alt="Jeny" style="width:25%"; >
-        </center> -->
+          <h1>Edit Dress</h1>
         <div class="fd-form-container-block1">
               <div class="profile-pic">
                 <div class="pic">
-                  <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
+                  <img src="icon.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
                 </div>        
-                <label for="profile_pictures"></label>
-                <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
+                <label for="dress_pictures"></label>
+                <input type="file" name="dresspic" value="" onchange="displayImage(this)" id="dresspic" class="fd-profile-pic-control">
               </div>
             </div>
           <div class="form-field-inline">
-            <label for="uname" class="field-label-inline">NIC Number</label>
-            <input type="text" value="<?php echo $row["nic"]?>" class="field-value-inline" name="nic" readonly>
+            <label for="dname" class="field-label-inline"><b>Dress Name: </b></label>
+            <input type="text" value="<?php echo $row["title"]?>" class="field-value-inline" name="title">
           </div>
 
           <div class="form-field-inline">
-            <label for="email" class="field-label-inline"><b>Email Address</b></label>
-            <input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>
+            <lable for="price" class="field-label-inline"><b>Price: </b></label>
+            <input type="text" value="<?php echo $row["price"]?>" class="field-value-inline" name="price">
           </div>
 
-          
+          <div class="row">
+          <div class="col-25"><br>
+            <lable for="type" class="field-label-inline">Size:</label>
+          </div>
+          <div class="col-75">
+            <label class="checkbox_container">S
+              <input type="checkbox" name="size[]" value="s">
+              <span class="checkmark"></span>
+            </label>
+            <label class="checkbox_container">M
+              <input type="checkbox" name="size[]" value="m">
+              <span class="checkmark"></span>
+            </label>
+            <label class="checkbox_container">L
+              <input type="checkbox" name="size[]" value="l">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkbox_container">XL
+              <input type="checkbox" name="size[]" value="xl">
+              <span class="checkmark"></span>
+            </label>
+            <label class="checkbox_container">XXL
+              <input type="checkbox" name="size[]" value="xxl">
+              <span class="checkmark"></span>
+            </label>
+            <label class="checkbox_container">XXXL
+              <input type="checkbox" name="size[]" value="xxxl">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+      <div class="col-25"><br>
+        <lable for="type" class="field-label-inline">Colors:</label>
+      </div>
+
+      <div class="col-75">
+      <!--  <div class="column">-->
+        <label class="checkbox_container">Red
+          <input type="checkbox" name="color[]" value="red">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Orange
+          <input type="checkbox" name="color[]" value="orange">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Yellow
+          <input type="checkbox" name="color[]" value="yellow">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Green
+          <input type="checkbox" name="color[]" value="green">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Blue
+          <input type="checkbox" name="color[]" value="blue">
+          <span class="checkmark"></span>
+        </label>
+     
+        <label class="checkbox_container">Purple
+          <input type="checkbox" name="color[]" value="purple">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Pink
+          <input type="checkbox" name="color[]" value="pink">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Black
+          <input type="checkbox" name="color[]" value="black">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">White
+          <input type="checkbox" name="color[]" value="white">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">Other
+          <input type="checkbox" name="color[]" value="other">
+          <span class="checkmark"></span>
+        </label>
+      
+      </div>
+        <div class="form-field-inline">
+            <label for="amount" class="field-label-inline"><b>Amount : </b></label>
+            <input type="text" value="<?php echo $row["amount"]?>" class="field-value-inline" name="amount">
+        </div>
+  
+
+              
           <div class="row">
           </div>
           <div class="btn-panel-center">

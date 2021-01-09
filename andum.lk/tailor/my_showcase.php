@@ -80,7 +80,7 @@ if (!isset($_SESSION['nic'])) {
 
       <!-- Dress box start -->
       <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
+        <form method="get" action="edit_ress.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
 
@@ -92,8 +92,8 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
               <div>
-                <a href="product.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
-                <a href="product.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
+                <a href="my_showcase.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
+                <a href="my_showcase.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
               </div>
             </div>
           </div>
@@ -129,8 +129,8 @@ if (!isset($_SESSION['nic'])) {
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
               <div>
-                <a href="product.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
-                <a href="product.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
+                <a href="my_showcase.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
+                <a href="my_showcase.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
               </div>
             </div>
           </div>

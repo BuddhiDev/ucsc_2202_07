@@ -549,6 +549,13 @@ if(isset($_POST['add_product']))
   }
 }
 
+if(isset($_POST['edit_dress_id']) ){
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
+    $_SESSION['selected_dress_id']=$selected_dress_id;
+    header('location: edit_dress.php');
+}
+
+
 //Update  dress detaills
 if(isset($_POST['update_dress']) ){
     $nic = mysqli_real_escape_string($db, $_POST['nic']);
@@ -909,26 +916,6 @@ if (isset($_POST['sale-complete'])) {
         }
 
         $mail->smtpClose();
-    }
-
-    if(isset($_POST['save'])){
-        $uID = mysqli_real_escape_string($db, $_POST['uID']);
-        $ratedIndex = mysqli_real_escape_string($db, $_POST['ratedIndex']);
-        $ratedIndex++;
-
-        if(!$uID){
-            $sql = "INSERT INTO star (rate_index) VALUES ('$ratedIndex')";
-            $result = mysqli_query($db,$sql);
-            $sql1 = "  SELECT id FROM star ORDER BY id DESC LIMIT 1";
-            $result1 = mysqli_query($db,$sql1);
-            $uData = mysqli_fetch_assoc($result1);
-            $uID = $uData['id'];
-        }
-        else{
-            $sql2 = "UPDATE star SET rate_index=''$ratedIndex' WHERE id='$uID'";
-
-        }
-
     }
 
 

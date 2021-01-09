@@ -168,31 +168,12 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-      </div>
-
-
-
   <div class="fd-container-box">
 
   
 
     <div class="side-bar-wrapper">
       <ul class="sidebar">
-        <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-            <div class="sidebar-icon">
-              <i class="fas fa-user-circle"></i>
-              <span class="sidebar-text">My Profile</span>
-            </div>           
-          </a>
-        </li>
         <li class="sidebar-item">
           <a class="sidebar-link" href="manage_customer.php">
           <div class="sidebar-icon">
@@ -243,10 +224,10 @@ if (!isset($_SESSION['nic'])) {
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link" href="index.php">
-          <div class="sidebar-icon">
+          <!--<div class="sidebar-icon">
             <i class="fas fa-download"></i>
             <span class="sidebar-text">Download User List</span>
-          </div>
+          </div>-->
           </a>
         </li>
       </ul>
