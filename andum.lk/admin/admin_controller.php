@@ -79,6 +79,11 @@ if(isset($_POST['send_mail'])){
         }
     }  
 
+    if(isset($_GET['dress_id']) ){
+        $selected_dress_id = mysqli_real_escape_string($db, $_GET['dress_id']);
+        $_SESSION['selected_dress_id']=$selected_dress_id;
+        header('location: view_product.php');
+    }
 
     
 ?>

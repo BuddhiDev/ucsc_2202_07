@@ -31,7 +31,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<?php //require("header.php")?>
+<?php require("header.php")?>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -73,7 +73,7 @@ if (!isset($_SESSION['nic'])) {
 
       <!-- Dress box start -->
       <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
+        <form method="get" action="review_dresses.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
           <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
 
@@ -107,7 +107,7 @@ if (!isset($_SESSION['nic'])) {
 
       <!-- Dress box start -->
       <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
+        <form method="post" action="review_dresses.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
           <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
           <div class="card-item">
@@ -137,7 +137,7 @@ if (!isset($_SESSION['nic'])) {
 
       <!-- Dress box start -->
       <div class="col-4">
-        <form method="post" action="index.php" class="dress-showcase">
+        <form method="post" action="review_dresses.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
           <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
           <div class="card-item">
