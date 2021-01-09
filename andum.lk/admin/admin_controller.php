@@ -46,7 +46,6 @@ if ($result) {
 
 
 
-
 if(isset($_POST['send_mail'])){
     $name = $_POST['aname'];
     $email = $_POST['email'];

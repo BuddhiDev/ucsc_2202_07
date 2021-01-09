@@ -1,4 +1,5 @@
 <?php include("../server.php");
+
 /*
 if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
@@ -6,14 +7,14 @@ if (!isset($_SESSION['nic'])) {
 }*/
 
 ?>
-
+<?php include("admin_controller.php")?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
+  <title>Andum.lk - Reviewer</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
@@ -31,9 +32,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<?php //require("header.php")?>
-
-  <script>
+<script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
         this.classList.toggle("active");
@@ -77,10 +76,14 @@ if (!isset($_SESSION['nic'])) {
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
           <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
 
+          
+
+
           <div class="card-item">
             <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            <a href="review_dress.php?rdress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
             </div>
+
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
