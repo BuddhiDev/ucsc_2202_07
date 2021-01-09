@@ -179,6 +179,10 @@
           </div>
 
       </div>
+
+      <div class="add-new-position">
+      <a class="cta" href="deleted_users_pdf.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+    </div>
       <h1>Banned Users</h1>
     <div style="overflow-x:auto;">
       <table>
