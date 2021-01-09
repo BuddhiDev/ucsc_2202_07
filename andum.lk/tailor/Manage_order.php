@@ -44,6 +44,10 @@ if (!isset($_SESSION['nic'])) {
   
 <?php require("header.php")?>
 
+<div class="add-new-position">
+      <a class="cta" href="order_pdf.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+    </div>
+
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
