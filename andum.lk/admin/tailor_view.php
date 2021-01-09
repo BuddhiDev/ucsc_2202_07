@@ -445,16 +445,17 @@ if (!isset($_SESSION['nic'])) {
 
         <?php
 
-        $nic = $_SESSION['selected_tailor_id'];
-        $sql2 = "SELECT * FROM t_orders WHERE t_nic='$nic'";
+        $nic = $_SESSION['nic'];
+        $sql2 = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic";
         $result2 = mysqli_query($db, $sql2);
+
 
         if (mysqli_num_rows($result2) > 0) {
 
           while ($row = mysqli_fetch_assoc($result2)) {
         ?>
 
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
             <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>pending</td>
