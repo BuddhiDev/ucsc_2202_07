@@ -37,13 +37,16 @@ if (!isset($_SESSION['nic'])) {
       background-color: #f2f2f2
     }
   </style>
+  
 </head>
 
 <body>
 
 
 <?php require("header.php") ?>
-
+<div class="add-new-position">
+      <a class="cta" href="purchases_pdf.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+    </div>
 
 
 
