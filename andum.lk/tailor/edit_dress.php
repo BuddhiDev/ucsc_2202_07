@@ -52,7 +52,7 @@ require("../server.php");
     
 
         if ($resulte) {
-          while ($row = mysqli_fetch_assoc($result)) {
+          while ($row = mysqli_fetch_assoc($resulte)) {
         ?>
 
 

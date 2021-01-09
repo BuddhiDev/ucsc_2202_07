@@ -535,7 +535,7 @@ if(isset($_POST['add_product']))
   if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
   {
 
-    $sql = " INSERT INTO dress_showcase (category, title, price, size, color, amount, image, permission, t_nic) VALUES ('$category', '$dressname','$price', '$schk', '$clchk', '$amount', '$filename', '1', '$t_nic')";
+    $sql = " INSERT INTO review_dress (category, title, price, size, color, amount, image, t_nic) VALUES ('$category', '$dressname','$price', '$schk', '$clchk', '$amount', '$filename', '$t_nic')";
     $result = mysqli_query($db,$sql);
 
     if (move_uploaded_file($tempname, $folder))
@@ -548,18 +548,18 @@ if(isset($_POST['add_product']))
     }
   }
 }
-
-if(isset($_POST['edit_dress_id']) ){
+//edit  dress detaills
+if(isset($_GET['edit_dress_id']) ){
     $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
     $_SESSION['selected_dress_id']=$selected_dress_id;
     header('location: edit_dress.php');
 }
 
 
-//Update  dress detaills
+//Save Updated  dress detaills
 if(isset($_POST['update_dress']) ){
-    $nic = mysqli_real_escape_string($db, $_POST['nic']);
-    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $nic = mysqli_real_escape_string($db, $_POST['dressid']);
+    $email = mysqli_real_escape_string($db, $_POST['title']);
     $fname = mysqli_real_escape_string($db, $_POST['fname']);
     $lname = mysqli_real_escape_string($db, $_POST['lname']);
 
