@@ -161,9 +161,9 @@
         </div>
       </div>
 
-      <div class="add-new-position">
+      <!-- <div class="add-new-position">
       <a class="cta" href="pdf_tailor.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
-    </div>
+    </div> -->
 
     </nav>
   </header>
@@ -211,14 +211,17 @@
           <td><?php echo $row["address"] ?></td>
           <td><?php echo $row["postalcode"] ?></td>
           <td>
-            <div>
-
-           <button class="view-button" name="viewr" >Confirm</button></a>
-
-              <!-- <a href="#"><button class="view-button" >View</button></a> -->
-            </div>
+          <div>
+            <a href="review_users.php?contact_user_id=<?php echo $row["nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONTACT</text></a>
+          </div>
           </td>
+          
          
+          <td>
+          <div>
+            <a href="review_users.php?review_user_id=<?php echo $row["nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
+          </div>
+          </td>
 
 
         </tr>
