@@ -1,20 +1,21 @@
 <?php include("../server.php");
 
+/*
 if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
-}
+}*/
 
 ?>
-
+<?php include("admin_controller.php")?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
-  <link rel="shortcut icon" href="logo.png">
+  <title>Andum.lk - Reviewer</title>
+  <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
@@ -30,23 +31,30 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-  
-<?php require("header.php")?>
-
-  <div class="add-new-position">
-  <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
-</div>
-
-  <div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
+<header>
+    <nav class="navbar-main">
+      <div class="navbar-logo">
+        <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
-
-  <script>
+      <div class="box">
+        <div class="nav_right">
+          <ul>
+            <li><i class="fas fa-user-circle"></i>
+              <div class="dd_right">
+                <ul>
+                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
+                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><i class="fas fa-envelope"></i></li>
+         <!--<li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+<script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
         this.classList.toggle("active");
@@ -58,11 +66,17 @@ if (!isset($_SESSION['nic'])) {
   ?>
 
 <div class="tailor-container-box">
+
+<div class="search-container">
+        <form method="post">
+          <div class="form-field-inline">
+            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
+            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
   
   <div class="tailor-cover">
-    <div class="row">
-      <h2 class="tailor-heading">My Dress showcase</h2>
-    </div>
     <div class="row">
       <?php
         $nic = $_SESSION['nic'];
@@ -71,7 +85,7 @@ if (!isset($_SESSION['nic'])) {
         if ($search != true) {
 
         // Read all dressess
-        $sql = "SELECT * FROM dress_showcase WHERE t_nic='$nic'";
+        $sql = "SELECT * FROM review_dress";
         $result = mysqli_query($db, $sql);
 
         if ($result) {
@@ -80,18 +94,21 @@ if (!isset($_SESSION['nic'])) {
 
       <!-- Dress box start -->
       <div class="col-4">
-        <form method="get" action="edit_dress.php" class="dress-showcase">
+        <form method="get" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+
+          
+
 
           <div class="card-item">
             <div class="card-img">
-            <a href="my_showcase.php?edit_dress_id=<?php echo $row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            <a href="review_dress.php?rdress_id=<?php echo $row["dress_id"] ?>"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
             </div>
+
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-              
             </div>
           </div>
         </form>
@@ -107,7 +124,7 @@ if (!isset($_SESSION['nic'])) {
           if (!$category_filter) {
 
             //Read using search keyword
-            $sql = "SELECT * FROM dress_showcase WHERE t_nic='$nic' && title LIKE '%$keyword%'";
+            $sql = "SELECT * FROM review_dress WHERE title LIKE '%$keyword%'";
             $result = mysqli_query($db, $sql);
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) {
@@ -117,18 +134,14 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
           <div class="card-item">
             <div class="card-img">
               <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
             </div>
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
-              <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-              <div>
-                <a href="my_showcase.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
-                <a href="my_showcase.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
-              </div>
+            <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
             </div>
           </div>
         </form>
@@ -141,7 +154,7 @@ if (!isset($_SESSION['nic'])) {
           } else {
             
             //Read using selected category
-            $sql = "SELECT * FROM dress_showcase WHERE t_nic='$nic' && category LIKE '%$selected_dress_category%'";
+            $sql = "SELECT * FROM review_dress WHERE category LIKE '%$selected_dress_category%'";
             $result = mysqli_query($db, $sql);
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) { 
@@ -151,7 +164,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
           <div class="card-item">
             <div class="card-img">
               <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
@@ -159,10 +172,6 @@ if (!isset($_SESSION['nic'])) {
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-              <div>
-                <a href="my_showcase.php?edit_dress_id=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
-                <a href="my_showcase.php?rem_dress_id=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
-              </div>
             </div>
           </div>
         </form>

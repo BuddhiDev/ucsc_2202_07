@@ -1,14 +1,7 @@
 <?php include("../server.php"); ?>
-<?php if(isset($_GET['nic']) ){
-    $selected_c_id = mysqli_real_escape_string($db, $_GET['nic']);
-    $_SESSION['selected_c_id']=$selected_c_id;
-    header('location: customer_view.php');
-}
-    if(isset($_GET['d_nic']) ){
-      $selected_c_id = mysqli_real_escape_string($db, $_GET['d_nic']);
-      $_SESSION['selected_c_id']=$selected_c_id;
-      header('location: banned_cust.php');
-} ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -167,16 +160,10 @@
           </ul>
         </div>
       </div>
-<!-- generate pdf -->
-      <div>
-    <div class="add-new-position">
-      <a class="cta" href="pdf_customer.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+
+      <div class="add-new-position">
+      <a class="cta" href="pdf_tailor.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
     </div>
-
-    
-  </div>
-
-
 
     </nav>
   </header>
@@ -200,14 +187,15 @@
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>Profile</th>
-          <th></th>
+          <th>Type</th>
+          <th>Address</th>
+          <th>Postal Code</th>
         </tr>
         <tr>
         
           <?php
 
-            $sql = "SELECT * FROM users WHERE type='1'";
+            $sql = "SELECT * FROM review_user ";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -219,19 +207,18 @@
           <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
           <td><?php echo $row["email"] ?></td>
           <td><?php echo $row["contactno"] ?></td>
+          <td><?php echo $row["type"] ?></td>
+          <td><?php echo $row["address"] ?></td>
+          <td><?php echo $row["postalcode"] ?></td>
           <td>
             <div>
-              <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
-             
-             
 
+           <button class="view-button" name="viewr" >Confirm</button></a>
+
+              <!-- <a href="#"><button class="view-button" >View</button></a> -->
             </div>
           </td>
-          <td>
-            <div>
-            <a href="manage_customer.php?d_nic=<?php echo $row["nic"]?>"><button class="view-button" name="delete_user">Suspend</button></a>
-            </div>
-          </td>
+         
 
 
         </tr>

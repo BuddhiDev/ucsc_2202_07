@@ -20,6 +20,29 @@
  //   header('location: fdesigner_view.php');
 //}
 
+
+if(isset($_GET['review_dress_id'])){
+    
+    // $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
+     $review_dress_id = mysqli_real_escape_string($db, $_GET['review_dress_id']);
+     $sqlp = "INSERT INTO dress_showcase(dress_id, category, title, price, size, color, amount, image, t_nic) SELECT*FROM review_dress WHERE dress_id='$review_dress_id' ";
+     $resultp=mysqli_query($db, $sqlp);
+     $sqlp = "DELETE FROM review_dress WHERE dress_id='$review_dress_id' ";
+    $resultp=mysqli_query($db, $sqlp);
+ 
+     if ($resultp) {
+ 
+         echo "<script>alert('CONFIRMATION SUCCESSFULY')</script>";
+         header('location: review_dress.php');
+     
+  } else {
+     array_push($errors, " failed, try again later");
+     echo "<script>alert('Sorry! CONFIRMATION UNSUCCESSFULY')</script>";
+ }
+
+}
+
+
 if(isset($_GET['delete_nic'])){
     
    $delete_nic = mysqli_real_escape_string($db, $_GET['delete_nic']);
@@ -27,10 +50,7 @@ if(isset($_GET['delete_nic'])){
    $result=mysqli_query($db, $sql);
    $sql = "DELETE FROM users WHERE nic='$delete_nic' ";
    $result=mysqli_query($db, $sql);
-    //echo "<script>alert('Suspend User Account')</script>";
-   // header('location: deleted_user.php');
-    //$msg = "<div>Suspend User Account</div>";
-    //echo $msg;
+    
 if ($result) {
     
         echo "Suspend User Account";
@@ -43,8 +63,11 @@ if ($result) {
 }
 }
 
-
-
+if(isset($_GET['rdress_id']) ){
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['rdress_id']);
+    $_SESSION['selected_dress_id']=$selected_dress_id;
+    header('location: view_product.php');
+}
 
 
 if(isset($_POST['send_mail'])){
@@ -80,19 +103,7 @@ if(isset($_POST['send_mail'])){
     }  
 
 
+   
     
 ?>
-                           
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        

@@ -463,17 +463,31 @@ if (!isset($_SESSION['nic'])) {
         <th>Tailor Name</th>
         <th>Patment Date</th>
         <th>Delivered Status</th>
-        <th><center>Action</center></th>
+       
 
       </tr>
 <tr>
-<td>Kamala Perera</td>
-<td>2020/11/07</td>
-<td>Pending</td>
-<td>No</td>
+<?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic)";
+        $result = mysqli_query($db, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+<td><?php echo $row["fname"]." ".$row["lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["status"] ?></td>
 
 </tr>
+<?php
+          }
+        } else {
+        }
 
+    ?>
 
 
 

@@ -100,6 +100,14 @@ $delivered_orders = $row[0];
           </a>
         </li>
         <li class="sidebar-item">
+          <a class="sidebar-link" href="pending_dresses.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-tshirt"></i>
+            <span class="sidebar-text">Pending Dresses</span>
+            </div>
+          </a>
+        </li>
+        <li class="sidebar-item">
           <a class="sidebar-link" href="Manage_order.php">
           <div class="sidebar-icon">
             <i class="fas fa-shopping-cart"></i>
