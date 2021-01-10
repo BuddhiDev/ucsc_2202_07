@@ -38,12 +38,6 @@ require("../server.php");
 
 
 
-
-          </li>
-        </ul>
-      </div>
-
-
 <!-- edit profile form-->
 
       <form action="edit_profile.php" method="post" enctype="multipart/form-data">

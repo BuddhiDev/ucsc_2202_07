@@ -550,21 +550,38 @@ if(isset($_POST['add_product']))
 }
 //edit  dress detaills
 if(isset($_GET['edit_dress_id']) ){
-    $selected_dress_id1 = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
-    $_SESSION['selected_dress_id1']=$selected_dress_id1;
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
+    $_SESSION['selected_dress_id1']=$selected_dress_id;
     header('location: edit_dress.php');
 }
 
 
 //Save Updated  dress detaills
 if(isset($_POST['update_dress']) ){
-    $nic = mysqli_real_escape_string($db, $_POST['dressid']);
-    $email = mysqli_real_escape_string($db, $_POST['title']);
-    $fname = mysqli_real_escape_string($db, $_POST['fname']);
-    $lname = mysqli_real_escape_string($db, $_POST['lname']);
+  //$selected_dress_id1 = $_SESSION['selected_dress_id1'];
+  $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
+  $selected_dress_id1 = mysqli_real_escape_string($db, $_POST['dress_id']);
+  $category = mysqli_real_escape_string($db, $_POST['Unit']);
+  $dressname = mysqli_real_escape_string($db, $_POST['dname']);
+  $price = mysqli_real_escape_string($db, $_POST['price']);
+
+  $size1 = $_POST['size'];
+  $schk="";
+  foreach($size1 as $schk1)
+     {
+        $schk.= $schk1.",";
+     }
+
+  $colors1 = $_POST['color'];
+  $clchk="";
+  foreach($colors1 as $clchk1)
+     {
+        $clchk.= $clchk1.",";
+     }
+  $amount = mysqli_real_escape_string($db, $_POST['amount']);
 
 
-    $sqle = "UPDATE dress_showcase SET WHERE dress_id='$edit_dress_id' ";
+    $sqle = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
     $resulte=mysqli_query($db, $sqle);
 
     if($resulte)

@@ -40,7 +40,7 @@ require("../server.php");
 
 <!-- edit profile form-->
 
-      <form action="edit_dress.php" method="post" enctype="multipart/form-data">
+<form method="post" action="my_showcase.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
         <?php
 
        include("../errors.php");
@@ -60,7 +60,7 @@ require("../server.php");
 
         <div class="login-container">
           <h1>Edit Dress</h1>
-        <div class="fd-form-container-block1">
+            <div class="fd-form-container-block1">
               <div class="profile-pic">
                 <div class="pic">
                   <img src="icon.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
@@ -69,14 +69,25 @@ require("../server.php");
                 <input type="file" name="dresspic" value="" onchange="displayImage(this)" id="dresspic" class="fd-profile-pic-control">
               </div>
             </div>
-          <div class="form-field-inline">
-            <label for="dname" class="field-label-inline"><b>Dress Name: </b></label>
-            <input type="text" value="<?php echo $row["title"]?>" class="field-value-inline" name="title">
+            <div class="row">
+        <div class="col-25"><br>
+          <lable for="type" class="field-label-inline">Category:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" value="<?php echo $row["category"]?>" class="field-value-inline" name="Unit"></div>
+          </div>
+          <div class="row">
+          <div class="col-25"><br>
+            <label for="dname" class="field-label-inline"><b>Dress Name: </b></label></div>
+            <div class="col-75">
+            <input type="text" value="<?php echo $row["title"]?>" class="field-value-inline" name="dname"></div>
           </div>
 
-          <div class="form-field-inline">
-            <lable for="price" class="field-label-inline"><b>Price: </b></label>
-            <input type="text" value="<?php echo $row["price"]?>" class="field-value-inline" name="price">
+          <div class="row">
+          <div class="col-25"><br>
+            <lable for="price" class="field-label-inline"><b>Price: </b></label></div>
+            <div class="col-75">
+            <input type="text" value="<?php echo $row["price"]?>" class="field-value-inline" name="price"></div>
           </div>
 
           <div class="row">
@@ -110,11 +121,11 @@ require("../server.php");
               <span class="checkmark"></span>
             </label>
           </div>
-        </div>
+          </div>
         <div class="row">
-      <div class="col-25"><br>
-        <lable for="type" class="field-label-inline">Colors:</label>
-      </div>
+        <div class="col-25"><br>
+          <lable for="type" class="field-label-inline">Colors:</label>
+        </div>
 
       <div class="col-75">
       <!--  <div class="column">-->
@@ -159,14 +170,20 @@ require("../server.php");
           <input type="checkbox" name="color[]" value="other">
           <span class="checkmark"></span>
         </label>
-      
+        </div>
       </div>
-        <div class="form-field-inline">
-            <label for="amount" class="field-label-inline"><b>Amount : </b></label>
-            <input type="text" value="<?php echo $row["amount"]?>" class="field-value-inline" name="amount">
+        <div class="row">
+            <div class="col-25"><br>
+            <label for="amount" class="field-value-inline"><b>Amount: </b></label></div>
+            <div class="col-75">
+            <input type="text" value="<?php echo $row["amount"]?>" class="field-value-inline" name="amount"></div>
         </div>
   
-
+        <div class="btn-panel-center">
+            <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+            <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+            <a href="my_dhowcase.php"><button class="loginbutton btn-full-w" type="submit" name="update_dress">Save</button></a>
+          </div>
               
          
           <?php
@@ -177,18 +194,15 @@ require("../server.php");
           <!-- fdgfsas<label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label> -->
-
+          
+         
          
 
-        </div>
-      </form>
-      <div class="row">
-          </div>
-          <div class="btn-panel-center">
-            <a href="my_dhowcase.php"><button class="loginbutton btn-full-w" type="submit" name="update_dress">Save</button></a>
-          </div>
+    </div>
+  </form>
+      
       <script src="../script.js"></script> 
-</div>
+
       <!--footer-->
         <?php require("../footer.php")?>
 

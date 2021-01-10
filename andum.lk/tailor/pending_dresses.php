@@ -57,9 +57,9 @@ if (!isset($_SESSION['nic'])) {
   
   <div class="tailor-cover">
     <div class="row">
-      <h2 class="tailor-heading"><b>Pending  Dresses</b></h2>
-      <h3>Dresses in this section is subject to administrator confirmation. After reviewing your dress details we will add your clothes to Andim.lk. 
-            <br>It will take 2 or 3 hours.</h3> 
+      <h2 class="tailor-heading"><b>Pending Dresses</b></h2>
+      <h3><p style="border:3px; border-style:solid; border-color:#cc12cc; padding: 1em;"> Dresses in this section is subject to administrator confirmation. After reviewing your dress details we will add your dress to Andim.lk. 
+            <br>It will take 2 or 3 hours.</p></h3> 
     </div>
 
     <div class="row">
@@ -81,7 +81,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="get" action="pending_dresses.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
 
           <div class="card-item">
             <div class="card-img">
@@ -115,7 +115,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
               <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
@@ -145,7 +145,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
               <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">

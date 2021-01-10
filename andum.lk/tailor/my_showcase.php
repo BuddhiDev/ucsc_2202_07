@@ -82,7 +82,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="get" action="edit_dress.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
 
           <div class="card-item">
             <div class="card-img">
@@ -117,7 +117,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
               <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
@@ -151,7 +151,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-4">
         <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-          <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
               <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
