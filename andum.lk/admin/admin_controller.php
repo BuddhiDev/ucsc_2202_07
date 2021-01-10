@@ -75,7 +75,7 @@ if(isset($_GET['review_user_id'])){
     
     // $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
      $review_user_id = mysqli_real_escape_string($db, $_GET['review_user_id']);
-     $sql3 = "INSERT INTO users(nic, fname, email, lname, contactno, password, type, address, postalcode) SELECT*FROM review_user WHERE nic='$review_user_id' ";
+     $sql3 = "INSERT INTO users (nic, fname, email, lname, contactno, password, type, address, postalcode) SELECT*FROM review_user WHERE nic='$review_user_id' ";
      $result3=mysqli_query($db, $sql3);
      $sql3 = "DELETE FROM review_user WHERE nic='$review_user_id' ";
     $result3=mysqli_query($db, $sql3);
@@ -83,7 +83,7 @@ if(isset($_GET['review_user_id'])){
      if ($result3) {
  
          echo "<script>alert('CONFIRMATION SUCCESSFULY')</script>";
-         header('location: index.php');
+         header('location: review_users.php');
      
   } else {
      array_push($errors, " failed, try again later");

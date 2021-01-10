@@ -167,6 +167,16 @@
 
     </nav>
   </header>
+  <script>
+    document.querySelector(".nav_right ul li").addEventListener("click",
+      function() {
+        this.classList.toggle("active");
+      })
+  </script>
+  <?php 
+    include("../errors.php");
+  ?>
+
   <div class="container-box">
     <div class="fd-container-box">
       <div class="row">
@@ -195,6 +205,8 @@
         
           <?php
 
+          
+            $nic = $_SESSION['nic'];
             $sql = "SELECT * FROM review_user ";
             $result = mysqli_query($db, $sql);
 
@@ -210,16 +222,12 @@
           <td><?php echo $row["type"] ?></td>
           <td><?php echo $row["address"] ?></td>
           <td><?php echo $row["postalcode"] ?></td>
-          <td>
-          <div>
-            <a href="review_users.php?contact_user_id=<?php echo $row["nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONTACT</text></a>
-          </div>
-          </td>
+          
           
          
           <td>
           <div>
-            <a href="review_users.php?review_user_id=<?php echo $row["nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
+            <a href="view_product.php?review_user_id=<?php echo $row["nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
           </div>
           </td>
 
