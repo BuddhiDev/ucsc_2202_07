@@ -5,14 +5,15 @@ if (!isset($_SESSION['nic'])) {
   exit();
 }
 ?>
+<?php include("admin_controller.php"); ?> 
 
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Product</title>
-  <link rel="shortcut icon" href="logo.png">
+  <title>Andum.lk - Confirm </title>
+  <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
@@ -181,8 +182,30 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-
-
+<header>
+    <nav class="navbar-main">
+      <div class="navbar-logo">
+        <img class="logo" src="../logo.png" alt="logo" class="img-box">
+      </div>
+      <div class="box">
+        <div class="nav_right">
+          <ul>
+            <li><i class="fas fa-user-circle"></i>
+              <div class="dd_right">
+                <ul>
+                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
+                  <li><a href="review_dress.php"><i class="fas fa-users"></i>Review Dresses</a></li>
+                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><i class="fas fa-envelope"></i></li>
+         <!--<li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -190,11 +213,14 @@ if (!isset($_SESSION['nic'])) {
         this.classList.toggle("active");
       })
   </script>
+  <?php 
+    include("../errors.php");
+  ?>
 
   <?php
   $selected_dress_id = $_SESSION['selected_dress_id'];
   $nic = $_SESSION['nic'];
-  $sql = "SELECT * FROM review_dress WHERE dress_id=$selected_dress_id";
+  $sql = "SELECT * FROM review_dress WHERE dress_id='$selected_dress_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result)
@@ -211,7 +237,7 @@ if (!isset($_SESSION['nic'])) {
       
       <div class="col-6">
         <div class="product-detail-box">
-          <form method="post">
+        <form method="post" action="review_dress.php">
             <p style="color: black; font-size: 30px; margin-top:10px"><?php echo $row["title"]?></p>
             
             <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"] ?>.00</h4>
@@ -220,14 +246,14 @@ if (!isset($_SESSION['nic'])) {
             
             <div>
               <div>
-                <p style="color: black; font-size: 15px; margin-top:10px">Color</p>
+                <p style="color: black; font-size: 15px; margin-top:10px"><br><b>Color</b></p>
               </div>
 
               <div>
                 <?php
                   $selected_dress_id = $_SESSION['selected_dress_id'];
                   $nic = $_SESSION['nic'];
-                  $sqlc = "SELECT color FROM review_dress WHERE dress_id=$selected_dress_id";
+                  $sqlc = "SELECT color FROM review_dress WHERE dress_id='$selected_dress_id'";
                   $resultc = mysqli_query($db,$sqlc);
                   $rowc = mysqli_fetch_assoc($resultc);
                   $mystring = $rowc['color'];
@@ -241,33 +267,15 @@ if (!isset($_SESSION['nic'])) {
                   ?>              
               </div>
 
-              <!-- <form action="" method="post">
-                  HEX <input type="text" name="hex" value="<?php echo(isset($_POST['hex']))?$_POST['hex']:'';?>">
-                  <input type="submit" values="Convert To RGB">
-              </form> -->
+              
                       
             </div>
 
-            <div class="product-cont">
-              <div class="quantity">
-                <input type="number"  name="quant" value="1" class="quentity-input">
-              </div>
-              <div class="product-s">
-              <select name="" id="" class="option">
-                <option value="">Select Size</option>
-                <option value="">S</option>
-                <option value="">M</option>
-                <option value="">L</option>
-                <option value="">XL</option>
-                <option value="">XXL</option>
-                <option value="">XXXL</option>
-              </select>
-              </div> 
-            </div>
-            <div>
-              <a href="view_product.php?t_nic=<?php echo $row["t_nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
-            </div>
-          </form>
+          <div>
+            <a href="view_product.php?review_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
+          </div>
+            
+        </form>
         </div>
         
       </div>

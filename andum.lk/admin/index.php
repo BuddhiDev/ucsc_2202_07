@@ -225,7 +225,7 @@ if (!isset($_SESSION['nic'])) {
         <li class="sidebar-item">
           <a class="sidebar-link" href="review_dress.php">
           <div class="sidebar-icon">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-tshirt"></i>
             <span class="sidebar-text">Review Dresses</span>
           </div>
           </a>

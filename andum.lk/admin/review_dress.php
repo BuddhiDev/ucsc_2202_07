@@ -15,7 +15,7 @@ if (!isset($_SESSION['nic'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Reviewer</title>
-  <link rel="shortcut icon" href="logo.png">
+  <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
@@ -31,7 +31,29 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 <body>
-
+<header>
+    <nav class="navbar-main">
+      <div class="navbar-logo">
+        <img class="logo" src="../logo.png" alt="logo" class="img-box">
+      </div>
+      <div class="box">
+        <div class="nav_right">
+          <ul>
+            <li><i class="fas fa-user-circle"></i>
+              <div class="dd_right">
+                <ul>
+                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
+                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><i class="fas fa-envelope"></i></li>
+         <!--<li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
