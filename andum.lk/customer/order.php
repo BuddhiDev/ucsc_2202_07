@@ -218,7 +218,7 @@ if (!isset($_SESSION['nic'])) {
     <?php
       $selected_o_id = $_SESSION['selected_o_id'];
       $nic = $_SESSION['nic'];
-      $sql = "SELECT * FROM t_orders WHERE id=$selected_o_id";
+      $sql = "SELECT * FROM t_orders WHERE id=$selected_o_id ";
       $result = mysqli_query($db, $sql);
       if ($result) 
       {
@@ -244,7 +244,7 @@ if (!isset($_SESSION['nic'])) {
               <p style="font-weight:bold">Order Price</p>
             </div>
             <div class="cust-n">
-              <p >Rs. 1000.00</p>
+              <p >Rs. <?php echo $row["price"]?>.00</p>
             </div>
           </div>
           <?php } ?> 
