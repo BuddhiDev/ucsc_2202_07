@@ -32,7 +32,7 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
+        $sql = "INSERT INTO review_user (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
         mysqli_query($db, $sql);
 
         // insert user if tailor
