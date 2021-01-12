@@ -50,7 +50,7 @@ $avg = $total/$numR;
     <i class="fas fa-star fa-2x" data-index="3"></i>
     <i class="fas fa-star fa-2x" data-index="4"></i>
     <br>
-    <?php echo $avg?>
+    <?php echo round($avg)?>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

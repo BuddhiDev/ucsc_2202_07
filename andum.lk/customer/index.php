@@ -181,7 +181,7 @@ if (!isset($_SESSION['nic'])) {
         <div class="row">
           <h2 class="customer-heading">Top Rated Tailors</h2>
         </div>
-        <div class="row">
+      <div class="row">
         <?php
           $nic = $_SESSION['nic'];
 
@@ -265,7 +265,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
       </div>
       <div class="text-view-more">
-        <a href="new-arrivals.php">view more +</a>
+        <a href="hire_tailor.php">view more +</a>
       </div>
     </div>
 
@@ -275,6 +275,88 @@ if (!isset($_SESSION['nic'])) {
           <h2 class="customer-heading">Top Rated Fashion Designers</h2>
         </div>
         <div class="row">
+        <?php
+          $nic = $_SESSION['nic'];
+
+
+          // Check condition if this is search request or not
+          if ($search != true) {
+            // Read all dressess
+            $s = "SELECT * FROM users WHERE type='2' LIMIT 0,4";
+            $res = mysqli_query($db, $s);
+
+            if ($res) {
+              while ($row = mysqli_fetch_assoc($res)) {
+
+          //retrieve tailor table data
+          $loop_nic=$row["nic"];
+          $t_sql="SELECT * FROM fashion_designer WHERE nic='$loop_nic' ORDER BY rate DESC";
+          $t_res=mysqli_query($db, $t_sql);
+          $t_row=mysqli_fetch_assoc($t_res);
+
+        ?>
+        <!-- Dress box start -->
+        <div class="col-3">
+          <form method="get" action="hire_fashion_designer.php">
+            <input type="hidden" value="<?php echo $nic ?> " name="nic">
+            <div class="card-item">
+              <div class="card-img">
+                <a href="fd.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
+              </div>
+              <div class="card-content">
+              
+                <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                <div class="card-description">
+                  
+                </div>
+              </div>
+            </div>
+          </form>
+          
+        </div>
+        <!-- Dress box end-->
+
+        <?php
+              }
+            }
+          } else {
+
+            //Read using search keyword
+            $sql = "SELECT * FROM users WHERE fname LIKE '%$keyword%' OR lname LIKE '%$keyword%' ";
+            $result = mysqli_query($db, $sql);
+
+            if ($result) {
+              while ($row = mysqli_fetch_assoc($result)) { 
+
+                //retrieve tailor table data
+          $loop_nic=$row["nic"];
+          $t_sql="SELECT * FROM fashion_designer WHERE nic='$loop_nic' ";
+          $t_res=mysqli_query($db, $t_sql);
+          $t_row=mysqli_fetch_assoc($t_res);
+
+        ?>
+
+        <div class="col-3">
+          <form method="get" action="index.php" class="dress-showcase">
+            <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
+            <div class="fd-card-item">
+              <div class="fd-card-img">
+              <a href="fd.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>
+              </div>
+              <div class="fd-card-content">
+                <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                <div class="card-description"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <?php }
+          }
+        }
+        ?>
+      </div>
+        <!-- <div class="row">
           <?php
           $nic = $_SESSION['nic'];
 
@@ -383,10 +465,10 @@ if (!isset($_SESSION['nic'])) {
             }
           }
                   ?>
-        </div>
+        </div> -->
       </div>
       <div class="text-view-more">
-        <a href="new-arrivals.php">view more +</a>
+        <a href="hire_fashion_designer.php">view more +</a>
       </div>
     </div>
 
