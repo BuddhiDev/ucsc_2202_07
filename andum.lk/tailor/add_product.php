@@ -86,29 +86,29 @@ require("../server.php");
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
-        <label class="checkbox_container">S
-          <input type="checkbox" name="size[]" value="s">
+        <label class="checkbox_container">UK 6
+          <input type="checkbox" name="size[]" value="UK 6">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">M
-          <input type="checkbox" name="size[]" value="m">
+        <label class="checkbox_container">UK 8
+          <input type="checkbox" name="size[]" value="UK 8">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">L
-          <input type="checkbox" name="size[]" value="l">
+        <label class="checkbox_container">UK 10
+          <input type="checkbox" name="size[]" value="UK 10">
           <span class="checkmark"></span>
         </label>
 
-        <label class="checkbox_container">XL
-          <input type="checkbox" name="size[]" value="xl">
+        <label class="checkbox_container">UK 12
+          <input type="checkbox" name="size[]" value="UK 12">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">XXL
-          <input type="checkbox" name="size[]" value="xxl">
+        <label class="checkbox_container">UK 14
+          <input type="checkbox" name="size[]" value="UK 14">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">XXXL
-          <input type="checkbox" name="size[]" value="xxxl">
+        <label class="checkbox_container">UK 16
+          <input type="checkbox" name="size[]" value="UK 16">
           <span class="checkmark"></span>
         </label>
       </div>

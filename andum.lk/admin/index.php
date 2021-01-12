@@ -230,6 +230,17 @@ if (!isset($_SESSION['nic'])) {
           </div>
           </a>
         </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="review_users.php">
+          <div class="sidebar-icon">
+            <i class="fas fa-tshirt"></i>
+            <span class="sidebar-text">Review Users</span>
+          </div>
+          </a>
+        </li>
+
+
         <li class="sidebar-item">
           <a class="sidebar-link" href="index.php">
           <!--<div class="sidebar-icon">

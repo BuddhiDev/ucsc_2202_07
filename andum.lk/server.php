@@ -32,7 +32,7 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO users (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
+        $sql = "INSERT INTO review_user (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
         mysqli_query($db, $sql);
 
         // insert user if tailor
@@ -548,17 +548,42 @@ if(isset($_POST['add_product']))
     }
   }
 }
-//edit  dress detaills
+
+
+//view  dress detaills and edit or remove dress
+if(isset($_GET['view_dress_id']) ){
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['view_dress_id']);
+    $_SESSION['selected_dress_id']=$selected_dress_id;
+    header('location: view_product.php');
+}
+
+
 if(isset($_GET['edit_dress_id']) ){
     $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
-    $_SESSION['selected_dress_id1']=$selected_dress_id;
+    $_SESSION['selected_dress_id']=$selected_dress_id;
     header('location: edit_dress.php');
 }
+
+if(isset($_GET['remove_dress_id']) ){
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['remove_dress_id']);
+    $sql= "DELETE FROM dress_showcase WHERE dress_id='$selected_dress_id' ";
+    $result=mysqli_query($db, $sql);
+    if($result)
+    {
+        echo "Dress has been removed successful";
+        header('location: my_showcase.php');
+    }
+    else{
+        echo "<script>alert('Sorry! Removed successfuly')</script>";
+    }
+    
+}
+
 
 
 //Save Updated  dress detaills
 if(isset($_POST['update_dress']) ){
-  //$selected_dress_id1 = $_SESSION['selected_dress_id1'];
+
   $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
   $selected_dress_id1 = mysqli_real_escape_string($db, $_POST['dress_id']);
   $category = mysqli_real_escape_string($db, $_POST['Unit']);

@@ -1,6 +1,6 @@
 <?php include("../server.php"); ?>
 
-
+<?php include("admin_controller.php"); ?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -227,7 +227,7 @@
          
           <td>
           <div>
-            <a href="view_product.php?review_user_id=<?php echo $row["nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
+            <a href="review_users.php?review_user_id=<?php echo $row["nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
           </div>
           </td>
 

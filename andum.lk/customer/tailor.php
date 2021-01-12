@@ -17,7 +17,6 @@ if (!isset($_SESSION['nic'])) {
   <title>Andum.lk - Hire a Tailor</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
-  <!-- <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css"> -->
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -171,140 +170,27 @@ if (!isset($_SESSION['nic'])) {
       width: 50px;
       background-color: #fab7cc;
     }
+
+    .column {
+      float: left;
+      width: 12%;
+      height: 1%;
+      padding: 2px;
+    }
+
+    /* Clear floats after image containers */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
   </style>
 
 </head>
 
 <body>
 
-<header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Women</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="workwear_gents.php">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="#">Kurthas</a></li>
-                    <li><a href="#">Shlwas</a></li>
-                    <li><a href="#">Sarees</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-              
-            
-          </li>
-          <li class="dropdown">
-            <a href="#">Men</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="index.php?dcategory=m-cas-tshirts">T shirts</a></li>
-                    <li><a href="index.php?dcategory=m-cas-shirts">Shirts</a></li>
-                    <li><a href="index.php?dcategory=m-cas-jeans">Jeans</a></li>
-                    <li><a href="index.php?dcategory=m-cas-trousers">Trousers</a></li>
-                    <li><a href="index.php?dcategory=m-cas-sarong">Sarong</a></li>
-                    <li><a href="index.php?dcategory=m-cas-shorts">Shorts</a></li>
-                  </ul>  
-                </div>
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Trousers</a></li>
-                    <li><a href="#">Blazers</a></li>
-                  </ul>
-                </div> 
-              </ul>
-            </div>            
-          </li>
-          <li class="dropdown">
-            <a href="#">Kids</a>
-            <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
-          </li>
-
-          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
-        </ul>
-      </div>
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                  <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
-                  <li><a href="#"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
-                  <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
-                  <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-
-            <li><i class="fas fa-envelope"></i></li>
-            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-        </div>
-        </ul>
-      </div>
-      </div>
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -323,6 +209,11 @@ if (!isset($_SESSION['nic'])) {
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result);
+
+    // get tailors dress
+    $d_sql="SELECT * FROM dress_showcase WHERE t_nic='$selected_t_nic' ";
+    $d_result = mysqli_query($db, $d_sql);
+    //
   ?>
 
     <div class="main">
@@ -347,10 +238,31 @@ if (!isset($_SESSION['nic'])) {
                 </div>
               </div>
             </form>
+
           </div>
         </div>
       </div>
+
+      </div>
+<br/>
+
+<div class="main">
+<lable for="type" class="field-label-inline">Recommended Dresses From Tailor:</label><br/><br/>
+<div style="position: absolute;border-radius: 10px;width: 800px;" >
+          <?php if($d_result){
+            while($d_row=mysqli_fetch_assoc($d_result)){
+          ?>
+                <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:10%">
+          <?php } } ?>
+</div>          
+</div>
+          </div>
+      </div>
     </div>
+
+
+
+
 
 <br/>
 <br/>
@@ -639,7 +551,7 @@ if (!isset($_SESSION['nic'])) {
           <textarea name="other" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
         </div>
         <div class="d-flex">
-        <lable for="type" class="field-label-inline">Upload Dress image:</label>
+        <lable for="type" class="field-label-inline">Upload Sample Image:</label>
       <div class="measure-card-value">
         <input type="file" id="file" name="myimage" value=""> <br/>
       </div>
