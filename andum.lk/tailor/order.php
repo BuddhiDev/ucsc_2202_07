@@ -298,39 +298,39 @@ if (!isset($_SESSION['nic'])) {
         <div class="form-outer">
           <form action="#">
             <div class="page slide-page">
-                <div class="field">
+                <!-- <div class="field">
                   <button class="firstNext next">Pending</button>
-                </div>
+                </div> -->
             </div>
             <div class="page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="">Accepted</button>
-              </div>
+                <!-- <button class="">Accepted</button>
+              </div> -->
             </div>
             <div class="page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                 <!-- <button class="prev-1 prev">Pending</button> -->
-                <button class="">Paid</button>
-              </div>
+                <!-- <button class="">Paid</button>
+              </div> -->
             </div>
             <div class="page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                   <!-- <button class="prev-2 prev">On going</button> -->
-                  <button class="">On Going</button>
-              </div>
+                  <!-- <button class="">On Going</button>
+              </div> -->
             </div>
             <div class="page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                   <!-- <button class="prev-2 prev">On going</button> -->
-                  <button class="">Delivered</button>
-              </div>
+                  <!-- <button class="">Delivered</button>
+              </div> -->
             </div>
             <div class="page">
-              <div class="field btns">
+              <!-- <div class="field btns"> -->
                   <!-- <button class="prev-3 prev">Complete</button> -->
-                  <button class="">Completed</button>
-              </div>
+                  <!-- <button class="">Completed</button>
+              </div> -->
             </div>
           </form>
         </div>

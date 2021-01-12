@@ -960,5 +960,37 @@ if (isset($_POST['sale-complete'])) {
         $mail->smtpClose();
     }
 
+// Rating System start
+if (isset($_POST['save'])) {
+    //$c_nic =  $_SESSION['nic'];
+
+    $uID = mysqli_real_escape_string($db, $_POST['uID']); 
+    $ratedIndex = mysqli_real_escape_string($db, $_POST['ratedIndex']);
+    $ratedIndex++; 
+
+    if (!$uID) 
+    {
+        $sql = "INSERT INTO star (rate_index) VALUES('$ratedIndex')";
+        $result = mysqli_query($db, $sql);
+        $sql1 = "SELECT id FROM star ORDER BY id DESC LIMIT 1";
+        $result1 = mysqli_query($db, $sql1);
+        $uData = mysqli_fetch_assoc($result1);
+        $uID = $uData['id'];
+    } 
+    else {
+        $sql = "UPDATE star  SET rate_index='$ratedIndex' WHERE id='uID'";
+        $result = mysqli_query($db, $sql);
+    }
+
+    exit(json_encode(array('id'=>$uID)));
+}
+
+
+// Rating System end
+
+
+
+
+
 
  ?>
