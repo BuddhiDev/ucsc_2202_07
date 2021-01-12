@@ -52,6 +52,7 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <div class="container-box">
+  <h2 class="tailor-heading">Current Orders</h2>
     <table>
       <tr>
         <th>Tailor Name</th>
@@ -62,7 +63,42 @@ if (!isset($_SESSION['nic'])) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM fd_orders WHERE c_nic='$nic'";
+        $sql = "SELECT * FROM fd_orders WHERE c_nic='$nic' AND status <>'Completed'";
+        $result = mysqli_query($db, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a class="cta" href="hired_fd_list.php?fd_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+    <?php
+          }
+        } else {
+        }
+
+    ?>
+    </table>
+
+    <h2 class="tailor-heading">Completed Orders</h2>
+    <table>
+      <tr>
+        <th>Tailor Name</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+      <tr>
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE c_nic='$nic' AND status ='Completed'";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {

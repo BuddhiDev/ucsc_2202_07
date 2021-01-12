@@ -63,6 +63,8 @@ if (!isset($_SESSION['nic'])) {
 
   <div class="container-box">
   <div style="overflow-x:auto;">
+
+  <h2 class="tailor-heading">New Sales</h2>
     <table>
       <tr>
         <th>Customer Name</th>
@@ -75,7 +77,7 @@ if (!isset($_SESSION['nic'])) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic";
+        $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Paid'";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -101,6 +103,87 @@ if (!isset($_SESSION['nic'])) {
 
 
     </table>
+
+    <h2 class="tailor-heading">Delivered Sales</h2>
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Delivered'";
+        $result = mysqli_query($db, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="Manage_sales.php?sale_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+    <h2 class="tailor-heading">Completed Sales</h2>
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Completed'";
+        $result = mysqli_query($db, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
+            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="Manage_sales.php?sale_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
   </div>
   </div>
   

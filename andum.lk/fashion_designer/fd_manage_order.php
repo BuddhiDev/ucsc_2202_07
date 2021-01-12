@@ -196,6 +196,7 @@ if (!isset($_SESSION['nic'])) {
 
   <div class="container-box">
   <div style="overflow-x:auto;">
+  <h2 class="tailor-heading">Pending Orders</h2>
     <table>
       <tr>
         <th>Customer Name</th>
@@ -207,7 +208,202 @@ if (!isset($_SESSION['nic'])) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic'";
+        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic' AND status='Pending' ";
+        $result = mysqli_query($db, $sql);
+        
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+    <h2 class="tailor-heading">Accepted Orders</h2>
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic' AND status='Accepted' ";
+        $result = mysqli_query($db, $sql);
+        
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+    <h2 class="tailor-heading">Paid Orders</h2>
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic' AND status='Paid' ";
+        $result = mysqli_query($db, $sql);
+        
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+    <h2 class="tailor-heading">Ongoing Orders</h2>
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic' AND status='Ongoing' ";
+        $result = mysqli_query($db, $sql);
+        
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+    <h2 class="tailor-heading">Delivered Orders</h2>
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic' AND status='Delivered' ";
+        $result = mysqli_query($db, $sql);
+        
+
+        if (mysqli_num_rows($result) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+
+            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            <td>
+              <div>
+                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+              </div>
+            </td>
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+    <h2 class="tailor-heading">Completed Orders</h2>
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th><center>Action</center></th>
+      </tr>
+      <tr>
+
+        <?php
+
+        $nic = $_SESSION['nic'];
+        $sql = "SELECT * FROM fd_orders WHERE fd_nic='$nic' AND status='Completed' ";
         $result = mysqli_query($db, $sql);
         
 
