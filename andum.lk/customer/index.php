@@ -49,8 +49,8 @@ if (!isset($_SESSION['nic'])) {
         <div class="search-container">
           <form method="post" action="product-view.php">
             <div class="form-field-inline">
-              <label for="searchname" class="field-label-inline">Search...</label>
-              <input type="text" class="field-value-inline" name="q">
+              <!-- <label for="searchname" class="field-label-inline">Search...</label> -->
+              <input type="text" class="field-value-inline" name="q" placeholder="Search">
               <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
           </form>
