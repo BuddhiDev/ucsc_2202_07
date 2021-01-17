@@ -851,6 +851,13 @@ nav ul.menu-area ul li a:hover{
   object-position: center;
 }
 
+.tt-card-img{
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+
 .user-card-img{
   width: 100%;
   padding: 50px;

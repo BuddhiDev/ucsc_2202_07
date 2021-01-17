@@ -11,7 +11,6 @@ if (!isset($_SESSION['nic'])) {
 <html>
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andum.lk - Hire a Tailor</title>
@@ -199,7 +198,7 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
   
-  <div class="container-box">
+<div class="container-box">
   <?php
   $selected_t_nic = $_SESSION['selected_t_nic'];
   $nic = $_SESSION['nic'];
@@ -216,57 +215,52 @@ if (!isset($_SESSION['nic'])) {
     //
   ?>
 
-    <div class="main">
-      <div class="leftside">
-        <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+    <div class="row">
+      <div class="col-3">
+        <div class="card-item">
+        <div class="tt-card-img">
+        <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+      </div>
+      <div class="card-content">
+        <form method="post">
+          <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+        </form>
+        
+        
+      </div>
         </div>
       </div>
-      <div class="rightside">
-        <div class="inside">
-          <div>
-            <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-              <br>
-              <div>
-                <div>
-                  Please fill down below application with your dress requirements to hire me.
-                  <br>
-                  <br>
-                  
+      
+    </div>
+
+    <div class="row">
+    <h4 class="user-type-headding">Please fill down below application with your dress requirements to hire me.</h4>
+    </div>
+    
+    <h4 class="tailot-headding">Recommanded Dresses</h4>
+    <div class="row">
+        
+        <?php if($d_result){
+          while($d_row=mysqli_fetch_assoc($d_result)){
+        ?>
+      <div class="col-3">
+        <div class="card-item">
+          <div class="card-img">
+          <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:100%">
+          </div>
+          <div class="card-content">
+          <center>
+              <div class="radio">
+                  <label><input type="radio" name="dresstype"  value=""></label>
                 </div>
-              </div>
-            </form>
-
+              </center>
           </div>
         </div>
-      </div>
-
-      </div>
-<br/>
-
-<div class="main">
-<lable for="type" class="field-label-inline">Recommended Dresses From Tailor:</label><br/><br/>
-<div style="position: absolute;border-radius: 10px;width: 800px;" >
-          <?php if($d_result){
-            while($d_row=mysqli_fetch_assoc($d_result)){
-          ?>
-                <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:10%">
-          <?php } } ?>
-</div>          
-</div>
-          </div>
-      </div>
+      </div>    
+      <?php } } ?>      
     </div>
 
 
-
-
-
-<br/>
-<br/>
-<div></div>
   <!--measurement form-->
   <div class="input-container">
     <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">

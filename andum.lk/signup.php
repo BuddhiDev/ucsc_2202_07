@@ -207,7 +207,6 @@ require("server.php");
               <div class="radio">
                   <label><input type="radio" name="Usertype"  value="0" required checked></label>
                 </div>
-
               </center>
                 
               </div>
