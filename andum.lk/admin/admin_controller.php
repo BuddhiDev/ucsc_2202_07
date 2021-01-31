@@ -21,14 +21,23 @@
 //}
 
 
-if(isset($_GET['review_dress_id'])){
+//view dress details
+if(isset($_GET['vdress_id']) ){
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['vdress_id']);
+    $_SESSION['selected_dress_id']=$selected_dress_id;
+    header('location: view_product.php');
+}
+
+
+//confirm dress
+if(isset($_GET['confirm_dress_id'])){
     
-    // $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
-     $review_dress_id = mysqli_real_escape_string($db, $_GET['review_dress_id']);
-     $sqlp = "INSERT INTO dress_showcase(dress_id, category, title, price, size, color, amount, image, t_nic) SELECT*FROM review_dress WHERE dress_id='$review_dress_id' ";
+    
+     $confirm_dress_id = mysqli_real_escape_string($db, $_GET['confirm_dress_id']);
+     $sqlp = "INSERT INTO dress_showcase(dress_id, category, title, price, size, color, amount, image, t_nic) SELECT*FROM review_dress WHERE dress_id='$confirm_dress_id' ";
      $resultp=mysqli_query($db, $sqlp);
-     $sqlp = "DELETE FROM review_dress WHERE dress_id='$review_dress_id' ";
-    $resultp=mysqli_query($db, $sqlp);
+     $sqlp = "DELETE FROM review_dress WHERE dress_id='$confirm_dress_id' ";
+     $resultp=mysqli_query($db, $sqlp);
  
      if ($resultp) {
  
@@ -42,7 +51,7 @@ if(isset($_GET['review_dress_id'])){
 
 }
 
-
+//suspend users
 if(isset($_GET['delete_nic'])){
     
    $delete_nic = mysqli_real_escape_string($db, $_GET['delete_nic']);
@@ -63,11 +72,7 @@ if ($result) {
 }
 }
 
-//if(isset($_GET['rdress_id']) ){
- //   $selected_dress_id = mysqli_real_escape_string($db, $_GET['rdress_id']);
- //   $_SESSION['selected_dress_id']=$selected_dress_id;
- //   header('location: view_product.php');
-//}
+
 
 
 //review user
@@ -92,6 +97,8 @@ if(isset($_GET['review_user_id'])){
 
 }
 
+
+//send warning msg to user
 if(isset($_POST['send_mail'])){
     $name = $_POST['aname'];
     $email = $_POST['email'];

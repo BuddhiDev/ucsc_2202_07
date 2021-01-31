@@ -194,7 +194,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="dd_right">
                 <ul>
                 <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="review_dress.php"><i class="fas fa-users"></i>Review Dresses</a></li>
+                  <li><a href="review_dress.php"><i class="fas fa-tshirt"></i>Review Dresses</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -272,7 +272,10 @@ if (!isset($_SESSION['nic'])) {
             </div>
 
           <div>
-            <a href="view_product.php?review_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
+            <a href="view_product.php?confirm_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
+          </div>
+          <div>
+            <a href="view_product.php?review_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">REJECT</text></a>
           </div>
             
         </form>
