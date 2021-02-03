@@ -1296,6 +1296,22 @@ a{
   text-align: center;
 }
 
+.t-card-content{
+  margin: 10px 10px 10px 40px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.t-card-img{
+  width: 200px;
+    height: 200px;
+    margin: 48px 0px 0px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
 .measure-headding{
   margin-top: 20px;
   margin-bottom: 50px;
@@ -1375,6 +1391,12 @@ a{
     margin: 10px 10px 10px 0px;
 }
 
+.h4-heading{
+  margin: 80px 10px 10px 10px;
+    padding: 10px;
+    text-align: center;
+}
+
 .btn-container{
   margin: 20px 20px 0px 20px;
     padding: 20px 20px 0px 20px;
@@ -1430,6 +1452,15 @@ a{
     border-radius: 20px;
     margin: 5px;
     background-color: #eb2188;
+}
+
+.hire-me-btn{
+  padding: 10px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 20px;
+  background-color: #eb2188;
+  color: white;
+  border: none;
 }
 
 .submit-quantity{

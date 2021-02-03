@@ -104,6 +104,7 @@
   .fd-card-img{
     width: 200px;
     height: 200px;
+    margin: 48px 0px 0px;
     border-radius: 50%;
     overflow: hidden;
     object-fit: cover;
