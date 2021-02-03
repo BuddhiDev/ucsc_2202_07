@@ -284,7 +284,7 @@ if (!isset($_SESSION['nic'])) {
         </div>
       </div>
       <div calss="row">
-    <table class="fd-table">
+   <!-- <table class="fd-table">
     <tr class="fd-tr">
       <th class="fd-th">Order Id</th>
       <th class="fd-th">Date</th>
@@ -306,7 +306,7 @@ if (!isset($_SESSION['nic'])) {
       <td class="fd-th">Johnson</td>
       <td class="fd-th">67</td>
     </tr>
-  </table>
+  </table>-->
 
     </div>
     </div>

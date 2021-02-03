@@ -63,7 +63,7 @@ require("../server.php");
 
       <div class="row">
         <div class="col-25"><br>
-          <label for="dname" class="field-label-inline">Dress Name: </label>
+          <label for="dname" class="field-label-inline">Dress  Name: </label>
         </div>
         <div class="col-75">
           <input type="text" class="field-value-inline" placeholder="Name" name="dname">

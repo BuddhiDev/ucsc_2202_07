@@ -147,8 +147,6 @@ if (!isset($_SESSION['nic'])) {
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href=".php"><i class="fas fa-money"></i>sells</a></li>
-                  <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -168,14 +166,14 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-    <div class="search-container">
+  <!--  <div class="search-container">
         <form method="post">
           <div class="form-field-inline">
             <input type="text" class="field-value-inline" name="q" placeholder="Search...">
             <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
           </div>
         </form>
-    </div>
+    </div>-->
 
 <div class="fd-container-box">
 
