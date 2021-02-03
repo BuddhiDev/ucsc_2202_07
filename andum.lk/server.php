@@ -291,6 +291,13 @@ if(isset($_GET['dress_id']) ){
     header('location: product.php');
 }
 
+//customise dress
+if(isset($_GET['t_t_nic']) ){
+    $selected_t_nic = mysqli_real_escape_string($db, $_GET['t_t_nic']);
+    $_SESSION['selected_t_nic']=$selected_t_nic;
+    header('location: get-measured.php');
+}
+
 //select a tailor
 if(isset($_GET['t_nic']) ){
     $selected_t_nic = mysqli_real_escape_string($db, $_GET['t_nic']);

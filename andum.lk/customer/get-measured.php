@@ -220,6 +220,21 @@ if (!isset($_SESSION['nic'])) {
 
   <!--measurement form-->
   <div class="input-container">
+  <form method="get" action="index.php">
+                    <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+                    <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                    <div class="card-item">
+                      <div class="card-img">
+                        <img src="/ucsc_2202_07/andum.lk/tailor/products/6.jpg?> " alt="Avatar" style="width:100%">
+                      </div>
+                      <div class="card-content">
+                        <div class="card-title">TTT</div>
+                      </div>
+                    </div>
+                  </form>
+
+
+
     <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
       <h2 class="measure-headding">Get Measured</h2>
         <div class="d-flex">
