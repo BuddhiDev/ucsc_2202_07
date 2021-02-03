@@ -2077,6 +2077,10 @@ h1 {
   width: 50px;
 }
 
+.to-box{
+  display: flex;
+}
+
 .second:hover {
   width: 50px;
   background-color: #fab7cc;

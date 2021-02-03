@@ -264,14 +264,18 @@ if (!isset($_SESSION['nic'])) {
               </select>
               </div> 
             </div>
-            <div class="customized">
-              <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-              <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-              <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button>
+            <div class="to-box">
+              <div class="customized">
+                <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+                <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button>
+              </div>
+              <div class="customized">
+                <a href="product.php?t_nic=<?php echo $row["t_nic"]?>" class="costomize-text"><button class="cart-button">CUSTOMIZE</button></a>
+              </div>
+
             </div>
-            <div>
-              <a href="product.php?t_nic=<?php echo $row["t_nic"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CUSTOM ORDER</text></a>
-            </div>
+            
           </form>
         </div>
         

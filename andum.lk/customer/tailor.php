@@ -212,8 +212,9 @@ if (!isset($_SESSION['nic'])) {
     $row = mysqli_fetch_assoc($result);
 
     // get tailors dress
-    $d_sql="SELECT * FROM dress_showcase WHERE t_nic='$selected_t_nic' ";
+    $d_sql="SELECT * FROM dress_showcase WHERE t_nic='$selected_t_nic' ORDER BY dress_id DESC ";
     $d_result = mysqli_query($db, $d_sql);
+
     //
   ?>
 
@@ -221,7 +222,7 @@ if (!isset($_SESSION['nic'])) {
       <center>
         <center>
         <div class="fd-card-img">
-            <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;" class="proDisp">
+          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;" class="proDisp">
           </div>
         </center>
       
@@ -248,7 +249,7 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:100%">
+          <a href="index.php?dress_id=<?php echo $d_row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:100%"></a>
           </div>
           <!-- <div class="card-content">
           <center>
@@ -263,249 +264,249 @@ if (!isset($_SESSION['nic'])) {
     </div>
 
 
-  <!--measurement form-->
-  <!-- <div class="input-container">
-    <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
-      <h2 class="measure-headding">Get Measured</h2>
-      <div class="d-flex">
-        <div class="f1">
-          <lable for="type" >Category:</label>
-          <select class="option" name="category" id="category" >
-            <optgroup label="WOMEN CASUAL WEAR">
-              <option value="w-cas-dresses">DRESSES</option>
-              <option value="w-cas-tshirts">T SHIRTS</option>
-              <option value="w-cas-blouse">BLOUSE</option>
-              <option value="w-cas-shirts">SHIRTS</option>
-              <option value="w-cas-jeans">JEANS</option>
-              <option value="w-cas-pants">PANTS</option>
-            </optgroup>
-            <optgroup label="WOMEN FORMAL WEAR">
-              <option value="w-for-dresses">DRESSES</option>
-              <option value="w-for-blouse">BLOUSE</option>
-              <option value="w-for-skirts">SKIRTS</option>
-              <option value="w-for-pants">PANTS</option>
-            </optgroup>
-            <optgroup label="WOMEN ETHNIC WEAR">
-              <option value="w-eth-kurthas">KURTHAS</option>
-              <option value="w-eth-sawls">SAWLS</option>
-              <option value="w-eth-sarees">SAREES</option>
-            </optgroup>
-            <optgroup label="MEN CASUAL WEAR">
-              <option value="m-cas-tshirts">T SHIRTS</option>
-              <option value="m-cas-shirts">SHIRTS</option>
-              <option value="m-cas-jeans">JEANS</option>
-              <option value="m-cas-trousers">TROUSERS</option>
-              <option value="m-cas-sarong">SARONG</option>
-              <option value="m-cas-shorts">SHORTS</option>
-            </optgroup>
-            <optgroup label="MEN FORMAL WEAR">
-              <option value="m-for-shirts">SHIRTS</option>
-              <option value="m-for-trousers">TROUSERS</option>
-              <option value="m-for-blazers">BLAZERS</option>
-            </optgroup>
-            <optgroup label="KIDS BOYS">
-              <option value="k-b-tshirts">T SHIRTS</option>
-              <option value="k-b-tanktops">TANK TOPS</option>
-              <option value="k-b-shirts">SHIRTS</option>
-              <option value="k-b-shorts">SHORTS</option>
-              <option value="k-b-pants">PANTS</option>
-              <option value="k-b-romper">Romper</option>
-              <option value="k-b-sleepwear">SLEEP WEAR</option>
-            </optgroup>
-            <optgroup label="KIDS GIRLS">
-              <option value="k-g-tshirts">T SHIRTS</option>
-              <option value="k-g-dresses">DRESSES</option>
-              <option value="k-g-shorts">SHORTS</option>
-              <option value="k-g-sleepwear">SLEEP WEAR</option>
-            </optgroup>
-          </select>
-        </div>
+        <!--measurement form-->
+        <!-- <div class="input-container">
+          <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
+            <h2 class="measure-headding">Get Measured</h2>
+            <div class="d-flex">
+              <div class="f1">
+                <lable for="type" >Category:</label>
+                <select class="option" name="category" id="category" >
+                  <optgroup label="WOMEN CASUAL WEAR">
+                    <option value="w-cas-dresses">DRESSES</option>
+                    <option value="w-cas-tshirts">T SHIRTS</option>
+                    <option value="w-cas-blouse">BLOUSE</option>
+                    <option value="w-cas-shirts">SHIRTS</option>
+                    <option value="w-cas-jeans">JEANS</option>
+                    <option value="w-cas-pants">PANTS</option>
+                  </optgroup>
+                  <optgroup label="WOMEN FORMAL WEAR">
+                    <option value="w-for-dresses">DRESSES</option>
+                    <option value="w-for-blouse">BLOUSE</option>
+                    <option value="w-for-skirts">SKIRTS</option>
+                    <option value="w-for-pants">PANTS</option>
+                  </optgroup>
+                  <optgroup label="WOMEN ETHNIC WEAR">
+                    <option value="w-eth-kurthas">KURTHAS</option>
+                    <option value="w-eth-sawls">SAWLS</option>
+                    <option value="w-eth-sarees">SAREES</option>
+                  </optgroup>
+                  <optgroup label="MEN CASUAL WEAR">
+                    <option value="m-cas-tshirts">T SHIRTS</option>
+                    <option value="m-cas-shirts">SHIRTS</option>
+                    <option value="m-cas-jeans">JEANS</option>
+                    <option value="m-cas-trousers">TROUSERS</option>
+                    <option value="m-cas-sarong">SARONG</option>
+                    <option value="m-cas-shorts">SHORTS</option>
+                  </optgroup>
+                  <optgroup label="MEN FORMAL WEAR">
+                    <option value="m-for-shirts">SHIRTS</option>
+                    <option value="m-for-trousers">TROUSERS</option>
+                    <option value="m-for-blazers">BLAZERS</option>
+                  </optgroup>
+                  <optgroup label="KIDS BOYS">
+                    <option value="k-b-tshirts">T SHIRTS</option>
+                    <option value="k-b-tanktops">TANK TOPS</option>
+                    <option value="k-b-shirts">SHIRTS</option>
+                    <option value="k-b-shorts">SHORTS</option>
+                    <option value="k-b-pants">PANTS</option>
+                    <option value="k-b-romper">Romper</option>
+                    <option value="k-b-sleepwear">SLEEP WEAR</option>
+                  </optgroup>
+                  <optgroup label="KIDS GIRLS">
+                    <option value="k-g-tshirts">T SHIRTS</option>
+                    <option value="k-g-dresses">DRESSES</option>
+                    <option value="k-g-shorts">SHORTS</option>
+                    <option value="k-g-sleepwear">SLEEP WEAR</option>
+                  </optgroup>
+                </select>
+              </div>
 
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-value">
-              <input class="input-field" type="text"  placeholder="Material" name="material">
-            </div>                             
-          </div>
-        </div>
-        
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Color" name="color">
-            </div>                             
-          </div>
-        </div>
-      </div> 
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text"  placeholder="Material" name="material">
+                  </div>                             
+                </div>
+              </div>
+              
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Color" name="color">
+                  </div>                             
+                </div>
+              </div>
+            </div> 
 
-              <input class="input-field" type="text" placeholder="Neck" name="neck">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
+                    <input class="input-field" type="text" placeholder="Neck" name="neck">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Chest" name="chest">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
             </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Chest" name="chest">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-                        
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
+                              
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Waist" name="waist">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/realhip-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Seat" name="seat">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
             </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Waist" name="waist">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/realhip-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Seat" name="seat">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
 
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/shirtl-01.png" class="body-img">
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/shirtl-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Shirt Length" name="shirtlength">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/back-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulderwidth">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
             </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Shirt Length" name="shirtlength">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/back-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Shoulder Width" name="shoulderwidth">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
 
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/arm-01.png" class="body-img">
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/arm-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Arm Length" name="armlength">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/cuff-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Wrist" name="wrist">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
             </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Arm Length" name="armlength">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/cuff-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Wrist" name="wrist">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
 
-      <div class="d-flex">
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/bicep-01.png" class="body-img">
+            <div class="d-flex">
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/bicep-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Biceps" name="biceps">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
+              <div class="f1">
+                <div class="measure-card">
+                  <div class="measure-card-img">
+                    <img src="/ucsc_2202_07/andum.lk/images/hip-01.png" class="body-img">
+                  </div>
+                  <div class="measure-card-value">
+                    <input class="input-field" type="text" placeholder="Hip" name="hip">
+                    <select class="option" name="Unit" id="unit" style="">
+                      <option>in</option>
+                      <option>cm</option>
+                    </select>
+                  </div>                             
+                </div>
+              </div>
             </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Biceps" name="biceps">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-        <div class="f1">
-          <div class="measure-card">
-            <div class="measure-card-img">
-              <img src="/ucsc_2202_07/andum.lk/images/hip-01.png" class="body-img">
-            </div>
-            <div class="measure-card-value">
-              <input class="input-field" type="text" placeholder="Hip" name="hip">
-              <select class="option" name="Unit" id="unit" style="">
-                <option>in</option>
-                <option>cm</option>
-              </select>
-            </div>                             
-          </div>
-        </div>
-      </div>
-      
+            
 
-        <div class="d-flex">
-          <textarea name="other" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
-        </div>
-        <div class="d-flex">
-        <lable for="type" class="field-label-inline">Upload Sample Image:</label>
-      <div class="measure-card-value">
-        <input type="file" id="file" name="myimage" value=""> <br/>
-      </div>
-      </div>
-      
-      <input type="hidden" value=<?php echo $row["nic"]; ?> name="t_nic">
-      <input type="hidden" value=<?php echo $row["fname"]; ?> name="t_fname">
-      <input type="hidden" value=<?php echo $row["lname"]; ?> name="t_lname">
-      <input type="hidden" value=<?php echo $nic; ?> name="c_nic">
-      <input type="hidden" value=<?php echo $fname; ?> name="c_fname">
-      <input type="hidden" value=<?php echo $lname; ?> name="c_lname">
-      <button type="submit" class="casual-btn" name="hireT">Submit</button>
-    </form>
-  </div> -->
+              <div class="d-flex">
+                <textarea name="other" rows="20" cols="50" placeholder="Your message to tailor" class="txt-area"></textarea>
+              </div>
+              <div class="d-flex">
+              <lable for="type" class="field-label-inline">Upload Sample Image:</label>
+            <div class="measure-card-value">
+              <input type="file" id="file" name="myimage" value=""> <br/>
+            </div>
+            </div>
+            
+            <input type="hidden" value=<?php echo $row["nic"]; ?> name="t_nic">
+            <input type="hidden" value=<?php echo $row["fname"]; ?> name="t_fname">
+            <input type="hidden" value=<?php echo $row["lname"]; ?> name="t_lname">
+            <input type="hidden" value=<?php echo $nic; ?> name="c_nic">
+            <input type="hidden" value=<?php echo $fname; ?> name="c_fname">
+            <input type="hidden" value=<?php echo $lname; ?> name="c_lname">
+            <button type="submit" class="casual-btn" name="hireT">Submit</button>
+          </form>
+        </div> -->
 
 
   <?php } ?>
