@@ -227,7 +227,7 @@ if (isset($_GET['logout'])) {
 
 //hire a tailor
 if (isset($_POST['hireT'])) {
-    echo "fuck";
+    
     $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
     $t_fname = mysqli_real_escape_string($db, $_POST['t_fname']);
     $t_lname = mysqli_real_escape_string($db, $_POST['t_lname']);
@@ -248,11 +248,12 @@ if (isset($_POST['hireT'])) {
     $biceps = mysqli_real_escape_string($db, $_POST['biceps']);
     $hips = mysqli_real_escape_string($db, $_POST['hips']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
+    $dress_id = mysqli_real_escape_string($db, $_POST['selected_dress_id']);
     $date = date('m');
 
     echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         header('location: hired_list.php');
@@ -294,7 +295,9 @@ if(isset($_GET['dress_id']) ){
 //customise dress
 if(isset($_GET['t_t_nic']) ){
     $selected_t_nic = mysqli_real_escape_string($db, $_GET['t_t_nic']);
+    $selected_dress_id = mysqli_real_escape_string($db, $_GET['dress_id']);
     $_SESSION['selected_t_nic']=$selected_t_nic;
+    $_SESSION['selected_dress_id']=$selected_dress_id;
     header('location: get-measured.php');
 }
 

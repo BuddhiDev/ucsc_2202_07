@@ -224,6 +224,10 @@ if (!isset($_SESSION['nic'])) {
       {
         $row = mysqli_fetch_assoc($result);
         $status=$row["status"];
+        $d_id=$row["dress_id"];
+        $sql_d = "SELECT * FROM dress_showcase WHERE dress_id=$d_id ";
+        $result_d = mysqli_query($db, $sql_d);
+        $row_d = mysqli_fetch_assoc($result_d);
         ?>
 
 <div class="container">
@@ -495,6 +499,11 @@ if (!isset($_SESSION['nic'])) {
         
         <div class="order-input-container" id="div-1">
           <form action="order.php" method="post" id=form-1>
+
+          <div class="card-img">
+                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row_d["image"]; ?> " alt="Avatar" style="width:20%">
+                      </div>
+
             <h2 class="order-measure-headding">Measurements</h2>
             <div class="d-flex">
               <div class="f1">

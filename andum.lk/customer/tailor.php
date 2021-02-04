@@ -229,8 +229,8 @@ if (!isset($_SESSION['nic'])) {
         <div class="t-card-content">
             <form method="post">
               <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-            </form>
-            <a href="get-measured.php"><button class="hire-me-btn">Hire Me</button></a>
+            </form> <br/><br/>
+            <!-- <a href="get-measured.php"><button class="hire-me-btn">Hire Me</button></a> -->You wonna hire my service? Select your dress for a custom order
             
         </div>
 
@@ -249,7 +249,8 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-3">
         <div class="card-item">
           <div class="card-img">
-          <a href="index.php?dress_id=<?php echo $d_row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:100%"></a>
+          <a href="order.php?t_t_nic=<?php echo $selected_t_nic ?>&dress_id=<?php echo $d_row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:100%"></a>
+          
           </div>
           <!-- <div class="card-content">
           <center>

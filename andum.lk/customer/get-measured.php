@@ -203,6 +203,7 @@ if (!isset($_SESSION['nic'])) {
 <div class="container-box">
   <?php
   $selected_t_nic = $_SESSION['selected_t_nic'];
+  $selected_dress_id = $_SESSION['selected_dress_id'];
   $nic = $_SESSION['nic'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
@@ -212,30 +213,31 @@ if (!isset($_SESSION['nic'])) {
     $row = mysqli_fetch_assoc($result);
 
     // get tailors dress
-    $d_sql="SELECT * FROM dress_showcase WHERE t_nic='$selected_t_nic' ";
+    $d_sql="SELECT * FROM dress_showcase WHERE dress_id='$selected_dress_id' ";
     $d_result = mysqli_query($db, $d_sql);
+    $d_row = mysqli_fetch_assoc($d_result);
     //
   ?>
 
 
   <!--measurement form-->
   <div class="input-container">
-  <form method="get" action="index.php">
-                    <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+  <form method="post" action="get-measured.php" style="max-width:1024px;margin:auto">
+                    <input type="hidden" value="<?php echo $d_row["dress_id"] ?> " name="dress_id">
                     <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
                     <div class="card-item">
                       <div class="card-img">
-                        <img src="/ucsc_2202_07/andum.lk/tailor/products/6.jpg?> " alt="Avatar" style="width:100%">
+                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:100%">
                       </div>
                       <div class="card-content">
-                        <div class="card-title">TTT</div>
+                        <div class="card-title"><?php echo $d_row["title"] ?></div>
                       </div>
                     </div>
-                  </form>
 
 
 
-    <form method="post" action="tailor.php" style="max-width:1024px;margin:auto">
+
+    
       <h2 class="measure-headding">Get Measured</h2>
         <div class="d-flex">
             <div class="f1">
@@ -480,6 +482,7 @@ if (!isset($_SESSION['nic'])) {
       <input type="hidden" value=<?php echo $nic; ?> name="c_nic">
       <input type="hidden" value=<?php echo $fname; ?> name="c_fname">
       <input type="hidden" value=<?php echo $lname; ?> name="c_lname">
+      <input type="hidden" value=<?php echo $selected_dress_id; ?> name="selected_dress_id">
       <button type="submit" class="casual-btn" name="hireT">Submit</button>
     </form>
   </div>

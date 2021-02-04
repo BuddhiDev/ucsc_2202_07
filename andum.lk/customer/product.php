@@ -271,7 +271,7 @@ if (!isset($_SESSION['nic'])) {
                 <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button>
               </div>
               <div class="customized">
-                <button class="cart-button"><a href="order.php?t_nic=<?php echo $row["t_nic"]?>" class="costomize-text">CUSTOMIZE</a></button>
+                <button class="cart-button"><a href="order.php?t_t_nic=<?php echo $row["t_nic"]?>&dress_id=<?php echo $selected_dress_id?>" class="costomize-text">CUSTOMIZE</a></button>
               </div>
 
             </div>
