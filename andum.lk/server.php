@@ -315,8 +315,8 @@ if(isset($_GET['f_id']) ){
 }
 
 //select a customer order from tailor
-if(isset($_GET['order_id']) ){
-    $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id']);
+if(isset($_GET['order_id_select']) ){
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id_select']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
 }
@@ -415,7 +415,10 @@ if (isset($_GET['odid'])) {
 
 
 //checkout from cart
-if (isset($_POST['Checkout'])) {
+if (isset($_GET['order_id'])) {
+
+    if($_SESSION['secret_order_key']==$_GET['order_id']){
+        echo "huy";
     $c_nic =  $_SESSION['nic'];
 
     $sql = "SELECT cart.order_id, cart.quantity, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount, dress_showcase.price FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
@@ -448,6 +451,9 @@ if (isset($_POST['Checkout'])) {
     } else {
         array_push($errors, "Add to cart failed, try again later");
     }
+}else{
+    echo "Payment verification failed";}
+
 }
 
 
@@ -658,7 +664,7 @@ if (isset($_POST['order-accept'])) {
 
 }
 
-//update tailor order statues as paid
+//update tailor order statues as paid -- need to integrate payment gateway
 if (isset($_POST['order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
