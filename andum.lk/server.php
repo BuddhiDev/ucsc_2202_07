@@ -241,17 +241,17 @@ if (isset($_POST['hireT'])) {
     $chest = mysqli_real_escape_string($db, $_POST['chest']);
     $waist = mysqli_real_escape_string($db, $_POST['waist']);
     $seat = mysqli_real_escape_string($db, $_POST['seat']);
-    $shirt_length = mysqli_real_escape_string($db, $_POST['shirt_length']);
-    $shoulder_width = mysqli_real_escape_string($db, $_POST['shoulder_width']);
-    $arm_length = mysqli_real_escape_string($db, $_POST['arm_length']);
+    $shirt_length = mysqli_real_escape_string($db, $_POST['shirtlength']);
+    $shoulder_width = mysqli_real_escape_string($db, $_POST['shoulderwidth']);
+    $arm_length = mysqli_real_escape_string($db, $_POST['armlength']);
     $wrist = mysqli_real_escape_string($db, $_POST['wrist']);
     $biceps = mysqli_real_escape_string($db, $_POST['biceps']);
-    $hips = mysqli_real_escape_string($db, $_POST['hips']);
+    $hips = mysqli_real_escape_string($db, $_POST['hip']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
     $dress_id = mysqli_real_escape_string($db, $_POST['selected_dress_id']);
     $date = date('m');
 
-    echo $t_nic,$t_fname,$chest;
+    //echo $t_nic,$t_fname,$chest;
     $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id)
     VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id')";
     $result = mysqli_query($db, $sql);
