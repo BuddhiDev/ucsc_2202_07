@@ -1,6 +1,13 @@
 <?php
 require("server.php");
+
+
+if (!isset($_SESSION['nic'])) {
+  header("location:../login.php");
+  exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -136,25 +143,58 @@ require("server.php");
     </nav>
   </header>
   </div>
+  <script>
+    document.querySelector(".nav_right ul li").addEventListener("click",
+      function() {
+        this.classList.toggle("active");
+      })
+  </script>
 
-  <form action="verify_user.php" method="post">
     <?php include("errors.php");
     ?>
 
-    <center>
-      <div class="btn-panel-center">
+<div class="container">
+<?php
+  $selected_id = $_SESSION['selected_id'];
+  $nic = $_SESSION['selected_id'];
+ 
+  $sql_sm = "SELECT email FROM review_user WHERE nic='$selected_id' ";
+  $result = mysqli_query($db, $sql_sm);
+  if ($result) {
+    while($row = mysqli_fetch_assoc($result)) {
+  ?>
+      
         <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
         <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
-        <button class="loginbutton btn-full-w" type="submit" name="verify">Verify  </button>
-      </div>
-
-
-     
-
-     
-    </div>
+    <h1>Verify user</h1>
+		<form action="#" method="post">
+    <center>
+			<p>
+				<label for="email">Your email</label>
+				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" require>
+			</p>
+        <p>
+          <button type="submit" name="send_mail" class="loginbutton btn-full-w">Verify me</button>
+        </p>
     </center>
-  </form>
+    </form>
+
+  </div>
+  <?php } } ?>
+    
+  <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        function sendEmail(){
+            var email = $(#email);
+        }
+    </script>
+
+
 
   <!-- </footer> -->
 <?php require("footer.php")?>

@@ -75,6 +75,37 @@ if (isset($_POST['register'])) {
     }
 }
 
+if(isset($_POST['verify_mail'])){
+  
+    $email = $_POST['email'];
+    
+
+    require 'phpmailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
+
+        $mail->Host='smtp.gmail.com';
+        $mail->Port=587;
+        $mail->SMTPAuth=true;
+        $mail->SMTPSecure='tls';
+
+        $mail->Username='andumdotlk@gmail.com';
+        $mail->Password='Andumdotlk#4BVNT';
+
+        $mail->setFrom('andumdotlk@gmail.com');
+        $mail->addAddress($email);
+
+       // $mail->isSMTP(true);
+     //   $mail->Subject = "$subject";
+       // $mail->Body =$body;
+        
+        if($mail->Send()){
+            echo "<script>alert('Email Sent.')</script>";
+        }
+        else{
+            echo "<script>alert('### Email Not Sent!')</script>";
+        }
+    }
+
 //login
 if (isset($_POST['login'])) {
 
