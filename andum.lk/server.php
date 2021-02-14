@@ -26,6 +26,7 @@ if (isset($_POST['register'])) {
     $addres = mysqli_real_escape_string($db, $_POST['address']);
     $postal = mysqli_real_escape_string($db, $_POST['postal']);
    
+    $_SESSION['verify_nic'] = $nic;
     $vkey = md5(time().$nic);
 
     if ($password1 != $password2) {
@@ -34,9 +35,11 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO review_user (nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
+        $sql = "INSERT INTO review_user(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
         mysqli_query($db, $sql);
+        
 
+        
         header('location: verify_user.php');
         // insert user if tailor
         // if ($utype == 0) {
@@ -76,12 +79,11 @@ if (isset($_POST['register'])) {
 }
 
 if(isset($_POST['verify_mail'])){
-  
-    $email = $_POST['email'];
-    
 
-    require 'phpmailer/PHPMailerAutoload.php';
-    $mail = new PHPMailer;
+    $email = $_POST['email'];
+   require 'php_mailer/PHPMailerAutoload.php';
+
+   $mail = new PHPMailer();
 
         $mail->Host='smtp.gmail.com';
         $mail->Port=587;
@@ -89,22 +91,26 @@ if(isset($_POST['verify_mail'])){
         $mail->SMTPSecure='tls';
 
         $mail->Username='andumdotlk@gmail.com';
-        $mail->Password='Andumdotlk#4BVNT';
+        $mail->Password='Andumdotlk@4BVNT';
 
         $mail->setFrom('andumdotlk@gmail.com');
         $mail->addAddress($email);
 
-       // $mail->isSMTP(true);
-     //   $mail->Subject = "$subject";
-       // $mail->Body =$body;
+        $mail->isSMTP(true);
+        $mail->Subject ="Thank you for registring";
+        $mail->Body ="dgwjecv";
         
+       // if($mail->Send()){
+            //header('location: thankyou.php');
+      //  }
         if($mail->Send()){
             echo "<script>alert('Email Sent.')</script>";
         }
         else{
             echo "<script>alert('### Email Not Sent!')</script>";
         }
-    }
+    
+}
 
 //login
 if (isset($_POST['login'])) {
@@ -987,7 +993,7 @@ if (isset($_POST['sale-complete'])) {
         $mail->Port = "587";
 
         $mail->Username = 'andumdotlk@gmail.com';
-        $mail->Password = 'Admin@123';
+        $mail->Password = 'Andumdotlk@4BVNT';
 
         $mail->isHTML(true);
 

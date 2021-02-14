@@ -1,9 +1,13 @@
 <?php
-require("server.php");
-
-
-
+ include("server.php");
+ 
+ if (!isset($_SESSION['verify_nic'])) {
+  header("location:server.php");
+  exit();
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -131,54 +135,46 @@ require("server.php");
           </li>
         </ul>
       </div>
-      <div class="box">
-        <div class="nav_right">
-          <li><a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a></li>
-          <li><a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a></li>
-        </div>
-      </div>
     </nav>
   </header>
   </div>
-  <script>
+
+    <?php include("errors.php");
+    ?>
+
+    <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
         this.classList.toggle("active");
       })
   </script>
 
-    <?php include("errors.php");
-    ?>
-
 <div class="container">
 <?php
-  
- 
-  $sql_sm = "SELECT email FROM review_user WHERE nic='$nic' ";
-  $result = mysqli_query($db, $sql_sm);
-  if ($result) {
-    while($row = mysqli_fetch_assoc($result)) {
+  $selected_vnic = $_SESSION['verify_nic'];
+  $sqlv = "SELECT * FROM review_user WHERE nic='$selected_vnic'";
+  $resultv = mysqli_query($db, $sqlv);
+  if ($resultv) {
+    while($row = mysqli_fetch_assoc($resultv)){
   ?>
-      
-        <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
-        <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
+  
+    
     <h1>Verify user</h1>
 		<form action="#" method="post">
-    <center>
-			<p>
+     <p>
 				<label for="email">Your email</label>
 				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" require>
 			</p>
-        <p>
-        <a href="verify_user.php?nic=<?php echo $row["nic"]?>"> <button type="submit" name="send_mail" class="loginbutton btn-full-w">Verify me</button>
-        </p>
-    </center>
+      <p>
+        <button type="submit" name="verify_mail" class="loginbutton btn-full-w">Verify me</button>
+			</p>
     </form>
 
   </div>
-  <?php } } ?>
-    
-  <script
+
+
+<?php }  } ?>
+<script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous">
@@ -186,11 +182,9 @@ require("server.php");
 
     <script type="text/javascript">
         function sendEmail(){
+          
             var email = $(#email);
-        }
     </script>
-
-
 
   <!-- </footer> -->
 <?php require("footer.php")?>

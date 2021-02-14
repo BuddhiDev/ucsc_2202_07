@@ -1,5 +1,5 @@
 <?php
-require("server.php");
+include("server.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
