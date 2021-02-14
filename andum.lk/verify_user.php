@@ -2,10 +2,7 @@
 require("server.php");
 
 
-if (!isset($_SESSION['nic'])) {
-  header("location:../login.php");
-  exit();
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -155,10 +152,9 @@ if (!isset($_SESSION['nic'])) {
 
 <div class="container">
 <?php
-  $selected_id = $_SESSION['selected_id'];
-  $nic = $_SESSION['selected_id'];
+  
  
-  $sql_sm = "SELECT email FROM review_user WHERE nic='$selected_id' ";
+  $sql_sm = "SELECT email FROM review_user WHERE nic='$nic' ";
   $result = mysqli_query($db, $sql_sm);
   if ($result) {
     while($row = mysqli_fetch_assoc($result)) {
@@ -174,7 +170,7 @@ if (!isset($_SESSION['nic'])) {
 				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" require>
 			</p>
         <p>
-          <button type="submit" name="send_mail" class="loginbutton btn-full-w">Verify me</button>
+        <a href="verify_user.php?nic=<?php echo $row["nic"]?>"> <button type="submit" name="send_mail" class="loginbutton btn-full-w">Verify me</button>
         </p>
     </center>
     </form>
