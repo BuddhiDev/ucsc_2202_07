@@ -25,6 +25,8 @@ if (isset($_POST['register'])) {
     $utype = mysqli_real_escape_string($db, $_POST['Usertype']);
     $addres = mysqli_real_escape_string($db, $_POST['address']);
     $postal = mysqli_real_escape_string($db, $_POST['postal']);
+   
+    $vkey = md5(time().$nic);
 
     if ($password1 != $password2) {
         array_push($errors, "Passwords do not match");
@@ -32,43 +34,44 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO review_user (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
+        $sql = "INSERT INTO review_user (nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
         mysqli_query($db, $sql);
 
+        header('location: verify_user.php');
         // insert user if tailor
-        if ($utype == 0) {
-            $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
-            mysqli_query($db, $sql1);
-        }
+        // if ($utype == 0) {
+        //     $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
+        //     mysqli_query($db, $sql1);
+        // }
 
         // insert user if customer
-        else if ($utype == 1) {
-            $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
-            mysqli_query($db, $sql1);
-        }
+        // else if ($utype == 1) {
+        //     $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
+        //     mysqli_query($db, $sql1);
+        // }
 
         // insert user if fashion designer
-        else if ($utype == 2) {
-            $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
-            mysqli_query($db, $sql1);
-        }
+        // else if ($utype == 2) {
+        //     $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
+        //     mysqli_query($db, $sql1);
+        // }
 
         //save session cache
-        $_SESSION['nic'] = $nic;
-        $_SESSION['fname'] = $fname;
-        $_SESSION['lname'] = $lname;
-        $_SESSION['success'] = "You are now logged in";
-        $_SESSION['utype'] = "$utype";
+        // $_SESSION['nic'] = $nic;
+        // $_SESSION['fname'] = $fname;
+        // $_SESSION['lname'] = $lname;
+        // $_SESSION['success'] = "You are now logged in";
+        // $_SESSION['utype'] = "$utype";
 
-        if ($_SESSION['utype'] == 0) {
-            header('location: tailor/tailor-dashboard.php');
-        }
-        else if ($_SESSION['utype'] == 1) {
-            header('location: customer/index.php');
-        }
-        else if ($_SESSION['utype'] == 2) {
-            header('location: fashion_designer/index.php');
-        }
+        // if ($_SESSION['utype'] == 0) {
+        //     header('location: tailor/tailor-dashboard.php');
+        // }
+        // else if ($_SESSION['utype'] == 1) {
+        //     header('location: customer/index.php');
+        // }
+        // else if ($_SESSION['utype'] == 2) {
+        //     header('location: fashion_designer/index.php');
+        // }
     }
 }
 
