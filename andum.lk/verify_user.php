@@ -149,7 +149,7 @@
       })
   </script>
 
-<div class="container">
+<div class="container-box">
 <?php
   $selected_vnic = $_SESSION['verify_nic'];
   $sqlv = "SELECT * FROM review_user WHERE nic='$selected_vnic'";
@@ -161,9 +161,9 @@
     
     <h1>Verify user</h1>
 		<form action="#" method="post">
-     <p>
-				<label for="email">Your email</label>
-				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" require>
+      <p>
+				<label for="email"></label>
+				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>
 			</p>
       <p>
         <button type="submit" name="verify_mail" class="loginbutton btn-full-w">Verify me</button>

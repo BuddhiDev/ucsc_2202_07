@@ -81,9 +81,11 @@ if (isset($_POST['register'])) {
 if(isset($_POST['verify_mail'])){
 
     $email = $_POST['email'];
-   require 'php_mailer/PHPMailerAutoload.php';
+   // $subject = ;
+   // $body = 'plz verify below link';
 
-   $mail = new PHPMailer();
+    require 'php_mailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
 
         $mail->Host='smtp.gmail.com';
         $mail->Port=587;
@@ -91,14 +93,14 @@ if(isset($_POST['verify_mail'])){
         $mail->SMTPSecure='tls';
 
         $mail->Username='andumdotlk@gmail.com';
-        $mail->Password='Andumdotlk@4BVNT';
+        $mail->Password='Admin@bvnt';
 
         $mail->setFrom('andumdotlk@gmail.com');
         $mail->addAddress($email);
 
         $mail->isSMTP(true);
-        $mail->Subject ="Thank you for registring";
-        $mail->Body ="dgwjecv";
+        $mail->Subject='Thank you for registring';
+        $mail->Body='plz verify below link';
         
        // if($mail->Send()){
             //header('location: thankyou.php');
