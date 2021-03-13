@@ -460,7 +460,7 @@ if (isset($_GET['odid'])) {
 if (isset($_GET['order_id'])) {
 
     if($_SESSION['secret_order_key']==$_GET['order_id']){
-        echo "huy";
+        //echo "buy";
     $c_nic =  $_SESSION['nic'];
 
     $sql = "SELECT cart.order_id, cart.quantity, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount, dress_showcase.price FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
