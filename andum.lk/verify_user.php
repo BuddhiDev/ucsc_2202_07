@@ -152,7 +152,7 @@
 <div class="container-box">
 <?php
   $selected_vnic = $_SESSION['verify_nic'];
-  $sqlv = "SELECT * FROM review_user WHERE nic='$selected_vnic'";
+  $sqlv = "SELECT * FROM users WHERE nic='$selected_vnic'";
   $resultv = mysqli_query($db, $sqlv);
   if ($resultv) {
     while($row = mysqli_fetch_assoc($resultv)){
@@ -166,9 +166,16 @@
 				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>
 			</p>
       <p>
+				<label for="vkey"></label>
+				<input type="text" value="<?php echo $row["vkey"]?>" class="field-value-inline" name="vkey" readonly>
+			</p>
+      <p>
         <button type="submit" name="verify_mail" class="loginbutton btn-full-w">Verify me</button>
 			</p>
     </form>
+    <center>
+        <i class="fas fa-envelope-open-text"></i>
+    </center>
 
   </div>
 
@@ -184,6 +191,7 @@
         function sendEmail(){
           
             var email = $(#email);
+            var vkey = $(#vkey);
     </script>
 
   <!-- </footer> -->

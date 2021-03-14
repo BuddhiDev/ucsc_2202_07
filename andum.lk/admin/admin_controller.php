@@ -127,7 +127,7 @@ if(isset($_POST['send_mail'])){
             echo "<script>alert('Email Sent.')</script>";
         }
         else{
-            echo "<script>alert('### Email Not Sent!')</script>";
+            echo "<script>alert(' Email Not Sent!!!')</script>";
         }
     }  
 

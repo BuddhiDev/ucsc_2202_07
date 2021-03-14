@@ -35,7 +35,7 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO review_user(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
+        $sql = "INSERT INTO users(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
         mysqli_query($db, $sql);
         
 
@@ -81,6 +81,7 @@ if (isset($_POST['register'])) {
 if(isset($_POST['verify_mail'])){
 
     $email = $_POST['email'];
+    $vkey = $_POST['vkey'];
    // $subject = ;
    // $body = 'plz verify below link';
 
@@ -100,7 +101,7 @@ if(isset($_POST['verify_mail'])){
 
         $mail->isSMTP(true);
         $mail->Subject='Thank you for registring';
-        $mail->Body='plz verify below link';
+        $mail->Body="<a href= 'http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'>Register Account</a>";
         
        // if($mail->Send()){
             //header('location: thankyou.php');
