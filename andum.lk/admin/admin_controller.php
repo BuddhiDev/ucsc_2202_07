@@ -114,7 +114,7 @@ if(isset($_POST['send_mail'])){
         $mail->SMTPSecure='tls';
 
         $mail->Username='andumdotlk@gmail.com';
-        $mail->Password='Admin@123';
+        $mail->Password='Admin@bvnt';
 
         $mail->setFrom('andumdotlk@gmail.com');
         $mail->addAddress($email);

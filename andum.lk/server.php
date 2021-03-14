@@ -25,6 +25,9 @@ if (isset($_POST['register'])) {
     $utype = mysqli_real_escape_string($db, $_POST['Usertype']);
     $addres = mysqli_real_escape_string($db, $_POST['address']);
     $postal = mysqli_real_escape_string($db, $_POST['postal']);
+   
+    $_SESSION['verify_nic'] = $nic;
+    $vkey = md5(time().$nic);
 
     if ($password1 != $password2) {
         array_push($errors, "Passwords do not match");
@@ -32,44 +35,83 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO review_user (nic, fname, email, lname, contactno, password, type, address, postalcode) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal')";
+        $sql = "INSERT INTO review_user(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
         mysqli_query($db, $sql);
+        
 
+        
+        header('location: verify_user.php');
         // insert user if tailor
-        if ($utype == 0) {
-            $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
-            mysqli_query($db, $sql1);
-        }
+        // if ($utype == 0) {
+        //     $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
+        //     mysqli_query($db, $sql1);
+        // }
 
         // insert user if customer
-        else if ($utype == 1) {
-            $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
-            mysqli_query($db, $sql1);
-        }
+        // else if ($utype == 1) {
+        //     $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
+        //     mysqli_query($db, $sql1);
+        // }
 
         // insert user if fashion designer
-        else if ($utype == 2) {
-            $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
-            mysqli_query($db, $sql1);
-        }
+        // else if ($utype == 2) {
+        //     $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
+        //     mysqli_query($db, $sql1);
+        // }
 
         //save session cache
-        $_SESSION['nic'] = $nic;
-        $_SESSION['fname'] = $fname;
-        $_SESSION['lname'] = $lname;
-        $_SESSION['success'] = "You are now logged in";
-        $_SESSION['utype'] = "$utype";
+        // $_SESSION['nic'] = $nic;
+        // $_SESSION['fname'] = $fname;
+        // $_SESSION['lname'] = $lname;
+        // $_SESSION['success'] = "You are now logged in";
+        // $_SESSION['utype'] = "$utype";
 
-        if ($_SESSION['utype'] == 0) {
-            header('location: tailor/tailor-dashboard.php');
-        }
-        else if ($_SESSION['utype'] == 1) {
-            header('location: customer/index.php');
-        }
-        else if ($_SESSION['utype'] == 2) {
-            header('location: fashion_designer/index.php');
-        }
+        // if ($_SESSION['utype'] == 0) {
+        //     header('location: tailor/tailor-dashboard.php');
+        // }
+        // else if ($_SESSION['utype'] == 1) {
+        //     header('location: customer/index.php');
+        // }
+        // else if ($_SESSION['utype'] == 2) {
+        //     header('location: fashion_designer/index.php');
+        // }
     }
+}
+
+if(isset($_POST['verify_mail'])){
+
+    $email = $_POST['email'];
+   // $subject = ;
+   // $body = 'plz verify below link';
+
+    require 'php_mailer/PHPMailerAutoload.php';
+    $mail = new PHPMailer;
+
+        $mail->Host='smtp.gmail.com';
+        $mail->Port=587;
+        $mail->SMTPAuth=true;
+        $mail->SMTPSecure='tls';
+
+        $mail->Username='andumdotlk@gmail.com';
+        $mail->Password='Admin@bvnt';
+
+        $mail->setFrom('andumdotlk@gmail.com');
+        $mail->addAddress($email);
+
+        $mail->isSMTP(true);
+        $mail->Subject='Thank you for registring';
+        $mail->Body='plz verify below link';
+        
+       // if($mail->Send()){
+            //header('location: thankyou.php');
+      //  }
+        if($mail->Send()){
+            echo "<script>alert('Email Sent.')</script>";
+        }
+        else{
+            echo "<script>alert('### Email Not Sent!')</script>";
+        }
+    
 }
 
 //login
@@ -418,7 +460,7 @@ if (isset($_GET['odid'])) {
 if (isset($_GET['order_id'])) {
 
     if($_SESSION['secret_order_key']==$_GET['order_id']){
-        echo "huy";
+        //echo "buy";
     $c_nic =  $_SESSION['nic'];
 
     $sql = "SELECT cart.order_id, cart.quantity, dress_showcase.dress_id, dress_showcase.category, dress_showcase.title, dress_showcase.amount, dress_showcase.price FROM cart INNER JOIN dress_showcase ON cart.c_nic='$c_nic' AND cart.dress_id=dress_showcase.dress_id";
@@ -953,7 +995,7 @@ if (isset($_POST['sale-complete'])) {
         $mail->Port = "587";
 
         $mail->Username = 'andumdotlk@gmail.com';
-        $mail->Password = 'Admin@123';
+        $mail->Password = 'Andumdotlk@4BVNT';
 
         $mail->isHTML(true);
 

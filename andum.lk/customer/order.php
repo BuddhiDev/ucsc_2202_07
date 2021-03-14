@@ -498,7 +498,30 @@ if (!isset($_SESSION['nic'])) {
   
         
         <div class="order-input-container" id="div-1">
-          <form action="order.php" method="post" id=form-1>
+          <form action="https://sandbox.payhere.lk/pay/checkout" method="post" id=form-1>
+
+            <?php //generate order random number and hash it
+    $_SESSION['secret_order_key']=md5(rand(10,1000000));
+    $secret_order_key = $_SESSION['secret_order_key']; ?>
+
+            <!-- payment gateway info -->
+            <input type="hidden" name="merchant_id" value="1216354">    <!-- Replace your Merchant ID -->
+    <input type="hidden" name="return_url" value="http://localhost/ucsc_2202_07/andum.lk/customer/orderAuth.php">
+    <input type="hidden" name="cancel_url" value="http://sample.com/cancel">
+    <input type="hidden" name="notify_url" value="http://sample.com/notify">  
+    <!--<br><br>Item Details<br>-->
+    <input type="hidden" name="order_id" value=<?php echo $secret_order_key?>>
+    <input type="hidden" name="items" value="Door bell wireless"><br>
+    <input type="hidden" name="currency" value="LKR">
+    <input type="hidden" name="amount" value="1000">  
+    <!-- <br><br>Customer Details<br>-->
+    <input type="hidden" name="first_name" value="Saman">
+    <input type="hidden" name="last_name" value="Perera"><br>
+    <input type="hidden" name="email" value="samanp@gmail.com">
+    <input type="hidden" name="phone" value="0771234567"><br>
+    <input type="hidden" name="address" value="No.1, Galle Road">
+    <input type="hidden" name="city" value="Colombo">
+    <input type="hidden" name="country" value="Sri Lanka"><br><br> 
 
           <div class="card-img">
                       <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row_d["image"]; ?> " alt="Avatar" style="width:20%">
@@ -711,7 +734,7 @@ if (!isset($_SESSION['nic'])) {
             </div>
             <?php if($status=="Accepted"){ ?>
             <div>
-              <input type="hidden" name="order_id" value=<?php echo $row["id"]?> >
+              <?php $_SESSION['tailor_oid_auth']=$row["id"]?> 
               <button name="order-paid" class="cart-button" type="submit">Make Payment</button>
               <button name="order-appeal" class="cart-button" type="submit">Request to change the price</button>
             </div>

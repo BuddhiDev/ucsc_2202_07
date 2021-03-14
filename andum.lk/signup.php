@@ -270,7 +270,7 @@ require("server.php");
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="register">SIGN UP </button>
+            <a href="verify_user.php"><button class="loginbutton btn-full-w" type="submit" name="register">SIGN UP </button>
           </div>
 
           <!-- <label>

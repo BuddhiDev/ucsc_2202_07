@@ -63,7 +63,7 @@ require("../server.php");
 
       <div class="row">
         <div class="col-25"><br>
-          <label for="dname" class="field-label-inline">Dress  Name: </label>
+          <label for="dname" class="field-label-inline">Dress  Name : </label>
         </div>
         <div class="col-75">
           <input type="text" class="field-value-inline" placeholder="Name" name="dname">
@@ -86,31 +86,35 @@ require("../server.php");
         <lable for="type" class="field-label-inline">Size:</label>
       </div>
       <div class="col-75">
-        <label class="checkbox_container">UK 6
-          <input type="checkbox" name="size[]" value="UK 6">
+        <label class="checkbox_container">XS
+          <input type="checkbox" name="size[]" value="XS">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">UK 8
-          <input type="checkbox" name="size[]" value="UK 8">
+        <label class="checkbox_container">S
+          <input type="checkbox" name="size[]" value="S">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">UK 10
-          <input type="checkbox" name="size[]" value="UK 10">
+        <label class="checkbox_container">M
+          <input type="checkbox" name="size[]" value="M">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox_container">L
+          <input type="checkbox" name="size[]" value="L">
           <span class="checkmark"></span>
         </label>
 
-        <label class="checkbox_container">UK 12
-          <input type="checkbox" name="size[]" value="UK 12">
+        <label class="checkbox_container">XL
+          <input type="checkbox" name="size[]" value="XL">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">UK 14
-          <input type="checkbox" name="size[]" value="UK 14">
+        <label class="checkbox_container">XXL
+          <input type="checkbox" name="size[]" value="XXL">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">UK 16
-          <input type="checkbox" name="size[]" value="UK 16">
-          <span class="checkmark"></span>
-        </label>
+        <div>
+              <a href="size_guide.php"><button class="view-button" name="#" >(Click Here for Size Guide)</button></a>
+        </div>
+
       </div>
     </div>
     <div class="row">
