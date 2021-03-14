@@ -134,25 +134,6 @@ if (isset($_POST['forgot_password']))
 
          
 
-         
-
-          <!-- <div class="form-field-inline">
-            <label for="password" class="field-label-inline"><b>Choose Passsword</b></label>
-            <input type="password" class="field-value-inline" name="password" required>
-          </div>
-
-          <div class="form-field-inline">
-            <label for="c_password" class="field-label-inline"><b>Re-enter Password</b></label>
-            <input type="password" class="field-value-inline" name="c_password" required>
-          </div> -->
-
-         
-        
-         
-
-
-
-
 
 
           <div class="btn-panel-center">

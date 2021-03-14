@@ -121,12 +121,13 @@ if (isset($_POST['login'])) {
 if(isset($_POST['resetpwd'])){
     
     $email = mysqli_real_escape_string($db, $_POST['email']);
-    $sql = "SELECT * from users WHERE email='$email'";
+    $sql = "SELECT * FROM users WHERE email='$email'";
     $run = mysqli_query($db,$sql);
     if(mysqli_num_rows($run)>0)
     {
         $row = mysqli_fetch_array($run);
         $db_email = $row['email'];
+        echo $row['email'];
         $db_nic = $row['nic'];
         $token = uniqid(md5(time())); //Random Token
         $sql = "INSERT INTO password_reset (id,email,token) VALUES (NULL,'$email','$token')";
@@ -145,7 +146,7 @@ if(isset($_POST['resetpwd'])){
             $mail->SMTPSecure = "tls";
             $mail->Port = "587";
             $mail->Username = 'andumdotlk@gmail.com';
-            $mail->Password = 'Admin@123';
+            $mail->Password = 'Andumdotlk@4BVNT';
             $mail->isHTML(true);
             $mail->Subject = "$subject";
 
@@ -166,7 +167,6 @@ if(isset($_POST['resetpwd'])){
 
 
             $mail->smtpClose();
-                //mail($to,$subject,$message);
 
         }
     }

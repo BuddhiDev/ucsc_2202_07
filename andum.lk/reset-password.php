@@ -60,8 +60,6 @@ require("server.php");
                 </div>
               </ul>
             </div>
-              
-            
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
@@ -114,12 +112,8 @@ require("server.php");
                 </ul>
               </div>             
             </ul>
-              
-
             </div>
-            
           </li>
-
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li>
@@ -138,34 +132,16 @@ require("server.php");
   </div>
 
   <form action="" method="post">
-    <?php include("errors.php");
-    ?>
-
     <div class="login-container">
       <div class="form-field-inline">
         <label for="email" class="field-label-inline">Email</label>
-        <input type="text" class="field-value-inline" name="email" required>
+        <input type="email" class="field-value-inline" name="email" required>
       </div>
       <div class="btn-panel-center">
         <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
         <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
         <button class="loginbutton btn-full-w" type="submit" name="resetpwd">Reset</button>
       </div>
-
-
-      <!-- <div class="btn-panel-center"> -->
-        <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
-        <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
-        <!-- <button class="loginbutton btn-full-w" type="submit" name="forgot_password">Forgot password</button>
-      </div> -->
-
-
-      <!-- <div> -->
-      <span class="psw">Don't you have an account? <a href="/ucsc_2202_07/andum.lk/signup.php">SIGN UP</a> now!</span>
-      <!-- </div> -->
-      <!-- <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label> -->
     </div>
   </form>
 
