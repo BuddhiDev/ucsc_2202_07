@@ -211,7 +211,7 @@
 
     <div class="row">
       <div class="col-3">
-        <div class="card-item-1">
+        <div class="card-item">
           <div class="card-img2">
             <img src="/ucsc_2202_07/andum.lk/images/tailors/t12.jpg" alt="Avatar" style="width:100%">
           </div>
@@ -221,7 +221,7 @@
         </div>
       </div>
       <div class="col-3">
-        <div class="card-item-1">
+        <div class="card-item">
           <div class="card-img2">
             <img src="/ucsc_2202_07/andum.lk/images/tailors/t4.jpg" alt="Avatar" style="width:100%">
           </div>
@@ -231,7 +231,7 @@
         </div>
       </div>
       <div class="col-3">
-        <div class="card-item-1">
+        <div class="card-item">
           <div class="card-img2">
             <img src="/ucsc_2202_07/andum.lk/images/tailors/t2.jpg" alt="Avatar" style="width:100%">
           </div>
@@ -241,7 +241,7 @@
         </div>
       </div>
       <div class="col-3">
-        <div class="card-item-1">
+        <div class="card-item">
           <div class="card-img2">
             <img src="/ucsc_2202_07/andum.lk/images/tailors/t3.jpg" alt="Avatar" style="width:100%">
           </div>
