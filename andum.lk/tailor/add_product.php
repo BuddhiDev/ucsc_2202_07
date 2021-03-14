@@ -19,7 +19,9 @@ require("../server.php");
 <body>
 
 <?php require("header.php")?>
-  
+<div class="add-new-position">
+    <a href="size_guide.php"><button class="loginbutton btn-full-w">(Click Here for Size Guide)</button></a>
+</div>  
 
 
   <script>
@@ -111,9 +113,6 @@ require("../server.php");
           <input type="checkbox" name="size[]" value="XXL">
           <span class="checkmark"></span>
         </label>
-        <div>
-              <a href="size_guide.php"><button class="view-button" name="#" >(Click Here for Size Guide)</button></a>
-        </div>
 
       </div>
     </div>

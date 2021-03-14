@@ -139,60 +139,15 @@
   </header>
   </div>
 
-    <?php include("errors.php");
-    ?>
-
-    <script>
-    document.querySelector(".nav_right ul li").addEventListener("click",
-      function() {
-        this.classList.toggle("active");
-      })
-  </script>
+    <?php include("errors.php");?>
 
 <div class="container-box">
-<?php
-  $selected_vnic = $_SESSION['verify_nic'];
-  $sqlv = "SELECT * FROM users WHERE nic='$selected_vnic'";
-  $resultv = mysqli_query($db, $sqlv);
-  if ($resultv) {
-    while($row = mysqli_fetch_assoc($resultv)){
-  ?>
-  
-    
-    <h1>Verify user</h1>
-		<form action="check_mail.php" method="post">
-      <p>
-				<label for="email"></label>
-				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>
-			</p>
-      <p>
-				<label for="vkey"></label>
-				<input type="text" value="<?php echo $row["vkey"]?>" class="field-value-inline" name="vkey" disabled>
-			</p>
-      <p>
-        <button type="submit" name="verify_mail" class="loginbutton btn-full-w">Verify me</button>
-			</p>
-    </form>
-
-  </div>
-
-
-<?php }  } ?>
-<script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous">
-    </script>
-
-    <script type="text/javascript">
-        function sendEmail(){
-          
-            var email = $(#email);
-            var vkey = $(#vkey);
-    </script>
-
-  <!-- </footer> -->
-<?php require("footer.php")?>
+<div class="row">
+<center>
+    <h3>Thank You for registering. We have sent a verification email to the address provided.</h3>
+    <p><i class="fas fa-envelope-open-text"></i></p>
+<center>
+</div>
 </body>
 
 </html>

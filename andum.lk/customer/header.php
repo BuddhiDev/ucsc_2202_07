@@ -106,6 +106,7 @@
               <div class="dd_right">
                 <ul>
                   <li><a href="cust_edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
+                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
                   <li><a href="hired_list.php"><i class="fas fa-users"></i>Hired Tailors</a></li>
                   <li><a href="hired_fd_list.php"><i class="fas fa-users"></i>Hired Fashion Designers</a></li>
                   <li><a href="purchases.php"><i class="fas fa-money"></i>Purchases</a></li>
