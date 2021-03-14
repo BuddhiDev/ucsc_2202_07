@@ -2,13 +2,10 @@
  include("server.php");
  
  if (!isset($_SESSION['verify_nic'])) {
-  header("location:server.php");
-  exit();
+ header("location:server.php");
+ exit();
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -160,7 +157,7 @@
   
     
     <h1>Verify user</h1>
-		<form action="check_mail.php" method="post">
+		<form action="#" method="post">
       <p>
 				<label for="email"></label>
 				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>

@@ -108,6 +108,7 @@ if(isset($_POST['verify_mail'])){
       //  }
         if($mail->Send()){
             echo "<script>alert('Email Sent.')</script>";
+            header('location: check_mail.php');
         }
         else{
             echo "<script>alert('### Email Not Sent!')</script>";

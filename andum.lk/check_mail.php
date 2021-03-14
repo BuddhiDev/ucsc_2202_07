@@ -1,13 +1,3 @@
-<?php
- include("server.php");
- 
- if (!isset($_SESSION['verify_nic'])) {
-  header("location:server.php");
-  exit();
-}
-?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +12,8 @@
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -139,14 +131,13 @@
   </header>
   </div>
 
-    <?php include("errors.php");?>
-
 <div class="container-box">
 <div class="row">
 <center>
     <h3>Thank You for registering. We have sent a verification email to the address provided.</h3>
-    <p><i class="fas fa-envelope-open-text"></i></p>
+    <i class="far fa-envelope" style="font-size:200px"></i>
 <center>
+</div>
 </div>
 </body>
 
