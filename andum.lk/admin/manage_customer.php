@@ -1,14 +1,5 @@
 <?php include("../server.php"); ?>
-<?php if(isset($_GET['nic']) ){
-    $selected_c_id = mysqli_real_escape_string($db, $_GET['nic']);
-    $_SESSION['selected_c_id']=$selected_c_id;
-    header('location: customer_view.php');
-}
-    if(isset($_GET['d_nic']) ){
-      $selected_c_id = mysqli_real_escape_string($db, $_GET['d_nic']);
-      $_SESSION['selected_c_id']=$selected_c_id;
-      header('location: banned_cust.php');
-} ?>
+<?php include("admin_controller.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -221,7 +212,7 @@
           <td><?php echo $row["contactno"] ?></td>
           <td>
             <div>
-              <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+              <a href="manage_customer.php?c_nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
              
              
 
@@ -229,7 +220,7 @@
           </td>
           <td>
             <div>
-            <a href="manage_customer.php?d_nic=<?php echo $row["nic"]?>"><button class="view-button" name="delete_user">Suspend</button></a>
+            <a href="manage_customer.php?d_cnic=<?php echo $row["nic"]?>"><button class="view-button" name="delete_user">Suspend</button></a>
             </div>
           </td>
 
