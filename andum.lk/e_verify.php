@@ -21,7 +21,8 @@ if(isset($_GET['vkey'])){
 
         if ($update_res)
         {
-            echo "Your account has been verified, You can now Login";
+           // echo "Your account has been verified, You can now Login";
+            header('location: thankyou.php');
         }
         else
         {
