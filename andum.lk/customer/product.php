@@ -267,7 +267,7 @@ if (!isset($_SESSION['nic'])) {
                     <select name="size" id="size" class="option">
                     <?php  foreach ($mysizes as $my_size){
                       ?>  
-                       <?php $new_size ?> = <option value="<?php echo $my_size ?>"><?php echo $my_size ?></option>
+                        <option value="<?php echo $my_size ?>"><?php echo $my_size ?></option>
                           
                     <?php } ?>
                     </select>
@@ -279,7 +279,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="customized">
                 <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
                 <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-                <input name="size" class="option" value="<?php echo $new_size ?>">
+                <!--<input name="size" class="option" value="<?php echo $new_size ?>">-->
                 <button class="cart-button" type="submit" name="addTocart" <?php if($item_added=="true") echo "disabled"?>><?php if($item_added=="false"){?> ADD TO CART<?php } else {?>ADDED TO CART<?php }?></button>
               </div>
               <div class="customized">
