@@ -67,6 +67,26 @@ if(isset($_GET['confirm_dress_id'])){
     }
 
 }
+if(isset($_GET['reject_dress_id'])){
+    
+    
+    $reject_dress_id = mysqli_real_escape_string($db, $_GET['reject_dress_id']);
+    $sqlr = "INSERT INTO rejected_dress(dress_id, category, title, price, size, color, amount, image, t_nic) SELECT*FROM review_dress WHERE dress_id='$reject_dress_id' ";
+    $resultr=mysqli_query($db, $sqlr);
+    $sqlr = "DELETE FROM review_dress WHERE dress_id='$reject_dress_id' ";
+    $resultr=mysqli_query($db, $sqlr);
+
+   if ($resultr) {
+
+        
+        header('location: review_dress.php');
+   } 
+   else {
+    array_push($errors, " failed, try again later");
+    echo "<script>alert('Sorry! REJECTING UNSUCCESSFULY')</script>";
+   }
+
+}
 
 //suspend users account
 if(isset($_GET['delete_nic'])) {

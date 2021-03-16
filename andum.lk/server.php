@@ -402,9 +402,9 @@ if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
     $quantity1 = mysqli_real_escape_string($db, $_POST['quant']);
+    $size = mysqli_real_escape_string($db, $_POST['size']);
 
-
-    $sql = "INSERT INTO cart (c_nic, dress_id, quantity) VALUES ('$c_nic','$dress_id','$quantity1')";
+    $sql = "INSERT INTO cart (c_nic, dress_id, quantity, size) VALUES ('$c_nic','$dress_id','$quantity1', '$size')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         $item_added = "true";
@@ -631,6 +631,35 @@ if(isset($_GET['remove_dress_id']) ){
     {
         echo "Dress has been removed successful";
         header('location: my_showcase.php');
+    }
+    else{
+        echo "<script>alert('Sorry! Removed successfuly')</script>";
+    }
+    
+}
+
+//view rejected dress
+if(isset($_GET['view_reject_dress_id']) ){
+    $selected_rdress_id = mysqli_real_escape_string($db, $_GET['view_reject_dress_id']);
+    $_SESSION['selected_rdress_id']=$selected_rdress_id;
+    header('location: view_rejectproduct.php');
+}
+
+//edit rejected dress details
+if(isset($_GET['edit_reject_dress_id']) ){
+    $selected_rdress_id = mysqli_real_escape_string($db, $_GET['edit_reject_dress_id']);
+    $_SESSION['selected_rdress_id']=$selected_rdress_id;
+    header('location: edit_rejectdress.php');
+}
+//remove rejected dress
+if(isset($_GET['remove_reject_dress_id']) ){
+    $selected_rdress_id = mysqli_real_escape_string($db, $_GET['remove_reject_dress_id']);
+    $sql= "DELETE FROM rejected_dress WHERE dress_id='$selected_rdress_id' ";
+    $result=mysqli_query($db, $sql);
+    if($result)
+    {
+        echo "Dress has been removed successful";
+        header('location: rejected_dress.php');
     }
     else{
         echo "<script>alert('Sorry! Removed successfuly')</script>";

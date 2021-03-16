@@ -70,6 +70,17 @@ if (!isset($_SESSION['nic'])) {
 
   
   <div class="tailor-cover">
+      <div class="row">
+        <div class="search-container">
+          <form method="post">
+            <div class="form-field-inline">
+              <label for="searchname" class="field-label-inline">Search...</label>
+              <input type="text" class="field-value-inline" name="q">
+              <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
     <div class="row">
       <?php
         $nic = $_SESSION['nic'];
