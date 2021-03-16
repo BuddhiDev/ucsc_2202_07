@@ -334,8 +334,6 @@ if (!isset($_SESSION['nic'])) {
   <?php
   $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
   $nic = $_SESSION['selected_fdesigner_id'];
-  $fname = $_SESSION['fname'];
-  $lname = $_SESSION['lname'];
   $sql = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {

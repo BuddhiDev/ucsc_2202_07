@@ -1,9 +1,9 @@
 <?php include("../server.php");
 
-/*if (!isset($_SESSION['nic'])) {
+if (!isset($_SESSION['nic'])) {
   header("location:../login.php");
   exit();
-}*/
+}
 
 ?>  
 <?php include("admin_controller.php"); ?>
@@ -243,7 +243,7 @@
             </form>
           </div>
           <div>
-            <li><a class="cta" href="send_mail.php"><button class="loginbutton btn-full-w">Warning message</button></a></li>
+            <li><a class="cta" href="send_mail_fdesigner.php"><button class="loginbutton btn-full-w">Warning message</button></a></li>
           </div>
           <div>
           <li><a href="banned_fdesigner.php?delete_nic=<?php echo $row["nic"]?>"><button class="loginbutton btn-full-w">Suspend User Account</button></a></li>

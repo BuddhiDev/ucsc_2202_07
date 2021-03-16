@@ -78,12 +78,12 @@ if (isset($_POST['register'])) {
     }
 }
 
+
+//verify email address
 if(isset($_POST['verify_mail'])){
 
     $email = $_POST['email'];
     $vkey = $_POST['vkey'];
-   // $subject = ;
-   // $body = 'plz verify below link';
 
     require 'php_mailer/PHPMailerAutoload.php';
     $mail = new PHPMailer;
@@ -161,7 +161,6 @@ if (isset($_POST['login'])) {
 }
 
 //reset password
-
 if(isset($_POST['resetpwd'])){
     
     $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -610,20 +609,20 @@ if(isset($_POST['add_product']))
 }
 
 
-//view  dress detaills and edit or remove dress
+//view  dress detaills 
 if(isset($_GET['view_dress_id']) ){
     $selected_dress_id = mysqli_real_escape_string($db, $_GET['view_dress_id']);
     $_SESSION['selected_dress_id']=$selected_dress_id;
     header('location: view_product.php');
 }
 
-
+//edit dress details
 if(isset($_GET['edit_dress_id']) ){
     $selected_dress_id = mysqli_real_escape_string($db, $_GET['edit_dress_id']);
     $_SESSION['selected_dress_id']=$selected_dress_id;
     header('location: edit_dress.php');
 }
-
+//remove dress
 if(isset($_GET['remove_dress_id']) ){
     $selected_dress_id = mysqli_real_escape_string($db, $_GET['remove_dress_id']);
     $sql= "DELETE FROM dress_showcase WHERE dress_id='$selected_dress_id' ";
@@ -677,10 +676,6 @@ if(isset($_POST['update_dress']) ){
         echo "<script>alert('Sorry! Update Unsuccessful')</script>";
     }
 }
-
-
-
-
 
 
 
@@ -966,7 +961,7 @@ if (isset($_POST['sale-complete'])) {
         // }
     //}
 
-
+//user send email to andum.lk website
     require_once "PHPMailer/PHPMailer.php";
     require_once "PHPMailer/SMTP.php";
     require_once "PHPMailer/Exception.php";

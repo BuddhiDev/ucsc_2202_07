@@ -255,15 +255,22 @@ if (!isset($_SESSION['nic'])) {
                 <input type="number"  name="quant" value="1" class="quentity-input">
               </div>
               <div class="product-s">
-              <select name="" id="" class="option">
-                <option value="">Select Size</option>
-                <option value="">S</option>
-                <option value="">M</option>
-                <option value="">L</option>
-                <option value="">XL</option>
-                <option value="">XXL</option>
-                <option value="">XXXL</option>
-              </select>
+              <?php
+                  $selected_dress_id = $_SESSION['selected_dress_id'];
+                  $nic = $_SESSION['nic'];
+                  $sqls = "SELECT size FROM dress_showcase WHERE dress_id=$selected_dress_id";
+                  $results = mysqli_query($db,$sqls);
+                  $rows = mysqli_fetch_assoc($results);
+                  $mystring = $rows['size'];
+                  $mysizes = (explode(",",$mystring));
+                  if ($mystring) {?>
+                  <select name="" id="" class="option">
+                  <?php  foreach ($mysizes as $my_size){
+                    ?>  
+                      <option value="<?php echo $my_size ?>"><?php echo $my_size ?></option>
+                        
+               <?php } } ?>
+               </select>
               </div> 
             </div>
             <div class="to-box">

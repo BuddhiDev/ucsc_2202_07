@@ -123,9 +123,10 @@ if (!isset($_SESSION['nic'])) {
 
         </table>
     </div>
-    <h3><b>CHEST -</b>Measure around the fullest part, place the tape close under the arms and make sure the tape is flat across the back.</h3><br>
-    <h3><b>WAIST -</b>Measure around natural waistline.</h3><br>
-    <h3><b>HIP   -</b>Measure 20cm down from the natural waistline.</h3>
+    <h3>How to Measure</h3>
+    <p><b>CHEST</b> -Measure around the fullest part, place the tape close under the arms and make sure the tape is flat across the back.</p>
+    <p><b>WAIST</b> - Measure around natural waistline.</p>
+    <p><b>HIP</b> - Measure 20cm down from the natural waistline.</p>
 <?php require("../footer.php")?>
 
 </body>

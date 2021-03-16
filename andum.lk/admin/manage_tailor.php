@@ -1,15 +1,6 @@
 <?php include("../server.php"); ?>
+<?php include("admin_controller.php"); ?>
 
-<?php if(isset($_GET['nic']) ){
-    $selected_tailor_id = mysqli_real_escape_string($db, $_GET['nic']);
-    $_SESSION['selected_tailor_id']=$selected_tailor_id;
-    header('location: tailor_view.php');
-}
-if(isset($_GET['d_nic']) ){
-  $selected_tailor_id = mysqli_real_escape_string($db, $_GET['d_nic']);
-  $_SESSION['selected_tailor_id']=$selected_tailor_id;
-  header('location: banned_tailor.php');
-}?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -178,17 +169,6 @@ if(isset($_GET['d_nic']) ){
   </header>
   <div class="container-box">
     <div class="fd-container-box">
-      <div class="row">
-      <div class="admin-search-container">
-            <form method="post">
-              <div class="form-field-inline">
-                <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-                <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-              </div>
-            </form>
-          </div>
-
-      </div>
     <div style="overflow-x:auto;">
       <table>
         <tr>
@@ -218,14 +198,14 @@ if(isset($_GET['d_nic']) ){
           <td>
             <div>
 
-            <a href="manage_tailor.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_tailor" >View</button></a>
+            <a href="manage_tailor.php?t_nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_tailor" >View</button></a>
 
               <!-- <a href="#"><button class="view-button" >View</button></a> -->
             </div>
           </td>
           <td>
             <div>
-              <a href="manage_tailor.php?d_nic=<?php echo $row["nic"]?>"><button class="view-button">Suspend</button></a>
+              <a href="manage_tailor.php?d_tnic=<?php echo $row["nic"]?>"><button class="view-button">Suspend</button></a>
             </div>
           </td>
 
