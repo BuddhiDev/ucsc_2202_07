@@ -1171,6 +1171,7 @@ a{
   display: block;
 }
 
+
 .box .nav_right ul li .dd_right .fas{
   margin-right: 10px; 
 }
@@ -2276,6 +2277,118 @@ h1 {
     display: flex;
 
 }
+
+/* ---------- Notification Styles Starts ---------- */
+.notifications{
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  background: #FAFAFA;
+  padding: 10px;
+  margin: 10px;
+  display: none;
+}
+
+.notifications:before
+{
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 90%;
+  transform: translateX(-50%);
+  border: 10px solid;
+  border-color: transparent transparent #fafafa transparent;
+}
+
+.box .nav_right ul li.active .notifications{
+  display: block;
+}
+
+/* .notify-navbar {
+  overflow: hidden;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* .notify-navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+} */
+
+/* .notify-dropdown {
+  float: left;
+  overflow: hidden;
+} */
+
+.notify-dropdown  {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: #FAFAFA;
+  background-color: #FAFAFA;
+  font-family: inherit;
+  margin: 0;
+}
+
+.notify-dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  background-color: #FAFAFA;
+  font-family: inherit;
+  margin: 0;
+  padding: 10px;
+}
+
+.notify-navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.notify-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.notify-dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.notify-dropdown-content a:hover {
+  background-color:white;
+}
+
+.notify-show {
+  display: block;
+}
+
+.notify-count
+{
+  background: cornflowerblue;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 8px;
+}
+
+#ncount{
+  position: relative;
+  top: -10px;
+  right: -10px;
+}
+/* ---------- Notification Styles Ends ---------- */
 /* -------- Tailor Styles Ends -------- */
 
 

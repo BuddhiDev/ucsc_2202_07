@@ -510,9 +510,9 @@ if (!isset($_SESSION['nic'])) {
     <input type="hidden" name="notify_url" value="http://sample.com/notify">  
     <!--<br><br>Item Details<br>-->
     <input type="hidden" name="order_id" value=<?php echo $secret_order_key?>>
-    <input type="hidden" name="items" value="Door bell wireless"><br>
+    <input type="hidden" name="items" value=<?php echo "FDO-".$row["id"] ?>><br>
     <input type="hidden" name="currency" value="LKR">
-    <input type="hidden" name="amount" value="1000">  
+    <input type="hidden" name="amount" value=<?php echo $row["price"] ?>>  
     <!-- <br><br>Customer Details<br>-->
     <input type="hidden" name="first_name" value="Saman">
     <input type="hidden" name="last_name" value="Perera"><br>
