@@ -43,9 +43,9 @@ require("../server.php");
 <form method="post" action="my_showcase.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
         <?php
 
-      include("../errors.php");
+       include("../errors.php");
 
-      $selected_dress_id1 = $_SESSION['selected_dress_id'];
+      $selected_dress_id1 = $_SESSION['selected_dress_id1'];
       $nic = $_SESSION['nic'];
     
       $sqle = "SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";

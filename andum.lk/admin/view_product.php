@@ -275,7 +275,7 @@ if (!isset($_SESSION['nic'])) {
             <a href="view_product.php?confirm_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
           </div>
           <div>
-            <a href="view_product.php?reject_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">REJECT</text></a>
+            <a href="view_product.php?review_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">REJECT</text></a>
           </div>
             
         </form>
