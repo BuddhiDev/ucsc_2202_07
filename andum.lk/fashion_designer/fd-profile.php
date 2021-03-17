@@ -177,7 +177,37 @@ if (!isset($_SESSION['nic'])) {
 
 <div class="fd-container-box">
 
-  <div class=fd-profile-row>
+<?php
+    
+    $nic = $_SESSION['nic'];
+    $fname = $_SESSION['fname'];
+    $lname = $_SESSION['lname'];
+    $sql = "SELECT * FROM users u INNER JOIN fashion_designer fd WHERE u.nic=fd.nic AND u.nic= '$nic'";
+    $result = mysqli_query($db, $sql);
+    if ($result) {
+      $row = mysqli_fetch_assoc($result)
+    
+    ?>
+
+<div class="row">
+      <div class="fd-title">
+        <div class="fd-card-img">
+          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%" class="proDisp">
+        </div>
+        <div class="fd-rightside">
+            <div  class="fd-title-box">
+              <form method="post">
+                <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+                  <div class="fd-title-box">
+                    Please explore below Featured images to get Idea about me..!
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>       
+    </div> 
+
+  <!-- <div class=fd-profile-row>
     <div class="profile-pic">
         <div class="pic">
             <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
@@ -188,61 +218,61 @@ if (!isset($_SESSION['nic'])) {
             <label for="">Thashwini</label>
         </div>
     </div>
-  </div>
+  </div> -->
 
-
-<div class=fd-profile-row>
-       <h3 class=tailor-headding>My Designs</h3>
-  </div>
-
-   <div class=fd-profile-row2>
-    <div class="col-4">
+  <center>
+      <!-- <div class=row>    -->
+        <h3 class="fashion-designer-headding">My Featured Images</h3>
+      <!-- </div> -->
+    </center>
+    
+    <div class=fd-profile-row2>
+      <div class="col-4">
         <form method="get" action="index.php" class="dress-showcase">
-        <div class="card-item">
+          <div class="fd-featured-card-item">
+              <div class="card-img">
+              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
+              </div>
+              <div class="card-content">
+              <div class="card-title"></div>
+              <div class="card-description"></div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="fd-featured-card-item">
             <div class="card-img">
-            <a href=""> <img src="/ucsc_2202_07/andum.lk/images/tailors//t6.jpg" alt="Avatar" style="width:100%"></a>
+              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
             </div>
             <div class="card-content">
             <div class="card-title"></div>
             <div class="card-description"></div>
             </div>
-        </div>
+          </div>
         </form>
+      </div>
+      <div class="col-4">
+        <form method="get" action="index.php" class="dress-showcase">
+          <div class="cfd-featured-card-item">
+              <div class="card-img">
+              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image3"]; ?>" alt="Avatar" style="width:100%"></a>
+              </div>
+              <div class="card-content">
+              <div class="card-title"></div>
+              <div class="card-description"></div>
+              </div>
+          </div>
+        </form>
+      </div>
+     
+      
+      <?php } ?>
     </div>
     
+  </div>
 
-    <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-        <div class="card-item">
-            <div class="card-img">
-            <a href=""> <img src="/ucsc_2202_07/andum.lk/images/tailors//t6.jpg" alt="Avatar" style="width:100%"></a>
-            </div>
-            <div class="card-content">
-            <div class="card-title"></div>
-            <div class="card-description"></div>
-            </div>
-        </div>
-        </form>
-    </div>
-    <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-        <div class="card-item">
-            <div class="card-img">
-            <a href=""> <img src="/ucsc_2202_07/andum.lk/images/tailors//t6.jpg" alt="Avatar" style="width:100%"></a>
-            </div>
-            <div class="card-content">
-            <div class="card-title"></div>
-            <div class="card-description"></div>
-            </div>
-        </div>
-        </form>
-    </div>
-        
-        
-    
-    </div>
-
-</div>
 
   <?php require("../footer.php")?>
 
