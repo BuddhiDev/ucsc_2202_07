@@ -1021,7 +1021,7 @@ if (isset($_POST['sale-complete'])) {
         $mail->Port = "587";
 
         $mail->Username = 'andumdotlk@gmail.com';
-        $mail->Password = 'Andumdotlk@4BVNT';
+        $mail->Password = 'Admin@bvnt';
 
         $mail->isHTML(true);
 
