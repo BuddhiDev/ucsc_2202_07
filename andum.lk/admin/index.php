@@ -232,10 +232,10 @@
         </li>
 
         <li class="sidebar-item">
-          <a class="sidebar-link" href="review_users.php">
+          <a class="sidebar-link" href="admin_payments.php">
           <div class="sidebar-icon">
-            <i class="fas fa-tshirt"></i>
-            <span class="sidebar-text">Review Users</span>
+            <i class="fas fa-money"></i>
+            <span class="sidebar-text">Payments</span>
           </div>
           </a>
         </li>
