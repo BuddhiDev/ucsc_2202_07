@@ -35,7 +35,7 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO users(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
+        $sql = "INSERT INTO users(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey,verified) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey','0')";
         mysqli_query($db, $sql);
         
 
@@ -101,20 +101,17 @@ if(isset($_POST['verify_mail'])){
 
         $mail->isSMTP(true);
         $mail->Subject='Thank you for registring';
-        $mail->Body="<a href= 'http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'>Register Account</a>";
-        
-       // if($mail->Send()){
-            //header('location: thankyou.php');
-      //  }
+        $mail->Body="<a href='http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'></a>";
+
         if($mail->Send()){
-            echo "<script>alert('Email Sent.')</script>";
             header('location: check_mail.php');
         }
         else{
-            echo "<script>alert('### Email Not Sent!')</script>";
+            echo "<script>alert(' Email Not Sent!')</script>";
         }
-    
+
 }
+
 
 //login
 if (isset($_POST['login'])) {
