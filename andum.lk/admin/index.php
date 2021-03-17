@@ -169,9 +169,36 @@
   </script>
 
   <div class="fd-container-box">
+<?php
+
+//get total orders sql
+$sqlu = "SELECT COUNT(nic) FROM users";
+$resultu = mysqli_query($db, $sqlu);
+$rowu = mysqli_fetch_array($resultu);
+$total_users = $rowu[0];
+
+$sqlt = "SELECT COUNT(nic) FROM users WHERE type='0'";
+$resultt = mysqli_query($db, $sqlt);
+$rowt = mysqli_fetch_array($resultt);
+$total_tailors = $rowt[0];
+
+$sql = "SELECT COUNT(nic) FROM users WHERE type='1'";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$total_customers = $row[0];
+
+$sql = "SELECT COUNT(nic) FROM users WHERE type='2'";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$total_fdesigners = $row[0];
+
+$sql = "SELECT COUNT(nic) FROM banned_users";
+$result = mysqli_query($db, $sql);
+$row = mysqli_fetch_array($result);
+$total_banned_users = $row[0];
 
   
-
+?>
     <div class="side-bar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-item">
@@ -256,16 +283,30 @@
       <div class=row>
         <div class=col-3>
           <div class="fd-block-3">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $total_users ?></h3>
             <Br>
             <h3>Total Users</h3>
           </div>
         </div>
         <div class=col-3>
           <div class="fd-block-2">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $total_tailors ?></h3>
             <Br>
-            <h3>Feedback Messages</h3>
+            <h3>Tailors</h3>
+          </div>
+        </div>
+        <div class=col-3>
+          <div class="fd-block-2">
+          <h3 class="fd-block-font-size"><?php echo $total_customers ?></h3>
+            <Br>
+            <h3>Customers</h3>
+          </div>
+        </div>
+        <div class=col-3>
+          <div class="fd-block-2">
+          <h3 class="fd-block-font-size"><?php echo $total_fdesigners ?></h3>
+            <Br>
+            <h3>Fashion designers</h3>
           </div>
         </div>
         <div class=col-3>
@@ -277,7 +318,7 @@
         </div>
         <div class=col-3>
           <div class="fd-block-4">
-          <h3 class="fd-block-font-size">24</h3>
+          <h3 class="fd-block-font-size"><?php echo $total_banned_users ?></h3>
             <Br>
             <h3>Deleted Users</h3>
           </div>
