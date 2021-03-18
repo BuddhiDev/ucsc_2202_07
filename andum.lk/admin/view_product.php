@@ -238,17 +238,38 @@ if (!isset($_SESSION['nic'])) {
       <div class="col-6">
         <div class="product-detail-box">
         <form method="post" action="review_dress.php">
-            <p style="color: black; font-size: 30px; margin-top:10px"><?php echo $row["title"]?></p>
+            <p style="color: black; font-size: 30px; margin-top:10px"><?php echo $row["title"] ;?></p>
             
-            <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"] ?>.00</h4>
+            <h4 style="color: black; margin-top:10px">LKR <?php echo $row["price"]; ?>.00</h4>
             
-            <!-- <h4 style="color: black; margin-top:10px">Available in stock: <?php if($item_added=="true"){echo $row["amount"]-1;}else{echo $row["amount"];} ?></h4> -->
-            
+            <h4 style="color: black; margin-top:10px">Available in stock: <?php echo $row["amount"]; ?></h4>
             <div>
               <div>
-                <p style="color: black; font-size: 15px; margin-top:10px"><br><b>Color</b></p>
+                <p style="color: black; font-size: 20px; margin-top:5px"><br><b>Sizes :</b></p>
               </div>
+              <div>
+                <?php
+                  $selected_dress_id = $_SESSION['selected_dress_id'];
+                  $nic = $_SESSION['nic'];
+                  $sqls = "SELECT size FROM review_dress WHERE dress_id='$selected_dress_id'";
+                  $results = mysqli_query($db,$sqls);
+                  $rows = mysqli_fetch_assoc($results);
+                  $mystring = $rows['size'];
+                  $mysizes = (explode(",",$mystring));
+                  if ($mystring) {
+                    foreach ($mysizes as $my_size){
+                      echo $my_size;
+                      echo "<br>";
+                    }
+                  }
+                ?>              
+              </div>
+            </div>
 
+            <div>
+              <div>
+                <p style="color: black; font-size: 20px; margin-top:8px"><br><b>Color :</b></p>
+              </div>
               <div>
                 <?php
                   $selected_dress_id = $_SESSION['selected_dress_id'];
@@ -264,11 +285,8 @@ if (!isset($_SESSION['nic'])) {
                       echo "<br>";
                     }
                   }
-                  ?>              
-              </div>
-
-              
-                      
+                ?>              
+              </div>         
             </div>
 
           <div>

@@ -58,18 +58,17 @@ if(isset($_GET['confirm_dress_id'])){
  
     if ($resultp) {
  
-         echo "<script>alert('CONFIRMATION SUCCESSFULY')</script>";
-         header('location: review_dress.php');
+        header('location: review_dress.php');
     } 
     else {
-     array_push($errors, " failed, try again later");
-     echo "<script>alert('Sorry! CONFIRMATION UNSUCCESSFULY')</script>";
+        array_push($errors, " failed, try again later");
+        echo "<script>alert('Sorry! CONFIRMATION UNSUCCESSFULY')</script>";
     }
 
 }
+
 if(isset($_GET['reject_dress_id'])){
-    
-    
+     
     $reject_dress_id = mysqli_real_escape_string($db, $_GET['reject_dress_id']);
     $sqlr = "INSERT INTO rejected_dress(dress_id, category, title, price, size, color, amount, image, t_nic) SELECT*FROM review_dress WHERE dress_id='$reject_dress_id' ";
     $resultr=mysqli_query($db, $sqlr);
@@ -77,8 +76,7 @@ if(isset($_GET['reject_dress_id'])){
     $resultr=mysqli_query($db, $sqlr);
 
    if ($resultr) {
-
-        
+   
         header('location: review_dress.php');
    } 
    else {
