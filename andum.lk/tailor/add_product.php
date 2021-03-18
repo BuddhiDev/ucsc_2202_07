@@ -36,7 +36,7 @@ require("../server.php");
 <div class="sliderbox-wrap">
 
 <center><img src="icon.png" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
-  <form method="post" action="pending_dresses.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
+  <form method="post" action="#" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
       <h2>Add Product</h2>
 
       <div class="row">

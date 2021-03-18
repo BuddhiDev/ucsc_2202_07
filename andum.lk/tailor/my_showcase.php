@@ -112,15 +112,11 @@ if (!isset($_SESSION['nic'])) {
           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            <a href="my_showcase.php?view_dress_id=<?php echo $row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
             </div>
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-              <div>
-                <a href="my_showcase.php?edit_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">EDIT</button></a>
-                <a href="my_showcase.php?rem_dress_nic=<?php echo $row["dress_id"]?>"><button class="loginbutton btn-full-w">REMOVE</button></a>
-              </div>
             </div>
           </div>
         </form>
@@ -146,7 +142,7 @@ if (!isset($_SESSION['nic'])) {
           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            <a href="my_showcase.php?view_dress_id=<?php echo $row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
             </div>
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>

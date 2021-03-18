@@ -194,7 +194,7 @@ if (!isset($_SESSION['nic'])) {
               <div class="dd_right">
                 <ul>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="review_dress.php"><i class="fas fa-users"></i>My Dress showcase</a></li>
+                  <li><a href="my_showcase.php"><i class="fas fa-users"></i>My Dress showcase</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -217,9 +217,9 @@ if (!isset($_SESSION['nic'])) {
     include("../errors.php");?>
 
   <?php
-  $selected_dress_id = $_SESSION['selected_dress_id'];
+  $selected_rdress_id = $_SESSION['selected_rdress_id'];
   $nic = $_SESSION['nic'];
-  $sql = "SELECT * FROM dress_showcase WHERE dress_id='$selected_dress_id' ";
+  $sql = "SELECT * FROM rejected_dress WHERE dress_id='$selected_rdress_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result)
@@ -245,9 +245,9 @@ if (!isset($_SESSION['nic'])) {
               </div>
               <div>
                 <?php
-                  $selected_dress_id = $_SESSION['selected_dress_id'];
+                  $selected_rdress_id = $_SESSION['selected_rdress_id'];
                   $nic = $_SESSION['nic'];
-                  $sqls = "SELECT size FROM dress_showcase WHERE dress_id='$selected_dress_id'";
+                  $sqls = "SELECT size FROM rejected_dress WHERE dress_id='$selected_rdress_id'";
                   $results = mysqli_query($db,$sqls);
                   $rows = mysqli_fetch_assoc($results);
                   $mystring = $rows['size'];
@@ -269,9 +269,9 @@ if (!isset($_SESSION['nic'])) {
 
               <div>
                 <?php
-                  $selected_dress_id = $_SESSION['selected_dress_id'];
+                  $selected_rdress_id = $_SESSION['selected_rdress_id'];
                   $nic = $_SESSION['nic'];
-                  $sqlc = "SELECT color FROM dress_showcase WHERE dress_id='$selected_dress_id'";
+                  $sqlc = "SELECT color FROM rejected_dress WHERE dress_id='$selected_rdress_id'";
                   $resultc = mysqli_query($db,$sqlc);
                   $rowc = mysqli_fetch_assoc($resultc);
                   $mystring = $rowc['color'];
@@ -287,10 +287,10 @@ if (!isset($_SESSION['nic'])) {
             </div>
 
           <div>
-            <a href="view_product.php?edit_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">Edit</text></a>
+            <a href="view_product.php?edit_reject_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">Edit</text></a>
           </div>
           <div>
-            <a onclick="return confirm('Sure?');" href="view_product.php?remove_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">Remove</text></a>
+            <a onclick="return confirm('Sure?');" href="view_product.php?remove_reject_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">Remove</text></a>
           </div>
           
         </form>

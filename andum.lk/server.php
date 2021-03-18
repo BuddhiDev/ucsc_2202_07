@@ -611,7 +611,7 @@ if(isset($_POST['add_product']))
     }
     else
     {
-        echo "<script>alert('Image Does Not Uploaded')</script>";
+        echo "<script>alert('Your dress does not Uploaded')</script>";
     }
   }
 }
@@ -650,14 +650,14 @@ if(isset($_GET['remove_dress_id']) ){
 if(isset($_GET['view_reject_dress_id']) ){
     $selected_rdress_id = mysqli_real_escape_string($db, $_GET['view_reject_dress_id']);
     $_SESSION['selected_rdress_id']=$selected_rdress_id;
-    header('location: view_rejectproduct.php');
+    header('location: view_reject_product.php');
 }
 
 //edit rejected dress details
 if(isset($_GET['edit_reject_dress_id']) ){
     $selected_rdress_id = mysqli_real_escape_string($db, $_GET['edit_reject_dress_id']);
     $_SESSION['selected_rdress_id']=$selected_rdress_id;
-    header('location: edit_rejectdress.php');
+    header('location: edit_reject_dress.php');
 }
 //remove rejected dress
 if(isset($_GET['remove_reject_dress_id']) ){
@@ -726,6 +726,57 @@ if(isset($_POST['update_dress']) ){
     }
 }
 }
+
+if(isset($_POST['update_reject_dress']) ){
+
+    $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
+    $selected_dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
+    $category = mysqli_real_escape_string($db, $_POST['Unit']);
+    $dressname = mysqli_real_escape_string($db, $_POST['dname']);
+    $price = mysqli_real_escape_string($db, $_POST['price']);
+  
+    $size1 = $_POST['size'];
+    $schk="";
+    foreach($size1 as $schk1)
+       {
+          $schk.= $schk1.",";
+       }
+  
+    $colors1 = $_POST['color'];
+    $clchk="";
+    foreach($colors1 as $clchk1)
+       {
+          $clchk.= $clchk1.",";
+       }
+    $amount = mysqli_real_escape_string($db, $_POST['amount']);
+    $filename = $_FILES["myimage"]["name"];
+    $tempname = $_FILES["myimage"]["tmp_name"];
+    $folder = "products/".$filename;
+  
+    if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
+    {
+      $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
+      $result=mysqli_query($db, $sql);
+      
+      if($filename=""){
+          $sql = "UPDATE rejected_dress SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
+          $result=mysqli_query($db, $sql);
+      }
+      $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM rejected_dress WHERE dress_id='$selected_dress_id' ";
+      $result = mysqli_query($db,$sql);
+      $sql = "DELETE FROM rejected_dress WHERE dress_id='$selected_dress_id'";
+      $result = mysqli_query($db,$sql);
+      if($result)
+      {
+          header('location: pending_dresses.php');
+      }
+      else{
+          echo "<script>alert('Sorry! Update Unsuccessful')</script>";
+      }
+  }
+  }
+  
+  
 
 
 

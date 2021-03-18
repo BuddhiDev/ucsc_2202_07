@@ -63,7 +63,7 @@ if (!isset($_SESSION['nic'])) {
       </div>
 
       <div class="row">
-        <h2 class="tailor-heading"><b>Pending Dresses</b></h2>
+        <h2 class="tailor-heading"><b>Rejected Dresses</b></h2>
         <h3><p style="border:3px; border-style:solid; border-color:#cc12cc; padding: 1em;"> Dresses in this section is subject to administrator confirmation. After reviewing your dress details we will add your dress to Andum.lk. 
               <br>It will take 2 or 3 hours.</p></h3> 
       </div>
@@ -76,7 +76,7 @@ if (!isset($_SESSION['nic'])) {
         if ($search != true) {
 
         // Read all dressess
-        $sql = "SELECT * FROM review_dress WHERE t_nic='$nic'";
+        $sql = "SELECT * FROM rejected_dress WHERE t_nic='$nic'";
         $result = mysqli_query($db, $sql);
 
         if ($result) {
@@ -91,7 +91,7 @@ if (!isset($_SESSION['nic'])) {
 
           <div class="card-item">
             <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            <a href="rejected_dress.php?view_reject_dress_id=<?php echo $row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
             </div>
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
@@ -111,7 +111,7 @@ if (!isset($_SESSION['nic'])) {
           if (!$category_filter) {
 
             //Read using search keyword
-            $sql = "SELECT * FROM review_dress WHERE t_nic='$nic' && title LIKE '%$keyword%'";
+            $sql = "SELECT * FROM rejected_dress WHERE t_nic='$nic' && title LIKE '%$keyword%'";
             $result = mysqli_query($db, $sql);
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) {
@@ -141,7 +141,7 @@ if (!isset($_SESSION['nic'])) {
           } else {
             
             //Read using selected category
-            $sql = "SELECT * FROM review_dress WHERE t_nic='$nic' && category LIKE '%$selected_dress_category%'";
+            $sql = "SELECT * FROM rejected_dress WHERE t_nic='$nic' && category LIKE '%$selected_dress_category%'";
             $result = mysqli_query($db, $sql);
             if ($result) {
               while ($row = mysqli_fetch_assoc($result)) { 
@@ -154,7 +154,7 @@ if (!isset($_SESSION['nic'])) {
           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
           <div class="card-item">
             <div class="card-img">
-              <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%">
+            <a href="rejected_dress.php?view_reject_dress_id=<?php echo $row["dress_id"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
             </div>
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
