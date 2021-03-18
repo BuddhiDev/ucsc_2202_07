@@ -51,7 +51,7 @@ if(isset($_GET['confirm_dress_id'])){
     
     
      $confirm_dress_id = mysqli_real_escape_string($db, $_GET['confirm_dress_id']);
-     $sqlp = "INSERT INTO dress_showcase(dress_id, category, title, price, size, color, amount, image, t_nic) SELECT*FROM review_dress WHERE dress_id='$confirm_dress_id' ";
+     $sqlp = "INSERT INTO dress_showcase(dress_id,category, title, price, size, color, amount, image, t_nic) SELECT*FROM review_dress WHERE dress_id='$confirm_dress_id' ";
      $resultp=mysqli_query($db, $sqlp);
      $sqlp = "DELETE FROM review_dress WHERE dress_id='$confirm_dress_id' ";
      $resultp=mysqli_query($db, $sqlp);

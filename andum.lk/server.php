@@ -603,7 +603,8 @@ if(isset($_POST['add_product']))
 
     if (move_uploaded_file($tempname, $folder))
     {
-        echo "<script>alert('Image Has Been Uploaded')</script>";
+        header('location: pending_dresses.php');
+
     }
     else
     {
@@ -676,7 +677,7 @@ if(isset($_GET['remove_reject_dress_id']) ){
 //Save Updated  dress detaills
 if(isset($_POST['update_dress']) ){
 
-  $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
+  $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
   $selected_dress_id1 = mysqli_real_escape_string($db, $_POST['dress_id']);
   $category = mysqli_real_escape_string($db, $_POST['Unit']);
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
@@ -696,18 +697,31 @@ if(isset($_POST['update_dress']) ){
         $clchk.= $clchk1.",";
      }
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
+  $filename = $_FILES["myimage"]["name"];
+  $tempname = $_FILES["myimage"]["tmp_name"];
+  $folder = "products/".$filename;
 
-
-    $sqle = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
-    $resulte=mysqli_query($db, $sqle);
-
-    if($resulte)
+  if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
+  {
+    $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
+    $result=mysqli_query($db, $sql);
+    
+    if($filename=""){
+        $sql = "UPDATE dress_showcase SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
+        $result=mysqli_query($db, $sql);
+    }
+    $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
+    $result = mysqli_query($db,$sql);
+    $sql = "DELETE FROM dress_showcase WHERE dress_id='$selected_dress_id1'";
+    $result = mysqli_query($db,$sql);
+    if($result)
     {
-        echo "<script>alert('Dress has been updated successfuly')</script>";
+        header('location: pending_dresses.php');
     }
     else{
         echo "<script>alert('Sorry! Update Unsuccessful')</script>";
     }
+}
 }
 
 
