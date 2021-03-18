@@ -325,38 +325,9 @@ $total_banned_users = $row[0];
         </div>
       </div>
       <div calss="row">
-   <!-- <table class="fd-table">
-    <tr class="fd-tr">
-      <th class="fd-th">Order Id</th>
-      <th class="fd-th">Date</th>
-      <th class="fd-th">Customer</th>
-      <th class="fd-th">Payment</th>
-    </tr>
-    <tr >
-      <td class="fd-th">Jill</td>
-      <td class="fd-th">Smith</td>
-      <td class="fd-th">50</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Eve</td>
-      <td class="fd-th">Jackson</td>
-      <td class="fd-th">94</td>
-    </tr>
-    <tr class="fd-th">
-      <td class="fd-th">Adam</td>
-      <td class="fd-th">Johnson</td>
-      <td class="fd-th">67</td>
-    </tr>
-  </table>-->
-
     </div>
     </div>
 
-    
-
-  
-
-    <!-- </div> -->
     
   </div>
 
