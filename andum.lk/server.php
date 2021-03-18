@@ -41,23 +41,23 @@ if (isset($_POST['register'])) {
 
         
         header('location: verify_user.php');
-        // insert user if tailor
-        // if ($utype == 0) {
-        //     $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
-        //     mysqli_query($db, $sql1);
-        // }
+        //insert user if tailor
+        if ($utype == 0) {
+            $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
+            mysqli_query($db, $sql1);
+        }
 
-        // insert user if customer
-        // else if ($utype == 1) {
-        //     $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
-        //     mysqli_query($db, $sql1);
-        // }
+       // insert user if customer
+        else if ($utype == 1) {
+            $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
+            mysqli_query($db, $sql1);
+        }
 
-        // insert user if fashion designer
-        // else if ($utype == 2) {
-        //     $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
-        //     mysqli_query($db, $sql1);
-        // }
+       // insert user if fashion designer
+        else if ($utype == 2) {
+            $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
+            mysqli_query($db, $sql1);
+        }
 
         //save session cache
         // $_SESSION['nic'] = $nic;
@@ -121,8 +121,10 @@ if (isset($_POST['login'])) {
 
     if (count($errors) == 0) {
         $password = md5($password1);
-        $sql = "SELECT * FROM users WHERE nic='$nic' AND password='$password'";
+        $sql = "SELECT * FROM users WHERE nic='$nic' AND password='$password' AND verified = 1";
         $result = mysqli_query($db, $sql);
+
+
 
         if (mysqli_num_rows($result) == 1) {
             $_SESSION['nic'] = $nic;
@@ -151,7 +153,12 @@ if (isset($_POST['login'])) {
             }
         }
          else {
-            array_push($errors, "Wrong username/ password combination");
+             if($_SESSION['nic'] = $nic && $_SESSION['password'] = $password){
+                array_push($errors, "Still not verified");
+             }
+             else{
+            array_push($errors, "Wrong username/ password combination/Still not verified");
+             }
             //header('location: login.php');
         }
     }
