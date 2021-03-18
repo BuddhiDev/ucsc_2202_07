@@ -62,13 +62,6 @@ require("../server.php");
                 <input type="file" name="dresspic" value="" onchange="displayImage(this)" id="dresspic" class="fd-profile-pic-control">
               </div>
             </div>
-            <div class="profile-pic">
-              <div class="pic">
-                <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
-              </div>        
-              <label for="profile_pictures"></label>
-              <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
-            </div>
 
           <div class="row">
           <div class="col-25"><br>
