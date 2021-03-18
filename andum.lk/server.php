@@ -151,6 +151,9 @@ if (isset($_POST['login'])) {
             else if ($_SESSION['utype'] == 2) {
                 header('location: fashion_designer/index.php');
             }
+            else if ($_SESSION['utype'] == 3) {
+                header('location: admin/index.php');
+            }
         }
          else {
              if($_SESSION['nic'] = $nic && $_SESSION['password'] = $password){
