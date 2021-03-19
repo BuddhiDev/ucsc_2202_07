@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) {
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
 </head>
 
-<body>
+
 <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
@@ -151,6 +151,26 @@ if (!isset($_SESSION['username'])) {
       </div>
     </nav>
   </header>
+
+  <body>
+
+  <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("notify-myDropdown").classList.toggle("notify-show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.notify-dropbtn')) {
+  var myDropdown = document.getElementById("notify-myDropdown");
+    if (myDropdown.classList.contains('notify-show')) {
+      myDropdown.classList.remove('notify-show');
+    }
+  }
+}
+</script>
 
   <div class="add-new-position">
   <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>

@@ -127,14 +127,27 @@
             <li><i class="fas fa-envelope"></i></li>
             <li><i class="fas fa-shopping-cart"></i></a></li>
             <li>
+            <?php
+              $sql_get = mysqli_query($db , "SELECT * FROM t_orders WHERE nstatus = 0");
+              $count = mysqli_num_rows($sql_get);
+            ?>
             <div class="notify-navbar">
               <div class="notify-dropdown">
-                <button class="notify-dropbtn" onclick="myFunction()">Notifications<span class="notify-count" id="ncount">5</span>
+                <button class="notify-dropbtn" onclick="myFunction()">Notifications<span class="notify-count" id="ncount"><?php echo $count; ?></span>
                 </button>
                 <div class="notify-dropdown-content" id="notify-myDropdown">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                  <?php
+                  $sql_get1 = mysqli_query($db , "SELECT * FROM t_orders WHERE nstatus = 0");
+                  if(mysqli_num_rows($sql_get1 )>0)
+                  {
+                    while($result = mysqli_fetch_assoc($sql_get1))
+                    {
+                      echo '<a href="read_msg.php?id='.$result['id'].'">'.$result['other'].'</a>';
+                      echo '<div class="notification-line"></div>';
+                    }
+                  }
+
+                  ?> 
                 </div>
               </div> 
             </div>

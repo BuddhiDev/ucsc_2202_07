@@ -301,11 +301,11 @@ if (isset($_POST['hireT'])) {
     $date = date('y-m-d h:i:s');
 
     //echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date')";
    $result = mysqli_query($db, $sql);
-   $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
-   $resultn = mysqli_query($db, $sqln);
+//    $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
+//    $resultn = mysqli_query($db, $sqln);
    
     if ($result) {
         header('location: hired_list.php');
@@ -368,13 +368,25 @@ if(isset($_GET['f_id']) ){
 
 //select a customer order from tailor
 if(isset($_GET['order_id_select']) ){
+    $main_id = $_GET['order_id_selectt'];
+    $sql_update = mysqli_query($db,"UPDATE t_orders SET nstatus=1 WHERE id='$main_id'");
     $selected_o_id = mysqli_real_escape_string($db, $_GET['order_id_select']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: order.php');
+}
+
+//select notification
+if(isset($_GET['id']) ){
+    $main_id = $_GET['id'];
+    $sql_update = mysqli_query($db,"UPDATE t_orders SET nstatus=1 WHERE id='$main_id'");
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['id']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
 }
 
 //select a sale from tailor
 if(isset($_GET['sale_id']) ){
+     
     $selected_s_id = mysqli_real_escape_string($db, $_GET['sale_id']);
     $_SESSION['selected_s_id']=$selected_s_id;
     header('location: sale.php');
