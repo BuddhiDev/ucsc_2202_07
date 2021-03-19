@@ -186,6 +186,24 @@ if (!isset($_SESSION['nic'])) {
         this.classList.toggle("active");
       })
   </script>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("notify-myDropdown").classList.toggle("notify-show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.notify-dropbtn')) {
+  var myDropdown = document.getElementById("notify-myDropdown");
+    if (myDropdown.classList.contains('notify-show')) {
+      myDropdown.classList.remove('notify-show');
+    }
+  }
+}
+</script>
   
   <div class="container-box">
     <?php

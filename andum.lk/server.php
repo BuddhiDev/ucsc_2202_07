@@ -170,7 +170,6 @@ if(isset($_POST['resetpwd'])){
     {
         $row = mysqli_fetch_array($run);
         $db_email = $row['email'];
-        echo $row['email'];
         $db_nic = $row['nic'];
         $token = uniqid(md5(time())); //Random Token
         $sql = "INSERT INTO password_reset (id,email,token) VALUES (NULL,'$email','$token')";
@@ -189,7 +188,7 @@ if(isset($_POST['resetpwd'])){
             $mail->SMTPSecure = "tls";
             $mail->Port = "587";
             $mail->Username = 'andumdotlk@gmail.com';
-            $mail->Password = 'Andumdotlk@4BVNT';
+            $mail->Password = 'Admin@bvnt';
             $mail->isHTML(true);
             $mail->Subject = "$subject";
 
@@ -292,12 +291,15 @@ if (isset($_POST['hireT'])) {
     $hips = mysqli_real_escape_string($db, $_POST['hip']);
     $other = mysqli_real_escape_string($db, $_POST['other']);
     $dress_id = mysqli_real_escape_string($db, $_POST['selected_dress_id']);
-    $date = date('m');
+    $date = date('y-m-d h:i:s');
 
     //echo $t_nic,$t_fname,$chest;
     $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id)
     VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id')";
-    $result = mysqli_query($db, $sql);
+   $result = mysqli_query($db, $sql);
+   $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
+   $resultn = mysqli_query($db, $sqln);
+   
     if ($result) {
         header('location: hired_list.php');
     } else {
@@ -992,7 +994,7 @@ if (isset($_POST['sale-complete'])) {
         $mail->Port = "587";
 
         $mail->Username = 'andumdotlk@gmail.com';
-        $mail->Password = 'Andumdotlk@4BVNT';
+        $mail->Password = 'Admin@bvnt';
 
         $mail->isHTML(true);
 

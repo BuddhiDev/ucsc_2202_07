@@ -135,7 +135,7 @@ require("server.php");
     <div class="login-container">
       <div class="form-field-inline">
         <label for="email" class="field-label-inline">Email</label>
-        <input type="email" class="field-value-inline" name="email" required>
+        <input type="text" class="field-value-inline" name="email" required>
       </div>
       <div class="btn-panel-center">
         <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
