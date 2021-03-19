@@ -83,8 +83,6 @@ if (!isset($_SESSION['nic'])) {
       </div>
     <div class="row">
       <?php
-        $nic = $_SESSION['nic'];
-
         // Check condition if this is search request or not
         if ($search != true) {
 
