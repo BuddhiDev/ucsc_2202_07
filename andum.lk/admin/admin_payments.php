@@ -325,48 +325,92 @@
       })
   </script>
   
- 
-
-   
-
-     
 
 <br/>
 <br/> 
     </form>
   </div>
 
-<center><p> Tailor orders </p></center>
+
+
+
+
+<center><p> Readymade dresses orders </p></center>
 
 <div class="container-box">
     <table>
       <tr>
-        <th>Tailor Name</th>
-        <th>Full paid amount</th>
+        <th>Customer NIC</th>
+        <th>Tailor NIC</th>
+        <th>Dress_id</th>
+        <th>quantity</th>
+        <th>Full payment</th>
         <th>Invoice</th>
-        <th>Net Money</th>
+        <th>Date</th>
         <th>Status</th>
-        
-        <th><center>Action</center></th>
+        <!--<th><center>Action</center></th>-->
 
       </tr>
-     
-        
+      <tr>
+      <?php
+          $sql = "SELECT sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
+          $result = mysqli_query($db, $sql); 
+          if ($result) {
+              while ($row = mysqli_fetch_assoc($result)) {
+                     
+      ?>
+      <td><?php echo $row["c_nic"] ?></td>
+      <td><?php echo $row["t_nic"] ?></td>
+      <td><?php echo $row["dress_id"] ?></td>
+      <td><?php echo $row["quantity"] ?></td>
+      <td><?php echo $row["total_price"] ?></td>
+      <td><?php echo($row["total_price"]*0.05)?></td>
+      <td><?php echo $row["date"] ?></td>
+      <td><?php echo $row["status"] ?></td>
+      </tr>
+
+      <?php } } ?>
     </table>
   </div>
 
 
-  <center><p> <b>Customer Orders </b></p></center>
+  <center><p> <b>Customize Orders </b></p></center>
 
   <div class="container-box">
     <table>
       <tr>
-        <th>Customer Name</th>
-        <th>Full paid amount</th>
+        <th>Customer NIC</th>
+        <th>Tailor NIC</th>
+        <th>Full Name</th>
+        <th>Dress_id</th>
+        <th>Account No</th>
+        <th>bank</th>
+        <th>Full payment</th>
         <th>Invoice</th>
-        <th>Net Money</th>
+        <th>Date</th>
         <th>Status</th>
       </tr>
+      <tr>
+      <?php
+          $sqlc = "SELECT o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic ";
+          $resultc = mysqli_query($db, $sqlc); 
+          if ($resultc) {
+              while ($row = mysqli_fetch_assoc($resultc)) {
+                     
+      ?>
+      <td><?php echo $row["c_nic"] ?></td>
+      <td><?php echo $row["t_nic"] ?></td>
+      <td><?php echo $row["t_fname"]. " " .$row["t_lname"]?></td>
+      <td><?php echo $row["dress_id"] ?></td>
+      <td><?php echo $row["ac_no"] ?></td>
+      <td><?php echo $row["bank"] ?></td>
+      <td><?php echo $row["price"] ?></td>
+      <td><?php echo($row["price"]*0.05)?></td>
+      <td><?php echo $row["date"] ?></td>
+      <td><?php echo $row["status"] ?></td>
+      </tr>
+
+      <?php } } ?>
       
     </table>
   </div>
