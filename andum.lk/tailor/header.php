@@ -126,6 +126,19 @@
             </li>
             <li><i class="fas fa-envelope"></i></li>
             <li><i class="fas fa-shopping-cart"></i></a></li>
+            <li>
+            <div class="notify-navbar">
+              <div class="notify-dropdown">
+                <button class="notify-dropbtn" onclick="myFunction()">Notifications<span class="notify-count" id="ncount">5</span>
+                </button>
+                <div class="notify-dropdown-content" id="notify-myDropdown">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div> 
+            </div>
+            </li>
           </ul>
         </div>
       </div>
