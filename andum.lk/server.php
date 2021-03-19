@@ -521,6 +521,10 @@ if (isset($_POST['update_user'])) {
     $contactno = mysqli_real_escape_string($db, $_POST['contactno']);
     $address = mysqli_real_escape_string($db, $_POST['address']);
     $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
+    $ac_no = mysqli_real_escape_string($db, $_POST['ac_no']);
+    $bank = mysqli_real_escape_string($db, $_POST['bank']);
+
+
 
     $filename = $_FILES["profilepic"]["name"];
     $tempname = $_FILES["profilepic"]["tmp_name"];
@@ -533,6 +537,11 @@ if (isset($_POST['update_user'])) {
     $password = md5($password1);
     $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' , image = '$filename' WHERE nic='$nic'";
     $result=mysqli_query($db, $sql);
+
+    $sql1 = "INSERT INTO tailors (ac_no,bank,nic) VALUES('$ac_no','$bank','$nic')";
+    $result1 = mysqli_query($db, $sql1);
+
+
 
     if (move_uploaded_file($tempname, $folder))
     {

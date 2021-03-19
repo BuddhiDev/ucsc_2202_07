@@ -114,6 +114,18 @@ require("../server.php");
             <label for="postalcode" class="field-label-inline"><b>Postal Code</b></label>
             <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
           </div>
+
+          <div class="form-field-inline">
+            <label for="ac_no" class="field-label-inline"><b>Account Number</b></label>
+            <input type="text"  class="field-value-inline" name="ac_no">
+          </div>
+
+          <div class="form-field-inline">
+            <label for="bank" class="field-label-inline"><b>Bank</b></label>
+            <input type="text"  class="field-value-inline" name="bank">
+          </div>
+
+
           <div class="row">
       <!-- <div class="col-75">
         <input type="file" id="myimage" name="myimage" value=""> <br/>
