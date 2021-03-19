@@ -264,13 +264,15 @@ if (!isset($_SESSION['nic'])) {
                   $mystring = $rows['size'];
                   $mysizes = (explode(",",$mystring));
                   if ($mystring) {?>
-                  <select name="" id="" class="option">
-                  <?php  foreach ($mysizes as $my_size){
-                    ?>  
-                      <option value="<?php echo $my_size ?>"><?php echo $my_size ?></option>
-                        
-               <?php } } ?>
-               </select>
+                    <select name="size" id="size" class="option">
+                    <?php  foreach ($mysizes as $my_size){
+                      ?>  
+                        <option value="<?php echo $my_size ?>"><?php echo $my_size ?></option>
+                          
+                    <?php } ?>
+                    </select>
+                  <?php } ?>
+               
               </div> 
             </div>
             <div class="to-box">

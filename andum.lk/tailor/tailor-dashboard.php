@@ -123,6 +123,14 @@ $delivered_orders = $row[0];
             </div>
           </a>
         </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="rejected_dress.php">
+          <div class="sidebar-icon">
+           <i class="fas fa-exclamation-triangle"></i>
+            <span class="sidebar-text">Rejected Dresses</span>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
     

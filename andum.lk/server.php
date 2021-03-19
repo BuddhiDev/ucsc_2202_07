@@ -35,29 +35,29 @@ if (isset($_POST['register'])) {
     if (count($errors) == 0) {
         $password = md5($password1);
         // inser to user table
-        $sql = "INSERT INTO users(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey')";
+        $sql = "INSERT INTO users(nic, fname, email, lname, contactno, password, type, address, postalcode,vkey,verified) VALUES ('$nic','$fname','$email','$lname','$contactno','$password','$utype','$addres','$postal' ,'$vkey','0')";
         mysqli_query($db, $sql);
         
 
         
         header('location: verify_user.php');
-        // insert user if tailor
-        // if ($utype == 0) {
-        //     $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
-        //     mysqli_query($db, $sql1);
-        // }
+        //insert user if tailor
+        if ($utype == 0) {
+            $sql1 = "INSERT INTO tailors (nic) VALUES ('$nic')";
+            mysqli_query($db, $sql1);
+        }
 
-        // insert user if customer
-        // else if ($utype == 1) {
-        //     $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
-        //     mysqli_query($db, $sql1);
-        // }
+       // insert user if customer
+        else if ($utype == 1) {
+            $sql1 = "INSERT INTO customers (nic) VALUES ('$nic')";
+            mysqli_query($db, $sql1);
+        }
 
-        // insert user if fashion designer
-        // else if ($utype == 2) {
-        //     $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
-        //     mysqli_query($db, $sql1);
-        // }
+       // insert user if fashion designer
+        else if ($utype == 2) {
+            $sql1 = "INSERT INTO fashion_designer (nic) VALUES ('$nic')";
+            mysqli_query($db, $sql1);
+        }
 
         //save session cache
         // $_SESSION['nic'] = $nic;
@@ -101,20 +101,17 @@ if(isset($_POST['verify_mail'])){
 
         $mail->isSMTP(true);
         $mail->Subject='Thank you for registring';
-        $mail->Body="<a href= 'http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'>Register Account</a>";
-        
-       // if($mail->Send()){
-            //header('location: thankyou.php');
-      //  }
+        $mail->Body="<a href='http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'></a>";
+
         if($mail->Send()){
-            echo "<script>alert('Email Sent.')</script>";
             header('location: check_mail.php');
         }
         else{
-            echo "<script>alert('### Email Not Sent!')</script>";
+            echo "<script>alert(' Email Not Sent!')</script>";
         }
-    
+
 }
+
 
 //login
 if (isset($_POST['login'])) {
@@ -124,8 +121,10 @@ if (isset($_POST['login'])) {
 
     if (count($errors) == 0) {
         $password = md5($password1);
-        $sql = "SELECT * FROM users WHERE nic='$nic' AND password='$password'";
+        $sql = "SELECT * FROM users WHERE nic='$nic' AND password='$password' AND verified = 1";
         $result = mysqli_query($db, $sql);
+
+
 
         if (mysqli_num_rows($result) == 1) {
             $_SESSION['nic'] = $nic;
@@ -152,9 +151,17 @@ if (isset($_POST['login'])) {
             else if ($_SESSION['utype'] == 2) {
                 header('location: fashion_designer/index.php');
             }
+            else if ($_SESSION['utype'] == 3) {
+                header('location: admin/index.php');
+            }
         }
          else {
-            array_push($errors, "Wrong username/ password combination");
+             if($_SESSION['nic'] = $nic && $_SESSION['password'] = $password){
+                array_push($errors, "Still not verified");
+             }
+             else{
+            array_push($errors, "Wrong username/ password combination/Still not verified");
+             }
             //header('location: login.php');
         }
     }
@@ -404,9 +411,9 @@ if (isset($_POST['addTocart'])) {
     $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
     $quantity1 = mysqli_real_escape_string($db, $_POST['quant']);
+    $size = mysqli_real_escape_string($db, $_POST['size']);
 
-
-    $sql = "INSERT INTO cart (c_nic, dress_id, quantity) VALUES ('$c_nic','$dress_id','$quantity1')";
+    $sql = "INSERT INTO cart (c_nic, dress_id, quantity, size) VALUES ('$c_nic','$dress_id','$quantity1', '$size')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         $item_added = "true";
@@ -601,11 +608,12 @@ if(isset($_POST['add_product']))
 
     if (move_uploaded_file($tempname, $folder))
     {
-        echo "<script>alert('Image Has Been Uploaded')</script>";
+        header('location: pending_dresses.php');
+
     }
     else
     {
-        echo "<script>alert('Image Does Not Uploaded')</script>";
+        echo "<script>alert('Your dress does not Uploaded')</script>";
     }
   }
 }
@@ -640,12 +648,41 @@ if(isset($_GET['remove_dress_id']) ){
     
 }
 
+//view rejected dress
+if(isset($_GET['view_reject_dress_id']) ){
+    $selected_rdress_id = mysqli_real_escape_string($db, $_GET['view_reject_dress_id']);
+    $_SESSION['selected_rdress_id']=$selected_rdress_id;
+    header('location: view_reject_product.php');
+}
+
+//edit rejected dress details
+if(isset($_GET['edit_reject_dress_id']) ){
+    $selected_rdress_id = mysqli_real_escape_string($db, $_GET['edit_reject_dress_id']);
+    $_SESSION['selected_rdress_id']=$selected_rdress_id;
+    header('location: edit_reject_dress.php');
+}
+//remove rejected dress
+if(isset($_GET['remove_reject_dress_id']) ){
+    $selected_rdress_id = mysqli_real_escape_string($db, $_GET['remove_reject_dress_id']);
+    $sql= "DELETE FROM rejected_dress WHERE dress_id='$selected_rdress_id' ";
+    $result=mysqli_query($db, $sql);
+    if($result)
+    {
+        echo "Dress has been removed successful";
+        header('location: rejected_dress.php');
+    }
+    else{
+        echo "<script>alert('Sorry! Removed successfuly')</script>";
+    }
+    
+}
+
 
 
 //Save Updated  dress detaills
 if(isset($_POST['update_dress']) ){
 
-  $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
+  $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
   $selected_dress_id1 = mysqli_real_escape_string($db, $_POST['dress_id']);
   $category = mysqli_real_escape_string($db, $_POST['Unit']);
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
@@ -665,19 +702,83 @@ if(isset($_POST['update_dress']) ){
         $clchk.= $clchk1.",";
      }
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
+  $filename = $_FILES["myimage"]["name"];
+  $tempname = $_FILES["myimage"]["tmp_name"];
+  $folder = "products/".$filename;
 
-
-    $sqle = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
-    $resulte=mysqli_query($db, $sqle);
-
-    if($resulte)
+  if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
+  {
+    $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
+    $result=mysqli_query($db, $sql);
+    
+    if($filename=""){
+        $sql = "UPDATE dress_showcase SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
+        $result=mysqli_query($db, $sql);
+    }
+    $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
+    $result = mysqli_query($db,$sql);
+    $sql = "DELETE FROM dress_showcase WHERE dress_id='$selected_dress_id1'";
+    $result = mysqli_query($db,$sql);
+    if($result)
     {
-        echo "<script>alert('Dress has been updated successfuly')</script>";
+        header('location: pending_dresses.php');
     }
     else{
         echo "<script>alert('Sorry! Update Unsuccessful')</script>";
     }
 }
+}
+
+if(isset($_POST['update_reject_dress']) ){
+
+    $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
+    $selected_dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
+    $category = mysqli_real_escape_string($db, $_POST['Unit']);
+    $dressname = mysqli_real_escape_string($db, $_POST['dname']);
+    $price = mysqli_real_escape_string($db, $_POST['price']);
+  
+    $size1 = $_POST['size'];
+    $schk="";
+    foreach($size1 as $schk1)
+       {
+          $schk.= $schk1.",";
+       }
+  
+    $colors1 = $_POST['color'];
+    $clchk="";
+    foreach($colors1 as $clchk1)
+       {
+          $clchk.= $clchk1.",";
+       }
+    $amount = mysqli_real_escape_string($db, $_POST['amount']);
+    $filename = $_FILES["myimage"]["name"];
+    $tempname = $_FILES["myimage"]["tmp_name"];
+    $folder = "products/".$filename;
+  
+    if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
+    {
+      $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
+      $result=mysqli_query($db, $sql);
+      
+      if($filename=""){
+          $sql = "UPDATE rejected_dress SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
+          $result=mysqli_query($db, $sql);
+      }
+      $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM rejected_dress WHERE dress_id='$selected_dress_id' ";
+      $result = mysqli_query($db,$sql);
+      $sql = "DELETE FROM rejected_dress WHERE dress_id='$selected_dress_id'";
+      $result = mysqli_query($db,$sql);
+      if($result)
+      {
+          header('location: pending_dresses.php');
+      }
+      else{
+          echo "<script>alert('Sorry! Update Unsuccessful')</script>";
+      }
+  }
+  }
+  
+  
 
 
 

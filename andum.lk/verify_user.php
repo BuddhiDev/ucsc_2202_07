@@ -164,7 +164,7 @@
 			</p>
       <p>
 				<label for="vkey"></label>
-				<input type="text" value="<?php echo $row["vkey"]?>" class="field-value-inline" name="vkey" disabled>
+				<input type="hidden" value="<?php echo $row["vkey"]?>" class="field-value-inline" name="vkey" >
 			</p>
       <p>
         <button type="submit" name="verify_mail" class="loginbutton btn-full-w">Verify me</button>

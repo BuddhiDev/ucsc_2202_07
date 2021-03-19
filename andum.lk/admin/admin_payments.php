@@ -1,41 +1,205 @@
 <?php include("../server.php");
 
-if (!isset($_SESSION['nic'])) {
-  header("location:../login.php");
-  exit();
-}
 
-?>  
-
-<?php include("../errors.php");
-  ?>
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
-  <link rel="shortcut icon" href="../logo.png">
-  <link rel="stylesheet" href="ucsc_2202_07/andum.lk/styles/style.css">
+  <title>Andum.lk - Hire a Tailor</title>
+  <link rel="shortcut icon" href="logo.png">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    
+
+    .leftside {
+      position: absolute;
+      height: 500px;
+      border-radius: 10px;
+      width: 300px;
+      /* background-image: url('/ucsc_2202_07/andum.lk/images/d-01.jpg'); */
+      background-size: cover;
+    }
+
+    .p {
+      margin-left: 40px;
+      margin-top: 420px;
+      color: black;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .one {
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      float: left;
+      margin-left: 40px;
+      margin-right: 40px;
+      text-align: center;
+      margin-top: 9px;
+    }
+
+    .one:hover {
+      border: 2px solid black;
+      width: 30px;
+      height: 30px;
+      float: left;
+      text-align: center;
+      margin-top: 9px;
+    }
+
+    .text {
+      color: black;
+    }
+
+    .color-box {
+      background-color: pink;
+    }
+
+    .onee {
+      border: 1px solid black;
+      width: 42px;
+      font-size: 14px;
+      height: 22px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: pink;
+      width: 30px;
+      background-color: pink;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on1 {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: blue;
+      width: 30px;
+      background-color: blue;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+    .on2 {
+      border: 1px solid black;
+      border-radius: 10px;
+      border-color: black;
+      width: 30px;
+      background-color: black;
+      height: 30px;
+      float: left;
+      margin-right: 5px;
+      text-align: center;
+    }
+
+
+
+    .onee:hover {
+      border: 2px solid black;
+      width: 42px;
+      height: 22px;
+      float: left;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+
+    .rightside {
+      width: 385px;
+      height: 500px;
+      border-radius: 10px;
+      float: right;
+      background: #fff;
+    }
+
+    .inside {
+      padding: 18px;
+    }
+
+    .cart-button {
+      padding: 9px 25px;
+      background-color: #EB2188;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      text-align: center;
+      -webkit-appearance: none;
+    }
+
+    .cart-button:hover {
+      color: black;
+    }
+
+    .second {
+      width: 50px;
+    }
+
+    .second:hover {
+      width: 50px;
+      background-color: #fab7cc;
+    }
+ 
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 99%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-  <header>
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
       </div>
       <div class="nav-item-middle">
         <ul class="nav-area">
-          <li><a href="tailor-dashboard.php">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
@@ -130,31 +294,26 @@ if (!isset($_SESSION['nic'])) {
             
           </li>
 
-          <li><a href="hire_tailor.php">Explore Tailors</a></li>
-          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
-          <li>
-          
-          </li>
+          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
+          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
         </ul>
       </div>
-      
-      <!-- </div> -->
       <div class="box">
         <div class="nav_right">
           <ul>
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
+                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
+                  <li><a href="manage_customer.php"><i class="fas fa-users"></i>Manage Customers</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-              </div>
-            </li>
+
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
         </div>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
@@ -165,116 +324,85 @@ if (!isset($_SESSION['nic'])) {
         this.classList.toggle("active");
       })
   </script>
+  
+ 
 
-  <!--  <div class="search-container">
-        <form method="post">
-          <div class="form-field-inline">
-            <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-            <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </form>
-    </div>-->
+   
 
-<div class="fd-container-box">
-
-<?php
-    
-    $nic = $_SESSION['nic'];
-    $fname = $_SESSION['fname'];
-    $lname = $_SESSION['lname'];
-    $sql = "SELECT * FROM users u INNER JOIN fashion_designer fd WHERE u.nic=fd.nic AND u.nic= '$nic'";
-    $result = mysqli_query($db, $sql);
-    if ($result) {
-      $row = mysqli_fetch_assoc($result)
-    
-    ?>
-
-<div class="row">
-      <div class="fd-title">
-        <div class="fd-card-img">
-          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%" class="proDisp">
-        </div>
-        <div class="fd-rightside">
-            <div  class="fd-title-box">
-              <form method="post">
-                <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-                  <div class="fd-title-box">
-                    Please explore below Featured images to get Idea about me..!
-                </div>
-              </form>
-            </div>
-        </div>
-      </div>       
-    </div> 
-
-  <!-- <div class=fd-profile-row>
-    <div class="profile-pic">
-        <div class="pic">
-            <img src="/ucsc_2202_07/andum.lk/images/profile/photo1.png" id="profileDisplay" name="profileDisplay" onclick="triggerClick()" alt="" class="proDisp">
-        </div>        
-        <label for="profile_pictures"></label>
-        <input type="file" name="profilepic" value="" onchange="displayImage(this)" id="profilepic" class="fd-profile-pic-control">
-        <div>
-            <label for="">Thashwini</label>
-        </div>
-    </div>
-  </div> -->
-
-  <center>
-      <!-- <div class=row>    -->
-        <h3 class="fashion-designer-headding">My Featured Images</h3>
-      <!-- </div> -->
-    </center>
-    
-    <div class=fd-profile-row2>
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <div class="fd-featured-card-item">
-              <div class="card-img">
-              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
-              </div>
-              <div class="card-content">
-              <div class="card-title"></div>
-              <div class="card-description"></div>
-              </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <div class="fd-featured-card-item">
-            <div class="card-img">
-              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
-            </div>
-            <div class="card-content">
-            <div class="card-title"></div>
-            <div class="card-description"></div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <div class="cfd-featured-card-item">
-              <div class="card-img">
-              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image3"]; ?>" alt="Avatar" style="width:100%"></a>
-              </div>
-              <div class="card-content">
-              <div class="card-title"></div>
-              <div class="card-description"></div>
-              </div>
-          </div>
-        </form>
-      </div>
      
-      
-      <?php } ?>
-    </div>
-    
+
+<br/>
+<br/> 
+    </form>
+  </div>
+
+<center><p> Tailor orders </p></center>
+
+<div class="container-box">
+    <table>
+      <tr>
+        <th>Tailor Name</th>
+        <th>Full paid amount</th>
+        <th>Invoice</th>
+        <th>Net Money</th>
+        <th>Status</th>
+        
+        <th><center>Action</center></th>
+
+      </tr>
+     
+        
+    </table>
   </div>
 
 
-  <?php require("../footer.php")?>
+  <center><p> <b>Customer Orders </b></p></center>
 
+  <div class="container-box">
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Full paid amount</th>
+        <th>Invoice</th>
+        <th>Net Money</th>
+        <th>Status</th>
+      </tr>
+      
+    </table>
+  </div>
+
+<center><p>Fashion designer orders</p></center>
+
+<div class="container-box">
+
+<table>
+
+<tr>
+        <th>Fashion Designer Name</th>
+        <th>Full paid amount</th>
+        <th>Invoice</th>
+        <th>Net Money</th>
+        <th>Status</th>
+       
+
+      </tr>
+
+
+
+
+</table>
+
+
+</div>
+
+
+
+
+ 
+  </div>
+
+  
+  <?php require("../footer.php") ?>
 </body>
+
 </html>

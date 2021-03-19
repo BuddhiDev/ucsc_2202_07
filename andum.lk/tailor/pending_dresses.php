@@ -49,11 +49,24 @@ if (!isset($_SESSION['nic'])) {
 <div class="tailor-container-box">
   
   <div class="tailor-cover">
-    <div class="row">
-      <h2 class="tailor-heading"><b>Pending Dresses</b></h2>
-      <h3><p style="border:3px; border-style:solid; border-color:#cc12cc; padding: 1em;"> Dresses in this section is subject to administrator confirmation. After reviewing your dress details we will add your dress to Andum.lk. 
-            <br>It will take 2 or 3 hours.</p></h3> 
-    </div>
+    
+      <div class="row">
+        <div class="search-container">
+          <form method="post">
+            <div class="form-field-inline">
+              <label for="searchname" class="field-label-inline">Search...</label>
+              <input type="text" class="field-value-inline" name="q">
+              <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <h2 class="tailor-heading"><b>Pending Dresses</b></h2>
+        <h3><p style="border:3px; border-style:solid; border-color:#cc12cc; padding: 1em;"> Dresses in this section is subject to administrator confirmation. After reviewing your dress details we will add your dress to Andum.lk. 
+              <br>It will take 2 or 3 hours.</p></h3> 
+      </div>
 
     <div class="row">
       <?php

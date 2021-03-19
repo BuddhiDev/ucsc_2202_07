@@ -36,14 +36,14 @@ require("../server.php");
 
 <!-- edit profile form-->
 
-<form method="post" action="my_showcase.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
+<form method="post" action="rejected_dress.php" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
     <?php
       include("../errors.php");
 
-      $selected_dress_id1 = $_SESSION['selected_dress_id'];
+      $selected_rdress_id = $_SESSION['selected_rdress_id'];
       $nic = $_SESSION['nic'];
     
-      $sqle = "SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
+      $sqle = "SELECT*FROM rejected_dress WHERE dress_id='$selected_rdress_id' ";
       $resulte=mysqli_query($db, $sqle);
        
 
@@ -190,7 +190,7 @@ require("../server.php");
         <div class="btn-panel-center">
             <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
             <input type="hidden" value="<?php echo $nic ?> " name="t_nic">
-            <a href="pending_dresses.php"><button class="loginbutton btn-full-w" type="submit" name="update_dress">Save</button></a>
+            <a href="pending_dresses.php"><button class="loginbutton btn-full-w" type="submit" name="update_reject_dress">Save</button></a>
         </div>
               
          
