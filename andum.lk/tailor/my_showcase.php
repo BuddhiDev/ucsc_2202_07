@@ -83,7 +83,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
-              
+              <div style="color: red;"><?php if($row["amount"]==0) { ?>sold out <?php }?></div>
             </div>
           </div>
         </form>
@@ -117,6 +117,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+              <div style="color: red;"><?php if($row["amount"]==0) { ?>sold out <?php }?></div>
             </div>
           </div>
         </form>
@@ -147,6 +148,7 @@ if (!isset($_SESSION['nic'])) {
             <div class="card-content">
               <div class="card-title"><?php echo $row["title"] ?></div>
               <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+              <div style="color: red;"><?php if($row["amount"]==0) { ?>sold out <?php }?></div>
             </div>
           </div>
         </form>
