@@ -77,8 +77,8 @@ window.onclick = function(e) {
 
   <div class="container-box">
   <div style="overflow-x:auto;">
-
-  <h2 class="tailor-heading">Pending Orders</h2>
+  <div id="div-1">
+    <h2 class="tailor-heading">Pending Orders</h2>
     <table>
       <tr>
         <th>Customer Name</th>
@@ -87,18 +87,14 @@ window.onclick = function(e) {
         <th><center>Action</center></th>
       </tr>
       <tr>
-
         <?php
-
         $nic = $_SESSION['nic'];
         $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Pending' ";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
-
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
-
             <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
             <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
@@ -114,11 +110,11 @@ window.onclick = function(e) {
             }
 
       ?>
-
-
     </table>
+  </div>
 
-    <h2 class="tailor-heading">Accepted Orders</h2>
+  <div>
+  <h2 class="tailor-heading">Accepted Orders</h2>
     <table>
       <tr>
         <th>Customer Name</th>
@@ -127,18 +123,14 @@ window.onclick = function(e) {
         <th><center>Action</center></th>
       </tr>
       <tr>
-
         <?php
-
         $nic = $_SESSION['nic'];
         $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Accepted' ";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
-
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
-
             <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
             <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
@@ -157,6 +149,9 @@ window.onclick = function(e) {
 
 
     </table>
+
+  </div>
+    
 
     <h2 class="tailor-heading">Paid Orders</h2>
     <table>
