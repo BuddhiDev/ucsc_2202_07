@@ -74,6 +74,8 @@ window.onclick = function(e) {
         <th>Order No</th>
         <th>Description</th>
         <th>Quantity</th>
+        <th>Size</th>
+        <th>Color</th>
         <th> Unit Price</th>
         <th>Total Price</th>
         <th>Remove</th>
@@ -82,7 +84,7 @@ window.onclick = function(e) {
         <?php
         $nic = $_SESSION['nic'];
         $total = 0;
-        $sql = "SELECT cart.order_id, cart.quantity, dress_showcase.category, dress_showcase.title, dress_showcase.price, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$nic' AND cart.dress_id=dress_showcase.dress_id";
+        $sql = "SELECT cart.order_id, cart.quantity, cart.size, cart.color,  dress_showcase.category, dress_showcase.title, dress_showcase.price, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$nic' AND cart.dress_id=dress_showcase.dress_id";
         $result = mysqli_query($db, $sql);
         
     //generate order random number and hash it
@@ -102,9 +104,12 @@ window.onclick = function(e) {
           <input type="hidden" value="<?php echo $row["order_id"]?>" name="oid">
           <input type="submit" value="Confirm Quantity" class="submit-button">
         </form>
-        </td>            
+        </td>
+        <td><?php echo $row["size"] ?></td>
+        <td><?php echo $row["color"] ?></td>            
         <td><?php echo $row["price"] ?></td>
         <td><?php echo number_format($row["quantity"]*$row["price"],2);?></td>
+        
         <td>              
           <form action="cart.php" method='GET'>
             <input type="hidden" value="<?php echo $row["order_id"]?>" name="odid">
@@ -120,7 +125,7 @@ window.onclick = function(e) {
       }
       ?>
       <tr>
-              <td colspan="4" align="right">Total</td>
+              <td colspan="6" align="right">Total</td>
               <td align="right"><?php echo number_format($total,2);?></td>
       </tr>
     <?php

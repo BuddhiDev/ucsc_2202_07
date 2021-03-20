@@ -234,10 +234,24 @@ if (!isset($_SESSION['nic'])) {
                   $rowc = mysqli_fetch_assoc($resultc);
                   $mystring = $rowc['color'];
                   $mycolors = (explode(",",$mystring));
-                  if ($mystring) {
+                  if ($mycolors!="") {
                     foreach ($mycolors as $my_color){
-                      echo $my_color;
-                      echo "<br>";
+                      // $data = array();
+                      // array_push($data,$my_color);
+                      // print_r($data);
+                      // $y = sizeof($data);
+                      // print_r($data[0]);
+                      // for($x=0; $x<sizeof($data); $x++){
+                      //   echo $data[$x];
+                      ?>   
+                      <label for="myRadioId" class="Color-radio">
+                        <!-- <input type="radio" name="myRadioField" id="myRadioId" class="radio-input" style="backgroung-color:<?php echo $my_color ?>"> -->
+                        <div class="radio-radio" style="background: <?php echo $my_color ?>;">
+                        <input type="radio" name="myRadioField" id="myRadioId"    style="margin-top: 24px" value="<?php echo $my_color ?>">
+                        </div>
+                      </label>
+                      <?php
+                      // } 
                     }
                   }
                   ?>              

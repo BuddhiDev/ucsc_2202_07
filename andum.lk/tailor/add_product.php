@@ -185,6 +185,7 @@ window.onclick = function(e) {
           <input type="checkbox" name="color[]" value="other">
           <span class="checkmark"></span>
         </label>
+        
       <!--  </div>-->
       </div>
     </div>

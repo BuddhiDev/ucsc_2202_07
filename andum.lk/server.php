@@ -424,8 +424,9 @@ if (isset($_POST['addTocart'])) {
     $dress_id = mysqli_real_escape_string($db, $_POST['dress_id']);
     $quantity1 = mysqli_real_escape_string($db, $_POST['quant']);
     $size = mysqli_real_escape_string($db, $_POST['size']);
+    $color = mysqli_real_escape_string($db, $_POST['myRadioField']);
 
-    $sql = "INSERT INTO cart (c_nic, dress_id, quantity, size) VALUES ('$c_nic','$dress_id','$quantity1', '$size')";
+    $sql = "INSERT INTO cart (c_nic, dress_id, quantity, size,color) VALUES ('$c_nic','$dress_id','$quantity1', '$size', '$color')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         $item_added = "true";
