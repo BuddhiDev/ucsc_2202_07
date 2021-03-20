@@ -306,12 +306,11 @@ $delivered_orders = $row[0];
       <!-- order chart -->
       <?php
 //initialize previouse 6 months
-  for ($i = 0; $i <= 6; $i++) 
+  for ($i = 0; $i <= 2; $i++) 
   {
     $months[] = date("m", strtotime( date( 'Y-m-01' )." -$i months"));
   }
   $year = date('Y');
-  $year=$year-1;
 //sql to get last month order count
 $sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[0]' ";
 $result = mysqli_query($db, $sql);
@@ -330,23 +329,23 @@ $result = mysqli_query($db, $sql);
 $row = mysqli_fetch_array($result);
 $mon3=$row[0];
 
-//sql to get last 4month order count
-$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[3]' ";
-$result = mysqli_query($db, $sql);
-$row = mysqli_fetch_array($result);
-$mon4=$row[0];
+// //sql to get last 4month order count
+// $sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[3]' ";
+// $result = mysqli_query($db, $sql);
+// $row = mysqli_fetch_array($result);
+// $mon4=$row[0];
 
-//sql to get last 5month order count
-$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[4]' ";
-$result = mysqli_query($db, $sql);
-$row = mysqli_fetch_array($result);
-$mon5=$row[0];
+// //sql to get last 5month order count
+// $sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[4]' ";
+// $result = mysqli_query($db, $sql);
+// $row = mysqli_fetch_array($result);
+// $mon5=$row[0];
 
-//sql to get last 6month order count
-$sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[5]' ";
-$result = mysqli_query($db, $sql);
-$row = mysqli_fetch_array($result);
-$mon6=$row[0];
+// //sql to get last 6month order count
+// $sql = "SELECT COUNT(id) FROM fd_orders WHERE fd_nic='$nic' AND date='$months[5]' ";
+// $result = mysqli_query($db, $sql);
+// $row = mysqli_fetch_array($result);
+// $mon6=$row[0];
 
 ?>
 <br />
@@ -359,7 +358,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Total Orders From Past 6 Months"
+		text: "Total Orders From 3 Months"
 	},
   axisX:{  
   //Try Changing to MMMM
@@ -376,12 +375,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
   type: "line",
   lineThickness: 2,
   dataPoints: [
-  { x: new Date(<?php echo $year ?>,<?php echo $months[1]?>), y:<?php echo $mon1?> },
-  { x: new Date(<?php echo $year ?>,<?php echo $months[2]?>), y:<?php echo $mon2?> },
-  { x: new Date(<?php echo $year ?>,<?php echo $months[3]?>), y:<?php echo $mon3?> },
-  { x: new Date(<?php echo $year ?>,<?php echo $months[4]?>), y:<?php echo $mon4?> },
-  { x: new Date(<?php echo $year ?>,<?php echo $months[5]?>), y:<?php echo $mon5?> },
-  { x: new Date(<?php echo $year ?>,<?php echo $months[6]?>), y:<?php echo $mon6?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[2]-1?>), y:<?php echo $mon1?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[1]-1?>), y:<?php echo $mon2?> },
+  { x: new Date(<?php echo $year ?>,<?php echo $months[0]-1?>), y:<?php echo $mon3?> },
+
     ]
       }    
       ]
