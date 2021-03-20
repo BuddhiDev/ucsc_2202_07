@@ -1403,6 +1403,11 @@ a{
     padding: 20px 20px 0px 20px;
 }
 
+.status-btn-container{
+  margin: 20px 20px 0px 20px;
+    padding: 20px 20px 0px 75px;
+}
+
 .product-detail-box{
   padding: 60px 0px;
   font-size: 20px;
@@ -1517,6 +1522,22 @@ a{
     text-align: center;
 }
 
+.admin-button {
+  padding: 5px 10px;
+    background-color: #14165a;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+    -webkit-appearance: none;
+    color: white;
+}
+
+.admin-button:hover {
+    color: #fafafa;
+}
+
 .order-detail-box{
   background-color: #FFCDE5;
     padding: 40px;
@@ -1605,6 +1626,46 @@ a{
     margin: 10px;
 }
 
+#div-4{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 10px;
+    /* display: inline-block; */
+    margin: 10px;
+}
+
+#div-5{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 10px;
+    /* display: inline-block; */
+    margin: 10px;
+}
+
+#div-6{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 10px;
+    /* display: inline-block; */
+    margin: 10px;
+}
+
+#div-7{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 10px;
+    /* display: inline-block; */
+    margin: 10px;
+}
+
+#div-8{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 10px;
+    /* display: inline-block; */
+    margin: 10px;
+}
+
 #chat-search-container input{
   color: #eee;
   outline: none;
@@ -1624,6 +1685,17 @@ a{
   display: flex;
 }
 
+.status-btn{
+  padding: 9px 25px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+    -webkit-appearance: none;
+    color: #eb2188;
+}
 .chat-row{
   display: flex;
   -ms-flex-wrap: wrap;
@@ -2059,7 +2131,7 @@ h1 {
 }
 
 .cart-button {
-  padding: 9px 25px;
+  padding: 10px 20px;
   background-color: #EB2188;
   color: white;
   border: none;

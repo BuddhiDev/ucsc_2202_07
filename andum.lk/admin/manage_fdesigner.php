@@ -160,7 +160,7 @@
       </div>
 
       <div class="add-new-position">
-      <a class="cta" href="pdf_fd.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+      <a class="cta" href="pdf_fd.php"><button class="admin-button">Generate PDF</button></a>
     </div>
 
     </nav>
@@ -195,13 +195,13 @@
           <td><?php echo $row["contactno"] ?></td>
           <td>
             <div>
-            <a href="manage_fdesigner.php?f_nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+            <a href="manage_fdesigner.php?f_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>
 
             </div>
           </td>
           <td>
             <div>
-            <a href="manage_fdesigner.php?d_fnic=<?php echo $row["nic"]?>"><button class="view-button">Suspend</button></a>
+            <a href="manage_fdesigner.php?d_fnic=<?php echo $row["nic"]?>"><button class="admin-button">Suspend</button></a>
             </div>
           </td>
 

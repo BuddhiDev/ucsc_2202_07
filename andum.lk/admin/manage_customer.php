@@ -161,7 +161,7 @@
 <!-- generate pdf -->
       <div>
     <div class="add-new-position">
-      <a class="cta" href="pdf_customer.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+      <a class="cta" href="pdf_customer.php"><button class="admin-button">Generate PDF</button></a>
     </div>
 
     
@@ -212,7 +212,7 @@
           <td><?php echo $row["contactno"] ?></td>
           <td>
             <div>
-              <a href="manage_customer.php?c_nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+              <a href="manage_customer.php?c_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>
              
              
 
@@ -220,7 +220,7 @@
           </td>
           <td>
             <div>
-            <a href="manage_customer.php?d_cnic=<?php echo $row["nic"]?>"><button class="view-button" name="delete_user">Suspend</button></a>
+            <a href="manage_customer.php?d_cnic=<?php echo $row["nic"]?>"><button class="admin-button" name="delete_user">Suspend</button></a>
             </div>
           </td>
 

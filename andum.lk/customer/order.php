@@ -492,8 +492,8 @@ if (!isset($_SESSION['nic'])) {
 
         <!--measurement form-->
         <div class="btn-container">
-        <button class="cart-button" onclick="myFunction()">Conversation</button>
-        <button class="cart-button" onclick="myFunction2()">Measurements</button>
+        <button class="status-btn" onclick="myFunction()">Conversation</button>
+        <button class="status-btn" onclick="myFunction2()">Measurements</button>
         </div>
   
         

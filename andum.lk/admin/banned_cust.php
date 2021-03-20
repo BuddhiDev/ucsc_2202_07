@@ -244,10 +244,10 @@ if (!isset($_SESSION['nic'])) {
             </form>
           </div>
           <div>
-            <li><a class="cta" href="send_mail_cust.php"><button class="loginbutton btn-full-w">Warning message</button></a></li>
+            <li><a class="cta" href="send_mail_cust.php"><button class="admin-button">Warning message</button></a></li>
           </div>
           <div>
-            <li><a href="banned_cust.php?delete_nic=<?php echo $row["nic"]?>"><button class="loginbutton btn-full-w">Suspend User Account</button></a></li>
+            <li><a href="banned_cust.php?delete_nic=<?php echo $row["nic"]?>"><button class="admin-button">Suspend User Account</button></a></li>
           </div>
         </div>
       </div>

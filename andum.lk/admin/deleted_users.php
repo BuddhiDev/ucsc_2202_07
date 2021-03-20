@@ -174,7 +174,7 @@
       </div>
 
       <div class="add-new-position">
-      <a class="cta" href="deleted_users_pdf.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+      <a class="cta" href="deleted_users_pdf.php"><button class="admin-button">Generate PDF</button></a>
     </div>
       <h1>Banned Users</h1>
     <div style="overflow-x:auto;">
@@ -206,13 +206,13 @@
           <td><?php echo $row["type"] ?></td>
           <td>
             <div>
-              <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_user" >View</button></a>
+              <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>
             
             </div>
           </td>
           <td>
             <div>
-              <a href="manage_customer.php?restore_nic=<?php echo $row["nic"]?>"><button class="view-button" name="#" >Restore</button></a>
+              <a href="manage_customer.php?restore_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="#" >Restore</button></a>
             </div>
           </td>
           

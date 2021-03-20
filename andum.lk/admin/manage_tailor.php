@@ -162,7 +162,7 @@
       </div>
 
       <div class="add-new-position">
-      <a class="cta" href="pdf_tailor.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
+      <a class="cta" href="pdf_tailor.php"><button class="admin-button">Generate PDF</button></a>
     </div>
 
     </nav>
@@ -198,14 +198,14 @@
           <td>
             <div>
 
-            <a href="manage_tailor.php?t_nic=<?php echo $row["nic"]?>"><button class="view-button" name="view_tailor" >View</button></a>
+            <a href="manage_tailor.php?t_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_tailor" >View</button></a>
 
               <!-- <a href="#"><button class="view-button" >View</button></a> -->
             </div>
           </td>
           <td>
             <div>
-              <a href="manage_tailor.php?d_tnic=<?php echo $row["nic"]?>"><button class="view-button">Suspend</button></a>
+              <a href="manage_tailor.php?d_tnic=<?php echo $row["nic"]?>"><button class="admin-button">Suspend</button></a>
             </div>
           </td>
 

@@ -154,7 +154,7 @@ if (!isset($_SESSION['nic'])) {
     }
 
     .cart-button {
-      padding: 9px 25px;
+      padding: 10px 20px;
       background-color: #EB2188;
       border: none;
       border-radius: 50px;

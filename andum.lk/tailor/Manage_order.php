@@ -42,9 +42,9 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
   
-<?php require("header.php")?>
+  <?php require("header.php")?>
 
-<div class="add-new-position">
+  <div class="add-new-position">
       <a class="cta" href="order_pdf.php"><button class="loginbutton btn-full-w">Generate PDF</button></a>
       <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
     </div>
@@ -56,268 +56,396 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("notify-myDropdown").classList.toggle("notify-show");
-}
+  <script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("notify-myDropdown").classList.toggle("notify-show");
+  }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.notify-dropbtn')) {
-  var myDropdown = document.getElementById("notify-myDropdown");
-    if (myDropdown.classList.contains('notify-show')) {
-      myDropdown.classList.remove('notify-show');
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(e) {
+    if (!e.target.matches('.notify-dropbtn')) {
+    var myDropdown = document.getElementById("notify-myDropdown");
+      if (myDropdown.classList.contains('notify-show')) {
+        myDropdown.classList.remove('notify-show');
+      }
     }
   }
-}
-</script>
+  </script>
+
+      <div class="status-btn-container">
+        <button class="status-btn" onclick="myFunction2()">Pending Orders</button>
+        <button class="status-btn" onclick="myFunction1()">Accepted Orders</button>
+        <button class="status-btn" onclick="myFunction3()">Paid Orders</button>
+        <button class="status-btn" onclick="myFunction4()">Ongoing Orders</button>
+        <button class="status-btn" onclick="myFunction5()">Delivered Orders</button>
+        <button class="status-btn" onclick="myFunction6()">Completed Orders</button>
+      </div>
 
 
   <div class="container-box">
-  <div style="overflow-x:auto;">
-  <div id="div-1">
-    <h2 class="tailor-heading">Pending Orders</h2>
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-      </tr>
-      <tr>
-        <?php
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Pending' ";
-        $result = mysqli_query($db, $sql);
+    <div style="overflow-x:auto;">
+      <div id="div-3">
+        <h2 class="tailor-heading">Pending Orders</h2>
+        <table>
+          <tr>
+            <th>Customer Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th><center>Action</center></th>
+          </tr>
+          <tr>
+            <?php
+            $nic = $_SESSION['nic'];
+            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Pending' ";
+            $result = mysqli_query($db, $sql);
 
-        if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-      <?php
-              }
-            } else {
-            }
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+                <td>
+                  <div>
+                    <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+                  </div>
+                </td>
+          </tr>
+          <?php
+                  }
+                } else {
+                }
 
-      ?>
-    </table>
+          ?>
+        </table>
+      </div>
+
+      <div id="div-4">
+        <h2 class="tailor-heading">Accepted Orders</h2>
+        <table>
+          <tr>
+            <th>Customer Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th><center>Action</center></th>
+          </tr>
+          <tr>
+            <?php
+            $nic = $_SESSION['nic'];
+            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Accepted' ";
+            $result = mysqli_query($db, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+                <td>
+                  <div>
+                    <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+                  </div>
+                </td>
+          </tr>
+          <?php
+                  }
+                } else {
+                }
+
+          ?>
+        </table>
+      </div>
+
+      <div id="div-5">
+        <h2 class="tailor-heading">Paid Orders</h2>
+        <table>
+          <tr>
+            <th>Customer Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th><center>Action</center></th>
+          </tr>
+          <tr>
+            <?php
+            $nic = $_SESSION['nic'];
+            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Paid' ";
+            $result = mysqli_query($db, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+                <td>
+                  <div>
+                    <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+                  </div>
+                </td>
+          </tr>
+          <?php
+                  }
+                } else {
+                }
+          ?>
+        </table>
+      </div>
+      
+      <div id="div-6">
+        <h2 class="tailor-heading">Ongoing Orders</h2>
+        <table>
+          <tr>
+            <th>Customer Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th><center>Action</center></th>
+          </tr>
+          <tr>
+            <?php
+            $nic = $_SESSION['nic'];
+            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Ongoing' ";
+            $result = mysqli_query($db, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+                <td>
+                  <div>
+                    <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+                  </div>
+                </td>
+          </tr>
+          <?php
+                  }
+                } else {
+                }
+
+          ?>
+        </table>    
+      </div>
+
+      <div id="div-7">
+        <h2 class="tailor-heading">Delivered Orders</h2>
+        <table>
+          <tr>
+            <th>Customer Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th><center>Action</center></th>
+          </tr>
+          <tr>
+            <?php
+            $nic = $_SESSION['nic'];
+            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Delivered' ";
+            $result = mysqli_query($db, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+                <td>
+                  <div>
+                    <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+                  </div>
+                </td>
+          </tr>
+          <?php
+                  }
+                } else {
+                }
+
+          ?>
+        </table>
+      </div>
+
+      <div id="div-8">
+        <h2 class="tailor-heading">Completed Orders</h2>
+        <table>
+          <tr>
+            <th>Customer Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th><center>Action</center></th>
+          </tr>
+          <tr>
+            <?php
+
+            $nic = $_SESSION['nic'];
+            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Completed' ";
+            $result = mysqli_query($db, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+                <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+                <td>
+                  <div>
+                    <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
+                  </div>
+                </td>
+          </tr>
+          <?php
+                  }
+                } else {
+                }
+
+          ?>
+        </table>
+      </div>  
+    </div>
   </div>
 
-  <div>
-  <h2 class="tailor-heading">Accepted Orders</h2>
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-      </tr>
-      <tr>
-        <?php
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Accepted' ";
-        $result = mysqli_query($db, $sql);
+  <script>
+      function myFunction1() 
+      {
+        var x = document.getElementById("div-3");
+        var y = document.getElementById("div-4");
+        var c = document.getElementById("div-5");
+        var d = document.getElementById("div-6");
+        var e = document.getElementById("div-7");
+        var f = document.getElementById("div-8");
+        if (x.style.display === "none" && c.style.display === "none" && d.style.display === "none" && e.style.display === "none" && f.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          c.style.display = "none";
+          d.style.display = "none";
+          e.style.display = "none";
+          f.style.display = "none";
+          y.style.display = "block";
+          
+        }
+      }
 
-        if (mysqli_num_rows($result) > 0) {
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-      <?php
-              }
-            } else {
-            }
+      function myFunction2() 
+      {
+        var x = document.getElementById("div-3");
+        var y = document.getElementById("div-4");
+        var c = document.getElementById("div-5");
+        var d = document.getElementById("div-6");
+        var e = document.getElementById("div-7");
+        var f = document.getElementById("div-8");
+        if (y.style.display === "none" && c.style.display === "none" && d.style.display === "none" && e.style.display === "none" && f.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          c.style.display = "none";
+          d.style.display = "none";
+          e.style.display = "none";
+          f.style.display = "none";
+          x.style.display = "block";
+        }
+      }
 
-      ?>
+      function myFunction3() 
+      {
+        var x = document.getElementById("div-3");
+        var y = document.getElementById("div-4");
+        var c = document.getElementById("div-5");
+        var d = document.getElementById("div-6");
+        var e = document.getElementById("div-7");
+        var f = document.getElementById("div-8");
+        if (x.style.display === "none" && y.style.display === "none" && d.style.display === "none" && e.style.display === "none" && f.style.display === "none") 
+        {
+          c.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "none";
+          d.style.display = "none";
+          e.style.display = "none";
+          f.style.display = "none";
+          c.style.display = "block";
+        }
+      }
 
+      function myFunction4() 
+      {
+        var x = document.getElementById("div-3");
+        var y = document.getElementById("div-4");
+        var c = document.getElementById("div-5");
+        var d = document.getElementById("div-6");
+        var e = document.getElementById("div-7");
+        var f = document.getElementById("div-8");
+        if (x.style.display === "none" && y.style.display === "none" && c.style.display === "none" && e.style.display === "none" && f.style.display === "none") 
+        {
+          d.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "none";
+          c.style.display = "none";
+          e.style.display = "none";
+          f.style.display = "none";
+          d.style.display = "block";
+        }
+      }
 
-    </table>
+      function myFunction5() 
+      {
+        var x = document.getElementById("div-3");
+        var y = document.getElementById("div-4");
+        var c = document.getElementById("div-5");
+        var d = document.getElementById("div-6");
+        var e = document.getElementById("div-7");
+        var f = document.getElementById("div-8");
+        if (x.style.display === "none" && y.style.display === "none" && c.style.display === "none" && d.style.display === "none" && f.style.display === "none") 
+        {
+          e.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "none";
+          c.style.display = "none"
+          d.style.display = "none";
+          f.style.display = "none";
+          e.style.display = "block";
+        }
+      }
 
-  </div>
-    
-
-    <h2 class="tailor-heading">Paid Orders</h2>
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-      </tr>
-      <tr>
-
-        <?php
-
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Paid' ";
-        $result = mysqli_query($db, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-      <?php
-              }
-            } else {
-            }
-
-      ?>
-
-
-    </table>
-
-    <h2 class="tailor-heading">Ongoing Orders</h2>
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-      </tr>
-      <tr>
-
-        <?php
-
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Ongoing' ";
-        $result = mysqli_query($db, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-      <?php
-              }
-            } else {
-            }
-
-      ?>
-
-
-    </table>
-
-    <h2 class="tailor-heading">Delivered Orders</h2>
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-      </tr>
-      <tr>
-
-        <?php
-
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Delivered' ";
-        $result = mysqli_query($db, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-      <?php
-              }
-            } else {
-            }
-
-      ?>
-
-
-    </table>
-
-    <h2 class="tailor-heading">Completed Orders</h2>
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
-      </tr>
-      <tr>
-
-        <?php
-
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Completed' ";
-        $result = mysqli_query($db, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="Manage_order.php?order_id_select=<?php echo $row["id"]?>"><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-      <?php
-              }
-            } else {
-            }
-
-      ?>
-
-
-    </table>
-
-  </div>
-  </div>
+      function myFunction6() 
+      {
+        var x = document.getElementById("div-3");
+        var y = document.getElementById("div-4");
+        var c = document.getElementById("div-5");
+        var d = document.getElementById("div-6");
+        var e = document.getElementById("div-7");
+        var f = document.getElementById("div-8");
+        if (x.style.display === "none" && y.style.display === "none" && c.style.display === "none" && d.style.display === "none" && e.style.display === "none") 
+        {
+          f.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "none";
+          c.style.display = "none";
+          d.style.display = "none";
+          e.style.display = "none";
+          f.style.display = "block";
+        }
+      }
+    </script>
   
-
-<?php require("../footer.php")?>
+  <?php require("../footer.php")?>
 
 </body>
 

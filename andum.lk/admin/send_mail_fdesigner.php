@@ -120,7 +120,7 @@ if (!isset($_SESSION['nic'])) {
 				<textarea name="body" id="body" cols="30" rows="10" required></textarea>
 			</p>
 			<p>
-        <button type="submit" name="send_mail" class="loginbutton btn-full-w">Send Message</button>
+        <button type="submit" name="send_mail" class="admin-button">Send Message</button>
 			</p>
 
 
