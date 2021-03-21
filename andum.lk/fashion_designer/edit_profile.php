@@ -45,7 +45,17 @@ if (isset($_POST['update_fd'])) {
           echo "<script>alert('Image Does Not Uploaded')</script>";
       }
 
-  }
+      if($resultf)
+    {
+        header('location: index.php');
+    }
+    else{
+        echo "<script>alert('Sorry! Update Unsuccessful')</script>";
+    }
+
+    }
+
+  
 
   $filename1 = $_FILES["addpic1"]["name"];
   $tempname1 = $_FILES["addpic1"]["tmp_name"];
@@ -102,8 +112,8 @@ if (isset($_POST['update_fd'])) {
                   echo "<script>alert('Image Does Not Uploaded')</script>";
               }
 
+            }
 
-}
 ?>
 
 
