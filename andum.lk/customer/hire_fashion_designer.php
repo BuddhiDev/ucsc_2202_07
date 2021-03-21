@@ -88,7 +88,7 @@ window.onclick = function(e) {
 $adsql = "SELECT * FROM advert_f LIMIT 3";
 $adres = mysqli_query($db, $adsql);
 
-if (mysqli_fetch_assoc($adres)!= NULL) {
+if ($adres) {
 
 ?>
 <div class="customer-cover">
