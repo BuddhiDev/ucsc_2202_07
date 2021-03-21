@@ -7,7 +7,7 @@ if (!isset($_SESSION['nic'])) {
 }
 
 ?>
-
+<?php include("admin_controller.php"); ?>
 <!DOCTYPE html>
 <html>
 
@@ -332,14 +332,15 @@ if (!isset($_SESSION['nic'])) {
   
   <div class="container-box">
   <?php
-  $selected_c_id = $_SESSION['selected_c_id'];
-  $nic = $_SESSION['selected_c_id'];
+  $selected_cus_id = $_SESSION['selected_cus_id'];
+  $nic = $_SESSION['selected_cus_id'];
   $fname = $_SESSION['fname'];
   $lname = $_SESSION['lname'];
-  $sql = "SELECT * FROM users WHERE nic='$selected_c_id' ";
+  $sql = "SELECT * FROM users WHERE nic='$selected_cus_id' ";
   $result = mysqli_query($db, $sql);
   if ($result) {
     $row = mysqli_fetch_assoc($result);
+    
   ?>
 
     <div class="main">
@@ -375,21 +376,75 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
 
-<center><p> Hired taiors' details of the customer </p></center>
+
+  
 
 <div class="container-box">
+<center><h2>Bought Readymade Dresses </h2></center>
+<table>
+      <tr>
+       
+      <th>Dress Id</th>
+      <th>Quantity</th>
+      <th>Price</th>
+        
+        <th>Date</th>
+        <th>Status</th>
+        
+      </tr>
+      <tr>
+
+        <?php
+
+        $selected_cus_id = $_SESSION['selected_cus_id'];
+        $nic = $_SESSION['selected_cus_id'];
+        $sql2 = "SELECT * FROM dress_sales  WHERE c_nic='$selected_cus_id'";
+        $result2 = mysqli_query($db, $sql2);
+
+
+        if (mysqli_num_rows($result2) > 0) {
+
+          while ($row = mysqli_fetch_assoc($result2)) {
+        ?>
+
+            <td><?php echo $row["dress_id"] ?></td>
+            <td><?php echo $row["quantity"] ?></td>
+            <td><?php echo $row["total_price"] ?></td>
+           
+            <td><?php echo $row["date"] ?></td>
+            <td><?php echo $row["status"] ?></td>
+            
+            
+      </tr>
+      <?php
+              }
+            } else {
+            }
+
+      ?>
+
+
+    </table>
+
+
+</div>
+
+
+<div class="container-box">
+<center><h2>Bought Customize Dresses </h2></center>
     <table>
       <tr>
         <th>Tailor Name</th>
         <th>Category</th>
         <th>Status</th>
-        <th><center>Action</center></th>
+        
 
       </tr>
       <tr>
         <?php
 
-        $nic = $_SESSION['selected_c_id'];
+        $selected_cus_id = $_SESSION['selected_cus_id'];
+        $nic = $_SESSION['selected_cus_id'];
         $sql1 = "SELECT * FROM t_orders WHERE c_nic='$nic'";
         $result1 = mysqli_query($db, $sql1);
 
@@ -401,9 +456,7 @@ if (!isset($_SESSION['nic'])) {
             <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
             <td><?php echo $row["category"] ?></td>
             <td><?php echo $row["status"] ?></td>
-            <td>
-              
-            </td>
+            
       </tr>
         <?php
               }
@@ -415,19 +468,20 @@ if (!isset($_SESSION['nic'])) {
   </div>
 
 
-  <center><p> Hired Fashion Designers' details of the customer </p></center>
+  <center><h2> Hired Fashion Designers' details of the customer </h2></center>
 
   <div class="container-box">
     <table>
       <tr>
-        <th>Tailor Name</th>
+        <th>Fashion Designer Name</th>
+        <th>Price</th>
+        <th>Date</th>
         <th>Status</th>
-        <th></th>
       </tr>
       <tr>
         <?php
 
-        $nic = $_SESSION['selected_c_id'];
+        $nic = $_SESSION['selected_cus_id'];
         $sql2 = "SELECT * FROM fd_orders WHERE c_nic='$nic'";
         $result2 = mysqli_query($db, $sql2);
 
@@ -437,12 +491,9 @@ if (!isset($_SESSION['nic'])) {
         ?>
 
             <td><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></td>
+            <td><?php echo $row["price"] ?></td>
+            <td><?php echo $row["date"] ?></td>
             <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a class="cta" href="hired_fd_list.php?fd_order_id=<?php echo $row["id"]?>"><button class="admin-button">View</button></a></center>
-              </div>
-            </td>
       </tr>
     <?php
           }
@@ -453,48 +504,6 @@ if (!isset($_SESSION['nic'])) {
     </table>
   </div>
 
-<center><p>Customer's Payments</p></center>
-
-<div class="container-box">
-
-<table>
-
-<tr>
-        <th>Tailor Name</th>
-        <th>Patment Date</th>
-        <th>Delivered Status</th>
-       
-
-      </tr>
-<tr>
-<?php
-
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic)";
-        $result = mysqli_query($db, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-<td><?php echo $row["fname"]." ".$row["lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-
-</tr>
-<?php
-          }
-        } else {
-        }
-
-    ?>
-
-
-
-</table>
-
-
-</div>
 
 
 

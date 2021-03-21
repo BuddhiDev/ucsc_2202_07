@@ -373,15 +373,19 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
 
-  <center><p> Fashion Designer's Order details</p></center>
+  
  
   <div class="container-box">
+  <center><h2> Fashion Designer's Order details</h2></center>
   <div style="overflow-x:auto;">
     <table>
       <tr>
         <th>Customer Name</th>
+        <th>Price</th>
+        <th>Invoice</th>
+        <th>Date</th>
         <th>Status</th>
-        <th><center>Action</center></th>
+       
       </tr>
       <tr>
 
@@ -398,12 +402,12 @@ if (!isset($_SESSION['nic'])) {
         ?>
 
             <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+            <td><?php echo $row["price"] ?></td>
+            <td><?php echo($row["price"]*0.05)?></td>
+            <td><?php echo $row["date"] ?></td>
             <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a href="fd_manage_order.php?f_order_id=<?php echo $row["id"]?>"><button class="admin-button">View</button></a></center>
-              </div>
-            </td>
+            
+           
       </tr>
       <?php
               }
@@ -416,7 +420,7 @@ if (!isset($_SESSION['nic'])) {
     </table>
   </div>
   </div>
-  <center><p> Uploaded Designs</p></center>
+  <center><h2> Uploaded Designs</h2></center>
 
 
 
@@ -484,42 +488,14 @@ if (!isset($_SESSION['nic'])) {
   </div>
 
 
+  <?php
+
   
+  }
 
-<center><p> Payments</p></center>
-
-<div class="container-box">
-
-<table>
-
-<tr>
-        <th>Customer Name</th>
-        <th>Patment Date</th>
-        <th>Delivered Status</th>
-        <th><center>Action</center></th>
-
-      </tr>
-<tr>
-<td>Kamala Perera</td>
-<td>2020/11/07</td>
-<td>Pending</td>
-<td>No</td>
-
-</tr>
+?>
 
 
-
-
-</table>
-
-
-</div>
-
-
-
-
-  <?php } ?>
-  </div>
 
   
   <?php require("../footer.php") ?>

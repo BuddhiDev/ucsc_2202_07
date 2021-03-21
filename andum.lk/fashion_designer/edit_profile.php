@@ -18,6 +18,8 @@ if (isset($_POST['update_fd'])) {
   $contactno = mysqli_real_escape_string($db, $_POST['contactno']);
   $address = mysqli_real_escape_string($db, $_POST['address']);
   $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
+  $ac_no = mysqli_real_escape_string($db, $_POST['ac_no']);
+  $bank = mysqli_real_escape_string($db, $_POST['bank']);
   
   $filename = $_FILES["profilepic"]["name"];
   $tempname = $_FILES["profilepic"]["tmp_name"];
@@ -30,6 +32,9 @@ if (isset($_POST['update_fd'])) {
       $password = md5($password1);
       $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode',image ='$filename' WHERE nic='$nic'";
       $result=mysqli_query($db, $sql);
+
+      $sqlf = "INSERT INTO fashion_designer (ac_no,bank,nic) VALUES('$ac_no','$bank','$nic')";
+    $resultf = mysqli_query($db, $sqlf);
 
       if (move_uploaded_file($tempname, $folder))
       {
@@ -345,6 +350,15 @@ if (isset($_POST['update_fd'])) {
             <input type="text" value="<?php echo $row["postalcode"]?>" class="field-value-inline" name="postalcode">
           </div>
 
+          <div class="form-field-inline">
+            <label for="ac_no" class="field-label-inline"><b>Account Number</b></label>
+            <input type="text"  class="field-value-inline" name="ac_no">
+          </div>
+
+          <div class="form-field-inline">
+            <label for="bank" class="field-label-inline"><b>Bank</b></label>
+            <input type="text"  class="field-value-inline" name="bank">
+          </div>  
 
           <div class="row">
                 <div class="col-4">
