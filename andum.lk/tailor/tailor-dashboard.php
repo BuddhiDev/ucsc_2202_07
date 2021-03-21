@@ -58,7 +58,6 @@ window.onclick = function(e) {
     <div class="add-new-position">
       <a class="cta" href="add_product.php"><button class="loginbutton btn-full-w">ADD NEW</button></a>
     </div>
-
     
   </div>
 
@@ -148,6 +147,14 @@ $delivered_orders = $row[0];
             </div>
           </a>
         </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="promote.php">
+          <div class="sidebar-icon">
+          <i class="fab fa-adversal"></i>
+            <span class="sidebar-text">Promote Profile</span>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
     
@@ -234,8 +241,6 @@ $result = mysqli_query($db, $sql);
 $row = mysqli_fetch_array($result);
 $mon3=$row[0];
 
-echo $months[2];
-echo $mon3;
 // //sql to get last 4month order count
 // $sql = "SELECT COUNT(id) FROM t_orders WHERE t_nic='$nic' AND date='$months[3]' ";
 // $result = mysqli_query($db, $sql);
