@@ -243,6 +243,15 @@ $delivered_orders = $row[0];
             </div>
           </a>
         </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="promote.php">
+          <div class="sidebar-icon">
+          <i class="fab fa-adversal"></i>
+            <span class="sidebar-text">Promote Profile</span>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
     

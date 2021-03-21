@@ -93,16 +93,27 @@ $nic=$_SESSION['nic'];
     <input type="hidden" name="city" value="Colombo">
     <input type="hidden" name="country" value="Sri Lanka"><br><br> 
 
-
-
-
       <!-- Checkout button click end-->
-      1 Month Promoting Package <br/>
+<?php
+      $sql = "SELECT tid FROM advert_t WHERE tid='$nic' ";
+      $result = mysqli_query($db, $sql);
+      $row = mysqli_fetch_array($result);
+
+      if ($row) {
+?>
+<center><h2>1 Month Promoting Package</h2> <br/>
+      You have already subscribed to this. <br/></center>
+<?php
+      }else{
+
+?>
+      <center><h2>1 Month Promoting Package</h2> <br/>
+      Subscribe this package to make visible your profile on top of the tailor list. <br/></center>
       <center><button class="loginbutton btn-full-w" type="submit" name="Checkout">SUBSCRIBE</button></center>
 
       </form>
 
-
+<?php } ?>
       
     </div>
     

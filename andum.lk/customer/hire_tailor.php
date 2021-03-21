@@ -80,12 +80,7 @@ window.onclick = function(e) {
       </div>
       <!-- Sponsered Profiles -->
 
-      <div class="customer-cover">
-      <div class="row">
-        <h2>Sponsored Tailors</h2>
-      </div>
       
-      <div class="row">
         <?php
 
             // Read all sponsered profiles
@@ -93,6 +88,16 @@ window.onclick = function(e) {
             $adres = mysqli_query($db, $adsql);
 
             if ($adres) {
+
+?>
+<div class="customer-cover">
+      <div class="row">
+        <h2>Sponsored Tailors</h2>
+      </div>
+      
+      <div class="row">
+<?php
+
               while ($adrow = mysqli_fetch_assoc($adres)) {
 
           //retrieve tailor table data
