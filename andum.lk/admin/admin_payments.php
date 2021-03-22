@@ -359,7 +359,7 @@
 
 
 
-<center><p> Readymade dresses orders </p></center>
+  <center><p> Readymade dresses orders </p></center>
 
 <div class="container-box">
     <table>
@@ -372,17 +372,19 @@
         <th>Invoice</th>
         <th>Date</th>
         <th>Status</th>
-        <!--<th><center>Action</center></th>-->
+        <th><center>Action</center></th>
 
       </tr>
       <tr>
       <?php
-          $sql = "SELECT sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
+          $sql = "SELECT sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic, sl.action FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
           $result = mysqli_query($db, $sql); 
           if ($result) {
+            
               while ($row = mysqli_fetch_assoc($result)) {
-                     
+                
       ?>
+      
       <td><?php echo $row["c_nic"] ?></td>
       <td><?php echo $row["t_nic"] ?></td>
       <td><?php echo $row["dress_id"] ?></td>
@@ -391,6 +393,7 @@
       <td><?php echo($row["total_price"]*0.05)?></td>
       <td><?php echo $row["date"] ?></td>
       <td><?php echo $row["status"] ?></td>
+      <td><button id="action" name='action' class='admin-button' onclick="myFunction()">Not Yet</button></td>
       </tr>
 
       <?php } } ?>
@@ -413,6 +416,7 @@
         <th>Invoice</th>
         <th>Date</th>
         <th>Status</th>
+        <th>Action</th>
       </tr>
       <tr>
       <?php
@@ -432,6 +436,7 @@
       <td><?php echo($row["price"]*0.05)?></td>
       <td><?php echo $row["date"] ?></td>
       <td><?php echo $row["status"] ?></td>
+      <td><button id="action"  class='admin-button' onclick="myFunction()">Not Yet</button></td>
       </tr>
 
       <?php } } ?>
@@ -446,15 +451,38 @@
 <table>
 
 <tr>
-        <th>Fashion Designer Name</th>
-        <th>Full paid amount</th>
+        <th>Customer NIC</th>
+        <th>Fashion Designer NIC</th>
+        <th>Full Name</th>
+        <th>Account No</th>
+        <th>bank</th>
+        <th>Full payment</th>
         <th>Invoice</th>
-        <th>Net Money</th>
+        <th>Date</th>
         <th>Status</th>
-       
-
+        <th>Action</th>
+      </tr>
+      <tr>
+      <?php
+          $sqlc = "SELECT o.id, o.c_nic,o.fd_nic,o.fd_fname,o.fd_lname,o.status,o.date,o.price,f.ac_no,f.bank FROM fd_orders AS o INNER JOIN fashion_designer AS f ON o.fd_nic = f.nic ";
+          $resultc = mysqli_query($db, $sqlc); 
+          if ($resultc) {
+              while ($row = mysqli_fetch_assoc($resultc)) {
+                     
+      ?>
+      <td><?php echo $row["c_nic"] ?></td>
+      <td><?php echo $row["fd_nic"] ?></td>
+      <td><?php echo $row["fd_fname"]. " " .$row["fd_lname"]?></td>
+      <td><?php echo $row["ac_no"] ?></td>
+      <td><?php echo $row["bank"] ?></td>
+      <td><?php echo $row["price"] ?></td>
+      <td><?php echo($row["price"]*0.05)?></td>
+      <td><?php echo $row["date"] ?></td>
+      <td><?php echo $row["status"] ?></td>
+      <td><button id="action"  class='admin-button' onclick="myFunction()">Not Yet</button></td>
       </tr>
 
+      <?php } } ?>
 
 
 
@@ -468,6 +496,12 @@
 
  
   </div>
+  <script>
+function myFunction() {
+  document.getElementById("action").innerHTML = "Paid";
+   <?php ?>
+}
+</script>
 
   
   <?php require("../footer.php") ?>

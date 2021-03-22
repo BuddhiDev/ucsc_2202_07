@@ -95,14 +95,14 @@ if(isset($_GET['reject_dress_id'])){
 if(isset($_GET['delete_nic'])) {
     
    $delete_nic = mysqli_real_escape_string($db, $_GET['delete_nic']);
-   $sql = "INSERT INTO banned_users(nic, fname, email, lname, contactno, password, type, address, postalcode, image) SELECT*FROM users WHERE nic='$delete_nic' ";
+   $sql = "INSERT INTO banned_users(nic, fname, email, lname, contactno, password, type, address, postalcode, image,vkey, verified, createdate) SELECT*FROM users WHERE nic='$delete_nic' ";
    $result=mysqli_query($db, $sql);
    $sql = "DELETE FROM users WHERE nic='$delete_nic' ";
    $result=mysqli_query($db, $sql);
     
     if ($result) {
     
-        echo "Suspend User Account";
+        
         header('location: deleted_users.php');
 
     } 
@@ -111,6 +111,24 @@ if(isset($_GET['delete_nic'])) {
     }
 }
 
+//restore user
+if(isset($_GET['restore_nic'])) {
+    
+    $restore_nic = mysqli_real_escape_string($db, $_GET['restore_nic']);
+    $sql = "INSERT INTO users(nic, fname, email, lname, contactno, password, type, address, postalcode, image, vkey, verified, createdate) SELECT*FROM banned_users WHERE nic='$restore_nic' ";
+    $result=mysqli_query($db, $sql);
+    $sql = "DELETE FROM banned_users WHERE nic='$restore_nic' ";
+    $result=mysqli_query($db, $sql);
+     
+     if ($result) {
+     
+         header('location: deleted_users.php');
+ 
+     } 
+     else {
+         echo "<script>alert('Sorry! Restore User Account is Unsuccessful')</script>";
+     }
+ }
 
 
 

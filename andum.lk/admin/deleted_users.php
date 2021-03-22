@@ -1,10 +1,6 @@
 <?php include("../server.php"); ?>
-<?php if(isset($_GET['nic']) ){
-    $selected_c_id = mysqli_real_escape_string($db, $_GET['nic']);
-    $_SESSION['selected_c_id']=$selected_c_id;
-    //header('location: customer_view.php');
-}
- ?>
+<?php include("admin_controller.php"); ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,7 +154,6 @@
               </div>
             </li>
             <li><i class="fas fa-envelope"></i></li>
-            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
           </ul>
         </div>
       </div>
@@ -176,15 +171,10 @@
       })
   </script>
   <div class="container-box">
-    <div class="fd-container-box">
-      
-     
-
-      </div>
-
+    
       <div class="add-new-position">
-      <a class="cta" href="deleted_users_pdf.php"><button class="admin-button">Generate PDF</button></a>
-    </div>
+          <a class="cta" href="deleted_users_pdf.php"><button class="admin-button">Generate PDF</button></a>
+      </div>
       <h1>Banned Users</h1>
     <div style="overflow-x:auto;">
       <table>
@@ -213,15 +203,15 @@
           <td><?php echo $row["email"] ?></td>
           <td><?php echo $row["contactno"] ?></td>
           <td><?php echo $row["type"] ?></td>
-          <td>
+          <!--<td>
             <div>
               <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>
             
             </div>
-          </td>
+          </td>-->
           <td>
             <div>
-              <a href="manage_customer.php?restore_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="#" >Restore</button></a>
+              <a href="deleted_users.php?restore_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="#" >Restore</button></a>
             </div>
           </td>
           
