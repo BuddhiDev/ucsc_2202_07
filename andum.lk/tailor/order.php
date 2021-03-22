@@ -210,23 +210,23 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("notify-myDropdown").classList.toggle("notify-show");
-}
+  <script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("notify-myDropdown").classList.toggle("notify-show");
+  }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.notify-dropbtn')) {
-  var myDropdown = document.getElementById("notify-myDropdown");
-    if (myDropdown.classList.contains('notify-show')) {
-      myDropdown.classList.remove('notify-show');
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(e) {
+    if (!e.target.matches('.notify-dropbtn')) {
+    var myDropdown = document.getElementById("notify-myDropdown");
+      if (myDropdown.classList.contains('notify-show')) {
+        myDropdown.classList.remove('notify-show');
+      }
     }
   }
-}
-</script>
+  </script>
 
 
 
@@ -731,6 +731,9 @@ window.onclick = function(e) {
       <?php } else { ?>
       <center><label for="searchname" class="field-label-inline">Estimated Order Price: </label></center>
       <?php } ?>
+      <!-- <input type="hidden" value=<?php echo $row["t_fname"]; ?> name="t_fname">
+      <input type="hidden" value=<?php echo $row["t_lname"]; ?> name="t_lname">
+      <input type="hidden" value=<?php echo $row["c_nic"];; ?> name="c_nic"> -->
       <center><input type="text" style=" width: 50%"  name="t-order-price" <?php if($row["status"]!="Pending") echo "disabled"?> ></center>
       <center><input type="hidden" class="field-value-inline" name="order_id" value=<?php echo $row["id"] ?>></center>
       <center><button class="accept-button" type="submit" name="order-accept" <?php if($row["status"]!="Pending") echo "disabled"?>>Submit</button></center>    

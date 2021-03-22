@@ -299,11 +299,13 @@ if (isset($_POST['hireT'])) {
     $other = mysqli_real_escape_string($db, $_POST['other']);
     $dress_id = mysqli_real_escape_string($db, $_POST['selected_dress_id']);
     $date = date('y-m-d h:i:s');
+    $msg = "Message from";
 
     //echo $t_nic,$t_fname,$chest;
     $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date)
     VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date')";
    $result = mysqli_query($db, $sql);
+   
 //    $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
 //    $resultn = mysqli_query($db, $sqln);
    
@@ -380,6 +382,15 @@ if(isset($_GET['id']) ){
     $main_id = $_GET['id'];
     $sql_update = mysqli_query($db,"UPDATE t_orders SET nstatus=1 WHERE id='$main_id'");
     $selected_o_id = mysqli_real_escape_string($db, $_GET['id']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: order.php');
+}
+
+//select customer notification
+if(isset($_GET['id_c']) ){
+    $main_id = $_GET['id_c'];
+    $sql_update = mysqli_query($db,"UPDATE c_orders SET nstatus=1 WHERE id='$main_id'");
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['id_c']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
 }
@@ -823,9 +834,15 @@ if (isset($_POST['order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $order_price = mysqli_real_escape_string($db, $_POST['t-order-price']);
+    // $t_fname = mysqli_real_escape_string($db, $_POST['t_fname']);
+    // $t_lname = mysqli_real_escape_string($db, $_POST['t_lname']);
+    // $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
+    $msg = 'Order Accepted';
     $sql = "UPDATE t_orders SET status='Accepted',price=$order_price WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
-
+    $sqln = "INSERT INTO c_orders (price,msg)
+    VALUES ('$order_price','$msg')";
+   $resultn = mysqli_query($db, $sqln);
 }
 
 //update tailor order statues as paid -- need to integrate payment gateway
