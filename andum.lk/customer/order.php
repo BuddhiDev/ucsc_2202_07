@@ -737,7 +737,8 @@ if (!isset($_SESSION['nic'])) {
               <?php $_SESSION['tailor_oid_auth']=$row["id"]?> 
               <button name="order-paid" class="cart-button" type="submit">Make Payment</button>
               </form>
-              </form action="order.php" method="post" id=form-1>
+              <form action="order.php" method="post" id=form-1><br/>
+              <input type="hidden" name="order_id" value=<?php echo $row["id"]?>>
               <button name="order-appeal" class="cart-button" type="submit">Request to change the price</button>
             </div>
 
