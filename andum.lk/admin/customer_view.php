@@ -314,8 +314,7 @@ if (!isset($_SESSION['nic'])) {
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
-            <li><i class="fas fa-envelope"></i></li>
-            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+            <!--<li><i class="fas fa-envelope"></i></li>-->
         </div>
         </ul>
       </div>

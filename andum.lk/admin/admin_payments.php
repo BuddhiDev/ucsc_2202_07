@@ -310,7 +310,6 @@
                 </ul>
 
             <li><i class="fas fa-envelope"></i></li>
-            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
         </div>
         </ul>
       </div>

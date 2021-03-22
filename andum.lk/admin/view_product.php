@@ -199,8 +199,6 @@ if (!isset($_SESSION['nic'])) {
                 </ul>
               </div>
             </li>
-            <li><i class="fas fa-envelope"></i></li>
-         <!--<li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>-->
           </ul>
         </div>
       </div>
