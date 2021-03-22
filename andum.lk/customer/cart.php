@@ -69,7 +69,21 @@ window.onclick = function(e) {
 
   <div class="container-box">
     <h2>Cart</h2>
-    <table>
+    
+        <?php
+        $nic = $_SESSION['nic'];
+        $total = 0;
+        $sql = "SELECT cart.order_id, cart.quantity, cart.size, cart.color,  dress_showcase.category, dress_showcase.title, dress_showcase.price, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$nic' AND cart.dress_id=dress_showcase.dress_id";
+        $result = mysqli_query($db, $sql);
+
+    //generate order random number and hash it
+    $_SESSION['secret_order_key']=md5(rand(10,1000000));
+    $secret_order_key = $_SESSION['secret_order_key'];
+
+
+        if (mysqli_num_rows($result) > 0) {
+          ?>
+<table>
       <tr>
         <th>Order No</th>
         <th>Description</th>
@@ -81,18 +95,7 @@ window.onclick = function(e) {
         <th>Remove</th>
       </tr>
       <tr>
-        <?php
-        $nic = $_SESSION['nic'];
-        $total = 0;
-        $sql = "SELECT cart.order_id, cart.quantity, cart.size, cart.color,  dress_showcase.category, dress_showcase.title, dress_showcase.price, dress_showcase.amount FROM cart INNER JOIN dress_showcase ON cart.c_nic='$nic' AND cart.dress_id=dress_showcase.dress_id";
-        $result = mysqli_query($db, $sql);
-        
-    //generate order random number and hash it
-    $_SESSION['secret_order_key']=md5(rand(10,1000000));
-    $secret_order_key = $_SESSION['secret_order_key'];
-
-
-        if (mysqli_num_rows($result) > 0) {
+          <?php
           while ($row = mysqli_fetch_assoc($result)) {
         ?>
 
@@ -128,12 +131,7 @@ window.onclick = function(e) {
               <td colspan="6" align="right">Total</td>
               <td align="right"><?php echo number_format($total,2);?></td>
       </tr>
-    <?php
-          
-        } else {
-        }
 
-    ?>
     </table>
     <div class="checkout-box">
       <div class="checkout-box-block">
@@ -157,7 +155,11 @@ window.onclick = function(e) {
     <input type="hidden" name="city" value="Colombo">
     <input type="hidden" name="country" value="Sri Lanka"><br><br> 
 
+    <?php
+          
+        } 
 
+    ?>
 
 
       <!-- Checkout button click end-->
@@ -165,10 +167,12 @@ window.onclick = function(e) {
       <center><button class="loginbutton btn-full-w" type="submit" name="Checkout">Checkout</button></center>
       <?php }  else {?>
       <center> No Items in the cart</center> <?php } ?>
+
       </form>
+      <center><a href="index.php"><button class="loginbutton btn-full-w">Continue Shopping</button></a></center>
       </div>
       <div class="checkout-box-block">
-        <a href="index.php"><button class="loginbutton btn-full-w">Continue Shopping</button></a>
+
       </div>
 
     </div>
