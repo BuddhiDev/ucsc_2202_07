@@ -771,18 +771,19 @@ if(isset($_POST['update_dress']) ){
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
   $filename = $_FILES["myimage"]["name"];
   $tempname = $_FILES["myimage"]["tmp_name"];
-  $folder = "products/".$filename;
-
-  if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
-  {
-    $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
-    $result=mysqli_query($db, $sql);
-    
-    if($filename=""){
-        $sql = "UPDATE dress_showcase SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
+ 
+    if($filename!="")
+    {
+        move_uploaded_file($tempname , "products/$filename");
+        $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', image='$filename', t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
+        $result=mysqli_query($db, $sql);
+    }  
+    else
+    {
+        $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
         $result=mysqli_query($db, $sql);
     }
-    $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
+    $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic) SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
     $result = mysqli_query($db,$sql);
     $sql = "DELETE FROM dress_showcase WHERE dress_id='$selected_dress_id1'";
     $result = mysqli_query($db,$sql);
@@ -793,7 +794,7 @@ if(isset($_POST['update_dress']) ){
     else{
         echo "<script>alert('Sorry! Update Unsuccessful')</script>";
     }
-}
+
 }
 
 if(isset($_POST['update_reject_dress']) ){
@@ -820,17 +821,19 @@ if(isset($_POST['update_reject_dress']) ){
     $amount = mysqli_real_escape_string($db, $_POST['amount']);
     $filename = $_FILES["myimage"]["name"];
     $tempname = $_FILES["myimage"]["tmp_name"];
-    $folder = "products/".$filename;
+    
   
-    if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
+    if($filename!="")
     {
-      $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
-      $result=mysqli_query($db, $sql);
-      
-      if($filename=""){
-          $sql = "UPDATE rejected_dress SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
-          $result=mysqli_query($db, $sql);
-      }
+        move_uploaded_file($tempname , "products/$filename");
+        $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', image='$filename', t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
+        $result=mysqli_query($db, $sql);
+    }  
+    else
+    {
+        $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
+        $result=mysqli_query($db, $sql);
+    }
       $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM rejected_dress WHERE dress_id='$selected_dress_id' ";
       $result = mysqli_query($db,$sql);
       $sql = "DELETE FROM rejected_dress WHERE dress_id='$selected_dress_id'";
@@ -842,7 +845,7 @@ if(isset($_POST['update_reject_dress']) ){
       else{
           echo "<script>alert('Sorry! Update Unsuccessful')</script>";
       }
-  }
+  
   }
   
   
