@@ -26,7 +26,7 @@
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+
 
   <header>
     <nav class="navbar-main">
@@ -160,6 +160,8 @@
       </div>
     </nav>
   </header>
+
+  <body>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",

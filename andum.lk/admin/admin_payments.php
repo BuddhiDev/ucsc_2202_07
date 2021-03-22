@@ -190,7 +190,7 @@
 
 </head>
 
-<body>
+
 
 <header>
     <nav class="navbar-main">
@@ -317,6 +317,15 @@
       </div>
     </nav>
   </header>
+
+  <body>
+
+  <script>
+    document.querySelector(".nav_right ul li").addEventListener("click",
+      function() {
+        this.classList.toggle("active");
+      })
+  </script>
 
   <div class="container-box">
     <div class="fd-container-box">

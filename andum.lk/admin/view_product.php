@@ -181,7 +181,7 @@ if (!isset($_SESSION['nic'])) {
  
 </head>
 
-<body>
+
 <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
@@ -206,6 +206,8 @@ if (!isset($_SESSION['nic'])) {
       </div>
     </nav>
   </header>
+
+  <body>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",

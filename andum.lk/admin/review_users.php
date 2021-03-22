@@ -34,7 +34,7 @@
   </style>
 </head>
 
-<body>
+
 
   <header>
     <nav class="navbar-main">
@@ -167,6 +167,8 @@
 
     </nav>
   </header>
+
+  <body>
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
       function() {
