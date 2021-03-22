@@ -318,20 +318,7 @@
     </nav>
   </header>
 
-  <div class="container-box">
-    <div class="fd-container-box">
-     <div class="row">
-      <div class="admin-search-container">
-            <form method="post" action = "search_payment.php">
-              <div class="form-field-inline">
-                <input type="text" class="field-value-inline" name="q" placeholder="Search by customer nic..">
-                <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-              </div>
-            </form>
-          </div>
-          
-      </div>
-
+  
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -368,7 +355,7 @@
       </tr>
       <tr>
       <?php
-          $sql = "SELECT sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
+          $sql = "SELECT sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id WHERE  sl.c_nic LIKE '%$keyword%' ";
           $result = mysqli_query($db, $sql); 
           if ($result) {
               while ($row = mysqli_fetch_assoc($result)) {
@@ -407,7 +394,7 @@
       </tr>
       <tr>
       <?php
-          $sqlc = "SELECT o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic ";
+          $sqlc = "SELECT o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic  WHERE  o.c_nic LIKE '%$keyword%' ";
           $resultc = mysqli_query($db, $sqlc); 
           if ($resultc) {
               while ($row = mysqli_fetch_assoc($resultc)) {
@@ -430,29 +417,9 @@
     </table>
   </div>
 
-<center><p>Fashion designer orders</p></center>
-
-<div class="container-box">
-
-<table>
-
-<tr>
-        <th>Fashion Designer Name</th>
-        <th>Full paid amount</th>
-        <th>Invoice</th>
-        <th>Net Money</th>
-        <th>Status</th>
-       
-
-      </tr>
+<
 
 
-
-
-</table>
-
-
-</div>
 
 
 

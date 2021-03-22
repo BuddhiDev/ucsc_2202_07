@@ -147,16 +147,16 @@
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Orders</a></li>
+                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
+                  <li><a href="manage_customer.php"><i class="fas fa-users"></i>Manage Customers</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
-              </div>
-            </li>
+
             <li><i class="fas fa-envelope"></i></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
         </div>
+        </ul>
+      </div>
       </div>
 <!-- generate pdf -->
       <div>
@@ -171,19 +171,20 @@
 
     </nav>
   </header>
+
   <div class="container-box">
     <div class="fd-container-box">
-     <!-- <div class="row">
+     <div class="row">
       <div class="admin-search-container">
-            <form method="post">
+            <form method="post" action = "search_customer.php">
               <div class="form-field-inline">
                 <input type="text" class="field-value-inline" name="q" placeholder="Search...">
                 <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
             </form>
           </div>
-
-      </div>-->
+          
+      </div>
     <div style="overflow-x:auto;">
       <table>
         <tr>
