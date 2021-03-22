@@ -76,7 +76,6 @@ window.onclick = function(e) {
             </div>
           </form>
         </div>
-
       </div>
       <!-- Sponsered Profiles -->
 
@@ -89,14 +88,14 @@ window.onclick = function(e) {
 
             if ($adres) {
 
-?>
-<div class="customer-cover">
-      <div class="row">
-        <h2>Sponsored Tailors</h2>
-      </div>
-      
-      <div class="row">
-<?php
+            ?>
+      <div class="customer-cover">
+        <div class="row">
+          <h2>Sponsored Tailors</h2>
+        </div>
+                  
+        <div class="row">
+            <?php
 
               while ($adrow = mysqli_fetch_assoc($adres)) {
 
@@ -255,7 +254,7 @@ window.onclick = function(e) {
         ?>
       </div>
 
-      </div>
+      
     
       
     </div>

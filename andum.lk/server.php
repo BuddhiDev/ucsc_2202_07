@@ -389,7 +389,7 @@ if(isset($_GET['id']) ){
 //select customer notification
 if(isset($_GET['id_c']) ){
     $main_id = $_GET['id_c'];
-    $sql_update = mysqli_query($db,"UPDATE c_orders SET nstatus=1 WHERE id='$main_id'");
+    $sql_update = mysqli_query($db,"UPDATE t_orders SET cstatus=1 WHERE id='$main_id'");
     $selected_o_id = mysqli_real_escape_string($db, $_GET['id_c']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
@@ -872,7 +872,7 @@ if (isset($_POST['order-accept'])) {
     // $t_lname = mysqli_real_escape_string($db, $_POST['t_lname']);
     // $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $msg = 'Order Accepted';
-    $sql = "UPDATE t_orders SET status='Accepted',price=$order_price WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Accepted',price=$order_price, cstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     $sqln = "INSERT INTO c_orders (price,msg)
     VALUES ('$order_price','$msg')";
@@ -883,7 +883,7 @@ if (isset($_POST['order-accept'])) {
 if (isset($_POST['order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Paid' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Paid', nstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -892,7 +892,7 @@ if (isset($_POST['order-paid'])) {
 if (isset($_POST['order-appeal'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Pending' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Pending',nstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -901,7 +901,7 @@ if (isset($_POST['order-appeal'])) {
 if (isset($_POST['order-ongoing'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Ongoing' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Ongoing', cstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -913,7 +913,7 @@ if (isset($_POST['order-deliver'])) {
     $filename = $_FILES["t_output"]["name"];
     $tempname = $_FILES["t_output"]["tmp_name"];
     $folder = "../orders/tailor/".$order_id.$filename;
-    $sql = "UPDATE t_orders SET status='Delivered',doc='$order_id$filename' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Delivered',doc='$order_id$filename', cstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     if (move_uploaded_file($tempname, $folder))
     {
@@ -932,7 +932,7 @@ if (isset($_POST['order-complete'])) {
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $t_rate = mysqli_real_escape_string($db, $_POST['t_rate']);
     $ta_nic = mysqli_real_escape_string($db, $_POST['tailor_nic']);
-    $sql = "UPDATE t_orders SET status='Completed' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Completed', nstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     $sql = "SELECT * FROM tailors WHERE nic='$ta_nic'";
     $result=mysqli_query($db, $sql);
@@ -963,6 +963,7 @@ if (isset($_POST['fd-order-accept'])) {
 if (isset($_POST['fd-order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $other = 'Message From';
     $sql = "UPDATE fd_orders SET status='Paid' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
