@@ -130,30 +130,49 @@ if(isset($_GET['restore_nic'])) {
      }
  }
 
+ //Pay for ready-made dresses payment to tailor
+ if(isset($_POST['readymade_dress_pay'])) {
+    $id = $_POST['id'];
 
+    $sql = "UPDATE dress_sales SET action='Paid' WHERE id='$id' ";
+    $result = mysqli_query($db, $sql);
+    if($result)
+    {
+        echo "<script>alert('status update successful')</script>";
+    }
+    else{
+        echo "<script>alert('Sorry! status update unsuccessful')</script>";
+    }
+ }
+ //Pay for customize dresses payment to tailor
+ if(isset($_POST['customize_dress_pay'])) {
+    $id = $_POST['id'];
 
-//review user
-/*
-if(isset($_GET['review_user_id'])){
-    
-    // $t_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
-     $review_user_id = mysqli_real_escape_string($db, $_GET['review_user_id']);
-     $sql3 = "INSERT INTO users (nic, fname, email, lname, contactno, password, type, address, postalcode) SELECT*FROM review_user WHERE nic='$review_user_id' ";
-     $result3=mysqli_query($db, $sql3);
-     $sql3 = "DELETE FROM review_user WHERE nic='$review_user_id' ";
-    $result3=mysqli_query($db, $sql3);
- 
-     if ($result3) {
- 
-         echo "<script>alert('CONFIRMATION SUCCESSFULY')</script>";
-         header('location: review_users.php');
-     
-  } else {
-     array_push($errors, " failed, try again later");
-     echo "<script>alert('Sorry! CONFIRMATION UNSUCCESSFULY')</script>";
+    $sql = "UPDATE t_orders SET action='Paid' WHERE id='$id' ";
+    $result = mysqli_query($db, $sql);
+    if($result)
+    {
+        echo "<script>alert('Paid for tailor')</script>";
+    }
+    else{
+        echo "<script>alert('Sorry! action update unsuccessful')</script>";
+    }
  }
 
-}*/
+ //Pay for design payment to fashion designers
+ if(isset($_POST['design_pay'])) {
+    $id = $_POST['id'];
+
+    $sql = "UPDATE fd_orders SET action='Paid' WHERE id='$id' ";
+    $result = mysqli_query($db, $sql);
+    if($result)
+    {
+        echo "<script>alert('Paid for fashion designer')</script>";
+    }
+    else{
+        echo "<script>alert('Sorry! action update unsuccessful')</script>";
+    }
+ }
 
 
 

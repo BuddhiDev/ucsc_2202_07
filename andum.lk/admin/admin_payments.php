@@ -1,7 +1,7 @@
-<?php include("../server.php");
+<?php include("../server.php"); ?>
+<?php include("admin_controller.php"); ?>
 
 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -372,12 +372,12 @@
         <th>Invoice</th>
         <th>Date</th>
         <th>Status</th>
-        <th><center>Action</center></th>
+        <th>Action</th>
 
       </tr>
       <tr>
       <?php
-          $sql = "SELECT sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic, sl.action FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
+          $sql = "SELECT sl.id,sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic, sl.action FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
           $result = mysqli_query($db, $sql); 
           if ($result) {
             
@@ -393,7 +393,10 @@
       <td><?php echo($row["total_price"]*0.05)?></td>
       <td><?php echo $row["date"] ?></td>
       <td><?php echo $row["status"] ?></td>
-      <td><button id="action" name='action' class='admin-button' onclick="myFunction()">Not Yet</button></td>
+      <form method="post">
+      <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
+      <td><button name='readymade_dress_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
+      </form>
       </tr>
 
       <?php } } ?>
@@ -420,7 +423,7 @@
       </tr>
       <tr>
       <?php
-          $sqlc = "SELECT o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic ";
+          $sqlc = "SELECT o.id,o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,o.action,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic ";
           $resultc = mysqli_query($db, $sqlc); 
           if ($resultc) {
               while ($row = mysqli_fetch_assoc($resultc)) {
@@ -436,7 +439,10 @@
       <td><?php echo($row["price"]*0.05)?></td>
       <td><?php echo $row["date"] ?></td>
       <td><?php echo $row["status"] ?></td>
-      <td><button id="action"  class='admin-button' onclick="myFunction()">Not Yet</button></td>
+      <form method="post">
+        <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
+        <td><button name='customize_dress_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
+      </form>
       </tr>
 
       <?php } } ?>
@@ -464,7 +470,7 @@
       </tr>
       <tr>
       <?php
-          $sqlc = "SELECT o.id, o.c_nic,o.fd_nic,o.fd_fname,o.fd_lname,o.status,o.date,o.price,f.ac_no,f.bank FROM fd_orders AS o INNER JOIN fashion_designer AS f ON o.fd_nic = f.nic ";
+          $sqlc = "SELECT o.id, o.c_nic,o.fd_nic,o.fd_fname,o.fd_lname,o.status,o.date,o.price,o.action,f.ac_no,f.bank FROM fd_orders AS o INNER JOIN fashion_designer AS f ON o.fd_nic = f.nic ";
           $resultc = mysqli_query($db, $sqlc); 
           if ($resultc) {
               while ($row = mysqli_fetch_assoc($resultc)) {
@@ -479,7 +485,10 @@
       <td><?php echo($row["price"]*0.05)?></td>
       <td><?php echo $row["date"] ?></td>
       <td><?php echo $row["status"] ?></td>
-      <td><button id="action"  class='admin-button' onclick="myFunction()">Not Yet</button></td>
+      <<form method="post" action='admin_payments.php'>
+        <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
+        <td><button name='design_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
+      </form>
       </tr>
 
       <?php } } ?>
@@ -496,12 +505,6 @@
 
  
   </div>
-  <script>
-function myFunction() {
-  document.getElementById("action").innerHTML = "Paid";
-   <?php ?>
-}
-</script>
 
   
   <?php require("../footer.php") ?>
