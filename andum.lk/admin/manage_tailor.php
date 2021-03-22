@@ -171,7 +171,7 @@
   <div class="container-box">
     <div class="fd-container-box">
      <div class="row">
-      <div class="admin-search-container">
+      <div class="search-container">
             <form method="post" action = "search_tailor.php">
               <div class="form-field-inline">
                 <input type="text" class="field-value-inline" name="q" placeholder="Search...">
