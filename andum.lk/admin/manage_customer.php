@@ -173,7 +173,7 @@
   </header>
   <div class="container-box">
     <div class="fd-container-box">
-      <div class="row">
+     <!-- <div class="row">
       <div class="admin-search-container">
             <form method="post">
               <div class="form-field-inline">
@@ -183,7 +183,7 @@
             </form>
           </div>
 
-      </div>
+      </div>-->
     <div style="overflow-x:auto;">
       <table>
         <tr>

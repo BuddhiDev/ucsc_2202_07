@@ -9,15 +9,14 @@ $db = mysqli_connect('localhost', 'root', '', 'andum');
 if (isset($_GET['order_id'])) {
 
     if($_SESSION['secret_order_key']==$_GET['order_id']){
-        //echo "buy";
 
-    $order_id = $_SESSION['fd_oid_auth'];
-    $sql = "UPDATE fd_orders SET status='Paid' WHERE id='$order_id'";
+    $nic=$_SESSION['nic'];
+    $sql = "INSERT INTO advert_f (fid) VALUES ('$nic')";
     $result=mysqli_query($db, $sql);
 
     }
 
-    header('location: fdesigner-order.php');
+    header('location: index.php');
 }else{
     echo "Payment verification failed";
 

@@ -159,7 +159,7 @@ window.onclick = function(e) {
           <div class="btn-panel-center">
             <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN UP WITH FACEBOOK </button>
             <button class="googlebutton btn-full-w" type="submit">SIGN UP WITH GOOGLE </button> -->
-            <button class="loginbutton btn-full-w" type="submit" name="update_user">Save Data</button>
+            <button class="loginbutton btn-full-w" type="submit" name="update_customer">Save Data</button>
           </div>
 
           <?php

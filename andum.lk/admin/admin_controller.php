@@ -27,13 +27,18 @@ if(isset($_GET['d_tnic']) ){
 
 //view customer details
 if(isset($_GET['c_nic']) ){
-    $selected_c_id = mysqli_real_escape_string($db, $_GET['nic']);
+
+    $selected_cus_id = mysqli_real_escape_string($db, $_GET['c_nic']);
+    $_SESSION['selected_cus_id']=$selected_cus_id;
+
+    $selected_c_id = mysqli_real_escape_string($db, $_GET['c_nic']);
     $_SESSION['selected_c_id']=$selected_c_id;
+
     header('location: customer_view.php');
 }
 //suspend customer
 if(isset($_GET['d_cnic']) ){
-      $selected_c_id = mysqli_real_escape_string($db, $_GET['d_nic']);
+      $selected_c_id = mysqli_real_escape_string($db, $_GET['d_cnic']);
       $_SESSION['selected_c_id']=$selected_c_id;
       header('location: banned_cust.php');
 }

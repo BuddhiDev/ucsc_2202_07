@@ -16,7 +16,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andum.lk - Tailor</title>
+  <title>Andum.lk - Admin</title>
   <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
@@ -225,22 +225,22 @@ $total_banned_users = $row[0];
             </div>
           </a>
         </li>
-        <li class="sidebar-item">
+        <!-- <li class="sidebar-item">
           <a class="sidebar-link" href="index.php">
           <div class="sidebar-icon">
             <i class="fas fa-comments"></i>
             <span class="sidebar-text">Feedback</span>
             </div>
           </a>
-        </li>
-        <li class="sidebar-item">
+        </li> -->
+        <!-- <li class="sidebar-item">
           <a class="sidebar-link" href="index.php">
           <div class="sidebar-icon">
           <i class="fas fa-bell"></i>
             <span class="sidebar-text">Notifications</span>
           </div>
           </a>
-        </li>
+        </li> -->
         <li class="sidebar-item">
           <a class="sidebar-link" href="deleted_users.php">
           <div class="sidebar-icon">
@@ -309,13 +309,13 @@ $total_banned_users = $row[0];
             <h3>Fashion designers</h3>
           </div>
         </div>
-        <div class=col-3>
+        <!-- <div class=col-3>
           <div class="fd-block-1">
           <h3 class="fd-block-font-size">24</h3>
             <Br>
             <h3>Notifications</h3>
           </div>
-        </div>
+        </div> -->
         <div class=col-3>
           <div class="fd-block-4">
           <h3 class="fd-block-font-size"><?php echo $total_banned_users ?></h3>

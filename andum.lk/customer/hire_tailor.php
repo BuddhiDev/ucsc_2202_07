@@ -78,6 +78,81 @@ window.onclick = function(e) {
         </div>
 
       </div>
+      <!-- Sponsered Profiles -->
+
+      
+        <?php
+
+            // Read all sponsered profiles
+            $adsql = "SELECT * FROM advert_t LIMIT 3";
+            $adres = mysqli_query($db, $adsql);
+
+            if ($adres) {
+
+?>
+<div class="customer-cover">
+      <div class="row">
+        <h2>Sponsored Tailors</h2>
+      </div>
+      
+      <div class="row">
+<?php
+
+              while ($adrow = mysqli_fetch_assoc($adres)) {
+
+          //retrieve tailor table data
+          $loop_nic=$adrow["tid"];
+          $t_sql="SELECT * FROM tailors WHERE nic='$loop_nic' ";
+          $t_res=mysqli_query($db, $t_sql);
+          $t_row=mysqli_fetch_assoc($t_res);
+
+          //retrieve user table data
+          $u_sql="SELECT * FROM users WHERE nic='$loop_nic' ";
+          $u_res=mysqli_query($db, $u_sql);
+          $u_row=mysqli_fetch_assoc($u_res);
+
+        ?>
+        <!-- Dress box start -->
+        <div class="col-4">
+          <div class="designer-box">
+          <form method="get" action="hire_tailor.php" class="users">
+            <input type="hidden" value="<?php echo $nic ?> " name="nic">
+            
+
+            <div class="fd-card-item">
+              <div class="fd-card-img">
+                <a href="hire_tailor.php?t_nic=<?php echo $u_row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $u_row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
+              </div>
+              <div class="fd-card-content">
+              <?php if($t_row["rate"]>0) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>1) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>2) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>3) { ?><span class="fa fa-star checked"></span><?php } else { ?> <span class="fa fa-star"></span><?php } ?>
+              <?php if($t_row["rate"]>4) { ?><span class="fa fa-star checked">(<?php echo $t_row["total_fb"] ?>)</span><?php } else { ?> <span class="fa fa-star">(<?php echo $t_row["total_fb"] ?>)</span><?php } ?>
+                <div class="card-title"><?php echo $u_row["fname"]." ".$u_row["lname"] ?></div>
+                <div class="card-description">
+                  
+                </div>
+              </div>
+            </div>
+          </form>
+
+          </div>
+          
+        </div>
+        <!-- Dress box end-->
+
+        <?php
+              }
+            }
+           
+        ?>
+      </div>
+
+      </div>
+
+      <!-- sponsered end -->
+
       <div class="customer-cover">
       <div class="row">
         <h2>All Categories</h2>

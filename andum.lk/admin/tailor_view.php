@@ -376,14 +376,14 @@ if (!isset($_SESSION['nic'])) {
     </form>
   </div>
  <?php } ?>
-  <center><p> Tailor's Dressshowcase</p></center>
+  <center><h2> Tailor's Dressshowcase</h2></center>
 
 
 
 
   <div class="customer-cover">
         <div class="row">
-          <h2 class="customer-heading">Readymade Dresses</h2>
+          
         </div>
         <div class="row">
 
@@ -430,7 +430,7 @@ if (!isset($_SESSION['nic'])) {
       
       
   </div>
-<center><p> Orders</p></center>
+<center><h2> Readymade Dress Orders</h2></center>
 
 <div class="container-box">
 
@@ -445,7 +445,8 @@ if (!isset($_SESSION['nic'])) {
 
         <?php
 
-        $nic = $_SESSION['nic'];
+        $selected_tailor_id = $_SESSION['selected_tailor_id'];
+        $nic = $_SESSION['selected_tailor_id'];
         $sql2 = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic";
         $result2 = mysqli_query($db, $sql2);
 
@@ -474,36 +475,50 @@ if (!isset($_SESSION['nic'])) {
 
 </div>
 
+<center><h2> Customize Dresses Orders</h2></center>
+<div class="container-box">
+    <table>
+      <tr>
+        <th>Customer NIC</th>
+        
+        <th>Dress_id</th>
+        <th>Full payment</th>
+        <th>Invoice</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+      <?php
+          $selected_tailor_id = $_SESSION['selected_tailor_id'];
+          $nic = $_SESSION['selected_tailor_id'];
+          $sqlc = "SELECT o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic WHERE nic = '$nic'";
+          $resultc = mysqli_query($db, $sqlc); 
+          if ($resultc) {
+              while ($row = mysqli_fetch_assoc($resultc)) {
+                     
+      ?>
+      <td><?php echo $row["c_nic"] ?></td>
+      
+      <td><?php echo $row["dress_id"] ?></td>
+      <td><?php echo $row["price"] ?></td>
+      <td><?php echo($row["price"]*0.05)?></td>
+      <td><?php echo $row["date"] ?></td>
+      <td><?php echo $row["status"] ?></td>
+      </tr>
 
-
+      <?php } } ?>
+      
+    </table>
+  </div>
 
   
 
-<center><p> Payments</p></center>
-
-<div class="container-box">
-
-<table>
-
-<tr>
-        <th>Tailor Name</th>
-        <th>Patment Date</th>
-        <th>Delivered Status</th>
-        <th><center>Action</center></th>
-
-      </tr>
-<tr>
-<td>Kamala Perera</td>
-<td>2020/11/07</td>
-<td>Pending</td>
-<td>No</td>
-
-</tr>
 
 
 
 
-</table>
+
+
 
 
 </div>
