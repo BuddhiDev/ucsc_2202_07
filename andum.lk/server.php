@@ -299,11 +299,13 @@ if (isset($_POST['hireT'])) {
     $other = mysqli_real_escape_string($db, $_POST['other']);
     $dress_id = mysqli_real_escape_string($db, $_POST['selected_dress_id']);
     $date = date('y-m-d h:i:s');
+    $msg = "Message from";
 
     //echo $t_nic,$t_fname,$chest;
     $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date)
     VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date')";
    $result = mysqli_query($db, $sql);
+   
 //    $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
 //    $resultn = mysqli_query($db, $sqln);
    
@@ -380,6 +382,15 @@ if(isset($_GET['id']) ){
     $main_id = $_GET['id'];
     $sql_update = mysqli_query($db,"UPDATE t_orders SET nstatus=1 WHERE id='$main_id'");
     $selected_o_id = mysqli_real_escape_string($db, $_GET['id']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: order.php');
+}
+
+//select customer notification
+if(isset($_GET['id_c']) ){
+    $main_id = $_GET['id_c'];
+    $sql_update = mysqli_query($db,"UPDATE t_orders SET cstatus=1 WHERE id='$main_id'");
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['id_c']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
 }
@@ -760,18 +771,19 @@ if(isset($_POST['update_dress']) ){
   $amount = mysqli_real_escape_string($db, $_POST['amount']);
   $filename = $_FILES["myimage"]["name"];
   $tempname = $_FILES["myimage"]["tmp_name"];
-  $folder = "products/".$filename;
-
-  if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
-  {
-    $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
-    $result=mysqli_query($db, $sql);
-    
-    if($filename=""){
-        $sql = "UPDATE dress_showcase SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
+ 
+    if($filename!="")
+    {
+        move_uploaded_file($tempname , "products/$filename");
+        $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', image='$filename', t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
+        $result=mysqli_query($db, $sql);
+    }  
+    else
+    {
+        $sql = "UPDATE dress_showcase SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', t_nic='$t_nic' WHERE dress_id='$selected_dress_id1' ";
         $result=mysqli_query($db, $sql);
     }
-    $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
+    $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic) SELECT*FROM dress_showcase WHERE dress_id='$selected_dress_id1' ";
     $result = mysqli_query($db,$sql);
     $sql = "DELETE FROM dress_showcase WHERE dress_id='$selected_dress_id1'";
     $result = mysqli_query($db,$sql);
@@ -782,7 +794,7 @@ if(isset($_POST['update_dress']) ){
     else{
         echo "<script>alert('Sorry! Update Unsuccessful')</script>";
     }
-}
+
 }
 
 if(isset($_POST['update_reject_dress']) ){
@@ -809,17 +821,19 @@ if(isset($_POST['update_reject_dress']) ){
     $amount = mysqli_real_escape_string($db, $_POST['amount']);
     $filename = $_FILES["myimage"]["name"];
     $tempname = $_FILES["myimage"]["tmp_name"];
-    $folder = "products/".$filename;
+    
   
-    if($category!="" && $dressname!="" && $price!="" && $schk!="" && $amount!="")
+    if($filename!="")
     {
-      $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk',amount='$amount',t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
-      $result=mysqli_query($db, $sql);
-      
-      if($filename=""){
-          $sql = "UPDATE rejected_dress SET image='$filename' WHERE dress_id='$selected_dress_id1' ";
-          $result=mysqli_query($db, $sql);
-      }
+        move_uploaded_file($tempname , "products/$filename");
+        $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', image='$filename', t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
+        $result=mysqli_query($db, $sql);
+    }  
+    else
+    {
+        $sql = "UPDATE rejected_dress SET category='$category',title='$dressname',price='$price',size='$schk',color='$clchk', amount='$amount', t_nic='$t_nic' WHERE dress_id='$selected_dress_id' ";
+        $result=mysqli_query($db, $sql);
+    }
       $sql = " INSERT INTO review_dress(dress_id,category, title, price, size, color, amount,image,t_nic)SELECT*FROM rejected_dress WHERE dress_id='$selected_dress_id' ";
       $result = mysqli_query($db,$sql);
       $sql = "DELETE FROM rejected_dress WHERE dress_id='$selected_dress_id'";
@@ -831,7 +845,7 @@ if(isset($_POST['update_reject_dress']) ){
       else{
           echo "<script>alert('Sorry! Update Unsuccessful')</script>";
       }
-  }
+  
   }
   
   
@@ -857,16 +871,22 @@ if (isset($_POST['order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $order_price = mysqli_real_escape_string($db, $_POST['t-order-price']);
-    $sql = "UPDATE t_orders SET status='Accepted',price=$order_price WHERE id='$order_id'";
+    // $t_fname = mysqli_real_escape_string($db, $_POST['t_fname']);
+    // $t_lname = mysqli_real_escape_string($db, $_POST['t_lname']);
+    // $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
+    $msg = 'Order Accepted';
+    $sql = "UPDATE t_orders SET status='Accepted',price=$order_price, cstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
-
+    $sqln = "INSERT INTO c_orders (price,msg)
+    VALUES ('$order_price','$msg')";
+   $resultn = mysqli_query($db, $sqln);
 }
 
 //update tailor order statues as paid -- need to integrate payment gateway
 if (isset($_POST['order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Paid' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Paid', nstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -875,7 +895,7 @@ if (isset($_POST['order-paid'])) {
 if (isset($_POST['order-appeal'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Pending' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Pending',nstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -884,7 +904,7 @@ if (isset($_POST['order-appeal'])) {
 if (isset($_POST['order-ongoing'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Ongoing' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Ongoing', cstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -896,7 +916,7 @@ if (isset($_POST['order-deliver'])) {
     $filename = $_FILES["t_output"]["name"];
     $tempname = $_FILES["t_output"]["tmp_name"];
     $folder = "../orders/tailor/".$order_id.$filename;
-    $sql = "UPDATE t_orders SET status='Delivered',doc='$order_id$filename' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Delivered',doc='$order_id$filename', cstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     if (move_uploaded_file($tempname, $folder))
     {
@@ -915,7 +935,7 @@ if (isset($_POST['order-complete'])) {
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $t_rate = mysqli_real_escape_string($db, $_POST['t_rate']);
     $ta_nic = mysqli_real_escape_string($db, $_POST['tailor_nic']);
-    $sql = "UPDATE t_orders SET status='Completed' WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Completed', nstatus=0 WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     $sql = "SELECT * FROM tailors WHERE nic='$ta_nic'";
     $result=mysqli_query($db, $sql);
@@ -946,6 +966,7 @@ if (isset($_POST['fd-order-accept'])) {
 if (isset($_POST['fd-order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
+    $other = 'Message From';
     $sql = "UPDATE fd_orders SET status='Paid' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 

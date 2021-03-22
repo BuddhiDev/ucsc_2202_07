@@ -246,7 +246,7 @@ $u_row=mysqli_fetch_assoc($u_res);
       </div>
       
     </div>
-
+    </div>
     <!--footer-->
     <?php require("../footer.php") ?>
 </body>

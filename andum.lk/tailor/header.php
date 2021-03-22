@@ -103,6 +103,7 @@
 
           <li><a href="#">Explore Tailors</a></li>
           <li><a href="#">Explore Fashion Designers</a></li>
+          <li><a href="../contact_us.php">Contact Us</a></li>
           <li>
           
           </li>
@@ -128,7 +129,8 @@
             <li><i class="fas fa-shopping-cart"></i></a></li>
             <li>
             <?php
-              $sql_get = mysqli_query($db , "SELECT * FROM t_orders WHERE nstatus = 0");
+              $nic = $_SESSION['nic'];
+              $sql_get = mysqli_query($db , "SELECT * FROM t_orders WHERE nstatus=0 AND t_nic='$nic' ");
               $count = mysqli_num_rows($sql_get);
             ?>
             <div class="notify-navbar">
@@ -137,12 +139,14 @@
                 </button>
                 <div class="notify-dropdown-content" id="notify-myDropdown">
                   <?php
-                  $sql_get1 = mysqli_query($db , "SELECT * FROM t_orders WHERE nstatus = 0");
+                  $nic = $_SESSION['nic'];
+                  $sql_get1 = mysqli_query($db , "SELECT * FROM t_orders WHERE nstatus = 0 AND t_nic='$nic' " );
+                  $order = 'order';
                   if(mysqli_num_rows($sql_get1 )>0)
                   {
                     while($result = mysqli_fetch_assoc($sql_get1))
                     {
-                      echo '<a href="read_msg.php?id='.$result['id'].'">'.$result['other'].'</a>';
+                      echo '<a href="read_msg.php?id='.$result['id'].'">'.$result['c_fname']." ".$result['status'] ." ".$order.'</a>';
                       echo '<div class="notification-line"></div>';
                     }
                   }

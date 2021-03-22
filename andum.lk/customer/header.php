@@ -97,6 +97,7 @@
           </li>
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
+          <li><a href="../contact_us.php">Contact Us</a></li>
         </ul>
       </div>
       <div class="box">
@@ -117,14 +118,30 @@
             <li><a href="inbox.php"><i class="fas fa-envelope"></i></a></li>
             <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
             <li>
+            <?php
+              $nic = $_SESSION['nic'];
+              $sql_get = mysqli_query($db , "SELECT * FROM t_orders WHERE cstatus = 0 AND c_nic='$nic'");
+              $count = mysqli_num_rows($sql_get);
+            ?>
             <div class="notify-navbar">
               <div class="notify-dropdown">
-                <button class="notify-dropbtn" onclick="myFunction()">Notifications<span class="notify-count" id="ncount">5</span>
+                <button class="notify-dropbtn" onclick="myFunction()">Notifications<span class="notify-count" id="ncount"><?php echo $count; ?></span>
                 </button>
                 <div class="notify-dropdown-content" id="notify-myDropdown">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
+                  <?php
+                  $nic = $_SESSION['nic'];
+                  $sql_get1 = mysqli_query($db , "SELECT * FROM t_orders WHERE cstatus = 0 AND c_nic='$nic'");
+                  $order = 'order';
+                  if(mysqli_num_rows($sql_get1 )>0)
+                  {
+                    while($result = mysqli_fetch_assoc($sql_get1))
+                    {
+                      echo '<a href="customer_read_message.php?id_c='.$result['id'].'">'.$result['t_fname'] ." ". $result['status'] ." ". $order.'</a>';
+                      echo '<div class="notification-line"></div>';
+                    }
+                  }
+
+                  ?> 
                 </div>
               </div> 
             </div>
