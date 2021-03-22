@@ -153,25 +153,19 @@
                 </ul>
 
             <li><i class="fas fa-envelope"></i></li>
-            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+            
         </div>
         </ul>
       </div>
       </div>
 <!-- generate pdf -->
-      <div>
-    <div class="add-new-position">
-      <a class="cta" href="pdf_customer.php"><button class="admin-button">Generate PDF</button></a>
-    </div>
-
-    
-  </div>
-
-
-
+            <div class="add-new-position">
+              <a class="cta" href="pdf_customer.php"><button class="admin-button">Generate PDF</button></a>
+            </div>
     </nav>
   </header>
 
+    
   <div class="container-box">
     <div class="fd-container-box">
      <div class="row">

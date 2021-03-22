@@ -243,7 +243,7 @@
           </div>
           <div>
             <li><a class="cta" href="send_mail_tailor.php"><button class="admin-button">Warning message</button></a></li>
-          </div>
+          </div><br>
           <div>
           <li><a href="banned_tailor.php?delete_nic=<?php echo $row["nic"]?>"><button class="admin-button">Suspend User Account</button></a></li>
           </div>
