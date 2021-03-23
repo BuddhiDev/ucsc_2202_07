@@ -161,10 +161,6 @@ window.onclick = function(e) {
           <input type="checkbox" name="color[]" value="blue">
           <span class="checkmark"></span>
         </label>
-      <!--  </div>
-        <div class="column">-->
-        
-        
         <label class="checkbox_container">Purple
           <input type="checkbox" name="color[]" value="purple">
           <span class="checkmark"></span>
@@ -181,12 +177,7 @@ window.onclick = function(e) {
           <input type="checkbox" name="color[]" value="white">
           <span class="checkmark"></span>
         </label>
-        <label class="checkbox_container">Other
-          <input type="checkbox" name="color[]" value="other">
-          <span class="checkmark"></span>
-        </label>
         
-      <!--  </div>-->
       </div>
     </div>
     <div class="row">
