@@ -155,15 +155,12 @@ if (isset($_POST['login'])) {
                 header('location: admin/index.php');
             }
         }
-         else {
-             if($_SESSION['nic'] == $nic && $_SESSION['password'] == $password){
-                array_push($errors, "Still not verified");
-             }
-             else{
-            array_push($errors, "Wrong username/ password combination");
-             }
+         
+            else{
+                array_push($errors, "Wrong username/ password combination or Still not Verified");
+                 }
             //header('location: login.php');
-        }
+        
     }
 }
 
