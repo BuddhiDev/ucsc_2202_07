@@ -143,7 +143,7 @@
                   {
                     while($result = mysqli_fetch_assoc($sql_get1))
                     {
-                      echo '<a href="customer_read_message.php?id_c='.$result['id'].'">'.$result['t_fname'] ." ". $result['status'] ." ". $order.'</a>';
+                      echo '<a href="order.php?id_fd='.$result['id'].'">'.$result['fd_fname'] ." ". $result['nmessage'] .'</a>';
                       echo '<div class="notification-line"></div>';
                     }
                   }

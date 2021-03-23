@@ -325,7 +325,7 @@ if (isset($_POST['hireFD'])) {
     $date = date('m');
 
     echo $fd_nic,$fd_fname;
-    $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other, date) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other','$date')";
+    $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other, date, nmessage) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other','$date','Pending Order')";
     $result = mysqli_query($db, $sql);
     if ($result) {
         header('location: hired_fd_list.php');
@@ -390,6 +390,24 @@ if(isset($_GET['id_c']) ){
     $selected_o_id = mysqli_real_escape_string($db, $_GET['id_c']);
     $_SESSION['selected_o_id']=$selected_o_id;
     header('location: order.php');
+}
+
+//select fashion designer notification
+if(isset($_GET['id_fd']) ){
+    $main_id = $_GET['id_fd'];
+    $sql_update = mysqli_query($db,"UPDATE fd_orders SET nstatus=1 WHERE id='$main_id'");
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['id_fd']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: order.php');
+}
+
+//select fashion designer - customer notification
+if(isset($_GET['id_fc']) ){
+    $main_id = $_GET['id_fc'];
+    $sql_update = mysqli_query($db,"UPDATE fd_orders SET cstatus=1 WHERE id='$main_id'");
+    $selected_o_id = mysqli_real_escape_string($db, $_GET['id_fc']);
+    $_SESSION['selected_o_id']=$selected_o_id;
+    header('location: fdesigner-order.php');
 }
 
 //select a sale from tailor
@@ -954,7 +972,7 @@ if (isset($_POST['fd-order-accept'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['fd_order_id']);
     $order_price = mysqli_real_escape_string($db, $_POST['fd-order-price']);
-    $sql = "UPDATE fd_orders SET status='Accepted',price=$order_price WHERE id='$order_id'";
+    $sql = "UPDATE fd_orders SET status='Accepted',price=$order_price, cstatus=0, nmessage='Accepted Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -964,7 +982,7 @@ if (isset($_POST['fd-order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $other = 'Message From';
-    $sql = "UPDATE fd_orders SET status='Paid' WHERE id='$order_id'";
+    $sql = "UPDATE fd_orders SET status='Paid', nstatus=1, nmessage='Paid Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -973,7 +991,7 @@ if (isset($_POST['fd-order-paid'])) {
 if (isset($_POST['fd-order-appeal'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE fd_orders SET status='Pending' WHERE id='$order_id'";
+    $sql = "UPDATE fd_orders SET status='Pending', nstatus=1, nmessage='Requested to change price' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -982,7 +1000,7 @@ if (isset($_POST['fd-order-appeal'])) {
 if (isset($_POST['fd-order-ongoing'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE fd_orders SET status='Ongoing' WHERE id='$order_id'";
+    $sql = "UPDATE fd_orders SET status='Ongoing', cstatus=0, nmessage='Ongoing Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -994,7 +1012,7 @@ if (isset($_POST['fd-order-deliver'])) {
     $filename = $_FILES["fd_output"]["name"];
     $tempname = $_FILES["fd_output"]["tmp_name"];
     $folder = "../orders/fashion/".$order_id.$filename;
-    $sql = "UPDATE fd_orders SET status='Delivered',doc='$order_id$filename' WHERE id='$order_id'";
+    $sql = "UPDATE fd_orders SET status='Delivered',doc='$order_id$filename', cstatus=0, nmessage='Delivered Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     if (move_uploaded_file($tempname, $folder))
     {
@@ -1013,7 +1031,7 @@ if (isset($_POST['fd-order-complete'])) {
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $fd_rate = mysqli_real_escape_string($db, $_POST['fd_rate']);
     $fd_nic = mysqli_real_escape_string($db, $_POST['fd_nic']);
-    $sql = "UPDATE fd_orders SET status='Completed' WHERE id='$order_id'";
+    $sql = "UPDATE fd_orders SET status='Completed', nstatus=0, nmessage='Completed Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     $sql = "SELECT * FROM fashion_designer WHERE nic='$fd_nic'";
     $result=mysqli_query($db, $sql);

@@ -121,7 +121,10 @@
             <?php
               $nic = $_SESSION['nic'];
               $sql_get = mysqli_query($db , "SELECT * FROM t_orders WHERE cstatus = 0 AND c_nic='$nic'");
-              $count = mysqli_num_rows($sql_get);
+              $count1 = mysqli_num_rows($sql_get);
+              $sql_get2 = mysqli_query($db , "SELECT * FROM fd_orders WHERE cstatus = 0 AND c_nic='$nic'");
+              $count2 = mysqli_num_rows($sql_get2);
+              $count = $count1+$count2;
             ?>
             <div class="notify-navbar">
               <div class="notify-dropdown">
@@ -137,6 +140,16 @@
                     while($result = mysqli_fetch_assoc($sql_get1))
                     {
                       echo '<a style="width:100%" href="customer_read_message.php?id_c='.$result['id'].'">'.$result['t_fname'] ." ". $result['nmessage'] .'</a>';
+                      echo '<div class="notification-line"></div>';
+                    }
+                  }
+                  $sql_get3 = mysqli_query($db , "SELECT * FROM fd_orders WHERE cstatus = 0 AND c_nic='$nic'");
+                  $order = 'order';
+                  if(mysqli_num_rows($sql_get3 )>0)
+                  {
+                    while($result = mysqli_fetch_assoc($sql_get3))
+                    {
+                      echo '<a style="width:100%" href="fdesigner-order.php?id_fc='.$result['id'].'">'.$result['t_fname'] ." ". $result['nmessage'] .'</a>';
                       echo '<div class="notification-line"></div>';
                     }
                   }
