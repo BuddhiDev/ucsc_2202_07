@@ -329,36 +329,30 @@
   <div class="container-box">
     <div class="fd-container-box">
      <div class="row">
-      <div class="admin-search-container">
+        <div class="admin-search-container">
             <form method="post" action = "search_payment.php">
               <div class="form-field-inline">
                 <input type="text" class="field-value-inline" name="q" placeholder="Search by customer nic..">
                 <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
             </form>
-          </div>
-          
+        </div>
       </div>
 
 
-  <script>
-    document.querySelector(".nav_right ul li").addEventListener("click",
-      function() {
-        this.classList.toggle("active");
-      })
-  </script>
-  
-
-<br/>
-<br/> 
-    </form>
-  </div>
+    <script>
+      document.querySelector(".nav_right ul li").addEventListener("click",
+        function() {
+          this.classList.toggle("active");
+        })
+    </script>
+    <br/>
+    <br/> 
+    </div>
 
 
 
-
-
-  <center><p> Readymade dresses orders </p></center>
+<center><p> Readymade dresses orders </p></center>
 
 <div class="container-box">
     <table>
@@ -503,7 +497,7 @@
 
 
  
-  </div>
+</div>
 
   
   <?php require("../footer.php") ?>
