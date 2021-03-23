@@ -26,40 +26,11 @@ if (!isset($_SESSION['nic'])) {
   
 </head>
 
+<?php require("fd-header.php") ?>
+
 <body>
 
-  <header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="hire_tailor.php">My Orders</a></li>
-          <li><a href="hire_tailor.php">My Designs</a></li>
-        </ul>
-      </div>
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                  <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><i class="fas fa-envelope"></i></li>
-            <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
