@@ -146,7 +146,7 @@
                   {
                     while($result = mysqli_fetch_assoc($sql_get1))
                     {
-                      echo '<a href="read_msg.php?id='.$result['id'].'">'.$result['c_fname']." ".$result['status'] ." ".$order.'</a>';
+                      echo '<a style="width:100%" href="read_msg.php?id='.$result['id'].'">'.$result['c_fname']." ".$result['nmessage'] .'</a>';
                       echo '<div class="notification-line"></div>';
                     }
                   }

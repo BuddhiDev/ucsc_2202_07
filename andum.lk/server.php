@@ -302,8 +302,8 @@ if (isset($_POST['hireT'])) {
     $msg = "Message from";
 
     //echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,nmessage)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date','Pending Order')";
    $result = mysqli_query($db, $sql);
    
 //    $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
@@ -875,7 +875,7 @@ if (isset($_POST['order-accept'])) {
     // $t_lname = mysqli_real_escape_string($db, $_POST['t_lname']);
     // $c_nic = mysqli_real_escape_string($db, $_POST['c_nic']);
     $msg = 'Order Accepted';
-    $sql = "UPDATE t_orders SET status='Accepted',price=$order_price, cstatus=0 WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Accepted',price=$order_price, cstatus=0,nmessage='Accepted Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     $sqln = "INSERT INTO c_orders (price,msg)
     VALUES ('$order_price','$msg')";
@@ -886,7 +886,7 @@ if (isset($_POST['order-accept'])) {
 if (isset($_POST['order-paid'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Paid', nstatus=0 WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Paid', nstatus=0, nmessage='Paid Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -895,7 +895,7 @@ if (isset($_POST['order-paid'])) {
 if (isset($_POST['order-appeal'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Pending',nstatus=0 WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Pending',nstatus=0,nmessage='Requested to change the price' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -904,7 +904,7 @@ if (isset($_POST['order-appeal'])) {
 if (isset($_POST['order-ongoing'])) {
 
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
-    $sql = "UPDATE t_orders SET status='Ongoing', cstatus=0 WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Ongoing', cstatus=0, nmessage='Ongoing Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
 }
@@ -916,7 +916,7 @@ if (isset($_POST['order-deliver'])) {
     $filename = $_FILES["t_output"]["name"];
     $tempname = $_FILES["t_output"]["tmp_name"];
     $folder = "../orders/tailor/".$order_id.$filename;
-    $sql = "UPDATE t_orders SET status='Delivered',doc='$order_id$filename', cstatus=0 WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Delivered',doc='$order_id$filename', cstatus=0, nmessage='Delivered Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     if (move_uploaded_file($tempname, $folder))
     {
@@ -935,7 +935,7 @@ if (isset($_POST['order-complete'])) {
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $t_rate = mysqli_real_escape_string($db, $_POST['t_rate']);
     $ta_nic = mysqli_real_escape_string($db, $_POST['tailor_nic']);
-    $sql = "UPDATE t_orders SET status='Completed', nstatus=0 WHERE id='$order_id'";
+    $sql = "UPDATE t_orders SET status='Completed', nstatus=0, nmessage='Completed Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
     $sql = "SELECT * FROM tailors WHERE nic='$ta_nic'";
     $result=mysqli_query($db, $sql);
