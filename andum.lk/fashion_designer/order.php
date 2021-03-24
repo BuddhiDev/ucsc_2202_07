@@ -257,7 +257,7 @@ if (!isset($_SESSION['nic'])) {
               <p style="font-weight:bold">Order Price</p>
             </div>
             <div class="cust-n">
-              <p >Rs. 1000.00</p>
+              <p >Rs. <?php echo $row["price"] ?></p>
             </div>
           </div>
           <?php } ?> 

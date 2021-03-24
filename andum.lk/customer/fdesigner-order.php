@@ -368,6 +368,9 @@ if (!isset($_SESSION['nic'])) {
             <div>
             <?php $_SESSION['fd_oid_auth']=$row["id"]?> 
               <button name="fd-order-paid" class="cart-button" type="submit">Make Payment</button>
+              </form><br/><br/>
+              <form action="fdesigner-order.php" method="post">
+              <input type="hidden" name="order_id" value=<?php echo $row["id"]?>>
               <button name="fd-order-appeal" class="cart-button" type="submit">Request for price change</button>
             </div>
             </form>

@@ -21,19 +21,21 @@ if (isset($_POST['update_fd'])) {
   $ac_no = mysqli_real_escape_string($db, $_POST['ac_no']);
   $bank = mysqli_real_escape_string($db, $_POST['bank']);
   
-  $filename = $_FILES["profilepic"]["name"];
-  $tempname = $_FILES["profilepic"]["tmp_name"];
-  $folder = "profile_pictures/".$filename;
+ 
 
   if ($password1 != $password2){
       array_push($errors, "Passwords do not match");
   }
   else{
+    $filename = $_FILES["profilepic"]["name"];
+    $tempname = $_FILES["profilepic"]["tmp_name"];
+    $folder = "profile_pictures/".$filename;
+    
       $password = md5($password1);
       $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode',image ='$filename' WHERE nic='$nic'";
       $result=mysqli_query($db, $sql);
 
-      $sqlf = "INSERT INTO fashion_designer (ac_no,bank,nic) VALUES('$ac_no','$bank','$nic')";
+      $sqlf = "UPDATE fashion_designer SET ac_no='$ac_no', bank='$bank' WHERE nic='$nic'";
     $resultf = mysqli_query($db, $sqlf);
 
       if (move_uploaded_file($tempname, $folder))
