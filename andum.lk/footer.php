@@ -75,8 +75,8 @@
             <a href="#">
               <li>HIRE A FASHION DESIGNER</li>
             </a>
-            <a href="#">
-              <li>SHIPPING AND RETURNS</li>
+            <a href="/ucsc_2202_07/andum.lk/contact_us.php">
+              <li>CONTACT US</li>
             </a>
           </ul>
         </div>

@@ -1,3 +1,5 @@
+<?php include("server.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +11,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+    <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
     <!-- <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css"> -->
     <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/lightslider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +27,7 @@
         <img class="logo" src="logo.png" alt="logo" class="img-box">
       </div>
       <div class="nav-item-middle">
-        <ul class="nav-area">
+        <ul class="nav-area" id="MenuItems">
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
@@ -59,9 +62,7 @@
                   </ul>
                 </div>
               </ul>
-            </div>
-              
-            
+            </div> 
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
@@ -92,40 +93,33 @@
           <li class="dropdown">
             <a href="#">Kids</a>
             <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
+              <ul class="menu-area">
+                <div class=col-6>
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Boys</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Tank Tops</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Girls</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>             
+              </ul>
             </div>
-            
           </li>
-
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
           <li><a href="customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li><a href="contact_us.php">Contact Us</a></li>
-          <li>
-          
-          </li>
         </ul>
       </div>
       <div class="box">
@@ -136,14 +130,13 @@
       </div>
       <div>
         <label id="icon">
-          <i class="fas fa-bars"></i>
+          <i class="fas fa-bars" onclick="menutoggle()"></i>
         </label>
       </div>
     </nav>
   </header>
 
   <div class="d-flex align-c">
-    
     <div class="f1">
       <!-- Slideshow container -->
       <div class="slideshow-container">
@@ -169,13 +162,12 @@
         <div class="title-lg">Are you looking for a unique dress ?</div>
         <div class="title-lg-light">Andum.lk is a platform for all fashion designers and Tailors</div>
         <div class="landing-btn-section">
-          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Tailor</button></a>
-          <a class="cta" href=""><button class="loginbutton btn-full-w">Find a Fashion Designer</button></a>
+          <a class="cta" href="login.php"><button class="loginbutton btn-full-w">Find a Tailor</button></a>
+          <a class="cta" href="login.php"><button class="loginbutton btn-full-w">Find a Fashion Designer</button></a>
         </div>
       </div>
     </div>
   </div> 
-
 
   <div style="text-align:center">
     <span class="dot" onclick="currentSlide(1)"></span>
@@ -203,181 +195,239 @@
       setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
   </script>
+
   <div class="container-box">
-  <div>
-    <div  class="tailor-headding">
-      <h3>OUR TAILORS</h3>
+    <div>
+      <div  class="tailor-headding">
+        <h3>OUR TAILORS</h3>
+      </div>
+      <div class="row">
+        <?php
+            // Read all dressess
+            $s = "SELECT * FROM users WHERE type='0' LIMIT 0,4";
+            $res = mysqli_query($db, $s);
+
+            if ($res) {
+              while ($row = mysqli_fetch_assoc($res)) {
+
+          //retrieve tailor table data
+          $loop_nic=$row["nic"];
+          $t_sql="SELECT * FROM tailors WHERE nic='$loop_nic' ORDER BY rate DESC";
+          $t_res=mysqli_query($db, $t_sql);
+          $t_row=mysqli_fetch_assoc($t_res);
+
+        ?>
+
+
+        <div class="col-3">
+        <form method="get" action="hire_tailor.php">
+            <input type="hidden" value="<?php echo $nic ?> " name="nic">
+            <div class="card-item">
+              <div class="card-img">
+                <a href="login.php"><img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
+              </div>
+              <div class="card-content">
+              
+                <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                <div class="card-description">
+                  
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <?php }
+          }
+        ?>
+        <!-- <div class="col-3">
+          <div class="card-item">
+            <div class="card-img2">
+              <img src="/ucsc_2202_07/andum.lk/images/tailors/t4.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Shermila Gamage</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card-item">
+            <div class="card-img2">
+              <img src="/ucsc_2202_07/andum.lk/images/tailors/t2.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Kanthi Gamage</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card-item">
+            <div class="card-img2">
+              <img src="/ucsc_2202_07/andum.lk/images/tailors/t3.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Anusha Perera</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div  class="text-view-more">
+        <h3><a href="login.php">+ View More</a></h3>
+      </div>
     </div>
 
-    <div class="row">
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t12.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Nirosha Perera</div>
-          </div>
-        </div>
+    <div>
+      <div  class="tailor-headding">
+        <h3>OUR FASHION DESIGNERS</h3>
       </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t4.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Shermila Gamage</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t2.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Kanthi Gamage</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/tailors/t3.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Anusha Perera</div>
-          </div>
-        </div>
-      </div>
-      
+      <div class="row">
+        <?php
 
+        // Read 4 fashion Designers
+        $s2 = "SELECT * FROM users WHERE type='2' LIMIT 0,4";
+        $res2 = mysqli_query($db, $s2);
+
+        if ($res2) {
+          while ($row = mysqli_fetch_assoc($res2)) {
+
+      //retrieve tailor table data
+      $loop_nic=$row["nic"];
+      $fd_sql="SELECT * FROM fashion_designer WHERE nic='$loop_nic' ORDER BY rate DESC";
+      $fd_res=mysqli_query($db, $fd_sql);
+      $fd_row=mysqli_fetch_assoc($fd_res);
+
+        ?>
+        <div class="col-3">
+        <form method="get" action="hire_fashion_designer.php">
+            <input type="hidden" value="<?php echo $nic ?> " name="nic">
+            <div class="card-item">
+              <div class="card-img">
+                <a href="login.php"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
+              </div>
+              <div class="card-content">
+              
+                <div class="card-title"><?php echo $row["fname"]." ".$row["lname"] ?></div>
+                <div class="card-description">
+                  
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <?php
+              }
+            }?>
+        <!-- <div class="col-3">
+          <div class="card-item">
+            <div class="card-img2">
+              <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis3.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Ayodya Balasuriya</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card-item">
+            <div class="card-img2">
+              <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis6.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Dilini Weerasinghe</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card-item">
+            <div class="card-img2">
+              <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis7.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Maneesha Muthuweera</div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div  class="text-view-more">
+        <h3><a href="login.php">+ View More</a></h3>
+      </div>
     </div>
 
-    <div  class="text-view-more">
-      <h3>+ View More</h3>
-    </div>
-  </div>
+    <div>
+      <div  class="tailor-headding">
+        <h3>NEW ARRIVALS</h3>
+      </div>
+      <div class="row">
+      <?php
 
-  <div>
-    <div  class="tailor-headding">
-      <h3>OUR FASHION DESIGNERS</h3>
-    </div>
+        // Read all dressess
+        $sql = "SELECT * FROM dress_showcase ORDER BY dress_id DESC LIMIT 0,4";
+        $result = mysqli_query($db, $sql);
 
-    <div class="row">
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis1.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Diluksha Weerawardhana</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis3.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Ayodya Balasuriya</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis6.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Dilini Weerasinghe</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img2">
-            <img src="/ucsc_2202_07/andum.lk/images/Fashion Designers/fdis7.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Maneesha Muthuweera</div>
-          </div>
-        </div>
-      </div>
-      
+        if ($result) 
+        {
+          while ($row = mysqli_fetch_assoc($result)) 
+          {
+            ?>
+            <div class="col-3">
+              <form method="get" action="index.php">
+                <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
+                <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+                <div class="card-item">
+                  <div class="card-img">
+                    <a href="login.php"> <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row["image"]; ?> " alt="Avatar" style="width:100%"></a>
+                  </div>
+                  <div class="card-content">
+                    <div class="card-title"><?php echo $row["title"] ?></div>
+                    <div class="card-description">LKR <?php echo $row["price"]?>.00</div>
+                    <div style="color: red;"><?php if($row["amount"]==0) { ?>sold out <?php }?></div>
+                  </div>
+                </div>
+              </form>
+            </div>
 
-    </div>
+            <?php
+          }
+        }?>
 
-    <div  class="text-view-more">
-      <h3>+ View More</h3>
-    </div>
-  </div>
-
-  <div>
-    <div  class="tailor-headding">
-      <h3>NEW ARRIVALS</h3>
-    </div>
-
-    <div class="row">
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress1.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Casual Summer Dress</div>
-            <div class="card-description">2500 LKR </div>
+        <!-- <div class="col-3">
+          <div class="card-item">
+            <div class="card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/dresses/6.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Floral Summer Dress</div>
+              <div class="card-description">2600 LKR </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/dresses/6.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">Floral Summer Dress</div>
-            <div class="card-description">2600 LKR </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress4.jpg" alt="Avatar" style="width:100%">
-          </div>
-          <div class="card-content">
-            <div class="card-title">A Line Dress</div>
-            <div class="card-description">3000 LKR </div>
+        <div class="col-3">
+          <div class="card-item">
+            <div class="card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/dresses/dress4.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">A Line Dress</div>
+              <div class="card-description">3000 LKR </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-3">
-        <div class="card-item">
-          <div class="card-img">
-            <img src="/ucsc_2202_07/andum.lk/images/dresses/dress5.jpg" alt="Avatar" style="width:100%">
+        <div class="col-3">
+          <div class="card-item">
+            <div class="card-img">
+              <img src="/ucsc_2202_07/andum.lk/images/dresses/dress5.jpg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="card-content">
+              <div class="card-title">Casual Floral Dress</div>
+              <div class="card-description">2500 LKR </div>
+            </div>
           </div>
-          <div class="card-content">
-            <div class="card-title">Casual Floral Dress</div>
-            <div class="card-description">2500 LKR </div>
-          </div>
-        </div>
+        </div> -->
       </div>
-      
-
+      <div  class="text-view-more">
+        <h3><a href="login.php">+ View More</a></h3>
+      </div>
     </div>
 
-    <div  class="text-view-more">
-      <h3>+ View More</h3>
-    </div>
-  </div>
-
-
-
-  
-    
-    
     <!-- <div class="tslider">
       
       <ul id="autoWidth" class="cs-hidden">
@@ -451,9 +501,27 @@
 
     <script type="text/javascript" src="script.js"></script> -->
 
+    <!-- ---------- js for toggle menue starts ---------- -->
+
+    <script>
+      var MenuItems = document.getElementById("MenuItems");
+      MenuItems.style.maxHeight = "0px";
+
+      function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px")
+        {
+          MenuItems.style.maxHeight = "200px"
+        }
+        else
+        {
+          MenuItems.style.maxHeight = "0px"
+        }
+      }
+    </script>
+    <!-- ---------- js for toggle menue ends ---------- -->
+
   </div>
  
-
   <!-- add a footer -->
   <?php require("footer.php")?>
 

@@ -23,8 +23,7 @@ if (!isset($_SESSION['nic'])) {
 
 <body>
 
-<?php require("header.php") ?>
-
+  <?php require("header.php") ?>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -33,25 +32,25 @@ if (!isset($_SESSION['nic'])) {
     })
   </script>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("notify-myDropdown").classList.toggle("notify-show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.notify-dropbtn')) {
-  var myDropdown = document.getElementById("notify-myDropdown");
-    if (myDropdown.classList.contains('notify-show')) {
-      myDropdown.classList.remove('notify-show');
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("notify-myDropdown").classList.toggle("notify-show");
     }
-  }
-}
-</script>
 
-    <br />
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.notify-dropbtn')) {
+      var myDropdown = document.getElementById("notify-myDropdown");
+        if (myDropdown.classList.contains('notify-show')) {
+          myDropdown.classList.remove('notify-show');
+        }
+      }
+    }
+  </script>
+
+  <br />
 
   <!--<div class="box">
     <header>
@@ -71,7 +70,7 @@ window.onclick = function(e) {
   <!-- <div class="wrapper">
         <aside class="bg-gra-200 border-r border-gray-300">Left</aside>
         <main>Right</main>
-    </div> -->
+  </div> -->
   <div class="search-container">
     <div class="form-field-inline">
       <label for="uname" class="field-label-inline">Search by Name</label>
@@ -100,44 +99,42 @@ window.onclick = function(e) {
   <!-- </div> -->
   <!--<div class="sliderbox-wrap"> -->
   <div class="container-box">
-<h2>New Arrivels</h2>
-  <div class="row">
-    <?php
-    $nic = $_SESSION['nic'];
-    $sql = "SELECT * FROM dress_showcase";
-    $result = mysqli_query($db, $sql);
+    <h2>New Arrivels</h2>
+    <div class="row">
+      <?php
+      $nic = $_SESSION['nic'];
+      $sql = "SELECT * FROM dress_showcase";
+      $result = mysqli_query($db, $sql);
 
-    if ($result) {
-      while ($row = mysqli_fetch_assoc($result)) {
-    ?>
-<!-- Dress box start -->
-        <div class="col-4">
-          <form method="post" action="index.php" class="dress-showcase">
+      if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+      ?>
+      <!-- Dress box start -->
+      <div class="col-4">
+        <form method="post" action="index.php" class="dress-showcase">
           <input type="hidden" value="<?php echo $row["dress_id"] ?> " name="dress_id">
-           <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-            <div class="card-item">
-              <div class="card-img">
-                <img src="product1.jpg" alt="Avatar" style="width:100%">
-              </div>
-              <div class="card-content">
-                <div class="card-title"><?php echo $row["title"] ?></div>
-                <div class="card-description">LKR 2,500.00</div>
-              </div>
+          <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
+          <div class="card-item">
+            <div class="card-img">
+              <img src="product1.jpg" alt="Avatar" style="width:100%">
             </div>
-          </form>
-        </div>
+            <div class="card-content">
+              <div class="card-title"><?php echo $row["title"] ?></div>
+              <div class="card-description">LKR 2,500.00</div>
+            </div>
+          </div>
+        </form>
+      </div>
 
-        <?php
+      <?php
+        }
       }
-    }
-    ?>
-    <!-- Dress box end-->
+      ?>
+      <!-- Dress box end-->
     </div>
   </div>
 
  <!--</div>-->
-
-
 
 <?php require("footer.php")?>
 

@@ -20,19 +20,11 @@ if (!isset($_SESSION['nic'])) {
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
-  <style>
-    .search-btn {
-      background-color: white;
-      color: #EB2188;
-    }
-  </style>
-
-
 </head>
 
 <body>
-<!--header-->
-<?php require("header.php") ?>
+  <!--header-->
+  <?php require("header.php") ?>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -41,26 +33,26 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("notify-myDropdown").classList.toggle("notify-show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.notify-dropbtn')) {
-  var myDropdown = document.getElementById("notify-myDropdown");
-    if (myDropdown.classList.contains('notify-show')) {
-      myDropdown.classList.remove('notify-show');
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("notify-myDropdown").classList.toggle("notify-show");
     }
-  }
-}
-</script>
 
-  <?php include("../errors.php");
-  ?>
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.notify-dropbtn')) {
+      var myDropdown = document.getElementById("notify-myDropdown");
+        if (myDropdown.classList.contains('notify-show')) {
+          myDropdown.classList.remove('notify-show');
+        }
+      }
+    }
+  </script>
+
+  <?php include("../errors.php");?>
+
   <div class="sliderbox-wrap">
     <div class="customer-container-box">
       <div class="row">
@@ -85,7 +77,6 @@ window.onclick = function(e) {
           // Check condition if this is search request or not
           if ($search != true) 
           {
-
             // Read all dressess
             $sql = "SELECT * FROM dress_showcase ORDER BY dress_id DESC LIMIT 0,4";
             $result = mysqli_query($db, $sql);

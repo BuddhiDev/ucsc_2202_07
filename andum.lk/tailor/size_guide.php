@@ -65,14 +65,15 @@ if (!isset($_SESSION['nic'])) {
   </header>
     <br>
   
-        <h2><b><CENTER>SIZE GUIDE</CENTER></b><h2>
+        <h2 class="size-guide-p">SIZE GUIDE<h2>
         <br>
-        <h3><p >Andum.lk own buy sizes are designed to fit the following body measurements.<br>Some product's may vary from these measurements but you can still use them as a guide.</p></h3>
+        <h3><p class="size-guide-p">Andum.lk own buy sizes are designed to fit the following body measurements.<br>Some product's may vary from these measurements but you can still use them as a guide.</p></h3>
         <br>
-        <h3><p>Measurement :: IN</p> <h3>
+        <h3><p class="size-guide-p">Measurement :: IN</p> <h3>
         <br>
         <div class="container-box">
-            <table>
+          <div class="size-guide-table"><center>
+          <table>
             <tr>
                 <th>SIZE</th>
                 <th>CHEST</th>
@@ -120,13 +121,157 @@ if (!isset($_SESSION['nic'])) {
                 <td>33</td>
                 <td>43.5</td>
             </tr>
+          </table>
+  </center>
+          </div>
 
-        </table>
-    </div>
-    <h3>How to Measure</h3>
-    <p><b>CHEST</b> -Measure around the fullest part, place the tape close under the arms and make sure the tape is flat across the back.</p>
-    <p><b>WAIST</b> - Measure around natural waistline.</p>
-    <p><b>HIP</b> - Measure 20cm down from the natural waistline.</p>
+          <div>
+          <h3 class="size-guide-p">HOW TO MEASURE</h3>
+
+          <div class="input-container">
+            <form method="post" action="get-measured.php" style="max-width:1024px;margin:auto">
+                
+                <div class="d-flex">
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                          <img src="/ucsc_2202_07/andum.lk/images/neck-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                        <h3 class="size-guide-h3">Neck</h3>
+                        <p class="size-guide-p2">Measure around the base of the neck  (slightly loose; donot take this too tight).</p>
+                        
+                      </div>                             
+                    </div>     
+                  </div>
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/chest-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Chest</h3>
+                      <p class="size-guide-p2">Measure and wrap it under your armpits at the fullest part of your chest. Stand straight and don't puff out your chest. Keep the tape measure taut, but not constricting. It shouldn't be squeezing down your chest, just resting.</p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/waist-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Waist</h3>
+                      <p class="size-guide-p2">Wrap the measuring tape around the smallest part of your torso at the waist ( about an inch above).</p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/realhip-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Seat</h3>
+                      <p class="size-guide-p2">Measurement around the widest part of your hips.</p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/shirtl-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Shirt Length</h3>
+                      <p class="size-guide-p2">Measured from the shoulder (close to the neck, where it is highest) to where you want the garment hemline. Tape should go over the fullest part of the bust. If it is a pant or skirt, measure from where you want it to be tied at the waist, to the hemline you want. </p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/back-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Shoulder Width</h3>
+                      <p class="size-guide-p2">This is measured from shoulder bone on one side to the other side shoulder bone.</p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/arm-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Arm Length</h3>
+                      <p class="size-guide-p2">This is according to your preference . Where your sleeve should end. If the sleeve length is past the elbow you should bend the arm slightly when taking the measurement.</p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/cuff-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Wrist</h3>
+                      <p class="size-guide-p2">Measure around the arms where the sleeve should end.</p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/bicep-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Biceps</h3>
+                      <p class="size-guide-p2">Measure at the thickest part of both biceps. Wrap a tape measure around both your biceps at their thickest point, near your armpit. </p>
+                        
+                      </div>                             
+                    </div>
+                  </div>
+                  <div class="size-f1">
+                    <div class="measure-card">
+                      <div class="measure-card-img">
+                        <img src="/ucsc_2202_07/andum.lk/images/hip-01.png" class="body-img">
+                      </div>
+                      <div class="measure-card-value">
+                      <h3 class="size-guide-h3">Hip</h3>
+                      <p class="size-guide-p2">Measure around the hips.</p>
+                      </div>                             
+                    </div>
+                  </div>
+                </div>
+            </form>
+          </div>
+    
+
+          </div>
+          
+        </div>
+    
 <?php require("../footer.php")?>
 
 </body>

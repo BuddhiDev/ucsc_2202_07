@@ -24,187 +24,11 @@ if (!isset($_SESSION['nic'])) {
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/dc4ee3e80e.js" crossorigin="anonymous"></script>
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .main {
-      width: 880px;
-      height: 500px;
-      margin-top: 86px;
-      margin-left: 270px;
-      /* background: #fafafafa; */
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px 0px #fff;
-    }
-
-    .leftside {
-      position: absolute;
-      height: 500px;
-      border-radius: 10px;
-      width: 300px;
-      /* background-image: url('/ucsc_2202_07/andum.lk/images/d-01.jpg'); */
-      background-size: cover;
-    }
-
-    .p {
-      margin-left: 40px;
-      margin-top: 420px;
-      color: black;
-      font-weight: bold;
-      font-family: sans-serif;
-    }
-
-    .one {
-      border: 1px solid black;
-      width: 30px;
-      height: 30px;
-      float: left;
-      margin-left: 40px;
-      margin-right: 40px;
-      text-align: center;
-      margin-top: 9px;
-    }
-
-    .one:hover {
-      border: 2px solid black;
-      width: 30px;
-      height: 30px;
-      float: left;
-      text-align: center;
-      margin-top: 9px;
-    }
-
-    .text {
-      color: black;
-    }
-
-    .color-box {
-      background-color: pink;
-    }
-
-    .onee {
-      border: 1px solid black;
-      width: 42px;
-      font-size: 14px;
-      height: 22px;
-      float: left;
-      margin-right: 5px;
-      text-align: center;
-    }
-
-    .on {
-      border: 1px solid black;
-      border-radius: 10px;
-      border-color: pink;
-      width: 30px;
-      background-color: pink;
-      height: 30px;
-      float: left;
-      margin-right: 5px;
-      text-align: center;
-    }
-
-    .on1 {
-      border: 1px solid black;
-      border-radius: 10px;
-      border-color: blue;
-      width: 30px;
-      background-color: blue;
-      height: 30px;
-      float: left;
-      margin-right: 5px;
-      text-align: center;
-    }
-
-    .on2 {
-      border: 1px solid black;
-      border-radius: 10px;
-      border-color: black;
-      width: 30px;
-      background-color: black;
-      height: 30px;
-      float: left;
-      margin-right: 5px;
-      text-align: center;
-    }
-
-
-
-    .onee:hover {
-      border: 2px solid black;
-      width: 42px;
-      height: 22px;
-      float: left;
-      text-align: center;
-    }
-
-    h1 {
-      font-weight: bold;
-      font-family: sans-serif;
-    }
-
-    .rightside {
-      width: 385px;
-      height: 500px;
-      border-radius: 10px;
-      float: right;
-      background: #fff;
-    }
-
-    .inside {
-      padding: 18px;
-    }
-
-    .cart-button {
-      padding: 9px 25px;
-      background-color: #EB2188;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease 0s;
-      text-align: center;
-      -webkit-appearance: none;
-    }
-
-    .alert {
-    padding: 20px;
-    background-color: #f44336; /* Red */
-    color: white;
-    margin-bottom: 15px; 
-    }
-    .cart-button:hover {
-      color: black;
-    }
-
-    .second {
-      width: 50px;
-    }
-
-    .second:hover {
-      width: 50px;
-      background-color: #fab7cc;
-    }
-    .accept-button{
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-    }
-  </style>
-
 </head>
 
 <body>
 
-<?php require("header.php") ?>
+  <?php require("header.php") ?>
 
   <script>
     document.querySelector(".nav_right ul li").addEventListener("click",
@@ -213,23 +37,23 @@ if (!isset($_SESSION['nic'])) {
       })
   </script>
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("notify-myDropdown").classList.toggle("notify-show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.notify-dropbtn')) {
-  var myDropdown = document.getElementById("notify-myDropdown");
-    if (myDropdown.classList.contains('notify-show')) {
-      myDropdown.classList.remove('notify-show');
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("notify-myDropdown").classList.toggle("notify-show");
     }
-  }
-}
-</script>
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.notify-dropbtn')) {
+      var myDropdown = document.getElementById("notify-myDropdown");
+        if (myDropdown.classList.contains('notify-show')) {
+          myDropdown.classList.remove('notify-show');
+        }
+      }
+    }
+  </script>
 
   <div class="container-box">
     <?php
@@ -257,7 +81,7 @@ window.onclick = function(e) {
       -->
 
       <div class="container">
-        <header>Order Details</header>
+        <h2>Order Details</h2>
         <form method="post">
           <div>
             <div class="title-n">
