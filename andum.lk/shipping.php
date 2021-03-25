@@ -20,7 +20,7 @@ require("server.php");
     
 </head>
 <body>
-  <header>
+<header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="logo.png" alt="logo" class="img-box">
@@ -134,85 +134,24 @@ require("server.php");
         </div>
       </div>
     </nav>
-  </header>
-  <div class="container-box">
-      <div class="row">
-        <div class="col-8">
-            <form action="contact_us.php" method="post">
+</header>
+    <div class="container-box">       
+        <h2 class="size-guide-p">RETURNS / REFUND / EXCHANGE POLICY<h2>
+        <h3><p class="size-guide-p">Andum.lk will give its customers the opportunity to refund or return/exchange a product provided it is in fully resalable condition. Returns should be made within 15 days and in original, undamaged packaging. If we find that the product has not been returned to us in fully resalable condition, we reserve the right to refuse a refund/exchange on the item. We will refund the price of the item to the purchaser account as store credits. A refund of the delivery charge will be given in the instance of incorrect, damaged or faulty goods.</p></h3>
+        <h2 class="size-guide-p">RETURNS/EXCHANGE OPTIONS<h2>
+        <h3><p class="numbering">1. <a href="/ucsc_2202_07/andum.lk/contact_us.php" class="link-text">Contact Us</a></p></h3>
+        <h3><p class="numbering">2. We shall communicate with the courier company and they courier will pick up your product ( Free of charge if the delivered goods are incorrect, damaged or faulty, If not the recipient need to pay LKR300 for the courier company.</p></h3>
+        <h3><p class="numbering">3. Once we receive the items, We will return the price of the item to the purchasers’ account within 7 days after a quality check.</p></h3>
+        <h3><p class="numbering">4. Returns should be made within 14 days and in original, undamaged packaging with the tag intact. If we find that the product has not been returned to us in fully resalable condition, we are unable to return on the item.</p></h3>
+        <h2 class="size-guide-p">ORIGINAL DELIVERY CHARGES<h2>
+        <h3><p class="numbering">We will refund the delivery charge when a product is incorrect, faulty or damaged, but not when a product is simply unwanted.</p></h3>
+        <h2 class="size-guide-p">PRICES AND SHIPPING FEES<h2>
+        <h3><p class="numbering">For orders the prices which are listed at the time of your order on the product page apply.</p></h3>
+        <h2 class="size-guide-p">DELIVERY<h2>
+        <h3><p class="numbering">1. Delivery will only be given to the shipping address provided by you</p></h3>
+        <h3><p class="numbering">2. We usually deliver within 4-6 working days of placement of the order.</p></h3>
+    </div>
 
-                <!-- errors display -->
-                <?php include("errors.php");
-                ?>
-
-                <div class="contact-us-container">
-                    <div class="form-field-inline">
-                    <label for="uname" class="field-label-inline">What is Your Issue</label>
-                    <input type="text" class="field-value-inline" name="issue" required>
-                    </div>
-
-                    <div class="form-field-inline">
-                    <label for="fname" class="field-label-inline"><b>Your Name</b></label>
-                    <input type="text" class="field-value-inline" name="cust_name" required>
-                    </div>
-
-                    <div class="form-field-inline">
-                    <label for="email" class="field-label-inline"><b>Email Address</b></label>
-                    <input type="text" class="field-value-inline" name="email" required>
-                    </div>
-
-                    <div class="form-field-inline">
-                    <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
-                    <input type="text" class="field-value-inline" name="contactno">
-                    </div>
-
-                    <div class="form-field-inline">
-                    <label for="address" class="field-label-inline"><b>Message</b></label>
-                    <textarea name="c_msg" rows="5" cols="50" placeholder="" class="txt-area2"></textarea>
-                    </div>
-
-                    <div class="btn-panel-center">
-                        <!-- <input type="button" onclick="sendEmail()" value="Send" class="loginbutton btn-full-w" name="message_send"> -->
-                    <button class="loginbutton btn-full-w" type="submit" name="message_send">Send</button>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-        <div class="col-4">
-            <div class="contact-detail-box">
-                <div>
-                    <div class="contact-text1">Customer Care Hotline</div>
-                    <div class="contact-text2">+9477123456</div>
-                    <div class="contact-text1">Address</div>
-                    <div class="contact-text2">101/2, Bangalawatta, Kothalawala, Kaduwela.</div>
-                    <div></div>
-                </div>
-                
-                
-            </div>
-            <div></div>
-        </div>
-
-        </div>
-  
-  </div>
-
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous">
-    </script>
-
-    <script type="text/javascript">
-        function sendEmail(){
-            var issue = $(#issue);
-            var cust_name = $(#cust_name);
-            var email = $(#email);
-            var contactno = $(#contactno);
-            var c_msg = $(#c_msg);
-        }
-    </script>
- 
 
   <!-- add a footer -->
   <?php require("footer.php")?>

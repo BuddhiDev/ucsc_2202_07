@@ -82,14 +82,14 @@
         </div>
         <div class="footer-section links2 ">
           <ul>
-            <a href="#">
-              <li>HIRE A TAILOR</li>
-            </a>
-            <a href="#">
-              <li>HIRE A FASHION DESIGNER</li>
-            </a>
-            <a href="#">
+            <a href="/ucsc_2202_07/andum.lk/shipping.php">
               <li>SHIPPING AND RETURNS</li>
+            </a>
+            <a href="#">
+              <li>PRIVACY POLICY</li>
+            </a>
+            <a href="#">
+              <li>TERMS AND CONDITIONS</li>
             </a>
           </ul>
         </div>

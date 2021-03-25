@@ -317,6 +317,10 @@ nav ul.menu-area ul li a:hover{
   color: #EB2188;
 }
 
+.checked {
+  color: orange;
+}
+
 
 
 
@@ -1466,7 +1470,7 @@ a{
 }
 
 .submit-button{
-  padding: 10px;
+  padding: 5px;
     border: none;
     border-radius: 20px;
     Color: white;
@@ -2702,6 +2706,7 @@ h1 {
 
 .size-guide-p{
   margin: 20px;
+  padding: 20px;
     text-align: center;
 }
 
@@ -2882,6 +2887,15 @@ h1 {
   content: "";
   clear: both;
   display: table;
+}
+
+.numbering{
+  margin: 20px;
+    text-align: left;
+}
+
+.link-text{
+  color: blue;
 }
 
 
