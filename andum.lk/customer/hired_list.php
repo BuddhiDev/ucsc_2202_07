@@ -77,7 +77,13 @@ window.onclick = function(e) {
 </script>
 
   <div class="container-box">
-  <h2 class="tailor-heading">Current Orders</h2>
+  <div class="btn-container">
+        <button class="status-btn" onclick="myFunction1()">Current Orders</button>
+        <button class="status-btn" onclick="myFunction2()">Completed Orders</button>
+        </div>
+
+  <div id="div-12">
+        <h2 class="tailor-heading">Current Orders</h2>
     <table>
       <tr>
         <th>Tailor Name</th>
@@ -107,15 +113,18 @@ window.onclick = function(e) {
               </div>
             </td>
       </tr>
-    <?php
+      <?php
+            }
+          } else {
           }
-        } else {
-        }
 
-    ?>
+      ?>
     </table>
 
-    <h2 class="tailor-heading">Completed Orders</h2>
+  </div>
+
+  <div id="div-13">
+  <h2 class="tailor-heading">Completed Orders</h2>
     <table>
       <tr>
         <th>Tailor Name</th>
@@ -145,13 +154,49 @@ window.onclick = function(e) {
               </div>
             </td>
       </tr>
-    <?php
+      <?php
+            }
+          } else {
           }
-        } else {
-        }
 
-    ?>
+      ?>
     </table>
+
+
+  </div>
+  <script>
+      function myFunction1() 
+      {
+        var x = document.getElementById("div-12");
+        var y = document.getElementById("div-13");
+        if (x.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          x.style.display = "block";
+        }
+      }
+
+      function myFunction2() 
+      {
+        var x = document.getElementById("div-12");
+        var y = document.getElementById("div-13");
+        if (y.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+      }
+    </script>
+
+    
 
   </div>
 

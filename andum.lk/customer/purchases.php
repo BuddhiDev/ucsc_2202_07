@@ -62,45 +62,50 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <div class="container-box">
-  <h2 class="tailor-heading">Current Orders</h2>
-    <table>
-      <tr>
-        <th>Tailor Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th><center>Action</center></th>
 
-      </tr>
-      <tr>
+  <div id="div-12">
+    <h2 class="tailor-heading">Current Orders</h2>
+      <table>
+        <tr>
+          <th>Tailor Name</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th><center>Action</center></th>
+
+        </tr>
+        <tr>
+          <?php
+
+          $nic = $_SESSION['nic'];
+          $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic) AND status <>'Completed'";
+          $result = mysqli_query($db, $sql);
+
+          if (mysqli_num_rows($result) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+          ?>
+
+              <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
+              <td><?php echo $row["category"] ?></td>
+              <td><?php echo $row["status"] ?></td>
+              <td>
+                <div>
+                  <center><a class="cta" href=purchases.php?purchase_id=<?php echo $row["id"]?>><button class="loginbutton btn-full-w">View</button></a></center>
+                </div>
+              </td>
+        </tr>
         <?php
+              }
+            } else {
+            }
 
-        $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic) AND status <>'Completed'";
-        $result = mysqli_query($db, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result)) {
         ?>
+      </table>
 
-            <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            <td>
-              <div>
-                <center><a class="cta" href=purchases.php?purchase_id=<?php echo $row["id"]?>><button class="loginbutton btn-full-w">View</button></a></center>
-              </div>
-            </td>
-      </tr>
-    <?php
-          }
-        } else {
-        }
+  </div>
 
-    ?>
-    </table>
-
-    <h2 class="tailor-heading">Completed Orders</h2>
+  <div id="div-13">
+  <h2 class="tailor-heading">Completed Orders</h2>
     <table>
       <tr>
         <th>Tailor Name</th>
@@ -130,13 +135,18 @@ if (!isset($_SESSION['nic'])) {
               </div>
             </td>
       </tr>
-    <?php
+      <?php
+            }
+          } else {
           }
-        } else {
-        }
 
-    ?>
+      ?>
     </table>
+
+  </div>
+    
+
+    
   </div>
 
 <?php require("../footer.php")?>

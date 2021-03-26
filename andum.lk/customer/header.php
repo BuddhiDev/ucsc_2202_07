@@ -97,7 +97,7 @@
           </li>
           <li><a href="hire_tailor.php">Hire a Tailor</a></li>
           <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
-          <li><a href="../contact_us.php">Contact Us</a></li>
+          <li><a href="contact_us.php">Contact Us</a></li>
         </ul>
       </div>
       <div class="box">

@@ -103,7 +103,7 @@
 
           <li><a href="#">Explore Tailors</a></li>
           <li><a href="#">Explore Fashion Designers</a></li>
-          <li><a href="../contact_us.php">Contact Us</a></li>
+          <li><a href="contact_us.php">Contact Us</a></li>
           <li>
           
           </li>

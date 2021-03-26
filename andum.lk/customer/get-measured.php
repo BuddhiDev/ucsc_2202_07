@@ -16,7 +16,7 @@ if (!isset($_SESSION['nic'])) {
   <title>Andum.lk - Hire a Tailor</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
-  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <!-- <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css"> -->
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fonts.css">
@@ -29,7 +29,7 @@ if (!isset($_SESSION['nic'])) {
 
   <?php require("header.php") ?>
   <div class="add-new-position">
-      <a href="/ucsc_2202_07/andum.lk/tailor/size_guide.php"><button class="loginbutton btn-full-w">(Click Here for Size Guide)</button></a>
+      <a href="/ucsc_2202_07/andum.lk/tailor/size_guide.php"><button class="submit-button">Click Here for Size Guide</button></a>
   </div>
 
   <script>

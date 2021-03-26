@@ -304,7 +304,7 @@ if (!isset($_SESSION['nic'])) {
     </div>
   </div>
 
-  <script>
+    <script>
       function myFunction1() 
       {
         var x = document.getElementById("div-3");

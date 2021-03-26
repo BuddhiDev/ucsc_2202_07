@@ -1684,6 +1684,46 @@ a{
     margin: 10px;
 }
 
+#div-9{
+  display: block;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#div-10{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#div-11{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#div-12{
+  display: block;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#div-13{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
 #chat-search-container input{
   color: #eee;
   outline: none;
