@@ -339,13 +339,6 @@
         </div>
       </div>
 
-
-    <script>
-      document.querySelector(".nav_right ul li").addEventListener("click",
-        function() {
-          this.classList.toggle("active");
-        })
-    </script>
     <br/>
     <br/> 
     </div>
