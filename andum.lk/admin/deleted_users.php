@@ -184,6 +184,7 @@
           <th>Email</th>
           <th>Phone</th>
           <th>Type</th>
+          <th>Action</th>
           <th></th>
         </tr>
         <tr>

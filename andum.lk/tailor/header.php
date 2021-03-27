@@ -126,7 +126,7 @@
               </div>
             </li>
             <li><i class="fas fa-envelope"></i></li>
-            <li><i class="fas fa-shopping-cart"></i></a></li>
+           <!-- <li><i class="fas fa-shopping-cart"></i></a></li>-->
             <li>
             <?php
               $nic = $_SESSION['nic'];

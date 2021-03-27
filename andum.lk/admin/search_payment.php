@@ -340,7 +340,7 @@
     </div>
 
 
-
+<?php $keyword=$_SESSION['q'];?>
 <center><p> Readymade dresses orders </p></center>
 
 <div class="container-box">
