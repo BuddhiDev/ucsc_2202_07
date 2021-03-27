@@ -314,6 +314,12 @@
         </ul>
       </div>
       </div>
+
+
+      <div class="add-new-position">
+              <a class="cta" href="pdf_payments.php"><button class="admin-button">Generate PDF</button></a>
+            </div>
+
     </nav>
   </header>
 
