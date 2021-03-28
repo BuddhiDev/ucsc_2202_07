@@ -147,8 +147,6 @@
                 <ul>
                   <li><a href="edit_profile.php"><i class="fas fa-edit"></i>Edit Profile</a></li>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href=".php"><i class="fas fa-money"></i>sells</a></li>
-                  <li><a href="#"><i class="fas fa-heart"></i>Favourites</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>
@@ -246,7 +244,7 @@ $total_banned_users = $row[0];
           <a class="sidebar-link" href="deleted_users.php">
           <div class="sidebar-icon">
             <i class="fas fa-users"></i>
-            <span class="sidebar-text">Deleted Users</span>
+            <span class="sidebar-text">Banned Users</span>
           </div>
           </a>
         </li>

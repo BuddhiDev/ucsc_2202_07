@@ -1,4 +1,13 @@
 <?php
+
+//search by a keyword
+if(isset($_POST['search'])){
+    $search=true;
+    $keyword= mysqli_real_escape_string($db, $_POST['q']);
+    $_SESSION['q']=$keyword;
+}
+
+
 //view fashion designer details
  if(isset($_GET['f_nic']) ){
     $selected_fdesigner_id = mysqli_real_escape_string($db, $_GET['f_nic']);
