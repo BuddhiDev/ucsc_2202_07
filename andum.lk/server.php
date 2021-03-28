@@ -900,6 +900,8 @@ if (isset($_POST['order-accept'])) {
 //update tailor order statues as paid -- need to integrate payment gateway
 if (isset($_POST['order-paid'])) {
 
+    print_r($_POST);
+    die;
     $order_id = mysqli_real_escape_string($db, $_POST['order_id']);
     $sql = "UPDATE t_orders SET status='Paid', nstatus=0, nmessage='Paid Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);

@@ -6,7 +6,7 @@
       <div class="nav-item-middle">
         <ul class="nav-area">
           <li><a href="index.php">Home</a></li>
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a href="#">Women</a>
             <div class="row">
               <ul class="menu-area">
@@ -99,10 +99,10 @@
 
             </div>
             
-          </li>
+          </li> -->
 
-          <li><a href="#">Explore Tailors</a></li>
-          <li><a href="#">Explore Fashion Designers</a></li>
+          <li><a href="hire_tailor.php">Explore Tailors</a></li>
+          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
           <li><a href="contact_us.php">Contact Us</a></li>
           <li>
           

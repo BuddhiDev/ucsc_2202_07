@@ -349,153 +349,207 @@
     <br/> 
     </div>
 
+    <div class="status-btn-container">
+        <button class="admin-status-button" onclick="myFunction7()">Readymade dresses orders</button>
+        <button class="admin-status-button" onclick="myFunction8()">Customize Orders</button>
+        <button class="admin-status-button" onclick="myFunction9()">Fashion designer orders</button>
+      </div>
 
+    <div id="div-9">
+      <center><p> Readymade dresses orders </p></center>
 
-<center><p> Readymade dresses orders </p></center>
+      <div class="container-box">
+        <table>
+          <tr>
+            <th>Customer NIC</th>
+            <th>Tailor NIC</th>
+            <th>Dress_id</th>
+            <th>quantity</th>
+            <th>Full payment</th>
+            <th>Invoice</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
 
-<div class="container-box">
-    <table>
-      <tr>
-        <th>Customer NIC</th>
-        <th>Tailor NIC</th>
-        <th>Dress_id</th>
-        <th>quantity</th>
-        <th>Full payment</th>
-        <th>Invoice</th>
-        <th>Date</th>
-        <th>Status</th>
-        <th>Action</th>
-
-      </tr>
-      <tr>
-      <?php
-          $sql = "SELECT sl.id,sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic, sl.action FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
-          $result = mysqli_query($db, $sql); 
-          if ($result) {
-            
-              while ($row = mysqli_fetch_assoc($result)) {
+          </tr>
+          <tr>
+          <?php
+              $sql = "SELECT sl.id,sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic, sl.action FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id  ";
+              $result = mysqli_query($db, $sql); 
+              if ($result) {
                 
-      ?>
-      
-      <td><?php echo $row["c_nic"] ?></td>
-      <td><?php echo $row["t_nic"] ?></td>
-      <td><?php echo $row["dress_id"] ?></td>
-      <td><?php echo $row["quantity"] ?></td>
-      <td><?php echo $row["total_price"] ?></td>
-      <td><?php echo($row["total_price"]*0.05)?></td>
-      <td><?php echo $row["date"] ?></td>
-      <td><?php echo $row["status"] ?></td>
-      <form method="post">
-      <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
-      <td><button name='readymade_dress_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
-      </form>
-      </tr>
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    
+          ?>
+          
+          <td><?php echo $row["c_nic"] ?></td>
+          <td><?php echo $row["t_nic"] ?></td>
+          <td><?php echo $row["dress_id"] ?></td>
+          <td><?php echo $row["quantity"] ?></td>
+          <td><?php echo $row["total_price"] ?></td>
+          <td><?php echo($row["total_price"]*0.05)?></td>
+          <td><?php echo $row["date"] ?></td>
+          <td><?php echo $row["status"] ?></td>
+          <form method="post">
+          <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
+          <td><button name='readymade_dress_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
+          </form>
+          </tr>
 
-      <?php } } ?>
-    </table>
-  </div>
+          <?php } } ?>
+        </table>
+      </div>
+    </div>
 
+    <div id="div-10">
+      <center><p> <b>Customize Orders </b></p></center>
 
-  <center><p> <b>Customize Orders </b></p></center>
+      <div class="container-box">
+        <table>
+          <tr>
+            <th>Customer NIC</th>
+            <th>Tailor NIC</th>
+            <th>Full Name</th>
+            <th>Dress_id</th>
+            <th>Account No</th>
+            <th>bank</th>
+            <th>Full payment</th>
+            <th>Invoice</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+          <?php
+              $sqlc = "SELECT o.id,o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,o.action,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic ";
+              $resultc = mysqli_query($db, $sqlc); 
+              if ($resultc) {
+                  while ($row = mysqli_fetch_assoc($resultc)) {
+                        
+          ?>
+          <td><?php echo $row["c_nic"] ?></td>
+          <td><?php echo $row["t_nic"] ?></td>
+          <td><?php echo $row["t_fname"]. " " .$row["t_lname"]?></td>
+          <td><?php echo $row["dress_id"] ?></td>
+          <td><?php echo $row["ac_no"] ?></td>
+          <td><?php echo $row["bank"] ?></td>
+          <td><?php echo $row["price"] ?></td>
+          <td><?php echo($row["price"]*0.05)?></td>
+          <td><?php echo $row["date"] ?></td>
+          <td><?php echo $row["status"] ?></td>
+          <form method="post">
+            <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
+            <td><button name='customize_dress_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
+          </form>
+          </tr>
 
-  <div class="container-box">
-    <table>
-      <tr>
-        <th>Customer NIC</th>
-        <th>Tailor NIC</th>
-        <th>Full Name</th>
-        <th>Dress_id</th>
-        <th>Account No</th>
-        <th>bank</th>
-        <th>Full payment</th>
-        <th>Invoice</th>
-        <th>Date</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-      <tr>
-      <?php
-          $sqlc = "SELECT o.id,o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,o.action,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic ";
-          $resultc = mysqli_query($db, $sqlc); 
-          if ($resultc) {
-              while ($row = mysqli_fetch_assoc($resultc)) {
-                     
-      ?>
-      <td><?php echo $row["c_nic"] ?></td>
-      <td><?php echo $row["t_nic"] ?></td>
-      <td><?php echo $row["t_fname"]. " " .$row["t_lname"]?></td>
-      <td><?php echo $row["dress_id"] ?></td>
-      <td><?php echo $row["ac_no"] ?></td>
-      <td><?php echo $row["bank"] ?></td>
-      <td><?php echo $row["price"] ?></td>
-      <td><?php echo($row["price"]*0.05)?></td>
-      <td><?php echo $row["date"] ?></td>
-      <td><?php echo $row["status"] ?></td>
-      <form method="post">
-        <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
-        <td><button name='customize_dress_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
-      </form>
-      </tr>
+          <?php } } ?>
+          
+        </table>
+      </div>
+    </div>
 
-      <?php } } ?>
-      
-    </table>
-  </div>
+    <div id="div-11">
+      <center><p>Fashion designer orders</p></center>
 
-<center><p>Fashion designer orders</p></center>
+      <div class="container-box">
+        <table>
 
-<div class="container-box">
+          <tr>
+                <th>Customer NIC</th>
+                <th>Fashion Designer NIC</th>
+                <th>Full Name</th>
+                <th>Account No</th>
+                <th>bank</th>
+                <th>Full payment</th>
+                <th>Invoice</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+              <?php
+                  $sqlc = "SELECT o.id, o.c_nic,o.fd_nic,o.fd_fname,o.fd_lname,o.status,o.date,o.price,o.action,f.ac_no,f.bank FROM fd_orders AS o INNER JOIN fashion_designer AS f ON o.fd_nic = f.nic ";
+                  $resultc = mysqli_query($db, $sqlc); 
+                  if ($resultc) {
+                      while ($row = mysqli_fetch_assoc($resultc)) {
+                            
+              ?>
+              <td><?php echo $row["c_nic"] ?></td>
+              <td><?php echo $row["fd_nic"] ?></td>
+              <td><?php echo $row["fd_fname"]. " " .$row["fd_lname"]?></td>
+              <td><?php echo $row["ac_no"] ?></td>
+              <td><?php echo $row["bank"] ?></td>
+              <td><?php echo $row["price"] ?></td>
+              <td><?php echo($row["price"]*0.05)?></td>
+              <td><?php echo $row["date"] ?></td>
+              <td><?php echo $row["status"] ?></td>
+              <<form method="post" action='admin_payments.php'>
+                <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
+                <td><button name='design_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
+              </form>
+              </tr>
 
-<table>
-
-<tr>
-        <th>Customer NIC</th>
-        <th>Fashion Designer NIC</th>
-        <th>Full Name</th>
-        <th>Account No</th>
-        <th>bank</th>
-        <th>Full payment</th>
-        <th>Invoice</th>
-        <th>Date</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-      <tr>
-      <?php
-          $sqlc = "SELECT o.id, o.c_nic,o.fd_nic,o.fd_fname,o.fd_lname,o.status,o.date,o.price,o.action,f.ac_no,f.bank FROM fd_orders AS o INNER JOIN fashion_designer AS f ON o.fd_nic = f.nic ";
-          $resultc = mysqli_query($db, $sqlc); 
-          if ($resultc) {
-              while ($row = mysqli_fetch_assoc($resultc)) {
-                     
-      ?>
-      <td><?php echo $row["c_nic"] ?></td>
-      <td><?php echo $row["fd_nic"] ?></td>
-      <td><?php echo $row["fd_fname"]. " " .$row["fd_lname"]?></td>
-      <td><?php echo $row["ac_no"] ?></td>
-      <td><?php echo $row["bank"] ?></td>
-      <td><?php echo $row["price"] ?></td>
-      <td><?php echo($row["price"]*0.05)?></td>
-      <td><?php echo $row["date"] ?></td>
-      <td><?php echo $row["status"] ?></td>
-      <<form method="post" action='admin_payments.php'>
-        <input type="hidden" value="<?php echo $row["id"] ?> " name="id">
-        <td><button name='design_pay' type='submit' class='admin-button' <?php if($row["action"]=="Paid") echo "disabled"?>><?php if($row["action"]=="Not Yet"){?> Not Yet<?php } else {?>Paid<?php }?></button></td>
-      </form>
-      </tr>
-
-      <?php } } ?>
-
-
-
-</table>
-
-
-</div>
+              <?php } } ?>
 
 
 
+        </table>
+      </div>
+    </div>
 
- 
+    <script>
+      function myFunction7() 
+      {
+        var x = document.getElementById("div-9");
+        var y = document.getElementById("div-10");
+        var c = document.getElementById("div-11");
+        if (y.style.display === "none" && c.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          c.style.display = "none";
+          x.style.display = "block";
+        }
+      }
+
+      function myFunction8() 
+      {
+        var x = document.getElementById("div-9");
+        var y = document.getElementById("div-10");
+        var c = document.getElementById("div-11");
+        if (x.style.display === "none" && c.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          c.style.display = "none";
+          y.style.display = "block";
+        }
+      }
+
+      function myFunction9() 
+      {
+        var x = document.getElementById("div-9");
+        var y = document.getElementById("div-10");
+        var c = document.getElementById("div-11");
+        if (x.style.display === "none" && y.style.display === "none") 
+        {
+          c.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "none";
+          c.style.display = "block";
+        }
+      }
+    </script>
 </div>
 
   
