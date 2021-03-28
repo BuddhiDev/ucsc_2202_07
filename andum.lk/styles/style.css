@@ -98,7 +98,7 @@ header {
   font-size: 20px;
   float: right;
   cursor: pointer;
-  display: flex;
+  display: none;
 }
 
  @media (max-width:1048px)
