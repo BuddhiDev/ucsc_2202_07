@@ -113,12 +113,28 @@ if (!isset($_SESSION['nic'])) {
 
 			<p>
 				<label for="subject">Subject *:</label>
-				<input type="text" name="subject" value="<?php echo "Warning message about suspending your account"?>" id="subject" readonly>
+				<select name="cars" id="cars" class="option">
+          <option value="Warning message about suspending your account">Warning message about suspending your account</option>
+          <option value="Your account has been suspended">Your account has been suspended</option>
+        </select>
 			</p>
 
 			<p>
 				<label for="body">Message *: </label>
-				<textarea name="body" id="body" cols="30" rows="10" required></textarea>
+				<textarea name="body" id="body" cols="30" rows="10" required>Hello Tailor,
+
+We're writing to let you know that activity on your account may not be following an important Andum.lk policy.
+If your problems could not be resloved; your account will be suspended. If you are doing any illeagal work on Andum.lk It shold be a reason to suspend your account.
+ 
+Reasons to Suspend your account-
+	-Get the payments and neglect the delivery of the orders.
+	-Adding rejected dresses again and again
+	-Refund requests from customers increase high
+For more details go through Contact Us page. 
+Thank you.
+Andum.lk
+
+          </textarea>
 			</p>
 			<p>
         <button type="submit" name="send_mail" class="admin-button">Send Message</button>
