@@ -23,6 +23,8 @@ if (!isset($_SESSION['nic'])) {
   <title>Andum.lk - Tailor</title>
   <link rel="shortcut icon" href="../logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fonts.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/fashion-designer.css">
@@ -114,13 +116,19 @@ if (!isset($_SESSION['nic'])) {
 			</p>
 
 			<p>
-				<label for="subject">Subject *:</label>
-				<input type="text" name="subject" value="<?php echo "Warning message about suspending your account"?>" id="subject" readonly>
+				<label for="subject" class="field-label-inline">Subject *:</label>
+        <select name="cars" id="cars">
+          <option value="Warning message about suspending your account">Warning message about suspending your account</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+				<!--<input type="text" name="subject" value="<?php echo "Warning message about suspending your account"?>" id="subject" readonly>-->
 			</p>
 
 			<p>
 				<label for="body">Message *: </label>
-				<textarea name="body" id="body" cols="30" rows="10" required></textarea>
+				<textarea name="body" id="body" cols="30" rows="10" required>xxx</textarea>
 			</p>
 			<p>
         <button type="submit" name="send_mail" class="admin-button">Send Message</button>

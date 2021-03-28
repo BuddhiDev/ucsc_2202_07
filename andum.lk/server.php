@@ -593,7 +593,7 @@ if (isset($_POST['update_user'])) {
 
     if($result)
     {
-        header('location: index.php');
+        header('location: tailor-dashboard.php');
     }
     else{
         echo "<script>alert('Sorry! Update Unsuccessful')</script>";

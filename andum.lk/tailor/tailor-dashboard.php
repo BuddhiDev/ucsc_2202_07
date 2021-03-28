@@ -132,14 +132,6 @@ $delivered_orders = $row[0];
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="index.php">
-          <div class="sidebar-icon">
-            <i class="fas fa-comments"></i>
-            <span class="sidebar-text">Chat</span>
-            </div>
-          </a>
-        </li>
-        <li class="sidebar-item">
           <a class="sidebar-link" href="rejected_dress.php">
           <div class="sidebar-icon">
            <i class="fas fa-exclamation-triangle"></i>
