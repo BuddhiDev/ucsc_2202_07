@@ -150,7 +150,6 @@
               <div class="dd_right">
                 <ul>
                   <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="fd-manage-orders.php"><i class="fas fa-money"></i>Orders</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
               </div>

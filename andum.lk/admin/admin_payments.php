@@ -304,8 +304,7 @@
             <li><i class="fas fa-user-circle"></i>
               <div class="dd_right">
                 <ul>
-                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="manage_customer.php"><i class="fas fa-users"></i>Manage Customers</a></li>
+                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
                   <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
                 </ul>
 
