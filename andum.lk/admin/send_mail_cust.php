@@ -106,18 +106,18 @@ if (!isset($_SESSION['nic'])) {
 		<h1>Warning message</h1>
 		<form action="#" method="post">
 			<p>
-				<label for="fullname">From *:</label>
-				<input type="text" value="<?php echo "Andum.lk Admin-"?>" class="field-value-inline" name="aname" require>
+				<label for="fullname" class="field-label-inline">From *:</label>
+				<input type="text" value="<?php echo "Andum.lk Admin-"?>" class="admin-field-value-inline" name="aname" require>
 			</p>
 
 			<p>
-				<label for="email">To *:</label>
-				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" require>
+				<label for="email" class="field-label-inline">To *:</label>
+				<input type="text" value="<?php echo $row["email"]?>" class="admin-field-value-inline" name="email" require>
 			</p>
 
 			<p>
 				<label for="subject" class="field-label-inline">Subject *:</label>
-        <select name="cars" id="cars">
+        <select name="cars" id="cars" class="admin-field-value-inline">
           <option value="Warning message about suspending your account">Warning message about suspending your account</option>
           <option value="saab">Saab</option>
           <option value="mercedes">Mercedes</option>
@@ -127,8 +127,8 @@ if (!isset($_SESSION['nic'])) {
 			</p>
 
 			<p>
-				<label for="body">Message *: </label>
-				<textarea name="body" id="body" cols="30" rows="10" required>xxx</textarea>
+				<label for="body" class="field-label-inline">Message *: </label>
+				<textarea name="body" id="body" class="admin-field-value-inline" cols="30" rows="10" required >xxx</textarea>
 			</p>
 			<p>
         <button type="submit" name="send_mail" class="admin-button">Send Message</button>
