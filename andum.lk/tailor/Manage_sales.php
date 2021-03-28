@@ -214,7 +214,7 @@ window.onclick = function(e) {
     </div>
   </div>
 
-  <script>
+    <script>
       function myFunction7() 
       {
         var x = document.getElementById("div-9");
