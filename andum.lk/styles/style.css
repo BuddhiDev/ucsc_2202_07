@@ -1528,6 +1528,22 @@ a{
   margin: 0px 0px 20px 1000px;
 }
 
+.admin-status-button{
+  padding: 9px 25px;
+    background-color: #14165a;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+    -webkit-appearance: none;
+    color: white;
+}
+
+.admin-status-button:hover{
+    color: #fafafa;
+}
+
 .view-button {
   padding: 6px 10px;
     background-color: #EB2188;
@@ -1745,14 +1761,14 @@ a{
 
 .status-btn{
   padding: 9px 25px;
-    background-color: #ccc;
+    background-color: #eb2188;
     border: none;
     border-radius: 1px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     text-align: center;
     -webkit-appearance: none;
-    color: #eb2188;
+    color: white;
 }
 .chat-row{
   display: flex;
