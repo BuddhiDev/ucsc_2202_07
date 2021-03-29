@@ -82,7 +82,7 @@ window.onclick = function(e) {
     <h2 class="tailor-heading">Current Orders</h2>
     <table>
       <tr>
-        <th>Tailor Name</th>
+        <th>Fashion Designer Name</th>
         <th>Status</th>
         <th></th>
       </tr>
@@ -119,7 +119,7 @@ window.onclick = function(e) {
     <h2 class="tailor-heading">Completed Orders</h2>
     <table>
       <tr>
-        <th>Tailor Name</th>
+        <th>Fashion Designer Name</th>
         <th>Status</th>
         <th></th>
       </tr>
@@ -160,6 +160,7 @@ window.onclick = function(e) {
         if (x.style.display === "none") 
         {
           x.style.display = "block";
+          y.style.display = "none";
         } 
         else 
         {
@@ -175,6 +176,7 @@ window.onclick = function(e) {
         if (y.style.display === "none") 
         {
           y.style.display = "block";
+          x.style.display = "none";
         } 
         else 
         {

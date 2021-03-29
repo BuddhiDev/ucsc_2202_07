@@ -87,7 +87,7 @@ window.onclick = function(e) {
     <table>
       <tr>
         <th>Tailor Name</th>
-        <th>Category</th>
+        <th>Dress Name</th>
         <th>Status</th>
         <th><center>Action</center></th>
 
@@ -96,7 +96,7 @@ window.onclick = function(e) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic' AND status <>'Completed' ORDER BY cr_date DESC ";
+        $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE c_nic='$nic' AND status <>'Completed' AND t.dress_id=d.dress_id ORDER BY cr_date DESC ";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -105,7 +105,7 @@ window.onclick = function(e) {
         ?>
 
             <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["title"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>
@@ -128,7 +128,7 @@ window.onclick = function(e) {
     <table>
       <tr>
         <th>Tailor Name</th>
-        <th>Category</th>
+        <th>Dress Name</th>
         <th>Status</th>
         <th><center>Action</center></th>
 
@@ -137,7 +137,7 @@ window.onclick = function(e) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic' AND status ='Completed' ORDER BY cr_date DESC ";
+        $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE c_nic='$nic' AND status ='Completed' AND t.dress_id=d.dress_id ORDER BY cr_date DESC ";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -146,7 +146,7 @@ window.onclick = function(e) {
         ?>
 
             <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
+            <td><?php echo $row["title"] ?></td>
             <td><?php echo $row["status"] ?></td>
             <td>
               <div>

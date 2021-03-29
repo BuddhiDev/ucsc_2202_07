@@ -254,6 +254,12 @@ if (!isset($_SESSION['nic'])) {
         <header>Order Details</header>
         <form method="post">
           <div>
+          <div class="title-n">
+              <p style="font-weight:bold">Order Id</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["id"]?></p>
+            </div>  <br/>
             <div class="title-n">
               <p style="font-weight:bold">Customer Name</p>
             </div>
@@ -268,7 +274,7 @@ if (!isset($_SESSION['nic'])) {
               <p style="font-weight:bold">Order Price</p>
             </div>
             <div class="cust-n">
-              <p >Rs. <?php echo $row["price"] ?></p>
+              <p >Rs. <?php echo $row["price"] ?>.00</p>
             </div>
           </div>
           <?php } ?> 
@@ -505,11 +511,11 @@ if (!isset($_SESSION['nic'])) {
   <!--measurement form-->
   <div class="input-container" id="div-1">
     <form method="post" action="order.php" style="max-width:1024px;margin:auto">
-
+<center>
     <div class="card-img">
                       <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row_d["image"]; ?> " alt="Avatar" style="width:20%">
                       </div>
-
+</center>
       <h2 class="measure-headding">Measurements</h2>
       <div class="d-flex">
         <div class="f1">
@@ -716,6 +722,13 @@ if (!isset($_SESSION['nic'])) {
         <textarea name="message" rows="20" cols="50" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
       </div>
 
+      <h2 class="order-measure-headding">Attached Files</h2>
+            <center>
+            <?php if($row["doc"]) {?>
+          <div class="card-img">
+                      <img src="/ucsc_2202_07/andum.lk/orders/tailor/<?php echo $row["doc"]; ?> " alt="Avatar" style="width:20%">
+                      </div></center>
+                      <?php }else {echo "No Attached Files"; }?>
     </form>
   </div>
   <div id="div-3" class="alert">

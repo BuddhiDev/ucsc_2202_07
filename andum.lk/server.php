@@ -1238,8 +1238,4 @@ if (isset($_POST['save'])) {
 // Rating System end
 
 
-
-
-
-
  ?>

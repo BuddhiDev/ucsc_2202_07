@@ -88,7 +88,7 @@ window.onclick = function(e) {
           <table>
             <tr>
               <th>Customer Name</th>
-              <th>Category</th>
+              <th>Dress Name</th>
               <th>Status</th>
               <th><center>Action</center></th>
             </tr>
@@ -97,7 +97,7 @@ window.onclick = function(e) {
               <?php
 
               $nic = $_SESSION['nic'];
-              $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Paid' DESC";
+              $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Paid' ORDER BY date DESC";
               $result = mysqli_query($db, $sql);
 
               if (mysqli_num_rows($result) > 0) {
@@ -106,7 +106,7 @@ window.onclick = function(e) {
               ?>
 
                   <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
-                  <td><?php echo $row["category"] ?></td>
+                  <td><?php echo $row["title"] ?></td>
                   <td><?php echo $row["status"] ?></td>
                   <td>
                     <div>
@@ -132,7 +132,7 @@ window.onclick = function(e) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
@@ -141,7 +141,7 @@ window.onclick = function(e) {
             <?php
 
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Delivered'";
+            $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Delivered' ORDER BY date DESC";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -150,7 +150,7 @@ window.onclick = function(e) {
             ?>
 
                 <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>
@@ -175,7 +175,7 @@ window.onclick = function(e) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
@@ -184,7 +184,7 @@ window.onclick = function(e) {
             <?php
 
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Completed'";
+            $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Completed' ORDER BY date DESC";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -193,7 +193,7 @@ window.onclick = function(e) {
             ?>
 
                 <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>
