@@ -107,8 +107,11 @@ $nic=$_SESSION['nic'];
       }else{
 
 ?>
-      <center><h2>1 Month Promoting Package</h2> <br/>
-      Subscribe this package to make visible your profile on top of the tailor list. <br/></center>
+      <center><b><h2>1 Month Promoting Package</h2></b> <br/>
+      Subscribe this package to make visible your profile on top of the tailor list. <br/><br/>
+      <b><h3>Benefits:</h3></b>
+      <ul><li>Visible your profile top of the tailor list </li>
+      <li>Impressions will be increased 100% </li></ul><br/></center>
       <center><button class="loginbutton btn-full-w" type="submit" name="Checkout">SUBSCRIBE</button></center>
 
       </form>
