@@ -64,7 +64,7 @@
       <div class="admin-table">
         <table>
           <tr>
-            <th>Nic</th>
+            
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
@@ -83,7 +83,7 @@
                 while ($row = mysqli_fetch_assoc($result)) {
               ?>
 
-            <td><?php echo $row["nic"] ?></td>
+            
             <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
             <td><?php echo $row["email"] ?></td>
             <td><?php echo $row["contactno"] ?></td>
