@@ -215,7 +215,7 @@ window.onclick = function(e) {
     </div>
     <div class="row">
       <div class="col-25"><br>
-        <lable for="amount" class="field-label-inline">Amount: </label>
+        <lable for="amount" class="field-label-inline">Available Stock: </label>
       </div>
       <div class="col-75">
         <input class="field-label-inline" type="text"  placeholder="Amount" name="amount">
