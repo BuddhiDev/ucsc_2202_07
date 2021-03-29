@@ -11,6 +11,19 @@
   margin-right: 25px;
 }
 
+.admin-sidebar{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 8px 10px;
+  list-style: none;
+  background-color: white;
+  background-size: cover;
+  min-height: 60%;
+  border-radius: 20px;
+  margin-right: 25px;
+}
+
 .sidebar-item{
     position: relative;
     padding: 10px;
@@ -39,6 +52,15 @@
   background-color: #fafafa;
   border-radius: 20px;
   }
+
+  .admin-container-box{
+    min-height: calc(100vh - 211px - 58px);
+    width: 68vW;
+    margin: 30 auto;
+    padding: 30px 20px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    }
 
   .input-search{
     width: 25rem;

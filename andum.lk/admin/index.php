@@ -167,7 +167,7 @@
       })
   </script>
 
-  <div class="fd-container-box">
+  <div class="admin-container-box">
 <?php
 
 //get total orders sql
@@ -199,7 +199,7 @@ $total_banned_users = $row[0];
   
 ?>
     <div class="side-bar-wrapper">
-      <ul class="sidebar">
+      <ul class="admin-sidebar">
         <li class="sidebar-item">
           <a class="sidebar-link" href="manage_customer.php">
           <div class="sidebar-icon">
@@ -280,28 +280,22 @@ $total_banned_users = $row[0];
     
     <div class="fd-content-wrapper">
       <div class=row>
-        <div class=col-3>
-          <div class="fd-block-3">
-          <h3 class="fd-block-font-size"><?php echo $total_users ?></h3>
-            <Br>
-            <h3>Total Users</h3>
-          </div>
-        </div>
-        <div class=col-3>
+        
+        <div class=col-4>
           <div class="fd-block-2">
           <h3 class="fd-block-font-size"><?php echo $total_tailors ?></h3>
             <Br>
             <h3>Tailors</h3>
           </div>
         </div>
-        <div class=col-3>
+        <div class=col-4>
           <div class="fd-block-2">
           <h3 class="fd-block-font-size"><?php echo $total_customers ?></h3>
             <Br>
             <h3>Customers</h3>
           </div>
         </div>
-        <div class=col-3>
+        <div class=col-4>
           <div class="fd-block-2">
           <h3 class="fd-block-font-size"><?php echo $total_fdesigners ?></h3>
             <Br>
@@ -315,7 +309,14 @@ $total_banned_users = $row[0];
             <h3>Notifications</h3>
           </div>
         </div> -->
-        <div class=col-3>
+        <div class=col-6>
+          <div class="fd-block-3">
+            <h3 class="fd-block-font-size"><?php echo $total_users ?></h3>
+            <Br>
+            <h3>Total Users</h3>
+          </div>
+        </div>
+        <div class=col-6>
           <div class="fd-block-4">
           <h3 class="fd-block-font-size"><?php echo $total_banned_users ?></h3>
             <Br>

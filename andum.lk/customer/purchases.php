@@ -62,6 +62,10 @@ if (!isset($_SESSION['nic'])) {
   </script>
 
   <div class="container-box">
+  <div class="btn-container">
+        <button class="status-btn" onclick="myFunction1()">Current Orders</button>
+        <button class="status-btn" onclick="myFunction2()">Completed Orders</button>
+        </div>
 
   <div id="div-12">
     <h2 class="tailor-heading">Current Orders</h2>
@@ -144,6 +148,38 @@ if (!isset($_SESSION['nic'])) {
     </table>
 
   </div>
+
+  <script>
+      function myFunction1() 
+      {
+        var x = document.getElementById("div-12");
+        var y = document.getElementById("div-13");
+        if (x.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          x.style.display = "block";
+        }
+      }
+
+      function myFunction2() 
+      {
+        var x = document.getElementById("div-12");
+        var y = document.getElementById("div-13");
+        if (y.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+      }
+    </script>
     
 
     

@@ -299,8 +299,8 @@ if (isset($_POST['hireT'])) {
     $msg = "Message from";
 
     //echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,nmessage)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date','Pending Order')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,c_status,nmessage)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date',1,'Pending Order')";
    $result = mysqli_query($db, $sql);
    
 //    $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
@@ -1188,19 +1188,17 @@ if (isset($_POST['sale-complete'])) {
         $mail->SMTPSecure = "tls";
         $mail->Port = "587";
 
-        $mail->Username = 'andumdotlk@gmail.com';
-        $mail->Password = 'Admin@bvnt';
+        $mail->Username = 'andumdotlk@gmail.com'; //Gmail address which you want to use as SMTP server
+        $mail->Password = 'Admin@bvnt'; // Gmail address password
 
         $mail->isHTML(true);
 
         $mail->Subject = "$issue";
 
-        $mail->setFrom('andumdotlk@gmail.com');
-        $mail->addAddress('andumdotlk@gmail.com');
+        $mail->setFrom('andumdotlk@gmail.com'); //Gmail address which you used as SMTP server
+        $mail->addAddress('andumdotlk@gmail.com'); // Email address where you want to recieve emails
 
-        $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $c_msg</h3>";
-
-        
+        $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $c_msg</h3>";       
 
         if($mail->Send()){
             echo "Email sent";

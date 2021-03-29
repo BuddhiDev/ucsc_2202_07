@@ -95,6 +95,11 @@ $result = mysqli_query($db, $sql);
 $row = mysqli_fetch_array($result);
 $delivered_orders = $row[0];
 
+//get delivered orders sql
+$sql_tal = "SELECT * FROM tailors WHERE nic='$nic' ";
+$result_tal = mysqli_query($db, $sql_tal);
+$row_tal = mysqli_fetch_array($result_tal);
+
 ?>
   <div class="fd-container-box">
     <div class="side-bar-wrapper">
@@ -161,14 +166,14 @@ $delivered_orders = $row[0];
         </div>
         <div class=col-4>
           <div class="fd-block-2">
-          <h3 class="fd-block-font-size">0</h3>
+          <h3 class="fd-block-font-size"><?php echo $row_tal['rate']?></h3>
             <Br>
             <h3>Profile Rate</h3>
           </div>
         </div>
         <div class=col-4>
           <div class="fd-block-3">
-          <h3 class="fd-block-font-size">0</h3>
+          <h3 class="fd-block-font-size"><?php echo $row_tal['total_fb']?></h3>
             <Br>
             <h3>Total Feedbacks</h3>
           </div>
