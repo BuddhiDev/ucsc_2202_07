@@ -53,6 +53,13 @@ if (!isset($_SESSION['nic'])) {
       }
     }
   </script>
+<?php
+$nic = $_SESSION['nic'];
+  $sql = "SELECT * FROM users WHERE nic='$nic' ";
+  $result = mysqli_query($db, $sql);
+  $row = mysqli_fetch_assoc($result);
+  ?>
+
   <div class="container-box">
       <div class="row">
         <div class="col-8">
@@ -67,20 +74,24 @@ if (!isset($_SESSION['nic'])) {
                     <label for="uname" class="field-label-inline">What is Your Issue</label>
                     <input type="text" class="field-value-inline" name="issue" required>
                     </div>
+                    <div class="form-field-inline">
+                    <label for="uname" class="field-label-inline">Order Id</label>
+                    <input type="text" class="field-value-inline" name="oid" placeholder="If you have any complain regards to an order, please insert order id here">
+                    </div>
 
                     <div class="form-field-inline">
                     <label for="fname" class="field-label-inline"><b>Your Name</b></label>
-                    <input type="text" class="field-value-inline" name="cust_name" required>
+                    <input type="text" class="field-value-inline" name="cust_name" value=<?php echo $row["fname"]." ".$row["lname"]?> required>
                     </div>
 
                     <div class="form-field-inline">
                     <label for="email" class="field-label-inline"><b>Email Address</b></label>
-                    <input type="text" class="field-value-inline" name="email" required>
+                    <input type="text" class="field-value-inline" name="email" value=<?php echo $row["email"]?> required>
                     </div>
 
                     <div class="form-field-inline">
                     <label for="contactno" class="field-label-inline"><b>Phone Number</b></label>
-                    <input type="text" class="field-value-inline" name="contactno">
+                    <input type="text" class="field-value-inline" name="contactno" value=<?php echo $row["contactno"]?>>
                     </div>
 
                     <div class="form-field-inline">

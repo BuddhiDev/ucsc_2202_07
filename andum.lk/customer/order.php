@@ -228,12 +228,19 @@ if (!isset($_SESSION['nic'])) {
         $sql_d = "SELECT * FROM dress_showcase WHERE dress_id=$d_id ";
         $result_d = mysqli_query($db, $sql_d);
         $row_d = mysqli_fetch_assoc($result_d);
+
         ?>
 
 <div class="container">
         <header>Order Details</header>
         <form method="post">
           <div>
+          <div class="title-n">
+              <p style="font-weight:bold">Order Id</p>
+            </div>
+            <div class="cust-n">
+              <p ><?php echo $row["id"]?></p>
+            </div>  <br/>
             <div class="title-n">
               <p style="font-weight:bold">Tailor Name</p>
             </div>
@@ -251,6 +258,7 @@ if (!isset($_SESSION['nic'])) {
               <p >Rs. <?php echo $row["price"]?>.00</p>
             </div>
           </div>
+          
           <?php } ?> 
           
         </form>
@@ -523,9 +531,10 @@ if (!isset($_SESSION['nic'])) {
     <input type="hidden" name="city" value="Colombo">
     <input type="hidden" name="country" value="Sri Lanka"><br><br> 
 
+    <center>
           <div class="card-img">
                       <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row_d["image"]; ?> " alt="Avatar" style="width:20%">
-                      </div>
+                      </div></center>
 
             <h2 class="order-measure-headding">Measurements</h2>
             <div class="d-flex">
@@ -732,6 +741,15 @@ if (!isset($_SESSION['nic'])) {
               <!-- <lable for="other" style="">Other:</label> -->
               <textarea name="message" rows="20" cols="50" placeholder="Other" class="txt-area" value="<?php echo $row["other"]?>" disabled ></textarea>
             </div>
+            <h2 class="order-measure-headding">Attached Files</h2>
+            <center>
+            <?php if($row["doc"]) {?>
+          <div class="card-img">
+                      <img src="/ucsc_2202_07/andum.lk/orders/tailor/<?php echo $row["doc"]; ?> " alt="Avatar" style="width:20%">
+                      </div></center>
+                      <?php }else {echo "No Attached Files"; }?>
+
+
             <?php if($status=="Accepted"){ ?>
             <div>
               <?php $_SESSION['tailor_oid_auth']=$row["id"]?> 

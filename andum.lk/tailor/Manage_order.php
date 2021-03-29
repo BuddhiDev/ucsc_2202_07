@@ -91,21 +91,21 @@ if (!isset($_SESSION['nic'])) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
           <tr>
             <?php
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Pending' ";
+            $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE t.t_nic='$nic' AND status='Pending' AND t.dress_id=d.dress_id ORDER BY cr_date DESC ";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>
@@ -127,21 +127,21 @@ if (!isset($_SESSION['nic'])) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
           <tr>
             <?php
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Accepted' ";
+            $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE t.t_nic='$nic' AND status='Accepted' AND t.dress_id=d.dress_id ORDER BY cr_date DESC";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>
@@ -163,21 +163,21 @@ if (!isset($_SESSION['nic'])) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
           <tr>
             <?php
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Paid' ";
+            $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE t.t_nic='$nic' AND status='Paid' AND t.dress_id=d.dress_id ORDER BY cr_date DESC";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>
@@ -198,21 +198,21 @@ if (!isset($_SESSION['nic'])) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
           <tr>
             <?php
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Ongoing' ";
+            $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE t.t_nic='$nic' AND status='Ongoing' AND t.dress_id=d.dress_id ORDER BY cr_date DESC ";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>
@@ -234,21 +234,21 @@ if (!isset($_SESSION['nic'])) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
           <tr>
             <?php
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Delivered' ";
+            $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE t.t_nic='$nic' AND status='Delivered' AND t.dress_id=d.dress_id ORDER BY cr_date DESC ";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>
@@ -270,7 +270,7 @@ if (!isset($_SESSION['nic'])) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Dress Name</th>
             <th>Status</th>
             <th><center>Action</center></th>
           </tr>
@@ -278,14 +278,14 @@ if (!isset($_SESSION['nic'])) {
             <?php
 
             $nic = $_SESSION['nic'];
-            $sql = "SELECT * FROM t_orders WHERE t_nic='$nic' AND status='Completed' ";
+            $sql = "SELECT * FROM t_orders t,dress_showcase d WHERE t.t_nic='$nic' AND status='Completed' AND t.dress_id=d.dress_id ORDER BY cr_date DESC";
             $result = mysqli_query($db, $sql);
 
             if (mysqli_num_rows($result) > 0) {
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
                 <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
                 <td>
                   <div>

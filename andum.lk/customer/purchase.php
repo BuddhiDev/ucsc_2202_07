@@ -243,16 +243,17 @@ if (!isset($_SESSION['nic'])) {
               <p ><?php echo $row["title"] ?></p>
             </div>
           </div>
-          <br/><br/>
           <div>
+          <br/><br/>
             <div class="title-n">
-              <p style="font-weight:bold">Category</p>
+              <p style="font-weight:bold">Shipping Address</p>
             </div>
             <div class="cust-n">
-              <p ><?php echo $row["category"] ?></p>
+              <p ><?php echo $row["address"] ?></p>
             </div>
           </div>
           <br/><br/>
+          
           <div>
             <div class="title-n">
               <p style="font-weight:bold">Colours</p>
@@ -463,7 +464,7 @@ if (!isset($_SESSION['nic'])) {
       <p>Tailor has been delivered the order, Did you recieve it?</p>
       <input type="hidden" name="sale_id" value=<?php echo $row["id"]?> > <br/>
       <input type="hidden" name="tailor_nic" value=<?php echo $row["t_nic"]?> >
-      <p>Please give your rate <input type="number" name="t_rate" min="1" max="5"> /5</p>
+      <p>Please give your rate <input type="number" name="t_rate" min="1" max="5"> /5</p><br/>
       <button name="sale-complete" class="accept-button">Mark as Completed</button>
       </form>
     </div>
@@ -473,6 +474,18 @@ if (!isset($_SESSION['nic'])) {
       <p>You marked this order as Completed!</p>
     </div>
     <?php } ?>
+
+    <center>
+            <?php
+            
+            $sql_dress = "SELECT * FROM dress_showcase WHERE dress_id=$selected_p_id ";
+            $res_dress = mysqli_query($db, $sql_dress);
+            $row_dress = mysqli_fetch_assoc($res_dress);
+            if($row_dress["image"]) { ?>
+          <div class="card-img">
+                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row_dress["image"]; ?> " alt="Avatar" style="width:20%">
+                      </div></center>
+                      <?php } ?> 
   
     <?php } ?>
      <?php require("../footer.php") ?>

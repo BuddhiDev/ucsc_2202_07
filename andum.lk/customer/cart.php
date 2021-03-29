@@ -80,7 +80,6 @@ if (!isset($_SESSION['nic'])) {
         $_SESSION['secret_order_key']=md5(rand(10,1000000));
         $secret_order_key = $_SESSION['secret_order_key'];
 
-
       if (mysqli_num_rows($result) > 0) {
       ?>
 
@@ -131,7 +130,7 @@ if (!isset($_SESSION['nic'])) {
             <td align="right"><?php echo number_format($total,2);?></td>
           </tr>
         </table>
-
+        
         <div class="checkout-box">
           <div class="checkout-box-block">
             <form method="post" action="https://sandbox.payhere.lk/pay/checkout">
@@ -156,8 +155,9 @@ if (!isset($_SESSION['nic'])) {
 
               <?php     
                   } 
-              ?>
 
+              ?>
+              
               <!-- Checkout button click end-->
               <?php if (mysqli_num_rows($result) > 0) { ?>
               <center><button class="loginbutton btn-full-w" type="submit" name="Checkout">Checkout</button></center>
@@ -166,9 +166,7 @@ if (!isset($_SESSION['nic'])) {
             </form>
             <center><a href="index.php"><button class="loginbutton btn-full-w">Continue Shopping</button></a></center>
           </div>
-          <div class="checkout-box-block">
 
-          </div>
 
         </div>
 

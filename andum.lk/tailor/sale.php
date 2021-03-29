@@ -268,10 +268,10 @@ window.onclick = function(e) {
           <br/><br/>
           <div>
             <div class="title-n">
-              <p style="font-weight:bold">Category</p>
+              <p style="font-weight:bold">Shipping Address</p>
             </div>
             <div class="cust-n">
-              <p ><?php echo $row["category"] ?></p>
+              <p ><?php echo $row["address"] ?></p>
             </div>
           </div>
           <br/><br/>
@@ -310,9 +310,13 @@ window.onclick = function(e) {
               <p ><?php echo $row["quantity"] ?></p>
             </div>
           </div>
+
+
           <?php } ?> 
           
         </form>
+
+        
 
         <div class="progress-bar">
           <div class="step">
@@ -396,6 +400,8 @@ window.onclick = function(e) {
               </div>
             </div>
           </form>
+
+
         </div>
       </div>
 
@@ -526,6 +532,19 @@ window.onclick = function(e) {
     </div>
     <?php } ?>
   
+    <center>
+            <?php
+            
+            $sql_dress = "SELECT * FROM dress_showcase WHERE dress_id=$selected_s_id ";
+            $res_dress = mysqli_query($db, $sql_dress);
+            $row_dress = mysqli_fetch_assoc($res_dress);
+            if($row_dress["image"]) { ?>
+          <div class="card-img">
+                      <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row_dress["image"]; ?> " alt="Avatar" style="width:20%">
+                      </div></center>
+                      <?php } ?> 
+
+
     <?php } ?>
      <?php require("../footer.php") ?>
     </div>
