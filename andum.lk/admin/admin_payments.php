@@ -192,135 +192,7 @@
 
 
 
-<header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Women</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="workwear_gents.php">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="#">Kurthas</a></li>
-                    <li><a href="#">Shlwas</a></li>
-                    <li><a href="#">Sarees</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-              
-            
-          </li>
-          <li class="dropdown">
-            <a href="#">Men</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
-                  </ul>  
-                </div>
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Trousers</a></li>
-                    <li><a href="#">Blazers</a></li>
-                  </ul>
-                </div> 
-              </ul>
-            </div>            
-          </li>
-          <li class="dropdown">
-            <a href="#">Kids</a>
-            <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
-          </li>
-
-          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
-        </ul>
-      </div>
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-
-            <li><i class="fas fa-envelope"></i></li>
-        </div>
-        </ul>
-      </div>
-      </div>
-
-
-      <div class="add-new-position">
-              <a class="cta" href="pdf_payments.php"><button class="admin-button">Generate PDF</button></a>
-            </div>
-
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <body>
 
@@ -332,32 +204,35 @@
   </script>
 
   <div class="container-box">
-    <div class="fd-container-box">
-     <div class="row">
+    <div class="admin-container">
+      <div class="admin-row">
         <div class="admin-search-container">
             <form method="post" action = "search_payment.php">
               <div class="form-field-inline">
                 <input type="text" class="field-value-inline" name="q" placeholder="Search by customer nic..">
-                <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="submit" class="admin-search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
             </form>
         </div>
       </div>
+      <div class="add-new-position">
+              <a class="cta" href="pdf_payments.php"><button class="admin-button">Generate PDF</button></a>
+            </div>
 
     <br/>
     <br/> 
     </div>
 
-    <div class="status-btn-container">
+    <div class="admin-status-btn-container">
         <button class="admin-status-button" onclick="myFunction7()">Readymade dresses orders</button>
         <button class="admin-status-button" onclick="myFunction8()">Customize Orders</button>
         <button class="admin-status-button" onclick="myFunction9()">Fashion designer orders</button>
       </div>
 
     <div id="div-9">
-      <center><p> Readymade dresses orders </p></center>
+      <center><p class="admin-para">Readymade dresses orders</p></center>
 
-      <div class="container-box">
+      <div class="admin-table">
         <table>
           <tr>
             <th>Customer NIC</th>
@@ -401,9 +276,9 @@
     </div>
 
     <div id="div-10">
-      <center><p> <b>Customize Orders </b></p></center>
+      <center><p class="admin-para">Customize Orders</p></center>
 
-      <div class="container-box">
+      <div class="admin-table">
         <table>
           <tr>
             <th>Customer NIC</th>
@@ -449,9 +324,9 @@
     </div>
 
     <div id="div-11">
-      <center><p>Fashion designer orders</p></center>
+      <center><p class="admin-para">Fashion designer orders</p></center>
 
-      <div class="container-box">
+      <div class="admin-table">
         <table>
 
           <tr>

@@ -180,29 +180,7 @@
 
 
 
-<header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="manage_tailor.php"><i class="fas fa-users"></i>Manage Tailors</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-              </div>
-            </li>
-            <!--<li><i class="fas fa-envelope"></i></li>-->
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <body>
   <script>
@@ -243,7 +221,7 @@
             </form>
           </div>
           <div>
-            <li><a class="cta" href="send_mail_tailor.php"><button class="admin-button">Warning message</button></a></li>
+            <li><a class="cta" href="send_mail_tailor.php"><button class="admin-suspend-button">Warning message</button></a></li>
           </div><br>
           <div>
           <li><a href="banned_tailor.php?delete_nic=<?php echo $row["nic"]?>"><button class="admin-button">Suspend User Account</button></a></li>

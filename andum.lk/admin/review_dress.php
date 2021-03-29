@@ -31,28 +31,7 @@ if (!isset($_SESSION['nic'])) {
 </head>
 
 
-<header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><i class="fas fa-envelope"></i></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <body>
 <script>
@@ -71,17 +50,18 @@ if (!isset($_SESSION['nic'])) {
 
   
   <div class="tailor-cover">
-      <div class="row">
-        <div class="search-container">
-          <form method="post">
-            <div class="form-field-inline">
-              <label for="searchname" class="field-label-inline">Search...</label>
-              <input type="text" class="field-value-inline" name="q">
-              <button type="submit" class="search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </div>
-          </form>
+  <div class="admin-container">
+      <div class="admin-row">
+        <div class="admin-search-container">
+            <form method="post" action = "search_payment.php">
+              <div class="form-field-inline">
+                <input type="text" class="field-value-inline" name="q" placeholder="Search by customer nic..">
+                <button type="submit" class="admin-search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </div>
+            </form>
         </div>
       </div>
+    </div>
     <div class="row">
       <?php
         // Check condition if this is search request or not

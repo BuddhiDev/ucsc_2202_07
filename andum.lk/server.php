@@ -125,7 +125,6 @@ if (isset($_POST['login'])) {
         $result = mysqli_query($db, $sql);
 
 
-
         if (mysqli_num_rows($result) == 1) {
             $_SESSION['nic'] = $nic;
             $_SESSION['success'] = "You are now logged in";
