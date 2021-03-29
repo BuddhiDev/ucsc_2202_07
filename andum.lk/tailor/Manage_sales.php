@@ -97,7 +97,7 @@ window.onclick = function(e) {
               <?php
 
               $nic = $_SESSION['nic'];
-              $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Paid'";
+              $sql = "SELECT * FROM dress_sales s,dress_showcase d,users u WHERE s.dress_id=d.dress_id AND d.t_nic='$nic' AND s.c_nic=u.nic AND status='Paid' DESC";
               $result = mysqli_query($db, $sql);
 
               if (mysqli_num_rows($result) > 0) {

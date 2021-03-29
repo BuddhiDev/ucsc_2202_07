@@ -96,7 +96,7 @@ window.onclick = function(e) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic' AND status <>'Completed' ";
+        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic' AND status <>'Completed' ORDER BY cr_date DESC ";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -137,7 +137,7 @@ window.onclick = function(e) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic' AND status ='Completed' ";
+        $sql = "SELECT * FROM t_orders WHERE c_nic='$nic' AND status ='Completed' ORDER BY cr_date DESC ";
         $result = mysqli_query($db, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -172,6 +172,7 @@ window.onclick = function(e) {
         if (x.style.display === "none") 
         {
           x.style.display = "block";
+          y.style.display = "none";
         } 
         else 
         {
@@ -187,6 +188,7 @@ window.onclick = function(e) {
         if (y.style.display === "none") 
         {
           y.style.display = "block";
+          x.style.display = "none";
         } 
         else 
         {
