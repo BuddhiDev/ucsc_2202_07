@@ -1658,6 +1658,13 @@ a{
     font-size: 20px;
 }
 
+.send-email-row{
+  display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .view-button {
   padding: 6px 10px;
     background-color: #EB2188;
