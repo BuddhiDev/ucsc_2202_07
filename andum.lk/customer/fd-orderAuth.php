@@ -12,7 +12,7 @@ if (isset($_GET['order_id'])) {
         //echo "buy";
 
     $order_id = $_SESSION['fd_oid_auth'];
-    $sql = "UPDATE fd_orders SET status='Paid' WHERE id='$order_id'";
+    $sql = "UPDATE fd_orders SET status='Paid',nstatus=0, nmessage='Paid Order' WHERE id='$order_id'";
     $result=mysqli_query($db, $sql);
 
     }
