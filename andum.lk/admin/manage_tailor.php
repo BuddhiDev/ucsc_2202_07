@@ -50,9 +50,9 @@
     <div class="admin-container">
       <div class="admin-row">
         <div class="admin-search-container">
-          <form method="post" action = "search_payment.php">
+          <form method="post" action = "search_tailor.php">
             <div class="form-field-inline">
-              <input type="text" class="field-value-inline" name="q" placeholder="Search by tailor nic..">
+              <input type="text" class="field-value-inline" name="q" placeholder="Search by tailor name..">
               <button type="submit" class="admin-search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
           </form>
@@ -65,7 +65,7 @@
     <div class="admin-table">
       <table>
         <tr>
-          <th>Nic</th>
+          
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
@@ -84,7 +84,7 @@
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
 
-          <td><?php echo $row["nic"] ?></td>
+         
           <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
           <td><?php echo $row["email"] ?></td>
           <td><?php echo $row["contactno"] ?></td>

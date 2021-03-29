@@ -223,7 +223,7 @@ if (!isset($_SESSION['nic'])) {
     <div class="row">
       <div class="col-6">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:50%;">
         </div>
       </div>
 
@@ -233,6 +233,9 @@ if (!isset($_SESSION['nic'])) {
             <form method="post">
               <br>
               <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <br>
+              <br>
+              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["nic"]?></p>
               <br>
               <div>
                 <div>

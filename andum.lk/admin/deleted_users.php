@@ -58,7 +58,6 @@
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>User Type</th>
           <th>Action</th>
           <th></th>
         </tr>
@@ -78,7 +77,7 @@
           <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
           <td><?php echo $row["email"] ?></td>
           <td><?php echo $row["contactno"] ?></td>
-          <td><?php echo $row["type"] ?></td>
+          
           <!--<td>
             <div>
               <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>
