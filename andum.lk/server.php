@@ -304,8 +304,8 @@ if (isset($_POST['hireT'])) {
     $msg = "Message from";
 
     //echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,nmessage)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$dateM','$dress_id', '$date','Pending Order')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,nstatus,nmessage)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$dateM','$dress_id', '$date','1','Pending Order')";
    $result = mysqli_query($db, $sql);
 //    $sql2 = "UPDATE t_orders SET cstatus=1 WHERE c_nic=$c_nic";
 //    $result3 = mysqli_query($db, $sql2);
@@ -331,7 +331,7 @@ if (isset($_POST['hireFD'])) {
     $other = mysqli_real_escape_string($db, $_POST['other']);
     $date = date('m');
 
-    echo $fd_nic,$fd_fname;
+   //echo $fd_nic,$fd_fname;
     $sql = "INSERT INTO fd_orders (c_nic, c_fname, c_lname, fd_nic, fd_fname, fd_lname, status, other, date, nmessage) VALUES ('$c_nic','$c_fname','$c_lname','$fd_nic','$fd_fname','$fd_lname','Pending','$other','$date','Pending Order')";
     $result = mysqli_query($db, $sql);
     if ($result) {
