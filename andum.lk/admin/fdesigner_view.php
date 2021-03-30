@@ -326,6 +326,7 @@ if (!isset($_SESSION['nic'])) {
       <table>
         <tr>
           <th>Customer Name</th>
+          <th>Order ID</th>
           <th>Price</th>
           <th>Invoice</th>
           <th>Date</th>
@@ -347,6 +348,7 @@ if (!isset($_SESSION['nic'])) {
           ?>
 
               <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+              <td><?php echo $row["id"] ?></td>
               <td><?php echo $row["price"] ?></td>
               <td><?php echo($row["price"]*0.05)?></td>
               <td><?php echo $row["date"] ?></td>
