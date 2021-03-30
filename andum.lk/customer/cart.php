@@ -143,7 +143,7 @@ if (!isset($_SESSION['nic'])) {
               <input type="hidden" name="order_id" value=<?php echo $secret_order_key ?>>
               <input type="hidden" name="items" value=<?php echo "DS-". $cart_oid ?>><br>
               <input type="hidden" name="currency" value="LKR">
-              <input type="hidden" name="amount" value=<?php echo $cart_price ?>>  
+              <input type="hidden" name="amount" value=<?php echo $total ?>>  
               <!-- <br><br>Customer Details<br>-->
               <input type="hidden" name="first_name" value="Saman">
               <input type="hidden" name="last_name" value="Perera"><br>
