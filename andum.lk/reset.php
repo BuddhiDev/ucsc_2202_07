@@ -144,7 +144,7 @@ require("server.php");
     <div class="login-container">
     <div class="form-field-inline">
         <label for="nic" class="field-label-inline"><b>NIC Number</b></label>
-        <input type="text" class="field-value-inline" name="nic" required>
+        <input type="text" class="field-value-inline" name="nic"  required>
       </div>
       <div class="form-field-inline">
         <label for="password" class="field-label-inline"><b>Password</b></label>
@@ -155,8 +155,6 @@ require("server.php");
         <input type="password" class="field-value-inline" name="confirmpassword" required>
       </div>
       <div class="btn-panel-center">
-        <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
-        <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
         <button class="loginbutton btn-full-w" type="submit" name="resetp">Reset Password</button>
       </div>
 

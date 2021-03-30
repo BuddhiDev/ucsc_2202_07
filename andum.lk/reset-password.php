@@ -116,9 +116,6 @@ require("server.php");
           </li>
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
-          <li>
-          
-          </li>
         </ul>
       </div>
       <div class="box">
@@ -138,8 +135,6 @@ require("server.php");
         <input type="text" class="field-value-inline" name="email" required>
       </div>
       <div class="btn-panel-center">
-        <!-- <button class="facebookbutton btn-full-w" type="submit">SIGN IN WITH FACEBOOK </button>
-        <button class="googlebutton btn-full-w" type="submit">SIGN IN WITH GOOGLE </button> -->
         <button class="loginbutton btn-full-w" type="submit" name="resetpwd">Reset</button>
       </div>
     </div>
