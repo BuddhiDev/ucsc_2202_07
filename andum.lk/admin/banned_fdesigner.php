@@ -224,28 +224,26 @@ if (!isset($_SESSION['nic'])) {
     while ($row = mysqli_fetch_assoc($result)) {
   ?>
 
-    <div class="main">
-      <div class="leftside">
-        <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+    <div class="row">
+      <div class="col-6">
+        <div class="admin-card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          </div>
         </div>
       </div>
 
-      <div class="rightside">
+      <div class="col-6">
         <div class="inside">
           <div>
             <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-              <br>
-              <p style="color: blue; font-size: 15px; margin-top:10px"><?php echo $row["email"] ?></p>
-              <br>
-          
+              <p class="admin-para2"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <p class="admin-para3"><?php echo $row["email"] ?></p>
             </form>
           </div>
           <div>
-            <li><a class="cta" href="send_mail_fdesigner.php"><button class="admin-button">Warning message</button></a></li>
-          </div><br>
+            <li><a class="cta" href="send_mail_fdesigner.php"><button class="admin-suspend-button">Warning message</button></a></li>
+          </div>
           <div>
           <li><a href="banned_fdesigner.php?delete_nic=<?php echo $row["nic"]?>"><button class="admin-button">Suspend User Account</button></a></li>
           </div>

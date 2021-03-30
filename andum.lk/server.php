@@ -101,8 +101,7 @@ if(isset($_POST['verify_mail'])){
 
         $mail->isSMTP(true);
         $mail->Subject='Thank you for registring';
-        $mail->Body="<Click Below link to Register to the Andum.lk 
-        'http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'>";
+        $mail->Body="<a href='http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'></a>";
 
         if($mail->Send()){
             header('location: check_mail.php');
@@ -299,8 +298,8 @@ if (isset($_POST['hireT'])) {
     $msg = "Message from";
 
     //echo $t_nic,$t_fname,$chest;
-    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,c_status,nmessage)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date',1,'Pending Order')";
+    $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,nmessage)
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date','Pending Order')";
    $result = mysqli_query($db, $sql);
    
 //    $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
@@ -721,7 +720,6 @@ if(isset($_GET['remove_dress_id']) ){
     $result=mysqli_query($db, $sql);
     if($result)
     {
-        echo "Dress has been removed successful";
         header('location: my_showcase.php');
     }
     else{

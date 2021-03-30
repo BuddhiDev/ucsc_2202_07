@@ -122,7 +122,7 @@ if (!isset($_SESSION['nic'])) {
         <?php
 
         $nic = $_SESSION['nic'];
-        $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic) AND status ='Completed' ORDER BY cr_date DESC";
+        $sql = "SELECT * FROM dress_sales d,dress_showcase s,users u WHERE d.c_nic='$nic' AND (d.dress_id=s.dress_id AND s.t_nic=u.nic) AND status ='Completed' ORDER BY date DESC";
         $result = mysqli_query($db, $sql);
 
         if ($result) {

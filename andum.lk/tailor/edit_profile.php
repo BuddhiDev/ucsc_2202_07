@@ -121,7 +121,7 @@ require("../server.php");
           </div>
 
           <div class="form-field-inline">
-            <label for="bank" class="field-label-inline"><b>Bank</b></label>
+            <label for="bank" class="field-label-inline"><b>Bank Swift Code</b></label>
             <input type="text"  class="field-value-inline" name="bank">
           </div>
 
