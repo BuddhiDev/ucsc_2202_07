@@ -80,9 +80,9 @@ window.onclick = function(e) {
         </div>
       </div>
 
-      <div class="row">
-        <h2 class="tailor-heading"><b>Pending Dresses</b></h2>
-        <h3><p style="border:3px; border-style:solid; border-color:#cc12cc; padding: 1em;"> Dresses in this section is subject to administrator confirmation. After reviewing your dress details we will add your dress to Andum.lk. 
+      <div class="reject-row">
+        <h2 class="admin-header"><b>Pending Dresses</b></h2>
+        <h3><p style="border:3px; border-style:solid; border-color:black; padding: 1em;"> Dresses in this section is subject to administrator confirmation. After reviewing your dress details we will add your dress to Andum.lk. 
               <br>It will take 2 or 3 hours.</p></h3> 
       </div>
 

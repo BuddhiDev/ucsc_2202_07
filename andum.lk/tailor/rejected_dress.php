@@ -80,11 +80,11 @@ window.onclick = function(e) {
         </div>
       </div>
 
-      <div class="row">
-        <h2 class="tailor-heading"><b>Rejected Dresses</b></h2><br>
+      <div class="reject-row">
+        <h2 class="admin-header"><b>Rejected Dresses</b></h2><br>
       </div>
-      <div class="row">
-        <h3><p style="border:3px; border-style:solid; border-color:#cc12cc; padding: 1em;"> Dresses in this section have been rejected by the administrator. It occurs for one of the following reasons.<br>
+      <div class="reject-row">
+        <h3><p style="border:3px; border-style:solid; border-color:black; padding: 1em;"> Dresses in this section have been rejected by the administrator. It occurs for one of the following reasons.<br>
         <br>1.If the quantity which has given by tailor is equal to zero.
         <br>2.If the given detailos, such as, dress title is not suitable for a dress
         <br>3.If the given image of the dress is not suitable.</p></h3> 

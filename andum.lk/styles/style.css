@@ -666,6 +666,14 @@ nav ul.menu-area ul li a:hover{
     flex-wrap: wrap;
   }
 
+  .reject-row{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
   .admin-row {
     display: flex;
     -ms-flex-wrap: wrap;
