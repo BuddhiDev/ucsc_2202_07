@@ -81,14 +81,14 @@ if (!isset($_SESSION['nic'])) {
     <form method="post" action="get-measured.php" style="max-width:1024px;margin:auto">
       <input type="hidden" value="<?php echo $d_row["dress_id"] ?> " name="dress_id">
       <input type="hidden" value="<?php echo $nic ?> " name="c_nic">
-      <div class="card-item">
+      <center><div class="card-item">
         <div class="card-img">
         <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $d_row["image"]; ?> " alt="Avatar" style="width:100%">
         </div>
         <div class="card-content">
           <div class="card-title"><?php echo $d_row["title"] ?></div>
         </div>
-      </div>
+      </div></center>
     
       <h2 class="measure-headding">Get Measured</h2>
         <div class="d-flex">

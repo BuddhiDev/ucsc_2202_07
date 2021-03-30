@@ -343,9 +343,9 @@
     <div class="container-box">
       <table>
         <tr>
-          <th>Customer NIC</th>
+          <th>Order ID</th>
           <th>Tailor NIC</th>
-          <th>Dress_id</th>
+          <th>Dress ID</th>
           <th>quantity</th>
           <th>Full payment</th>
           <th>Invoice</th>
@@ -356,7 +356,7 @@
         </tr>
         <tr>
         <?php
-            $sql = "SELECT sl.id,sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic, sl.action FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id WHERE  sl.c_nic LIKE '%$keyword%' ";
+            $sql = "SELECT sl.id,sl.c_nic,sl.dress_id,sl.quantity,sl.total_price,sl.date,sl.status,ds.t_nic, sl.action FROM dress_sales AS sl INNER JOIN dress_showcase AS ds ON sl.dress_id = ds.dress_id WHERE  sl.id LIKE '%$keyword%' ";
             $result = mysqli_query($db, $sql); 
             if ($result) {
               
@@ -364,7 +364,7 @@
                   
         ?>
         
-        <td><?php echo $row["c_nic"] ?></td>
+        <td><?php echo $row["id"] ?></td>
         <td><?php echo $row["t_nic"] ?></td>
         <td><?php echo $row["dress_id"] ?></td>
         <td><?php echo $row["quantity"] ?></td>
@@ -390,7 +390,7 @@
     <div class="container-box">
       <table>
         <tr>
-          <th>Customer NIC</th>
+          <th>Order ID</th>
           <th>Tailor NIC</th>
           <th>Full Name</th>
           <th>Dress_id</th>
@@ -404,13 +404,13 @@
         </tr>
         <tr>
         <?php
-            $sqlc = "SELECT o.id,o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,o.action,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic WHERE  o.c_nic LIKE '%$keyword%'";
+            $sqlc = "SELECT o.id,o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,o.action,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic WHERE  o.id LIKE '%$keyword%'";
             $resultc = mysqli_query($db, $sqlc); 
             if ($resultc) {
                 while ($row = mysqli_fetch_assoc($resultc)) {
                       
         ?>
-        <td><?php echo $row["c_nic"] ?></td>
+        <td><?php echo $row["id"] ?></td>
         <td><?php echo $row["t_nic"] ?></td>
         <td><?php echo $row["t_fname"]. " " .$row["t_lname"]?></td>
         <td><?php echo $row["dress_id"] ?></td>
@@ -441,7 +441,7 @@
     <table>
 
       <tr>
-            <th>Customer NIC</th>
+            <th>Order ID</th>
             <th>Fashion Designer NIC</th>
             <th>Full Name</th>
             <th>Account No</th>
@@ -454,13 +454,14 @@
           </tr>
           <tr>
           <?php
-              $sqlc = "SELECT o.id, o.c_nic,o.fd_nic,o.fd_fname,o.fd_lname,o.status,o.date,o.price,o.action,f.ac_no,f.bank FROM fd_orders AS o INNER JOIN fashion_designer AS f ON o.fd_nic = f.nic  WHERE  o.c_nic LIKE '%$keyword%' ";
+              $sqlc = "SELECT o.id, o.c_nic,o.fd_nic,o.fd_fname,o.fd_lname,o.status,o.date,o.price,o.action,f.ac_no,f.bank FROM fd_orders AS o INNER JOIN fashion_designer AS f ON o.fd_nic = f.nic  WHERE  o.id LIKE '%$keyword%' ";
               $resultc = mysqli_query($db, $sqlc); 
               if ($resultc) {
                   while ($row = mysqli_fetch_assoc($resultc)) {
                         
           ?>
-          <td><?php echo $row["c_nic"] ?></td>
+          <!-- bbbb -->
+          <td><?php echo $row["id"] ?></td>
           <td><?php echo $row["fd_nic"] ?></td>
           <td><?php echo $row["fd_fname"]. " " .$row["fd_lname"]?></td>
           <td><?php echo $row["ac_no"] ?></td>
