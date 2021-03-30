@@ -69,7 +69,7 @@ if (!isset($_SESSION['nic'])) {
    
      <?php
 
-       $sql = "SELECT * FROM users WHERE  nic LIKE '%$keyword%'";
+       $sql = "SELECT * FROM users WHERE  fname LIKE '%$keyword%'";
        $result = mysqli_query($db, $sql);
 
        if (mysqli_num_rows($result) > 0) {

@@ -135,7 +135,7 @@ include("server.php");
   <div class="container-box">
     <center>
       <br>
-      <h2>Thank you for verifying your account. Now you can SIGN IN to the Andum.lk ! </h2><br>
+      <h2 class="admin-para">Thank you for verifying your account. Now you can SIGN IN to the Andum.lk ! </h2><br>
       <li><a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a></li>
     </center>
   </div 

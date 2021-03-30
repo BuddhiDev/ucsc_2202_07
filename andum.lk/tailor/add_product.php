@@ -62,22 +62,55 @@ window.onclick = function(e) {
           <lable for="type" class="field-label-inline">Category:</label>
         </div>
         <div class="col-75">
-          <select class="option" name="Unit" id="unit">
-            <optgroup label="WOMEN">
-              <option value="casual_wear">Casual wear</option>
-              <option value="fomal wear">Fomal wear</option>
-              <option value="ethnic_dresses">Ethnic wear</option>
-            </optgroup>
-            <optgroup label="MEN">
-              <option value="Top wear">Casual wear</option>
-              <option value="bottom wear">Fomal wear</option>
-              <option value="sports wear">Inner wear</option>
-            </optgroup>
-            <optgroup label="KIDS">
-              <option value="girl's_collection">Girls</option>
-              <option value="boy's_collection">Boys</option>
-            </optgroup>
-          </select>
+        <select class="option" name="category" id="category" >
+              <optgroup label="WOMEN CASUAL WEAR">
+              <option value="w-cas-dresses">DRESSES</option>
+              <option value="w-cas-tshirts">T SHIRTS</option>
+              <option value="w-cas-blouse">BLOUSE</option>
+              <option value="w-cas-shirts">SHIRTS</option>
+              <option value="w-cas-jeans">JEANS</option>
+              <option value="w-cas-pants">PANTS</option>
+              </optgroup>
+              <optgroup label="WOMEN FORMAL WEAR">
+              <option value="w-for-dresses">DRESSES</option>
+              <option value="w-for-blouse">BLOUSE</option>
+              <option value="w-for-skirts">SKIRTS</option>
+              <option value="w-for-pants">PANTS</option>
+              </optgroup>
+              <optgroup label="WOMEN ETHNIC WEAR">
+              <option value="w-eth-kurthas">KURTHAS</option>
+              <option value="w-eth-sawls">SAWLS</option>
+              <option value="w-eth-sarees">SAREES</option>
+              </optgroup>
+              <optgroup label="MEN CASUAL WEAR">
+              <option value="m-cas-tshirts">T SHIRTS</option>
+              <option value="m-cas-shirts">SHIRTS</option>
+              <option value="m-cas-jeans">JEANS</option>
+              <option value="m-cas-trousers">TROUSERS</option>
+              <option value="m-cas-sarong">SARONG</option>
+              <option value="m-cas-shorts">SHORTS</option>
+              </optgroup>
+              <optgroup label="MEN FORMAL WEAR">
+              <option value="m-for-shirts">SHIRTS</option>
+              <option value="m-for-trousers">TROUSERS</option>
+              <option value="m-for-blazers">BLAZERS</option>
+              </optgroup>
+              <optgroup label="KIDS BOYS">
+              <option value="k-b-tshirts">T SHIRTS</option>
+              <option value="k-b-tanktops">TANK TOPS</option>
+              <option value="k-b-shirts">SHIRTS</option>
+              <option value="k-b-shorts">SHORTS</option>
+              <option value="k-b-pants">PANTS</option>
+              <option value="k-b-romper">Romper</option>
+              <option value="k-b-sleepwear">SLEEP WEAR</option>
+              </optgroup>
+              <optgroup label="KIDS GIRLS">
+              <option value="k-g-tshirts">T SHIRTS</option>
+              <option value="k-g-dresses">DRESSES</option>
+              <option value="k-g-shorts">SHORTS</option>
+              <option value="k-g-sleepwear">SLEEP WEAR</option>
+              </optgroup>
+            </select>
         </div>
       </div>
 
@@ -182,7 +215,7 @@ window.onclick = function(e) {
     </div>
     <div class="row">
       <div class="col-25"><br>
-        <lable for="amount" class="field-label-inline">Amount: </label>
+        <lable for="amount" class="field-label-inline">Available Stock: </label>
       </div>
       <div class="col-75">
         <input class="field-label-inline" type="text"  placeholder="Amount" name="amount">

@@ -317,6 +317,12 @@ nav ul.menu-area ul li a:hover{
   color: #EB2188;
 }
 
+.admin-search-btn {
+  border: none;
+  background-color: white;
+  color: #14165a;
+}
+
 .checked {
   color: orange;
 }
@@ -658,6 +664,17 @@ nav ul.menu-area ul li a:hover{
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+  }
+
+  .admin-row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 85%;
+  }
+
+  .admin-container{
+    display: flex;
   }
 
   @media screen and (max-width:480px)
@@ -1166,6 +1183,11 @@ a{
   font-size: 22px;
 }
 
+.admin-nav-right i{
+  color: #EB2188;
+  font-size: 30px;
+}
+
 .nav_right li{
   margin: 0px 10px;
 }
@@ -1180,12 +1202,29 @@ a{
   display: none;
 }
 
+.box .admin-nav-right ul li .dd_right{
+  position: absolute;
+  top: 72px;
+  right: 48px;
+  background: #fafafafa;
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
 .box .nav_right ul li.active .dd_right{
+  display: block;
+}
+
+.box .admin-nav-right ul li.active .dd_right{
   display: block;
 }
 
 
 .box .nav_right ul li .dd_right .fas{
+  margin-right: 10px; 
+}
+
+.box .admin-nav-right ul li .dd_right .fas{
   margin-right: 10px; 
 }
 
@@ -1200,7 +1239,22 @@ a{
 
 }
 
+.box .admin-nav-right ul li .dd_right:before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 90%;
+  transform: translateX(-50%);
+  border: 10px solid;
+  border-color: transparent transparent #fafafa transparent;
+
+}
+
 .nav_right{
+  display: flex;
+}
+
+.admin-nav-right{
   display: flex;
 }
 
@@ -1213,7 +1267,20 @@ a{
     font-size: 10px;
 }
 
+.box .admin-nav-right > ul li a{
+  display: flex;
+    width: max-content;
+    height: 40px;
+    align-items: center;
+    color: black;
+    font-size: 10px;
+}
+
 .box .nav_right > a{
+  text-align: right;
+}
+
+.box .admin-nav-right > a{
   text-align: right;
 }
 
@@ -1225,8 +1292,20 @@ a{
 	position: relative;
 }
 
+.box .admin-nav-right ul li.nr_li{
+	margin : 0px 25px;
+	cursor: pointer;
+	color: #EB2188;
+	font-size: 30px;
+	position: relative;
+}
+
 .box .nav_right ul li.nr_li:hover {
     color: black;
+}
+
+.box .admin-nav-right ul li.nr_li:hover {
+  color: black;
 }
 
 .box .nav_right ul li img{
@@ -1519,13 +1598,13 @@ a{
 }
 
 .admin-search-container {
-  width: 28%;
-  border-color: #ccc;
-  box-shadow: 0px 1px 4px 1px #fff;
-  background-color: white;
-  border-radius: 20px;
-  padding: 0px 10px 0px 10px;
-  margin: 0px 0px 20px 1000px;
+  width: 50%;
+    border-color: #ccc;
+    box-shadow: 0px 1px 4px 1px #fff;
+    background-color: white;
+    border-radius: 20px;
+    padding: 0px 20px 0px 20px;
+    margin: 9px auto;
 }
 
 .admin-status-button{
@@ -1554,6 +1633,92 @@ a{
   box-sizing: border-box;
 }
 
+.admin-suspend-button{
+  padding: 5px 10px;
+    /* margin: 10px; */
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+    -webkit-appearance: none;
+    color: white;
+}
+
+.admin-header{
+  padding: 10px;
+    margin: 10px;
+}
+
+.admin-para{
+  padding: 10px;
+    margin: 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.admin-confirm-btn{
+  padding: 5px;
+    margin: 5px;
+    color: white;
+    width: 14%;
+    height: 40px;
+    background: #14165a;
+    text-align: center;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-confirm-btn:hover{
+    color: #fafafa;
+}
+
+.admin-reject-btn{
+  padding: 5px;
+    margin: 5px;
+    color: white;
+    width: 14%;
+    height: 40px;
+    background: red;
+    text-align: center;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-reject-btn:hover{
+  color: #fafafa;
+}
+
+.admin-btn-cont{
+  display: flex;
+}
+
+.admin-confirm-text{
+  color: white;
+  font-size: 16px;
+}
+
+.admin-confirm-text:hover{
+  color: #fafafa;
+}
+
+.send-email-row{
+  display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.admin-card-item{
+  width: 300px;
+    background: white;
+    border-radius: 4px;
+    margin: 20px 20px 20px 300px;
+}
+
 .view-button {
   padding: 6px 10px;
     background-color: #EB2188;
@@ -1580,6 +1745,16 @@ a{
 
 .admin-button:hover {
     color: #fafafa;
+}
+
+.admin-table{
+  padding: 10px;
+    margin: 10px;
+}
+
+.admin-status-btn-container{
+  margin: 20px 20px 0px 20px;
+    padding: 20px 20px 0px 20px;
 }
 
 .order-detail-box{
@@ -1743,6 +1918,70 @@ a{
 }
 
 #div-13{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#adminc-div1{
+  display: block;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#adminc-div2{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#adminc-div3{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#admint-div1{
+  display: block;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#admint-div2{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#admint-div3{
+  display: none;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#adminf-div1{
+  display: block;
+  box-shadow: 0px 1px 4px 1px #f4f4f4;
+    padding: 20px;
+    /* display: inline-block; */
+    margin: 20px;
+}
+
+#adminf-div2{
   display: none;
   box-shadow: 0px 1px 4px 1px #f4f4f4;
     padding: 20px;
@@ -2534,8 +2773,6 @@ h1 {
   margin-right: 5px;
   text-align: center;
 }
-
-
 
 .onee:hover {
   border: 2px solid black;

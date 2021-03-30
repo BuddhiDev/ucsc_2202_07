@@ -35,132 +35,7 @@
 
 
 
-  <header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="tailor-dashboard.php">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Women</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="workwear_gents.php">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="#">Kurthas</a></li>
-                    <li><a href="#">Shlwas</a></li>
-                    <li><a href="#">Sarees</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-              
-            
-          </li>
-          <li class="dropdown">
-            <a href="#">Men</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
-                  </ul>  
-                </div>
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Trousers</a></li>
-                    <li><a href="#">Blazers</a></li>
-                  </ul>
-                </div> 
-              </ul>
-            </div>            
-          </li>
-          <li class="dropdown">
-            <a href="#">Kids</a>
-            <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
-          </li>
-
-          <li><a href="hire_tailor.php">Explore Tailors</a></li>
-          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                  <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboard</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-              </div>
-            </li>
-            <!--<li><i class="fas fa-envelope"></i></li>-->
-          </ul>
-        </div>
-      </div>
-
-      
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <body>
 
@@ -175,15 +50,14 @@
       <div class="add-new-position">
           <a class="cta" href="deleted_users_pdf.php"><button class="admin-button">Generate PDF</button></a>
       </div>
-      <h1>Banned Users</h1>
-    <div style="overflow-x:auto;">
+      <h1 class="admin-header">Banned Users</h1>
+    <div class="admin-table">
       <table>
         <tr>
           <th>Nic</th>
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
-          <th>Type</th>
           <th>Action</th>
           <th></th>
         </tr>
@@ -203,7 +77,7 @@
           <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
           <td><?php echo $row["email"] ?></td>
           <td><?php echo $row["contactno"] ?></td>
-          <td><?php echo $row["type"] ?></td>
+          
           <!--<td>
             <div>
               <a href="manage_customer.php?nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>

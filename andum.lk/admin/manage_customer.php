@@ -34,135 +34,7 @@
 
 
 
-  <header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="tailor-dashboard.php">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Women</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="workwear_gents.php">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="#">Kurthas</a></li>
-                    <li><a href="#">Shlwas</a></li>
-                    <li><a href="#">Sarees</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-              
-            
-          </li>
-          <li class="dropdown">
-            <a href="#">Men</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
-                  </ul>  
-                </div>
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Trousers</a></li>
-                    <li><a href="#">Blazers</a></li>
-                  </ul>
-                </div> 
-              </ul>
-            </div>            
-          </li>
-          <li class="dropdown">
-            <a href="#">Kids</a>
-            <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
-          </li>
-
-          <li><a href="hire_tailor.php">Explore Tailors</a></li>
-          <li><a href="hire_fashion_designer.php">Explore Fashion Designers</a></li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-
-            <!--<li><i class="fas fa-envelope"></i></li>-->
-            
-        </div>
-        </ul>
-      </div>
-      </div>
-<!-- generate pdf -->
-            <div class="add-new-position">
-              <a class="cta" href="pdf_customer.php"><button class="admin-button">Generate PDF</button></a>
-            </div>
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <body>
 
@@ -174,71 +46,71 @@
   </script>
 
   <div class="container-box">
-    <div class="fd-container-box">
-     <div class="row">
-      <div class="search-container">
+    <div class="admin-container">
+      <div class="admin-row">
+        <div class="admin-search-container">
             <form method="post" action = "search_customer.php">
               <div class="form-field-inline">
-                <input type="text" class="field-value-inline" name="q" placeholder="Search...">
-                <button type="submit" class="search-input-group-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input type="text" class="field-value-inline" name="q" placeholder="Search by customer name..">
+                <button type="submit" class="admin-search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
             </form>
-          </div>
-          
+        </div>
       </div>
-    <div style="overflow-x:auto;">
-      <table>
-        <tr>
-          <th>Nic</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Profile</th>
-          <th></th>
-        </tr>
-        <tr>
-        
+      <div class="add-new-position">
+              <a class="cta" href="pdf_customer.php"><button class="admin-button">Generate PDF</button></a>
+      </div>
+    </div>
+      <div class="admin-table">
+        <table>
+          <tr>
+            
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Profile</th>
+            <th></th>
+          </tr>
+          <tr>
+          
+            <?php
+
+              $sql = "SELECT * FROM users WHERE type='1'";
+              $result = mysqli_query($db, $sql);
+
+              if (mysqli_num_rows($result) > 0) {
+
+                while ($row = mysqli_fetch_assoc($result)) {
+              ?>
+
+            
+            <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
+            <td><?php echo $row["email"] ?></td>
+            <td><?php echo $row["contactno"] ?></td>
+            <td>
+              <div>
+                <a href="manage_customer.php?c_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>
+              
+              
+
+              </div>
+            </td>
+            <td>
+              <div>
+              <a href="manage_customer.php?d_cnic=<?php echo $row["nic"]?>"><button class="admin-suspend-button" name="delete_user">Suspend</button></a>
+              </div>
+            </td>
+
+
+          </tr>
           <?php
-
-            $sql = "SELECT * FROM users WHERE type='1'";
-            $result = mysqli_query($db, $sql);
-
-            if (mysqli_num_rows($result) > 0) {
-
-              while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-
-          <td><?php echo $row["nic"] ?></td>
-          <td><?php echo $row["fname"]. " " .$row["lname"] ?></td>
-          <td><?php echo $row["email"] ?></td>
-          <td><?php echo $row["contactno"] ?></td>
-          <td>
-            <div>
-              <a href="manage_customer.php?c_nic=<?php echo $row["nic"]?>"><button class="admin-button" name="view_user" >View</button></a>
-             
-             
-
-            </div>
-          </td>
-          <td>
-            <div>
-            <a href="manage_customer.php?d_cnic=<?php echo $row["nic"]?>"><button class="admin-button" name="delete_user">Suspend</button></a>
-            </div>
-          </td>
-
-
-        </tr>
-        <?php
+                  }
+                } else {
                 }
-              } else {
-              }
 
-        ?>
-      </table>
-    </div>
-
-    </div>
-    
+          ?>
+        </table>
+      </div>
   </div>
 
 

@@ -182,7 +182,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">
@@ -245,7 +245,7 @@ if (!isset($_SESSION['nic'])) {
             </form>
           </div>
           <div>
-            <li><a class="cta" href="send_mail_cust.php"><button class="admin-button">Warning message</button></a></li>
+            <li><a class="cta" href="send_mail_cust.php"><button class="admin-suspend-button">Warning message</button></a></li>
           </div><br>
           <div>
             <li><a href="banned_cust.php?delete_nic=<?php echo $row["nic"]?>"><button class="admin-button">Suspend User Account</button></a></li>

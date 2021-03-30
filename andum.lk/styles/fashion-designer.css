@@ -136,10 +136,22 @@
     display: inline-block;
   }
 
+  .admin-content-wrapper{
+    /* background-color: #f8f9fc; */
+    width: 64%;
+    display: inline-block;
+  }
+
   .side-bar-wrapper{
     display: inline-block;
     vertical-align: top;
     width: 35%;
+  }
+
+  .admin-side-bar-wrapper{
+    display: inline-block;
+    vertical-align: top;
+    width: 32%;
   }
 
   .fd-block-1{

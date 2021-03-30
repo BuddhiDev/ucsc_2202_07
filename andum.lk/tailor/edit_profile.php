@@ -116,12 +116,12 @@ require("../server.php");
           </div>
 
           <div class="form-field-inline">
-            <label for="ac_no" class="field-label-inline"><b>Account Number</b></label>
+            <label for="ac_no" class="field-label-inline"><b> Bank Account Number</b></label>
             <input type="text"  class="field-value-inline" name="ac_no">
           </div>
 
           <div class="form-field-inline">
-            <label for="bank" class="field-label-inline"><b>Bank</b></label>
+            <label for="bank" class="field-label-inline"><b>Bank Swift Code</b></label>
             <input type="text"  class="field-value-inline" name="bank">
           </div>
 

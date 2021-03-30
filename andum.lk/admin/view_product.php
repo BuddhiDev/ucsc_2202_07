@@ -289,12 +289,17 @@ if (!isset($_SESSION['nic'])) {
               </div>         
             </div>
 
-          <div>
-            <a href="view_product.php?confirm_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">CONFIRM</text></a>
+            <div class="admin-btn-cont">
+            <div class="admin-confirm-btn">
+            <a href="view_product.php?confirm_dress_id=<?php echo $row["dress_id"]?>" class="admin-confirm-text"><text>CONFIRM</text></a>
+          </div><br>
+          <div class="admin-reject-btn">
+            <a href="view_product.php?reject_dress_id=<?php echo $row["dress_id"]?>" class="admin-confirm-text"><text>REJECT</text></a>
           </div>
-          <div>
-            <a href="view_product.php?reject_dress_id=<?php echo $row["dress_id"]?>" class="costomize-text"><text style="color:red;text-shadow: 2px 2px 5px red;">REJECT</text></a>
-          </div>
+
+            </div>
+
+          
             
         </form>
         </div>

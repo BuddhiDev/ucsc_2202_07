@@ -24,7 +24,7 @@
         <img class="logo" src="logo.png" alt="logo" class="img-box">
       </div>
       <div class="nav-item-middle">
-        <ul class="nav-area">
+        <ul class="nav-area" id="MenuItems">
           <li><a href="index.php">Home</a></li>
           <li class="dropdown">
             <a href="#">Women</a>
@@ -33,7 +33,7 @@
                 <div class="col-4">
                   <ul class="inner-menu">
                     <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
+                    <li><a href="/ucsc_2202_07/andum.lk/customer/dresses.php">Dresses</a></li>
                     <li><a href="#">T shirts</a></li>
                     <li><a href="#">Blouse</a></li>
                     <li><a href="#">Shirts</a></li>
@@ -59,9 +59,7 @@
                   </ul>
                 </div>
               </ul>
-            </div>
-              
-            
+            </div> 
           </li>
           <li class="dropdown">
             <a href="#">Men</a>
@@ -92,49 +90,54 @@
           <li class="dropdown">
             <a href="#">Kids</a>
             <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
+              <ul class="menu-area">
+                <div class=col-6>
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Boys</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Tank Tops</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Pants</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="inner-menu">
+                    <li class="inner-list-header">Girls</li>
+                    <li><a href="#">T shirts</a></li>
+                    <li><a href="#">Dresses</a></li>
+                    <li><a href="#">Shorts</a></li>
+                    <li><a href="#">Sleepware</a></li>
+                  </ul>
+                </div>             
+              </ul>
             </div>
-            
           </li>
-
           <li><a href="/ucsc_2202_07/andum.lk/customer/hire_tailor.php">Explore Tailors</a></li>
-          <li><a href="/ucsc_2202_07/andum.lk/customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
-          <li>
-          
-          </li>
+          <li><a href="customer/hire_fashion_designer.php">Explore Fashion Designers</a></li>
+          <li><a href="contact_us.php">Contact Us</a></li>
         </ul>
+      </div>
+      <div class="box">
+        <div class="nav_right">
+          <li><a class="cta" href="/ucsc_2202_07/andum.lk/login.php"><button class="loginbutton btn-full-w">Sign In</button></a></li>
+          <li><a class="cta" href="/ucsc_2202_07/andum.lk/signup.php"><button class="loginbutton btn-full-w">Sign Up</button></a></li>
+        </div>
+      </div>
+      <div>
+        <label id="icon">
+          <i class="fas fa-bars" onclick="menutoggle()"></i>
+        </label>
       </div>
     </nav>
   </header>
   </div>
 
 <div class="container-box">
-<div class="row">
+<div class="send-email-row">
 <center>
-    <h3>Thank You for registering. We have sent a verification email to the address provided.</h3>
+    <h3 class="admin-para">Thank You for registering. We have sent a verification email to the address provided.</h3>
     <i class="far fa-envelope" style="font-size:200px"></i>
 <center>
 </div>

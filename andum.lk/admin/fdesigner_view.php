@@ -19,6 +19,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -197,131 +198,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-<header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Women</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="workwear_gents.php">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="#">Kurthas</a></li>
-                    <li><a href="#">Shlwas</a></li>
-                    <li><a href="#">Sarees</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-              
-            
-          </li>
-          <li class="dropdown">
-            <a href="#">Men</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
-                  </ul>  
-                </div>
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Trousers</a></li>
-                    <li><a href="#">Blazers</a></li>
-                  </ul>
-                </div> 
-              </ul>
-            </div>            
-          </li>
-          <li class="dropdown">
-            <a href="#">Kids</a>
-            <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
-          </li>
-
-          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
-        </ul>
-      </div>
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="manage_fdesigner.php"><i class="fas fa-users"></i>Manage Fashion Designers</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-
-            <!--<li><i class="fas fa-envelope"></i></li>-->
-            
-        </div>
-        </ul>
-      </div>
-      </div>
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <body>
 
@@ -333,169 +210,199 @@ if (!isset($_SESSION['nic'])) {
   </script>
   
   <div class="container-box">
-  <?php
-  $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
-  $nic = $_SESSION['selected_fdesigner_id'];
-  $sql = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
-  $result = mysqli_query($db, $sql);
-  if ($result) {
-    $row = mysqli_fetch_assoc($result);
-  ?>
+    <?php
+    $selected_fdesigner_id = $_SESSION['selected_fdesigner_id'];
+    $nic = $_SESSION['selected_fdesigner_id'];
+    $sql = "SELECT * FROM users WHERE nic='$selected_fdesigner_id' ";
+    $result = mysqli_query($db, $sql);
+    if ($result) {
+      $row = mysqli_fetch_assoc($result);
+    ?>
 
-    <div class="main">
-      <div class="leftside">
+    <div class="row">
+      <div class="col-6">
+        <div class="admin-card-item">
         <div class="card-img">
           <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
+
+        </div>
+        
       </div>
 
-      <div class="rightside">
+      <div class="col-6">
         <div class="inside">
           <div>
             <form method="post">
               <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-              <br>
-              <div>
-                <div>
-                  Activities of Fashion Designer
-                  <br>
-                  <br>
-                  
-                </div>
-              </div>
+              <p class="admin-para"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <p class="admin-para"><?php echo $row["nic"]?></p>
             </form>
           </div>
         </div>
       </div>
     </div>
+    
+    <center><h2 class="admin-header">Activities of Fashion Designer</h2></center>
 
-<br/>
-<br/> 
-    </form>
-  </div>
+    <div class="admin-status-btn-container">
+        <button class="admin-status-button" onclick="myFunctionaf1()">Uploaded Designs</button>
+        <button class="admin-status-button" onclick="myFunctionaf2()">Fashion Designer's Order details</button>
+      </div>
 
-  
- 
-  <div class="container-box">
-  <center><h2> Fashion Designer's Order details</h2></center>
-  <div style="overflow-x:auto;">
-    <table>
-      <tr>
-        <th>Customer Name</th>
-        <th>Price</th>
-        <th>Invoice</th>
-        <th>Date</th>
-        <th>Status</th>
-       
-      </tr>
-      <tr>
+  <div id="adminf-div1">
+    <center><h2>Uploaded Designs</h2></center>
+      <?php
+    
+      $nic = $_SESSION['selected_fdesigner_id'];
+      
+      $sql2 = "SELECT * FROM fashion_designer WHERE nic='$selected_fdesigner_id' ";
+      $result2 = mysqli_query($db, $sql2);
+      if ($result2) {
+      while( $row = mysqli_fetch_assoc($result2)){
+    ?>
+
+      <div class=fd-profile-row2>
+          <div class="col-4">
+            <form method="get" action="index.php" class="dress-showcase">
+              <div class="fd-featured-card-item">
+                  <div class="card-img">
+                  <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
+                  </div>
+                  <div class="card-content">
+                  <div class="card-title"></div>
+                  <div class="card-description"></div>
+                  </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-4">
+            <form method="get" action="index.php" class="dress-showcase">
+              <div class="fd-featured-card-item">
+                <div class="card-img">
+                  <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
+                </div>
+                <div class="card-content">
+                <div class="card-title"></div>
+                <div class="card-description"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-4">
+            <form method="get" action="index.php" class="dress-showcase">
+              <div class="cfd-featured-card-item">
+                  <div class="card-img">
+                  <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image3"]; ?>" alt="Avatar" style="width:100%"></a>
+                  </div>
+                  <div class="card-content">
+                  <div class="card-title"></div>
+                  <div class="card-description"></div>
+                  </div>
+              </div>
+            </form>
+          </div>
 
         <?php
 
-        $nic = $_SESSION['selected_fdesigner_id'];
-        $sql1 = "SELECT * FROM fd_orders WHERE fd_nic='$nic'";
-        $result1 = mysqli_query($db, $sql1);
-        
+          }
+          }
 
-        if (mysqli_num_rows($result1) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result1)) {
         ?>
+      </div>
 
-            <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
-            <td><?php echo $row["price"] ?></td>
-            <td><?php echo($row["price"]*0.05)?></td>
-            <td><?php echo $row["date"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            
-           
-      </tr>
-      <?php
-              }
-            } else {
-            }
 
+        <?php
+        }
       ?>
 
-
-    </table>
   </div>
-  </div>
-  <center><h2> Uploaded Designs</h2></center>
 
-
-
-  <?php
- 
-  $nic = $_SESSION['selected_fdesigner_id'];
   
-  $sql2 = "SELECT * FROM fashion_designer WHERE nic='$selected_fdesigner_id' ";
-  $result2 = mysqli_query($db, $sql2);
-  if ($result2) {
-   while( $row = mysqli_fetch_assoc($result2)){
- ?>
 
-<div class=fd-profile-row2>
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <div class="fd-featured-card-item">
-              <div class="card-img">
-              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image1"]; ?>" alt="Avatar" style="width:100%"></a>
-              </div>
-              <div class="card-content">
-              <div class="card-title"></div>
-              <div class="card-description"></div>
-              </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <div class="fd-featured-card-item">
-            <div class="card-img">
-              <a href=""><img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image2"]; ?>" alt="Avatar" style="width:100%"></a>
-            </div>
-            <div class="card-content">
-            <div class="card-title"></div>
-            <div class="card-description"></div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-4">
-        <form method="get" action="index.php" class="dress-showcase">
-          <div class="cfd-featured-card-item">
-              <div class="card-img">
-              <a href=""> <img src="/ucsc_2202_07/andum.lk/fashion_designer/sample_images/<?php echo $row["image3"]; ?>" alt="Avatar" style="width:100%"></a>
-              </div>
-              <div class="card-content">
-              <div class="card-title"></div>
-              <div class="card-description"></div>
-              </div>
-          </div>
-        </form>
-      </div>
+  <div id="adminf-div2">
+  <center><h2>Fashion Designer's Order details</h2></center>
+    <div class="admin-table">
+      <table>
+        <tr>
+          <th>Customer Name</th>
+          <th>Price</th>
+          <th>Invoice</th>
+          <th>Date</th>
+          <th>Status</th>
+        
+        </tr>
+        <tr>
 
-<?php
+          <?php
 
-  }
-  }
+          $nic = $_SESSION['selected_fdesigner_id'];
+          $sql1 = "SELECT * FROM fd_orders WHERE fd_nic='$nic'";
+          $result1 = mysqli_query($db, $sql1);
+          
 
-?>
-  </div>
+          if (mysqli_num_rows($result1) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result1)) {
+          ?>
+
+              <td><?php echo $row["c_fname"]." ".$row["c_lname"] ?></td>
+              <td><?php echo $row["price"] ?></td>
+              <td><?php echo($row["price"]*0.05)?></td>
+              <td><?php echo $row["date"] ?></td>
+              <td><?php echo $row["status"] ?></td>
+              
+            
+        </tr>
+        <?php
+                }
+              } else {
+              }
+
+        ?>
+
+
+      </table>
     </div>
-      
-      
+
   </div>
 
+  <script>
+      function myFunctionaf1() 
+      {
+        var x = document.getElementById("adminf-div1");
+        var y = document.getElementById("adminf-div2");
+        if (y.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          x.style.display = "block";
+        }
+      }
 
-  <?php
+      function myFunctionaf2() 
+      {
+        var x = document.getElementById("adminf-div1");
+        var y = document.getElementById("adminf-div2");
+        if (x.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+      }
+    </script>
 
-  
-  }
+    
+    
 
-?>
+  </div>
 
 
 

@@ -101,7 +101,8 @@ if(isset($_POST['verify_mail'])){
 
         $mail->isSMTP(true);
         $mail->Subject='Thank you for registring';
-        $mail->Body="<a href='http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'></a>";
+        $mail->Body="<Click Below link to Register to the Andum.lk 
+        'http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'>";
 
         if($mail->Send()){
             header('location: check_mail.php');
@@ -123,7 +124,6 @@ if (isset($_POST['login'])) {
         $password = md5($password1);
         $sql = "SELECT * FROM users WHERE nic='$nic' AND password='$password' AND verified = 1";
         $result = mysqli_query($db, $sql);
-
 
 
         if (mysqli_num_rows($result) == 1) {
@@ -577,7 +577,7 @@ if (isset($_POST['update_user'])) {
     $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' , image = '$filename' WHERE nic='$nic'";
     $result=mysqli_query($db, $sql);
 
-    $sql1 = "INSERT INTO tailors (ac_no,bank,nic) VALUES('$ac_no','$bank','$nic')";
+    $sql1 = "UPDATE tailors SET ac_no = '$ac_no' ,bank='$bank' WHERE nic='$nic'";
     $result1 = mysqli_query($db, $sql1);
 
 
@@ -660,7 +660,7 @@ if(isset($_POST['add_product']))
 {
 
   $t_nic =  $_SESSION['nic'];
-  $category = mysqli_real_escape_string($db, $_POST['Unit']);
+  $category = mysqli_real_escape_string($db, $_POST['category']);
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
   $price = mysqli_real_escape_string($db, $_POST['price']);
 
@@ -721,7 +721,6 @@ if(isset($_GET['remove_dress_id']) ){
     $result=mysqli_query($db, $sql);
     if($result)
     {
-        echo "Dress has been removed successful";
         header('location: my_showcase.php');
     }
     else{

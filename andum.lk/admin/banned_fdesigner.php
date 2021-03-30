@@ -181,7 +181,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-<header>
+  <header>
     <nav class="navbar-main">
       <div class="navbar-logo">
         <img class="logo" src="../logo.png" alt="logo" class="img-box">

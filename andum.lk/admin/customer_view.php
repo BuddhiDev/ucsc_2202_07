@@ -197,130 +197,7 @@ if (!isset($_SESSION['nic'])) {
 
 
 
-<header>
-    <nav class="navbar-main">
-      <div class="navbar-logo">
-        <img class="logo" src="../logo.png" alt="logo" class="img-box">
-      </div>
-      <div class="nav-item-middle">
-        <ul class="nav-area">
-          <li><a href="index.php">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Women</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="#">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Dresses</a></li>
-                    <li><a href="#">Blouse</a></li>
-                    <li><a href="#">Skirts</a></li>
-                    <li><a href="workwear_gents.php">Pants</a></li>
-                  </ul>
-                </div>
-                <div class="col-4">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Ethnic wear</li>
-                    <li><a href="#">Kurthas</a></li>
-                    <li><a href="#">Shlwas</a></li>
-                    <li><a href="#">Sarees</a></li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-              
-            
-          </li>
-          <li class="dropdown">
-            <a href="#">Men</a>
-            <div class="row">
-              <ul class="menu-area">
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Casual Wear</li>
-                    <li><a href="#">T shirts</a></li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Jeans</a></li>
-                    <li><a href="index.php?dcategory=trouser">Trousers</a></li>
-                    <li><a href="#">Sarong</a></li>
-                    <li><a href="#">Shorts</a></li>
-                  </ul>  
-                </div>
-                <div class="col-6">
-                  <ul class="inner-menu">
-                    <li class="inner-list-header">Formal Wear</li>
-                    <li><a href="#">Shirts</a></li>
-                    <li><a href="#">Trousers</a></li>
-                    <li><a href="#">Blazers</a></li>
-                  </ul>
-                </div> 
-              </ul>
-            </div>            
-          </li>
-          <li class="dropdown">
-            <a href="#">Kids</a>
-            <div class="row">
-            <ul class="menu-area">
-              <div class=col-6>
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Boys</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Tank Tops</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Pants</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul class="inner-menu">
-                  <li class="inner-list-header">Girls</li>
-                  <li><a href="#">T shirts</a></li>
-                  <li><a href="#">Dresses</a></li>
-                  <li><a href="#">Shorts</a></li>
-                  <li><a href="#">Sleepware</a></li>
-                </ul>
-              </div>             
-            </ul>
-              
-
-            </div>
-            
-          </li>
-
-          <li><a href="hire_tailor.php">Hire a Tailor</a></li>
-          <li><a href="hire_fashion_designer.php">Hire a Fashion Designer</a></li>
-        </ul>
-      </div>
-      <div class="box">
-        <div class="nav_right">
-          <ul>
-            <li><i class="fas fa-user-circle"></i>
-              <div class="dd_right">
-                <ul>
-                <li><a href="index.php"><i class="fas fa-chart-line"></i>Dashboad</a></li>
-                  <li><a href="manage_customer.php"><i class="fas fa-users"></i>Manage Customers</a></li>
-                  <li><a href="index.php?logout='1'"><i class="fas fa-sign-out-alt" name="logout"></i>Sign Out</a></li>
-                </ul>
-
-            <!--<li><i class="fas fa-envelope"></i></li>-->
-        </div>
-        </ul>
-      </div>
-      </div>
-    </nav>
-  </header>
+<?php require("header.php") ?>
 
   <body>
 
@@ -332,184 +209,231 @@ if (!isset($_SESSION['nic'])) {
   </script>
   
   <div class="container-box">
-  <?php
-  $selected_cus_id = $_SESSION['selected_cus_id'];
-  $nic = $_SESSION['selected_cus_id'];
-  $fname = $_SESSION['fname'];
-  $lname = $_SESSION['lname'];
-  $sql = "SELECT * FROM users WHERE nic='$selected_cus_id' ";
-  $result = mysqli_query($db, $sql);
-  if ($result) {
-    $row = mysqli_fetch_assoc($result);
-    
-  ?>
+    <?php
+    $selected_cus_id = $_SESSION['selected_cus_id'];
+    $nic = $_SESSION['selected_cus_id'];
+    $fname = $_SESSION['fname'];
+    $lname = $_SESSION['lname'];
+    $sql = "SELECT * FROM users WHERE nic='$selected_cus_id' ";
+    $result = mysqli_query($db, $sql);
+    if ($result) {
+      $row = mysqli_fetch_assoc($result);
+      
+    ?>
 
-    <div class="main">
-      <div class="leftside">
+    <div class="row">
+      <div class="col-6">
+        <div class="admin-card-item">
         <div class="card-img">
           <img src="/ucsc_2202_07/andum.lk/customer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
+
+        </div>
+        
       </div>
 
-      <div class="rightside">
+      <div class="col-6">
         <div class="inside">
           <div>
             <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-              <br>
-              <div>
-                <div>
-                  Activities of Customer
-                  <br>
-                  <br>
-                  
-                </div>
-              </div>
+              <p class="admin-para"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <p class="admin-para"><?php echo $row["nic"]?></p>
             </form>
           </div>
         </div>
       </div>
     </div>
 
-<br/>
-<br/> 
-    </form>
-  </div>
+    <center><h2 class="admin-header">Activities of Customer</h2></center>
 
+      <div class="admin-status-btn-container">
+        <button class="admin-status-button" onclick="myFunctiona1()">Bought Readymade Dresses</button>
+        <button class="admin-status-button" onclick="myFunctiona2()">Bought Customize Dresses</button>
+        <button class="admin-status-button" onclick="myFunctiona3()">Hired Fashion Designers' details of the customer</button>
+      </div>
 
-  
-
-<div class="container-box">
-<center><h2>Bought Readymade Dresses </h2></center>
-<table>
-      <tr>
-       
-      <th>Dress Id</th>
-      <th>Quantity</th>
-      <th>Price</th>
-        
-        <th>Date</th>
-        <th>Status</th>
-        
-      </tr>
-      <tr>
-
-        <?php
-
-        $selected_cus_id = $_SESSION['selected_cus_id'];
-        $nic = $_SESSION['selected_cus_id'];
-        $sql2 = "SELECT * FROM dress_sales  WHERE c_nic='$selected_cus_id'";
-        $result2 = mysqli_query($db, $sql2);
-
-
-        if (mysqli_num_rows($result2) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result2)) {
-        ?>
-
-            <td><?php echo $row["dress_id"] ?></td>
-            <td><?php echo $row["quantity"] ?></td>
-            <td><?php echo $row["total_price"] ?></td>
-           
-            <td><?php echo $row["date"] ?></td>
-            <td><?php echo $row["status"] ?></td>
+    <div id="adminc-div1">
+      <center><h2 class="admin-para">Bought Readymade Dresses</h2></center>
+      <div class="admin-table">
+          <table>
+            <tr>
             
+            <th>Dress Id</th>
+            <th>Quantity</th>
+            <th>Price</th>
+              
+              <th>Date</th>
+              <th>Status</th>
+              
+            </tr>
+            <tr>
+
+              <?php
+
+              $selected_cus_id = $_SESSION['selected_cus_id'];
+              $nic = $_SESSION['selected_cus_id'];
+              $sql2 = "SELECT * FROM dress_sales  WHERE c_nic='$selected_cus_id'";
+              $result2 = mysqli_query($db, $sql2);
+
+
+              if (mysqli_num_rows($result2) > 0) {
+
+                while ($row = mysqli_fetch_assoc($result2)) {
+              ?>
+
+                  <td><?php echo $row["dress_id"] ?></td>
+                  <td><?php echo $row["quantity"] ?></td>
+                  <td><?php echo $row["total_price"] ?></td>
+                
+                  <td><?php echo $row["date"] ?></td>
+                  <td><?php echo $row["status"] ?></td>
+                  
+                  
+            </tr>
+            <?php
+                    }
+                  } else {
+                  }
+
+            ?>
+
+
+          </table>
+      </div>
+    </div>
+
+    <div id="adminc-div2">
+      <center><h2 class="admin-para">Bought Customize Dresses</h2></center>
+      <div class="admin-table">
+        <table>
+          <tr>
+            <th>Tailor Name</th>
+            <th>Category</th>
+            <th>Status</th>
             
-      </tr>
-      <?php
+
+          </tr>
+          <tr>
+            <?php
+
+            $selected_cus_id = $_SESSION['selected_cus_id'];
+            $nic = $_SESSION['selected_cus_id'];
+            $sql1 = "SELECT * FROM t_orders WHERE c_nic='$nic'";
+            $result1 = mysqli_query($db, $sql1);
+
+            if (mysqli_num_rows($result1) > 0) {
+
+              while ($row = mysqli_fetch_assoc($result1)) {
+            ?>
+
+                <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
+                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+                
+          </tr>
+            <?php
+                  }
+                } else {
+                }
+
+            ?>
+        </table>
+      </div>
+    </div>
+
+    <div id="adminc-div3">
+      <center><h2 class="admin-para">Hired Fashion Designers' details of the customer</h2></center>
+      <div class="admin-table">
+        <table>
+          <tr>
+            <th>Fashion Designer Name</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <?php
+
+            $nic = $_SESSION['selected_cus_id'];
+            $sql2 = "SELECT * FROM fd_orders WHERE c_nic='$nic'";
+            $result2 = mysqli_query($db, $sql2);
+
+            if (mysqli_num_rows($result2) > 0) {
+
+              while ($row = mysqli_fetch_assoc($result2)) {
+            ?>
+
+                <td><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></td>
+                <td><?php echo $row["price"] ?></td>
+                <td><?php echo $row["date"] ?></td>
+                <td><?php echo $row["status"] ?></td>
+          </tr>
+          <?php
+                }
+              } else {
               }
-            } else {
-            }
 
-      ?>
+          ?>
+        </table>
+      </div>
+    </div>
 
+      <?php } ?>
 
-    </table>
-
-
-</div>
-
-
-<div class="container-box">
-<center><h2>Bought Customize Dresses </h2></center>
-    <table>
-      <tr>
-        <th>Tailor Name</th>
-        <th>Category</th>
-        <th>Status</th>
-        
-
-      </tr>
-      <tr>
-        <?php
-
-        $selected_cus_id = $_SESSION['selected_cus_id'];
-        $nic = $_SESSION['selected_cus_id'];
-        $sql1 = "SELECT * FROM t_orders WHERE c_nic='$nic'";
-        $result1 = mysqli_query($db, $sql1);
-
-        if (mysqli_num_rows($result1) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result1)) {
-        ?>
-
-            <td><?php echo $row["t_fname"]." ".$row["t_lname"] ?></td>
-            <td><?php echo $row["category"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-            
-      </tr>
-        <?php
-              }
-            } else {
-            }
-
-        ?>
-    </table>
-  </div>
-
-
-  <center><h2> Hired Fashion Designers' details of the customer </h2></center>
-
-  <div class="container-box">
-    <table>
-      <tr>
-        <th>Fashion Designer Name</th>
-        <th>Price</th>
-        <th>Date</th>
-        <th>Status</th>
-      </tr>
-      <tr>
-        <?php
-
-        $nic = $_SESSION['selected_cus_id'];
-        $sql2 = "SELECT * FROM fd_orders WHERE c_nic='$nic'";
-        $result2 = mysqli_query($db, $sql2);
-
-        if (mysqli_num_rows($result2) > 0) {
-
-          while ($row = mysqli_fetch_assoc($result2)) {
-        ?>
-
-            <td><?php echo $row["fd_fname"]." ".$row["fd_lname"] ?></td>
-            <td><?php echo $row["price"] ?></td>
-            <td><?php echo $row["date"] ?></td>
-            <td><?php echo $row["status"] ?></td>
-      </tr>
-    <?php
-          }
-        } else {
+    <script>
+      function myFunctiona1() 
+      {
+        var x = document.getElementById("adminc-div1");
+        var y = document.getElementById("adminc-div2");
+        var c = document.getElementById("adminc-div3");
+        if (y.style.display === "none" && c.style.display === "none") 
+        {
+          x.style.display = "block";
+        } 
+        else 
+        {
+          y.style.display = "none";
+          c.style.display = "none";
+          x.style.display = "block";
         }
+      }
 
-    ?>
-    </table>
-  </div>
+      function myFunctiona2() 
+      {
+        var x = document.getElementById("adminc-div1");
+        var y = document.getElementById("adminc-div2");
+        var c = document.getElementById("adminc-div3");
+        if (x.style.display === "none" && c.style.display === "none") 
+        {
+          y.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          c.style.display = "none";
+          y.style.display = "block";
+        }
+      }
+
+      function myFunctiona3() 
+      {
+        var x = document.getElementById("adminc-div1");
+        var y = document.getElementById("adminc-div2");
+        var c = document.getElementById("adminc-div3");
+        if (x.style.display === "none" && y.style.display === "none") 
+        {
+          c.style.display = "block";
+        } 
+        else 
+        {
+          x.style.display = "none";
+          y.style.display = "none";
+          c.style.display = "block";
+        }
+      }
+    </script>
 
 
-
-
-
-  <?php } ?>
   </div>
 
   
