@@ -305,7 +305,7 @@ if (isset($_POST['hireT'])) {
 
     //echo $t_nic,$t_fname,$chest;
     $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,nstatus,nmessage)
-    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$dateM','$dress_id', '$date','1','Pending Order')";
+    VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$dateM','$dress_id', '$date','0','Pending Order')";
    $result = mysqli_query($db, $sql);
 //    $sql2 = "UPDATE t_orders SET cstatus=1 WHERE c_nic=$c_nic";
 //    $result3 = mysqli_query($db, $sql2);
