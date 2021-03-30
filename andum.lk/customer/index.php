@@ -313,7 +313,7 @@ if (!isset($_SESSION['nic'])) {
             <input type="hidden" value="<?php echo $nic ?> " name="nic">
             <div class="card-item">
               <div class="card-img">
-                <a href="fd.php?t_nic=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
+                <a href="fd.php?f_id=<?php echo $row["nic"] ?>"><img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Ava" style="width:100%" class="proDisp"></a>    
               </div>
               <div class="card-content">
               
