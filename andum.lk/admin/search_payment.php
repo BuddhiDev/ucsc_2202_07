@@ -460,6 +460,7 @@
                   while ($row = mysqli_fetch_assoc($resultc)) {
                         
           ?>
+          <!-- bbbb -->
           <td><?php echo $row["id"] ?></td>
           <td><?php echo $row["fd_nic"] ?></td>
           <td><?php echo $row["fd_fname"]. " " .$row["fd_lname"]?></td>
