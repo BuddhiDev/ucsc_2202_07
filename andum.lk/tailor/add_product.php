@@ -53,15 +53,15 @@ window.onclick = function(e) {
 <!--add new product form-->
 <div class="sliderbox-wrap">
 
-<center><img src="icon.png" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/>
+<!-- <center><img src="icon.png" alt="Avatar" style="width:200px;margin-top:10px"></center> <br/> -->
   <form method="post" action="#" enctype="multipart/form-data" style="max-width:800px;margin:auto;padding:10px">
-      <h2>Add Product</h2>
+      <h2 class="admin-header">Add Product</h2>
 
       <div class="row">
-        <div class="col-25"><br>
-          <lable for="type" class="field-label-inline">Category:</label>
+        <div class="col-25-2">
+          <lable for="type" class="field-label-inline">Category</label>
         </div>
-        <div class="col-75">
+        <div class="col-75-2">
         <select class="option" name="category" id="category" >
               <optgroup label="WOMEN CASUAL WEAR">
               <option value="w-cas-dresses">DRESSES</option>
@@ -115,8 +115,8 @@ window.onclick = function(e) {
       </div>
 
       <div class="row">
-        <div class="col-25"><br>
-          <label for="dname" class="field-label-inline">Dress  Name : </label>
+        <div class="col-25-2">
+          <label for="dname" class="field-label-inline">Dress Name</label>
         </div>
         <div class="col-75">
           <input type="text" class="field-value-inline" placeholder="Name" name="dname">
@@ -126,8 +126,8 @@ window.onclick = function(e) {
 
 
     <div class="row">
-      <div class="col-25"><br>
-        <lable for="price" class="field-label-inline">Price: </label>
+      <div class="col-25-2">
+        <lable for="price" class="field-label-inline">Price</label>
       </div>
       <div class="col-75">
         <input class="field-label-inline" type="text"  placeholder="Price" name="price">
@@ -135,8 +135,8 @@ window.onclick = function(e) {
     </div>
 
     <div class="row">
-      <div class="col-25"><br>
-        <lable for="type" class="field-label-inline">Size:</label>
+      <div class="col-25-2">
+        <lable for="type" class="field-label-inline">Size</label>
       </div>
       <div class="col-75">
         <label class="checkbox_container">XS
@@ -168,8 +168,8 @@ window.onclick = function(e) {
       </div>
     </div>
     <div class="row">
-      <div class="col-25"><br>
-        <lable for="type" class="field-label-inline">Colors:</label>
+      <div class="col-25-2">
+        <lable for="type" class="field-label-inline">Colors</label>
       </div>
 
       <div class="col-75">
@@ -214,8 +214,8 @@ window.onclick = function(e) {
       </div>
     </div>
     <div class="row">
-      <div class="col-25"><br>
-        <lable for="amount" class="field-label-inline">Available Stock: </label>
+      <div class="col-25-2">
+        <lable for="amount" class="field-label-inline">Available Stock</label>
       </div>
       <div class="col-75">
         <input class="field-label-inline" type="text"  placeholder="Amount" name="amount">
@@ -223,11 +223,11 @@ window.onclick = function(e) {
     </div>
 
     <div class="row">
-      <div class="col-25">
-        <lable for="type" class="field-label-inline">Upload Dress image:</label>
+      <div class="col-25-2">
+        <lable for="type" class="field-label-inline">Upload Dress image</label>
       </div>
       <div class="col-75">
-        <input type="file" id="file" name="myimage" value=""> <br/>
+        <input type="file" id="file" name="myimage" value="">
       </div>
     </div>
     <div> 

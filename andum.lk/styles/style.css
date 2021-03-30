@@ -33,13 +33,14 @@ button:focus{
 }
 
 .error{
-  width: 100%;
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #fafafafa;
+  margin: 20px;
+    padding: 10px 0px;
+    border: none;
     border-radius: 10px;
     text-align: left;
-    background: #fafafafa;
+    color: red;
+    font-weight: 900;
+    font-size: 16px;
    
 }
 
@@ -733,10 +734,25 @@ nav ul.menu-area ul li a:hover{
     margin-top: 6px;
   }
 
+  .col-25-2 {
+    float: left;
+    width: 40%;
+    margin-top: 6px;
+    display: flex;
+  }
+
   .col-75 {
     float: inherit;
     width: 50%;
     margin: 10px;
+    padding: 10px;
+    flex: 1;
+  }
+
+  .col-75-2 {
+    float: inherit;
+    width: 50%;
+    margin: 10px 40px;
     padding: 10px;
     flex: 1;
   }

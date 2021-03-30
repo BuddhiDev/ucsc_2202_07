@@ -203,7 +203,10 @@ if(isset($_POST['resetpwd'])){
             
 
             if($mail->Send()){
-                echo "Password link has been send to the email";
+                // echo "Password link has been send to the email";
+                echo "<script>alert('Password link has been send to the email')</script>";
+                
+                
             }
             else{
                 echo "User Not Found";
@@ -242,13 +245,15 @@ if(isset($_POST['resetp']))
     $hashed = md5($password);
     if($password!=$confirmpassword)
     {
-        $msg= "Sorry, password not matched";
-        echo $msg;
+        // $msg= "Sorry, password not matched";
+        // echo $msg;
+        array_push($errors, "Sorry, password not matched");
     }
     elseif(strlen($password)<6)
     {
-        $msg = "<div>Password must be 6 characters long</div>";
-        echo $msg;
+        // $msg = "<div>Password must be 6 characters long</div>";
+        // echo $msg;
+        array_push($errors, "Password must be 6 characters long");
     }
     else
     {
@@ -301,6 +306,8 @@ if (isset($_POST['hireT'])) {
     $sql = "INSERT INTO t_orders (c_nic, c_fname, c_lname, t_nic, t_fname, t_lname, status, category, material, color, neck, chest, waist, seat, shirt_length, shoulder_width, arm_length, wrist, biceps, hip, other, date, dress_id, cr_date,nmessage)
     VALUES ('$c_nic','$c_fname','$c_lname','$t_nic','$t_fname','$t_lname','Pending','$category','$material','$color','$neck','$chest','$waist','$seat','$shirt_length','$shoulder_width','$arm_length','$wrist','$biceps','$hips','$other','$date','$dress_id', '$date','Pending Order')";
    $result = mysqli_query($db, $sql);
+//    $sql2 = "UPDATE t_orders SET cstatus=1 WHERE c_nic=$c_nic";
+//    $result3 = mysqli_query($db, $sql2);
    
 //    $sqln = "INSERT INTO message (nic, name, message, cr_date) VALUES('$t_nic', '$c_fname', '$other', '$date')";
 //    $resultn = mysqli_query($db, $sqln);

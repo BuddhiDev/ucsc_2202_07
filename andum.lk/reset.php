@@ -138,8 +138,7 @@ require("server.php");
   </div>
 
   <form action="" method="post">
-    <?php include("errors.php");
-    ?>
+    
 
     <div class="login-container">
     <div class="form-field-inline">
@@ -154,6 +153,8 @@ require("server.php");
         <label for="confirmpassword" class="field-label-inline"><b>Confirm Password</b></label>
         <input type="password" class="field-value-inline" name="confirmpassword" required>
       </div>
+      <?php include("errors.php");
+    ?>
       <div class="btn-panel-center">
         <button class="loginbutton btn-full-w" type="submit" name="resetp">Reset Password</button>
       </div>
@@ -167,7 +168,7 @@ require("server.php");
 
 
       <!-- <div> -->
-      <span class="psw">Don't you have an account? <a href="/ucsc_2202_07/andum.lk/signup.php">SIGN UP</a> now!</span>
+      
       <!-- </div> -->
       <!-- <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me

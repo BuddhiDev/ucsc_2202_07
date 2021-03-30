@@ -138,8 +138,7 @@ require("server.php");
   </div>
 
   <form action="login.php" method="post">
-    <?php include("errors.php");
-    ?>
+    
 
     <div class="login-container">
       <div class="form-field-inline">
@@ -150,6 +149,8 @@ require("server.php");
         <label for="password" class="field-label-inline"><b>Password</b></label>
         <input type="password" class="field-value-inline" name="password" required>
       </div>
+      <?php include("errors.php");
+    ?>
       <div class="text-box">
         <span class="psw">Forgot<a href="reset-password.php">&nbsppassword?</a></span>
       </div>
