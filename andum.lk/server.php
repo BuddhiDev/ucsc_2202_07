@@ -576,7 +576,7 @@ if (isset($_POST['update_user'])) {
     $sql = "UPDATE users SET fname='$fname',lname='$lname',contactno='$contactno',password='$password',address='$address',postalcode='$postalcode' , image = '$filename' WHERE nic='$nic'";
     $result=mysqli_query($db, $sql);
 
-    $sql1 = "INSERT INTO tailors (ac_no,bank,nic) VALUES('$ac_no','$bank','$nic')";
+    $sql1 = "UPDATE tailors SET ac_no = '$ac_no' ,bank='$bank' WHERE nic='$nic'";
     $result1 = mysqli_query($db, $sql1);
 
 
@@ -720,7 +720,6 @@ if(isset($_GET['remove_dress_id']) ){
     $result=mysqli_query($db, $sql);
     if($result)
     {
-        echo "Dress has been removed successful";
         header('location: my_showcase.php');
     }
     else{

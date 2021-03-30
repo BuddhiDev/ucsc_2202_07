@@ -477,11 +477,12 @@ if (!isset($_SESSION['nic'])) {
 
     <center>
             <?php
-            
-            $sql_dress = "SELECT * FROM dress_showcase WHERE dress_id=$selected_p_id ";
+            $clicked_dessID=$row['dress_id'];
+            $sql_dress = "SELECT * FROM dress_showcase WHERE dress_id=$clicked_dessID ";
             $res_dress = mysqli_query($db, $sql_dress);
             $row_dress = mysqli_fetch_assoc($res_dress);
-            if($row_dress["image"]) { ?>
+
+            if($row_dress['image']) { ?>
           <div class="card-img">
                       <img src="/ucsc_2202_07/andum.lk/tailor/products/<?php echo $row_dress["image"]; ?> " alt="Avatar" style="width:20%">
                       </div></center>
