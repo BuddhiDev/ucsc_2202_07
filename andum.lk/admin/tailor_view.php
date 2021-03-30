@@ -222,8 +222,10 @@ if (!isset($_SESSION['nic'])) {
 
     <div class="row">
       <div class="col-6">
-        <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:50%;">
+        <div class="admin-card-item">
+          <div class="card-img">
+            <img src="/ucsc_2202_07/andum.lk/tailor/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
+          </div>
         </div>
       </div>
 
@@ -231,20 +233,8 @@ if (!isset($_SESSION['nic'])) {
         <div class="inside">
           <div>
             <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-              <br>
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["nic"]?></p>
-              <br>
-              <div>
-                <div>
-                  Activities of Tailor
-                  <br>
-                  <br>
-                  
-                </div>
-              </div>
+              <p class="admin-para"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <p class="admin-para"><?php echo $row["nic"]?></p>
             </form>
           </div>
         </div>
@@ -252,6 +242,9 @@ if (!isset($_SESSION['nic'])) {
     </div>
 
     <?php } ?>
+
+    <center><h2 class="admin-header">Activities of Tailor</h2></center>
+    
 
     <div class="admin-status-btn-container">
         <button class="admin-status-button" onclick="myFunctionat1()">Tailor's Dressshowcase</button>

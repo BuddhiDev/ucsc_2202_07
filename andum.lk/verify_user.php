@@ -156,19 +156,19 @@
   ?>
   
     
-    <h1>Verify user</h1>
+    <h1 class="admin-header">Verify user</h1>
 		<form action="#" method="post">
-      <p>
+    <div class="form-field-inline">
 				<label for="email"></label>
 				<input type="text" value="<?php echo $row["email"]?>" class="field-value-inline" name="email" readonly>
-			</p>
-      <p>
+        </div>
 				<label for="vkey"></label>
 				<input type="hidden" value="<?php echo $row["vkey"]?>" class="field-value-inline" name="vkey" >
-			</p>
-      <p>
-        <button type="submit" name="verify_mail" class="loginbutton btn-full-w">Verify me</button>
-			</p>
+        <div class="btn-panel-center">
+        <button type="submit" name="verify_mail" class="loginbutton btn-full-w">Verify Me</button>
+
+        </div>
+        
     </form>
 
   </div>

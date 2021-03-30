@@ -1647,7 +1647,7 @@ a{
 }
 
 .admin-header{
-  padding: 19px;
+  padding: 10px;
     margin: 10px;
 }
 
@@ -1656,6 +1656,67 @@ a{
     margin: 10px;
     font-weight: 600;
     font-size: 20px;
+}
+
+.admin-confirm-btn{
+  padding: 5px;
+    margin: 5px;
+    color: white;
+    width: 14%;
+    height: 40px;
+    background: #14165a;
+    text-align: center;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-confirm-btn:hover{
+    color: #fafafa;
+}
+
+.admin-reject-btn{
+  padding: 5px;
+    margin: 5px;
+    color: white;
+    width: 14%;
+    height: 40px;
+    background: red;
+    text-align: center;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-reject-btn:hover{
+  color: #fafafa;
+}
+
+.admin-btn-cont{
+  display: flex;
+}
+
+.admin-confirm-text{
+  color: white;
+  font-size: 16px;
+}
+
+.admin-confirm-text:hover{
+  color: #fafafa;
+}
+
+.send-email-row{
+  display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.admin-card-item{
+  width: 300px;
+    background: white;
+    border-radius: 4px;
+    margin: 20px 20px 20px 300px;
 }
 
 .view-button {

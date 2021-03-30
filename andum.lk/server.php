@@ -660,7 +660,7 @@ if(isset($_POST['add_product']))
 {
 
   $t_nic =  $_SESSION['nic'];
-  $category = mysqli_real_escape_string($db, $_POST['Unit']);
+  $category = mysqli_real_escape_string($db, $_POST['category']);
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
   $price = mysqli_real_escape_string($db, $_POST['price']);
 

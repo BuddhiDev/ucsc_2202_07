@@ -19,6 +19,7 @@ if (!isset($_SESSION['nic'])) {
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/style.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/loginstyle.css">
+  <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/customerstyles.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/tailorstyle.css">
   <link rel="stylesheet" href="/ucsc_2202_07/andum.lk/styles/dropdown.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -220,9 +221,13 @@ if (!isset($_SESSION['nic'])) {
 
     <div class="row">
       <div class="col-6">
+        <div class="admin-card-item">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:50%;">
+          <img src="/ucsc_2202_07/andum.lk/fashion_designer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
+
+        </div>
+        
       </div>
 
       <div class="col-6">
@@ -230,24 +235,15 @@ if (!isset($_SESSION['nic'])) {
           <div>
             <form method="post">
               <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-              <br>
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["nic"]?></p>
-              <br>
-              <div>
-                <div>
-                  Activities of Fashion Designer
-                  <br>
-                  <br>
-                  
-                </div>
-              </div>
+              <p class="admin-para"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <p class="admin-para"><?php echo $row["nic"]?></p>
             </form>
           </div>
         </div>
       </div>
     </div>
+    
+    <center><h2 class="admin-header">Activities of Fashion Designer</h2></center>
 
     <div class="admin-status-btn-container">
         <button class="admin-status-button" onclick="myFunctionaf1()">Uploaded Designs</button>
