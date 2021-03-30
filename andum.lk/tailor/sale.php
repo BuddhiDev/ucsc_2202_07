@@ -534,8 +534,8 @@ window.onclick = function(e) {
   
     <center>
             <?php
-            
-            $sql_dress = "SELECT * FROM dress_showcase WHERE dress_id=$selected_s_id ";
+            $selected_dressID=$row['dress_id'];
+            $sql_dress = "SELECT * FROM dress_showcase WHERE dress_id=$selected_dressID ";
             $res_dress = mysqli_query($db, $sql_dress);
             $row_dress = mysqli_fetch_assoc($res_dress);
             if($row_dress["image"]) { ?>

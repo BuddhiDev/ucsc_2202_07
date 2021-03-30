@@ -132,14 +132,14 @@
 
   .fd-content-wrapper{
     /* background-color: #f8f9fc; */
-    width: 72%;
+    width: 64%;
     display: inline-block;
   }
 
   .side-bar-wrapper{
     display: inline-block;
     vertical-align: top;
-    width: 24%;
+    width: 35%;
   }
 
   .fd-block-1{
