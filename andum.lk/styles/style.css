@@ -1635,7 +1635,7 @@ a{
 
 .admin-suspend-button{
   padding: 5px 10px;
-    /* margin: 10px; */
+    margin: 5px 0px;
     background-color: red;
     border: none;
     border-radius: 10px;
@@ -1656,6 +1656,20 @@ a{
     margin: 10px;
     font-weight: 600;
     font-size: 20px;
+}
+
+.admin-para2{
+  padding: 10px 0px;
+    margin: 10px 0px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.admin-para3{
+  padding: 10px 0px;
+    margin: 10px 0px;
+    font-weight: 200;
+    font-size: 14px;
 }
 
 .admin-confirm-btn{

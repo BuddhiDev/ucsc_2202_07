@@ -155,7 +155,7 @@ $total_banned_users = $row[0];
       <div class=row>
         
         <div class=col-4>
-          <div class="fd-block-2">
+          <div class="fd-block-1">
           <h3 class="fd-block-font-size"><?php echo $total_tailors ?></h3>
             <Br>
             <h3>Tailors</h3>
@@ -169,7 +169,7 @@ $total_banned_users = $row[0];
           </div>
         </div>
         <div class=col-4>
-          <div class="fd-block-2">
+          <div class="fd-block-1">
           <h3 class="fd-block-font-size"><?php echo $total_fdesigners ?></h3>
             <Br>
             <h3>Fashion designers</h3>

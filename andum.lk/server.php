@@ -101,8 +101,7 @@ if(isset($_POST['verify_mail'])){
 
         $mail->isSMTP(true);
         $mail->Subject='Thank you for registring';
-        $mail->Body="<Click Below link to Register to the Andum.lk 
-        'http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'>";
+        $mail->Body="<a href='http://localhost/ucsc_2202_07/andum.lk/e_verify.php?vkey=$vkey'></a>";
 
         if($mail->Send()){
             header('location: check_mail.php');
@@ -660,7 +659,7 @@ if(isset($_POST['add_product']))
 {
 
   $t_nic =  $_SESSION['nic'];
-  $category = mysqli_real_escape_string($db, $_POST['category']);
+  $category = mysqli_real_escape_string($db, $_POST['Unit']);
   $dressname = mysqli_real_escape_string($db, $_POST['dname']);
   $price = mysqli_real_escape_string($db, $_POST['price']);
 
