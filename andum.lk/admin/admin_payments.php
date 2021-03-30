@@ -209,7 +209,7 @@
         <div class="admin-search-container">
             <form method="post" action = "search_payment.php">
               <div class="form-field-inline">
-                <input type="text" class="field-value-inline" name="q" placeholder="Search by customer nic..">
+                <input type="text" class="field-value-inline" name="q" placeholder="Search by Order ID..">
                 <button type="submit" class="admin-search-btn" name="search"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
             </form>
@@ -235,9 +235,9 @@
       <div class="admin-table">
         <table>
           <tr>
-            <th>Customer NIC</th>
+            <th>Order ID</th>
             <th>Tailor NIC</th>
-            <th>Dress_id</th>
+            <th>Dress ID</th>
             <th>quantity</th>
             <th>Full payment</th>
             <th>Invoice</th>
@@ -256,7 +256,7 @@
                     
           ?>
           
-          <td><?php echo $row["c_nic"] ?></td>
+          <td><?php echo $row["id"] ?></td>
           <td><?php echo $row["t_nic"] ?></td>
           <td><?php echo $row["dress_id"] ?></td>
           <td><?php echo $row["quantity"] ?></td>
@@ -281,7 +281,7 @@
       <div class="admin-table">
         <table>
           <tr>
-            <th>Customer NIC</th>
+            <th>Order ID</th>
             <th>Tailor NIC</th>
             <th>Full Name</th>
             <th>Dress_id</th>
@@ -301,7 +301,7 @@
                   while ($row = mysqli_fetch_assoc($resultc)) {
                         
           ?>
-          <td><?php echo $row["c_nic"] ?></td>
+          <td><?php echo $row["id"] ?></td>
           <td><?php echo $row["t_nic"] ?></td>
           <td><?php echo $row["t_fname"]. " " .$row["t_lname"]?></td>
           <td><?php echo $row["dress_id"] ?></td>
@@ -330,7 +330,7 @@
         <table>
 
           <tr>
-                <th>Customer NIC</th>
+                <th>Order ID</th>
                 <th>Fashion Designer NIC</th>
                 <th>Full Name</th>
                 <th>Account No</th>
@@ -349,7 +349,7 @@
                       while ($row = mysqli_fetch_assoc($resultc)) {
                             
               ?>
-              <td><?php echo $row["c_nic"] ?></td>
+              <td><?php echo $row["id"] ?></td>
               <td><?php echo $row["fd_nic"] ?></td>
               <td><?php echo $row["fd_fname"]. " " .$row["fd_lname"]?></td>
               <td><?php echo $row["ac_no"] ?></td>

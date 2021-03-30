@@ -301,9 +301,10 @@ if (!isset($_SESSION['nic'])) {
         <table>
           <tr>
             <th>Customer Name</th>
-            <th>Category</th>
+            <th>Title</th>
             <th>Status</th>
-            <th><center>Action</center></th>
+            <th>Order Id</th>
+            
           </tr>
           <tr>
 
@@ -321,9 +322,10 @@ if (!isset($_SESSION['nic'])) {
             ?>
 
                 <td><?php echo $row["fname"]." ".$row["lname"] ?></td>
-                <td><?php echo $row["category"] ?></td>
+                <td><?php echo $row["title"] ?></td>
                 <td><?php echo $row["status"] ?></td>
-                <td>pending</td>
+                <td><?php echo $row["id"] ?></td>
+                
                 
           </tr>
           <?php
@@ -346,7 +348,7 @@ if (!isset($_SESSION['nic'])) {
           <tr>
             <th>Customer NIC</th>
             
-            <th>Dress_id</th>
+            <th>Order Id</th>
             <th>Full payment</th>
             <th>Invoice</th>
             <th>Date</th>
@@ -354,17 +356,19 @@ if (!isset($_SESSION['nic'])) {
           </tr>
           <tr>
           <?php
-              $selected_tailor_id = $_SESSION['selected_tailor_id'];
+              // $selected_tailor_id = $_SESSION['selected_tailor_id'];
               $nic = $_SESSION['selected_tailor_id'];
-              $sqlc = "SELECT o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic WHERE nic = '$nic'";
+
+              $sqlc= "SELECT *FROM t_orders WHERE t_nic ='$nic'";
+              // $sqlc = "SELECT o.id, o.c_nic,o.t_nic,o.t_fname,o.t_lname,o.status,o.date,o.price,o.dress_id,t.ac_no,t.bank FROM t_orders AS o INNER JOIN tailors AS t ON o.t_nic = t.nic WHERE nic = '$nic'";
               $resultc = mysqli_query($db, $sqlc); 
               if ($resultc) {
                   while ($row = mysqli_fetch_assoc($resultc)) {
                         
           ?>
           <td><?php echo $row["c_nic"] ?></td>
-          
-          <td><?php echo $row["dress_id"] ?></td>
+          <td><?php echo $row["id"] ?></td>
+         
           <td><?php echo $row["price"] ?></td>
           <td><?php echo($row["price"]*0.05)?></td>
           <td><?php echo $row["date"] ?></td>
