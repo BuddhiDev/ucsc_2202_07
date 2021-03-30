@@ -721,7 +721,6 @@ if(isset($_GET['remove_dress_id']) ){
     $result=mysqli_query($db, $sql);
     if($result)
     {
-        echo "Dress has been removed successful";
         header('location: my_showcase.php');
     }
     else{
