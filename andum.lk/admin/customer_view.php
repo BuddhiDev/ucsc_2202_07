@@ -223,35 +223,30 @@ if (!isset($_SESSION['nic'])) {
 
     <div class="row">
       <div class="col-6">
+        <div class="admin-card-item">
         <div class="card-img">
-          <img src="/ucsc_2202_07/andum.lk/customer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:50%;">
+          <img src="/ucsc_2202_07/andum.lk/customer/profile_pictures/<?php echo $row["image"]; ?>" alt="Avatar" style="width:100%;">
         </div>
+
+        </div>
+        
       </div>
 
       <div class="col-6">
         <div class="inside">
           <div>
             <form method="post">
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["fname"]." ".$row["lname"] ?></p>
-              <br>
-              <br>
-              <p style="color: black; font-size: 20px; margin-top:10px"><?php echo $row["nic"]?></p>
-              <br>
-              <div>
-                <div>
-                  Activities of Customer
-                  <br>
-                  <br>
-                </div>
-              </div>
+              <p class="admin-para"><?php echo $row["fname"]." ".$row["lname"] ?></p>
+              <p class="admin-para"><?php echo $row["nic"]?></p>
             </form>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="admin-status-btn-container">
+    <center><h2 class="admin-header">Activities of Customer</h2></center>
+
+      <div class="admin-status-btn-container">
         <button class="admin-status-button" onclick="myFunctiona1()">Bought Readymade Dresses</button>
         <button class="admin-status-button" onclick="myFunctiona2()">Bought Customize Dresses</button>
         <button class="admin-status-button" onclick="myFunctiona3()">Hired Fashion Designers' details of the customer</button>
