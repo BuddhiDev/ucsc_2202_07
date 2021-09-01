@@ -117,10 +117,12 @@ if (!isset($_SESSION['nic'])) {
 
 			<p>
 				<label for="subject" class="field-label-inline">Subject *:</label>
+        <input type="text" value="Warning message about suspending your account" class="field-value-inline" name="subject" require>
+				<!--
         <select name="cars" id="cars" class="option">
           <option value="Warning message about suspending your account">Warning message about suspending your account</option>
           <option value="Your account has been suspended">Your account has been suspended</option>
-        </select>
+        </select>-->
 			<p>
 				<label for="body" class="field-label-inline">Message *: </label>
 				<textarea name="body" id="body" class="admin-field-value-inline" cols="30" rows="10" required >Hello Customer,

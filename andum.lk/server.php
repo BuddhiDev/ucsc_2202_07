@@ -818,6 +818,8 @@ if(isset($_POST['update_dress']) ){
 
 }
 
+//Save updated rejected dress details
+
 if(isset($_POST['update_reject_dress']) ){
 
     $t_nic = mysqli_real_escape_string($db, $_POST['t_nic']);
